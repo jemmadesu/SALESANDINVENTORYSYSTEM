@@ -1,0 +1,400 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{8162A4FE-5C33-41BB-AF97-98E1DB092D71}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <StartupObject>SALESANDINVENTORYSYSTEM.My.MyApplication</StartupObject>
+    <RootNamespace>SALESANDINVENTORYSYSTEM</RootNamespace>
+    <AssemblyName>SALESANDINVENTORYSYSTEM</AssemblyName>
+    <FileAlignment>512</FileAlignment>
+    <MyType>WindowsForms</MyType>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <DefineDebug>true</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DocumentationFile>SALESANDINVENTORYSYSTEM.xml</DocumentationFile>
+    <NoWarn>42016,41999,42017,42018,42019,42032,42036,42020,42021,42022</NoWarn>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <DefineDebug>false</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DocumentationFile>SALESANDINVENTORYSYSTEM.xml</DocumentationFile>
+    <NoWarn>42016,41999,42017,42018,42019,42032,42036,42020,42021,42022</NoWarn>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup>
+    <OptionExplicit>On</OptionExplicit>
+  </PropertyGroup>
+  <PropertyGroup>
+    <OptionCompare>Binary</OptionCompare>
+  </PropertyGroup>
+  <PropertyGroup>
+    <OptionStrict>Off</OptionStrict>
+  </PropertyGroup>
+  <PropertyGroup>
+    <OptionInfer>On</OptionInfer>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Bunifu_UI_v1.5.3">
+      <HintPath>..\..\..\..\Downloads\ss\InnerVisual-Bunifu_UI_v1.5.3 Crack\Bunifu_UI_v1.5.3.dll</HintPath>
+    </Reference>
+    <Reference Include="Guna.UI">
+      <HintPath>..\..\..\..\Downloads\ss\FTUApps.com-Guna-UI-Framework-Ultimate-v2.0.0.1-Keygen\[FTUApps.com] - Guna UI Framework Ultimate v2.0.0.1 + Keygen\Guna.UI-Framework-Lib-master\Guna.UI WinForms\.net 2.0\Guna.UI.dll</HintPath>
+    </Reference>
+    <Reference Include="Guna.UI2">
+      <HintPath>..\..\..\..\Downloads\ss\FTUApps.com-Guna-UI-Framework-Ultimate-v2.0.0.1-Keygen\[FTUApps.com] - Guna UI Framework Ultimate v2.0.0.1 + Keygen\Guna.UI-Framework-Lib-master\Guna.UI2 WinForms\.net 2.0\Guna.UI2.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.Common, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ReportingServices.ReportViewerControl.Winforms.150.1537.0\lib\net40\Microsoft.ReportViewer.Common.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.DataVisualization, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ReportingServices.ReportViewerControl.Winforms.150.1537.0\lib\net40\Microsoft.ReportViewer.DataVisualization.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.Design, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ReportingServices.ReportViewerControl.Winforms.150.1537.0\lib\net40\Microsoft.ReportViewer.Design.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.ProcessingObjectModel, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ReportingServices.ReportViewerControl.Winforms.150.1537.0\lib\net40\Microsoft.ReportViewer.ProcessingObjectModel.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.WebForms, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Report.Viewer.11.0.0.0\lib\net\Microsoft.ReportViewer.WebForms.DLL</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.WinForms">
+      <HintPath>..\packages\Microsoft.ReportingServices.ReportViewerControl.Winforms.150.1537.0\lib\net40\Microsoft.ReportViewer.WinForms.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.SqlServer.Types, Version=14.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.SqlServer.Types.14.0.314.76\lib\net40\Microsoft.SqlServer.Types.dll</HintPath>
+    </Reference>
+    <Reference Include="MySql.Data, Version=8.0.25.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\Debug\MySql.Data.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Management" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Windows.Forms.DataVisualization" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Net.Http" />
+  </ItemGroup>
+  <ItemGroup>
+    <Import Include="Microsoft.VisualBasic" />
+    <Import Include="System" />
+    <Import Include="System.Collections" />
+    <Import Include="System.Collections.Generic" />
+    <Import Include="System.Data" />
+    <Import Include="System.Drawing" />
+    <Import Include="System.Diagnostics" />
+    <Import Include="System.Windows.Forms" />
+    <Import Include="System.Linq" />
+    <Import Include="System.Xml.Linq" />
+    <Import Include="System.Threading.Tasks" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="FRMLOGIN.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FRMLOGIN.Designer.vb">
+      <DependentUpon>FRMLOGIN.vb</DependentUpon>
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FRMMAINMENU.Designer.vb">
+      <DependentUpon>FRMMAINMENU.vb</DependentUpon>
+    </Compile>
+    <Compile Include="FRMMAINMENU.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FRMREPORTS.Designer.vb">
+      <DependentUpon>FRMREPORTS.vb</DependentUpon>
+    </Compile>
+    <Compile Include="FRMREPORTS.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="inventory_dbDataSet3.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>inventory_dbDataSet3.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="inventory_dbDataSet3.vb">
+      <DependentUpon>inventory_dbDataSet3.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Module1.vb" />
+    <Compile Include="My Project\AssemblyInfo.vb" />
+    <Compile Include="My Project\Application.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Application.myapp</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="My Project\Resources.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="My Project\Settings.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <Compile Include="ucCATEGORY.Designer.vb">
+      <DependentUpon>ucCATEGORY.vb</DependentUpon>
+    </Compile>
+    <Compile Include="ucCATEGORY.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ucOUTOFSTOCKS.Designer.vb">
+      <DependentUpon>ucOUTOFSTOCKS.vb</DependentUpon>
+    </Compile>
+    <Compile Include="ucOUTOFSTOCKS.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ucLOWQTY.Designer.vb">
+      <DependentUpon>ucLOWQTY.vb</DependentUpon>
+    </Compile>
+    <Compile Include="ucLOWQTY.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ucDASHBOARD.Designer.vb">
+      <DependentUpon>ucDASHBOARD.vb</DependentUpon>
+    </Compile>
+    <Compile Include="ucDASHBOARD.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ucNEWPRODUCT.Designer.vb">
+      <DependentUpon>ucNEWPRODUCT.vb</DependentUpon>
+    </Compile>
+    <Compile Include="ucNEWPRODUCT.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ucOBSELETEINVENTORY.Designer.vb">
+      <DependentUpon>ucOBSELETEINVENTORY.vb</DependentUpon>
+    </Compile>
+    <Compile Include="ucOBSELETEINVENTORY.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ucPRODUCTLIST.Designer.vb">
+      <DependentUpon>ucPRODUCTLIST.vb</DependentUpon>
+    </Compile>
+    <Compile Include="ucPRODUCTLIST.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ucPUTINTOINVENTORY.Designer.vb">
+      <DependentUpon>ucPUTINTOINVENTORY.vb</DependentUpon>
+    </Compile>
+    <Compile Include="ucPUTINTOINVENTORY.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ucNEAREXPIRY.Designer.vb">
+      <DependentUpon>ucNEAREXPIRY.vb</DependentUpon>
+    </Compile>
+    <Compile Include="ucNEAREXPIRY.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ucRESTOCK.Designer.vb">
+      <DependentUpon>ucRESTOCK.vb</DependentUpon>
+    </Compile>
+    <Compile Include="ucRESTOCK.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ucRETURN.Designer.vb">
+      <DependentUpon>ucRETURN.vb</DependentUpon>
+    </Compile>
+    <Compile Include="ucRETURN.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ucSALES.Designer.vb">
+      <DependentUpon>ucSALES.vb</DependentUpon>
+    </Compile>
+    <Compile Include="ucSALES.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ucSETTINGS.Designer.vb">
+      <DependentUpon>ucSETTINGS.vb</DependentUpon>
+    </Compile>
+    <Compile Include="ucSETTINGS.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ucSTOCKLIST.Designer.vb">
+      <DependentUpon>ucSTOCKLIST.vb</DependentUpon>
+    </Compile>
+    <Compile Include="ucSTOCKLIST.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ucSUPPLIER.Designer.vb">
+      <DependentUpon>ucSUPPLIER.vb</DependentUpon>
+    </Compile>
+    <Compile Include="ucSUPPLIER.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ucTRANSACTION.Designer.vb">
+      <DependentUpon>ucTRANSACTION.vb</DependentUpon>
+    </Compile>
+    <Compile Include="ucTRANSACTION.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ucUSERMANAGEMENT.Designer.vb">
+      <DependentUpon>ucUSERMANAGEMENT.vb</DependentUpon>
+    </Compile>
+    <Compile Include="ucUSERMANAGEMENT.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="FRMLOGIN.resx">
+      <DependentUpon>FRMLOGIN.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FRMMAINMENU.resx">
+      <DependentUpon>FRMMAINMENU.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FRMREPORTS.resx">
+      <DependentUpon>FRMREPORTS.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="My Project\Resources.resx">
+      <Generator>VbMyResourcesResXFileCodeGenerator</Generator>
+      <CustomToolNamespace>My.Resources</CustomToolNamespace>
+      <SubType>Designer</SubType>
+      <LastGenOutput>Resources.Designer.vb</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="RPTACTLOG.rdlc" />
+    <EmbeddedResource Include="RPTEXP.rdlc" />
+    <EmbeddedResource Include="RPTOUTOFSTOCKS.rdlc" />
+    <EmbeddedResource Include="RPTPRODUCTS.rdlc" />
+    <EmbeddedResource Include="RPTSALES.rdlc" />
+    <EmbeddedResource Include="RPTSUPPLIER.rdlc" />
+    <EmbeddedResource Include="RPTUSERACCOUNTS.rdlc" />
+    <EmbeddedResource Include="ucCATEGORY.resx">
+      <DependentUpon>ucCATEGORY.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ucDASHBOARD.resx">
+      <DependentUpon>ucDASHBOARD.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ucOUTOFSTOCKS.resx">
+      <DependentUpon>ucOUTOFSTOCKS.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ucLOWQTY.resx">
+      <DependentUpon>ucLOWQTY.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ucNEWPRODUCT.resx">
+      <DependentUpon>ucNEWPRODUCT.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ucOBSELETEINVENTORY.resx">
+      <DependentUpon>ucOBSELETEINVENTORY.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ucPRODUCTLIST.resx">
+      <DependentUpon>ucPRODUCTLIST.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ucPUTINTOINVENTORY.resx">
+      <DependentUpon>ucPUTINTOINVENTORY.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ucNEAREXPIRY.resx">
+      <DependentUpon>ucNEAREXPIRY.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ucRESTOCK.resx">
+      <DependentUpon>ucRESTOCK.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ucRETURN.resx">
+      <DependentUpon>ucRETURN.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ucSALES.resx">
+      <DependentUpon>ucSALES.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ucSETTINGS.resx">
+      <DependentUpon>ucSETTINGS.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ucSTOCKLIST.resx">
+      <DependentUpon>ucSTOCKLIST.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ucSUPPLIER.resx">
+      <DependentUpon>ucSUPPLIER.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ucTRANSACTION.resx">
+      <DependentUpon>ucTRANSACTION.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ucUSERMANAGEMENT.resx">
+      <DependentUpon>ucUSERMANAGEMENT.vb</DependentUpon>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="inventory_dbDataSet3.xsc">
+      <DependentUpon>inventory_dbDataSet3.xsd</DependentUpon>
+    </None>
+    <None Include="inventory_dbDataSet3.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>inventory_dbDataSet3.Designer.vb</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="inventory_dbDataSet3.xss">
+      <DependentUpon>inventory_dbDataSet3.xsd</DependentUpon>
+    </None>
+    <None Include="My Project\Application.myapp">
+      <Generator>MyApplicationCodeGenerator</Generator>
+      <LastGenOutput>Application.Designer.vb</LastGenOutput>
+    </None>
+    <None Include="My Project\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <CustomToolNamespace>My</CustomToolNamespace>
+      <LastGenOutput>Settings.Designer.vb</LastGenOutput>
+    </None>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Connected Services\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
+    <None Include="Resources\icons8-cloud-backup-restore-100 %281%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\noun-data-backup-4550589.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\noun-data-backup-45505891.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\noun-data-backup-45505892.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\restore.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\noun-restore-down-1387364.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\[CITYPNG.COM]White Circle Round Question Mark Icon PNG - 1124x1124.png" />
+    <Content Include="SqlServerTypes\Loader.cs" />
+    <Content Include="SqlServerTypes\readme.htm" />
+    <Content Include="SqlServerTypes\x64\msvcr120.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="SqlServerTypes\x64\SqlServerSpatial140.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="SqlServerTypes\x86\msvcr120.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="SqlServerTypes\x86\SqlServerSpatial140.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
+</Project>
