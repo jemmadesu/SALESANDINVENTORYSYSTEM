@@ -109,6 +109,8 @@ Public Class FRMLOGIN
                 con.Close()
             End If
         End If
+
+        con.Close()
     End Sub
     Private Sub CHKPASS_CheckedChanged(sender As Object, e As EventArgs) Handles CHKPASS.CheckedChanged
         If CHKPASS.Checked = False Then

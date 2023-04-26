@@ -199,7 +199,7 @@ Partial Class ucPRODUCTLIST
         Me.DGVPRODLIST.ReadOnly = True
         Me.DGVPRODLIST.RowHeadersVisible = False
         Me.DGVPRODLIST.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
-        Me.DGVPRODLIST.Size = New System.Drawing.Size(1181, 573)
+        Me.DGVPRODLIST.Size = New System.Drawing.Size(1181, 632)
         Me.DGVPRODLIST.TabIndex = 133
         '
         'Label4

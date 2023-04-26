@@ -38,7 +38,7 @@ Partial Class ucOBSELETEINVENTORY
         Me.BTNARCHIVE.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.BTNARCHIVE.Font = New System.Drawing.Font("Century Gothic", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.BTNARCHIVE.ForeColor = System.Drawing.Color.White
-        Me.BTNARCHIVE.Location = New System.Drawing.Point(1102, 668)
+        Me.BTNARCHIVE.Location = New System.Drawing.Point(1102, 734)
         Me.BTNARCHIVE.Name = "BTNARCHIVE"
         Me.BTNARCHIVE.Size = New System.Drawing.Size(124, 34)
         Me.BTNARCHIVE.TabIndex = 46
@@ -91,12 +91,12 @@ Partial Class ucOBSELETEINVENTORY
         Me.DGVEXPIREDPROD.AllowUserToDeleteRows = False
         Me.DGVEXPIREDPROD.BackgroundColor = System.Drawing.Color.White
         Me.DGVEXPIREDPROD.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.DGVEXPIREDPROD.Location = New System.Drawing.Point(63, 157)
+        Me.DGVEXPIREDPROD.Location = New System.Drawing.Point(63, 159)
         Me.DGVEXPIREDPROD.Name = "DGVEXPIREDPROD"
         Me.DGVEXPIREDPROD.ReadOnly = True
         Me.DGVEXPIREDPROD.RowHeadersVisible = False
         Me.DGVEXPIREDPROD.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
-        Me.DGVEXPIREDPROD.Size = New System.Drawing.Size(1163, 489)
+        Me.DGVEXPIREDPROD.Size = New System.Drawing.Size(1163, 550)
         Me.DGVEXPIREDPROD.TabIndex = 71
         '
         'ucOBSELETEINVENTORY

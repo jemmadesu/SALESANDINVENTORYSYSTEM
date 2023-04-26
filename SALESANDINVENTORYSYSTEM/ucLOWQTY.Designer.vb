@@ -82,7 +82,7 @@ Partial Class ucLOWQTY
         Me.DGVLOWQTY.ReadOnly = True
         Me.DGVLOWQTY.RowHeadersVisible = False
         Me.DGVLOWQTY.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
-        Me.DGVLOWQTY.Size = New System.Drawing.Size(1181, 573)
+        Me.DGVLOWQTY.Size = New System.Drawing.Size(1181, 593)
         Me.DGVLOWQTY.TabIndex = 71
         '
         'ucLOWQTY

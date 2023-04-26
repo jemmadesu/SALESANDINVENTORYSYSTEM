@@ -73,6 +73,7 @@ Partial Class ucTRANSACTION
         Me.BTNPAY = New System.Windows.Forms.Button()
         Me.TRANSADATE = New System.Windows.Forms.DateTimePicker()
         Me.lbldate = New System.Windows.Forms.Label()
+        Me.Button1 = New System.Windows.Forms.Button()
         CType(Me.NumericUpDown1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.GroupBox3.SuspendLayout()
         Me.pnlpayment.SuspendLayout()
@@ -673,11 +674,21 @@ Partial Class ucTRANSACTION
         Me.lbldate.TabIndex = 76
         Me.lbldate.Text = "lbldate"
         '
+        'Button1
+        '
+        Me.Button1.Location = New System.Drawing.Point(489, 66)
+        Me.Button1.Name = "Button1"
+        Me.Button1.Size = New System.Drawing.Size(75, 23)
+        Me.Button1.TabIndex = 77
+        Me.Button1.Text = "Button1"
+        Me.Button1.UseVisualStyleBackColor = True
+        '
         'ucTRANSACTION
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.SystemColors.Control
+        Me.Controls.Add(Me.Button1)
         Me.Controls.Add(Me.TRANSADATE)
         Me.Controls.Add(Me.lbldate)
         Me.Controls.Add(Me.BTNDELETE)
@@ -765,4 +776,5 @@ Partial Class ucTRANSACTION
     Friend WithEvents TOTALBILL As TextBox
     Friend WithEvents TRANSADATE As DateTimePicker
     Friend WithEvents lbldate As Label
+    Friend WithEvents Button1 As Button
 End Class

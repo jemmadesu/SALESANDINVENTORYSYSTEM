@@ -1,7 +1,7 @@
 ﻿Imports MySql.Data.MySqlClient
 Public Class FRMMAINMENU
     Private Sub FRMMAINMENU_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-       
+        con.Close()
 
         If LBLUSERTYPE.Text = "Admin" Then
 
@@ -219,7 +219,5 @@ Public Class FRMMAINMENU
         FRMREPORTS.ShowDialog()
     End Sub
 
-    Private Sub Panel1_Paint(sender As Object, e As PaintEventArgs) Handles Panel1.Paint
 
-    End Sub
 End Class

@@ -104,13 +104,13 @@ Public Class ucCATEGORY
         OpenCon()
 
 
-        cmd.CommandText = "insert into tbl_category(ID, catcode,catname) values ( @ID, @cc, @cn)"
+        cmd.CommandText = "insert into tbl_category values (NULL, @cc, @cn)"
         With cmd.Parameters
 
             .Clear()
 
 
-            .AddWithValue("ID", TXTID.Text)
+
             .AddWithValue("cc", TXTCATCODE.Text)
             .AddWithValue("cn", TXTCATNAME.Text)
 

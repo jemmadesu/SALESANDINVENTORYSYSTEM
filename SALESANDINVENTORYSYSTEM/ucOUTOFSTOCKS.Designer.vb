@@ -71,7 +71,7 @@ Partial Class ucOUTOFSTOCKS
         Me.DGVOUTOFSTOCKS.ReadOnly = True
         Me.DGVOUTOFSTOCKS.RowHeadersVisible = False
         Me.DGVOUTOFSTOCKS.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
-        Me.DGVOUTOFSTOCKS.Size = New System.Drawing.Size(1163, 489)
+        Me.DGVOUTOFSTOCKS.Size = New System.Drawing.Size(1163, 562)
         Me.DGVOUTOFSTOCKS.TabIndex = 75
         '
         'Label8
@@ -92,7 +92,7 @@ Partial Class ucOUTOFSTOCKS
         Me.BTNARCHIVE.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.BTNARCHIVE.Font = New System.Drawing.Font("Century Gothic", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.BTNARCHIVE.ForeColor = System.Drawing.Color.White
-        Me.BTNARCHIVE.Location = New System.Drawing.Point(1102, 668)
+        Me.BTNARCHIVE.Location = New System.Drawing.Point(1102, 740)
         Me.BTNARCHIVE.Name = "BTNARCHIVE"
         Me.BTNARCHIVE.Size = New System.Drawing.Size(124, 34)
         Me.BTNARCHIVE.TabIndex = 76

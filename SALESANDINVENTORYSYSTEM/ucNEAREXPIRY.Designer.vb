@@ -26,9 +26,9 @@ Partial Class ucNEAREXPIRY
         Me.Label4 = New System.Windows.Forms.Label()
         Me.Button1 = New System.Windows.Forms.Button()
         Me.Panel2 = New System.Windows.Forms.Panel()
+        Me.BTNBACK = New System.Windows.Forms.Button()
         Me.DGVEXP = New System.Windows.Forms.DataGridView()
         Me.Label8 = New System.Windows.Forms.Label()
-        Me.BTNBACK = New System.Windows.Forms.Button()
         Me.Panel2.SuspendLayout()
         CType(Me.DGVEXP, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
@@ -60,32 +60,6 @@ Partial Class ucNEAREXPIRY
         Me.Panel2.Size = New System.Drawing.Size(1322, 49)
         Me.Panel2.TabIndex = 128
         '
-        'DGVEXP
-        '
-        Me.DGVEXP.AllowUserToAddRows = False
-        Me.DGVEXP.AllowUserToDeleteRows = False
-        Me.DGVEXP.BackgroundColor = System.Drawing.Color.White
-        Me.DGVEXP.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.DGVEXP.Location = New System.Drawing.Point(71, 138)
-        Me.DGVEXP.Name = "DGVEXP"
-        Me.DGVEXP.ReadOnly = True
-        Me.DGVEXP.RowHeadersVisible = False
-        Me.DGVEXP.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
-        Me.DGVEXP.Size = New System.Drawing.Size(1181, 573)
-        Me.DGVEXP.TabIndex = 129
-        '
-        'Label8
-        '
-        Me.Label8.AutoSize = True
-        Me.Label8.BackColor = System.Drawing.SystemColors.Control
-        Me.Label8.Font = New System.Drawing.Font("Century Gothic", 20.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label8.ForeColor = System.Drawing.Color.MediumSeaGreen
-        Me.Label8.Location = New System.Drawing.Point(57, 79)
-        Me.Label8.Name = "Label8"
-        Me.Label8.Size = New System.Drawing.Size(229, 32)
-        Me.Label8.TabIndex = 132
-        Me.Label8.Text = "NEARLY-EXPIRED"
-        '
         'BTNBACK
         '
         Me.BTNBACK.BackColor = System.Drawing.Color.FromArgb(CType(CType(37, Byte), Integer), CType(CType(46, Byte), Integer), CType(CType(59, Byte), Integer))
@@ -103,6 +77,32 @@ Partial Class ucNEAREXPIRY
         Me.BTNBACK.TabIndex = 3
         Me.BTNBACK.Text = " Back"
         Me.BTNBACK.UseVisualStyleBackColor = False
+        '
+        'DGVEXP
+        '
+        Me.DGVEXP.AllowUserToAddRows = False
+        Me.DGVEXP.AllowUserToDeleteRows = False
+        Me.DGVEXP.BackgroundColor = System.Drawing.Color.White
+        Me.DGVEXP.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
+        Me.DGVEXP.Location = New System.Drawing.Point(71, 138)
+        Me.DGVEXP.Name = "DGVEXP"
+        Me.DGVEXP.ReadOnly = True
+        Me.DGVEXP.RowHeadersVisible = False
+        Me.DGVEXP.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
+        Me.DGVEXP.Size = New System.Drawing.Size(1181, 595)
+        Me.DGVEXP.TabIndex = 129
+        '
+        'Label8
+        '
+        Me.Label8.AutoSize = True
+        Me.Label8.BackColor = System.Drawing.SystemColors.Control
+        Me.Label8.Font = New System.Drawing.Font("Century Gothic", 20.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label8.ForeColor = System.Drawing.Color.MediumSeaGreen
+        Me.Label8.Location = New System.Drawing.Point(57, 79)
+        Me.Label8.Name = "Label8"
+        Me.Label8.Size = New System.Drawing.Size(229, 32)
+        Me.Label8.TabIndex = 132
+        Me.Label8.Text = "NEARLY-EXPIRED"
         '
         'ucNEAREXPIRY
         '

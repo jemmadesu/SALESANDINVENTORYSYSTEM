@@ -77,19 +77,14 @@ Public Class ucTRANSACTION
         e.Graphics.DrawString("RPHECMPC", f10b, Brushes.Black, centermargin, 5, center)
         e.Graphics.DrawString("Rizal Provincial Hospital Employees", f8, Brushes.Black, centermargin, 25, center)
         e.Graphics.DrawString("and Community Multi-purpose Cooperative", f8, Brushes.Black, centermargin, 40, center)
+        e.Graphics.DrawString("Tomas Claudio St. San Juan Morong, Rizal", f8, Brushes.Black, centermargin, 55, center)
 
         'e.Graphics.DrawString(line, f8, Brushes.Black, 0, 100)
 
-        e.Graphics.DrawString("Invoice No.: " + TXTOR.Text.ToString, f8, Brushes.Black, 0, 60)
-        'e.Graphics.DrawString(" :" + TXTOR.Text.ToString, f8, Brushes.Black, 50, 60)
-        'e.Graphics.DrawString("Tel No", f8, Brushes.Black, centermargin, 40, center)
+        e.Graphics.DrawString("Invoice No.: " + TXTOR.Text.ToString, f8, Brushes.Black, 0, 80)
+        e.Graphics.DrawString("Cashier: " + FRMMAINMENU.LBLUSERNAME.Text.ToString, f8, Brushes.Black, 0, 95)
+        e.Graphics.DrawString("Date: " & Date.Now(), f8, Brushes.Black, 0, 110)
 
-        e.Graphics.DrawString("Cashier: " + FRMMAINMENU.LBLUSERNAME.Text.ToString, f8, Brushes.Black, 0, 75)
-        'e.Graphics.DrawString(" :" + FRMMAINMENU.LBLUSERNAME.Text.ToString, f8, Brushes.Black, 50, 75)
-        'e.Graphics.DrawString("Tel No", f8, Brushes.Black, 70, 75)
-
-        e.Graphics.DrawString("Date: " & Date.Now(), f8, Brushes.Black, 0, 90)
-        'e.Graphics.DrawString(line, f8, Brushes.Black, 0, 100)
 
         Dim height As Integer
         Dim i As Long
@@ -98,43 +93,32 @@ Public Class ucTRANSACTION
 
         For row As Integer = 0 To DGVCART.RowCount - 1
             height += 15
-            e.Graphics.DrawString("Qty " + DGVCART.Rows(row).Cells(7).Value.ToString, f10, Brushes.Black, 0, 100 + height)
-            e.Graphics.DrawString(DGVCART.Rows(row).Cells(1).Value.ToString, f10, Brushes.Black, 35, 100 + height)
+            e.Graphics.DrawString("Qty " + DGVCART.Rows(row).Cells(7).Value.ToString, f10, Brushes.Black, 0, 120 + height)
+            e.Graphics.DrawString(DGVCART.Rows(row).Cells(1).Value.ToString, f10, Brushes.Black, 35, 120 + height)
 
-            'i = DGVCART.Rows(row).Cells(5).Value
-            'DGVCART.Rows(row).Cells(5).Value = Format(i, "##,##0")
-            'e.Graphics.DrawString(DGVCART.Rows(row).Cells(5).Value.ToString, f10, Brushes.Black, rightmargin, 100 + height, right)
+
         Next
         Dim height2 As Integer
-
         height2 = 110 + height
 
         sumprice()
-        'e.Graphics.DrawString(line, f8, Brushes.Black, 0, 140)
-        e.Graphics.DrawString("Total Qty: " & t_qty, f10b, Brushes.Black, 0, 15 + height2)
-        'e.Graphics.DrawString(line, f8, Brushes.Black, 0, height)
-        e.Graphics.DrawString("Total: " & Format(t_price, "##,##0"), f10b, Brushes.Black, rightmargin, 20 + height2, right)
 
-        'e.Graphics.DrawString("Total: " & Format(t_price, "##,##0"), f10b, Brushes.Black, rightmargin, 10 + height2, right)
+        e.Graphics.DrawString("Total Qty: " & t_qty, f10b, Brushes.Black, 0, 70 + height2)
+        e.Graphics.DrawString("Total: " & Format(t_price, "##,##0"), f10b, Brushes.Black, rightmargin, 70 + height2, right)
 
-        e.Graphics.DrawString("Payment: " + TXTPAYMENT.Text.ToString, f10b, Brushes.Black, 0, 35 + height2)
-        e.Graphics.DrawString("Discount Type: " + CBODISCOUNT.Text.ToString, f10b, Brushes.Black, 0, 55 + height2)
-        e.Graphics.DrawString("Change: " + TXTCHANGE.Text.ToString, f10b, Brushes.Black, 0, 75 + height2)
 
-        e.Graphics.DrawString("Thanks for Shopping”, f10, Brushes.Black, centermargin, 100 + height2, center)
-        e.Graphics.DrawString("Input Space", f10, Brushes.Black, centermargin, 130 + height2, center)
+
+        e.Graphics.DrawString("Payment: " + TXTPAYMENT.Text.ToString, f10b, Brushes.Black, 0, 80 + height2)
+        e.Graphics.DrawString("Discount Type: " + CBODISCOUNT.Text.ToString, f10b, Brushes.Black, 0, 90 + height2)
+        e.Graphics.DrawString("Change: " + TXTCHANGE.Text.ToString, f10b, Brushes.Black, 0, 100 + height2)
+
+        e.Graphics.DrawString("Thanks for Shopping”, f10, Brushes.Black, centermargin, 120 + height2, center)
+        e.Graphics.DrawString("This serves as your official receipt", f10, Brushes.Black, centermargin, 150 + height2, center)
 
     End Sub
     Dim t_price As Long
     Dim t_qty As Long
     Sub sumprice()
-        'Dim countprice As Long = 0
-
-        'For rowitem As Long = 0 To DGVCART.RowCount - 1
-        '    countprice = countprice + Val(DGVCART.Rows(rowitem).Cells(5).Value * DGVCART.Rows(rowitem).Cells(7).Value)
-        'Next
-        't_price = countprice
-
         t_price = Val(TXTBILL.Text)
 
         Dim countqty As Long = 0
@@ -701,5 +685,11 @@ Public Class ucTRANSACTION
 
     Private Sub DGVPRODUCTS_CellContentClick(sender As Object, e As DataGridViewCellEventArgs) Handles DGVPRODUCTS.CellContentClick
 
+    End Sub
+
+    Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
+        changelongpaper()
+        PPD.Document = PD
+        PPD.ShowDialog()
     End Sub
 End Class
