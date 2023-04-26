@@ -38,9 +38,14 @@ Partial Class ucCATEGORY
         Me.BTNDELETE = New System.Windows.Forms.Button()
         Me.DGVPRODUCTS = New System.Windows.Forms.DataGridView()
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
+        Me.GroupBox2 = New System.Windows.Forms.GroupBox()
+        Me.Label3 = New System.Windows.Forms.Label()
+        Me.TXTSEARCH = New System.Windows.Forms.TextBox()
+        Me.BackgroundWorker1 = New System.ComponentModel.BackgroundWorker()
         Me.Panel2.SuspendLayout()
         CType(Me.DGVPRODUCTS, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.GroupBox1.SuspendLayout()
+        Me.GroupBox2.SuspendLayout()
         Me.SuspendLayout()
         '
         'Button1
@@ -105,11 +110,11 @@ Partial Class ucCATEGORY
         Me.Label11.AutoSize = True
         Me.Label11.Font = New System.Drawing.Font("Century Gothic", 20.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label11.ForeColor = System.Drawing.Color.MediumSeaGreen
-        Me.Label11.Location = New System.Drawing.Point(57, 79)
+        Me.Label11.Location = New System.Drawing.Point(73, 79)
         Me.Label11.Name = "Label11"
-        Me.Label11.Size = New System.Drawing.Size(139, 32)
+        Me.Label11.Size = New System.Drawing.Size(160, 32)
         Me.Label11.TabIndex = 74
-        Me.Label11.Text = "Category"
+        Me.Label11.Text = "CATEGORY"
         '
         'Panel2
         '
@@ -145,7 +150,7 @@ Partial Class ucCATEGORY
         Me.BTNADD.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.BTNADD.Font = New System.Drawing.Font("Century Gothic", 9.0!)
         Me.BTNADD.ForeColor = System.Drawing.Color.Snow
-        Me.BTNADD.Location = New System.Drawing.Point(65, 233)
+        Me.BTNADD.Location = New System.Drawing.Point(97, 245)
         Me.BTNADD.Name = "BTNADD"
         Me.BTNADD.Size = New System.Drawing.Size(99, 36)
         Me.BTNADD.TabIndex = 40
@@ -158,7 +163,7 @@ Partial Class ucCATEGORY
         Me.BTNINSERT.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.BTNINSERT.Font = New System.Drawing.Font("Century Gothic", 9.0!)
         Me.BTNINSERT.ForeColor = System.Drawing.Color.Snow
-        Me.BTNINSERT.Location = New System.Drawing.Point(206, 233)
+        Me.BTNINSERT.Location = New System.Drawing.Point(257, 245)
         Me.BTNINSERT.Name = "BTNINSERT"
         Me.BTNINSERT.Size = New System.Drawing.Size(99, 36)
         Me.BTNINSERT.TabIndex = 39
@@ -171,7 +176,7 @@ Partial Class ucCATEGORY
         Me.BTNUPDATE.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.BTNUPDATE.Font = New System.Drawing.Font("Century Gothic", 9.0!)
         Me.BTNUPDATE.ForeColor = System.Drawing.Color.Snow
-        Me.BTNUPDATE.Location = New System.Drawing.Point(342, 233)
+        Me.BTNUPDATE.Location = New System.Drawing.Point(97, 341)
         Me.BTNUPDATE.Name = "BTNUPDATE"
         Me.BTNUPDATE.Size = New System.Drawing.Size(99, 36)
         Me.BTNUPDATE.TabIndex = 38
@@ -180,11 +185,11 @@ Partial Class ucCATEGORY
         '
         'BTNDELETE
         '
-        Me.BTNDELETE.BackColor = System.Drawing.Color.IndianRed
+        Me.BTNDELETE.BackColor = System.Drawing.Color.Gray
         Me.BTNDELETE.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.BTNDELETE.Font = New System.Drawing.Font("Century Gothic", 9.0!)
         Me.BTNDELETE.ForeColor = System.Drawing.Color.Snow
-        Me.BTNDELETE.Location = New System.Drawing.Point(65, 295)
+        Me.BTNDELETE.Location = New System.Drawing.Point(257, 341)
         Me.BTNDELETE.Name = "BTNDELETE"
         Me.BTNDELETE.Size = New System.Drawing.Size(99, 36)
         Me.BTNDELETE.TabIndex = 37
@@ -197,17 +202,17 @@ Partial Class ucCATEGORY
         Me.DGVPRODUCTS.AllowUserToDeleteRows = False
         Me.DGVPRODUCTS.BackgroundColor = System.Drawing.Color.White
         Me.DGVPRODUCTS.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.DGVPRODUCTS.Location = New System.Drawing.Point(719, 140)
+        Me.DGVPRODUCTS.Location = New System.Drawing.Point(41, 71)
         Me.DGVPRODUCTS.Name = "DGVPRODUCTS"
         Me.DGVPRODUCTS.ReadOnly = True
         Me.DGVPRODUCTS.RowHeadersVisible = False
         Me.DGVPRODUCTS.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
-        Me.DGVPRODUCTS.Size = New System.Drawing.Size(423, 565)
+        Me.DGVPRODUCTS.Size = New System.Drawing.Size(402, 474)
         Me.DGVPRODUCTS.TabIndex = 76
         '
         'GroupBox1
         '
-        Me.GroupBox1.BackColor = System.Drawing.SystemColors.Control
+        Me.GroupBox1.BackColor = System.Drawing.Color.White
         Me.GroupBox1.Controls.Add(Me.TXTCATCODE)
         Me.GroupBox1.Controls.Add(Me.BTNADD)
         Me.GroupBox1.Controls.Add(Me.Label1)
@@ -225,13 +230,44 @@ Partial Class ucCATEGORY
         Me.GroupBox1.TabStop = False
         Me.GroupBox1.Text = "Add category"
         '
+        'GroupBox2
+        '
+        Me.GroupBox2.BackColor = System.Drawing.SystemColors.ScrollBar
+        Me.GroupBox2.Controls.Add(Me.Label3)
+        Me.GroupBox2.Controls.Add(Me.TXTSEARCH)
+        Me.GroupBox2.Controls.Add(Me.DGVPRODUCTS)
+        Me.GroupBox2.Font = New System.Drawing.Font("Century Gothic", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.GroupBox2.ForeColor = System.Drawing.SystemColors.ControlDarkDark
+        Me.GroupBox2.Location = New System.Drawing.Point(754, 140)
+        Me.GroupBox2.Name = "GroupBox2"
+        Me.GroupBox2.Size = New System.Drawing.Size(483, 565)
+        Me.GroupBox2.TabIndex = 78
+        Me.GroupBox2.TabStop = False
+        Me.GroupBox2.Text = "Category List"
+        '
+        'Label3
+        '
+        Me.Label3.AutoSize = True
+        Me.Label3.Location = New System.Drawing.Point(69, 40)
+        Me.Label3.Name = "Label3"
+        Me.Label3.Size = New System.Drawing.Size(164, 17)
+        Me.Label3.TabIndex = 78
+        Me.Label3.Text = "Search Category Name:"
+        '
+        'TXTSEARCH
+        '
+        Me.TXTSEARCH.Location = New System.Drawing.Point(236, 37)
+        Me.TXTSEARCH.Name = "TXTSEARCH"
+        Me.TXTSEARCH.Size = New System.Drawing.Size(180, 23)
+        Me.TXTSEARCH.TabIndex = 77
+        '
         'ucCATEGORY
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
+        Me.Controls.Add(Me.GroupBox2)
         Me.Controls.Add(Me.GroupBox1)
         Me.Controls.Add(Me.TXTID)
-        Me.Controls.Add(Me.DGVPRODUCTS)
         Me.Controls.Add(Me.Panel2)
         Me.Controls.Add(Me.Button1)
         Me.Controls.Add(Me.Label11)
@@ -241,6 +277,8 @@ Partial Class ucCATEGORY
         CType(Me.DGVPRODUCTS, System.ComponentModel.ISupportInitialize).EndInit()
         Me.GroupBox1.ResumeLayout(False)
         Me.GroupBox1.PerformLayout()
+        Me.GroupBox2.ResumeLayout(False)
+        Me.GroupBox2.PerformLayout()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -260,4 +298,8 @@ Partial Class ucCATEGORY
     Friend WithEvents BTNDELETE As Button
     Friend WithEvents DGVPRODUCTS As DataGridView
     Friend WithEvents GroupBox1 As GroupBox
+    Friend WithEvents GroupBox2 As GroupBox
+    Friend WithEvents BackgroundWorker1 As System.ComponentModel.BackgroundWorker
+    Friend WithEvents Label3 As Label
+    Friend WithEvents TXTSEARCH As TextBox
 End Class

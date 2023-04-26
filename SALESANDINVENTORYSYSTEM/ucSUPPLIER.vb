@@ -74,6 +74,7 @@ Public Class ucSUPPLIER
     End Sub
 
     Private Sub ucSUPPLIER_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        con.Close()
         load_data()
     End Sub
 
@@ -161,5 +162,26 @@ Public Class ucSUPPLIER
         TXTEMAIL.Text = ""
         TXTNO.Text = ""
         TXTADD.Text = ""
+    End Sub
+
+    Private Sub BTNBACK_Click(sender As Object, e As EventArgs) Handles BTNBACK.Click
+        Dim i As Integer
+        For i = 0 To 0
+            FRMMAINMENU.PNLMAIN.Controls.RemoveAt(i)
+        Next
+
+        Dim SETTINGS As New ucSETTINGS()
+        SETTINGS.Parent = FRMMAINMENU.PNLMAIN
+        SETTINGS.Show()
+        SETTINGS.Dock = DockStyle.Fill
+    End Sub
+    Private Sub search()
+        Dim dba As New MySqlDataAdapter("select Companyname, FirstName, LastName, Email, PhoneNo, Address from tbl_supplier WHERE tbl_supplier.companyname LIKE '%" & Me.TXTSEARCH.Text & "%';", con)
+        Dim dbset As New DataSet
+        dba.Fill(dbset)
+        Me.DGVSUP.DataSource = dbset.Tables(0).DefaultView
+    End Sub
+    Private Sub TXTSEARCH_TextChanged(sender As Object, e As EventArgs) Handles TXTSEARCH.TextChanged
+        search()
     End Sub
 End Class

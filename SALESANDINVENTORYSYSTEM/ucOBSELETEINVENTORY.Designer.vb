@@ -81,9 +81,9 @@ Partial Class ucOBSELETEINVENTORY
         Me.Label8.ForeColor = System.Drawing.Color.MediumSeaGreen
         Me.Label8.Location = New System.Drawing.Point(57, 79)
         Me.Label8.Name = "Label8"
-        Me.Label8.Size = New System.Drawing.Size(381, 32)
+        Me.Label8.Size = New System.Drawing.Size(442, 64)
         Me.Label8.TabIndex = 48
-        Me.Label8.Text = "Expired product in inventory"
+        Me.Label8.Text = "EXPIRED PRODUCT IN INVENTORY" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10)
         '
         'DGVEXPIREDPROD
         '

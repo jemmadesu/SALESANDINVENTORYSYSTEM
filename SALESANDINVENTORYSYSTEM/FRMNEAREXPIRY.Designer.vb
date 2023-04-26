@@ -23,9 +23,9 @@ Partial Class FRMNEAREXPIRY
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         Me.Panel2 = New System.Windows.Forms.Panel()
+        Me.LBLEXIT = New System.Windows.Forms.Label()
         Me.Label8 = New System.Windows.Forms.Label()
         Me.DGVEXP = New System.Windows.Forms.DataGridView()
-        Me.LBLEXIT = New System.Windows.Forms.Label()
         Me.Panel2.SuspendLayout()
         CType(Me.DGVEXP, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
@@ -40,6 +40,18 @@ Partial Class FRMNEAREXPIRY
         Me.Panel2.Size = New System.Drawing.Size(1306, 49)
         Me.Panel2.TabIndex = 129
         '
+        'LBLEXIT
+        '
+        Me.LBLEXIT.AutoSize = True
+        Me.LBLEXIT.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.LBLEXIT.Font = New System.Drawing.Font("Century Gothic", 20.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.LBLEXIT.ForeColor = System.Drawing.Color.White
+        Me.LBLEXIT.Location = New System.Drawing.Point(1239, 9)
+        Me.LBLEXIT.Name = "LBLEXIT"
+        Me.LBLEXIT.Size = New System.Drawing.Size(30, 32)
+        Me.LBLEXIT.TabIndex = 135
+        Me.LBLEXIT.Text = "x"
+        '
         'Label8
         '
         Me.Label8.AutoSize = True
@@ -48,9 +60,9 @@ Partial Class FRMNEAREXPIRY
         Me.Label8.ForeColor = System.Drawing.Color.MediumSeaGreen
         Me.Label8.Location = New System.Drawing.Point(40, 77)
         Me.Label8.Name = "Label8"
-        Me.Label8.Size = New System.Drawing.Size(209, 32)
+        Me.Label8.Size = New System.Drawing.Size(229, 32)
         Me.Label8.TabIndex = 134
-        Me.Label8.Text = "Nearly-Expired"
+        Me.Label8.Text = "NEARLY-EXPIRED"
         '
         'DGVEXP
         '
@@ -65,18 +77,6 @@ Partial Class FRMNEAREXPIRY
         Me.DGVEXP.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
         Me.DGVEXP.Size = New System.Drawing.Size(1181, 573)
         Me.DGVEXP.TabIndex = 133
-        '
-        'LBLEXIT
-        '
-        Me.LBLEXIT.AutoSize = True
-        Me.LBLEXIT.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.LBLEXIT.Font = New System.Drawing.Font("Century Gothic", 20.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.LBLEXIT.ForeColor = System.Drawing.Color.White
-        Me.LBLEXIT.Location = New System.Drawing.Point(1239, 9)
-        Me.LBLEXIT.Name = "LBLEXIT"
-        Me.LBLEXIT.Size = New System.Drawing.Size(30, 32)
-        Me.LBLEXIT.TabIndex = 135
-        Me.LBLEXIT.Text = "x"
         '
         'FRMNEAREXPIRY
         '

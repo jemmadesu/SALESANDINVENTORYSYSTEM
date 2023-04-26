@@ -46,6 +46,8 @@ Partial Class ucSUPPLIER
         Me.Label8 = New System.Windows.Forms.Label()
         Me.TXTCOM = New System.Windows.Forms.TextBox()
         Me.DGVSUP = New System.Windows.Forms.DataGridView()
+        Me.Label9 = New System.Windows.Forms.Label()
+        Me.TXTSEARCH = New System.Windows.Forms.TextBox()
         Me.Panel2.SuspendLayout()
         CType(Me.DGVSUP, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
@@ -104,9 +106,9 @@ Partial Class ucSUPPLIER
         Me.Label11.ForeColor = System.Drawing.Color.MediumSeaGreen
         Me.Label11.Location = New System.Drawing.Point(57, 79)
         Me.Label11.Name = "Label11"
-        Me.Label11.Size = New System.Drawing.Size(347, 32)
+        Me.Label11.Size = New System.Drawing.Size(321, 32)
         Me.Label11.TabIndex = 135
-        Me.Label11.Text = "Supplier Information Form"
+        Me.Label11.Text = "SUPPLIER INFORMATION"
         '
         'BTNCANCEL
         '
@@ -136,7 +138,7 @@ Partial Class ucSUPPLIER
         '
         'BTNDELETE
         '
-        Me.BTNDELETE.BackColor = System.Drawing.Color.IndianRed
+        Me.BTNDELETE.BackColor = System.Drawing.Color.Gray
         Me.BTNDELETE.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.BTNDELETE.Font = New System.Drawing.Font("Century Gothic", 9.0!)
         Me.BTNDELETE.ForeColor = System.Drawing.SystemColors.Control
@@ -276,9 +278,9 @@ Partial Class ucSUPPLIER
         Me.Label8.ForeColor = System.Drawing.SystemColors.ControlDarkDark
         Me.Label8.Location = New System.Drawing.Point(62, 159)
         Me.Label8.Name = "Label8"
-        Me.Label8.Size = New System.Drawing.Size(171, 17)
+        Me.Label8.Size = New System.Drawing.Size(102, 17)
         Me.Label8.TabIndex = 160
-        Me.Label8.Text = "Supplier Company Name"
+        Me.Label8.Text = "Supplier Name"
         '
         'TXTCOM
         '
@@ -297,10 +299,30 @@ Partial Class ucSUPPLIER
         Me.DGVSUP.Size = New System.Drawing.Size(657, 542)
         Me.DGVSUP.TabIndex = 161
         '
+        'Label9
+        '
+        Me.Label9.AutoSize = True
+        Me.Label9.Font = New System.Drawing.Font("Century Gothic", 9.75!)
+        Me.Label9.ForeColor = System.Drawing.SystemColors.ControlDarkDark
+        Me.Label9.Location = New System.Drawing.Point(918, 122)
+        Me.Label9.Name = "Label9"
+        Me.Label9.Size = New System.Drawing.Size(157, 17)
+        Me.Label9.TabIndex = 163
+        Me.Label9.Text = "Search Supplier Name :"
+        '
+        'TXTSEARCH
+        '
+        Me.TXTSEARCH.Location = New System.Drawing.Point(1085, 119)
+        Me.TXTSEARCH.Name = "TXTSEARCH"
+        Me.TXTSEARCH.Size = New System.Drawing.Size(180, 20)
+        Me.TXTSEARCH.TabIndex = 162
+        '
         'ucSUPPLIER
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
+        Me.Controls.Add(Me.Label9)
+        Me.Controls.Add(Me.TXTSEARCH)
         Me.Controls.Add(Me.DGVSUP)
         Me.Controls.Add(Me.Label8)
         Me.Controls.Add(Me.TXTCOM)
@@ -355,4 +377,6 @@ Partial Class ucSUPPLIER
     Friend WithEvents Label8 As Label
     Friend WithEvents TXTCOM As TextBox
     Friend WithEvents DGVSUP As DataGridView
+    Friend WithEvents Label9 As Label
+    Friend WithEvents TXTSEARCH As TextBox
 End Class

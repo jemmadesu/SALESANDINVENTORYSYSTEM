@@ -24,12 +24,12 @@ Partial Class ucSTOCKLIST
     Private Sub InitializeComponent()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(ucSTOCKLIST))
         Me.Panel2 = New System.Windows.Forms.Panel()
-        Me.BTNBACK = New System.Windows.Forms.Button()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.Label2 = New System.Windows.Forms.Label()
         Me.TXTSEARCH = New Guna.UI2.WinForms.Guna2TextBox()
         Me.DGVSTOCK = New System.Windows.Forms.DataGridView()
         Me.Label4 = New System.Windows.Forms.Label()
+        Me.BTNBACK = New System.Windows.Forms.Button()
         Me.Panel2.SuspendLayout()
         CType(Me.DGVSTOCK, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
@@ -44,24 +44,6 @@ Partial Class ucSTOCKLIST
         Me.Panel2.Size = New System.Drawing.Size(1322, 49)
         Me.Panel2.TabIndex = 128
         '
-        'BTNBACK
-        '
-        Me.BTNBACK.BackColor = System.Drawing.Color.FromArgb(CType(CType(37, Byte), Integer), CType(CType(46, Byte), Integer), CType(CType(59, Byte), Integer))
-        Me.BTNBACK.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None
-        Me.BTNBACK.FlatAppearance.BorderSize = 0
-        Me.BTNBACK.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.BTNBACK.Font = New System.Drawing.Font("Century Gothic", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.BTNBACK.ForeColor = System.Drawing.Color.White
-        Me.BTNBACK.Image = CType(resources.GetObject("BTNBACK.Image"), System.Drawing.Image)
-        Me.BTNBACK.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.BTNBACK.Location = New System.Drawing.Point(1200, 3)
-        Me.BTNBACK.Name = "BTNBACK"
-        Me.BTNBACK.Padding = New System.Windows.Forms.Padding(20, 0, 0, 0)
-        Me.BTNBACK.Size = New System.Drawing.Size(119, 46)
-        Me.BTNBACK.TabIndex = 3
-        Me.BTNBACK.Text = " Back"
-        Me.BTNBACK.UseVisualStyleBackColor = False
-        '
         'Label1
         '
         Me.Label1.AutoSize = True
@@ -69,9 +51,9 @@ Partial Class ucSTOCKLIST
         Me.Label1.ForeColor = System.Drawing.Color.MediumSeaGreen
         Me.Label1.Location = New System.Drawing.Point(57, 79)
         Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(133, 32)
+        Me.Label1.Size = New System.Drawing.Size(154, 32)
         Me.Label1.TabIndex = 131
-        Me.Label1.Text = "Stock List"
+        Me.Label1.Text = "STOCK LIST"
         '
         'Label2
         '
@@ -129,6 +111,24 @@ Partial Class ucSTOCKLIST
         Me.Label4.Name = "Label4"
         Me.Label4.Size = New System.Drawing.Size(0, 13)
         Me.Label4.TabIndex = 132
+        '
+        'BTNBACK
+        '
+        Me.BTNBACK.BackColor = System.Drawing.Color.FromArgb(CType(CType(37, Byte), Integer), CType(CType(46, Byte), Integer), CType(CType(59, Byte), Integer))
+        Me.BTNBACK.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None
+        Me.BTNBACK.FlatAppearance.BorderSize = 0
+        Me.BTNBACK.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.BTNBACK.Font = New System.Drawing.Font("Century Gothic", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.BTNBACK.ForeColor = System.Drawing.Color.White
+        Me.BTNBACK.Image = CType(resources.GetObject("BTNBACK.Image"), System.Drawing.Image)
+        Me.BTNBACK.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
+        Me.BTNBACK.Location = New System.Drawing.Point(1200, 3)
+        Me.BTNBACK.Name = "BTNBACK"
+        Me.BTNBACK.Padding = New System.Windows.Forms.Padding(20, 0, 0, 0)
+        Me.BTNBACK.Size = New System.Drawing.Size(119, 46)
+        Me.BTNBACK.TabIndex = 3
+        Me.BTNBACK.Text = " Back"
+        Me.BTNBACK.UseVisualStyleBackColor = False
         '
         'ucSTOCKLIST
         '

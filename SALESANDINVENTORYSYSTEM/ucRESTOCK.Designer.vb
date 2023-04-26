@@ -61,12 +61,13 @@ Partial Class ucRESTOCK
         Me.Label8.ForeColor = System.Drawing.Color.MediumSeaGreen
         Me.Label8.Location = New System.Drawing.Point(57, 79)
         Me.Label8.Name = "Label8"
-        Me.Label8.Size = New System.Drawing.Size(118, 32)
+        Me.Label8.Size = New System.Drawing.Size(131, 32)
         Me.Label8.TabIndex = 38
-        Me.Label8.Text = "Restock"
+        Me.Label8.Text = "RESTOCK"
         '
         'GroupBox3
         '
+        Me.GroupBox3.BackColor = System.Drawing.Color.White
         Me.GroupBox3.Controls.Add(Me.TXTQTYADD)
         Me.GroupBox3.Controls.Add(Me.Label9)
         Me.GroupBox3.Controls.Add(Me.TXTQTY)
@@ -86,7 +87,7 @@ Partial Class ucRESTOCK
         Me.GroupBox3.ForeColor = System.Drawing.SystemColors.ControlDarkDark
         Me.GroupBox3.Location = New System.Drawing.Point(46, 132)
         Me.GroupBox3.Name = "GroupBox3"
-        Me.GroupBox3.Size = New System.Drawing.Size(501, 589)
+        Me.GroupBox3.Size = New System.Drawing.Size(501, 622)
         Me.GroupBox3.TabIndex = 35
         Me.GroupBox3.TabStop = False
         Me.GroupBox3.Text = "Product Restock"
@@ -248,7 +249,7 @@ Partial Class ucRESTOCK
         '
         'GroupBox1
         '
-        Me.GroupBox1.BackColor = System.Drawing.SystemColors.Control
+        Me.GroupBox1.BackColor = System.Drawing.SystemColors.ScrollBar
         Me.GroupBox1.Controls.Add(Me.DGVMAIN)
         Me.GroupBox1.Controls.Add(Me.Label5)
         Me.GroupBox1.Controls.Add(Me.TXTSEARCH)
@@ -256,7 +257,7 @@ Partial Class ucRESTOCK
         Me.GroupBox1.ForeColor = System.Drawing.SystemColors.ControlDarkDark
         Me.GroupBox1.Location = New System.Drawing.Point(650, 132)
         Me.GroupBox1.Name = "GroupBox1"
-        Me.GroupBox1.Size = New System.Drawing.Size(625, 589)
+        Me.GroupBox1.Size = New System.Drawing.Size(625, 622)
         Me.GroupBox1.TabIndex = 34
         Me.GroupBox1.TabStop = False
         Me.GroupBox1.Text = "Stock List"
@@ -265,30 +266,30 @@ Partial Class ucRESTOCK
         '
         Me.DGVMAIN.BackgroundColor = System.Drawing.Color.White
         Me.DGVMAIN.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.DGVMAIN.Location = New System.Drawing.Point(22, 69)
+        Me.DGVMAIN.Location = New System.Drawing.Point(22, 51)
         Me.DGVMAIN.Name = "DGVMAIN"
         Me.DGVMAIN.ReadOnly = True
         Me.DGVMAIN.RowHeadersVisible = False
         Me.DGVMAIN.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
-        Me.DGVMAIN.Size = New System.Drawing.Size(581, 504)
+        Me.DGVMAIN.Size = New System.Drawing.Size(581, 554)
         Me.DGVMAIN.TabIndex = 33
         '
         'Label5
         '
         Me.Label5.AutoSize = True
-        Me.Label5.Font = New System.Drawing.Font("Century Gothic", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label5.Font = New System.Drawing.Font("Century Gothic", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label5.ForeColor = System.Drawing.SystemColors.ControlDarkDark
-        Me.Label5.Location = New System.Drawing.Point(287, 27)
+        Me.Label5.Location = New System.Drawing.Point(132, 25)
         Me.Label5.Name = "Label5"
-        Me.Label5.Size = New System.Drawing.Size(49, 16)
+        Me.Label5.Size = New System.Drawing.Size(99, 17)
         Me.Label5.TabIndex = 9
-        Me.Label5.Text = "Search:"
+        Me.Label5.Text = "Search Stocks:"
         '
         'TXTSEARCH
         '
         Me.TXTSEARCH.Font = New System.Drawing.Font("Century Gothic", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.TXTSEARCH.ForeColor = System.Drawing.SystemColors.ControlDarkDark
-        Me.TXTSEARCH.Location = New System.Drawing.Point(355, 22)
+        Me.TXTSEARCH.Location = New System.Drawing.Point(233, 22)
         Me.TXTSEARCH.Name = "TXTSEARCH"
         Me.TXTSEARCH.Size = New System.Drawing.Size(248, 23)
         Me.TXTSEARCH.TabIndex = 7
@@ -297,7 +298,7 @@ Partial Class ucRESTOCK
         '
         Me.TXTSI.BackColor = System.Drawing.Color.White
         Me.TXTSI.Enabled = False
-        Me.TXTSI.Location = New System.Drawing.Point(24, 727)
+        Me.TXTSI.Location = New System.Drawing.Point(18, 778)
         Me.TXTSI.Name = "TXTSI"
         Me.TXTSI.ReadOnly = True
         Me.TXTSI.Size = New System.Drawing.Size(147, 20)

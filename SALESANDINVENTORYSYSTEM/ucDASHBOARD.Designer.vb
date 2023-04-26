@@ -30,12 +30,14 @@ Partial Class ucDASHBOARD
         Dim DataGridViewCellStyle1 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Dim DataGridViewCellStyle2 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Dim DataGridViewCellStyle3 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim ChartArea2 As System.Windows.Forms.DataVisualization.Charting.ChartArea = New System.Windows.Forms.DataVisualization.Charting.ChartArea()
+        Dim Legend2 As System.Windows.Forms.DataVisualization.Charting.Legend = New System.Windows.Forms.DataVisualization.Charting.Legend()
+        Dim Series2 As System.Windows.Forms.DataVisualization.Charting.Series = New System.Windows.Forms.DataVisualization.Charting.Series()
         Me.Panel7 = New System.Windows.Forms.Panel()
         Me.Panel8 = New System.Windows.Forms.Panel()
         Me.LBLYEAR = New System.Windows.Forms.Label()
         Me.LBLDATE = New System.Windows.Forms.Label()
         Me.LBLDAY = New System.Windows.Forms.Label()
-        Me.Panel6 = New System.Windows.Forms.Panel()
         Me.Panel5 = New System.Windows.Forms.Panel()
         Me.lblsales = New System.Windows.Forms.Label()
         Me.PictureBox5 = New System.Windows.Forms.PictureBox()
@@ -62,6 +64,7 @@ Partial Class ucDASHBOARD
         Me.StatusDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Panel1 = New System.Windows.Forms.Panel()
         Me.LBLMONTH = New System.Windows.Forms.Label()
+        Me.Chart1 = New System.Windows.Forms.DataVisualization.Charting.Chart()
         Me.Panel7.SuspendLayout()
         Me.Panel5.SuspendLayout()
         CType(Me.PictureBox5, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -76,6 +79,7 @@ Partial Class ucDASHBOARD
         CType(Me.TblusersBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.DGVUSERS, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.Panel1.SuspendLayout()
+        CType(Me.Chart1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'Panel7
@@ -130,13 +134,6 @@ Partial Class ucDASHBOARD
         Me.LBLDAY.Size = New System.Drawing.Size(41, 21)
         Me.LBLDAY.TabIndex = 1
         Me.LBLDAY.Text = "Day"
-        '
-        'Panel6
-        '
-        Me.Panel6.Location = New System.Drawing.Point(40, 498)
-        Me.Panel6.Name = "Panel6"
-        Me.Panel6.Size = New System.Drawing.Size(953, 228)
-        Me.Panel6.TabIndex = 40
         '
         'Panel5
         '
@@ -458,16 +455,36 @@ Partial Class ucDASHBOARD
         Me.LBLMONTH.TabIndex = 0
         Me.LBLMONTH.Text = "Month"
         '
+        'Chart1
+        '
+        ChartArea2.Name = "ChartArea1"
+        Me.Chart1.ChartAreas.Add(ChartArea2)
+        Legend2.Name = "Legend1"
+        Me.Chart1.Legends.Add(Legend2)
+        Me.Chart1.Location = New System.Drawing.Point(40, 471)
+        Me.Chart1.Name = "Chart1"
+        Me.Chart1.Palette = System.Windows.Forms.DataVisualization.Charting.ChartColorPalette.SeaGreen
+        Series2.ChartArea = "ChartArea1"
+        Series2.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Pie
+        Series2.Legend = "Legend1"
+        Series2.Name = "Series1"
+        Series2.XValueMember = "Year"
+        Series2.YValueMembers = "TotalBill"
+        Me.Chart1.Series.Add(Series2)
+        Me.Chart1.Size = New System.Drawing.Size(953, 300)
+        Me.Chart1.TabIndex = 46
+        Me.Chart1.Text = "Chart1"
+        '
         'ucDASHBOARD
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.WhiteSmoke
+        Me.Controls.Add(Me.Chart1)
         Me.Controls.Add(Me.Panel1)
         Me.Controls.Add(Me.CHART)
         Me.Controls.Add(Me.DGVUSERS)
         Me.Controls.Add(Me.Panel7)
-        Me.Controls.Add(Me.Panel6)
         Me.Controls.Add(Me.Panel5)
         Me.Controls.Add(Me.Panel4)
         Me.Controls.Add(Me.Panel3)
@@ -495,11 +512,11 @@ Partial Class ucDASHBOARD
         CType(Me.DGVUSERS, System.ComponentModel.ISupportInitialize).EndInit()
         Me.Panel1.ResumeLayout(False)
         Me.Panel1.PerformLayout()
+        CType(Me.Chart1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
 
     End Sub
     Friend WithEvents Panel7 As Panel
-    Friend WithEvents Panel6 As Panel
     Private WithEvents Panel5 As Panel
     Private WithEvents lblsales As Label
     Private WithEvents PictureBox5 As PictureBox
@@ -530,4 +547,5 @@ Partial Class ucDASHBOARD
     Friend WithEvents LBLYEAR As Label
     Friend WithEvents LBLDATE As Label
     Friend WithEvents Panel8 As Panel
+    Friend WithEvents Chart1 As DataVisualization.Charting.Chart
 End Class

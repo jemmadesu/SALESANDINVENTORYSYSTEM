@@ -50,10 +50,12 @@ Partial Class ucNEWPRODUCT
         Me.Panel2 = New System.Windows.Forms.Panel()
         Me.BTNBACK = New System.Windows.Forms.Button()
         Me.DGVPRODUCTS = New System.Windows.Forms.DataGridView()
+        Me.GroupBox2 = New System.Windows.Forms.GroupBox()
         Me.Panel1.SuspendLayout()
         Me.GroupBox1.SuspendLayout()
         Me.Panel2.SuspendLayout()
         CType(Me.DGVPRODUCTS, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.GroupBox2.SuspendLayout()
         Me.SuspendLayout()
         '
         'Panel1
@@ -79,7 +81,7 @@ Partial Class ucNEWPRODUCT
         Me.Panel1.Font = New System.Drawing.Font("Century Gothic", 9.75!)
         Me.Panel1.Location = New System.Drawing.Point(26, 22)
         Me.Panel1.Name = "Panel1"
-        Me.Panel1.Size = New System.Drawing.Size(486, 546)
+        Me.Panel1.Size = New System.Drawing.Size(498, 546)
         Me.Panel1.TabIndex = 39
         '
         'TXTCATCODE
@@ -293,15 +295,15 @@ Partial Class ucNEWPRODUCT
         Me.Label8.ForeColor = System.Drawing.Color.MediumSeaGreen
         Me.Label8.Location = New System.Drawing.Point(57, 79)
         Me.Label8.Name = "Label8"
-        Me.Label8.Size = New System.Drawing.Size(182, 32)
+        Me.Label8.Size = New System.Drawing.Size(270, 32)
         Me.Label8.TabIndex = 37
-        Me.Label8.Text = "New Product"
+        Me.Label8.Text = "ADD NEW PRODUCT"
         '
         'TXTSEARCH
         '
         Me.TXTSEARCH.Font = New System.Drawing.Font("Century Gothic", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.TXTSEARCH.ForeColor = System.Drawing.SystemColors.ControlDarkDark
-        Me.TXTSEARCH.Location = New System.Drawing.Point(797, 118)
+        Me.TXTSEARCH.Location = New System.Drawing.Point(282, 28)
         Me.TXTSEARCH.Name = "TXTSEARCH"
         Me.TXTSEARCH.Size = New System.Drawing.Size(254, 23)
         Me.TXTSEARCH.TabIndex = 40
@@ -311,11 +313,11 @@ Partial Class ucNEWPRODUCT
         Me.Label10.AutoSize = True
         Me.Label10.Font = New System.Drawing.Font("Century Gothic", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label10.ForeColor = System.Drawing.SystemColors.ControlDarkDark
-        Me.Label10.Location = New System.Drawing.Point(666, 120)
+        Me.Label10.Location = New System.Drawing.Point(122, 31)
         Me.Label10.Name = "Label10"
-        Me.Label10.Size = New System.Drawing.Size(116, 17)
+        Me.Label10.Size = New System.Drawing.Size(154, 17)
         Me.Label10.TabIndex = 44
-        Me.Label10.Text = "New Product List"
+        Me.Label10.Text = "Search Product Name:"
         '
         'DTP
         '
@@ -332,9 +334,9 @@ Partial Class ucNEWPRODUCT
         Me.GroupBox1.Controls.Add(Me.Panel1)
         Me.GroupBox1.Font = New System.Drawing.Font("Century Gothic", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.GroupBox1.ForeColor = System.Drawing.SystemColors.ControlDarkDark
-        Me.GroupBox1.Location = New System.Drawing.Point(85, 140)
+        Me.GroupBox1.Location = New System.Drawing.Point(43, 132)
         Me.GroupBox1.Name = "GroupBox1"
-        Me.GroupBox1.Size = New System.Drawing.Size(534, 586)
+        Me.GroupBox1.Size = New System.Drawing.Size(553, 586)
         Me.GroupBox1.TabIndex = 45
         Me.GroupBox1.TabStop = False
         '
@@ -372,24 +374,37 @@ Partial Class ucNEWPRODUCT
         Me.DGVPRODUCTS.AllowUserToDeleteRows = False
         Me.DGVPRODUCTS.BackgroundColor = System.Drawing.Color.White
         Me.DGVPRODUCTS.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.DGVPRODUCTS.Location = New System.Drawing.Point(669, 150)
+        Me.DGVPRODUCTS.Location = New System.Drawing.Point(27, 58)
         Me.DGVPRODUCTS.Name = "DGVPRODUCTS"
         Me.DGVPRODUCTS.ReadOnly = True
         Me.DGVPRODUCTS.RowHeadersVisible = False
         Me.DGVPRODUCTS.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
-        Me.DGVPRODUCTS.Size = New System.Drawing.Size(580, 576)
+        Me.DGVPRODUCTS.Size = New System.Drawing.Size(533, 510)
         Me.DGVPRODUCTS.TabIndex = 71
+        '
+        'GroupBox2
+        '
+        Me.GroupBox2.BackColor = System.Drawing.SystemColors.ScrollBar
+        Me.GroupBox2.Controls.Add(Me.DGVPRODUCTS)
+        Me.GroupBox2.Controls.Add(Me.TXTSEARCH)
+        Me.GroupBox2.Controls.Add(Me.Label10)
+        Me.GroupBox2.Font = New System.Drawing.Font("Century Gothic", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.GroupBox2.ForeColor = System.Drawing.SystemColors.ControlDarkDark
+        Me.GroupBox2.Location = New System.Drawing.Point(703, 132)
+        Me.GroupBox2.Name = "GroupBox2"
+        Me.GroupBox2.Size = New System.Drawing.Size(587, 586)
+        Me.GroupBox2.TabIndex = 72
+        Me.GroupBox2.TabStop = False
+        Me.GroupBox2.Text = "New Product List"
         '
         'ucNEWPRODUCT
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.SystemColors.Control
-        Me.Controls.Add(Me.DGVPRODUCTS)
+        Me.Controls.Add(Me.GroupBox2)
         Me.Controls.Add(Me.Panel2)
         Me.Controls.Add(Me.GroupBox1)
-        Me.Controls.Add(Me.Label10)
-        Me.Controls.Add(Me.TXTSEARCH)
         Me.Controls.Add(Me.Label8)
         Me.Controls.Add(Me.DTP)
         Me.Name = "ucNEWPRODUCT"
@@ -399,6 +414,8 @@ Partial Class ucNEWPRODUCT
         Me.GroupBox1.ResumeLayout(False)
         Me.Panel2.ResumeLayout(False)
         CType(Me.DGVPRODUCTS, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.GroupBox2.ResumeLayout(False)
+        Me.GroupBox2.PerformLayout()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -430,4 +447,5 @@ Partial Class ucNEWPRODUCT
     Friend WithEvents Panel2 As Panel
     Friend WithEvents BTNBACK As Button
     Friend WithEvents DGVPRODUCTS As DataGridView
+    Friend WithEvents GroupBox2 As GroupBox
 End Class

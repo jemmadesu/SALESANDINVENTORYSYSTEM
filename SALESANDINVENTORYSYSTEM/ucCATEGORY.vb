@@ -62,7 +62,7 @@ Public Class ucCATEGORY
 
 
     Private Sub ucCATEGORY_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-
+        con.Close()
 
         Try
 
@@ -212,6 +212,15 @@ Public Class ucCATEGORY
         TXTCATCODE.Text = ""
         load_data()
     End Sub
+    Private Sub search()
+        Dim dba As New MySqlDataAdapter("select catcode, catname from tbl_category  WHERE tbl_category.catname LIKE '%" & Me.TXTSEARCH.Text & "%';", con)
+        Dim dbset As New DataSet
+        dba.Fill(dbset)
+        Me.DGVPRODUCTS.DataSource = dbset.Tables(0).DefaultView
+    End Sub
+    Private Sub TXTSEARCH_TextChanged(sender As Object, e As EventArgs) Handles TXTSEARCH.TextChanged
 
+        search()
 
+    End Sub
 End Class

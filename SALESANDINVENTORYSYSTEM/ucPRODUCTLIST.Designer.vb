@@ -149,9 +149,9 @@ Partial Class ucPRODUCTLIST
         Me.Label1.ForeColor = System.Drawing.Color.MediumSeaGreen
         Me.Label1.Location = New System.Drawing.Point(57, 79)
         Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(228, 32)
+        Me.Label1.Size = New System.Drawing.Size(257, 32)
         Me.Label1.TabIndex = 50
-        Me.Label1.Text = "New Product List"
+        Me.Label1.Text = "NEW PRODUCT LIST"
         '
         'Label2
         '

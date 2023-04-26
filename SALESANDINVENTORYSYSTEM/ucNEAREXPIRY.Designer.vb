@@ -82,9 +82,9 @@ Partial Class ucNEAREXPIRY
         Me.Label8.ForeColor = System.Drawing.Color.MediumSeaGreen
         Me.Label8.Location = New System.Drawing.Point(57, 79)
         Me.Label8.Name = "Label8"
-        Me.Label8.Size = New System.Drawing.Size(209, 32)
+        Me.Label8.Size = New System.Drawing.Size(229, 32)
         Me.Label8.TabIndex = 132
-        Me.Label8.Text = "Nearly-Expired"
+        Me.Label8.Text = "NEARLY-EXPIRED"
         '
         'BTNBACK
         '

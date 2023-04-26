@@ -26,7 +26,7 @@ Partial Class ucTRANSACTION
         Me.Label7 = New System.Windows.Forms.Label()
         Me.NumericUpDown1 = New System.Windows.Forms.NumericUpDown()
         Me.Label10 = New System.Windows.Forms.Label()
-        Me.TXTPRICE = New System.Windows.Forms.TextBox()
+        Me.TXTSEARCH = New System.Windows.Forms.TextBox()
         Me.Label5 = New System.Windows.Forms.Label()
         Me.TXTBILL = New System.Windows.Forms.TextBox()
         Me.GroupBox3 = New System.Windows.Forms.GroupBox()
@@ -89,9 +89,9 @@ Partial Class ucTRANSACTION
         Me.Label11.ForeColor = System.Drawing.Color.MediumSeaGreen
         Me.Label11.Location = New System.Drawing.Point(539, 14)
         Me.Label11.Name = "Label11"
-        Me.Label11.Size = New System.Drawing.Size(238, 32)
+        Me.Label11.Size = New System.Drawing.Size(281, 32)
         Me.Label11.TabIndex = 55
-        Me.Label11.Text = "Sales Transaction"
+        Me.Label11.Text = "SALES TRANSACTION"
         '
         'Label7
         '
@@ -126,15 +126,15 @@ Partial Class ucTRANSACTION
         Me.Label10.TabIndex = 13
         Me.Label10.Text = "Search Product "
         '
-        'TXTPRICE
+        'TXTSEARCH
         '
-        Me.TXTPRICE.BackColor = System.Drawing.SystemColors.Window
-        Me.TXTPRICE.Font = New System.Drawing.Font("Century Gothic", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.TXTPRICE.ForeColor = System.Drawing.SystemColors.ControlDarkDark
-        Me.TXTPRICE.Location = New System.Drawing.Point(141, 62)
-        Me.TXTPRICE.Name = "TXTPRICE"
-        Me.TXTPRICE.Size = New System.Drawing.Size(255, 23)
-        Me.TXTPRICE.TabIndex = 9
+        Me.TXTSEARCH.BackColor = System.Drawing.SystemColors.Window
+        Me.TXTSEARCH.Font = New System.Drawing.Font("Century Gothic", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.TXTSEARCH.ForeColor = System.Drawing.SystemColors.ControlDarkDark
+        Me.TXTSEARCH.Location = New System.Drawing.Point(141, 62)
+        Me.TXTSEARCH.Name = "TXTSEARCH"
+        Me.TXTSEARCH.Size = New System.Drawing.Size(255, 23)
+        Me.TXTSEARCH.TabIndex = 9
         '
         'Label5
         '
@@ -163,7 +163,7 @@ Partial Class ucTRANSACTION
         '
         'GroupBox3
         '
-        Me.GroupBox3.BackColor = System.Drawing.SystemColors.Control
+        Me.GroupBox3.BackColor = System.Drawing.Color.White
         Me.GroupBox3.Controls.Add(Me.TXTPRC)
         Me.GroupBox3.Controls.Add(Me.Label17)
         Me.GroupBox3.Controls.Add(Me.TXTCATCODE)
@@ -600,6 +600,7 @@ Partial Class ucTRANSACTION
         '
         'GroupBox1
         '
+        Me.GroupBox1.BackColor = System.Drawing.Color.White
         Me.GroupBox1.Controls.Add(Me.Label7)
         Me.GroupBox1.Controls.Add(Me.NumericUpDown1)
         Me.GroupBox1.Controls.Add(Me.BTNCART)
@@ -692,7 +693,7 @@ Partial Class ucTRANSACTION
         Me.Controls.Add(Me.Label6)
         Me.Controls.Add(Me.DGVCART)
         Me.Controls.Add(Me.Label10)
-        Me.Controls.Add(Me.TXTPRICE)
+        Me.Controls.Add(Me.TXTSEARCH)
         Me.Controls.Add(Me.Label11)
         Me.Controls.Add(Me.GroupBox3)
         Me.Name = "ucTRANSACTION"
@@ -724,7 +725,7 @@ Partial Class ucTRANSACTION
     Friend WithEvents Label8 As Label
     Friend WithEvents TXTQTY As TextBox
     Friend WithEvents Label4 As Label
-    Friend WithEvents TXTPRICE As TextBox
+    Friend WithEvents TXTSEARCH As TextBox
     Friend WithEvents Label2 As Label
     Friend WithEvents Label1 As Label
     Friend WithEvents TXTOR As TextBox

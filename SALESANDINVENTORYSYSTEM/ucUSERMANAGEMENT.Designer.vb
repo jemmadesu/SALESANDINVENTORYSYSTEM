@@ -48,7 +48,6 @@ Partial Class ucUSERMANAGEMENT
         Me.TXTNAME = New System.Windows.Forms.TextBox()
         Me.DGVUSERS = New System.Windows.Forms.DataGridView()
         Me.Panel2 = New System.Windows.Forms.Panel()
-        Me.BTNBACK = New System.Windows.Forms.Button()
         Me.Label14 = New System.Windows.Forms.Label()
         Me.Label13 = New System.Windows.Forms.Label()
         Me.Label17 = New System.Windows.Forms.Label()
@@ -64,6 +63,7 @@ Partial Class ucUSERMANAGEMENT
         Me.BTNDELETE = New System.Windows.Forms.Button()
         Me.BTNSAVE = New System.Windows.Forms.Button()
         Me.Label1 = New System.Windows.Forms.Label()
+        Me.BTNBACK = New System.Windows.Forms.Button()
         Me.GroupBox1.SuspendLayout()
         CType(Me.DGVUSERS, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.Panel2.SuspendLayout()
@@ -110,7 +110,7 @@ Partial Class ucUSERMANAGEMENT
         'txtsearch
         '
         Me.txtsearch.Font = New System.Drawing.Font("Century Gothic", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txtsearch.Location = New System.Drawing.Point(991, 111)
+        Me.txtsearch.Location = New System.Drawing.Point(843, 114)
         Me.txtsearch.Name = "txtsearch"
         Me.txtsearch.Size = New System.Drawing.Size(277, 23)
         Me.txtsearch.TabIndex = 107
@@ -322,24 +322,6 @@ Partial Class ucUSERMANAGEMENT
         Me.Panel2.Size = New System.Drawing.Size(1322, 49)
         Me.Panel2.TabIndex = 127
         '
-        'BTNBACK
-        '
-        Me.BTNBACK.BackColor = System.Drawing.Color.FromArgb(CType(CType(37, Byte), Integer), CType(CType(46, Byte), Integer), CType(CType(59, Byte), Integer))
-        Me.BTNBACK.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None
-        Me.BTNBACK.FlatAppearance.BorderSize = 0
-        Me.BTNBACK.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.BTNBACK.Font = New System.Drawing.Font("Century Gothic", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.BTNBACK.ForeColor = System.Drawing.Color.White
-        Me.BTNBACK.Image = CType(resources.GetObject("BTNBACK.Image"), System.Drawing.Image)
-        Me.BTNBACK.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.BTNBACK.Location = New System.Drawing.Point(1200, 3)
-        Me.BTNBACK.Name = "BTNBACK"
-        Me.BTNBACK.Padding = New System.Windows.Forms.Padding(20, 0, 0, 0)
-        Me.BTNBACK.Size = New System.Drawing.Size(119, 46)
-        Me.BTNBACK.TabIndex = 3
-        Me.BTNBACK.Text = " Back"
-        Me.BTNBACK.UseVisualStyleBackColor = False
-        '
         'Label14
         '
         Me.Label14.AutoSize = True
@@ -347,9 +329,9 @@ Partial Class ucUSERMANAGEMENT
         Me.Label14.ForeColor = System.Drawing.Color.MediumSeaGreen
         Me.Label14.Location = New System.Drawing.Point(57, 79)
         Me.Label14.Name = "Label14"
-        Me.Label14.Size = New System.Drawing.Size(256, 32)
+        Me.Label14.Size = New System.Drawing.Size(323, 32)
         Me.Label14.TabIndex = 128
-        Me.Label14.Text = "User Management"
+        Me.Label14.Text = "CREATE USER ACCOUNT"
         '
         'Label13
         '
@@ -480,7 +462,7 @@ Partial Class ucUSERMANAGEMENT
         '
         'BTNDELETE
         '
-        Me.BTNDELETE.BackColor = System.Drawing.Color.IndianRed
+        Me.BTNDELETE.BackColor = System.Drawing.Color.Gray
         Me.BTNDELETE.Enabled = False
         Me.BTNDELETE.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.BTNDELETE.Font = New System.Drawing.Font("Century Gothic", 9.0!)
@@ -511,11 +493,29 @@ Partial Class ucUSERMANAGEMENT
         Me.Label1.AutoSize = True
         Me.Label1.Font = New System.Drawing.Font("Century Gothic", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label1.ForeColor = System.Drawing.SystemColors.ControlDarkDark
-        Me.Label1.Location = New System.Drawing.Point(859, 114)
+        Me.Label1.Location = New System.Drawing.Point(711, 114)
         Me.Label1.Name = "Label1"
         Me.Label1.Size = New System.Drawing.Size(126, 17)
         Me.Label1.TabIndex = 144
         Me.Label1.Text = "Search Username :"
+        '
+        'BTNBACK
+        '
+        Me.BTNBACK.BackColor = System.Drawing.Color.FromArgb(CType(CType(37, Byte), Integer), CType(CType(46, Byte), Integer), CType(CType(59, Byte), Integer))
+        Me.BTNBACK.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None
+        Me.BTNBACK.FlatAppearance.BorderSize = 0
+        Me.BTNBACK.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.BTNBACK.Font = New System.Drawing.Font("Century Gothic", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.BTNBACK.ForeColor = System.Drawing.Color.White
+        Me.BTNBACK.Image = CType(resources.GetObject("BTNBACK.Image"), System.Drawing.Image)
+        Me.BTNBACK.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
+        Me.BTNBACK.Location = New System.Drawing.Point(1200, 3)
+        Me.BTNBACK.Name = "BTNBACK"
+        Me.BTNBACK.Padding = New System.Windows.Forms.Padding(20, 0, 0, 0)
+        Me.BTNBACK.Size = New System.Drawing.Size(119, 46)
+        Me.BTNBACK.TabIndex = 3
+        Me.BTNBACK.Text = " Back"
+        Me.BTNBACK.UseVisualStyleBackColor = False
         '
         'ucUSERMANAGEMENT
         '

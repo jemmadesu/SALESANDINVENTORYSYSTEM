@@ -27,20 +27,21 @@ Partial Class FRMMAINMENU
         Me.PNLMAIN = New System.Windows.Forms.Panel()
         Me.Panel1 = New System.Windows.Forms.Panel()
         Me.TIMEDATE = New System.Windows.Forms.Label()
-        Me.BTNREPORTS = New System.Windows.Forms.Button()
         Me.LBLUSERTYPE = New System.Windows.Forms.Label()
-        Me.PictureBox1 = New System.Windows.Forms.PictureBox()
         Me.LBLUSERNAME = New System.Windows.Forms.Label()
-        Me.BTNINVENTORY = New System.Windows.Forms.Button()
         Me.Label1 = New System.Windows.Forms.Label()
+        Me.Timer1 = New System.Windows.Forms.Timer(Me.components)
+        Me.Guna2CirclePictureBox1 = New Guna.UI2.WinForms.Guna2CirclePictureBox()
+        Me.BTNREPORTS = New System.Windows.Forms.Button()
+        Me.BTNINVENTORY = New System.Windows.Forms.Button()
         Me.BTNTRANSACTION = New System.Windows.Forms.Button()
         Me.BTNLOGOUT = New System.Windows.Forms.Button()
         Me.BTNSETTINGS = New System.Windows.Forms.Button()
         Me.BTNSALES = New System.Windows.Forms.Button()
         Me.BTNDASHBOARD = New System.Windows.Forms.Button()
-        Me.Timer1 = New System.Windows.Forms.Timer(Me.components)
+        Me.LBLTIME = New System.Windows.Forms.Label()
         Me.Panel1.SuspendLayout()
-        CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.Guna2CirclePictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'PNLMAIN
@@ -54,10 +55,11 @@ Partial Class FRMMAINMENU
         'Panel1
         '
         Me.Panel1.BackColor = System.Drawing.Color.FromArgb(CType(CType(37, Byte), Integer), CType(CType(46, Byte), Integer), CType(CType(59, Byte), Integer))
+        Me.Panel1.Controls.Add(Me.LBLTIME)
+        Me.Panel1.Controls.Add(Me.Guna2CirclePictureBox1)
         Me.Panel1.Controls.Add(Me.TIMEDATE)
         Me.Panel1.Controls.Add(Me.BTNREPORTS)
         Me.Panel1.Controls.Add(Me.LBLUSERTYPE)
-        Me.Panel1.Controls.Add(Me.PictureBox1)
         Me.Panel1.Controls.Add(Me.LBLUSERNAME)
         Me.Panel1.Controls.Add(Me.BTNINVENTORY)
         Me.Panel1.Controls.Add(Me.Label1)
@@ -74,13 +76,61 @@ Partial Class FRMMAINMENU
         'TIMEDATE
         '
         Me.TIMEDATE.AutoSize = True
-        Me.TIMEDATE.Font = New System.Drawing.Font("Century Gothic", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.TIMEDATE.Font = New System.Drawing.Font("Century Gothic", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.TIMEDATE.ForeColor = System.Drawing.Color.MediumSeaGreen
-        Me.TIMEDATE.Location = New System.Drawing.Point(142, 70)
+        Me.TIMEDATE.Location = New System.Drawing.Point(47, 778)
         Me.TIMEDATE.Name = "TIMEDATE"
-        Me.TIMEDATE.Size = New System.Drawing.Size(83, 20)
+        Me.TIMEDATE.Size = New System.Drawing.Size(40, 17)
         Me.TIMEDATE.TabIndex = 22
-        Me.TIMEDATE.Text = "Date/Time"
+        Me.TIMEDATE.Text = "Date"
+        '
+        'LBLUSERTYPE
+        '
+        Me.LBLUSERTYPE.AutoSize = True
+        Me.LBLUSERTYPE.Font = New System.Drawing.Font("Century Gothic", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.LBLUSERTYPE.ForeColor = System.Drawing.Color.MediumSeaGreen
+        Me.LBLUSERTYPE.Location = New System.Drawing.Point(147, 101)
+        Me.LBLUSERTYPE.Name = "LBLUSERTYPE"
+        Me.LBLUSERTYPE.Size = New System.Drawing.Size(74, 20)
+        Me.LBLUSERTYPE.TabIndex = 20
+        Me.LBLUSERTYPE.Text = "Usertype"
+        '
+        'LBLUSERNAME
+        '
+        Me.LBLUSERNAME.AutoSize = True
+        Me.LBLUSERNAME.Font = New System.Drawing.Font("Century Gothic", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.LBLUSERNAME.ForeColor = System.Drawing.Color.MediumSeaGreen
+        Me.LBLUSERNAME.Location = New System.Drawing.Point(65, 144)
+        Me.LBLUSERNAME.Name = "LBLUSERNAME"
+        Me.LBLUSERNAME.Size = New System.Drawing.Size(88, 21)
+        Me.LBLUSERNAME.TabIndex = 19
+        Me.LBLUSERNAME.Text = "Username"
+        '
+        'Label1
+        '
+        Me.Label1.AutoSize = True
+        Me.Label1.Font = New System.Drawing.Font("Century Gothic", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label1.ForeColor = System.Drawing.SystemColors.Window
+        Me.Label1.Location = New System.Drawing.Point(147, 80)
+        Me.Label1.Name = "Label1"
+        Me.Label1.Size = New System.Drawing.Size(55, 21)
+        Me.Label1.TabIndex = 15
+        Me.Label1.Text = "Hello !"
+        '
+        'Timer1
+        '
+        '
+        'Guna2CirclePictureBox1
+        '
+        Me.Guna2CirclePictureBox1.Image = Global.SALESANDINVENTORYSYSTEM.My.Resources.Resources.admin
+        Me.Guna2CirclePictureBox1.Location = New System.Drawing.Point(35, 52)
+        Me.Guna2CirclePictureBox1.Name = "Guna2CirclePictureBox1"
+        Me.Guna2CirclePictureBox1.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle
+        Me.Guna2CirclePictureBox1.ShadowDecoration.Parent = Me.Guna2CirclePictureBox1
+        Me.Guna2CirclePictureBox1.Size = New System.Drawing.Size(106, 89)
+        Me.Guna2CirclePictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+        Me.Guna2CirclePictureBox1.TabIndex = 0
+        Me.Guna2CirclePictureBox1.TabStop = False
         '
         'BTNREPORTS
         '
@@ -102,38 +152,6 @@ Partial Class FRMMAINMENU
         Me.BTNREPORTS.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
         Me.BTNREPORTS.UseVisualStyleBackColor = False
         '
-        'LBLUSERTYPE
-        '
-        Me.LBLUSERTYPE.AutoSize = True
-        Me.LBLUSERTYPE.Font = New System.Drawing.Font("Century Gothic", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.LBLUSERTYPE.ForeColor = System.Drawing.Color.MediumSeaGreen
-        Me.LBLUSERTYPE.Location = New System.Drawing.Point(18, 15)
-        Me.LBLUSERTYPE.Name = "LBLUSERTYPE"
-        Me.LBLUSERTYPE.Size = New System.Drawing.Size(74, 20)
-        Me.LBLUSERTYPE.TabIndex = 20
-        Me.LBLUSERTYPE.Text = "Usertype"
-        '
-        'PictureBox1
-        '
-        Me.PictureBox1.Image = CType(resources.GetObject("PictureBox1.Image"), System.Drawing.Image)
-        Me.PictureBox1.Location = New System.Drawing.Point(37, 100)
-        Me.PictureBox1.Name = "PictureBox1"
-        Me.PictureBox1.Size = New System.Drawing.Size(64, 64)
-        Me.PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize
-        Me.PictureBox1.TabIndex = 18
-        Me.PictureBox1.TabStop = False
-        '
-        'LBLUSERNAME
-        '
-        Me.LBLUSERNAME.AutoSize = True
-        Me.LBLUSERNAME.Font = New System.Drawing.Font("Century Gothic", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.LBLUSERNAME.ForeColor = System.Drawing.Color.MediumSeaGreen
-        Me.LBLUSERNAME.Location = New System.Drawing.Point(107, 134)
-        Me.LBLUSERNAME.Name = "LBLUSERNAME"
-        Me.LBLUSERNAME.Size = New System.Drawing.Size(88, 21)
-        Me.LBLUSERNAME.TabIndex = 19
-        Me.LBLUSERNAME.Text = "Username"
-        '
         'BTNINVENTORY
         '
         Me.BTNINVENTORY.BackColor = System.Drawing.Color.FromArgb(CType(CType(37, Byte), Integer), CType(CType(46, Byte), Integer), CType(CType(59, Byte), Integer))
@@ -154,17 +172,6 @@ Partial Class FRMMAINMENU
         Me.BTNINVENTORY.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
         Me.BTNINVENTORY.UseVisualStyleBackColor = False
         '
-        'Label1
-        '
-        Me.Label1.AutoSize = True
-        Me.Label1.Font = New System.Drawing.Font("Century Gothic", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label1.ForeColor = System.Drawing.SystemColors.Window
-        Me.Label1.Location = New System.Drawing.Point(107, 114)
-        Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(55, 21)
-        Me.Label1.TabIndex = 15
-        Me.Label1.Text = "Hello !"
-        '
         'BTNTRANSACTION
         '
         Me.BTNTRANSACTION.BackColor = System.Drawing.Color.FromArgb(CType(CType(37, Byte), Integer), CType(CType(46, Byte), Integer), CType(CType(59, Byte), Integer))
@@ -181,7 +188,7 @@ Partial Class FRMMAINMENU
         Me.BTNTRANSACTION.Padding = New System.Windows.Forms.Padding(40, 0, 0, 0)
         Me.BTNTRANSACTION.Size = New System.Drawing.Size(266, 43)
         Me.BTNTRANSACTION.TabIndex = 16
-        Me.BTNTRANSACTION.Text = "    Transaction"
+        Me.BTNTRANSACTION.Text = "  Sales  Transaction"
         Me.BTNTRANSACTION.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
         Me.BTNTRANSACTION.UseVisualStyleBackColor = False
         '
@@ -195,7 +202,7 @@ Partial Class FRMMAINMENU
         Me.BTNLOGOUT.ForeColor = System.Drawing.SystemColors.Window
         Me.BTNLOGOUT.Image = CType(resources.GetObject("BTNLOGOUT.Image"), System.Drawing.Image)
         Me.BTNLOGOUT.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.BTNLOGOUT.Location = New System.Drawing.Point(0, 666)
+        Me.BTNLOGOUT.Location = New System.Drawing.Point(-4, 624)
         Me.BTNLOGOUT.Name = "BTNLOGOUT"
         Me.BTNLOGOUT.Padding = New System.Windows.Forms.Padding(40, 0, 0, 0)
         Me.BTNLOGOUT.Size = New System.Drawing.Size(273, 43)
@@ -264,8 +271,16 @@ Partial Class FRMMAINMENU
         Me.BTNDASHBOARD.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
         Me.BTNDASHBOARD.UseVisualStyleBackColor = False
         '
-        'Timer1
+        'LBLTIME
         '
+        Me.LBLTIME.AutoSize = True
+        Me.LBLTIME.Font = New System.Drawing.Font("Century Gothic", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.LBLTIME.ForeColor = System.Drawing.Color.MediumSeaGreen
+        Me.LBLTIME.Location = New System.Drawing.Point(65, 739)
+        Me.LBLTIME.Name = "LBLTIME"
+        Me.LBLTIME.Size = New System.Drawing.Size(56, 24)
+        Me.LBLTIME.TabIndex = 24
+        Me.LBLTIME.Text = "Time"
         '
         'FRMMAINMENU
         '
@@ -279,7 +294,7 @@ Partial Class FRMMAINMENU
         Me.Text = "w"
         Me.Panel1.ResumeLayout(False)
         Me.Panel1.PerformLayout()
-        CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.Guna2CirclePictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
 
     End Sub
@@ -294,9 +309,10 @@ Partial Class FRMMAINMENU
     Friend WithEvents BTNDASHBOARD As Button
     Friend WithEvents BTNINVENTORY As Button
     Friend WithEvents LBLUSERNAME As Label
-    Friend WithEvents PictureBox1 As PictureBox
     Friend WithEvents LBLUSERTYPE As Label
     Friend WithEvents Timer1 As Timer
     Friend WithEvents TIMEDATE As Label
     Friend WithEvents BTNREPORTS As Button
+    Friend WithEvents Guna2CirclePictureBox1 As Guna.UI2.WinForms.Guna2CirclePictureBox
+    Friend WithEvents LBLTIME As Label
 End Class

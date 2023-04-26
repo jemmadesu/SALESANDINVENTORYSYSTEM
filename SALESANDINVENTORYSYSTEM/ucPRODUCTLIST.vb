@@ -54,6 +54,7 @@ Public Class ucPRODUCTLIST
         VIEW()
     End Sub
     Private Sub ucPRODUCTLIST_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        con.Close()
         Try
 
             Dim da As New MySqlDataAdapter("select stockid, prodid, prodname, prodman, prodbrand, prodcat, catcode from tbl_products ", con)
@@ -158,5 +159,9 @@ Public Class ucPRODUCTLIST
 
     Private Sub TXTSEARCH_TextChanged_1(sender As Object, e As EventArgs) Handles TXTSEARCH.TextChanged
         searchprod()
+    End Sub
+
+    Private Sub Label2_Click(sender As Object, e As EventArgs) Handles Label2.Click
+
     End Sub
 End Class

@@ -64,7 +64,7 @@ Partial Class ucPUTINTOINVENTORY
         '
         'GroupBox4
         '
-        Me.GroupBox4.BackColor = System.Drawing.SystemColors.Control
+        Me.GroupBox4.BackColor = System.Drawing.SystemColors.ScrollBar
         Me.GroupBox4.Controls.Add(Me.BTNDELETE)
         Me.GroupBox4.Controls.Add(Me.DGVMAIN)
         Me.GroupBox4.Controls.Add(Me.TextBox4)
@@ -79,7 +79,7 @@ Partial Class ucPUTINTOINVENTORY
         '
         'BTNDELETE
         '
-        Me.BTNDELETE.BackColor = System.Drawing.Color.IndianRed
+        Me.BTNDELETE.BackColor = System.Drawing.Color.Gray
         Me.BTNDELETE.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.BTNDELETE.Font = New System.Drawing.Font("Century Gothic", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.BTNDELETE.ForeColor = System.Drawing.Color.White
@@ -112,7 +112,7 @@ Partial Class ucPUTINTOINVENTORY
         '
         'GroupBox1
         '
-        Me.GroupBox1.BackColor = System.Drawing.SystemColors.Control
+        Me.GroupBox1.BackColor = System.Drawing.SystemColors.ScrollBar
         Me.GroupBox1.Controls.Add(Me.BTNSAVE)
         Me.GroupBox1.Controls.Add(Me.Label9)
         Me.GroupBox1.Controls.Add(Me.TXTSI)
@@ -340,7 +340,7 @@ Partial Class ucPUTINTOINVENTORY
         '
         'GroupBox2
         '
-        Me.GroupBox2.BackColor = System.Drawing.SystemColors.Control
+        Me.GroupBox2.BackColor = System.Drawing.SystemColors.ScrollBar
         Me.GroupBox2.Controls.Add(Me.DGVPRODUCTS)
         Me.GroupBox2.Controls.Add(Me.TXTSEARCH)
         Me.GroupBox2.Font = New System.Drawing.Font("Century Gothic", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))

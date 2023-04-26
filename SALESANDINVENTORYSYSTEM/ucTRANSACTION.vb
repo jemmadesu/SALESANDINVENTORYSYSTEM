@@ -9,7 +9,12 @@ Public Class ucTRANSACTION
     Dim longpaper As Integer
 
 
-
+    Private Sub search()
+        Dim dba As New MySqlDataAdapter("select prodid, prodname, prodbrand, prodcat, catcode, price, unit, quantity from tbl_products WHERE tbl_products.prodname LIKE '%" & Me.TXTSEARCH.Text & "%';", con)
+        Dim dbset As New DataSet
+        dba.Fill(dbset)
+        Me.DGVPRODUCTS.DataSource = dbset.Tables(0).DefaultView
+    End Sub
     Private Sub ucTRANSACTION_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         con.Close()
 
@@ -173,6 +178,7 @@ Public Class ucTRANSACTION
         DGVPRODUCTS.Columns(6).HeaderText = "Unit"
         DGVPRODUCTS.Columns(7).Width = 200
         DGVPRODUCTS.Columns(7).HeaderText = "Stocks"
+
 
     End Sub
 
@@ -511,7 +517,6 @@ Public Class ucTRANSACTION
         CBODISCOUNT.Text = "-- Select --"
         TXTOR.Text = ""
         pnlpayment.Visible = False
-        DGVPRODUCTS.Enabled = False
         BTNPAY.Visible = False
 
         pnlpayment.Visible = False
@@ -690,5 +695,11 @@ Public Class ucTRANSACTION
 
     End Sub
 
+    Private Sub TXTPRICE_TextChanged(sender As Object, e As EventArgs) Handles TXTSEARCH.TextChanged
+        search()
+    End Sub
 
+    Private Sub DGVPRODUCTS_CellContentClick(sender As Object, e As DataGridViewCellEventArgs) Handles DGVPRODUCTS.CellContentClick
+
+    End Sub
 End Class

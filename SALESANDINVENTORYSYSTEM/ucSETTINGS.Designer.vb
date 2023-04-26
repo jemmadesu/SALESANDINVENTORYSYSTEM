@@ -24,20 +24,20 @@ Partial Class ucSETTINGS
     Private Sub InitializeComponent()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(ucSETTINGS))
         Me.Panel2 = New System.Windows.Forms.Panel()
+        Me.LBLEXIT = New System.Windows.Forms.Label()
+        Me.Guna2ShadowPanel1 = New Guna.UI2.WinForms.Guna2ShadowPanel()
+        Me.Label3 = New System.Windows.Forms.Label()
+        Me.Label2 = New System.Windows.Forms.Label()
+        Me.Label1 = New System.Windows.Forms.Label()
+        Me.Guna2PictureBox1 = New Guna.UI2.WinForms.Guna2PictureBox()
+        Me.BTNRESTORE = New Guna.UI2.WinForms.Guna2Button()
+        Me.BTNBACKUP = New Guna.UI2.WinForms.Guna2Button()
         Me.BTNSTOCKIN = New System.Windows.Forms.Button()
         Me.BTNPI = New System.Windows.Forms.Button()
         Me.BTNINVENTORY = New System.Windows.Forms.Button()
         Me.BTNSUP = New System.Windows.Forms.Button()
         Me.BTNCATEGORY = New System.Windows.Forms.Button()
-        Me.LBLEXIT = New System.Windows.Forms.Label()
         Me.BTNUM = New System.Windows.Forms.Button()
-        Me.Guna2ShadowPanel1 = New Guna.UI2.WinForms.Guna2ShadowPanel()
-        Me.Label3 = New System.Windows.Forms.Label()
-        Me.Label2 = New System.Windows.Forms.Label()
-        Me.BTNRESTORE = New Guna.UI2.WinForms.Guna2Button()
-        Me.BTNBACKUP = New Guna.UI2.WinForms.Guna2Button()
-        Me.Guna2PictureBox1 = New Guna.UI2.WinForms.Guna2PictureBox()
-        Me.Label1 = New System.Windows.Forms.Label()
         Me.Panel2.SuspendLayout()
         Me.Guna2ShadowPanel1.SuspendLayout()
         CType(Me.Guna2PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -58,6 +58,114 @@ Partial Class ucSETTINGS
         Me.Panel2.Name = "Panel2"
         Me.Panel2.Size = New System.Drawing.Size(1322, 49)
         Me.Panel2.TabIndex = 44
+        '
+        'LBLEXIT
+        '
+        Me.LBLEXIT.AutoSize = True
+        Me.LBLEXIT.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.LBLEXIT.Font = New System.Drawing.Font("Century Gothic", 20.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.LBLEXIT.ForeColor = System.Drawing.Color.White
+        Me.LBLEXIT.Location = New System.Drawing.Point(1276, 4)
+        Me.LBLEXIT.Name = "LBLEXIT"
+        Me.LBLEXIT.Size = New System.Drawing.Size(30, 32)
+        Me.LBLEXIT.TabIndex = 28
+        Me.LBLEXIT.Text = "x"
+        '
+        'Guna2ShadowPanel1
+        '
+        Me.Guna2ShadowPanel1.BackColor = System.Drawing.Color.Transparent
+        Me.Guna2ShadowPanel1.Controls.Add(Me.Label3)
+        Me.Guna2ShadowPanel1.Controls.Add(Me.Label2)
+        Me.Guna2ShadowPanel1.Controls.Add(Me.BTNRESTORE)
+        Me.Guna2ShadowPanel1.Controls.Add(Me.BTNBACKUP)
+        Me.Guna2ShadowPanel1.FillColor = System.Drawing.Color.White
+        Me.Guna2ShadowPanel1.Location = New System.Drawing.Point(750, 98)
+        Me.Guna2ShadowPanel1.Name = "Guna2ShadowPanel1"
+        Me.Guna2ShadowPanel1.ShadowColor = System.Drawing.Color.Black
+        Me.Guna2ShadowPanel1.Size = New System.Drawing.Size(486, 624)
+        Me.Guna2ShadowPanel1.TabIndex = 46
+        '
+        'Label3
+        '
+        Me.Label3.AutoSize = True
+        Me.Label3.Font = New System.Drawing.Font("Century Gothic", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label3.ForeColor = System.Drawing.Color.MediumSeaGreen
+        Me.Label3.Location = New System.Drawing.Point(392, 22)
+        Me.Label3.Name = "Label3"
+        Me.Label3.Size = New System.Drawing.Size(65, 20)
+        Me.Label3.TabIndex = 50
+        Me.Label3.Text = "Options"
+        '
+        'Label2
+        '
+        Me.Label2.AutoSize = True
+        Me.Label2.Font = New System.Drawing.Font("Century Gothic", 11.25!, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label2.ForeColor = System.Drawing.Color.MediumSeaGreen
+        Me.Label2.Location = New System.Drawing.Point(64, 304)
+        Me.Label2.Name = "Label2"
+        Me.Label2.Size = New System.Drawing.Size(164, 20)
+        Me.Label2.TabIndex = 49
+        Me.Label2.Text = "Your Backup Records"
+        '
+        'Label1
+        '
+        Me.Label1.AutoSize = True
+        Me.Label1.Font = New System.Drawing.Font("Century Gothic", 20.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label1.ForeColor = System.Drawing.SystemColors.ControlText
+        Me.Label1.Location = New System.Drawing.Point(231, 312)
+        Me.Label1.Name = "Label1"
+        Me.Label1.Size = New System.Drawing.Size(301, 33)
+        Me.Label1.TabIndex = 48
+        Me.Label1.Text = "BACKUP AND RESTORE"
+        '
+        'Guna2PictureBox1
+        '
+        Me.Guna2PictureBox1.Image = Global.SALESANDINVENTORYSYSTEM.My.Resources.Resources.noun_restore_down_1387364
+        Me.Guna2PictureBox1.Location = New System.Drawing.Point(105, 98)
+        Me.Guna2PictureBox1.Name = "Guna2PictureBox1"
+        Me.Guna2PictureBox1.ShadowDecoration.Parent = Me.Guna2PictureBox1
+        Me.Guna2PictureBox1.Size = New System.Drawing.Size(175, 166)
+        Me.Guna2PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+        Me.Guna2PictureBox1.TabIndex = 47
+        Me.Guna2PictureBox1.TabStop = False
+        '
+        'BTNRESTORE
+        '
+        Me.BTNRESTORE.CheckedState.Parent = Me.BTNRESTORE
+        Me.BTNRESTORE.CustomImages.Parent = Me.BTNRESTORE
+        Me.BTNRESTORE.FillColor = System.Drawing.Color.LightGray
+        Me.BTNRESTORE.Font = New System.Drawing.Font("Segoe UI", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.BTNRESTORE.ForeColor = System.Drawing.SystemColors.ControlDarkDark
+        Me.BTNRESTORE.HoverState.Parent = Me.BTNRESTORE
+        Me.BTNRESTORE.Image = Global.SALESANDINVENTORYSYSTEM.My.Resources.Resources.restore
+        Me.BTNRESTORE.ImageAlign = System.Windows.Forms.HorizontalAlignment.Right
+        Me.BTNRESTORE.ImageSize = New System.Drawing.Size(50, 45)
+        Me.BTNRESTORE.Location = New System.Drawing.Point(58, 188)
+        Me.BTNRESTORE.Name = "BTNRESTORE"
+        Me.BTNRESTORE.ShadowDecoration.Parent = Me.BTNRESTORE
+        Me.BTNRESTORE.Size = New System.Drawing.Size(352, 83)
+        Me.BTNRESTORE.TabIndex = 46
+        Me.BTNRESTORE.Text = "Restore"
+        Me.BTNRESTORE.TextAlign = System.Windows.Forms.HorizontalAlignment.Left
+        '
+        'BTNBACKUP
+        '
+        Me.BTNBACKUP.CheckedState.Parent = Me.BTNBACKUP
+        Me.BTNBACKUP.CustomImages.Parent = Me.BTNBACKUP
+        Me.BTNBACKUP.FillColor = System.Drawing.Color.LightGray
+        Me.BTNBACKUP.Font = New System.Drawing.Font("Segoe UI", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.BTNBACKUP.ForeColor = System.Drawing.SystemColors.ControlDarkDark
+        Me.BTNBACKUP.HoverState.Parent = Me.BTNBACKUP
+        Me.BTNBACKUP.Image = Global.SALESANDINVENTORYSYSTEM.My.Resources.Resources.noun_data_backup_45505892
+        Me.BTNBACKUP.ImageAlign = System.Windows.Forms.HorizontalAlignment.Right
+        Me.BTNBACKUP.ImageSize = New System.Drawing.Size(50, 45)
+        Me.BTNBACKUP.Location = New System.Drawing.Point(58, 63)
+        Me.BTNBACKUP.Name = "BTNBACKUP"
+        Me.BTNBACKUP.ShadowDecoration.Parent = Me.BTNBACKUP
+        Me.BTNBACKUP.Size = New System.Drawing.Size(352, 83)
+        Me.BTNBACKUP.TabIndex = 45
+        Me.BTNBACKUP.Text = "Create Backup"
+        Me.BTNBACKUP.TextAlign = System.Windows.Forms.HorizontalAlignment.Left
         '
         'BTNSTOCKIN
         '
@@ -149,18 +257,6 @@ Partial Class ucSETTINGS
         Me.BTNCATEGORY.TextAlign = System.Drawing.ContentAlignment.MiddleRight
         Me.BTNCATEGORY.UseVisualStyleBackColor = False
         '
-        'LBLEXIT
-        '
-        Me.LBLEXIT.AutoSize = True
-        Me.LBLEXIT.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.LBLEXIT.Font = New System.Drawing.Font("Century Gothic", 20.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.LBLEXIT.ForeColor = System.Drawing.Color.White
-        Me.LBLEXIT.Location = New System.Drawing.Point(1276, 4)
-        Me.LBLEXIT.Name = "LBLEXIT"
-        Me.LBLEXIT.Size = New System.Drawing.Size(30, 32)
-        Me.LBLEXIT.TabIndex = 28
-        Me.LBLEXIT.Text = "x"
-        '
         'BTNUM
         '
         Me.BTNUM.BackColor = System.Drawing.Color.FromArgb(CType(CType(37, Byte), Integer), CType(CType(46, Byte), Integer), CType(CType(59, Byte), Integer))
@@ -178,100 +274,6 @@ Partial Class ucSETTINGS
         Me.BTNUM.Text = "User Account"
         Me.BTNUM.TextAlign = System.Drawing.ContentAlignment.MiddleRight
         Me.BTNUM.UseVisualStyleBackColor = False
-        '
-        'Guna2ShadowPanel1
-        '
-        Me.Guna2ShadowPanel1.BackColor = System.Drawing.Color.Transparent
-        Me.Guna2ShadowPanel1.Controls.Add(Me.Label3)
-        Me.Guna2ShadowPanel1.Controls.Add(Me.Label2)
-        Me.Guna2ShadowPanel1.Controls.Add(Me.BTNRESTORE)
-        Me.Guna2ShadowPanel1.Controls.Add(Me.BTNBACKUP)
-        Me.Guna2ShadowPanel1.FillColor = System.Drawing.Color.White
-        Me.Guna2ShadowPanel1.Location = New System.Drawing.Point(750, 98)
-        Me.Guna2ShadowPanel1.Name = "Guna2ShadowPanel1"
-        Me.Guna2ShadowPanel1.ShadowColor = System.Drawing.Color.Black
-        Me.Guna2ShadowPanel1.Size = New System.Drawing.Size(486, 624)
-        Me.Guna2ShadowPanel1.TabIndex = 46
-        '
-        'Label3
-        '
-        Me.Label3.AutoSize = True
-        Me.Label3.Font = New System.Drawing.Font("Century Gothic", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label3.ForeColor = System.Drawing.Color.FromArgb(CType(CType(111, Byte), Integer), CType(CType(143, Byte), Integer), CType(CType(175, Byte), Integer))
-        Me.Label3.Location = New System.Drawing.Point(392, 22)
-        Me.Label3.Name = "Label3"
-        Me.Label3.Size = New System.Drawing.Size(65, 20)
-        Me.Label3.TabIndex = 50
-        Me.Label3.Text = "Options"
-        '
-        'Label2
-        '
-        Me.Label2.AutoSize = True
-        Me.Label2.Font = New System.Drawing.Font("Century Gothic", 11.25!, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label2.Location = New System.Drawing.Point(64, 304)
-        Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(164, 20)
-        Me.Label2.TabIndex = 49
-        Me.Label2.Text = "Your Backup Records"
-        '
-        'BTNRESTORE
-        '
-        Me.BTNRESTORE.CheckedState.Parent = Me.BTNRESTORE
-        Me.BTNRESTORE.CustomImages.Parent = Me.BTNRESTORE
-        Me.BTNRESTORE.FillColor = System.Drawing.Color.LightGray
-        Me.BTNRESTORE.Font = New System.Drawing.Font("Segoe UI", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.BTNRESTORE.ForeColor = System.Drawing.SystemColors.ControlDarkDark
-        Me.BTNRESTORE.HoverState.Parent = Me.BTNRESTORE
-        Me.BTNRESTORE.Image = Global.SALESANDINVENTORYSYSTEM.My.Resources.Resources.restore
-        Me.BTNRESTORE.ImageAlign = System.Windows.Forms.HorizontalAlignment.Right
-        Me.BTNRESTORE.ImageSize = New System.Drawing.Size(50, 45)
-        Me.BTNRESTORE.Location = New System.Drawing.Point(58, 188)
-        Me.BTNRESTORE.Name = "BTNRESTORE"
-        Me.BTNRESTORE.ShadowDecoration.Parent = Me.BTNRESTORE
-        Me.BTNRESTORE.Size = New System.Drawing.Size(352, 83)
-        Me.BTNRESTORE.TabIndex = 46
-        Me.BTNRESTORE.Text = "Restore"
-        Me.BTNRESTORE.TextAlign = System.Windows.Forms.HorizontalAlignment.Left
-        '
-        'BTNBACKUP
-        '
-        Me.BTNBACKUP.CheckedState.Parent = Me.BTNBACKUP
-        Me.BTNBACKUP.CustomImages.Parent = Me.BTNBACKUP
-        Me.BTNBACKUP.FillColor = System.Drawing.Color.LightGray
-        Me.BTNBACKUP.Font = New System.Drawing.Font("Segoe UI", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.BTNBACKUP.ForeColor = System.Drawing.SystemColors.ControlDarkDark
-        Me.BTNBACKUP.HoverState.Parent = Me.BTNBACKUP
-        Me.BTNBACKUP.Image = Global.SALESANDINVENTORYSYSTEM.My.Resources.Resources.noun_data_backup_45505892
-        Me.BTNBACKUP.ImageAlign = System.Windows.Forms.HorizontalAlignment.Right
-        Me.BTNBACKUP.ImageSize = New System.Drawing.Size(50, 45)
-        Me.BTNBACKUP.Location = New System.Drawing.Point(58, 63)
-        Me.BTNBACKUP.Name = "BTNBACKUP"
-        Me.BTNBACKUP.ShadowDecoration.Parent = Me.BTNBACKUP
-        Me.BTNBACKUP.Size = New System.Drawing.Size(352, 83)
-        Me.BTNBACKUP.TabIndex = 45
-        Me.BTNBACKUP.Text = "Create Backup"
-        Me.BTNBACKUP.TextAlign = System.Windows.Forms.HorizontalAlignment.Left
-        '
-        'Guna2PictureBox1
-        '
-        Me.Guna2PictureBox1.Image = Global.SALESANDINVENTORYSYSTEM.My.Resources.Resources.noun_restore_down_1387364
-        Me.Guna2PictureBox1.Location = New System.Drawing.Point(105, 98)
-        Me.Guna2PictureBox1.Name = "Guna2PictureBox1"
-        Me.Guna2PictureBox1.ShadowDecoration.Parent = Me.Guna2PictureBox1
-        Me.Guna2PictureBox1.Size = New System.Drawing.Size(175, 166)
-        Me.Guna2PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
-        Me.Guna2PictureBox1.TabIndex = 47
-        Me.Guna2PictureBox1.TabStop = False
-        '
-        'Label1
-        '
-        Me.Label1.AutoSize = True
-        Me.Label1.Font = New System.Drawing.Font("Century Gothic", 20.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label1.Location = New System.Drawing.Point(231, 312)
-        Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(286, 33)
-        Me.Label1.TabIndex = 48
-        Me.Label1.Text = "Backup and  Restore"
         '
         'ucSETTINGS
         '

@@ -3,6 +3,13 @@ Public Class ucSTOCKLIST
     Private Sub ucSTOCKLIST_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         LOADDATAMAIN()
     End Sub
+
+    Private Sub search()
+        Dim dba As New MySqlDataAdapter("select stockid, prodname, unit, price, quantity, prodman, expirationdate from tbl_products WHERE tbl_products.prodname LIKE '%" & Me.TXTSEARCH.Text & "%';", con)
+        Dim dbset As New DataSet
+        dba.Fill(dbset)
+        Me.DGVSTOCK.DataSource = dbset.Tables(0).DefaultView
+    End Sub
     Private Sub DGVMAINSET()
         DGVSTOCK.Columns(0).Width = 200
         DGVSTOCK.Columns(0).HeaderText = "Stock ID"
@@ -59,4 +66,7 @@ Public Class ucSTOCKLIST
         INVETORY.Dock = DockStyle.Fill
     End Sub
 
+    Private Sub TXTSEARCH_TextChanged(sender As Object, e As EventArgs) Handles TXTSEARCH.TextChanged
+        search()
+    End Sub
 End Class

@@ -51,9 +51,9 @@ Partial Class ucSALES
         Me.Label8.ForeColor = System.Drawing.Color.MediumSeaGreen
         Me.Label8.Location = New System.Drawing.Point(57, 79)
         Me.Label8.Name = "Label8"
-        Me.Label8.Size = New System.Drawing.Size(190, 32)
+        Me.Label8.Size = New System.Drawing.Size(207, 32)
         Me.Label8.TabIndex = 45
-        Me.Label8.Text = "Sales Income"
+        Me.Label8.Text = "SALES INCOME"
         '
         'BTNGENERATE
         '
@@ -71,13 +71,13 @@ Partial Class ucSALES
         'Label2
         '
         Me.Label2.AutoSize = True
-        Me.Label2.Font = New System.Drawing.Font("Century Gothic", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label2.ForeColor = System.Drawing.SystemColors.ControlDarkDark
-        Me.Label2.Location = New System.Drawing.Point(956, 758)
+        Me.Label2.Font = New System.Drawing.Font("Century Gothic", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label2.ForeColor = System.Drawing.Color.MediumSeaGreen
+        Me.Label2.Location = New System.Drawing.Point(960, 761)
         Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(99, 21)
+        Me.Label2.Size = New System.Drawing.Size(110, 19)
         Me.Label2.TabIndex = 46
-        Me.Label2.Text = "Total Sales :"
+        Me.Label2.Text = "TOTAL SALES :"
         '
         'Panel2
         '
@@ -102,11 +102,13 @@ Partial Class ucSALES
         '
         'TXTINCOME
         '
+        Me.TXTINCOME.BackColor = System.Drawing.Color.White
         Me.TXTINCOME.Enabled = False
-        Me.TXTINCOME.ForeColor = System.Drawing.SystemColors.ControlDarkDark
+        Me.TXTINCOME.Font = New System.Drawing.Font("Century Gothic", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.TXTINCOME.ForeColor = System.Drawing.Color.MediumSeaGreen
         Me.TXTINCOME.Location = New System.Drawing.Point(1076, 758)
         Me.TXTINCOME.Name = "TXTINCOME"
-        Me.TXTINCOME.Size = New System.Drawing.Size(163, 20)
+        Me.TXTINCOME.Size = New System.Drawing.Size(163, 27)
         Me.TXTINCOME.TabIndex = 47
         '
         'DATE1
