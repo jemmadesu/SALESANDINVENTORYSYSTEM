@@ -129,6 +129,7 @@ Public Class ucCATEGORY
     End Sub
 
     Private Sub BTNUPDATE_Click_1(sender As Object, e As EventArgs) Handles BTNUPDATE.Click
+
         If TXTCATNAME.Text = "" Or TXTCATCODE.Text = "" Then
             MsgBox("All fields are required!", vbOKOnly + vbCritical, "Error Saving")
             TXTCATNAME.Focus()
@@ -185,4 +186,32 @@ Public Class ucCATEGORY
         End If
         BTNUPDATE.Text = "Update"
     End Sub
+
+    Private Sub BTNSAVEEDIT_Click(sender As Object, e As EventArgs)
+        If TXTCATNAME.Text = "" Or TXTCATCODE.Text = "" Then
+            MsgBox("All fields are required!", vbOKOnly + vbCritical, "Error Saving")
+            TXTCATNAME.Focus()
+            Exit Sub
+        End If
+
+        OpenCon()
+        cmd.CommandText = "Update tbl_category set catcode =@cc, catname=@cn where catcode= @cc"
+        With cmd.Parameters
+            .Clear()
+            .AddWithValue("cc", TXTCATCODE.Text)
+            .AddWithValue("cn", TXTCATNAME.Text)
+
+
+        End With
+        cmd.ExecuteNonQuery()
+        con.Close()
+        MsgBox("Record has been updated!", vbOKOnly + vbInformation, "Editing Successful")
+
+        TXTID.Text = ""
+        TXTCATNAME.Text = ""
+        TXTCATCODE.Text = ""
+        load_data()
+    End Sub
+
+
 End Class

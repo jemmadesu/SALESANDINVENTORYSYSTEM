@@ -27,12 +27,11 @@ Partial Class ucSALES
         Me.BTNGENERATE = New System.Windows.Forms.Button()
         Me.Label2 = New System.Windows.Forms.Label()
         Me.Panel2 = New System.Windows.Forms.Panel()
-        Me.LBLEXIT = New System.Windows.Forms.Label()
         Me.DGVSALES = New System.Windows.Forms.DataGridView()
         Me.TXTINCOME = New System.Windows.Forms.TextBox()
         Me.DATE1 = New Guna.UI2.WinForms.Guna2DateTimePicker()
         Me.DATE2 = New Guna.UI2.WinForms.Guna2DateTimePicker()
-        Me.Panel2.SuspendLayout()
+        Me.BTNCLEAR = New System.Windows.Forms.Button()
         CType(Me.DGVSALES, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
@@ -62,11 +61,11 @@ Partial Class ucSALES
         Me.BTNGENERATE.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.BTNGENERATE.Font = New System.Drawing.Font("Century Gothic", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.BTNGENERATE.ForeColor = System.Drawing.SystemColors.Control
-        Me.BTNGENERATE.Location = New System.Drawing.Point(1029, 108)
+        Me.BTNGENERATE.Location = New System.Drawing.Point(1046, 108)
         Me.BTNGENERATE.Name = "BTNGENERATE"
-        Me.BTNGENERATE.Size = New System.Drawing.Size(210, 33)
+        Me.BTNGENERATE.Size = New System.Drawing.Size(83, 33)
         Me.BTNGENERATE.TabIndex = 44
-        Me.BTNGENERATE.Text = "Generate Report"
+        Me.BTNGENERATE.Text = "Filter"
         Me.BTNGENERATE.UseVisualStyleBackColor = False
         '
         'Label2
@@ -83,24 +82,11 @@ Partial Class ucSALES
         'Panel2
         '
         Me.Panel2.BackColor = System.Drawing.Color.FromArgb(CType(CType(37, Byte), Integer), CType(CType(46, Byte), Integer), CType(CType(59, Byte), Integer))
-        Me.Panel2.Controls.Add(Me.LBLEXIT)
         Me.Panel2.Dock = System.Windows.Forms.DockStyle.Top
         Me.Panel2.Location = New System.Drawing.Point(0, 0)
         Me.Panel2.Name = "Panel2"
         Me.Panel2.Size = New System.Drawing.Size(1322, 49)
         Me.Panel2.TabIndex = 48
-        '
-        'LBLEXIT
-        '
-        Me.LBLEXIT.AutoSize = True
-        Me.LBLEXIT.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.LBLEXIT.Font = New System.Drawing.Font("Century Gothic", 20.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.LBLEXIT.ForeColor = System.Drawing.Color.White
-        Me.LBLEXIT.Location = New System.Drawing.Point(1276, 6)
-        Me.LBLEXIT.Name = "LBLEXIT"
-        Me.LBLEXIT.Size = New System.Drawing.Size(30, 32)
-        Me.LBLEXIT.TabIndex = 29
-        Me.LBLEXIT.Text = "x"
         '
         'DGVSALES
         '
@@ -146,7 +132,7 @@ Partial Class ucSALES
         Me.DATE2.FillColor = System.Drawing.Color.White
         Me.DATE2.Format = System.Windows.Forms.DateTimePickerFormat.[Long]
         Me.DATE2.HoverState.Parent = Me.DATE2
-        Me.DATE2.Location = New System.Drawing.Point(788, 105)
+        Me.DATE2.Location = New System.Drawing.Point(806, 108)
         Me.DATE2.MaxDate = New Date(9998, 12, 31, 0, 0, 0, 0)
         Me.DATE2.MinDate = New Date(1753, 1, 1, 0, 0, 0, 0)
         Me.DATE2.Name = "DATE2"
@@ -155,11 +141,25 @@ Partial Class ucSALES
         Me.DATE2.TabIndex = 51
         Me.DATE2.Value = New Date(2023, 4, 9, 3, 3, 41, 799)
         '
+        'BTNCLEAR
+        '
+        Me.BTNCLEAR.BackColor = System.Drawing.SystemColors.ControlDarkDark
+        Me.BTNCLEAR.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.BTNCLEAR.Font = New System.Drawing.Font("Century Gothic", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.BTNCLEAR.ForeColor = System.Drawing.SystemColors.Control
+        Me.BTNCLEAR.Location = New System.Drawing.Point(1156, 108)
+        Me.BTNCLEAR.Name = "BTNCLEAR"
+        Me.BTNCLEAR.Size = New System.Drawing.Size(83, 33)
+        Me.BTNCLEAR.TabIndex = 52
+        Me.BTNCLEAR.Text = "Clear"
+        Me.BTNCLEAR.UseVisualStyleBackColor = False
+        '
         'ucSALES
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.SystemColors.Control
+        Me.Controls.Add(Me.BTNCLEAR)
         Me.Controls.Add(Me.DATE2)
         Me.Controls.Add(Me.DATE1)
         Me.Controls.Add(Me.DGVSALES)
@@ -171,8 +171,6 @@ Partial Class ucSALES
         Me.Controls.Add(Me.Label4)
         Me.Name = "ucSALES"
         Me.Size = New System.Drawing.Size(1322, 801)
-        Me.Panel2.ResumeLayout(False)
-        Me.Panel2.PerformLayout()
         CType(Me.DGVSALES, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
@@ -184,8 +182,8 @@ Partial Class ucSALES
     Friend WithEvents Label2 As Label
     Friend WithEvents Panel2 As Panel
     Friend WithEvents DGVSALES As DataGridView
-    Friend WithEvents LBLEXIT As Label
     Friend WithEvents TXTINCOME As TextBox
     Friend WithEvents DATE1 As Guna.UI2.WinForms.Guna2DateTimePicker
     Friend WithEvents DATE2 As Guna.UI2.WinForms.Guna2DateTimePicker
+    Friend WithEvents BTNCLEAR As Button
 End Class

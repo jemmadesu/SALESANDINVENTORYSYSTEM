@@ -27,6 +27,7 @@ Public Class FRMLOGIN
 
 
     Private Sub BTNLOGIN_Click_1(sender As Object, e As EventArgs) Handles BTNLOGIN.Click
+
         OpenCon()
         cmd.CommandText = "Select * from tbl_users where username = '" & TXTUN.Text & "' and password = '" & TXTPW.Text & "' and status = '" & status & "' "
         cmd.ExecuteNonQuery()
@@ -84,102 +85,30 @@ Public Class FRMLOGIN
             dr = cmd.ExecuteReader()
             If dr.HasRows Then
                 Dim res As DialogResult
-                res = MessageBox.Show("you have near-expiry products on your inventory, do you want view products?", "Notice", MessageBoxButtons.OK, MessageBoxIcon.Warning, MessageBoxDefaultButton.Button2)
+                res = MessageBox.Show("you have near-expiry products on your inventory, do you want view products?", "Notice", MessageBoxButtons.YesNo, MessageBoxIcon.Warning, MessageBoxDefaultButton.Button2)
+                If res = DialogResult.Yes Then
+                    FRMNEAREXPIRY.Show()
+                    con.Close()
+                End If
             End If
-            con.Close()
+
 
             '' LOW QTY
-
+            con.Close()
             con.Open()
-                    cmd.CommandText = "select stockid, prodid, prodname, prodman, prodbrand, prodcat, catcode, price, unit, quantity, expirationdate from tbl_products WHERE quantity < 10;"
-                    cmd.Parameters.Clear()
-                    cmd.ExecuteNonQuery()
-                    dr = cmd.ExecuteReader()
-                    If dr.HasRows Then
-                        Dim reslow As DialogResult
-                        reslow = MessageBox.Show("you have out of stocks products on your inventory, do you want view products?", "Notice", MessageBoxButtons.OK, MessageBoxIcon.Warning, MessageBoxDefaultButton.Button2)
-                    End If
-
-                    con.Close()
-
-                    'If res = DialogResult.Yes Then
-
-                    '    Dim i As Integer
-                    '    For i = 0 To 0
-                    '        FRMMAINMENU.PNLMAIN.Controls.RemoveAt(i)
-                    '    Next
-
-                    '    Dim exp As New ucNEAREXPIRY
-                    '    exp.Parent = FRMMAINMENU.PNLMAIN
-                    '    exp.Show()
-                    '    exp.Dock = DockStyle.Fill
-                    '    con.Close()
-
-                    '    Exit Sub
-                    'End If
-
+            cmd.CommandText = "select stockid, prodid, prodname, prodman, prodbrand, prodcat, catcode, price, unit, quantity, expirationdate from tbl_products WHERE quantity < 10;"
+            cmd.Parameters.Clear()
+            cmd.ExecuteNonQuery()
+            dr = cmd.ExecuteReader()
+            If dr.HasRows Then
+                Dim reslow As DialogResult
+                reslow = MessageBox.Show("you have out of stocks products on your inventory, do you want view products?", "Notice", MessageBoxButtons.YesNo, MessageBoxIcon.Warning, MessageBoxDefaultButton.Button2)
+                If reslow = DialogResult.Yes Then
+                    FRMLOWQTY.ShowDialog()
                 End If
-
-        ' NAME 
-
-        'Dim connectionString As String = “Server=localhost;Port=3306;User=root;Password=password;Database=inventory_db”
-        'Dim conn As New MySqlConnection(connectionString)
-
-        'Try
-        '    conn.Open()
-        'Catch ex As Exception
-        '    MessageBox.Show(ex.Message)
-        'End Try
-        'Dim sql As String = "SELECT userid, firstname, middlename, lastname FROM tbl_users WHERE userid = 1"
-        'Dim cmd1 As New MySqlCommand(sql, conn)
-        'Dim reader As MySqlDataReader = cmd1.ExecuteReader()
-
-        'If reader.Read() Then
-        '    Dim firstname As String = reader.GetString("firstname")
-        '    Dim middlename As String = reader.GetString("middlename")
-        '    Dim lastname As String = reader.GetString("lastname")
-
-        '    FRMMAINMENU.FN.Text = firstname
-        '    FRMMAINMENU.MN.Text = middlename
-        '    FRMMAINMENU.LN.Text = lastname
-        'End If
-
-        'reader.Close()
-        'conn.Close()
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-        'Dim dba As New MySqlDataAdapter("select stockid, prodid, prodname, prodman, prodbrand, prodcat, catcode, price, unit, quantity, expirationdate from tbl_products  WHERE expirationdate  < Now();", con)
-        'Dim dbset As New DataSet
-        'dba.Fill(dbset)
-
-        'If dbset.Tables(0).DefaultView.Count > 0 Then
-        '    If MessageBox.Show("Want to check if there is/are stocks that are expired?", "Expired Products", MessageBoxButtons.YesNo, MessageBoxIcon.Question) = DialogResult.Yes Then
-        '        Dim i As Integer
-        '        For i = 0 To 0
-        '            FRMMAINMENU.PNLMAIN.Controls.RemoveAt(i)
-        '        Next
-
-        '        Dim EXPIRED As New ucOBSELETEINVENTORY()
-        '        EXPIRED.Parent = FRMMAINMENU.PNLMAIN
-        '        EXPIRED.Show()
-        '        EXPIRED.Dock = DockStyle.Fill
-
-        '    End If
-
-        'End If
+                con.Close()
+            End If
+        End If
     End Sub
     Private Sub CHKPASS_CheckedChanged(sender As Object, e As EventArgs) Handles CHKPASS.CheckedChanged
         If CHKPASS.Checked = False Then

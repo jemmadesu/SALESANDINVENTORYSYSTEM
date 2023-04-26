@@ -58,7 +58,6 @@ Partial Class ucTRANSACTION
         Me.Label6 = New System.Windows.Forms.Label()
         Me.pnlpayment = New System.Windows.Forms.Panel()
         Me.TOTALBILL = New System.Windows.Forms.TextBox()
-        Me.BTNPRINT = New System.Windows.Forms.Button()
         Me.Panel2 = New System.Windows.Forms.Panel()
         Me.TXTCHANGE = New System.Windows.Forms.TextBox()
         Me.Panel1 = New System.Windows.Forms.Panel()
@@ -433,7 +432,7 @@ Partial Class ucTRANSACTION
         Me.BTNSAVE.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.BTNSAVE.Font = New System.Drawing.Font("Century Gothic", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.BTNSAVE.ForeColor = System.Drawing.SystemColors.Control
-        Me.BTNSAVE.Location = New System.Drawing.Point(183, 213)
+        Me.BTNSAVE.Location = New System.Drawing.Point(308, 213)
         Me.BTNSAVE.Name = "BTNSAVE"
         Me.BTNSAVE.Size = New System.Drawing.Size(100, 29)
         Me.BTNSAVE.TabIndex = 16
@@ -477,7 +476,6 @@ Partial Class ucTRANSACTION
         Me.pnlpayment.BackColor = System.Drawing.SystemColors.Control
         Me.pnlpayment.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.pnlpayment.Controls.Add(Me.TOTALBILL)
-        Me.pnlpayment.Controls.Add(Me.BTNPRINT)
         Me.pnlpayment.Controls.Add(Me.Panel2)
         Me.pnlpayment.Controls.Add(Me.Label9)
         Me.pnlpayment.Controls.Add(Me.Label2)
@@ -505,19 +503,6 @@ Partial Class ucTRANSACTION
         Me.TOTALBILL.Size = New System.Drawing.Size(266, 20)
         Me.TOTALBILL.TabIndex = 70
         Me.TOTALBILL.Text = "0"
-        '
-        'BTNPRINT
-        '
-        Me.BTNPRINT.BackColor = System.Drawing.Color.MediumSeaGreen
-        Me.BTNPRINT.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.BTNPRINT.Font = New System.Drawing.Font("Century Gothic", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.BTNPRINT.ForeColor = System.Drawing.SystemColors.Control
-        Me.BTNPRINT.Location = New System.Drawing.Point(308, 213)
-        Me.BTNPRINT.Name = "BTNPRINT"
-        Me.BTNPRINT.Size = New System.Drawing.Size(100, 29)
-        Me.BTNPRINT.TabIndex = 71
-        Me.BTNPRINT.Text = "Print Invoice"
-        Me.BTNPRINT.UseVisualStyleBackColor = False
         '
         'Panel2
         '
@@ -681,7 +666,7 @@ Partial Class ucTRANSACTION
         'lbldate
         '
         Me.lbldate.AutoSize = True
-        Me.lbldate.Location = New System.Drawing.Point(844, 57)
+        Me.lbldate.Location = New System.Drawing.Point(133, 785)
         Me.lbldate.Name = "lbldate"
         Me.lbldate.Size = New System.Drawing.Size(38, 13)
         Me.lbldate.TabIndex = 76
@@ -692,8 +677,8 @@ Partial Class ucTRANSACTION
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.SystemColors.Control
-        Me.Controls.Add(Me.lbldate)
         Me.Controls.Add(Me.TRANSADATE)
+        Me.Controls.Add(Me.lbldate)
         Me.Controls.Add(Me.BTNDELETE)
         Me.Controls.Add(Me.BTNPAY)
         Me.Controls.Add(Me.DGVPRODUCTS)
@@ -778,6 +763,5 @@ Partial Class ucTRANSACTION
     Friend WithEvents BTNPAY As Button
     Friend WithEvents TOTALBILL As TextBox
     Friend WithEvents TRANSADATE As DateTimePicker
-    Friend WithEvents BTNPRINT As Button
     Friend WithEvents lbldate As Label
 End Class

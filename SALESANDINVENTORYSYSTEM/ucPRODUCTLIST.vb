@@ -1,6 +1,12 @@
 ﻿Imports MySql.Data.MySqlClient
 Public Class ucPRODUCTLIST
 
+    Private Sub searchprod()
+        Dim dba As New MySqlDataAdapter("select stockid, prodid, prodname, prodman, prodbrand, prodcat, catcode  from tbl_products  WHERE  tbl_products.stockid LIKE '%" & Me.TXTSEARCH.Text & "%' OR tbl_products.prodname LIKE '%" & Me.TXTSEARCH.Text & "%' OR tbl_products.prodid LIKE '%" & Me.TXTSEARCH.Text & "%'", con)
+        Dim dbset As New DataSet
+        dba.Fill(dbset)
+        Me.DGVPRODLIST.DataSource = dbset.Tables(0).DefaultView
+    End Sub
     Private Sub DGVSETPROPERTY()
 
 
@@ -148,5 +154,9 @@ Public Class ucPRODUCTLIST
         OUT.Parent = FRMMAINMENU.PNLMAIN
         OUT.Show()
         OUT.Dock = DockStyle.Fill
+    End Sub
+
+    Private Sub TXTSEARCH_TextChanged_1(sender As Object, e As EventArgs) Handles TXTSEARCH.TextChanged
+        searchprod()
     End Sub
 End Class

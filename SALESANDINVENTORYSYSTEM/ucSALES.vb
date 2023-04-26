@@ -70,21 +70,45 @@ Public Class ucSALES
         End Try
     End Sub
     Private Sub BTNGENERATE_Click(sender As Object, e As EventArgs) Handles BTNGENERATE.Click
-        ' Retrieve sales data from data source
+
+
+
+        Dim conn1 As New MySqlConnection(“Server=localhost;Port=3306;User=root;Password=password;Database=inventory_db”)
+        conn1.Open()
+        Dim cmd1 As New MySqlCommand(“Select * from tbl_Sales where transadate between @date1 and @date2”, conn1)
+        cmd1.Parameters.Add("date1”, MySqlDbType.Date).Value = DATE1.Value
+        cmd1.Parameters.Add("date2”, MySqlDbType.Date).Value = DATE2.Value
+        Dim da As New MySqlDataAdapter
+        da.SelectCommand = cmd1
+        Dim dt As New DataTable
+        dt.Clear()
+        da.Fill(dt)
+        DGVSALES.DataSource = dt
+        conn1.Close()
+
+        'Retrieve sales data from data source
         Dim dtSales As New DataTable
         Using conn As New MySqlConnection(“Server=localhost;Port=3306;User=root;Password=password;Database=inventory_db”)
             conn.Open()
             Using cmd As New MySqlCommand("SELECT * FROM tbl_sales", conn)
                 Using adapter As New MySqlDataAdapter(cmd)
+                    'Dim d = cmd.Parameters
+                    'd.Clear()
+                    'd.AddWithValue("date1", DATE1.Value)
                     adapter.Fill(dtSales)
                 End Using
             End Using
         End Using
 
-        ' Filter sales data based on date range selected in date time picker
+
+        'Filter sales data based on date range selected in date time picker
         Dim startDate As Date = DATE1.Value.Date
         Dim endDate As Date = DATE2.Value.Date.AddDays(1).AddSeconds(-1)
         Dim filteredRows() As DataRow = dtSales.Select("transadate >= #" & startDate.ToString("yyyy/MM/dd") & "# AND transadate <= #" & endDate.ToString("yyyy/MM/dd") & "#")
+
+        Dim dt1 As Date = DATE1.Value.ToShortDateString()
+        Console.WriteLine(dt1)
+
 
         ' Calculate total sales for filtered data
         Dim totalbill As Decimal = 0
@@ -94,13 +118,17 @@ Public Class ucSALES
 
         ' Display total sales in a label or textbox
         TXTINCOME.Text = "₱" & totalbill.ToString("N2")
+
+        'Dim startDate As Date = DATE1.Value.Date
+        'Dim endDate As Date = DATE2.Value.Date
+
+    End Sub
+    Private Sub DATE1_FormatChanged(sender As Object, e As EventArgs) Handles DATE1.FormatChanged
+        Format("yyyy/MM/dd")
     End Sub
 
-    Private Sub Panel2_Paint(sender As Object, e As PaintEventArgs) Handles Panel2.Paint
-
-    End Sub
-
-    Private Sub LBLEXIT_Click(sender As Object, e As EventArgs) Handles LBLEXIT.Click
-
+    Private Sub BTNCLEAR_Click(sender As Object, e As EventArgs) Handles BTNCLEAR.Click
+        displayprod()
+        loads()
     End Sub
 End Class

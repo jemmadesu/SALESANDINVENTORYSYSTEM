@@ -11,6 +11,11 @@ Public Class ucTRANSACTION
 
 
     Private Sub ucTRANSACTION_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        con.Close()
+
+
+        '------------------------------------------
+
         lbldate.Text = Format(Date.Now, "yyyy-MM-dd")
 
         TRANSADATE.Format = DateTimePickerFormat.Custom
@@ -32,7 +37,7 @@ Public Class ucTRANSACTION
         longpaper = longpaper + 500
 
     End Sub
-    Private Sub BTNPRINT_Click(sender As Object, e As EventArgs) Handles BTNPRINT.Click
+    Private Sub BTNPRINT_Click(sender As Object, e As EventArgs)
         changelongpaper()
         PPD.Document = PD
         PPD.ShowDialog()
@@ -424,72 +429,75 @@ Public Class ucTRANSACTION
 
         If MessageBox.Show("Finalize Ordering", "Are you sure?", MessageBoxButtons.YesNo, MessageBoxIcon.Information, MessageBoxDefaultButton.Button2) = DialogResult.No Then
             Exit Sub
-
         End If
 
-        activity = "Save purchase order. Order No:" + TXTOR.Text
-        actlog()
+        If MessageBox.Show("Do you want receipt to print?", "Print Receipt", MessageBoxButtons.YesNo, MessageBoxIcon.Information, MessageBoxDefaultButton.Button2) = DialogResult.Yes Then
+            changelongpaper()
+            PPD.Document = PD
+            PPD.ShowDialog()
 
-        Dim x As Integer
-        For x = 0 To DGVCART.Rows.Count - 1
+            activity = "Save purchase order. Order No:" + TXTOR.Text
+            actlog()
 
-            con.Open()
-            cmd.CommandText = "insert into tbl_transaction values (NULL, @or, @dt, @pi, @pn, @pb, @cn, @cc, @un, @qt, @pm, @tb, @ch, @da, @td, @rd)"
+            Dim x As Integer
+            For x = 0 To DGVCART.Rows.Count - 1
 
-
-
-            Console.WriteLine(TRANSADATE.Value)
-            With cmd.Parameters
-
-                .Clear()
-
-
-                .AddWithValue("or", TXTOR.Text)
-
-                .AddWithValue("dt", CBODISCOUNT.Text)
-
-                .AddWithValue("pi", DGVCART.Rows(x).Cells(0).Value.ToString)
-
-                .AddWithValue("pn", DGVCART.Rows(x).Cells(1).Value.ToString)
-
-                .AddWithValue("pb", DGVCART.Rows(x).Cells(2).Value.ToString)
-
-                .AddWithValue("cn", DGVCART.Rows(x).Cells(3).Value.ToString)
-
-                .AddWithValue("cc", DGVCART.Rows(x).Cells(4).Value.ToString)
-
-                .AddWithValue("un", DGVCART.Rows(x).Cells(6).Value.ToString)
-
-                .AddWithValue("qt", DGVCART.Rows(x).Cells(7).Value.ToString)
-
-                .AddWithValue("pm", TXTPAYMENT.Text)
-
-                .AddWithValue("tb", TOTALBILL.Text)
-
-                .AddWithValue("ch", TXTCHANGE.Text)
-
-                .AddWithValue("da", Convert.ToInt32(TXTDISCAMOUNT.Text))
-
-                .AddWithValue("td", TRANSADATE.Value)
-
-                .AddWithValue("rd", DGVCART.Rows(x).Cells(9).Value.ToString)
-
-
-            End With
-            cmd.ExecuteNonQuery()
-            con.Close()
+                con.Open()
+                cmd.CommandText = "insert into tbl_transaction values (NULL, @or, @dt, @pi, @pn, @pb, @cn, @cc, @un, @qt, @pm, @tb, @ch, @da, @td, @rd)"
 
 
 
-            MessageBox.Show("Thank you Very Much", "Thank you", MessageBoxButtons.OK, MessageBoxIcon.Information)
+                Console.WriteLine(TRANSADATE.Value)
+                With cmd.Parameters
 
-            Dim insrtslecmd As New MySqlCommand("INSERT INTO tbl_sales (orderno, transadate, discounttype, totalbill, payment, totalchange) VALUES (" & Me.TXTOR.Text & ",'" & Me.lbldate.Text & "', '" & Me.CBODISCOUNT.Text & "', '" & Me.TXTBILL.Text & "', '" & Me.TXTPAYMENT.Text & "', '" & Me.TXTCHANGE.Text & "')", con)
-            con.Open()
-            insrtslecmd.ExecuteNonQuery()
-            con.Close()
+                    .Clear()
 
 
-        Next
+                    .AddWithValue("or", TXTOR.Text)
+
+                    .AddWithValue("dt", CBODISCOUNT.Text)
+
+                    .AddWithValue("pi", DGVCART.Rows(x).Cells(0).Value.ToString)
+
+                    .AddWithValue("pn", DGVCART.Rows(x).Cells(1).Value.ToString)
+
+                    .AddWithValue("pb", DGVCART.Rows(x).Cells(2).Value.ToString)
+
+                    .AddWithValue("cn", DGVCART.Rows(x).Cells(3).Value.ToString)
+
+                    .AddWithValue("cc", DGVCART.Rows(x).Cells(4).Value.ToString)
+
+                    .AddWithValue("un", DGVCART.Rows(x).Cells(6).Value.ToString)
+
+                    .AddWithValue("qt", DGVCART.Rows(x).Cells(7).Value.ToString)
+
+                    .AddWithValue("pm", TXTPAYMENT.Text)
+
+                    .AddWithValue("tb", TOTALBILL.Text)
+
+                    .AddWithValue("ch", TXTCHANGE.Text)
+
+                    .AddWithValue("da", Convert.ToInt32(TXTDISCAMOUNT.Text))
+
+                    .AddWithValue("td", TRANSADATE.Value)
+
+                    .AddWithValue("rd", DGVCART.Rows(x).Cells(9).Value.ToString)
+
+
+                End With
+                cmd.ExecuteNonQuery()
+                con.Close()
+
+                MessageBox.Show("Thank you Very Much", "Thank you", MessageBoxButtons.OK, MessageBoxIcon.Information)
+
+                Dim insrtslecmd As New MySqlCommand("INSERT INTO tbl_sales (orderno, transadate, discounttype, totalbill, payment, totalchange) VALUES (" & Me.TXTOR.Text & ",'" & Me.lbldate.Text & "', '" & Me.CBODISCOUNT.Text & "', '" & Me.TXTBILL.Text & "', '" & Me.TXTPAYMENT.Text & "', '" & Me.TXTCHANGE.Text & "')", con)
+                con.Open()
+                insrtslecmd.ExecuteNonQuery()
+                con.Close()
+
+
+            Next
+        End If
         Dim dlcmd As New MySqlCommand("DELETE FROM tbl_cart", con)
         con.Open()
         dlcmd.ExecuteNonQuery()

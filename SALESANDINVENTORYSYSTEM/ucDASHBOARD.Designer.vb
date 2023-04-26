@@ -22,12 +22,19 @@ Partial Class ucDASHBOARD
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
+        Me.components = New System.ComponentModel.Container()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(ucDASHBOARD))
         Dim ChartArea1 As System.Windows.Forms.DataVisualization.Charting.ChartArea = New System.Windows.Forms.DataVisualization.Charting.ChartArea()
         Dim Legend1 As System.Windows.Forms.DataVisualization.Charting.Legend = New System.Windows.Forms.DataVisualization.Charting.Legend()
         Dim Series1 As System.Windows.Forms.DataVisualization.Charting.Series = New System.Windows.Forms.DataVisualization.Charting.Series()
-        Me.Panel8 = New System.Windows.Forms.Panel()
+        Dim DataGridViewCellStyle1 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle2 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle3 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Me.Panel7 = New System.Windows.Forms.Panel()
+        Me.Panel8 = New System.Windows.Forms.Panel()
+        Me.LBLYEAR = New System.Windows.Forms.Label()
+        Me.LBLDATE = New System.Windows.Forms.Label()
+        Me.LBLDAY = New System.Windows.Forms.Label()
         Me.Panel6 = New System.Windows.Forms.Panel()
         Me.Panel5 = New System.Windows.Forms.Panel()
         Me.lblsales = New System.Windows.Forms.Label()
@@ -45,7 +52,17 @@ Partial Class ucDASHBOARD
         Me.lblproducts = New System.Windows.Forms.Label()
         Me.pictureBox3 = New System.Windows.Forms.PictureBox()
         Me.Label2 = New System.Windows.Forms.Label()
-        Me.Chart1 = New System.Windows.Forms.DataVisualization.Charting.Chart()
+        Me.CHART = New System.Windows.Forms.DataVisualization.Charting.Chart()
+        Me.Inventory_dbDataSet = New SALESANDINVENTORYSYSTEM.inventory_dbDataSet()
+        Me.Tbl_usersTableAdapter = New SALESANDINVENTORYSYSTEM.inventory_dbDataSetTableAdapters.tbl_usersTableAdapter()
+        Me.TblusersBindingSource = New System.Windows.Forms.BindingSource(Me.components)
+        Me.DGVUSERS = New Guna.UI2.WinForms.Guna2DataGridView()
+        Me.UsernameDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.UsertypeDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.StatusDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Panel1 = New System.Windows.Forms.Panel()
+        Me.LBLMONTH = New System.Windows.Forms.Label()
+        Me.Panel7.SuspendLayout()
         Me.Panel5.SuspendLayout()
         CType(Me.PictureBox5, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.Panel4.SuspendLayout()
@@ -54,22 +71,65 @@ Partial Class ucDASHBOARD
         CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.panel2.SuspendLayout()
         CType(Me.pictureBox3, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.Chart1, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.CHART, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.Inventory_dbDataSet, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.TblusersBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.DGVUSERS, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.Panel1.SuspendLayout()
         Me.SuspendLayout()
-        '
-        'Panel8
-        '
-        Me.Panel8.Location = New System.Drawing.Point(1015, 331)
-        Me.Panel8.Name = "Panel8"
-        Me.Panel8.Size = New System.Drawing.Size(267, 395)
-        Me.Panel8.TabIndex = 42
         '
         'Panel7
         '
+        Me.Panel7.BackColor = System.Drawing.Color.White
+        Me.Panel7.Controls.Add(Me.Panel8)
+        Me.Panel7.Controls.Add(Me.LBLYEAR)
+        Me.Panel7.Controls.Add(Me.LBLDATE)
+        Me.Panel7.Controls.Add(Me.LBLDAY)
         Me.Panel7.Location = New System.Drawing.Point(1015, 75)
         Me.Panel7.Name = "Panel7"
         Me.Panel7.Size = New System.Drawing.Size(267, 228)
         Me.Panel7.TabIndex = 41
+        '
+        'Panel8
+        '
+        Me.Panel8.BackColor = System.Drawing.Color.MediumSeaGreen
+        Me.Panel8.Location = New System.Drawing.Point(0, 218)
+        Me.Panel8.Name = "Panel8"
+        Me.Panel8.Size = New System.Drawing.Size(267, 10)
+        Me.Panel8.TabIndex = 1
+        '
+        'LBLYEAR
+        '
+        Me.LBLYEAR.AutoSize = True
+        Me.LBLYEAR.Font = New System.Drawing.Font("Century Gothic", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.LBLYEAR.ForeColor = System.Drawing.Color.Black
+        Me.LBLYEAR.Location = New System.Drawing.Point(96, 185)
+        Me.LBLYEAR.Name = "LBLYEAR"
+        Me.LBLYEAR.Size = New System.Drawing.Size(47, 21)
+        Me.LBLYEAR.TabIndex = 3
+        Me.LBLYEAR.Text = "Year"
+        '
+        'LBLDATE
+        '
+        Me.LBLDATE.AutoSize = True
+        Me.LBLDATE.Font = New System.Drawing.Font("Century Gothic", 36.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.LBLDATE.ForeColor = System.Drawing.Color.Black
+        Me.LBLDATE.Location = New System.Drawing.Point(62, 106)
+        Me.LBLDATE.Name = "LBLDATE"
+        Me.LBLDATE.Size = New System.Drawing.Size(135, 56)
+        Me.LBLDATE.TabIndex = 2
+        Me.LBLDATE.Text = "Date"
+        '
+        'LBLDAY
+        '
+        Me.LBLDAY.AutoSize = True
+        Me.LBLDAY.Font = New System.Drawing.Font("Century Gothic", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.LBLDAY.ForeColor = System.Drawing.Color.Black
+        Me.LBLDAY.Location = New System.Drawing.Point(106, 63)
+        Me.LBLDAY.Name = "LBLDAY"
+        Me.LBLDAY.Size = New System.Drawing.Size(41, 21)
+        Me.LBLDAY.TabIndex = 1
+        Me.LBLDAY.Text = "Day"
         '
         'Panel6
         '
@@ -80,6 +140,7 @@ Partial Class ucDASHBOARD
         '
         'Panel5
         '
+        Me.Panel5.BackColor = System.Drawing.Color.White
         Me.Panel5.Controls.Add(Me.lblsales)
         Me.Panel5.Controls.Add(Me.PictureBox5)
         Me.Panel5.Controls.Add(Me.Label10)
@@ -125,6 +186,7 @@ Partial Class ucDASHBOARD
         '
         'Panel4
         '
+        Me.Panel4.BackColor = System.Drawing.Color.White
         Me.Panel4.Controls.Add(Me.lblexp)
         Me.Panel4.Controls.Add(Me.PictureBox4)
         Me.Panel4.Controls.Add(Me.Label8)
@@ -170,6 +232,7 @@ Partial Class ucDASHBOARD
         '
         'Panel3
         '
+        Me.Panel3.BackColor = System.Drawing.Color.White
         Me.Panel3.Controls.Add(Me.Label5)
         Me.Panel3.Controls.Add(Me.PictureBox2)
         Me.Panel3.Controls.Add(Me.Label6)
@@ -215,6 +278,7 @@ Partial Class ucDASHBOARD
         '
         'panel2
         '
+        Me.panel2.BackColor = System.Drawing.Color.White
         Me.panel2.Controls.Add(Me.lblproducts)
         Me.panel2.Controls.Add(Me.pictureBox3)
         Me.panel2.Controls.Add(Me.Label2)
@@ -258,38 +322,161 @@ Partial Class ucDASHBOARD
         Me.Label2.TabIndex = 0
         Me.Label2.Text = "Products"
         '
-        'Chart1
+        'CHART
         '
         ChartArea1.Name = "ChartArea1"
-        Me.Chart1.ChartAreas.Add(ChartArea1)
+        Me.CHART.ChartAreas.Add(ChartArea1)
         Legend1.Name = "Legend1"
-        Me.Chart1.Legends.Add(Legend1)
-        Me.Chart1.Location = New System.Drawing.Point(28, 177)
-        Me.Chart1.Name = "Chart1"
-        Me.Chart1.Palette = System.Windows.Forms.DataVisualization.Charting.ChartColorPalette.Grayscale
+        Me.CHART.Legends.Add(Legend1)
+        Me.CHART.Location = New System.Drawing.Point(40, 181)
+        Me.CHART.Name = "CHART"
+        Me.CHART.Palette = System.Windows.Forms.DataVisualization.Charting.ChartColorPalette.SeaGreen
         Series1.ChartArea = "ChartArea1"
         Series1.Legend = "Legend1"
-        Series1.Name = "Total Sales"
-        Me.Chart1.Series.Add(Series1)
-        Me.Chart1.Size = New System.Drawing.Size(965, 300)
-        Me.Chart1.TabIndex = 43
-        Me.Chart1.Text = "Chart1"
+        Series1.Name = "Total Bill"
+        Me.CHART.Series.Add(Series1)
+        Me.CHART.Size = New System.Drawing.Size(953, 265)
+        Me.CHART.TabIndex = 42
+        Me.CHART.Text = "Chart1"
+        '
+        'Inventory_dbDataSet
+        '
+        Me.Inventory_dbDataSet.DataSetName = "inventory_dbDataSet"
+        Me.Inventory_dbDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema
+        '
+        'Tbl_usersTableAdapter
+        '
+        Me.Tbl_usersTableAdapter.ClearBeforeFill = True
+        '
+        'TblusersBindingSource
+        '
+        Me.TblusersBindingSource.DataMember = "tbl_users"
+        Me.TblusersBindingSource.DataSource = Me.Inventory_dbDataSet
+        '
+        'DGVUSERS
+        '
+        Me.DGVUSERS.AllowUserToAddRows = False
+        Me.DGVUSERS.AllowUserToDeleteRows = False
+        DataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(CType(CType(201, Byte), Integer), CType(CType(231, Byte), Integer), CType(CType(203, Byte), Integer))
+        Me.DGVUSERS.AlternatingRowsDefaultCellStyle = DataGridViewCellStyle1
+        Me.DGVUSERS.AutoGenerateColumns = False
+        Me.DGVUSERS.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill
+        Me.DGVUSERS.BackgroundColor = System.Drawing.Color.White
+        Me.DGVUSERS.BorderStyle = System.Windows.Forms.BorderStyle.None
+        Me.DGVUSERS.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal
+        Me.DGVUSERS.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None
+        DataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(CType(CType(76, Byte), Integer), CType(CType(175, Byte), Integer), CType(CType(80, Byte), Integer))
+        DataGridViewCellStyle2.Font = New System.Drawing.Font("Segoe UI", 10.5!)
+        DataGridViewCellStyle2.ForeColor = System.Drawing.Color.White
+        DataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight
+        DataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+        DataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.DGVUSERS.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle2
+        Me.DGVUSERS.ColumnHeadersHeight = 21
+        Me.DGVUSERS.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.UsernameDataGridViewTextBoxColumn, Me.UsertypeDataGridViewTextBoxColumn, Me.StatusDataGridViewTextBoxColumn})
+        Me.DGVUSERS.DataSource = Me.TblusersBindingSource
+        DataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle3.BackColor = System.Drawing.Color.FromArgb(CType(CType(219, Byte), Integer), CType(CType(239, Byte), Integer), CType(CType(220, Byte), Integer))
+        DataGridViewCellStyle3.Font = New System.Drawing.Font("Segoe UI", 10.5!)
+        DataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.ControlDarkDark
+        DataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(CType(CType(135, Byte), Integer), CType(CType(201, Byte), Integer), CType(CType(138, Byte), Integer))
+        DataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.Black
+        DataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
+        Me.DGVUSERS.DefaultCellStyle = DataGridViewCellStyle3
+        Me.DGVUSERS.Enabled = False
+        Me.DGVUSERS.EnableHeadersVisualStyles = False
+        Me.DGVUSERS.GridColor = System.Drawing.Color.FromArgb(CType(CType(199, Byte), Integer), CType(CType(231, Byte), Integer), CType(CType(201, Byte), Integer))
+        Me.DGVUSERS.Location = New System.Drawing.Point(1015, 331)
+        Me.DGVUSERS.Name = "DGVUSERS"
+        Me.DGVUSERS.ReadOnly = True
+        Me.DGVUSERS.RowHeadersVisible = False
+        Me.DGVUSERS.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
+        Me.DGVUSERS.Size = New System.Drawing.Size(267, 395)
+        Me.DGVUSERS.TabIndex = 0
+        Me.DGVUSERS.Theme = Guna.UI2.WinForms.Enums.DataGridViewPresetThemes.Green
+        Me.DGVUSERS.ThemeStyle.AlternatingRowsStyle.BackColor = System.Drawing.Color.FromArgb(CType(CType(201, Byte), Integer), CType(CType(231, Byte), Integer), CType(CType(203, Byte), Integer))
+        Me.DGVUSERS.ThemeStyle.AlternatingRowsStyle.Font = Nothing
+        Me.DGVUSERS.ThemeStyle.AlternatingRowsStyle.ForeColor = System.Drawing.Color.Empty
+        Me.DGVUSERS.ThemeStyle.AlternatingRowsStyle.SelectionBackColor = System.Drawing.Color.Empty
+        Me.DGVUSERS.ThemeStyle.AlternatingRowsStyle.SelectionForeColor = System.Drawing.Color.Empty
+        Me.DGVUSERS.ThemeStyle.BackColor = System.Drawing.Color.White
+        Me.DGVUSERS.ThemeStyle.GridColor = System.Drawing.Color.FromArgb(CType(CType(199, Byte), Integer), CType(CType(231, Byte), Integer), CType(CType(201, Byte), Integer))
+        Me.DGVUSERS.ThemeStyle.HeaderStyle.BackColor = System.Drawing.Color.FromArgb(CType(CType(76, Byte), Integer), CType(CType(175, Byte), Integer), CType(CType(80, Byte), Integer))
+        Me.DGVUSERS.ThemeStyle.HeaderStyle.BorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None
+        Me.DGVUSERS.ThemeStyle.HeaderStyle.Font = New System.Drawing.Font("Segoe UI", 10.5!)
+        Me.DGVUSERS.ThemeStyle.HeaderStyle.ForeColor = System.Drawing.Color.White
+        Me.DGVUSERS.ThemeStyle.HeaderStyle.HeaightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.EnableResizing
+        Me.DGVUSERS.ThemeStyle.HeaderStyle.Height = 21
+        Me.DGVUSERS.ThemeStyle.ReadOnly = True
+        Me.DGVUSERS.ThemeStyle.RowsStyle.BackColor = System.Drawing.Color.FromArgb(CType(CType(219, Byte), Integer), CType(CType(239, Byte), Integer), CType(CType(220, Byte), Integer))
+        Me.DGVUSERS.ThemeStyle.RowsStyle.BorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal
+        Me.DGVUSERS.ThemeStyle.RowsStyle.Font = New System.Drawing.Font("Segoe UI", 10.5!)
+        Me.DGVUSERS.ThemeStyle.RowsStyle.ForeColor = System.Drawing.SystemColors.ControlDarkDark
+        Me.DGVUSERS.ThemeStyle.RowsStyle.Height = 22
+        Me.DGVUSERS.ThemeStyle.RowsStyle.SelectionBackColor = System.Drawing.Color.FromArgb(CType(CType(135, Byte), Integer), CType(CType(201, Byte), Integer), CType(CType(138, Byte), Integer))
+        Me.DGVUSERS.ThemeStyle.RowsStyle.SelectionForeColor = System.Drawing.Color.Black
+        '
+        'UsernameDataGridViewTextBoxColumn
+        '
+        Me.UsernameDataGridViewTextBoxColumn.DataPropertyName = "username"
+        Me.UsernameDataGridViewTextBoxColumn.HeaderText = "username"
+        Me.UsernameDataGridViewTextBoxColumn.Name = "UsernameDataGridViewTextBoxColumn"
+        Me.UsernameDataGridViewTextBoxColumn.ReadOnly = True
+        '
+        'UsertypeDataGridViewTextBoxColumn
+        '
+        Me.UsertypeDataGridViewTextBoxColumn.DataPropertyName = "usertype"
+        Me.UsertypeDataGridViewTextBoxColumn.HeaderText = "usertype"
+        Me.UsertypeDataGridViewTextBoxColumn.Name = "UsertypeDataGridViewTextBoxColumn"
+        Me.UsertypeDataGridViewTextBoxColumn.ReadOnly = True
+        '
+        'StatusDataGridViewTextBoxColumn
+        '
+        Me.StatusDataGridViewTextBoxColumn.DataPropertyName = "status"
+        Me.StatusDataGridViewTextBoxColumn.HeaderText = "status"
+        Me.StatusDataGridViewTextBoxColumn.Name = "StatusDataGridViewTextBoxColumn"
+        Me.StatusDataGridViewTextBoxColumn.ReadOnly = True
+        '
+        'Panel1
+        '
+        Me.Panel1.BackColor = System.Drawing.Color.MediumSeaGreen
+        Me.Panel1.Controls.Add(Me.LBLMONTH)
+        Me.Panel1.Location = New System.Drawing.Point(1015, 75)
+        Me.Panel1.Name = "Panel1"
+        Me.Panel1.Size = New System.Drawing.Size(267, 60)
+        Me.Panel1.TabIndex = 0
+        '
+        'LBLMONTH
+        '
+        Me.LBLMONTH.AutoSize = True
+        Me.LBLMONTH.Font = New System.Drawing.Font("Century Gothic", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.LBLMONTH.ForeColor = System.Drawing.Color.White
+        Me.LBLMONTH.Location = New System.Drawing.Point(96, 22)
+        Me.LBLMONTH.Name = "LBLMONTH"
+        Me.LBLMONTH.Size = New System.Drawing.Size(70, 22)
+        Me.LBLMONTH.TabIndex = 0
+        Me.LBLMONTH.Text = "Month"
         '
         'ucDASHBOARD
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.BackColor = System.Drawing.Color.White
-        Me.Controls.Add(Me.Chart1)
-        Me.Controls.Add(Me.Panel8)
+        Me.BackColor = System.Drawing.Color.WhiteSmoke
+        Me.Controls.Add(Me.Panel1)
+        Me.Controls.Add(Me.CHART)
+        Me.Controls.Add(Me.DGVUSERS)
         Me.Controls.Add(Me.Panel7)
         Me.Controls.Add(Me.Panel6)
         Me.Controls.Add(Me.Panel5)
         Me.Controls.Add(Me.Panel4)
         Me.Controls.Add(Me.Panel3)
         Me.Controls.Add(Me.panel2)
+        Me.ForeColor = System.Drawing.SystemColors.ControlDarkDark
         Me.Name = "ucDASHBOARD"
         Me.Size = New System.Drawing.Size(1322, 801)
+        Me.Panel7.ResumeLayout(False)
+        Me.Panel7.PerformLayout()
         Me.Panel5.ResumeLayout(False)
         Me.Panel5.PerformLayout()
         CType(Me.PictureBox5, System.ComponentModel.ISupportInitialize).EndInit()
@@ -302,12 +489,15 @@ Partial Class ucDASHBOARD
         Me.panel2.ResumeLayout(False)
         Me.panel2.PerformLayout()
         CType(Me.pictureBox3, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.Chart1, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.CHART, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.Inventory_dbDataSet, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.TblusersBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.DGVUSERS, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.Panel1.ResumeLayout(False)
+        Me.Panel1.PerformLayout()
         Me.ResumeLayout(False)
 
     End Sub
-
-    Friend WithEvents Panel8 As Panel
     Friend WithEvents Panel7 As Panel
     Friend WithEvents Panel6 As Panel
     Private WithEvents Panel5 As Panel
@@ -326,5 +516,18 @@ Partial Class ucDASHBOARD
     Private WithEvents lblproducts As Label
     Private WithEvents pictureBox3 As PictureBox
     Private WithEvents Label2 As Label
-    Friend WithEvents Chart1 As DataVisualization.Charting.Chart
+    Friend WithEvents CHART As DataVisualization.Charting.Chart
+    Friend WithEvents Inventory_dbDataSet As inventory_dbDataSet
+    Friend WithEvents Tbl_usersTableAdapter As inventory_dbDataSetTableAdapters.tbl_usersTableAdapter
+    Friend WithEvents TblusersBindingSource As BindingSource
+    Friend WithEvents DGVUSERS As Guna.UI2.WinForms.Guna2DataGridView
+    Friend WithEvents UsernameDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
+    Friend WithEvents UsertypeDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
+    Friend WithEvents StatusDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
+    Friend WithEvents Panel1 As Panel
+    Friend WithEvents LBLMONTH As Label
+    Friend WithEvents LBLDAY As Label
+    Friend WithEvents LBLYEAR As Label
+    Friend WithEvents LBLDATE As Label
+    Friend WithEvents Panel8 As Panel
 End Class

@@ -240,7 +240,7 @@ Partial Class FRMLOGIN
         '
         'BTNCANCEL
         '
-        Me.BTNCANCEL.BackColor = System.Drawing.Color.FromArgb(CType(CType(37, Byte), Integer), CType(CType(46, Byte), Integer), CType(CType(59, Byte), Integer))
+        Me.BTNCANCEL.BackColor = System.Drawing.SystemColors.ControlDark
         Me.BTNCANCEL.Cursor = System.Windows.Forms.Cursors.Hand
         Me.BTNCANCEL.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.BTNCANCEL.Font = New System.Drawing.Font("Century Gothic", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))

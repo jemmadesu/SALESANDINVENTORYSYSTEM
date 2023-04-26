@@ -34,7 +34,7 @@ Partial Class ucSETTINGS
         Me.Guna2ShadowPanel1 = New Guna.UI2.WinForms.Guna2ShadowPanel()
         Me.Label3 = New System.Windows.Forms.Label()
         Me.Label2 = New System.Windows.Forms.Label()
-        Me.Guna2Button1 = New Guna.UI2.WinForms.Guna2Button()
+        Me.BTNRESTORE = New Guna.UI2.WinForms.Guna2Button()
         Me.BTNBACKUP = New Guna.UI2.WinForms.Guna2Button()
         Me.Guna2PictureBox1 = New Guna.UI2.WinForms.Guna2PictureBox()
         Me.Label1 = New System.Windows.Forms.Label()
@@ -184,7 +184,7 @@ Partial Class ucSETTINGS
         Me.Guna2ShadowPanel1.BackColor = System.Drawing.Color.Transparent
         Me.Guna2ShadowPanel1.Controls.Add(Me.Label3)
         Me.Guna2ShadowPanel1.Controls.Add(Me.Label2)
-        Me.Guna2ShadowPanel1.Controls.Add(Me.Guna2Button1)
+        Me.Guna2ShadowPanel1.Controls.Add(Me.BTNRESTORE)
         Me.Guna2ShadowPanel1.Controls.Add(Me.BTNBACKUP)
         Me.Guna2ShadowPanel1.FillColor = System.Drawing.Color.White
         Me.Guna2ShadowPanel1.Location = New System.Drawing.Point(750, 98)
@@ -210,28 +210,28 @@ Partial Class ucSETTINGS
         Me.Label2.Font = New System.Drawing.Font("Century Gothic", 11.25!, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label2.Location = New System.Drawing.Point(64, 304)
         Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(106, 20)
+        Me.Label2.Size = New System.Drawing.Size(164, 20)
         Me.Label2.TabIndex = 49
-        Me.Label2.Text = "Your Backups"
+        Me.Label2.Text = "Your Backup Records"
         '
-        'Guna2Button1
+        'BTNRESTORE
         '
-        Me.Guna2Button1.CheckedState.Parent = Me.Guna2Button1
-        Me.Guna2Button1.CustomImages.Parent = Me.Guna2Button1
-        Me.Guna2Button1.FillColor = System.Drawing.Color.LightGray
-        Me.Guna2Button1.Font = New System.Drawing.Font("Segoe UI", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Guna2Button1.ForeColor = System.Drawing.SystemColors.ControlDarkDark
-        Me.Guna2Button1.HoverState.Parent = Me.Guna2Button1
-        Me.Guna2Button1.Image = Global.SALESANDINVENTORYSYSTEM.My.Resources.Resources.restore
-        Me.Guna2Button1.ImageAlign = System.Windows.Forms.HorizontalAlignment.Right
-        Me.Guna2Button1.ImageSize = New System.Drawing.Size(50, 45)
-        Me.Guna2Button1.Location = New System.Drawing.Point(58, 188)
-        Me.Guna2Button1.Name = "Guna2Button1"
-        Me.Guna2Button1.ShadowDecoration.Parent = Me.Guna2Button1
-        Me.Guna2Button1.Size = New System.Drawing.Size(352, 83)
-        Me.Guna2Button1.TabIndex = 46
-        Me.Guna2Button1.Text = "Restore"
-        Me.Guna2Button1.TextAlign = System.Windows.Forms.HorizontalAlignment.Left
+        Me.BTNRESTORE.CheckedState.Parent = Me.BTNRESTORE
+        Me.BTNRESTORE.CustomImages.Parent = Me.BTNRESTORE
+        Me.BTNRESTORE.FillColor = System.Drawing.Color.LightGray
+        Me.BTNRESTORE.Font = New System.Drawing.Font("Segoe UI", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.BTNRESTORE.ForeColor = System.Drawing.SystemColors.ControlDarkDark
+        Me.BTNRESTORE.HoverState.Parent = Me.BTNRESTORE
+        Me.BTNRESTORE.Image = Global.SALESANDINVENTORYSYSTEM.My.Resources.Resources.restore
+        Me.BTNRESTORE.ImageAlign = System.Windows.Forms.HorizontalAlignment.Right
+        Me.BTNRESTORE.ImageSize = New System.Drawing.Size(50, 45)
+        Me.BTNRESTORE.Location = New System.Drawing.Point(58, 188)
+        Me.BTNRESTORE.Name = "BTNRESTORE"
+        Me.BTNRESTORE.ShadowDecoration.Parent = Me.BTNRESTORE
+        Me.BTNRESTORE.Size = New System.Drawing.Size(352, 83)
+        Me.BTNRESTORE.TabIndex = 46
+        Me.BTNRESTORE.Text = "Restore"
+        Me.BTNRESTORE.TextAlign = System.Windows.Forms.HorizontalAlignment.Left
         '
         'BTNBACKUP
         '
@@ -298,7 +298,7 @@ Partial Class ucSETTINGS
     Friend WithEvents LBLEXIT As Label
     Friend WithEvents BTNBACKUP As Guna.UI2.WinForms.Guna2Button
     Friend WithEvents Guna2ShadowPanel1 As Guna.UI2.WinForms.Guna2ShadowPanel
-    Friend WithEvents Guna2Button1 As Guna.UI2.WinForms.Guna2Button
+    Friend WithEvents BTNRESTORE As Guna.UI2.WinForms.Guna2Button
     Friend WithEvents Guna2PictureBox1 As Guna.UI2.WinForms.Guna2PictureBox
     Friend WithEvents Label3 As Label
     Friend WithEvents Label2 As Label

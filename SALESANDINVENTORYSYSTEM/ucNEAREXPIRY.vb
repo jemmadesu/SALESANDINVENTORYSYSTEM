@@ -50,26 +50,6 @@ Public Class ucNEAREXPIRY
     End Sub
 
     Private Sub DGVEXP_CellFormatting(sender As Object, e As DataGridViewCellFormattingEventArgs)
-
-        'If DGVEXP.Columns(e.ColumnIndex).Name = "remaining_days" Then
-        '    DGVEXP.Columns(e.ColumnIndex).HeaderText = "Remaining Days"
-        '    DGVEXP.Columns(e.ColumnIndex).Width = 150
-
-        'End If
-
-        ' Check if the current column is the column you want to modify
-        If e.ColumnIndex = 5 Then ' Replace 1 with the index of the column you want to modify
-            ' Check if the cell value is a negative number
-            If IsNumeric(e.Value) AndAlso CDbl(e.Value) < 0 Then
-                ' Remove the negative sign and set the cell value to the absolute value of the original number
-                e.Value = Math.Abs(CDbl(e.Value)).ToString()
-                e.FormattingApplied = True
-
-
-            End If
-        End If
-
-
         ' Check if the column index is the one you want to format
         If e.ColumnIndex = 5 Then ' Replace 1 with the actual column index you want to format
             ' Check the cell value and set the background color accordingly
@@ -91,15 +71,4 @@ Public Class ucNEAREXPIRY
         PROD.Show()
         PROD.Dock = DockStyle.Fill
     End Sub
-    'Private Sub searchproducts()
-    '    Dim dba As New MySqlDataAdapter("select stockid, prodname, unit, price, quantity, prodman, expirationdate from tbl_products WHERE tbl_products.prodname LIKE '%" & Me.TXTSEARCH.Text & "%';", con)
-    '    Dim dbset As New DataSet
-    '    dba.Fill(dbset)
-    '    Me.DGVEXP.DataSource = dbset.Tables(0).DefaultView
-
-    'End Sub
-
-    'Private Sub TXTSEARCH_TextChanged(sender As Object, e As EventArgs)
-    '    searchproducts()
-    'End Sub
 End Class

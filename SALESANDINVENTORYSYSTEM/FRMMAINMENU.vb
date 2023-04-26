@@ -1,6 +1,7 @@
 ﻿Imports MySql.Data.MySqlClient
 Public Class FRMMAINMENU
     Private Sub FRMMAINMENU_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+       
 
         If LBLUSERTYPE.Text = "Admin" Then
 
@@ -120,6 +121,30 @@ Public Class FRMMAINMENU
 
     Private Sub BTNLOGOUT_Click_1(sender As Object, e As EventArgs) Handles BTNLOGOUT.Click
 
+        con.Open()
+        cmd.CommandText = "select * from tbl_cart"
+        cmd.Parameters.Clear()
+        cmd.ExecuteNonQuery()
+        dr = cmd.ExecuteReader()
+        If dr.HasRows Then
+            Dim res As DialogResult
+            res = MessageBox.Show("You still have products left on your cart, please remove the items before closing", "Transaction", MessageBoxButtons.YesNo, MessageBoxIcon.Warning, MessageBoxDefaultButton.Button2)
+            If res = DialogResult.Yes Then
+
+                Dim i As Integer
+                For i = 0 To 0
+                    PNLMAIN.Controls.RemoveAt(i)
+                Next
+
+                Dim TRANS As New ucTRANSACTION()
+                TRANS.Parent = PNLMAIN
+                TRANS.Show()
+                TRANS.Dock = DockStyle.Fill
+            End If
+
+            Exit Sub
+
+            End If
         FRMLOGIN.Show()
         Me.Close()
 
@@ -134,7 +159,7 @@ Public Class FRMMAINMENU
         BTNDASHBOARD.BackColor = Color.FromArgb(37, 46, 59)
 
 
-
+        con.Close()
 
     End Sub
     Private Sub BTNINVENTORY_Click(sender As Object, e As EventArgs) Handles BTNINVENTORY.Click
@@ -186,36 +211,14 @@ Public Class FRMMAINMENU
 
 
     Private Sub Timer1_Tick(sender As Object, e As EventArgs) Handles Timer1.Tick
-        TIMEDATE.Text = Date.Now.ToString("MM-dd-yyyy hh:mm:ss tt ")
+        TIMEDATE.Text = Date.Now.ToString("MM-dd-yyyy" & vbCrLf & "hh: mm:ss tt")
     End Sub
 
     Private Sub Button2_Click(sender As Object, e As EventArgs) Handles BTNREPORTS.Click
         FRMREPORTS.ShowDialog()
     End Sub
 
-    Private Sub Button1_Click(sender As Object, e As EventArgs)
-
-    End Sub
-
     Private Sub Panel1_Paint(sender As Object, e As PaintEventArgs) Handles Panel1.Paint
 
     End Sub
-
-    Private Sub LBLUSERNAME_Click(sender As Object, e As EventArgs) Handles LBLUSERNAME.Click
-
-    End Sub
 End Class
-'MsgBox("you have near-expiry products on your inventory, do you want view products?", MessageBoxIcon.Information)
-'If res = DialogResult.Yes Then
-
-'    Dim i As Integer
-'    For i = 0 To 0
-'        PNLMAIN.Controls.RemoveAt(i)
-'    Next
-
-'    Dim exp As New ucNEAREXPIRY
-'    exp.Parent = FRMMAINMENU.PNLMAIN
-'    exp.Show()
-'    exp.Dock = DockStyle.Fill
-
-'End If

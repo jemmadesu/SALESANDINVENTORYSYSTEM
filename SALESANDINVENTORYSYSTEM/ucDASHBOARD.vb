@@ -4,7 +4,34 @@ Public Class ucDASHBOARD
 
     End Sub
 
+    Private Sub DGVSETPROPERTY()
+        'DGVUSERS.Columns(0).Width = 10
+        DGVUSERS.Columns(0).HeaderText = "Username"
+        'DGVUSERS.Columns(1).Width = 10
+        DGVUSERS.Columns(1).HeaderText = "User Type"
+        'DGVUSERS.Columns(2).Width = 10
+        DGVUSERS.Columns(2).HeaderText = "Status"
+
+    End Sub
     Private Sub ucDASHBOARD_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        DGVSETPROPERTY()
+        refreshgrid()
+
+        Dim currentMonth As String = DateTime.Now.ToString("MMMM")
+        LBLMONTH.Text = currentMonth
+
+        Dim currentDay As String = DateTime.Now.ToString("dddd")
+        LBLDAY.Text = currentDay
+
+        Dim currentDate As String = DateTime.Now.ToString("dd")
+        LBLDATE.Text = currentDate
+
+        Dim currentYear As String = DateTime.Now.ToString("yyyy")
+        LBLYEAR.Text = currentYear
+
+        DGVUSERS.DefaultCellStyle.ForeColor = Color.Black
+
+
 
         Dim prod As String
         OpenCon()
@@ -28,29 +55,48 @@ Public Class ucDASHBOARD
         lblexp.Text = exp
         con.Close()
 
-        ' Define the SQL query to retrieve total sales data
-        Dim sqlQuery As String = "SELECT SUM(totalbill) AS TotalSales, MONTH(transadate) AS Month FROM tbl_sales GROUP BY MONTH(transadate)"
 
-        ' Create a new data table to store the results of the SQL query
-        Dim dataTable As New DataTable()
 
-        ' Create a new data adapter to retrieve data from the database
-        Dim dataAdapter As New MySqlDataAdapter(sqlQuery, con)
 
-        ' Fill the data table with the results of the SQL query
-        dataAdapter.Fill(dataTable)
 
-        ' Bind the data table to the chart control and specify the data series and X/Y values
-        chart1.DataSource = dataTable
-        chart1.Series("Total Sales").XValueMember = "Month"
-        chart1.Series("Total Sales").YValueMembers = "TotalSales"
 
-        ' Customize the appearance and behavior of the chart control as desired
-        chart1.ChartAreas(0).AxisX.LabelStyle.Interval = 1
-        chart1.Series("Total Sales").ChartType = DataVisualization.Charting.SeriesChartType.Line
+
+        Dim conn As New MySqlConnection(“Server=localhost;Port=3306;User=root;Password=password;Database=inventory_db”)
+        Dim cmd1 As New MySqlCommand("
+    SELECT 
+        MONTH(transadate) AS Month, 
+        SUM(totalbill) AS TotalBill
+    FROM 
+        tbl_sales 
+    GROUP BY 
+        MONTH(transadate)
+
+", conn)
+        Dim da As New MySqlDataAdapter(cmd1)
+        Dim dt As New DataTable()
+        da.Fill(dt)
+
+
+        CHART.DataSource = dt
+        CHART.Series("Total Bill").XValueMember = "Month"
+        CHART.Series("Total Bill").YValueMembers = "TotalBill"
+        'CHART.Series("Total Bill").ChartType = SeriesChartType.Column
+        CHART.Series("Total Bill").LegendText = "Total Bill"
+
+        CHART.ChartAreas(0).AxisX.Title = "Month"
+        CHART.ChartAreas(0).AxisY.Title = "Total Bill"
+
     End Sub
 
-    Private Sub chart1_Click(sender As Object, e As EventArgs)
+    Private Sub refreshgrid()
+        Me.Tbl_usersTableAdapter.Fill(Me.Inventory_dbDataSet.tbl_users)
+    End Sub
+
+    Private Sub CHART_Click(sender As Object, e As EventArgs) Handles CHART.Click
+
+    End Sub
+
+    Private Sub Label1_Click(sender As Object, e As EventArgs) Handles LBLMONTH.Click
 
 
     End Sub

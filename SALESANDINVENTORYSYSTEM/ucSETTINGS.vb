@@ -96,4 +96,51 @@ Public Class ucSETTINGS
         SUPPLIER.Show()
         SUPPLIER.Dock = DockStyle.Fill
     End Sub
+
+    Private Sub BTNBACKUP_Click(sender As Object, e As EventArgs) Handles BTNBACKUP.Click
+        Dim backup As New SaveFileDialog
+        backup.InitialDirectory = “C:\"
+        backup.Title = "Database Backup”
+        backup.CheckFileExists = False
+        backup.CheckPathExists = False
+        backup.DefaultExt = "sql"
+        backup.Filter = "sql files (*.sql)|*.sql|All files (*.*)|*.*"
+        backup.RestoreDirectory = True
+
+        If backup.ShowDialog = Windows.Forms.DialogResult.OK Then
+            Dim con As MySqlConnection = New MySqlConnection(“Server=localhost;Port=3306;User=root;Password=password;Database=inventory_db;charset=utf8”)
+            Dim cmd As MySqlCommand = New MySqlCommand
+            cmd.Connection = con
+            con.Open()
+            Dim mb As MySqlBackup = New MySqlBackup(cmd)
+            mb.ExportToFile(backup.FileName)
+            con.Close()
+        ElseIf backup.ShowDialog = Windows.Forms.DialogResult.Cancel Then
+            Return
+        End If
+    End Sub
+
+    Private Sub BTNRESTORE_Click(sender As Object, e As EventArgs) Handles BTNRESTORE.Click
+        Dim restore As New OpenFileDialog
+        restore.InitialDirectory = "C:\"
+        restore.Title = "Restore Database”
+        restore.CheckFileExists = False
+        restore.CheckPathExists = False
+        restore.DefaultExt = “sql”
+        restore.Filter = "sql files (*.sql)|*.sql|All files (*.*)|*.*"
+        restore.RestoreDirectory = True
+
+        If restore.ShowDialog = Windows.Forms.DialogResult.OK Then
+            Dim con As MySqlConnection = New MySqlConnection(“Server=localhost;Port=3306;User=root;Password=password;Database=restore_db;charset=utf8”)
+            Dim cmd As MySqlCommand = New MySqlCommand
+            cmd.Connection = con
+            con.Open()
+            Dim restoreDB As MySqlBackup = New MySqlBackup(cmd)
+            restoreDB.ImportFromFile(restore.FileName)
+            con.Close()
+
+            MessageBox.Show("Successfully restored the database”, "Notice", MessageBoxButtons.OK, MessageBoxIcon.Information)
+        End If
+
+    End Sub
 End Class

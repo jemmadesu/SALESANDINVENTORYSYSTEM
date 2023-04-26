@@ -323,7 +323,6 @@ Public Class ucNEWPRODUCT
     End Sub
     Private Sub TXTSEARCH_TextChanged(sender As Object, e As EventArgs) Handles TXTSEARCH.TextChanged
         searchproducts()
-
     End Sub
 
 
