@@ -21,17 +21,21 @@ Public Class ucPUTINTOINVENTORY
     Private Sub DGVSETPROPERTY()
 
 
-        '--------------------------------------------------------------- CODE FOR COLUMN HEADER NAME (NOT WORKING) -----------------------------------------
+        '--------------------------------------------------------------- CODE FOR COLUMN HEADER NAME (PRODUCT) -----------------------------------------
         DGVPRODUCTS.Columns(0).Width = 200
-        DGVPRODUCTS.Columns(0).HeaderText = "Stock ID"
+        DGVPRODUCTS.Columns(0).HeaderText = "Product ID"
         DGVPRODUCTS.Columns(1).Width = 200
-        DGVPRODUCTS.Columns(1).HeaderText = "Product ID"
+        DGVPRODUCTS.Columns(1).HeaderText = "Product Name"
         DGVPRODUCTS.Columns(2).Width = 200
-        DGVPRODUCTS.Columns(2).HeaderText = "Product Name"
+        DGVPRODUCTS.Columns(2).HeaderText = "Manufacturer"
         DGVPRODUCTS.Columns(3).Width = 200
-        DGVPRODUCTS.Columns(3).HeaderText = "Product Manufacturer"
+        DGVPRODUCTS.Columns(3).HeaderText = "Brand"
         DGVPRODUCTS.Columns(4).Width = 200
-        DGVPRODUCTS.Columns(4).HeaderText = "Product Brand"
+        DGVPRODUCTS.Columns(4).HeaderText = "Category"
+        DGVPRODUCTS.Columns(5).Width = 200
+        DGVPRODUCTS.Columns(5).HeaderText = "Category Code"
+
+
 
     End Sub
 
@@ -43,11 +47,11 @@ Public Class ucPUTINTOINVENTORY
         DGVMAIN.Columns(2).Width = 200
         DGVMAIN.Columns(2).HeaderText = "Product Name"
         DGVMAIN.Columns(3).Width = 200
-        DGVMAIN.Columns(3).HeaderText = "Product Manufacturer"
+        DGVMAIN.Columns(3).HeaderText = "Manufacturer"
         DGVMAIN.Columns(4).Width = 200
-        DGVMAIN.Columns(4).HeaderText = "Product Brand"
+        DGVMAIN.Columns(4).HeaderText = "Brand"
         DGVMAIN.Columns(5).Width = 200
-        DGVMAIN.Columns(5).HeaderText = "Category Name"
+        DGVMAIN.Columns(5).HeaderText = "Category"
         DGVMAIN.Columns(6).Width = 200
         DGVMAIN.Columns(6).HeaderText = "Category Code"
         DGVMAIN.Columns(7).Width = 200
@@ -69,7 +73,7 @@ Public Class ucPUTINTOINVENTORY
         ' ------------------------------------------------------------ FOR DISPLAYING THE COLUMN HEADER (PRODUCTS) -------------------------------------------------
         Try
 
-            Dim da As New MySqlDataAdapter("select stockid, prodid, prodname, prodman, prodbrand from tbl_products ", con)
+            Dim da As New MySqlDataAdapter("select prodid, prodname, prodman, prodbrand, prodcat, catcode from tbl_products ", con)
             Dim dt As New DataSet()
             da.Fill(dt)
             DGVPRODUCTS.DataSource = dt.Tables(0)
@@ -87,7 +91,7 @@ Public Class ucPUTINTOINVENTORY
     Private Sub LOADDATAMAIN()
         Try
 
-            Dim da As New MySqlDataAdapter("select stockid, prodid, prodname, prodman, prodbrand, prodcat, catcode, price, unit, quantity, expirationdate from tbl_products ", con)
+            Dim da As New MySqlDataAdapter("select stockid, prodid, prodname, prodman, prodbrand, prodcat, catcode, price, unit, quantity, expirationdate from tbl_stocks", con)
             Dim dt As New DataSet()
             da.Fill(dt)
             DGVMAIN.DataSource = dt.Tables(0)
@@ -109,7 +113,7 @@ Public Class ucPUTINTOINVENTORY
 
         Try
 
-            Dim da As New MySqlDataAdapter("select stockid, prodid, prodname, prodman, prodbrand from tbl_products ", con)
+            Dim da As New MySqlDataAdapter("select prodid, prodname, prodman, prodbrand, prodcat, catcode from tbl_products ", con)
             Dim dt As New DataSet()
             da.Fill(dt)
             DGVPRODUCTS.DataSource = dt.Tables(0)
@@ -122,97 +126,25 @@ Public Class ucPUTINTOINVENTORY
 
 
         End Try
-
-
-        Try
-
-            Dim da As New MySqlDataAdapter("select stockid, prodid, prodname, prodman, prodbrand, prodcat, catcode, price, unit, quantity, expirationdate from tbl_products ", con)
-            Dim dt As New DataSet()
-            da.Fill(dt)
-            DGVMAIN.DataSource = dt.Tables(0)
-
-
-        Catch ex As Exception
-
-            MessageBox.Show(ex.ToString())
-
-
-
-        End Try
     End Sub
-
-
-
-    'Private Sub Getmax()
-
-    '    ' ---------------------------------------------------------------- FOR AUTO INCREMENT (STOCK ID) -----------------------------------------
-    '    OpenCon()
-    '    cmd.CommandText = "Select * from tbl_products"
-    '    dr = cmd.ExecuteReader
-    '    If dr.HasRows Then
-    '        Dim getno As Integer
-    '        con.Close()
-    '        OpenCon()
-    '        cmd.CommandText = "Select Max(stockid) from tbl_products"
-    '        getno = Convert.ToInt64(cmd.ExecuteScalar())
-    '        con.Close()
-
-    '        TXTSI.Text = getno + 1
-
-    '        con.Close()
-    '    End If
-    'End Sub
     Private Sub ucPUTINTOINVENTORY_Load(sender As Object, e As EventArgs) Handles MyBase.Load
 
 
 
         ' -------------------------------------------------------- FOR GETTING DATA TABLE TO DATA GRID "PRODUCTS" (MAIN FORM) -------------------------------------------------
 
-        Try
-
-            Dim da As New MySqlDataAdapter("select stockid, prodid, prodname, prodman, prodbrand from tbl_products ", con)
-            Dim dt As New DataSet()
-            da.Fill(dt)
-            DGVPRODUCTS.DataSource = dt.Tables(0)
-
-            DGVSETPROPERTY()
-        Catch ex As Exception
-
-            MessageBox.Show(ex.ToString())
-
-
-
-        End Try
+        LOADDATAPROD()
 
         DTPED.Format = DateTimePickerFormat.Custom
         DTPED.CustomFormat = "   "
 
         ' -------------------------------------------------------- FOR GETTING DATA TABLE TO DATA GRID "WHOLE" (MAIN FORM) -------------------------------------------------
 
-        Try
 
-            Dim da As New MySqlDataAdapter("select stockid, prodid, prodname, prodman, prodbrand, prodcat, catcode, price, unit, quantity, expirationdate from tbl_products where price <> '' ", con)
-            Dim dt As New DataSet()
-            da.Fill(dt)
-            DGVMAIN.DataSource = dt.Tables(0)
-
-            DGVMAINSET()
-        Catch ex As Exception
-
-            MessageBox.Show(ex.ToString())
-
-
-
-        End Try
-
-
-
+        LOADDATAMAIN()
 
 
     End Sub
-
-
-
     Private Sub DTPED_ValueChanged(sender As Object, e As EventArgs) Handles DTPED.ValueChanged
         DTPED.CustomFormat = "yyy/dd/MM"
     End Sub
@@ -245,9 +177,8 @@ Public Class ucPUTINTOINVENTORY
 
             row = DGVPRODUCTS.Rows(e.RowIndex)
 
-            TXTSI.Text = row.Cells(0).Value
-            TXTPI.Text = row.Cells(1).Value
-            TXTPNA.Text = row.Cells(2).Value
+            TXTPI.Text = row.Cells(0).Value
+            TXTPNA.Text = row.Cells(1).Value
 
 
         End If
@@ -312,20 +243,21 @@ Public Class ucPUTINTOINVENTORY
 
         con.Close()
         txtmix.Text = TXTUNIT.Text + " " + CBOUNIT.Text
-        con.Open()
-        cmd.CommandText = "Update tbl_products set prodid=@pi, price=@pr, unit=@un, quantity=@qt, expirationdate=@ed, dateaddedstocks=@da where prodid= @pi"
 
-        With cmd.Parameters
-            .Clear()
-            .AddWithValue("pi", TXTPI.Text)
-            .AddWithValue("pr", TXTPRICE.Text)
-            .AddWithValue("un", txtmix.Text)
-            .AddWithValue("qt", NUDQUANTITY.Text)
-            .AddWithValue("ed", DTPED.Value)
-            .AddWithValue("da", DTPAS.Value)
-        End With
+        'Dim x As Integer
+        'For x = 0 To DGVPRODUCTS.Rows.Count - 1
+
+
+        cmd.CommandText = "INSERT INTO tbl_stocks (prodid, prodname, prodman, prodbrand, prodcat, catcode, price, unit, quantity, expirationdate, dateaddedstocks) " &
+                  "VALUES (" & Me.TXTPI.Text & ", '" & Me.TXTPNA.Text & "', '" & Me.DGVPRODUCTS.CurrentRow.Cells(2).Value & "', '" & Me.DGVPRODUCTS.CurrentRow.Cells(3).Value & "', '" & Me.DGVPRODUCTS.CurrentRow.Cells(4).Value & "', '" & Me.DGVPRODUCTS.CurrentRow.Cells(5).Value & "', " & Me.TXTPRICE.Text & ", '" & Me.txtmix.Text & "', " & Me.NUDQUANTITY.Value & ", '" & Me.DTPED.Value.ToString("yyyy-MM-dd") & "', '" & Me.DTPAS.Value.ToString("yyyy-MM-dd HH:mm:ss") & "')"
+        con.Open()
         cmd.ExecuteNonQuery()
         con.Close()
+
+
+
+        MessageBox.Show("Thank you Very Much", "Thank you", MessageBoxButtons.OK, MessageBoxIcon.Information)
+
         MsgBox("New product has been added into inventory!", vbOKOnly + vbInformation, "Added New Stock")
         activity = "Added new product into inventory. Product Name: " + TXTPNA.Text
         actlog()
@@ -341,6 +273,10 @@ Public Class ucPUTINTOINVENTORY
     End Sub
 
     Private Sub GroupBox2_Enter(sender As Object, e As EventArgs) Handles GroupBox2.Enter
+
+    End Sub
+
+    Private Sub GroupBox1_Enter(sender As Object, e As EventArgs) Handles GroupBox1.Enter
 
     End Sub
 End Class

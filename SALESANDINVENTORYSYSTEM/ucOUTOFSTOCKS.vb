@@ -42,7 +42,7 @@ Public Class ucOUTOFSTOCKS
 
 
             con.Open()
-            command = New MySqlCommand("select stockid, prodid, prodname, prodman, prodbrand, prodcat, catcode, price, unit, quantity, expirationdate from tbl_products  WHERE quantity = 0;", con)
+            command = New MySqlCommand("select stockid, prodid, prodname, prodman, prodbrand, prodcat, catcode, price, unit, quantity, expirationdate from tbl_stocks  WHERE quantity = 0;", con)
             dataadapt.SelectCommand = command
             dataadapt.Fill(dataset)
             bindindsrc.DataSource = dataset

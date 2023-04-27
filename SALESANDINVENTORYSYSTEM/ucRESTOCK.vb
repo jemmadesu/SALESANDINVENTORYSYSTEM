@@ -40,7 +40,7 @@ Public Class ucRESTOCK
     End Sub
 
     Private Sub searchproducts()
-        Dim dba As New MySqlDataAdapter("select stockid, prodname, unit, price, quantity, prodman, expirationdate from tbl_products WHERE tbl_products.prodname LIKE '%" & Me.TXTSEARCH.Text & "%';", con)
+        Dim dba As New MySqlDataAdapter("select stockid, prodname, unit, price, quantity, prodman, expirationdate from tbl_stocks WHERE tbl_stocks.prodname LIKE '%" & Me.TXTSEARCH.Text & "%';", con)
         Dim dbset As New DataSet
         dba.Fill(dbset)
         Me.DGVMAIN.DataSource = dbset.Tables(0).DefaultView
@@ -50,7 +50,7 @@ Public Class ucRESTOCK
 
         Try
 
-            Dim da As New MySqlDataAdapter("select stockid, prodname, unit, price, quantity, prodman, expirationdate from tbl_products ", con)
+            Dim da As New MySqlDataAdapter("select stockid, prodname, unit, price, quantity, prodman, expirationdate from tbl_stocks ", con)
             Dim dt As New DataSet()
             da.Fill(dt)
             DGVMAIN.DataSource = dt.Tables(0)
@@ -69,7 +69,7 @@ Public Class ucRESTOCK
 
         Try
 
-            Dim da As New MySqlDataAdapter("select stockid, prodname, unit, price, quantity, prodman, expirationdate from tbl_products where price <> '' ", con)
+            Dim da As New MySqlDataAdapter("select stockid, prodname, unit, price, quantity, prodman, expirationdate from tbl_Stocks ", con)
             Dim dt As New DataSet()
             da.Fill(dt)
             DGVMAIN.DataSource = dt.Tables(0)
@@ -82,50 +82,6 @@ Public Class ucRESTOCK
 
 
         End Try
-
-
-
-
-        'For Each row As DataGridViewRow In DGVMAIN.Rows
-        '    Dim isRowEmpty As Boolean = True
-
-        '    For Each cell As DataGridViewCell In row.Cells
-        '        If Not String.IsNullOrEmpty(cell.Value) Then
-        '            isRowEmpty = False
-        '            Exit For
-        '        End If
-        '    Next
-
-        '    row.Visible = Not isRowEmpty
-        'Next
-
-
-
-
-
-        'Dim connString As String = “Server=localhost;Port=3306;User=root;Password=password;Database=inventory_db”
-        'Dim conn As New MySqlConnection(connString)
-        'Dim query As String = "SELECT select stockid, prodname, unit, price, quantity, prodman, expirationdate WHERE quantity IS NOT NULL AND quantity <> '';"
-        'Dim dat As New MySqlDataAdapter(query, conn)
-        'Dim ds As New DataSet()
-        'dat.Fill(ds, "tbl_products")
-
-        'DGVMAIN.DataSource = ds.Tables("tbl_products")
-
-
-        'For Each col As DataGridViewColumn In DGVMAIN.Columns
-        '    If col.HeaderText = "quantity" Then
-        '        col.Visible = False
-        '    End If
-        'Next
-
-        'For Each row As DataGridViewRow In DGVMAIN.Rows
-        '    Dim ageValue As String = Convert.ToString(row.Cells("quantity").Value)
-        '    If String.IsNullOrEmpty(ageValue) Then
-        '        row.Cells("quantity").Style.ForeColor = Color.White
-        '        row.Cells("quantity").Style.BackColor = Color.Red
-        '    End If
-        'Next
 
 
     End Sub
@@ -159,7 +115,7 @@ Public Class ucRESTOCK
 
         con.Close()
         con.Open()
-        cmd.CommandText = "Update tbl_products set quantity=@qt where stockid= @si"
+        cmd.CommandText = "Update tbl_stocks set quantity=@qt where stockid= @si"
 
 
 

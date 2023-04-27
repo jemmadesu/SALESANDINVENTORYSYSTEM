@@ -47,7 +47,7 @@ Partial Class ucDASHBOARD
         Me.PictureBox4 = New System.Windows.Forms.PictureBox()
         Me.Label8 = New System.Windows.Forms.Label()
         Me.Panel3 = New System.Windows.Forms.Panel()
-        Me.Label5 = New System.Windows.Forms.Label()
+        Me.lblouofstock = New System.Windows.Forms.Label()
         Me.PictureBox2 = New System.Windows.Forms.PictureBox()
         Me.Label6 = New System.Windows.Forms.Label()
         Me.panel2 = New System.Windows.Forms.Panel()
@@ -230,7 +230,7 @@ Partial Class ucDASHBOARD
         'Panel3
         '
         Me.Panel3.BackColor = System.Drawing.Color.White
-        Me.Panel3.Controls.Add(Me.Label5)
+        Me.Panel3.Controls.Add(Me.lblouofstock)
         Me.Panel3.Controls.Add(Me.PictureBox2)
         Me.Panel3.Controls.Add(Me.Label6)
         Me.Panel3.Location = New System.Drawing.Point(278, 78)
@@ -238,16 +238,16 @@ Partial Class ucDASHBOARD
         Me.Panel3.Size = New System.Drawing.Size(232, 81)
         Me.Panel3.TabIndex = 36
         '
-        'Label5
+        'lblouofstock
         '
-        Me.Label5.AutoSize = True
-        Me.Label5.Font = New System.Drawing.Font("Century Gothic", 15.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label5.ForeColor = System.Drawing.SystemColors.ControlDarkDark
-        Me.Label5.Location = New System.Drawing.Point(82, 40)
-        Me.Label5.Name = "Label5"
-        Me.Label5.Size = New System.Drawing.Size(24, 25)
-        Me.Label5.TabIndex = 22
-        Me.Label5.Text = "0"
+        Me.lblouofstock.AutoSize = True
+        Me.lblouofstock.Font = New System.Drawing.Font("Century Gothic", 15.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblouofstock.ForeColor = System.Drawing.SystemColors.ControlDarkDark
+        Me.lblouofstock.Location = New System.Drawing.Point(82, 40)
+        Me.lblouofstock.Name = "lblouofstock"
+        Me.lblouofstock.Size = New System.Drawing.Size(24, 25)
+        Me.lblouofstock.TabIndex = 22
+        Me.lblouofstock.Text = "0"
         '
         'PictureBox2
         '
@@ -269,9 +269,9 @@ Partial Class ucDASHBOARD
         Me.Label6.ForeColor = System.Drawing.SystemColors.ControlDarkDark
         Me.Label6.Location = New System.Drawing.Point(82, 8)
         Me.Label6.Name = "Label6"
-        Me.Label6.Size = New System.Drawing.Size(118, 21)
+        Me.Label6.Size = New System.Drawing.Size(111, 21)
         Me.Label6.TabIndex = 0
-        Me.Label6.Text = "New Products"
+        Me.Label6.Text = "Out of stocks"
         '
         'panel2
         '
@@ -466,8 +466,9 @@ Partial Class ucDASHBOARD
         Me.Chart1.Palette = System.Windows.Forms.DataVisualization.Charting.ChartColorPalette.SeaGreen
         Series2.ChartArea = "ChartArea1"
         Series2.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Pie
+        Series2.LabelForeColor = System.Drawing.Color.White
         Series2.Legend = "Legend1"
-        Series2.Name = "Series1"
+        Series2.Name = "Sales"
         Series2.XValueMember = "Year"
         Series2.YValueMembers = "TotalBill"
         Me.Chart1.Series.Add(Series2)
@@ -526,7 +527,7 @@ Partial Class ucDASHBOARD
     Private WithEvents PictureBox4 As PictureBox
     Private WithEvents Label8 As Label
     Private WithEvents Panel3 As Panel
-    Private WithEvents Label5 As Label
+    Private WithEvents lblouofstock As Label
     Private WithEvents PictureBox2 As PictureBox
     Private WithEvents Label6 As Label
     Private WithEvents panel2 As Panel

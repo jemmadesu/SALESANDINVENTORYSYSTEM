@@ -10,7 +10,7 @@ Public Class ucTRANSACTION
 
 
     Private Sub search()
-        Dim dba As New MySqlDataAdapter("select prodid, prodname, prodbrand, prodcat, catcode, price, unit, quantity from tbl_products WHERE tbl_products.prodname LIKE '%" & Me.TXTSEARCH.Text & "%';", con)
+        Dim dba As New MySqlDataAdapter("select prodid, prodname, prodbrand, prodcat, catcode, price, unit, quantity from tbl_stocks WHERE tbl_stocks.prodname LIKE '%" & Me.TXTSEARCH.Text & "%';", con)
         Dim dbset As New DataSet
         dba.Fill(dbset)
         Me.DGVPRODUCTS.DataSource = dbset.Tables(0).DefaultView
@@ -215,7 +215,7 @@ Public Class ucTRANSACTION
 
         Try
 
-            Dim da As New MySqlDataAdapter("select prodid, prodname, prodbrand, prodcat, catcode, price, unit, quantity from tbl_products where price <> '' ", con)
+            Dim da As New MySqlDataAdapter("select prodid, prodname, prodbrand, prodcat, catcode, price, unit, quantity from tbl_stocks", con)
             Dim dt As New DataSet()
             da.Fill(dt)
             Me.DGVPRODUCTS.DataSource = dt.Tables(0).DefaultView
@@ -335,7 +335,7 @@ Public Class ucTRANSACTION
         Dim quantityToSubtract = NumericUpDown1.Value
 
         ' Construct the SQL query using parameterized queries
-        Dim sql = "UPDATE tbl_products SET quantity = quantity - @quantityToSubtract WHERE prodid = @prodId"
+        Dim sql = "UPDATE tbl_stocks SET quantity = quantity - @quantityToSubtract WHERE prodid = @prodId"
 
         ' Create the MySqlCommand and add the parameters
         Dim command As New MySqlCommand(sql, con)
@@ -349,14 +349,6 @@ Public Class ucTRANSACTION
 
         ' Refresh the DataGridView to show the updated data
         showproducts()
-
-
-
-        'Dim Update As New MySqlCommand("UPDATE tbl_products SET quantity=" & Me.DGVPRODUCTS.CurrentRow.Cells(7).Value - Me.NumericUpDown1.Value & " WHERE prodid=" & Me.DGVPRODUCTS.CurrentRow.Cells(0).Value & ";", con)
-        'con.Open()
-        'Update.ExecuteNonQuery()
-        'con.Close()
-        'showproducts()
 
         ' ---------------------------------------------------------------------------- SAVING CODE FOR TBL_CART ----------------------------------------------------
 
@@ -439,7 +431,6 @@ Public Class ucTRANSACTION
 
                 Console.WriteLine(TRANSADATE.Value)
                 With cmd.Parameters
-
                     .Clear()
 
 
@@ -585,7 +576,7 @@ Public Class ucTRANSACTION
         Dim cartRow = DGVCART.CurrentRow
 
         ' Construct the SQL query using parameterized queries
-        Dim sql = "UPDATE tbl_products SET Quantity = Quantity + @quantityToAdd WHERE prodid = @prodId"
+        Dim sql = "UPDATE tbl_stocks SET Quantity = Quantity + @quantityToAdd WHERE prodid = @prodId"
 
         ' Loop through each row in the products DataGridView
         For Each productRow As DataGridViewRow In DGVPRODUCTS.Rows
@@ -610,15 +601,6 @@ Public Class ucTRANSACTION
         ' Refresh the DataGridViews to show the updated data
         showproducts()
         showcart()
-
-
-        'For x As Integer = 0 To Me.DGVPRODUCTS.RowCount - 1
-        '    Dim upcmd As New MySqlCommand("UPDATE tbl_products SET Quantity=" & Me.DGVCART.CurrentRow.Cells(7).Value + Me.DGVPRODUCTS.Rows(x).Cells(7).Value & " WHERE prodid=" & Me.DGVPRODUCTS.Rows(x).Cells(0).Value & ";", con)
-        '    con.Open()
-        '    upcmd.ExecuteNonQuery()
-        '    con.Close()
-
-        'Next
 
         For i As Integer = 0 To DGVCART.SelectedRows.Count - 1
             Dim cmd As New MySqlCommand("delete from tbl_cart where prodid = @pi ", con)
@@ -670,23 +652,9 @@ Public Class ucTRANSACTION
         Format("yyyy-mm-dd")
         'Format(TRANSADATE.Value, "yyyy-mm-dd")
     End Sub
-
-    Private Sub DateTimePicker1_ValueChanged(sender As Object, e As EventArgs)
-
-    End Sub
-
-    Private Sub DateTimePicker1_ValueChanged_1(sender As Object, e As EventArgs)
-
-    End Sub
-
     Private Sub TXTPRICE_TextChanged(sender As Object, e As EventArgs) Handles TXTSEARCH.TextChanged
         search()
     End Sub
-
-    Private Sub DGVPRODUCTS_CellContentClick(sender As Object, e As DataGridViewCellEventArgs) Handles DGVPRODUCTS.CellContentClick
-
-    End Sub
-
     Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
         changelongpaper()
         PPD.Document = PD

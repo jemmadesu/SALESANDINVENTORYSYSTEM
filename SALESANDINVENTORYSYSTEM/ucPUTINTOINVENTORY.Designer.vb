@@ -29,8 +29,6 @@ Partial Class ucPUTINTOINVENTORY
         Me.TextBox4 = New System.Windows.Forms.TextBox()
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
         Me.BTNSAVE = New System.Windows.Forms.Button()
-        Me.Label9 = New System.Windows.Forms.Label()
-        Me.TXTSI = New System.Windows.Forms.TextBox()
         Me.TXTPNA = New System.Windows.Forms.TextBox()
         Me.Label7 = New System.Windows.Forms.Label()
         Me.TXTPI = New System.Windows.Forms.TextBox()
@@ -114,8 +112,6 @@ Partial Class ucPUTINTOINVENTORY
         '
         Me.GroupBox1.BackColor = System.Drawing.SystemColors.ScrollBar
         Me.GroupBox1.Controls.Add(Me.BTNSAVE)
-        Me.GroupBox1.Controls.Add(Me.Label9)
-        Me.GroupBox1.Controls.Add(Me.TXTSI)
         Me.GroupBox1.Controls.Add(Me.TXTPNA)
         Me.GroupBox1.Controls.Add(Me.Label7)
         Me.GroupBox1.Controls.Add(Me.TXTPI)
@@ -149,33 +145,12 @@ Partial Class ucPUTINTOINVENTORY
         Me.BTNSAVE.Text = "Save"
         Me.BTNSAVE.UseVisualStyleBackColor = False
         '
-        'Label9
-        '
-        Me.Label9.AutoSize = True
-        Me.Label9.Font = New System.Drawing.Font("Century Gothic", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label9.ForeColor = System.Drawing.SystemColors.ControlDarkDark
-        Me.Label9.Location = New System.Drawing.Point(13, 24)
-        Me.Label9.Name = "Label9"
-        Me.Label9.Size = New System.Drawing.Size(81, 20)
-        Me.Label9.TabIndex = 22
-        Me.Label9.Text = "Stock ID : "
-        '
-        'TXTSI
-        '
-        Me.TXTSI.Enabled = False
-        Me.TXTSI.Font = New System.Drawing.Font("Century Gothic", 9.75!)
-        Me.TXTSI.ForeColor = System.Drawing.SystemColors.ControlDarkDark
-        Me.TXTSI.Location = New System.Drawing.Point(146, 21)
-        Me.TXTSI.Name = "TXTSI"
-        Me.TXTSI.Size = New System.Drawing.Size(152, 23)
-        Me.TXTSI.TabIndex = 19
-        '
         'TXTPNA
         '
         Me.TXTPNA.Enabled = False
         Me.TXTPNA.Font = New System.Drawing.Font("Century Gothic", 9.75!)
         Me.TXTPNA.ForeColor = System.Drawing.SystemColors.ControlDarkDark
-        Me.TXTPNA.Location = New System.Drawing.Point(146, 100)
+        Me.TXTPNA.Location = New System.Drawing.Point(152, 78)
         Me.TXTPNA.Name = "TXTPNA"
         Me.TXTPNA.Size = New System.Drawing.Size(153, 23)
         Me.TXTPNA.TabIndex = 18
@@ -185,7 +160,7 @@ Partial Class ucPUTINTOINVENTORY
         Me.Label7.AutoSize = True
         Me.Label7.Font = New System.Drawing.Font("Century Gothic", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label7.ForeColor = System.Drawing.SystemColors.ControlDarkDark
-        Me.Label7.Location = New System.Drawing.Point(13, 103)
+        Me.Label7.Location = New System.Drawing.Point(19, 81)
         Me.Label7.Name = "Label7"
         Me.Label7.Size = New System.Drawing.Size(127, 20)
         Me.Label7.TabIndex = 17
@@ -196,7 +171,7 @@ Partial Class ucPUTINTOINVENTORY
         Me.TXTPI.Enabled = False
         Me.TXTPI.Font = New System.Drawing.Font("Century Gothic", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.TXTPI.ForeColor = System.Drawing.SystemColors.ControlDarkDark
-        Me.TXTPI.Location = New System.Drawing.Point(146, 60)
+        Me.TXTPI.Location = New System.Drawing.Point(152, 38)
         Me.TXTPI.Name = "TXTPI"
         Me.TXTPI.Size = New System.Drawing.Size(153, 23)
         Me.TXTPI.TabIndex = 16
@@ -206,7 +181,7 @@ Partial Class ucPUTINTOINVENTORY
         Me.Label6.AutoSize = True
         Me.Label6.Font = New System.Drawing.Font("Century Gothic", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label6.ForeColor = System.Drawing.SystemColors.ControlDarkDark
-        Me.Label6.Location = New System.Drawing.Point(13, 63)
+        Me.Label6.Location = New System.Drawing.Point(19, 41)
         Me.Label6.Name = "Label6"
         Me.Label6.Size = New System.Drawing.Size(99, 20)
         Me.Label6.TabIndex = 15
@@ -218,7 +193,7 @@ Partial Class ucPUTINTOINVENTORY
         Me.CBOUNIT.ForeColor = System.Drawing.SystemColors.ControlDarkDark
         Me.CBOUNIT.FormattingEnabled = True
         Me.CBOUNIT.Items.AddRange(New Object() {"gram/s", "miligram/s", "liter/s", "mililiter/s", "Pack/s", "Sachet/s", "Bottle/s", "Piece/s", "Boxe/s"})
-        Me.CBOUNIT.Location = New System.Drawing.Point(205, 142)
+        Me.CBOUNIT.Location = New System.Drawing.Point(211, 120)
         Me.CBOUNIT.Name = "CBOUNIT"
         Me.CBOUNIT.Size = New System.Drawing.Size(94, 25)
         Me.CBOUNIT.TabIndex = 11
@@ -227,7 +202,7 @@ Partial Class ucPUTINTOINVENTORY
         '
         Me.TXTUNIT.Font = New System.Drawing.Font("Century Gothic", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.TXTUNIT.ForeColor = System.Drawing.SystemColors.ControlDarkDark
-        Me.TXTUNIT.Location = New System.Drawing.Point(146, 144)
+        Me.TXTUNIT.Location = New System.Drawing.Point(152, 122)
         Me.TXTUNIT.Name = "TXTUNIT"
         Me.TXTUNIT.Size = New System.Drawing.Size(53, 23)
         Me.TXTUNIT.TabIndex = 10
@@ -237,7 +212,7 @@ Partial Class ucPUTINTOINVENTORY
         Me.Label4.AutoSize = True
         Me.Label4.Font = New System.Drawing.Font("Century Gothic", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label4.ForeColor = System.Drawing.SystemColors.ControlDarkDark
-        Me.Label4.Location = New System.Drawing.Point(13, 144)
+        Me.Label4.Location = New System.Drawing.Point(19, 122)
         Me.Label4.Name = "Label4"
         Me.Label4.Size = New System.Drawing.Size(73, 20)
         Me.Label4.TabIndex = 9
@@ -247,7 +222,7 @@ Partial Class ucPUTINTOINVENTORY
         '
         Me.DTPED.Font = New System.Drawing.Font("Century Gothic", 9.75!)
         Me.DTPED.Format = System.Windows.Forms.DateTimePickerFormat.[Short]
-        Me.DTPED.Location = New System.Drawing.Point(148, 275)
+        Me.DTPED.Location = New System.Drawing.Point(154, 253)
         Me.DTPED.Name = "DTPED"
         Me.DTPED.Size = New System.Drawing.Size(152, 23)
         Me.DTPED.TabIndex = 8
@@ -257,7 +232,7 @@ Partial Class ucPUTINTOINVENTORY
         Me.Label3.AutoSize = True
         Me.Label3.Font = New System.Drawing.Font("Century Gothic", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label3.ForeColor = System.Drawing.SystemColors.ControlDarkDark
-        Me.Label3.Location = New System.Drawing.Point(13, 275)
+        Me.Label3.Location = New System.Drawing.Point(19, 253)
         Me.Label3.Name = "Label3"
         Me.Label3.Size = New System.Drawing.Size(127, 20)
         Me.Label3.TabIndex = 7
@@ -267,7 +242,7 @@ Partial Class ucPUTINTOINVENTORY
         '
         Me.NUDQUANTITY.Font = New System.Drawing.Font("Century Gothic", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.NUDQUANTITY.ForeColor = System.Drawing.SystemColors.ControlDarkDark
-        Me.NUDQUANTITY.Location = New System.Drawing.Point(147, 232)
+        Me.NUDQUANTITY.Location = New System.Drawing.Point(153, 210)
         Me.NUDQUANTITY.Name = "NUDQUANTITY"
         Me.NUDQUANTITY.Size = New System.Drawing.Size(153, 23)
         Me.NUDQUANTITY.TabIndex = 6
@@ -276,7 +251,7 @@ Partial Class ucPUTINTOINVENTORY
         '
         Me.TXTPRICE.Font = New System.Drawing.Font("Century Gothic", 9.75!)
         Me.TXTPRICE.ForeColor = System.Drawing.SystemColors.ControlDarkDark
-        Me.TXTPRICE.Location = New System.Drawing.Point(146, 186)
+        Me.TXTPRICE.Location = New System.Drawing.Point(152, 164)
         Me.TXTPRICE.Name = "TXTPRICE"
         Me.TXTPRICE.Size = New System.Drawing.Size(153, 23)
         Me.TXTPRICE.TabIndex = 5
@@ -286,7 +261,7 @@ Partial Class ucPUTINTOINVENTORY
         Me.Label2.AutoSize = True
         Me.Label2.Font = New System.Drawing.Font("Century Gothic", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label2.ForeColor = System.Drawing.SystemColors.ControlDarkDark
-        Me.Label2.Location = New System.Drawing.Point(13, 189)
+        Me.Label2.Location = New System.Drawing.Point(19, 167)
         Me.Label2.Name = "Label2"
         Me.Label2.Size = New System.Drawing.Size(58, 20)
         Me.Label2.TabIndex = 4
@@ -297,7 +272,7 @@ Partial Class ucPUTINTOINVENTORY
         Me.Label1.AutoSize = True
         Me.Label1.Font = New System.Drawing.Font("Century Gothic", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label1.ForeColor = System.Drawing.SystemColors.ControlDarkDark
-        Me.Label1.Location = New System.Drawing.Point(13, 235)
+        Me.Label1.Location = New System.Drawing.Point(19, 213)
         Me.Label1.Name = "Label1"
         Me.Label1.Size = New System.Drawing.Size(67, 20)
         Me.Label1.TabIndex = 3
@@ -451,8 +426,6 @@ Partial Class ucPUTINTOINVENTORY
     Friend WithEvents Label6 As Label
     Friend WithEvents TXTDA As TextBox
     Friend WithEvents DTPAS As DateTimePicker
-    Friend WithEvents Label9 As Label
-    Friend WithEvents TXTSI As TextBox
     Friend WithEvents DGVPRODUCTS As DataGridView
     Friend WithEvents DGVMAIN As DataGridView
     Friend WithEvents Panel2 As Panel

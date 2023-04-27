@@ -29,7 +29,7 @@ Public Class ucNEAREXPIRY
         Try
 
             con.Open()
-            command = New MySqlCommand("SELECT prodid, prodname, unit, quantity, expirationdate, DATEDIFF(expirationdate, NOW()) AS Remaining_Days FROM tbl_products WHERE expirationdate > CURDATE() AND expirationdate <= DATE_ADD(CURDATE(), interval 10 day);", con)
+            command = New MySqlCommand("SELECT prodid, prodname, unit, quantity, expirationdate, DATEDIFF(expirationdate, NOW()) AS Remaining_Days FROM tbl_stocks WHERE expirationdate > CURDATE() AND expirationdate <= DATE_ADD(CURDATE(), interval 10 day);", con)
 
             dataadapt.SelectCommand = command
             dataadapt.Fill(dataset)

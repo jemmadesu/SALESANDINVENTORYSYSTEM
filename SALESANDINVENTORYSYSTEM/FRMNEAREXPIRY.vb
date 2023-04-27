@@ -18,7 +18,7 @@ Public Class FRMNEAREXPIRY
         con.Close()
         Try
 
-            Dim da As New MySqlDataAdapter("SELECT prodid, prodname, unit, quantity, expirationdate, DATEDIFF(expirationdate, NOW()) AS Remaining_Days FROM tbl_products WHERE expirationdate > CURDATE() AND expirationdate <= DATE_ADD(CURDATE(), interval 10 day);", con)
+            Dim da As New MySqlDataAdapter("SELECT prodid, prodname, unit, quantity, expirationdate, DATEDIFF(expirationdate, NOW()) AS Remaining_Days FROM tbl_stocks WHERE expirationdate > CURDATE() AND expirationdate <= DATE_ADD(CURDATE(), interval 10 day);", con)
             Dim dt As New DataSet()
             da.Fill(dt)
             DGVEXP.DataSource = dt.Tables(0)

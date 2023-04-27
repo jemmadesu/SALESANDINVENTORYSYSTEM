@@ -54,6 +54,13 @@ Public Class ucDASHBOARD
         lblexp.Text = exp
         con.Close()
 
+        Dim out As String
+        OpenCon()
+        cmd.CommandText = "select stockid, prodid, prodname, prodman, prodbrand, prodcat, catcode, price, unit, quantity, expirationdate from tbl_stocks  WHERE quantity = 0;"
+        out = cmd.ExecuteScalar()
+        lblouofstock.Text = out
+        con.Close()
+
 
 
 
@@ -84,66 +91,21 @@ Public Class ucDASHBOARD
         CHART.ChartAreas(0).AxisX.Title = "Month"
         CHART.ChartAreas(0).AxisY.Title = "Total Bill"
 
+        'PIE
 
-        ' PIE CHART
+        Dim sql As String = "SELECT YEAR(transadate) AS salesyear, SUM(totalbill) AS salesamount FROM tbl_sales GROUP BY YEAR(transadate)"
+        Dim adapter As New MySqlDataAdapter(sql, con)
+        Dim table As New DataTable()
+        adapter.Fill(table)
 
-        '' Create a connection to the MySQL database
-        'Dim connectionString As String = "Server=myServerAddress;Database=myDatabase;Uid=myUsername;Pwd=myPassword;"
-        'Dim connection As New MySqlConnection(connectionString)
-
-        '' Create a SQL query to retrieve the total bill and yearly sales data
-        'Dim query As String = "SELECT SUM(totalbill) as TotalBill, YEAR(transadate) as SaleYear, SUM(totalsales) as TotalSales FROM tbl_Sales GROUP BY SaleYear"
-
-        '' Create a command object and execute the query
-        'Dim command As New MySqlCommand(query, connection)
-        'connection.Open()
-        'Dim reader As MySqlDataReader = command.ExecuteReader()
-
-        '' Create a new chart control
-        'Dim chart1 As New Chart()
-
-        '' Set up the chart area and legend
-        'chart1.ChartAreas.Add(New ChartArea())
-        'chart1.Legends.Add(New Legend("Legend"))
-        'chart1.Legends("Legend").Docking = Docking.Bottom
-
-        '' Set up the series data
-        'Dim series1 As New Series()
-        'series1.ChartType = SeriesChartType.Pie
-        'series1.IsValueShownAsLabel = True
-        'series1.Legend = "Legend"
-
-        'While reader.Read()
-        '    Dim year As Integer = reader.GetInt32("SaleYear")
-        '    Dim sales As Decimal = reader.GetDecimal("TotalSales")
-        '    Dim bill As Decimal = reader.GetDecimal("TotalBill")
-
-        '    ' Add the data point to the series with the year, total bill, and yearly sales data
-        '    Dim dp As New DataPoint()
-        '    dp.SetValueXY(year, sales)
-        '    dp.LegendText = year.ToString()
-        '    dp.Label = String.Format("{0}: {1:C2} ({2:C2})", year, bill, sales)
-        '    series1.Points.Add(dp)
-        'End While
-
-        '' Set the chart title
-        'chart1.Titles.Add("Yearly Sales")
-
-        '' Bind the series to the chart control
-        'chart1.Series.Add(series1)
-
-        '' Add the chart control to your form's controls collection
-        'Me.Controls.Add(chart1)
-
-        '' Close the database connection and reader
-        'reader.Close()
-        'connection.Close()
-
+        For Each row As DataRow In table.Rows
+            chart1.Series("Sales").Points.AddXY(row("salesyear").ToString(), row("salesamount"))
+        Next
 
 
 
         ' Set the chart type to column chart
-        Chart1.Series(0).ChartType = DataVisualization.Charting.SeriesChartType.Pie
+        chart1.Series(0).ChartType = DataVisualization.Charting.SeriesChartType.Pie
 
 
 

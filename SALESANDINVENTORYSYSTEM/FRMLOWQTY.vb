@@ -29,7 +29,7 @@ Public Class FRMLOWQTY
         con.Close()
         Try
 
-            Dim da As New MySqlDataAdapter("select stockid, prodid, prodname, prodman, prodbrand, prodcat, catcode, price, unit, quantity, expirationdate from tbl_products WHERE quantity < 10;", con)
+            Dim da As New MySqlDataAdapter("select stockid, prodid, prodname, prodman, prodbrand, prodcat, catcode, price, unit, quantity, expirationdate from tbl_stocks WHERE quantity < 10;", con)
             Dim dt As New DataSet()
             da.Fill(dt)
             DGVLOWQTY.DataSource = dt.Tables(0)

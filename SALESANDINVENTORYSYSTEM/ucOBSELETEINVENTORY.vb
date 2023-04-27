@@ -42,7 +42,7 @@ Public Class ucOBSELETEINVENTORY
 
 
             con.Open()
-            command = New MySqlCommand("select stockid, prodid, prodname, prodman, prodbrand, prodcat, catcode, price, unit, quantity, expirationdate from tbl_products  WHERE expirationdate  < Now();", con)
+            command = New MySqlCommand("select stockid, prodid, prodname, prodman, prodbrand, prodcat, catcode, price, unit, quantity, expirationdate from tbl_stocks  WHERE expirationdate  < Now();", con)
 
             dataadapt.SelectCommand = command
             dataadapt.Fill(dataset)

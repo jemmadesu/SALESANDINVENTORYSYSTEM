@@ -79,7 +79,7 @@ Public Class FRMLOGIN
 
             ' ' NOTIF FOR NEAR_EXPIRY
             con.Open()
-            cmd.CommandText = "select prodid, prodname, unit, quantity, expirationdate, datediff(expirationdate, now()) as remaining_days from tbl_products where expirationdate > curdate() and expirationdate <= date_add(curdate(), interval 10 day);"
+            cmd.CommandText = "select prodid, prodname, unit, quantity, expirationdate, datediff(expirationdate, now()) as remaining_days from tbl_stocks where expirationdate > curdate() and expirationdate <= date_add(curdate(), interval 10 day);"
             cmd.Parameters.Clear()
             cmd.ExecuteNonQuery()
             dr = cmd.ExecuteReader()
@@ -96,7 +96,7 @@ Public Class FRMLOGIN
             '' LOW QTY
             con.Close()
             con.Open()
-            cmd.CommandText = "select stockid, prodid, prodname, prodman, prodbrand, prodcat, catcode, price, unit, quantity, expirationdate from tbl_products WHERE quantity < 10;"
+            cmd.CommandText = "select stockid, prodid, prodname, prodman, prodbrand, prodcat, catcode, price, unit, quantity, expirationdate from tbl_Stocks WHERE quantity < 10;"
             cmd.Parameters.Clear()
             cmd.ExecuteNonQuery()
             dr = cmd.ExecuteReader()
