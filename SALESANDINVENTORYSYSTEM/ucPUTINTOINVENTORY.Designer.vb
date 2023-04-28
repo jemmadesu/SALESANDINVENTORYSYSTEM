@@ -51,6 +51,7 @@ Partial Class ucPUTINTOINVENTORY
         Me.TXTSEARCH = New System.Windows.Forms.TextBox()
         Me.Panel2 = New System.Windows.Forms.Panel()
         Me.BTNBACK = New System.Windows.Forms.Button()
+        Me.TXTSAM = New System.Windows.Forms.TextBox()
         Me.GroupBox4.SuspendLayout()
         CType(Me.DGVMAIN, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.GroupBox1.SuspendLayout()
@@ -375,11 +376,20 @@ Partial Class ucPUTINTOINVENTORY
         Me.BTNBACK.Text = " Back"
         Me.BTNBACK.UseVisualStyleBackColor = False
         '
+        'TXTSAM
+        '
+        Me.TXTSAM.Location = New System.Drawing.Point(1000, 783)
+        Me.TXTSAM.Name = "TXTSAM"
+        Me.TXTSAM.Size = New System.Drawing.Size(100, 20)
+        Me.TXTSAM.TabIndex = 45
+        Me.TXTSAM.Visible = False
+        '
         'ucPUTINTOINVENTORY
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.SystemColors.Control
+        Me.Controls.Add(Me.TXTSAM)
         Me.Controls.Add(Me.Panel2)
         Me.Controls.Add(Me.TextBox1)
         Me.Controls.Add(Me.GroupBox4)
@@ -433,4 +443,5 @@ Partial Class ucPUTINTOINVENTORY
     Friend WithEvents BTNBACK As Button
     Friend WithEvents BTNDELETE As Button
     Friend WithEvents BTNSAVE As Button
+    Friend WithEvents TXTSAM As TextBox
 End Class

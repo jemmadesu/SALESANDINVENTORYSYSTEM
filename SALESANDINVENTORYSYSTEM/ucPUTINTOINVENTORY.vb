@@ -184,7 +184,7 @@ Public Class ucPUTINTOINVENTORY
         End If
 
         Function_Enable()
-        'Getmax()
+
     End Sub
 
 
@@ -216,7 +216,7 @@ Public Class ucPUTINTOINVENTORY
 
     Private Sub BTNDELETE_Click_1(sender As Object, e As EventArgs) Handles BTNDELETE.Click
         For i As Integer = 0 To DGVMAIN.SelectedRows.Count - 1
-            Dim cmd As New MySqlCommand("delete from tbl_products where stockid = @si ", con)
+            Dim cmd As New MySqlCommand("delete from tbl_stocks where stockid = @si ", con)
             cmd.Parameters.AddWithValue("si", DGVMAIN.SelectedRows(i).Cells(0).Value.ToString())
             con.Open()
             cmd.ExecuteNonQuery()
@@ -231,22 +231,42 @@ Public Class ucPUTINTOINVENTORY
 
     Private Sub BTNSAVE_Click_1(sender As Object, e As EventArgs) Handles BTNSAVE.Click
 
+        ' ------------------------------------------------------------- ERROR TRAPPING -------------------------------------------------------------------
 
-        ' ------------------------------------------------------------- SAVING CODE -------------------------------------------------------------------
+        If TXTPI.Text <> TXTSAM.Text Then
+            OpenCon()
+            cmd.CommandText = "Select * from tbl_stocks where prodid = '" & TXTPI.Text & "'"
+            dr = cmd.ExecuteReader()
+            If dr.HasRows Then
+                MsgBox("Product is already added on the stocks", vbOKOnly + vbCritical, "Error Saving")
+                con.Close()
+                TXTPI.Text = ""
+                TXTPNA.Text = ""
+                TXTUNIT.Text = ""
+                CBOUNIT.Text = ""
+                TXTPRICE.Text = ""
+                NUDQUANTITY.Value = 0
+                txtmix.Text = ""
+
+                Exit Sub
+            End If
+            con.Close()
+        End If
 
         If NUDQUANTITY.Text = "" Or TXTPRICE.Text = "" Or TXTUNIT.Text = "" Or CBOUNIT.Text = "" Then
-            MsgBox("All fields are required!", vbOKOnly + vbCritical, "Error Saving")
+            MsgBox("All fields are required!", vbOKOnly + vbCritical, "Notice")
             TXTPRICE.Focus()
         End If
 
-        'save code - tbl_bookstock (insert into)
+        If NUDQUANTITY.Value = 0 Then
+            MsgBox("The quantity is 0", vbOKOnly + vbCritical, "Notice")
+        End If
 
         con.Close()
         txtmix.Text = TXTUNIT.Text + " " + CBOUNIT.Text
 
-        'Dim x As Integer
-        'For x = 0 To DGVPRODUCTS.Rows.Count - 1
 
+        ' ----------------------------------------------------   SAVING CODE  --------------------------------------------------------------------------
 
         cmd.CommandText = "INSERT INTO tbl_stocks (prodid, prodname, prodman, prodbrand, prodcat, catcode, price, unit, quantity, expirationdate, dateaddedstocks) " &
                   "VALUES (" & Me.TXTPI.Text & ", '" & Me.TXTPNA.Text & "', '" & Me.DGVPRODUCTS.CurrentRow.Cells(2).Value & "', '" & Me.DGVPRODUCTS.CurrentRow.Cells(3).Value & "', '" & Me.DGVPRODUCTS.CurrentRow.Cells(4).Value & "', '" & Me.DGVPRODUCTS.CurrentRow.Cells(5).Value & "', " & Me.TXTPRICE.Text & ", '" & Me.txtmix.Text & "', " & Me.NUDQUANTITY.Value & ", '" & Me.DTPED.Value.ToString("yyyy-MM-dd") & "', '" & Me.DTPAS.Value.ToString("yyyy-MM-dd HH:mm:ss") & "')"
@@ -261,22 +281,36 @@ Public Class ucPUTINTOINVENTORY
         MsgBox("New product has been added into inventory!", vbOKOnly + vbInformation, "Added New Stock")
         activity = "Added new product into inventory. Product Name: " + TXTPNA.Text
         actlog()
-        NUDQUANTITY.Text = ""
-        TXTPRICE.Text = ""
-        DTPED.Text = ""
-        txtmix.Text = ""
-        CBOUNIT.Text = ""
+
+        TXTPI.Text = ""
+        TXTPNA.Text = ""
         TXTUNIT.Text = ""
+        CBOUNIT.Text = ""
+        TXTPRICE.Text = ""
+        NUDQUANTITY.Value = 0
+        txtmix.Text = ""
 
         LOADDATAPROD()
         LOADDATAMAIN()
     End Sub
+    Private Sub searchprod()
 
-    Private Sub GroupBox2_Enter(sender As Object, e As EventArgs) Handles GroupBox2.Enter
-
+        Dim dba As New MySqlDataAdapter("select prodid, prodname, prodman, prodbrand, prodcat, catcode  from tbl_products  WHERE tbl_products.prodname LIKE '%" & Me.TXTSEARCH.Text & "%' OR tbl_products.prodid LIKE '%" & Me.TXTSEARCH.Text & "%'", con)
+        Dim dbset As New DataSet
+        dba.Fill(dbset)
+        Me.DGVPRODUCTS.DataSource = dbset.Tables(0).DefaultView
     End Sub
+    Private Sub TXTSEARCH_TextChanged(sender As Object, e As EventArgs) Handles TXTSEARCH.TextChanged
+        searchprod()
+    End Sub
+    Private Sub search()
 
-    Private Sub GroupBox1_Enter(sender As Object, e As EventArgs) Handles GroupBox1.Enter
-
+        Dim dba As New MySqlDataAdapter("select prodid, prodname, prodman, prodbrand, prodcat, catcode  from tbl_stocks  WHERE tbl_stocks.prodname LIKE '%" & Me.TextBox4.Text & "%' OR tbl_stocks.prodid LIKE '%" & Me.TextBox4.Text & "%'", con)
+        Dim dbset As New DataSet
+        dba.Fill(dbset)
+        Me.DGVPRODUCTS.DataSource = dbset.Tables(0).DefaultView
+    End Sub
+    Private Sub TextBox4_TextChanged(sender As Object, e As EventArgs) Handles TextBox4.TextChanged
+        search()
     End Sub
 End Class

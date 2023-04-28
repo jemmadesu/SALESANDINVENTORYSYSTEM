@@ -40,10 +40,11 @@ Public Class ucRESTOCK
     End Sub
 
     Private Sub searchproducts()
-        Dim dba As New MySqlDataAdapter("select stockid, prodname, unit, price, quantity, prodman, expirationdate from tbl_stocks WHERE tbl_stocks.prodname LIKE '%" & Me.TXTSEARCH.Text & "%';", con)
+        Dim dba As New MySqlDataAdapter("select prodid, prodname, prodman, prodbrand, prodcat, catcode  from tbl_products  WHERE tbl_products.prodname LIKE '%" & Me.TXTSEARCH.Text & "%' OR tbl_products.prodid LIKE '%" & Me.TXTSEARCH.Text & "%'", con)
         Dim dbset As New DataSet
         dba.Fill(dbset)
         Me.DGVMAIN.DataSource = dbset.Tables(0).DefaultView
+
 
     End Sub
     Private Sub LOADDATA()

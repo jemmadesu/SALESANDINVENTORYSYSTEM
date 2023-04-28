@@ -197,9 +197,9 @@ Partial Class ucSETTINGS
         Me.Label2.ForeColor = System.Drawing.Color.MediumSeaGreen
         Me.Label2.Location = New System.Drawing.Point(64, 304)
         Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(140, 20)
+        Me.Label2.Size = New System.Drawing.Size(129, 20)
         Me.Label2.TabIndex = 49
-        Me.Label2.Text = "Restored Backups"
+        Me.Label2.Text = "Backup Records"
         '
         'BTNRESTORE
         '

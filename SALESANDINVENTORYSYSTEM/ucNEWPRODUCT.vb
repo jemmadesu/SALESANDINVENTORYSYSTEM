@@ -93,10 +93,11 @@ Public Class ucNEWPRODUCT
     End Sub
 
     Private Sub searchproducts()
-        Dim dba As New MySqlDataAdapter("select stockid, prodid, prodname, prodman, prodbrand, prodcat, catcode  from tbl_products  WHERE  tbl_products.stockid LIKE '%" & Me.TXTSEARCH.Text & "%' OR tbl_products.prodname LIKE '%" & Me.TXTSEARCH.Text & "%' OR tbl_products.prodid LIKE '%" & Me.TXTSEARCH.Text & "%'", con)
+        Dim dba As New MySqlDataAdapter("select prodid, prodname, prodman, prodbrand, prodcat, catcode  from tbl_products  WHERE tbl_products.prodname LIKE '%" & Me.TXTSEARCH.Text & "%' OR tbl_products.prodid LIKE '%" & Me.TXTSEARCH.Text & "%'", con)
         Dim dbset As New DataSet
         dba.Fill(dbset)
         Me.DGVPRODUCTS.DataSource = dbset.Tables(0).DefaultView
+
     End Sub
 
 
