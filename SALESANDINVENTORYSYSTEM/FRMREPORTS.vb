@@ -1,6 +1,11 @@
 ﻿Imports MySql.Data.MySqlClient
 Public Class FRMREPORTS
     Private Sub FRMREPORTS_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        'TODO: This line of code loads data into the 'inventory_dbDataSet.tbl_stocks' table. You can move, or remove it, as needed.
+        Me.RPTSTOCKS.SetDisplayMode(Microsoft.Reporting.WinForms.DisplayMode.PrintLayout)
+        Me.tbl_stocksTableAdapter.Fill(Me.inventory_dbDataSet.tbl_stocks)
+
+        Me.RPTSTOCKS.RefreshReport()
         'TODO: This line of code loads data into the 'inventory_dbDataSet.tbl_actlog' table. You can move, or remove it, as needed.
         Me.RPTACTLOG.SetDisplayMode(Microsoft.Reporting.WinForms.DisplayMode.PrintLayout)
         Me.tbl_actlogTableAdapter.Fill(Me.inventory_dbDataSet.tbl_actlog)
@@ -123,5 +128,17 @@ Public Class FRMREPORTS
 
     Private Sub BTNCLOSE_Click(sender As Object, e As EventArgs) Handles BTNCLOSE.Click
         Me.Close()
+    End Sub
+
+    Private Sub STOCKSFILL_Click(sender As Object, e As EventArgs) Handles STOCKSFILL.Click
+        Me.tbl_stocksTableAdapter.FillByADD(Me.inventory_dbDataSet.tbl_stocks, Date1SALES.Value.ToShortDateString, Date2SALES.Value.ToShortDateString)
+
+        Me.RPTSALES.RefreshReport()
+    End Sub
+
+    Private Sub STOCKCLR_Click(sender As Object, e As EventArgs) Handles STOCKCLR.Click
+        Me.tbl_stocksTableAdapter.Fill(Me.inventory_dbDataSet.tbl_stocks)
+
+        Me.RPTSTOCKS.RefreshReport()
     End Sub
 End Class

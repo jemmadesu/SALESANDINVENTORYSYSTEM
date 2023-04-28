@@ -23,13 +23,14 @@ Partial Class FRMREPORTS
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
-        Dim ReportDataSource1 As Microsoft.Reporting.WinForms.ReportDataSource = New Microsoft.Reporting.WinForms.ReportDataSource()
-        Dim ReportDataSource2 As Microsoft.Reporting.WinForms.ReportDataSource = New Microsoft.Reporting.WinForms.ReportDataSource()
-        Dim ReportDataSource3 As Microsoft.Reporting.WinForms.ReportDataSource = New Microsoft.Reporting.WinForms.ReportDataSource()
-        Dim ReportDataSource4 As Microsoft.Reporting.WinForms.ReportDataSource = New Microsoft.Reporting.WinForms.ReportDataSource()
-        Dim ReportDataSource5 As Microsoft.Reporting.WinForms.ReportDataSource = New Microsoft.Reporting.WinForms.ReportDataSource()
-        Dim ReportDataSource6 As Microsoft.Reporting.WinForms.ReportDataSource = New Microsoft.Reporting.WinForms.ReportDataSource()
-        Dim ReportDataSource7 As Microsoft.Reporting.WinForms.ReportDataSource = New Microsoft.Reporting.WinForms.ReportDataSource()
+        Dim ReportDataSource17 As Microsoft.Reporting.WinForms.ReportDataSource = New Microsoft.Reporting.WinForms.ReportDataSource()
+        Dim ReportDataSource18 As Microsoft.Reporting.WinForms.ReportDataSource = New Microsoft.Reporting.WinForms.ReportDataSource()
+        Dim ReportDataSource19 As Microsoft.Reporting.WinForms.ReportDataSource = New Microsoft.Reporting.WinForms.ReportDataSource()
+        Dim ReportDataSource20 As Microsoft.Reporting.WinForms.ReportDataSource = New Microsoft.Reporting.WinForms.ReportDataSource()
+        Dim ReportDataSource21 As Microsoft.Reporting.WinForms.ReportDataSource = New Microsoft.Reporting.WinForms.ReportDataSource()
+        Dim ReportDataSource22 As Microsoft.Reporting.WinForms.ReportDataSource = New Microsoft.Reporting.WinForms.ReportDataSource()
+        Dim ReportDataSource23 As Microsoft.Reporting.WinForms.ReportDataSource = New Microsoft.Reporting.WinForms.ReportDataSource()
+        Dim ReportDataSource24 As Microsoft.Reporting.WinForms.ReportDataSource = New Microsoft.Reporting.WinForms.ReportDataSource()
         Me.tbl_actlogBindingSource = New System.Windows.Forms.BindingSource(Me.components)
         Me.inventory_dbDataSet = New SALESANDINVENTORYSYSTEM.inventory_dbDataSet()
         Me.tbl_salesBindingSource = New System.Windows.Forms.BindingSource(Me.components)
@@ -38,6 +39,7 @@ Partial Class FRMREPORTS
         Me.tbl_supplierBindingSource = New System.Windows.Forms.BindingSource(Me.components)
         Me.tbl_productsBindingSource = New System.Windows.Forms.BindingSource(Me.components)
         Me.tbl_usersBindingSource = New System.Windows.Forms.BindingSource(Me.components)
+        Me.tbl_stocksBindingSource = New System.Windows.Forms.BindingSource(Me.components)
         Me.tbl_usersTableAdapter = New SALESANDINVENTORYSYSTEM.inventory_dbDataSetTableAdapters.tbl_usersTableAdapter()
         Me.tbl_productsTableAdapter = New SALESANDINVENTORYSYSTEM.inventory_dbDataSetTableAdapters.tbl_productsTableAdapter()
         Me.tbl_expiredprodTableAdapter = New SALESANDINVENTORYSYSTEM.inventory_dbDataSetTableAdapters.tbl_expiredprodTableAdapter()
@@ -85,7 +87,15 @@ Partial Class FRMREPORTS
         Me.BTNFILTER = New Guna.UI2.WinForms.Guna2Button()
         Me.CBOUT = New Guna.UI2.WinForms.Guna2ComboBox()
         Me.TCREPORTS = New System.Windows.Forms.TabControl()
+        Me.TPSTOCKS = New System.Windows.Forms.TabPage()
+        Me.Label4 = New System.Windows.Forms.Label()
+        Me.STOCKCLR = New Guna.UI2.WinForms.Guna2Button()
+        Me.STOCKSFILL = New Guna.UI2.WinForms.Guna2Button()
+        Me.Guna2DateTimePicker1 = New Guna.UI2.WinForms.Guna2DateTimePicker()
+        Me.Guna2DateTimePicker2 = New Guna.UI2.WinForms.Guna2DateTimePicker()
+        Me.RPTSTOCKS = New Microsoft.Reporting.WinForms.ReportViewer()
         Me.BTNCLOSE = New System.Windows.Forms.Button()
+        Me.tbl_stocksTableAdapter = New SALESANDINVENTORYSYSTEM.inventory_dbDataSetTableAdapters.tbl_stocksTableAdapter()
         CType(Me.tbl_actlogBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.inventory_dbDataSet, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.tbl_salesBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -94,6 +104,7 @@ Partial Class FRMREPORTS
         CType(Me.tbl_supplierBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.tbl_productsBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.tbl_usersBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.tbl_stocksBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.TPACT.SuspendLayout()
         Me.TPSALES.SuspendLayout()
         Me.TPOUT.SuspendLayout()
@@ -102,6 +113,7 @@ Partial Class FRMREPORTS
         Me.TPPRODS.SuspendLayout()
         Me.TPUSERS.SuspendLayout()
         Me.TCREPORTS.SuspendLayout()
+        Me.TPSTOCKS.SuspendLayout()
         Me.SuspendLayout()
         '
         'tbl_actlogBindingSource
@@ -143,6 +155,11 @@ Partial Class FRMREPORTS
         '
         Me.tbl_usersBindingSource.DataMember = "tbl_users"
         Me.tbl_usersBindingSource.DataSource = Me.inventory_dbDataSet
+        '
+        'tbl_stocksBindingSource
+        '
+        Me.tbl_stocksBindingSource.DataMember = "tbl_stocks"
+        Me.tbl_stocksBindingSource.DataSource = Me.inventory_dbDataSet
         '
         'tbl_usersTableAdapter
         '
@@ -250,9 +267,9 @@ Partial Class FRMREPORTS
         '
         'RPTACTLOG
         '
-        ReportDataSource1.Name = "DataSet_ACT"
-        ReportDataSource1.Value = Me.tbl_actlogBindingSource
-        Me.RPTACTLOG.LocalReport.DataSources.Add(ReportDataSource1)
+        ReportDataSource17.Name = "DataSet_ACT"
+        ReportDataSource17.Value = Me.tbl_actlogBindingSource
+        Me.RPTACTLOG.LocalReport.DataSources.Add(ReportDataSource17)
         Me.RPTACTLOG.LocalReport.ReportEmbeddedResource = "SALESANDINVENTORYSYSTEM.RPTACTLOG.rdlc"
         Me.RPTACTLOG.Location = New System.Drawing.Point(31, 86)
         Me.RPTACTLOG.Name = "RPTACTLOG"
@@ -340,9 +357,9 @@ Partial Class FRMREPORTS
         '
         'RPTSALES
         '
-        ReportDataSource2.Name = "DataSet_Sales"
-        ReportDataSource2.Value = Me.tbl_salesBindingSource
-        Me.RPTSALES.LocalReport.DataSources.Add(ReportDataSource2)
+        ReportDataSource18.Name = "DataSet_Sales"
+        ReportDataSource18.Value = Me.tbl_salesBindingSource
+        Me.RPTSALES.LocalReport.DataSources.Add(ReportDataSource18)
         Me.RPTSALES.LocalReport.ReportEmbeddedResource = "SALESANDINVENTORYSYSTEM.RPTSALES.rdlc"
         Me.RPTSALES.Location = New System.Drawing.Point(31, 86)
         Me.RPTSALES.Name = "RPTSALES"
@@ -430,9 +447,9 @@ Partial Class FRMREPORTS
         '
         'RPTOUTOFSTOCKS
         '
-        ReportDataSource3.Name = "DataSet_OutOfStocks"
-        ReportDataSource3.Value = Me.tbl_stocksoutBindingSource
-        Me.RPTOUTOFSTOCKS.LocalReport.DataSources.Add(ReportDataSource3)
+        ReportDataSource19.Name = "DataSet_OutOfStocks"
+        ReportDataSource19.Value = Me.tbl_stocksoutBindingSource
+        Me.RPTOUTOFSTOCKS.LocalReport.DataSources.Add(ReportDataSource19)
         Me.RPTOUTOFSTOCKS.LocalReport.ReportEmbeddedResource = "SALESANDINVENTORYSYSTEM.RPTOUTOFSTOCKS.rdlc"
         Me.RPTOUTOFSTOCKS.Location = New System.Drawing.Point(31, 86)
         Me.RPTOUTOFSTOCKS.Name = "RPTOUTOFSTOCKS"
@@ -520,9 +537,9 @@ Partial Class FRMREPORTS
         '
         'RPTEXP
         '
-        ReportDataSource4.Name = "DataSet1"
-        ReportDataSource4.Value = Me.tbl_expiredprodBindingSource
-        Me.RPTEXP.LocalReport.DataSources.Add(ReportDataSource4)
+        ReportDataSource20.Name = "DataSet1"
+        ReportDataSource20.Value = Me.tbl_expiredprodBindingSource
+        Me.RPTEXP.LocalReport.DataSources.Add(ReportDataSource20)
         Me.RPTEXP.LocalReport.ReportEmbeddedResource = "SALESANDINVENTORYSYSTEM.RPTEXP.rdlc"
         Me.RPTEXP.Location = New System.Drawing.Point(31, 86)
         Me.RPTEXP.Name = "RPTEXP"
@@ -543,9 +560,9 @@ Partial Class FRMREPORTS
         '
         'RPTSUP
         '
-        ReportDataSource5.Name = "DataSet_SUPPLIER"
-        ReportDataSource5.Value = Me.tbl_supplierBindingSource
-        Me.RPTSUP.LocalReport.DataSources.Add(ReportDataSource5)
+        ReportDataSource21.Name = "DataSet_SUPPLIER"
+        ReportDataSource21.Value = Me.tbl_supplierBindingSource
+        Me.RPTSUP.LocalReport.DataSources.Add(ReportDataSource21)
         Me.RPTSUP.LocalReport.ReportEmbeddedResource = "SALESANDINVENTORYSYSTEM.RPTSUPPLIER.rdlc"
         Me.RPTSUP.Location = New System.Drawing.Point(31, 86)
         Me.RPTSUP.Name = "RPTSUP"
@@ -644,9 +661,9 @@ Partial Class FRMREPORTS
         '
         'RPTPRODUCTS
         '
-        ReportDataSource6.Name = "DataSet_Products"
-        ReportDataSource6.Value = Me.tbl_productsBindingSource
-        Me.RPTPRODUCTS.LocalReport.DataSources.Add(ReportDataSource6)
+        ReportDataSource22.Name = "DataSet_Products"
+        ReportDataSource22.Value = Me.tbl_productsBindingSource
+        Me.RPTPRODUCTS.LocalReport.DataSources.Add(ReportDataSource22)
         Me.RPTPRODUCTS.LocalReport.ReportEmbeddedResource = "SALESANDINVENTORYSYSTEM.RPTPRODUCTS.rdlc"
         Me.RPTPRODUCTS.Location = New System.Drawing.Point(31, 86)
         Me.RPTPRODUCTS.Name = "RPTPRODUCTS"
@@ -672,9 +689,9 @@ Partial Class FRMREPORTS
         '
         'RPTUSERS
         '
-        ReportDataSource7.Name = "DataSet_useraccounts"
-        ReportDataSource7.Value = Me.tbl_usersBindingSource
-        Me.RPTUSERS.LocalReport.DataSources.Add(ReportDataSource7)
+        ReportDataSource23.Name = "DataSet_useraccounts"
+        ReportDataSource23.Value = Me.tbl_usersBindingSource
+        Me.RPTUSERS.LocalReport.DataSources.Add(ReportDataSource23)
         Me.RPTUSERS.LocalReport.ReportEmbeddedResource = "SALESANDINVENTORYSYSTEM.RPTUSERACCOUNTS.rdlc"
         Me.RPTUSERS.Location = New System.Drawing.Point(31, 86)
         Me.RPTUSERS.Name = "RPTUSERS"
@@ -747,6 +764,7 @@ Partial Class FRMREPORTS
         '
         Me.TCREPORTS.Controls.Add(Me.TPUSERS)
         Me.TCREPORTS.Controls.Add(Me.TPPRODS)
+        Me.TCREPORTS.Controls.Add(Me.TPSTOCKS)
         Me.TCREPORTS.Controls.Add(Me.TPSUP)
         Me.TCREPORTS.Controls.Add(Me.TPEXP)
         Me.TCREPORTS.Controls.Add(Me.TPOUT)
@@ -759,6 +777,106 @@ Partial Class FRMREPORTS
         Me.TCREPORTS.Size = New System.Drawing.Size(1555, 728)
         Me.TCREPORTS.TabIndex = 23
         '
+        'TPSTOCKS
+        '
+        Me.TPSTOCKS.Controls.Add(Me.Label4)
+        Me.TPSTOCKS.Controls.Add(Me.STOCKCLR)
+        Me.TPSTOCKS.Controls.Add(Me.STOCKSFILL)
+        Me.TPSTOCKS.Controls.Add(Me.Guna2DateTimePicker1)
+        Me.TPSTOCKS.Controls.Add(Me.Guna2DateTimePicker2)
+        Me.TPSTOCKS.Controls.Add(Me.RPTSTOCKS)
+        Me.TPSTOCKS.Location = New System.Drawing.Point(4, 29)
+        Me.TPSTOCKS.Name = "TPSTOCKS"
+        Me.TPSTOCKS.Size = New System.Drawing.Size(1547, 695)
+        Me.TPSTOCKS.TabIndex = 7
+        Me.TPSTOCKS.Text = "Stocks"
+        Me.TPSTOCKS.UseVisualStyleBackColor = True
+        '
+        'Label4
+        '
+        Me.Label4.AutoSize = True
+        Me.Label4.Font = New System.Drawing.Font("Century Gothic", 11.25!)
+        Me.Label4.Location = New System.Drawing.Point(31, 12)
+        Me.Label4.Name = "Label4"
+        Me.Label4.Size = New System.Drawing.Size(112, 20)
+        Me.Label4.TabIndex = 12
+        Me.Label4.Text = "Filter by Date :"
+        '
+        'STOCKCLR
+        '
+        Me.STOCKCLR.BackColor = System.Drawing.Color.Transparent
+        Me.STOCKCLR.CheckedState.Parent = Me.STOCKCLR
+        Me.STOCKCLR.CustomImages.Parent = Me.STOCKCLR
+        Me.STOCKCLR.FillColor = System.Drawing.SystemColors.ControlDark
+        Me.STOCKCLR.Font = New System.Drawing.Font("Segoe UI", 9.0!)
+        Me.STOCKCLR.ForeColor = System.Drawing.Color.White
+        Me.STOCKCLR.HoverState.Parent = Me.STOCKCLR
+        Me.STOCKCLR.Location = New System.Drawing.Point(763, 12)
+        Me.STOCKCLR.Name = "STOCKCLR"
+        Me.STOCKCLR.ShadowDecoration.Parent = Me.STOCKCLR
+        Me.STOCKCLR.Size = New System.Drawing.Size(98, 36)
+        Me.STOCKCLR.TabIndex = 11
+        Me.STOCKCLR.Text = "Clear Filter"
+        '
+        'STOCKSFILL
+        '
+        Me.STOCKSFILL.CheckedState.Parent = Me.STOCKSFILL
+        Me.STOCKSFILL.CustomImages.Parent = Me.STOCKSFILL
+        Me.STOCKSFILL.FillColor = System.Drawing.Color.MediumSeaGreen
+        Me.STOCKSFILL.Font = New System.Drawing.Font("Segoe UI", 9.0!)
+        Me.STOCKSFILL.ForeColor = System.Drawing.Color.White
+        Me.STOCKSFILL.HoverState.Parent = Me.STOCKSFILL
+        Me.STOCKSFILL.Location = New System.Drawing.Point(643, 12)
+        Me.STOCKSFILL.Name = "STOCKSFILL"
+        Me.STOCKSFILL.ShadowDecoration.Parent = Me.STOCKSFILL
+        Me.STOCKSFILL.Size = New System.Drawing.Size(98, 36)
+        Me.STOCKSFILL.TabIndex = 10
+        Me.STOCKSFILL.Text = "Filter"
+        '
+        'Guna2DateTimePicker1
+        '
+        Me.Guna2DateTimePicker1.CheckedState.Parent = Me.Guna2DateTimePicker1
+        Me.Guna2DateTimePicker1.FillColor = System.Drawing.Color.MediumSeaGreen
+        Me.Guna2DateTimePicker1.ForeColor = System.Drawing.Color.White
+        Me.Guna2DateTimePicker1.Format = System.Windows.Forms.DateTimePickerFormat.[Long]
+        Me.Guna2DateTimePicker1.HoverState.Parent = Me.Guna2DateTimePicker1
+        Me.Guna2DateTimePicker1.Location = New System.Drawing.Point(398, 12)
+        Me.Guna2DateTimePicker1.MaxDate = New Date(9998, 12, 31, 0, 0, 0, 0)
+        Me.Guna2DateTimePicker1.MinDate = New Date(1753, 1, 1, 0, 0, 0, 0)
+        Me.Guna2DateTimePicker1.Name = "Guna2DateTimePicker1"
+        Me.Guna2DateTimePicker1.ShadowDecoration.Parent = Me.Guna2DateTimePicker1
+        Me.Guna2DateTimePicker1.Size = New System.Drawing.Size(200, 36)
+        Me.Guna2DateTimePicker1.TabIndex = 9
+        Me.Guna2DateTimePicker1.Value = New Date(2023, 4, 15, 23, 18, 1, 623)
+        '
+        'Guna2DateTimePicker2
+        '
+        Me.Guna2DateTimePicker2.CheckedState.Parent = Me.Guna2DateTimePicker2
+        Me.Guna2DateTimePicker2.FillColor = System.Drawing.Color.MediumSeaGreen
+        Me.Guna2DateTimePicker2.ForeColor = System.Drawing.Color.White
+        Me.Guna2DateTimePicker2.Format = System.Windows.Forms.DateTimePickerFormat.[Long]
+        Me.Guna2DateTimePicker2.HoverState.Parent = Me.Guna2DateTimePicker2
+        Me.Guna2DateTimePicker2.Location = New System.Drawing.Point(175, 12)
+        Me.Guna2DateTimePicker2.MaxDate = New Date(9998, 12, 31, 0, 0, 0, 0)
+        Me.Guna2DateTimePicker2.MinDate = New Date(1753, 1, 1, 0, 0, 0, 0)
+        Me.Guna2DateTimePicker2.Name = "Guna2DateTimePicker2"
+        Me.Guna2DateTimePicker2.ShadowDecoration.Parent = Me.Guna2DateTimePicker2
+        Me.Guna2DateTimePicker2.Size = New System.Drawing.Size(200, 36)
+        Me.Guna2DateTimePicker2.TabIndex = 8
+        Me.Guna2DateTimePicker2.Value = New Date(2023, 4, 15, 23, 18, 1, 623)
+        '
+        'RPTSTOCKS
+        '
+        ReportDataSource24.Name = "inv_db"
+        ReportDataSource24.Value = Me.tbl_stocksBindingSource
+        Me.RPTSTOCKS.LocalReport.DataSources.Add(ReportDataSource24)
+        Me.RPTSTOCKS.LocalReport.ReportEmbeddedResource = "SALESANDINVENTORYSYSTEM.RPTSTOCKS.rdlc"
+        Me.RPTSTOCKS.Location = New System.Drawing.Point(35, 73)
+        Me.RPTSTOCKS.Name = "RPTSTOCKS"
+        Me.RPTSTOCKS.ServerReport.BearerToken = Nothing
+        Me.RPTSTOCKS.Size = New System.Drawing.Size(1480, 610)
+        Me.RPTSTOCKS.TabIndex = 7
+        '
         'BTNCLOSE
         '
         Me.BTNCLOSE.BackColor = System.Drawing.SystemColors.ControlDark
@@ -770,6 +888,10 @@ Partial Class FRMREPORTS
         Me.BTNCLOSE.TabIndex = 5
         Me.BTNCLOSE.Text = "Close"
         Me.BTNCLOSE.UseVisualStyleBackColor = False
+        '
+        'tbl_stocksTableAdapter
+        '
+        Me.tbl_stocksTableAdapter.ClearBeforeFill = True
         '
         'FRMREPORTS
         '
@@ -789,6 +911,7 @@ Partial Class FRMREPORTS
         CType(Me.tbl_supplierBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.tbl_productsBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.tbl_usersBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.tbl_stocksBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
         Me.TPACT.ResumeLayout(False)
         Me.TPACT.PerformLayout()
         Me.TPSALES.ResumeLayout(False)
@@ -800,6 +923,8 @@ Partial Class FRMREPORTS
         Me.TPUSERS.ResumeLayout(False)
         Me.TPUSERS.PerformLayout()
         Me.TCREPORTS.ResumeLayout(False)
+        Me.TPSTOCKS.ResumeLayout(False)
+        Me.TPSTOCKS.PerformLayout()
         Me.ResumeLayout(False)
 
     End Sub
@@ -859,4 +984,13 @@ Partial Class FRMREPORTS
     Friend WithEvents CBOUT As Guna.UI2.WinForms.Guna2ComboBox
     Friend WithEvents TCREPORTS As TabControl
     Friend WithEvents BTNCLOSE As Button
+    Friend WithEvents TPSTOCKS As TabPage
+    Friend WithEvents Label4 As Label
+    Friend WithEvents STOCKCLR As Guna.UI2.WinForms.Guna2Button
+    Friend WithEvents STOCKSFILL As Guna.UI2.WinForms.Guna2Button
+    Friend WithEvents Guna2DateTimePicker1 As Guna.UI2.WinForms.Guna2DateTimePicker
+    Friend WithEvents Guna2DateTimePicker2 As Guna.UI2.WinForms.Guna2DateTimePicker
+    Friend WithEvents RPTSTOCKS As Microsoft.Reporting.WinForms.ReportViewer
+    Friend WithEvents tbl_stocksBindingSource As BindingSource
+    Friend WithEvents tbl_stocksTableAdapter As inventory_dbDataSetTableAdapters.tbl_stocksTableAdapter
 End Class

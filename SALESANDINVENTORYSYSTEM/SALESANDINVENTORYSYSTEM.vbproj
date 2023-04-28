@@ -367,6 +367,7 @@
       <SubType>Designer</SubType>
       <LastGenOutput>Resources.Designer.vb</LastGenOutput>
     </EmbeddedResource>
+    <EmbeddedResource Include="RPTSTOCKS.rdlc" />
     <EmbeddedResource Include="RPTACTLOG.rdlc" />
     <EmbeddedResource Include="RPTEXP.rdlc" />
     <EmbeddedResource Include="RPTOUTOFSTOCKS.rdlc" />
