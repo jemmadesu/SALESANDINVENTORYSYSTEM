@@ -121,6 +121,8 @@ Public Class ucSETTINGS
 
         MessageBox.Show("Successfully created a Backup”, "Notice", MessageBoxButtons.OK, MessageBoxIcon.Information)
 
+        'FRMBACKUP.ShowDialog()
+
     End Sub
 
     Private Sub BTNRESTORE_Click(sender As Object, e As EventArgs) Handles BTNRESTORE.Click
@@ -144,6 +146,7 @@ Public Class ucSETTINGS
 
             MessageBox.Show("Successfully restored the database”, "Notice", MessageBoxButtons.OK, MessageBoxIcon.Information)
         End If
-
+        'FRMRESTORE.ShowDialog()
     End Sub
+
 End Class

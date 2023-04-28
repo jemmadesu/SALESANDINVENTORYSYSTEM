@@ -211,7 +211,7 @@ Public Class ucNEWPRODUCT
         OpenCon()
 
 
-        cmd.CommandText = "insert into tbl_products (stockid, prodid, prodname, prodman, prodbrand, prodcat, catcode, dateadddedprod) values (@si, @pid, @pna, @pm, @pb, @pc, @cc, @dap)  "
+        cmd.CommandText = "insert into tbl_products (prodid, prodname, prodman, prodbrand, prodcat, catcode, dateadddedprod) values (@si, @pid, @pna, @pm, @pb, @pc, @cc, @dap)  "
         With cmd.Parameters
             'cmd.CommandText = "insert into tbl_products values(@pid, @pno, @pna, @pm, @da)"
             'With cmd.Parameters

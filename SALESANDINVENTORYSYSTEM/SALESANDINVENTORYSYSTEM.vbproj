@@ -168,6 +168,12 @@
     <Import Include="System.Threading.Tasks" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="FRMBACKUP.Designer.vb">
+      <DependentUpon>FRMBACKUP.vb</DependentUpon>
+    </Compile>
+    <Compile Include="FRMBACKUP.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="FRMLOGIN.vb">
       <SubType>Form</SubType>
     </Compile>
@@ -197,6 +203,12 @@
       <DependentUpon>FRMREPORTS.vb</DependentUpon>
     </Compile>
     <Compile Include="FRMREPORTS.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FRMRESTORE.Designer.vb">
+      <DependentUpon>FRMRESTORE.vb</DependentUpon>
+    </Compile>
+    <Compile Include="FRMRESTORE.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="inventory_dbDataSet3.Designer.vb">
@@ -328,6 +340,9 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="FRMBACKUP.resx">
+      <DependentUpon>FRMBACKUP.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FRMLOGIN.resx">
       <DependentUpon>FRMLOGIN.vb</DependentUpon>
     </EmbeddedResource>
@@ -342,6 +357,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FRMREPORTS.resx">
       <DependentUpon>FRMREPORTS.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FRMRESTORE.resx">
+      <DependentUpon>FRMRESTORE.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="My Project\Resources.resx">
       <Generator>VbMyResourcesResXFileCodeGenerator</Generator>

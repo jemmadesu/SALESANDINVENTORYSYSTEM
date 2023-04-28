@@ -63,6 +63,17 @@ Namespace My
                 Return CType(Me("inventory_dbConnectionString"),String)
             End Get
         End Property
+        
+        <Global.System.Configuration.ApplicationScopedSettingAttribute(),  _
+         Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.Configuration.SpecialSettingAttribute(Global.System.Configuration.SpecialSetting.ConnectionString),  _
+         Global.System.Configuration.DefaultSettingValueAttribute("server=localhost;user id=root;password=password;persistsecurityinfo=True;database"& _ 
+            "=restore_db")>  _
+        Public ReadOnly Property restore_dbConnectionString() As String
+            Get
+                Return CType(Me("restore_dbConnectionString"),String)
+            End Get
+        End Property
     End Class
 End Namespace
 

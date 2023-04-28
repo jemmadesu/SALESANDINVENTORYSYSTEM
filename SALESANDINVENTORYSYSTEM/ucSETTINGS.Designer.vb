@@ -29,7 +29,6 @@ Partial Class ucSETTINGS
         Me.BTNINVENTORY = New System.Windows.Forms.Button()
         Me.BTNSUP = New System.Windows.Forms.Button()
         Me.BTNCATEGORY = New System.Windows.Forms.Button()
-        Me.LBLEXIT = New System.Windows.Forms.Label()
         Me.BTNUM = New System.Windows.Forms.Button()
         Me.Guna2ShadowPanel1 = New Guna.UI2.WinForms.Guna2ShadowPanel()
         Me.Label3 = New System.Windows.Forms.Label()
@@ -38,13 +37,9 @@ Partial Class ucSETTINGS
         Me.BTNBACKUP = New Guna.UI2.WinForms.Guna2Button()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.Guna2PictureBox1 = New Guna.UI2.WinForms.Guna2PictureBox()
-        Me.Panel1 = New System.Windows.Forms.Panel()
-        Me.DataGridView1 = New System.Windows.Forms.DataGridView()
         Me.Panel2.SuspendLayout()
         Me.Guna2ShadowPanel1.SuspendLayout()
         CType(Me.Guna2PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
-        Me.Panel1.SuspendLayout()
-        CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'Panel2
@@ -55,7 +50,6 @@ Partial Class ucSETTINGS
         Me.Panel2.Controls.Add(Me.BTNINVENTORY)
         Me.Panel2.Controls.Add(Me.BTNSUP)
         Me.Panel2.Controls.Add(Me.BTNCATEGORY)
-        Me.Panel2.Controls.Add(Me.LBLEXIT)
         Me.Panel2.Controls.Add(Me.BTNUM)
         Me.Panel2.Dock = System.Windows.Forms.DockStyle.Top
         Me.Panel2.Location = New System.Drawing.Point(0, 0)
@@ -127,7 +121,7 @@ Partial Class ucSETTINGS
         Me.BTNSUP.ForeColor = System.Drawing.Color.White
         Me.BTNSUP.Image = CType(resources.GetObject("BTNSUP.Image"), System.Drawing.Image)
         Me.BTNSUP.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.BTNSUP.Location = New System.Drawing.Point(800, 0)
+        Me.BTNSUP.Location = New System.Drawing.Point(818, 2)
         Me.BTNSUP.Name = "BTNSUP"
         Me.BTNSUP.Size = New System.Drawing.Size(120, 49)
         Me.BTNSUP.TabIndex = 49
@@ -152,18 +146,6 @@ Partial Class ucSETTINGS
         Me.BTNCATEGORY.Text = "Category"
         Me.BTNCATEGORY.TextAlign = System.Drawing.ContentAlignment.MiddleRight
         Me.BTNCATEGORY.UseVisualStyleBackColor = False
-        '
-        'LBLEXIT
-        '
-        Me.LBLEXIT.AutoSize = True
-        Me.LBLEXIT.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.LBLEXIT.Font = New System.Drawing.Font("Century Gothic", 20.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.LBLEXIT.ForeColor = System.Drawing.Color.White
-        Me.LBLEXIT.Location = New System.Drawing.Point(1276, 4)
-        Me.LBLEXIT.Name = "LBLEXIT"
-        Me.LBLEXIT.Size = New System.Drawing.Size(30, 32)
-        Me.LBLEXIT.TabIndex = 28
-        Me.LBLEXIT.Text = "x"
         '
         'BTNUM
         '
@@ -215,9 +197,9 @@ Partial Class ucSETTINGS
         Me.Label2.ForeColor = System.Drawing.Color.MediumSeaGreen
         Me.Label2.Location = New System.Drawing.Point(64, 304)
         Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(164, 20)
+        Me.Label2.Size = New System.Drawing.Size(140, 20)
         Me.Label2.TabIndex = 49
-        Me.Label2.Text = "Your Backup Records"
+        Me.Label2.Text = "Restored Backups"
         '
         'BTNRESTORE
         '
@@ -279,30 +261,11 @@ Partial Class ucSETTINGS
         Me.Guna2PictureBox1.TabIndex = 47
         Me.Guna2PictureBox1.TabStop = False
         '
-        'Panel1
-        '
-        Me.Panel1.Controls.Add(Me.DataGridView1)
-        Me.Panel1.Location = New System.Drawing.Point(304, 122)
-        Me.Panel1.Name = "Panel1"
-        Me.Panel1.Size = New System.Drawing.Size(645, 447)
-        Me.Panel1.TabIndex = 49
-        Me.Panel1.Visible = False
-        '
-        'DataGridView1
-        '
-        Me.DataGridView1.BackgroundColor = System.Drawing.Color.White
-        Me.DataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.DataGridView1.Location = New System.Drawing.Point(17, 144)
-        Me.DataGridView1.Name = "DataGridView1"
-        Me.DataGridView1.Size = New System.Drawing.Size(611, 280)
-        Me.DataGridView1.TabIndex = 0
-        '
         'ucSETTINGS
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.White
-        Me.Controls.Add(Me.Panel1)
         Me.Controls.Add(Me.Label1)
         Me.Controls.Add(Me.Guna2PictureBox1)
         Me.Controls.Add(Me.Guna2ShadowPanel1)
@@ -310,19 +273,15 @@ Partial Class ucSETTINGS
         Me.Name = "ucSETTINGS"
         Me.Size = New System.Drawing.Size(1322, 801)
         Me.Panel2.ResumeLayout(False)
-        Me.Panel2.PerformLayout()
         Me.Guna2ShadowPanel1.ResumeLayout(False)
         Me.Guna2ShadowPanel1.PerformLayout()
         CType(Me.Guna2PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
-        Me.Panel1.ResumeLayout(False)
-        CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
     End Sub
 
     Friend WithEvents Panel2 As Panel
-    Friend WithEvents LBLEXIT As Label
     Friend WithEvents BTNBACKUP As Guna.UI2.WinForms.Guna2Button
     Friend WithEvents Guna2ShadowPanel1 As Guna.UI2.WinForms.Guna2ShadowPanel
     Friend WithEvents BTNRESTORE As Guna.UI2.WinForms.Guna2Button
@@ -336,6 +295,4 @@ Partial Class ucSETTINGS
     Friend WithEvents BTNUM As Button
     Friend WithEvents BTNPI As Button
     Friend WithEvents BTNSTOCKIN As Button
-    Friend WithEvents Panel1 As Panel
-    Friend WithEvents DataGridView1 As DataGridView
 End Class
