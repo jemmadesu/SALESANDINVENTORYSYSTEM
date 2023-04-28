@@ -119,7 +119,7 @@ Public Class ucTRANSACTION
     Dim t_price As Long
     Dim t_qty As Long
     Sub sumprice()
-        t_price = Val(TXTBILL.Text)
+        t_price = Val(TOTALBILL.Text)
 
         Dim countqty As Long = 0
         For rowitem As Long = 0 To DGVCART.RowCount - 1
@@ -399,11 +399,11 @@ Public Class ucTRANSACTION
 
 
 
-        If Val(TXTPAYMENT.Text) < Val(TXTBILL.Text) Then
-            MessageBox.Show("The Payment is Insufficient", "INSUFFICIENT PAYMENT", MessageBoxButtons.OK, MessageBoxIcon.Information)
+        If Val(TXTBILL.Text) <= Val(TXTPAYMENT.Text) Then
+            MessageBox.Show("The Payment is Insufficient", "Insufficient Payment", MessageBoxButtons.OK, MessageBoxIcon.Information)
             Exit Sub
-
         End If
+
         If CBODISCOUNT.Text = "-- Select --" Then
             MessageBox.Show("Please select Discount Type.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
             Exit Sub

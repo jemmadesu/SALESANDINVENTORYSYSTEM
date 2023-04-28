@@ -118,6 +118,9 @@ Public Class ucSETTINGS
         ElseIf backup.ShowDialog = Windows.Forms.DialogResult.Cancel Then
             Return
         End If
+
+        MessageBox.Show("Successfully created a Backup”, "Notice", MessageBoxButtons.OK, MessageBoxIcon.Information)
+
     End Sub
 
     Private Sub BTNRESTORE_Click(sender As Object, e As EventArgs) Handles BTNRESTORE.Click
