@@ -21,27 +21,23 @@ Public Class ucNEWPRODUCT
     'Dim con As New MySqlConnection("Data Source=. ;initial Catalog=DatabaseSql; User ID = root;Password = password")
     Private Sub DGVSETPROPERTY()
 
-
         DGVPRODUCTS.Columns(0).Width = 200
-        DGVPRODUCTS.Columns(0).HeaderText = "Stock ID"
+        DGVPRODUCTS.Columns(0).HeaderText = "Product ID"
 
         DGVPRODUCTS.Columns(1).Width = 200
-        DGVPRODUCTS.Columns(1).HeaderText = "Product ID"
+        DGVPRODUCTS.Columns(1).HeaderText = "Product Name"
 
         DGVPRODUCTS.Columns(2).Width = 200
-        DGVPRODUCTS.Columns(2).HeaderText = "Product Name"
+        DGVPRODUCTS.Columns(2).HeaderText = "Product Manufacturer"
 
         DGVPRODUCTS.Columns(3).Width = 200
-        DGVPRODUCTS.Columns(3).HeaderText = "Product Manufacturer"
+        DGVPRODUCTS.Columns(3).HeaderText = "Product Brand"
 
         DGVPRODUCTS.Columns(4).Width = 200
-        DGVPRODUCTS.Columns(4).HeaderText = "Product Brand"
+        DGVPRODUCTS.Columns(4).HeaderText = "Category Name"
 
         DGVPRODUCTS.Columns(5).Width = 200
-        DGVPRODUCTS.Columns(5).HeaderText = "Category Name"
-
-        DGVPRODUCTS.Columns(6).Width = 200
-        DGVPRODUCTS.Columns(6).HeaderText = "Category Code"
+        DGVPRODUCTS.Columns(5).HeaderText = "Category Code"
 
     End Sub
 
@@ -110,26 +106,20 @@ Public Class ucNEWPRODUCT
             Dim getno As Integer
             con.Close()
             OpenCon()
-            cmd.CommandText = "Select Max(stockid) from tbl_products"
+            cmd.CommandText = "Select Max(id) from tbl_products"
             getno = Convert.ToInt64(cmd.ExecuteScalar())
             con.Close()
-            TXTSI.Text = getno + 1
+            LBLID.Text = getno + 1
         Else
-            TXTSI.Text = 1
+            LBLID.Text = 1
             con.Close()
         End If
-    End Sub
-
-
-
-    Private Sub dgv_refresh()
-        'Me.Tbl_productsTableAdapter.Fill(Me.Inventory_dbDataSet.tbl_products)
     End Sub
 
     Private Sub VIEW()
         Try
 
-            Dim da As New MySqlDataAdapter("select stockid, prodid, prodname, prodman, prodbrand, prodcat, catcode  from tbl_products ", con)
+            Dim da As New MySqlDataAdapter("select prodid, prodname, prodman, prodbrand, prodcat, catcode  from tbl_products ", con)
             Dim dt As New DataSet()
             da.Fill(dt)
             DGVPRODUCTS.DataSource = dt.Tables(0)
@@ -174,7 +164,7 @@ Public Class ucNEWPRODUCT
     Private Sub Load_data()
         Try
 
-            Dim da As New MySqlDataAdapter("select stockid, prodid, prodname, prodman, prodbrand, prodcat, catcode  from tbl_products ", con)
+            Dim da As New MySqlDataAdapter("select prodid, prodname, prodman, prodbrand, prodcat, catcode  from tbl_products ", con)
             Dim dt As New DataSet()
             da.Fill(dt)
             DGVPRODUCTS.DataSource = dt.Tables(0)
@@ -212,19 +202,19 @@ Public Class ucNEWPRODUCT
         OpenCon()
 
 
-        cmd.CommandText = "insert into tbl_products (prodid, prodname, prodman, prodbrand, prodcat, catcode, dateadddedprod) values (@si, @pid, @pna, @pm, @pb, @pc, @cc, @dap)  "
+        cmd.CommandText = "insert into tbl_products (id, prodid, prodname, prodman, prodbrand, prodcat, catcode, dateaddedprod) values (@id, @pid, @pna, @pm, @pb, @pc, @cc, @dap)"
         With cmd.Parameters
-            'cmd.CommandText = "insert into tbl_products values(@pid, @pno, @pna, @pm, @da)"
-            'With cmd.Parameters
+
             .Clear()
-            .AddWithValue("si", TXTSI.Text)
+            .AddWithValue("id", LBLID.Text)
             .AddWithValue("pid", TXTPI.Text)
             .AddWithValue("pna", TXTPNA.Text)
-            .AddWithValue("pb", TXTBRAND.Text)
             .AddWithValue("pm", TXTPM.Text)
-            .AddWithValue("dap", DTP.Value)
+            .AddWithValue("pb", TXTBRAND.Text)
             .AddWithValue("pc", CBOPRODCAT.Text)
             .AddWithValue("cc", TXTCATCODE.Text)
+            .AddWithValue("dap", Format(Date.Now, "yyyy-MM-dd"))
+
 
         End With
         cmd.ExecuteNonQuery()
@@ -309,7 +299,6 @@ Public Class ucNEWPRODUCT
         TXTPI.Text = ""
         TXTPNA.Text = ""
         TXTPM.Text = ""
-        TXTSI.Text = ""
         TXTPI.Focus()
 
     End Sub
@@ -348,13 +337,12 @@ Public Class ucNEWPRODUCT
         If e.RowIndex >= 0 Then
             Dim row As DataGridViewRow
             row = DGVPRODUCTS.Rows(e.RowIndex)
-            TXTSI.Text = row.Cells(0).Value
-            TXTPI.Text = row.Cells(1).Value
-            TXTPNA.Text = row.Cells(2).Value
-            TXTPM.Text = row.Cells(3).Value
-            TXTBRAND.Text = row.Cells(4).Value
-            CBOPRODCAT.Text = row.Cells(5).Value
-            TXTCATCODE.Text = row.Cells(6).Value
+            TXTPI.Text = row.Cells(0).Value
+            TXTPNA.Text = row.Cells(1).Value
+            TXTPM.Text = row.Cells(2).Value
+            TXTBRAND.Text = row.Cells(3).Value
+            CBOPRODCAT.Text = row.Cells(4).Value
+            TXTCATCODE.Text = row.Cells(5).Value
 
         End If
         BTNEDIT.Text = "Update"

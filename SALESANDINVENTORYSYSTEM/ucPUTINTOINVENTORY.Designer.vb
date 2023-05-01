@@ -26,7 +26,7 @@ Partial Class ucPUTINTOINVENTORY
         Me.GroupBox4 = New System.Windows.Forms.GroupBox()
         Me.BTNDELETE = New System.Windows.Forms.Button()
         Me.DGVMAIN = New System.Windows.Forms.DataGridView()
-        Me.TextBox4 = New System.Windows.Forms.TextBox()
+        Me.TXTSTOCKSEARCH = New System.Windows.Forms.TextBox()
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
         Me.BTNSAVE = New System.Windows.Forms.Button()
         Me.TXTPNA = New System.Windows.Forms.TextBox()
@@ -63,10 +63,10 @@ Partial Class ucPUTINTOINVENTORY
         '
         'GroupBox4
         '
-        Me.GroupBox4.BackColor = System.Drawing.SystemColors.ScrollBar
+        Me.GroupBox4.BackColor = System.Drawing.SystemColors.InactiveCaption
         Me.GroupBox4.Controls.Add(Me.BTNDELETE)
         Me.GroupBox4.Controls.Add(Me.DGVMAIN)
-        Me.GroupBox4.Controls.Add(Me.TextBox4)
+        Me.GroupBox4.Controls.Add(Me.TXTSTOCKSEARCH)
         Me.GroupBox4.Font = New System.Drawing.Font("Century Gothic", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.GroupBox4.ForeColor = System.Drawing.SystemColors.ControlDarkDark
         Me.GroupBox4.Location = New System.Drawing.Point(30, 488)
@@ -79,6 +79,7 @@ Partial Class ucPUTINTOINVENTORY
         'BTNDELETE
         '
         Me.BTNDELETE.BackColor = System.Drawing.Color.Gray
+        Me.BTNDELETE.FlatAppearance.BorderSize = 0
         Me.BTNDELETE.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.BTNDELETE.Font = New System.Drawing.Font("Century Gothic", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.BTNDELETE.ForeColor = System.Drawing.Color.White
@@ -101,17 +102,17 @@ Partial Class ucPUTINTOINVENTORY
         Me.DGVMAIN.Size = New System.Drawing.Size(1191, 174)
         Me.DGVMAIN.TabIndex = 33
         '
-        'TextBox4
+        'TXTSTOCKSEARCH
         '
-        Me.TextBox4.ForeColor = System.Drawing.SystemColors.ControlDarkDark
-        Me.TextBox4.Location = New System.Drawing.Point(41, 40)
-        Me.TextBox4.Name = "TextBox4"
-        Me.TextBox4.Size = New System.Drawing.Size(546, 23)
-        Me.TextBox4.TabIndex = 11
+        Me.TXTSTOCKSEARCH.ForeColor = System.Drawing.SystemColors.ControlDarkDark
+        Me.TXTSTOCKSEARCH.Location = New System.Drawing.Point(41, 40)
+        Me.TXTSTOCKSEARCH.Name = "TXTSTOCKSEARCH"
+        Me.TXTSTOCKSEARCH.Size = New System.Drawing.Size(546, 23)
+        Me.TXTSTOCKSEARCH.TabIndex = 11
         '
         'GroupBox1
         '
-        Me.GroupBox1.BackColor = System.Drawing.SystemColors.ScrollBar
+        Me.GroupBox1.BackColor = System.Drawing.Color.White
         Me.GroupBox1.Controls.Add(Me.BTNSAVE)
         Me.GroupBox1.Controls.Add(Me.TXTPNA)
         Me.GroupBox1.Controls.Add(Me.Label7)
@@ -136,6 +137,7 @@ Partial Class ucPUTINTOINVENTORY
         'BTNSAVE
         '
         Me.BTNSAVE.BackColor = System.Drawing.Color.MediumSeaGreen
+        Me.BTNSAVE.FlatAppearance.BorderSize = 0
         Me.BTNSAVE.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.BTNSAVE.Font = New System.Drawing.Font("Century Gothic", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.BTNSAVE.ForeColor = System.Drawing.Color.White
@@ -316,7 +318,7 @@ Partial Class ucPUTINTOINVENTORY
         '
         'GroupBox2
         '
-        Me.GroupBox2.BackColor = System.Drawing.SystemColors.ScrollBar
+        Me.GroupBox2.BackColor = System.Drawing.SystemColors.InactiveCaption
         Me.GroupBox2.Controls.Add(Me.DGVPRODUCTS)
         Me.GroupBox2.Controls.Add(Me.TXTSEARCH)
         Me.GroupBox2.Font = New System.Drawing.Font("Century Gothic", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
@@ -388,7 +390,7 @@ Partial Class ucPUTINTOINVENTORY
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.BackColor = System.Drawing.SystemColors.Control
+        Me.BackColor = System.Drawing.Color.White
         Me.Controls.Add(Me.TXTSAM)
         Me.Controls.Add(Me.Panel2)
         Me.Controls.Add(Me.TextBox1)
@@ -416,7 +418,7 @@ Partial Class ucPUTINTOINVENTORY
     End Sub
 
     Friend WithEvents GroupBox4 As GroupBox
-    Friend WithEvents TextBox4 As TextBox
+    Friend WithEvents TXTSTOCKSEARCH As TextBox
     Friend WithEvents GroupBox1 As GroupBox
     Friend WithEvents CBOUNIT As ComboBox
     Friend WithEvents TXTUNIT As TextBox

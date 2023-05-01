@@ -150,7 +150,7 @@ Partial Class ucCATEGORY
         Me.BTNADD.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.BTNADD.Font = New System.Drawing.Font("Century Gothic", 9.0!)
         Me.BTNADD.ForeColor = System.Drawing.Color.Snow
-        Me.BTNADD.Location = New System.Drawing.Point(97, 245)
+        Me.BTNADD.Location = New System.Drawing.Point(343, 191)
         Me.BTNADD.Name = "BTNADD"
         Me.BTNADD.Size = New System.Drawing.Size(99, 36)
         Me.BTNADD.TabIndex = 40
@@ -163,7 +163,7 @@ Partial Class ucCATEGORY
         Me.BTNINSERT.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.BTNINSERT.Font = New System.Drawing.Font("Century Gothic", 9.0!)
         Me.BTNINSERT.ForeColor = System.Drawing.Color.Snow
-        Me.BTNINSERT.Location = New System.Drawing.Point(257, 245)
+        Me.BTNINSERT.Location = New System.Drawing.Point(470, 191)
         Me.BTNINSERT.Name = "BTNINSERT"
         Me.BTNINSERT.Size = New System.Drawing.Size(99, 36)
         Me.BTNINSERT.TabIndex = 39
@@ -176,7 +176,7 @@ Partial Class ucCATEGORY
         Me.BTNUPDATE.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.BTNUPDATE.Font = New System.Drawing.Font("Century Gothic", 9.0!)
         Me.BTNUPDATE.ForeColor = System.Drawing.Color.Snow
-        Me.BTNUPDATE.Location = New System.Drawing.Point(97, 341)
+        Me.BTNUPDATE.Location = New System.Drawing.Point(343, 233)
         Me.BTNUPDATE.Name = "BTNUPDATE"
         Me.BTNUPDATE.Size = New System.Drawing.Size(99, 36)
         Me.BTNUPDATE.TabIndex = 38
@@ -189,7 +189,7 @@ Partial Class ucCATEGORY
         Me.BTNDELETE.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.BTNDELETE.Font = New System.Drawing.Font("Century Gothic", 9.0!)
         Me.BTNDELETE.ForeColor = System.Drawing.Color.Snow
-        Me.BTNDELETE.Location = New System.Drawing.Point(257, 341)
+        Me.BTNDELETE.Location = New System.Drawing.Point(470, 233)
         Me.BTNDELETE.Name = "BTNDELETE"
         Me.BTNDELETE.Size = New System.Drawing.Size(99, 36)
         Me.BTNDELETE.TabIndex = 37
@@ -225,14 +225,14 @@ Partial Class ucCATEGORY
         Me.GroupBox1.ForeColor = System.Drawing.SystemColors.ControlDarkDark
         Me.GroupBox1.Location = New System.Drawing.Point(79, 140)
         Me.GroupBox1.Name = "GroupBox1"
-        Me.GroupBox1.Size = New System.Drawing.Size(494, 565)
+        Me.GroupBox1.Size = New System.Drawing.Size(628, 356)
         Me.GroupBox1.TabIndex = 77
         Me.GroupBox1.TabStop = False
         Me.GroupBox1.Text = "Add category"
         '
         'GroupBox2
         '
-        Me.GroupBox2.BackColor = System.Drawing.SystemColors.ScrollBar
+        Me.GroupBox2.BackColor = System.Drawing.SystemColors.InactiveCaption
         Me.GroupBox2.Controls.Add(Me.Label3)
         Me.GroupBox2.Controls.Add(Me.TXTSEARCH)
         Me.GroupBox2.Controls.Add(Me.DGVPRODUCTS)
@@ -265,6 +265,7 @@ Partial Class ucCATEGORY
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
+        Me.BackColor = System.Drawing.Color.White
         Me.Controls.Add(Me.GroupBox2)
         Me.Controls.Add(Me.GroupBox1)
         Me.Controls.Add(Me.TXTID)

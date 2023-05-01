@@ -300,8 +300,14 @@ Public Class ucTRANSACTION
             Exit Sub
         End If
         If Me.NumericUpDown1.Value > 0 Or Me.NumericUpDown1.Value <= Me.DGVPRODUCTS.CurrentRow.Cells(7).Value Then
-
         End If
+
+
+
+
+
+
+
 
 
         BTNPAY.Visible = True
@@ -659,5 +665,9 @@ Public Class ucTRANSACTION
         changelongpaper()
         PPD.Document = PD
         PPD.ShowDialog()
+    End Sub
+
+    Private Sub TXTUNIT_TextChanged(sender As Object, e As EventArgs) Handles TXTUNIT.TextChanged
+        If TXTUNIT.Text = "Pack/s" Then NumericUpDown1.Value = 10
     End Sub
 End Class

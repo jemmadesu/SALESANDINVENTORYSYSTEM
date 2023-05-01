@@ -89,7 +89,7 @@ Partial Class ucLOWQTY
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.BackColor = System.Drawing.SystemColors.Control
+        Me.BackColor = System.Drawing.Color.White
         Me.Controls.Add(Me.DGVLOWQTY)
         Me.Controls.Add(Me.Label8)
         Me.Controls.Add(Me.Panel2)

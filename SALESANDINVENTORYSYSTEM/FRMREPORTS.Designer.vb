@@ -23,30 +23,23 @@ Partial Class FRMREPORTS
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
-        Dim ReportDataSource17 As Microsoft.Reporting.WinForms.ReportDataSource = New Microsoft.Reporting.WinForms.ReportDataSource()
-        Dim ReportDataSource18 As Microsoft.Reporting.WinForms.ReportDataSource = New Microsoft.Reporting.WinForms.ReportDataSource()
-        Dim ReportDataSource19 As Microsoft.Reporting.WinForms.ReportDataSource = New Microsoft.Reporting.WinForms.ReportDataSource()
-        Dim ReportDataSource20 As Microsoft.Reporting.WinForms.ReportDataSource = New Microsoft.Reporting.WinForms.ReportDataSource()
-        Dim ReportDataSource21 As Microsoft.Reporting.WinForms.ReportDataSource = New Microsoft.Reporting.WinForms.ReportDataSource()
-        Dim ReportDataSource22 As Microsoft.Reporting.WinForms.ReportDataSource = New Microsoft.Reporting.WinForms.ReportDataSource()
-        Dim ReportDataSource23 As Microsoft.Reporting.WinForms.ReportDataSource = New Microsoft.Reporting.WinForms.ReportDataSource()
-        Dim ReportDataSource24 As Microsoft.Reporting.WinForms.ReportDataSource = New Microsoft.Reporting.WinForms.ReportDataSource()
+        Dim ReportDataSource1 As Microsoft.Reporting.WinForms.ReportDataSource = New Microsoft.Reporting.WinForms.ReportDataSource()
+        Dim ReportDataSource2 As Microsoft.Reporting.WinForms.ReportDataSource = New Microsoft.Reporting.WinForms.ReportDataSource()
+        Dim ReportDataSource3 As Microsoft.Reporting.WinForms.ReportDataSource = New Microsoft.Reporting.WinForms.ReportDataSource()
+        Dim ReportDataSource4 As Microsoft.Reporting.WinForms.ReportDataSource = New Microsoft.Reporting.WinForms.ReportDataSource()
+        Dim ReportDataSource5 As Microsoft.Reporting.WinForms.ReportDataSource = New Microsoft.Reporting.WinForms.ReportDataSource()
+        Dim ReportDataSource6 As Microsoft.Reporting.WinForms.ReportDataSource = New Microsoft.Reporting.WinForms.ReportDataSource()
+        Dim ReportDataSource7 As Microsoft.Reporting.WinForms.ReportDataSource = New Microsoft.Reporting.WinForms.ReportDataSource()
+        Dim ReportDataSource8 As Microsoft.Reporting.WinForms.ReportDataSource = New Microsoft.Reporting.WinForms.ReportDataSource()
         Me.tbl_actlogBindingSource = New System.Windows.Forms.BindingSource(Me.components)
         Me.inventory_dbDataSet = New SALESANDINVENTORYSYSTEM.inventory_dbDataSet()
         Me.tbl_salesBindingSource = New System.Windows.Forms.BindingSource(Me.components)
         Me.tbl_stocksoutBindingSource = New System.Windows.Forms.BindingSource(Me.components)
         Me.tbl_expiredprodBindingSource = New System.Windows.Forms.BindingSource(Me.components)
         Me.tbl_supplierBindingSource = New System.Windows.Forms.BindingSource(Me.components)
-        Me.tbl_productsBindingSource = New System.Windows.Forms.BindingSource(Me.components)
         Me.tbl_usersBindingSource = New System.Windows.Forms.BindingSource(Me.components)
         Me.tbl_stocksBindingSource = New System.Windows.Forms.BindingSource(Me.components)
-        Me.tbl_usersTableAdapter = New SALESANDINVENTORYSYSTEM.inventory_dbDataSetTableAdapters.tbl_usersTableAdapter()
-        Me.tbl_productsTableAdapter = New SALESANDINVENTORYSYSTEM.inventory_dbDataSetTableAdapters.tbl_productsTableAdapter()
-        Me.tbl_expiredprodTableAdapter = New SALESANDINVENTORYSYSTEM.inventory_dbDataSetTableAdapters.tbl_expiredprodTableAdapter()
-        Me.tbl_stocksoutTableAdapter = New SALESANDINVENTORYSYSTEM.inventory_dbDataSetTableAdapters.tbl_stocksoutTableAdapter()
-        Me.tbl_salesTableAdapter = New SALESANDINVENTORYSYSTEM.inventory_dbDataSetTableAdapters.tbl_salesTableAdapter()
-        Me.tbl_supplierTableAdapter = New SALESANDINVENTORYSYSTEM.inventory_dbDataSetTableAdapters.tbl_supplierTableAdapter()
-        Me.tbl_actlogTableAdapter = New SALESANDINVENTORYSYSTEM.inventory_dbDataSetTableAdapters.tbl_actlogTableAdapter()
+        Me.tbl_productsBindingSource = New System.Windows.Forms.BindingSource(Me.components)
         Me.TPACT = New System.Windows.Forms.TabPage()
         Me.ACTCLR = New Guna.UI2.WinForms.Guna2Button()
         Me.ACTFILL = New Guna.UI2.WinForms.Guna2Button()
@@ -74,12 +67,12 @@ Partial Class FRMREPORTS
         Me.TPSUP = New System.Windows.Forms.TabPage()
         Me.RPTSUP = New Microsoft.Reporting.WinForms.ReportViewer()
         Me.TPPRODS = New System.Windows.Forms.TabPage()
+        Me.RPTPRODUCTS = New Microsoft.Reporting.WinForms.ReportViewer()
         Me.Label3 = New System.Windows.Forms.Label()
         Me.BTNCLRDATE = New Guna.UI2.WinForms.Guna2Button()
         Me.BTNFILL = New Guna.UI2.WinForms.Guna2Button()
         Me.Date2 = New Guna.UI2.WinForms.Guna2DateTimePicker()
         Me.Date1 = New Guna.UI2.WinForms.Guna2DateTimePicker()
-        Me.RPTPRODUCTS = New Microsoft.Reporting.WinForms.ReportViewer()
         Me.TPUSERS = New System.Windows.Forms.TabPage()
         Me.RPTUSERS = New Microsoft.Reporting.WinForms.ReportViewer()
         Me.BTNCLEAR = New Guna.UI2.WinForms.Guna2Button()
@@ -95,16 +88,23 @@ Partial Class FRMREPORTS
         Me.Guna2DateTimePicker2 = New Guna.UI2.WinForms.Guna2DateTimePicker()
         Me.RPTSTOCKS = New Microsoft.Reporting.WinForms.ReportViewer()
         Me.BTNCLOSE = New System.Windows.Forms.Button()
+        Me.tbl_usersTableAdapter = New SALESANDINVENTORYSYSTEM.inventory_dbDataSetTableAdapters.tbl_usersTableAdapter()
+        Me.tbl_expiredprodTableAdapter = New SALESANDINVENTORYSYSTEM.inventory_dbDataSetTableAdapters.tbl_expiredprodTableAdapter()
+        Me.tbl_stocksoutTableAdapter = New SALESANDINVENTORYSYSTEM.inventory_dbDataSetTableAdapters.tbl_stocksoutTableAdapter()
+        Me.tbl_salesTableAdapter = New SALESANDINVENTORYSYSTEM.inventory_dbDataSetTableAdapters.tbl_salesTableAdapter()
+        Me.tbl_supplierTableAdapter = New SALESANDINVENTORYSYSTEM.inventory_dbDataSetTableAdapters.tbl_supplierTableAdapter()
+        Me.tbl_actlogTableAdapter = New SALESANDINVENTORYSYSTEM.inventory_dbDataSetTableAdapters.tbl_actlogTableAdapter()
         Me.tbl_stocksTableAdapter = New SALESANDINVENTORYSYSTEM.inventory_dbDataSetTableAdapters.tbl_stocksTableAdapter()
+        Me.tbl_productsTableAdapter = New SALESANDINVENTORYSYSTEM.inventory_dbDataSetTableAdapters.tbl_productsTableAdapter()
         CType(Me.tbl_actlogBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.inventory_dbDataSet, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.tbl_salesBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.tbl_stocksoutBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.tbl_expiredprodBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.tbl_supplierBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.tbl_productsBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.tbl_usersBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.tbl_stocksBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.tbl_productsBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.TPACT.SuspendLayout()
         Me.TPSALES.SuspendLayout()
         Me.TPOUT.SuspendLayout()
@@ -146,11 +146,6 @@ Partial Class FRMREPORTS
         Me.tbl_supplierBindingSource.DataMember = "tbl_supplier"
         Me.tbl_supplierBindingSource.DataSource = Me.inventory_dbDataSet
         '
-        'tbl_productsBindingSource
-        '
-        Me.tbl_productsBindingSource.DataMember = "tbl_products"
-        Me.tbl_productsBindingSource.DataSource = Me.inventory_dbDataSet
-        '
         'tbl_usersBindingSource
         '
         Me.tbl_usersBindingSource.DataMember = "tbl_users"
@@ -161,33 +156,10 @@ Partial Class FRMREPORTS
         Me.tbl_stocksBindingSource.DataMember = "tbl_stocks"
         Me.tbl_stocksBindingSource.DataSource = Me.inventory_dbDataSet
         '
-        'tbl_usersTableAdapter
+        'tbl_productsBindingSource
         '
-        Me.tbl_usersTableAdapter.ClearBeforeFill = True
-        '
-        'tbl_productsTableAdapter
-        '
-        Me.tbl_productsTableAdapter.ClearBeforeFill = True
-        '
-        'tbl_expiredprodTableAdapter
-        '
-        Me.tbl_expiredprodTableAdapter.ClearBeforeFill = True
-        '
-        'tbl_stocksoutTableAdapter
-        '
-        Me.tbl_stocksoutTableAdapter.ClearBeforeFill = True
-        '
-        'tbl_salesTableAdapter
-        '
-        Me.tbl_salesTableAdapter.ClearBeforeFill = True
-        '
-        'tbl_supplierTableAdapter
-        '
-        Me.tbl_supplierTableAdapter.ClearBeforeFill = True
-        '
-        'tbl_actlogTableAdapter
-        '
-        Me.tbl_actlogTableAdapter.ClearBeforeFill = True
+        Me.tbl_productsBindingSource.DataMember = "tbl_products"
+        Me.tbl_productsBindingSource.DataSource = Me.inventory_dbDataSet
         '
         'TPACT
         '
@@ -267,9 +239,9 @@ Partial Class FRMREPORTS
         '
         'RPTACTLOG
         '
-        ReportDataSource17.Name = "DataSet_ACT"
-        ReportDataSource17.Value = Me.tbl_actlogBindingSource
-        Me.RPTACTLOG.LocalReport.DataSources.Add(ReportDataSource17)
+        ReportDataSource1.Name = "DataSet_ACT"
+        ReportDataSource1.Value = Me.tbl_actlogBindingSource
+        Me.RPTACTLOG.LocalReport.DataSources.Add(ReportDataSource1)
         Me.RPTACTLOG.LocalReport.ReportEmbeddedResource = "SALESANDINVENTORYSYSTEM.RPTACTLOG.rdlc"
         Me.RPTACTLOG.Location = New System.Drawing.Point(31, 86)
         Me.RPTACTLOG.Name = "RPTACTLOG"
@@ -357,9 +329,9 @@ Partial Class FRMREPORTS
         '
         'RPTSALES
         '
-        ReportDataSource18.Name = "DataSet_Sales"
-        ReportDataSource18.Value = Me.tbl_salesBindingSource
-        Me.RPTSALES.LocalReport.DataSources.Add(ReportDataSource18)
+        ReportDataSource2.Name = "DataSet_Sales"
+        ReportDataSource2.Value = Me.tbl_salesBindingSource
+        Me.RPTSALES.LocalReport.DataSources.Add(ReportDataSource2)
         Me.RPTSALES.LocalReport.ReportEmbeddedResource = "SALESANDINVENTORYSYSTEM.RPTSALES.rdlc"
         Me.RPTSALES.Location = New System.Drawing.Point(31, 86)
         Me.RPTSALES.Name = "RPTSALES"
@@ -447,9 +419,9 @@ Partial Class FRMREPORTS
         '
         'RPTOUTOFSTOCKS
         '
-        ReportDataSource19.Name = "DataSet_OutOfStocks"
-        ReportDataSource19.Value = Me.tbl_stocksoutBindingSource
-        Me.RPTOUTOFSTOCKS.LocalReport.DataSources.Add(ReportDataSource19)
+        ReportDataSource3.Name = "DataSet_OutOfStocks"
+        ReportDataSource3.Value = Me.tbl_stocksoutBindingSource
+        Me.RPTOUTOFSTOCKS.LocalReport.DataSources.Add(ReportDataSource3)
         Me.RPTOUTOFSTOCKS.LocalReport.ReportEmbeddedResource = "SALESANDINVENTORYSYSTEM.RPTOUTOFSTOCKS.rdlc"
         Me.RPTOUTOFSTOCKS.Location = New System.Drawing.Point(31, 86)
         Me.RPTOUTOFSTOCKS.Name = "RPTOUTOFSTOCKS"
@@ -537,9 +509,9 @@ Partial Class FRMREPORTS
         '
         'RPTEXP
         '
-        ReportDataSource20.Name = "DataSet1"
-        ReportDataSource20.Value = Me.tbl_expiredprodBindingSource
-        Me.RPTEXP.LocalReport.DataSources.Add(ReportDataSource20)
+        ReportDataSource4.Name = "DataSet1"
+        ReportDataSource4.Value = Me.tbl_expiredprodBindingSource
+        Me.RPTEXP.LocalReport.DataSources.Add(ReportDataSource4)
         Me.RPTEXP.LocalReport.ReportEmbeddedResource = "SALESANDINVENTORYSYSTEM.RPTEXP.rdlc"
         Me.RPTEXP.Location = New System.Drawing.Point(31, 86)
         Me.RPTEXP.Name = "RPTEXP"
@@ -560,9 +532,9 @@ Partial Class FRMREPORTS
         '
         'RPTSUP
         '
-        ReportDataSource21.Name = "DataSet_SUPPLIER"
-        ReportDataSource21.Value = Me.tbl_supplierBindingSource
-        Me.RPTSUP.LocalReport.DataSources.Add(ReportDataSource21)
+        ReportDataSource5.Name = "DataSet_SUPPLIER"
+        ReportDataSource5.Value = Me.tbl_supplierBindingSource
+        Me.RPTSUP.LocalReport.DataSources.Add(ReportDataSource5)
         Me.RPTSUP.LocalReport.ReportEmbeddedResource = "SALESANDINVENTORYSYSTEM.RPTSUPPLIER.rdlc"
         Me.RPTSUP.Location = New System.Drawing.Point(31, 86)
         Me.RPTSUP.Name = "RPTSUP"
@@ -572,12 +544,12 @@ Partial Class FRMREPORTS
         '
         'TPPRODS
         '
+        Me.TPPRODS.Controls.Add(Me.RPTPRODUCTS)
         Me.TPPRODS.Controls.Add(Me.Label3)
         Me.TPPRODS.Controls.Add(Me.BTNCLRDATE)
         Me.TPPRODS.Controls.Add(Me.BTNFILL)
         Me.TPPRODS.Controls.Add(Me.Date2)
         Me.TPPRODS.Controls.Add(Me.Date1)
-        Me.TPPRODS.Controls.Add(Me.RPTPRODUCTS)
         Me.TPPRODS.Location = New System.Drawing.Point(4, 29)
         Me.TPPRODS.Name = "TPPRODS"
         Me.TPPRODS.Padding = New System.Windows.Forms.Padding(3)
@@ -585,6 +557,18 @@ Partial Class FRMREPORTS
         Me.TPPRODS.TabIndex = 1
         Me.TPPRODS.Text = "Products"
         Me.TPPRODS.UseVisualStyleBackColor = True
+        '
+        'RPTPRODUCTS
+        '
+        ReportDataSource6.Name = "DataSet1"
+        ReportDataSource6.Value = Me.tbl_productsBindingSource
+        Me.RPTPRODUCTS.LocalReport.DataSources.Add(ReportDataSource6)
+        Me.RPTPRODUCTS.LocalReport.ReportEmbeddedResource = "SALESANDINVENTORYSYSTEM.RPTPRODUCTS.rdlc"
+        Me.RPTPRODUCTS.Location = New System.Drawing.Point(42, 79)
+        Me.RPTPRODUCTS.Name = "RPTPRODUCTS"
+        Me.RPTPRODUCTS.ServerReport.BearerToken = Nothing
+        Me.RPTPRODUCTS.Size = New System.Drawing.Size(1480, 610)
+        Me.RPTPRODUCTS.TabIndex = 8
         '
         'Label3
         '
@@ -659,18 +643,6 @@ Partial Class FRMREPORTS
         Me.Date1.TabIndex = 1
         Me.Date1.Value = New Date(2023, 4, 15, 23, 18, 1, 623)
         '
-        'RPTPRODUCTS
-        '
-        ReportDataSource22.Name = "DataSet_Products"
-        ReportDataSource22.Value = Me.tbl_productsBindingSource
-        Me.RPTPRODUCTS.LocalReport.DataSources.Add(ReportDataSource22)
-        Me.RPTPRODUCTS.LocalReport.ReportEmbeddedResource = "SALESANDINVENTORYSYSTEM.RPTPRODUCTS.rdlc"
-        Me.RPTPRODUCTS.Location = New System.Drawing.Point(31, 86)
-        Me.RPTPRODUCTS.Name = "RPTPRODUCTS"
-        Me.RPTPRODUCTS.ServerReport.BearerToken = Nothing
-        Me.RPTPRODUCTS.Size = New System.Drawing.Size(1480, 610)
-        Me.RPTPRODUCTS.TabIndex = 0
-        '
         'TPUSERS
         '
         Me.TPUSERS.Controls.Add(Me.RPTUSERS)
@@ -689,9 +661,9 @@ Partial Class FRMREPORTS
         '
         'RPTUSERS
         '
-        ReportDataSource23.Name = "DataSet_useraccounts"
-        ReportDataSource23.Value = Me.tbl_usersBindingSource
-        Me.RPTUSERS.LocalReport.DataSources.Add(ReportDataSource23)
+        ReportDataSource7.Name = "DataSet_useraccounts"
+        ReportDataSource7.Value = Me.tbl_usersBindingSource
+        Me.RPTUSERS.LocalReport.DataSources.Add(ReportDataSource7)
         Me.RPTUSERS.LocalReport.ReportEmbeddedResource = "SALESANDINVENTORYSYSTEM.RPTUSERACCOUNTS.rdlc"
         Me.RPTUSERS.Location = New System.Drawing.Point(31, 86)
         Me.RPTUSERS.Name = "RPTUSERS"
@@ -867,9 +839,9 @@ Partial Class FRMREPORTS
         '
         'RPTSTOCKS
         '
-        ReportDataSource24.Name = "inv_db"
-        ReportDataSource24.Value = Me.tbl_stocksBindingSource
-        Me.RPTSTOCKS.LocalReport.DataSources.Add(ReportDataSource24)
+        ReportDataSource8.Name = "inv_db"
+        ReportDataSource8.Value = Me.tbl_stocksBindingSource
+        Me.RPTSTOCKS.LocalReport.DataSources.Add(ReportDataSource8)
         Me.RPTSTOCKS.LocalReport.ReportEmbeddedResource = "SALESANDINVENTORYSYSTEM.RPTSTOCKS.rdlc"
         Me.RPTSTOCKS.Location = New System.Drawing.Point(35, 73)
         Me.RPTSTOCKS.Name = "RPTSTOCKS"
@@ -889,14 +861,43 @@ Partial Class FRMREPORTS
         Me.BTNCLOSE.Text = "Close"
         Me.BTNCLOSE.UseVisualStyleBackColor = False
         '
+        'tbl_usersTableAdapter
+        '
+        Me.tbl_usersTableAdapter.ClearBeforeFill = True
+        '
+        'tbl_expiredprodTableAdapter
+        '
+        Me.tbl_expiredprodTableAdapter.ClearBeforeFill = True
+        '
+        'tbl_stocksoutTableAdapter
+        '
+        Me.tbl_stocksoutTableAdapter.ClearBeforeFill = True
+        '
+        'tbl_salesTableAdapter
+        '
+        Me.tbl_salesTableAdapter.ClearBeforeFill = True
+        '
+        'tbl_supplierTableAdapter
+        '
+        Me.tbl_supplierTableAdapter.ClearBeforeFill = True
+        '
+        'tbl_actlogTableAdapter
+        '
+        Me.tbl_actlogTableAdapter.ClearBeforeFill = True
+        '
         'tbl_stocksTableAdapter
         '
         Me.tbl_stocksTableAdapter.ClearBeforeFill = True
+        '
+        'tbl_productsTableAdapter
+        '
+        Me.tbl_productsTableAdapter.ClearBeforeFill = True
         '
         'FRMREPORTS
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
+        Me.BackColor = System.Drawing.Color.White
         Me.ClientSize = New System.Drawing.Size(1555, 759)
         Me.Controls.Add(Me.BTNCLOSE)
         Me.Controls.Add(Me.TCREPORTS)
@@ -909,9 +910,9 @@ Partial Class FRMREPORTS
         CType(Me.tbl_stocksoutBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.tbl_expiredprodBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.tbl_supplierBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.tbl_productsBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.tbl_usersBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.tbl_stocksBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.tbl_productsBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
         Me.TPACT.ResumeLayout(False)
         Me.TPACT.PerformLayout()
         Me.TPSALES.ResumeLayout(False)
@@ -931,8 +932,6 @@ Partial Class FRMREPORTS
     Friend WithEvents tbl_usersBindingSource As BindingSource
     Friend WithEvents inventory_dbDataSet As inventory_dbDataSet
     Friend WithEvents tbl_usersTableAdapter As inventory_dbDataSetTableAdapters.tbl_usersTableAdapter
-    Friend WithEvents tbl_productsBindingSource As BindingSource
-    Friend WithEvents tbl_productsTableAdapter As inventory_dbDataSetTableAdapters.tbl_productsTableAdapter
     Friend WithEvents tbl_expiredprodBindingSource As BindingSource
     Friend WithEvents tbl_expiredprodTableAdapter As inventory_dbDataSetTableAdapters.tbl_expiredprodTableAdapter
     Friend WithEvents tbl_stocksoutBindingSource As BindingSource
@@ -975,7 +974,6 @@ Partial Class FRMREPORTS
     Friend WithEvents BTNFILL As Guna.UI2.WinForms.Guna2Button
     Friend WithEvents Date2 As Guna.UI2.WinForms.Guna2DateTimePicker
     Friend WithEvents Date1 As Guna.UI2.WinForms.Guna2DateTimePicker
-    Friend WithEvents RPTPRODUCTS As Microsoft.Reporting.WinForms.ReportViewer
     Friend WithEvents TPUSERS As TabPage
     Friend WithEvents RPTUSERS As Microsoft.Reporting.WinForms.ReportViewer
     Friend WithEvents BTNCLEAR As Guna.UI2.WinForms.Guna2Button
@@ -993,4 +991,7 @@ Partial Class FRMREPORTS
     Friend WithEvents RPTSTOCKS As Microsoft.Reporting.WinForms.ReportViewer
     Friend WithEvents tbl_stocksBindingSource As BindingSource
     Friend WithEvents tbl_stocksTableAdapter As inventory_dbDataSetTableAdapters.tbl_stocksTableAdapter
+    Friend WithEvents tbl_productsBindingSource As BindingSource
+    Friend WithEvents tbl_productsTableAdapter As inventory_dbDataSetTableAdapters.tbl_productsTableAdapter
+    Friend WithEvents RPTPRODUCTS As Microsoft.Reporting.WinForms.ReportViewer
 End Class

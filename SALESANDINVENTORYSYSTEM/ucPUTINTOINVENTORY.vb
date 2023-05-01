@@ -305,12 +305,12 @@ Public Class ucPUTINTOINVENTORY
     End Sub
     Private Sub search()
 
-        Dim dba As New MySqlDataAdapter("select prodid, prodname, prodman, prodbrand, prodcat, catcode  from tbl_stocks  WHERE tbl_stocks.prodname LIKE '%" & Me.TextBox4.Text & "%' OR tbl_stocks.prodid LIKE '%" & Me.TextBox4.Text & "%'", con)
+        Dim dba As New MySqlDataAdapter("select stockid, prodid, prodname, prodman, prodbrand, prodcat, catcode, price, unit, quantity, expirationdate from tbl_stocks  WHERE tbl_stocks.prodname LIKE '%" & Me.TXTSTOCKSEARCH.Text & "%' OR tbl_stocks.prodid LIKE '%" & Me.TXTSTOCKSEARCH.Text & "%'", con)
         Dim dbset As New DataSet
         dba.Fill(dbset)
-        Me.DGVPRODUCTS.DataSource = dbset.Tables(0).DefaultView
+        Me.DGVMAIN.DataSource = dbset.Tables(0).DefaultView
     End Sub
-    Private Sub TextBox4_TextChanged(sender As Object, e As EventArgs) Handles TextBox4.TextChanged
+    Private Sub TextBox4_TextChanged(sender As Object, e As EventArgs) Handles TXTSTOCKSEARCH.TextChanged
         search()
     End Sub
 End Class

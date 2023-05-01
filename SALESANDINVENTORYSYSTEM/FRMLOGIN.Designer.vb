@@ -256,7 +256,7 @@ Partial Class FRMLOGIN
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.BackColor = System.Drawing.SystemColors.Window
+        Me.BackColor = System.Drawing.Color.White
         Me.ClientSize = New System.Drawing.Size(1023, 547)
         Me.Controls.Add(Me.BTNCANCEL)
         Me.Controls.Add(Me.Panel4)

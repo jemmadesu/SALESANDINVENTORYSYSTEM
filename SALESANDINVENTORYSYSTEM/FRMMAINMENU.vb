@@ -73,26 +73,8 @@ Public Class FRMMAINMENU
 
     End Sub
 
-    Private Sub BTNREPORTS_Click_1(sender As Object, e As EventArgs) Handles BTNSALES.Click
-        Dim i As Integer
-        For i = 0 To 0
-            PNLMAIN.Controls.RemoveAt(i)
-        Next
+    Private Sub BTNREPORTS_Click_1(sender As Object, e As EventArgs)
 
-        Dim REPORTS As New ucSALES
-        REPORTS.Parent = PNLMAIN
-        REPORTS.Show()
-        REPORTS.Dock = DockStyle.Fill
-
-
-        BTNSALES.BackColor = Color.FromArgb(44, 55, 70)
-
-        BTNINVENTORY.BackColor = Color.FromArgb(37, 46, 59)
-        BTNTRANSACTION.BackColor = Color.FromArgb(37, 46, 59)
-        BTNINVENTORY.BackColor = Color.FromArgb(37, 46, 59)
-        BTNDASHBOARD.BackColor = Color.FromArgb(37, 46, 59)
-        BTNSETTINGS.BackColor = Color.FromArgb(37, 46, 59)
-        BTNLOGOUT.BackColor = Color.FromArgb(37, 46, 59)
 
     End Sub
 
@@ -144,7 +126,7 @@ Public Class FRMMAINMENU
 
             Exit Sub
 
-            End If
+        End If
         FRMLOGIN.Show()
         Me.Close()
 
@@ -219,5 +201,25 @@ Public Class FRMMAINMENU
         FRMREPORTS.ShowDialog()
     End Sub
 
+    Private Sub BTNSALES_Click(sender As Object, e As EventArgs) Handles BTNSALES.Click
+        Dim i As Integer
+        For i = 0 To 0
+            PNLMAIN.Controls.RemoveAt(i)
+        Next
 
+        Dim REPORTS As New ucSALES
+        REPORTS.Parent = PNLMAIN
+        REPORTS.Show()
+        REPORTS.Dock = DockStyle.Fill
+
+
+        BTNSALES.BackColor = Color.FromArgb(44, 55, 70)
+
+        BTNINVENTORY.BackColor = Color.FromArgb(37, 46, 59)
+        BTNTRANSACTION.BackColor = Color.FromArgb(37, 46, 59)
+        BTNINVENTORY.BackColor = Color.FromArgb(37, 46, 59)
+        BTNDASHBOARD.BackColor = Color.FromArgb(37, 46, 59)
+        BTNSETTINGS.BackColor = Color.FromArgb(37, 46, 59)
+        BTNLOGOUT.BackColor = Color.FromArgb(37, 46, 59)
+    End Sub
 End Class

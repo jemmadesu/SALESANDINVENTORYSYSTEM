@@ -82,6 +82,7 @@ Partial Class FRMNEAREXPIRY
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
+        Me.BackColor = System.Drawing.Color.White
         Me.ClientSize = New System.Drawing.Size(1306, 762)
         Me.Controls.Add(Me.Label8)
         Me.Controls.Add(Me.Panel2)
