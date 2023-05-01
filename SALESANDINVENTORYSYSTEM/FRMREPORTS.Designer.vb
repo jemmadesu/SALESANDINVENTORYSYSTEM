@@ -37,9 +37,9 @@ Partial Class FRMREPORTS
         Me.tbl_stocksoutBindingSource = New System.Windows.Forms.BindingSource(Me.components)
         Me.tbl_expiredprodBindingSource = New System.Windows.Forms.BindingSource(Me.components)
         Me.tbl_supplierBindingSource = New System.Windows.Forms.BindingSource(Me.components)
+        Me.tbl_productsBindingSource = New System.Windows.Forms.BindingSource(Me.components)
         Me.tbl_usersBindingSource = New System.Windows.Forms.BindingSource(Me.components)
         Me.tbl_stocksBindingSource = New System.Windows.Forms.BindingSource(Me.components)
-        Me.tbl_productsBindingSource = New System.Windows.Forms.BindingSource(Me.components)
         Me.TPACT = New System.Windows.Forms.TabPage()
         Me.ACTCLR = New Guna.UI2.WinForms.Guna2Button()
         Me.ACTFILL = New Guna.UI2.WinForms.Guna2Button()
@@ -102,9 +102,9 @@ Partial Class FRMREPORTS
         CType(Me.tbl_stocksoutBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.tbl_expiredprodBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.tbl_supplierBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.tbl_productsBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.tbl_usersBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.tbl_stocksBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.tbl_productsBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.TPACT.SuspendLayout()
         Me.TPSALES.SuspendLayout()
         Me.TPOUT.SuspendLayout()
@@ -146,6 +146,11 @@ Partial Class FRMREPORTS
         Me.tbl_supplierBindingSource.DataMember = "tbl_supplier"
         Me.tbl_supplierBindingSource.DataSource = Me.inventory_dbDataSet
         '
+        'tbl_productsBindingSource
+        '
+        Me.tbl_productsBindingSource.DataMember = "tbl_products"
+        Me.tbl_productsBindingSource.DataSource = Me.inventory_dbDataSet
+        '
         'tbl_usersBindingSource
         '
         Me.tbl_usersBindingSource.DataMember = "tbl_users"
@@ -155,11 +160,6 @@ Partial Class FRMREPORTS
         '
         Me.tbl_stocksBindingSource.DataMember = "tbl_stocks"
         Me.tbl_stocksBindingSource.DataSource = Me.inventory_dbDataSet
-        '
-        'tbl_productsBindingSource
-        '
-        Me.tbl_productsBindingSource.DataMember = "tbl_products"
-        Me.tbl_productsBindingSource.DataSource = Me.inventory_dbDataSet
         '
         'TPACT
         '
@@ -852,6 +852,8 @@ Partial Class FRMREPORTS
         'BTNCLOSE
         '
         Me.BTNCLOSE.BackColor = System.Drawing.SystemColors.ControlDark
+        Me.BTNCLOSE.FlatAppearance.BorderSize = 0
+        Me.BTNCLOSE.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.BTNCLOSE.Font = New System.Drawing.Font("Segoe UI", 9.0!)
         Me.BTNCLOSE.ForeColor = System.Drawing.Color.FromArgb(CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer))
         Me.BTNCLOSE.Location = New System.Drawing.Point(1452, 12)
@@ -910,9 +912,9 @@ Partial Class FRMREPORTS
         CType(Me.tbl_stocksoutBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.tbl_expiredprodBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.tbl_supplierBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.tbl_productsBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.tbl_usersBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.tbl_stocksBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.tbl_productsBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
         Me.TPACT.ResumeLayout(False)
         Me.TPACT.PerformLayout()
         Me.TPSALES.ResumeLayout(False)

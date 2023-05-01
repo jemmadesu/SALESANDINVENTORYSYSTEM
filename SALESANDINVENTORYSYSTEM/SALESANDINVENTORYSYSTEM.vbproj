@@ -476,6 +476,7 @@
     <None Include="Resources\[CITYPNG.COM]White Circle Round Question Mark Icon PNG - 1124x1124.png" />
     <Content Include="logo.ico" />
     <None Include="Resources\admin.png" />
+    <None Include="Resources\x-symbol.png" />
     <Content Include="SqlServerTypes\Loader.cs" />
     <Content Include="SqlServerTypes\readme.htm" />
     <Content Include="SqlServerTypes\x64\msvcr120.dll">

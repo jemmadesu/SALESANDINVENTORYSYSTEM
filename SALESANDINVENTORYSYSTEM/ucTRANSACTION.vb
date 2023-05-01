@@ -103,17 +103,17 @@ Public Class ucTRANSACTION
 
         sumprice()
 
-        e.Graphics.DrawString("Total Qty: " & t_qty, f10b, Brushes.Black, 0, 70 + height2)
-        e.Graphics.DrawString("Total: " & Format(t_price, "##,##0"), f10b, Brushes.Black, rightmargin, 70 + height2, right)
+        e.Graphics.DrawString("Total Qty: " & t_qty, f10b, Brushes.Black, 0, 50 + height2)
+        e.Graphics.DrawString("Total: " & Format(t_price, "##,##0"), f10b, Brushes.Black, rightmargin, 50 + height2, right)
 
 
 
-        e.Graphics.DrawString("Payment: " + TXTPAYMENT.Text.ToString, f10b, Brushes.Black, 0, 80 + height2)
-        e.Graphics.DrawString("Discount Type: " + CBODISCOUNT.Text.ToString, f10b, Brushes.Black, 0, 90 + height2)
-        e.Graphics.DrawString("Change: " + TXTCHANGE.Text.ToString, f10b, Brushes.Black, 0, 100 + height2)
+        e.Graphics.DrawString("Payment: " + TXTPAYMENT.Text.ToString, f10b, Brushes.Black, 0, 65 + height2)
+        e.Graphics.DrawString("Discount Type: " + CBODISCOUNT.Text.ToString, f10b, Brushes.Black, 0, 80 + height2)
+        e.Graphics.DrawString("Change: " + TXTCHANGE.Text.ToString, f10b, Brushes.Black, 0, 95 + height2)
 
-        e.Graphics.DrawString("Thanks for Shopping”, f10, Brushes.Black, centermargin, 120 + height2, center)
-        e.Graphics.DrawString("This serves as your official receipt", f10, Brushes.Black, centermargin, 150 + height2, center)
+        e.Graphics.DrawString("Thanks for Shopping”, f10, Brushes.Black, centermargin, 150 + height2, center)
+        e.Graphics.DrawString("This serves as your official receipt", f10, Brushes.Black, centermargin, 180 + height2, center)
 
     End Sub
     Dim t_price As Long
@@ -661,13 +661,17 @@ Public Class ucTRANSACTION
     Private Sub TXTPRICE_TextChanged(sender As Object, e As EventArgs) Handles TXTSEARCH.TextChanged
         search()
     End Sub
-    Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
-        changelongpaper()
-        PPD.Document = PD
-        PPD.ShowDialog()
-    End Sub
+    'Private Sub Button1_Click(sender As Object, e As EventArgs)
+    '    changelongpaper()
+    '    PPD.Document = PD
+    '    PPD.ShowDialog()
+    'End Sub
 
     Private Sub TXTUNIT_TextChanged(sender As Object, e As EventArgs) Handles TXTUNIT.TextChanged
+
+    End Sub
+
+    Private Sub NumericUpDown1_ValueChanged(sender As Object, e As EventArgs) Handles NumericUpDown1.ValueChanged
         If TXTUNIT.Text = "Pack/s" Then NumericUpDown1.Value = 10
     End Sub
 End Class

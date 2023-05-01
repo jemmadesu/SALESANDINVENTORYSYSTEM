@@ -110,7 +110,7 @@ Partial Class ucUSERMANAGEMENT
         'txtsearch
         '
         Me.txtsearch.Font = New System.Drawing.Font("Century Gothic", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txtsearch.Location = New System.Drawing.Point(843, 114)
+        Me.txtsearch.Location = New System.Drawing.Point(991, 89)
         Me.txtsearch.Name = "txtsearch"
         Me.txtsearch.Size = New System.Drawing.Size(277, 23)
         Me.txtsearch.TabIndex = 107
@@ -129,7 +129,7 @@ Partial Class ucUSERMANAGEMENT
         '
         'GroupBox1
         '
-        Me.GroupBox1.BackColor = System.Drawing.SystemColors.Control
+        Me.GroupBox1.BackColor = System.Drawing.Color.White
         Me.GroupBox1.Controls.Add(Me.Panel1)
         Me.GroupBox1.Controls.Add(Me.Label12)
         Me.GroupBox1.Controls.Add(Me.TXTCP)
@@ -511,7 +511,7 @@ Partial Class ucUSERMANAGEMENT
         Me.Label1.AutoSize = True
         Me.Label1.Font = New System.Drawing.Font("Century Gothic", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label1.ForeColor = System.Drawing.SystemColors.ControlDarkDark
-        Me.Label1.Location = New System.Drawing.Point(711, 114)
+        Me.Label1.Location = New System.Drawing.Point(859, 89)
         Me.Label1.Name = "Label1"
         Me.Label1.Size = New System.Drawing.Size(126, 17)
         Me.Label1.TabIndex = 144

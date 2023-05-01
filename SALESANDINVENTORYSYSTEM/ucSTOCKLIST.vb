@@ -69,4 +69,6 @@ Public Class ucSTOCKLIST
     Private Sub TXTSEARCH_TextChanged(sender As Object, e As EventArgs) Handles TXTSEARCH.TextChanged
         search()
     End Sub
+
+
 End Class

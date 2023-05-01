@@ -1,9 +1,37 @@
 ﻿Imports MySql.Data.MySqlClient
+Imports System.ComponentModel
 Imports System.IO
 
 
 Public Class ucUSERMANAGEMENT
     Dim con_str As String = "My.Settings.inventory_dbConnectionString"
+
+    Private Sub DGVSETPROPERTY()
+        DGVUSERS.Columns(0).Width = 150
+        DGVUSERS.Columns(0).HeaderText = "Username"
+        DGVUSERS.Columns(1).Width = 150
+        DGVUSERS.Columns(1).HeaderText = "User Type"
+        DGVUSERS.Columns(2).Width = 150
+        DGVUSERS.Columns(2).HeaderText = "User ID"
+        DGVUSERS.Columns(3).Width = 150
+        DGVUSERS.Columns(3).HeaderText = "Reference ID"
+        DGVUSERS.Columns(4).Width = 150
+        DGVUSERS.Columns(4).HeaderText = "Status"
+        DGVUSERS.Columns(5).Width = 150
+        DGVUSERS.Columns(5).HeaderText = "Password"
+        DGVUSERS.Columns(6).Width = 150
+        DGVUSERS.Columns(6).HeaderText = "First Name"
+        DGVUSERS.Columns(7).Width = 150
+        DGVUSERS.Columns(7).HeaderText = "Middle Name"
+        DGVUSERS.Columns(8).Width = 150
+        DGVUSERS.Columns(8).HeaderText = "Last Name"
+        DGVUSERS.Columns(9).Width = 150
+        DGVUSERS.Columns(9).HeaderText = "Telephone No."
+        DGVUSERS.Columns(10).Width = 150
+        DGVUSERS.Columns(10).HeaderText = "E-Mail"
+        DGVUSERS.Columns(11).Width = 150
+        DGVUSERS.Columns(11).HeaderText = "Address"
+    End Sub
     Private Sub actlog()
         con.Close()
         OpenCon()
@@ -61,8 +89,7 @@ Public Class ucUSERMANAGEMENT
             Dim dt As New DataSet()
             da.Fill(dt)
             DGVUSERS.DataSource = dt.Tables(0)
-
-            'DGVSETPROPERTY()
+            DGVSETPROPERTY()
         Catch ex As Exception
 
             MessageBox.Show(ex.ToString())
@@ -96,21 +123,9 @@ Public Class ucUSERMANAGEMENT
     End Sub
 
     Private Sub DGVUSERS_CellClick(sender As Object, e As DataGridViewCellEventArgs) Handles DGVUSERS.CellContentClick
-
-        'Dim res As DialogResult
-        'res = MsgBox("You're on edit mode, please select the user you want edit", MessageBoxButtons.OK + vbInformation, "Edit Mode")
-        'If res = DialogResult.OK Then
-
-        '    DGVUSERS.Enabled = True
-
         BTNDELETE.Enabled = True
         BTNEDIT.Text = "Save Edit"
         If BTNEDIT.Text = "Save Edit" Then BTNSAVE.Visible = False
-
-
-        '    Exit Sub
-        'End If 
-
 
         BTNEDIT.Enabled = True
         BTNCANCEL.Enabled = True
@@ -171,46 +186,6 @@ Public Class ucUSERMANAGEMENT
         actlog()
 
     End Sub
-
-    Private Sub BTNADD_Click(sender As Object, e As EventArgs)
-        ' ERROR TRAPPING
-
-        'DGVUSERS.Enabled = False
-
-
-        'If CBOACCTYPE.Text = "" Then MsgBox("Please select your usertype first!", vbOKOnly + vbCritical, "Error creating new account")
-
-        'If CBOACCTYPE.SelectedIndex = -1 Then
-        '    TXTFN.Enabled = False
-        '    TXTNAME.Enabled = False
-        '    TXTMN.Enabled = False
-        '    TXTLN.Enabled = False
-        '    TXTTEL.Enabled = False
-        '    TXTEMAIL.Enabled = False
-        '    TXTADDRESS.Enabled = False
-        '    TXTUN.Enabled = False
-        '    TXTCP.Enabled = False
-        '    TXTPW.Enabled = False
-        '    CBOSTATUS.Enabled = False
-
-
-
-        '    Exit Sub
-        'End If
-
-
-        'DGVUSERS.Enabled = False
-        'BTNSAVE.Enabled = False
-        'BTNCANCEL.Enabled = True
-
-
-
-
-
-
-
-    End Sub
-
     Private Sub BTNSAVE_Click(sender As Object, e As EventArgs) Handles BTNSAVE.Click
 
 
@@ -372,7 +347,7 @@ Public Class ucUSERMANAGEMENT
         cmd.ExecuteNonQuery()
         con.Close()
         MsgBox("New user has been updated!", vbOKOnly + vbInformation, "Saving Successful")
-        activity = "Added new user. userID: " + TXTUI.Text
+        activity = "Updated a user. userID: " + TXTUI.Text
         actlog()
         LOADUSERS()
 
@@ -416,46 +391,36 @@ Public Class ucUSERMANAGEMENT
 
     Private Sub CBOACCTYPE_SelectedIndexChanged(sender As Object, e As EventArgs) Handles CBOACCTYPE.SelectedIndexChanged
 
-
-        'If BTNEDIT.Text = "Save Edit" Then
-        '    Exit Sub
-
-        'End If
-
-        'If BTNEDIT.Text = "Edit" Then
-
-
-
         BTNSAVE.Enabled = True
-            DGVUSERS.Enabled = False
-            BTNCANCEL.Enabled = True
+        DGVUSERS.Enabled = False
+        BTNCANCEL.Enabled = True
 
-            Getmax()
-            AutoID()
+        Getmax()
+        AutoID()
 
-            TXTUN.Text = ""
-            TXTPW.Text = ""
-            TXTCP.Text = ""
-            TXTFN.Text = ""
-            TXTMN.Text = ""
-            TXTLN.Text = ""
-            TXTTEL.Text = ""
-            TXTEMAIL.Text = ""
-            TXTADDRESS.Text = ""
-            TXTFN.Focus()
+        TXTUN.Text = ""
+        TXTPW.Text = ""
+        TXTCP.Text = ""
+        TXTFN.Text = ""
+        TXTMN.Text = ""
+        TXTLN.Text = ""
+        TXTTEL.Text = ""
+        TXTEMAIL.Text = ""
+        TXTADDRESS.Text = ""
+        TXTFN.Focus()
 
-            TXTFN.Enabled = True
-            TXTNAME.Enabled = True
-            TXTMN.Enabled = True
-            TXTLN.Enabled = True
-            TXTTEL.Enabled = True
-            TXTEMAIL.Enabled = True
-            TXTADDRESS.Enabled = True
-            TXTUN.Enabled = True
-            TXTCP.Enabled = True
-            TXTPW.Enabled = True
-            CBOSTATUS.Enabled = True
-            Exit Sub
+        TXTFN.Enabled = True
+        TXTNAME.Enabled = True
+        TXTMN.Enabled = True
+        TXTLN.Enabled = True
+        TXTTEL.Enabled = True
+        TXTEMAIL.Enabled = True
+        TXTADDRESS.Enabled = True
+        TXTUN.Enabled = True
+        TXTCP.Enabled = True
+        TXTPW.Enabled = True
+        CBOSTATUS.Enabled = True
+        Exit Sub
         'End If
     End Sub
 
@@ -470,44 +435,102 @@ Public Class ucUSERMANAGEMENT
         Me.DGVUSERS.DataSource = dbset.Tables(0).DefaultView
 
     End Sub
-    Private Sub DGVSETPROPERTY()
-        DGVUSERS.Columns(0).Width = 150
-        DGVUSERS.Columns(0).HeaderText = "Username"
-        DGVUSERS.Columns(1).Width = 150
-        DGVUSERS.Columns(1).HeaderText = "User Type"
-        DGVUSERS.Columns(2).Width = 150
-        DGVUSERS.Columns(2).HeaderText = "User ID"
-        DGVUSERS.Columns(3).Width = 150
-        DGVUSERS.Columns(3).HeaderText = "Reference ID"
-        DGVUSERS.Columns(4).Width = 150
-        DGVUSERS.Columns(4).HeaderText = "Status"
-        DGVUSERS.Columns(5).Width = 150
-        DGVUSERS.Columns(5).HeaderText = "Password"
-        DGVUSERS.Columns(6).Width = 150
-        DGVUSERS.Columns(6).HeaderText = "First Name"
-        DGVUSERS.Columns(7).Width = 150
-        DGVUSERS.Columns(7).HeaderText = "Middle Name"
-        DGVUSERS.Columns(8).Width = 150
-        DGVUSERS.Columns(8).HeaderText = "Last Name"
-        DGVUSERS.Columns(9).Width = 150
-        DGVUSERS.Columns(9).HeaderText = "Telephone No."
-        DGVUSERS.Columns(10).Width = 150
-        DGVUSERS.Columns(10).HeaderText = "E-Mail"
-        DGVUSERS.Columns(11).Width = 150
-        DGVUSERS.Columns(11).HeaderText = "Address"
-    End Sub
+
     Private Sub txtsearch_TextChanged(sender As Object, e As EventArgs) Handles txtsearch.TextChanged
         searchuser()
     End Sub
-    'Private Sub DGVUSERS_CellFormatting(sender As Object, e As DataGridViewCellFormattingEventArgs) Handles DGVUSERS.CellFormatting
-    ''    For Each row As DataGridViewRow In DGVUSERS.Rows
-    ''        If row.Cells(1).Value = "usertype" Then
-    ''            row.DefaultCellStyle.ForeColor = Color.White
-    ''            row.DefaultCellStyle.BackColor = Color.Green
 
-    ''        End If
+    Private Sub TXTTEL_KeyPress(sender As Object, e As KeyPressEventArgs) Handles TXTTEL.KeyPress
+        If Not Char.IsNumber(e.KeyChar) And Not Char.IsControl(e.KeyChar) Then
+            e.Handled = True
+            MsgBox("Letter or Special character is not allowed", vbCritical, "Error")
+        End If
+        If TXTTEL.Text.Length >= 12 Then
+            If e.KeyChar <> ControlChars.Back Then
+                e.Handled = True
+                MsgBox("Number Exceed", vbCritical, "Error")
+            End If
+        End If
+    End Sub
 
-    ''    Next
+    Private Sub TXTFN_KeyPress(sender As Object, e As KeyPressEventArgs) Handles TXTFN.KeyPress
+        If Not Char.IsLetter(e.KeyChar) And Not e.KeyChar = Chr(Keys.Back) And Not e.KeyChar = Chr(Keys.Space) Then
+            e.Handled = True
+            MsgBox("Number or Special character is not allowed", MessageBoxIcon.Warning, "Error")
+        End If
+    End Sub
+    Private Sub TXTMN_KeyPress(sender As Object, e As KeyPressEventArgs) Handles TXTMN.KeyPress
+        If Not Char.IsLetter(e.KeyChar) And Not e.KeyChar = Chr(Keys.Back) And Not e.KeyChar = Chr(Keys.Space) Then
+            e.Handled = True
+            MsgBox("Number or Special character is not allowed", MessageBoxIcon.Warning, "Invalid Format")
+        End If
+    End Sub
+    Private Sub TXTLN_KeyPress(sender As Object, e As KeyPressEventArgs) Handles TXTLN.KeyPress
+        If Not Char.IsLetter(e.KeyChar) And Not e.KeyChar = Chr(Keys.Back) And Not e.KeyChar = Chr(Keys.Space) Then
+            e.Handled = True
+            MsgBox("Number or Special character is not allowed", MessageBoxIcon.Warning, "Invalid Format")
+        End If
+    End Sub
 
-    ''End Sub
+    Private Sub TXTEMAIL_Validating(sender As Object, e As CancelEventArgs) Handles TXTEMAIL.Validating
+        ' Get the entered email address from the TextBox
+        Dim emailAddress As String = TXTEMAIL.Text.Trim()
+
+        ' Check if the email address is in a valid format
+        If Not IsValidEmail(emailAddress) Then
+            ' Display a warning message and cancel the event to prevent the TextBox from losing focus
+            MessageBox.Show("The email address you entered is not in a valid format. Please enter a valid email address.", "Invalid Email Address", MessageBoxButtons.OK, MessageBoxIcon.Warning)
+            e.Cancel = True
+        End If
+    End Sub
+
+    ' Helper function to check if an email address is in a valid format
+    Private Function IsValidEmail(ByVal emailAddress As String) As Boolean
+        Dim emailRegex As New System.Text.RegularExpressions.Regex("^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$")
+        Return emailRegex.IsMatch(emailAddress)
+    End Function
+
+    Private Sub TXTADDRESS_TextChanged(sender As Object, e As EventArgs) Handles TXTADDRESS.TextChanged
+
+    End Sub
+
+    Private Sub TXTADDRESS_Validating(sender As Object, e As CancelEventArgs) Handles TXTADDRESS.Validating
+        ' Get the entered address from the TextBox
+        Dim address As String = TXTADDRESS.Text.Trim()
+
+        ' Check if the address is in a valid format
+        If Not IsValidAddress(address) Then
+            ' Display a warning message and cancel the event to prevent the TextBox from losing focus
+            MessageBox.Show("The address you entered is not in a valid format. Please enter a valid address.", "Invalid Address", MessageBoxButtons.OK, MessageBoxIcon.Warning)
+            e.Cancel = True
+        End If
+    End Sub
+
+    ' Helper function to check if an address is in a valid format
+    Private Function IsValidAddress(ByVal address As String) As Boolean
+        ' Check if the address is null or empty
+        If String.IsNullOrEmpty(address) Then
+            Return False
+        End If
+
+        ' Check if the address contains only letters, numbers, spaces, commas, and periods
+        Dim validChars As String = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789 ,."
+        For Each c As Char In address
+            If Not validChars.Contains(c) Then
+                Return False
+            End If
+        Next
+
+        ' Check if the address contains at least one letter or number
+        If Not address.Any(Function(c) Char.IsLetterOrDigit(c)) Then
+            Return False
+        End If
+
+        ' Check if the address starts with a number or letter
+        If Not Char.IsLetterOrDigit(address(0)) Then
+            Return False
+        End If
+
+        Return True
+    End Function
 End Class

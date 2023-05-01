@@ -4,33 +4,29 @@ Public Class ucPRODUCTLIST
 
     Private Sub DGVSETPROPERTY()
 
-
         DGVPRODLIST.Columns(0).Width = 200
-        DGVPRODLIST.Columns(0).HeaderText = "Stock ID"
+        DGVPRODLIST.Columns(0).HeaderText = "Product ID"
 
         DGVPRODLIST.Columns(1).Width = 200
-        DGVPRODLIST.Columns(1).HeaderText = "Product ID"
+        DGVPRODLIST.Columns(1).HeaderText = "Product Name"
 
         DGVPRODLIST.Columns(2).Width = 200
-        DGVPRODLIST.Columns(2).HeaderText = "Product Name"
+        DGVPRODLIST.Columns(2).HeaderText = "Product Manufacturer"
 
         DGVPRODLIST.Columns(3).Width = 200
-        DGVPRODLIST.Columns(3).HeaderText = "Product Manufacturer"
+        DGVPRODLIST.Columns(3).HeaderText = "Product Brand"
 
         DGVPRODLIST.Columns(4).Width = 200
-        DGVPRODLIST.Columns(4).HeaderText = "Product Brand"
+        DGVPRODLIST.Columns(4).HeaderText = "Category Name"
 
         DGVPRODLIST.Columns(5).Width = 200
-        DGVPRODLIST.Columns(5).HeaderText = "Category Name"
-
-        DGVPRODLIST.Columns(6).Width = 200
-        DGVPRODLIST.Columns(6).HeaderText = "Category Code"
+        DGVPRODLIST.Columns(5).HeaderText = "Category Code"
 
     End Sub
     Private Sub VIEW()
         Try
 
-            Dim da As New MySqlDataAdapter("select stockid, prodid, prodname, prodman, prodbrand, prodcat, catcode  from tbl_products ", con)
+            Dim da As New MySqlDataAdapter("select prodid, prodname, prodman, prodbrand, prodcat, catcode  from tbl_products ", con)
             Dim dt As New DataSet()
             da.Fill(dt)
             DGVPRODLIST.DataSource = dt.Tables(0)
@@ -52,7 +48,7 @@ Public Class ucPRODUCTLIST
         con.Close()
         Try
 
-            Dim da As New MySqlDataAdapter("select stockid, prodid, prodname, prodman, prodbrand, prodcat, catcode from tbl_products ", con)
+            Dim da As New MySqlDataAdapter("select prodid, prodname, prodman, prodbrand, prodcat, catcode from tbl_products ", con)
             Dim dt As New DataSet()
             da.Fill(dt)
             DGVPRODLIST.DataSource = dt.Tables(0)

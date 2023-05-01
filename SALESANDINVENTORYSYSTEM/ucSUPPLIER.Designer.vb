@@ -24,7 +24,6 @@ Partial Class ucSUPPLIER
     Private Sub InitializeComponent()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(ucSUPPLIER))
         Me.Panel2 = New System.Windows.Forms.Panel()
-        Me.BTNBACK = New System.Windows.Forms.Button()
         Me.Label22 = New System.Windows.Forms.Label()
         Me.TXTFN = New System.Windows.Forms.TextBox()
         Me.Label11 = New System.Windows.Forms.Label()
@@ -48,6 +47,7 @@ Partial Class ucSUPPLIER
         Me.DGVSUP = New System.Windows.Forms.DataGridView()
         Me.Label9 = New System.Windows.Forms.Label()
         Me.TXTSEARCH = New System.Windows.Forms.TextBox()
+        Me.BTNBACK = New System.Windows.Forms.Button()
         Me.Panel2.SuspendLayout()
         CType(Me.DGVSUP, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
@@ -61,24 +61,6 @@ Partial Class ucSUPPLIER
         Me.Panel2.Name = "Panel2"
         Me.Panel2.Size = New System.Drawing.Size(1322, 49)
         Me.Panel2.TabIndex = 128
-        '
-        'BTNBACK
-        '
-        Me.BTNBACK.BackColor = System.Drawing.Color.FromArgb(CType(CType(37, Byte), Integer), CType(CType(46, Byte), Integer), CType(CType(59, Byte), Integer))
-        Me.BTNBACK.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None
-        Me.BTNBACK.FlatAppearance.BorderSize = 0
-        Me.BTNBACK.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.BTNBACK.Font = New System.Drawing.Font("Century Gothic", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.BTNBACK.ForeColor = System.Drawing.Color.White
-        Me.BTNBACK.Image = CType(resources.GetObject("BTNBACK.Image"), System.Drawing.Image)
-        Me.BTNBACK.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.BTNBACK.Location = New System.Drawing.Point(1200, 3)
-        Me.BTNBACK.Name = "BTNBACK"
-        Me.BTNBACK.Padding = New System.Windows.Forms.Padding(20, 0, 0, 0)
-        Me.BTNBACK.Size = New System.Drawing.Size(119, 46)
-        Me.BTNBACK.TabIndex = 3
-        Me.BTNBACK.Text = " Back"
-        Me.BTNBACK.UseVisualStyleBackColor = False
         '
         'Label22
         '
@@ -304,7 +286,7 @@ Partial Class ucSUPPLIER
         Me.Label9.AutoSize = True
         Me.Label9.Font = New System.Drawing.Font("Century Gothic", 9.75!)
         Me.Label9.ForeColor = System.Drawing.SystemColors.ControlDarkDark
-        Me.Label9.Location = New System.Drawing.Point(918, 122)
+        Me.Label9.Location = New System.Drawing.Point(854, 122)
         Me.Label9.Name = "Label9"
         Me.Label9.Size = New System.Drawing.Size(157, 17)
         Me.Label9.TabIndex = 163
@@ -312,10 +294,28 @@ Partial Class ucSUPPLIER
         '
         'TXTSEARCH
         '
-        Me.TXTSEARCH.Location = New System.Drawing.Point(1085, 119)
+        Me.TXTSEARCH.Location = New System.Drawing.Point(1035, 119)
         Me.TXTSEARCH.Name = "TXTSEARCH"
-        Me.TXTSEARCH.Size = New System.Drawing.Size(180, 20)
+        Me.TXTSEARCH.Size = New System.Drawing.Size(230, 20)
         Me.TXTSEARCH.TabIndex = 162
+        '
+        'BTNBACK
+        '
+        Me.BTNBACK.BackColor = System.Drawing.Color.FromArgb(CType(CType(37, Byte), Integer), CType(CType(46, Byte), Integer), CType(CType(59, Byte), Integer))
+        Me.BTNBACK.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None
+        Me.BTNBACK.FlatAppearance.BorderSize = 0
+        Me.BTNBACK.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.BTNBACK.Font = New System.Drawing.Font("Century Gothic", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.BTNBACK.ForeColor = System.Drawing.Color.White
+        Me.BTNBACK.Image = CType(resources.GetObject("BTNBACK.Image"), System.Drawing.Image)
+        Me.BTNBACK.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
+        Me.BTNBACK.Location = New System.Drawing.Point(1200, 3)
+        Me.BTNBACK.Name = "BTNBACK"
+        Me.BTNBACK.Padding = New System.Windows.Forms.Padding(20, 0, 0, 0)
+        Me.BTNBACK.Size = New System.Drawing.Size(119, 46)
+        Me.BTNBACK.TabIndex = 3
+        Me.BTNBACK.Text = " Back"
+        Me.BTNBACK.UseVisualStyleBackColor = False
         '
         'ucSUPPLIER
         '

@@ -73,7 +73,6 @@ Partial Class ucTRANSACTION
         Me.BTNPAY = New System.Windows.Forms.Button()
         Me.TRANSADATE = New System.Windows.Forms.DateTimePicker()
         Me.lbldate = New System.Windows.Forms.Label()
-        Me.Button1 = New System.Windows.Forms.Button()
         CType(Me.NumericUpDown1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.GroupBox3.SuspendLayout()
         Me.pnlpayment.SuspendLayout()
@@ -362,6 +361,7 @@ Partial Class ucTRANSACTION
         '
         Me.BTNCART.BackColor = System.Drawing.Color.MediumSeaGreen
         Me.BTNCART.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.BTNCART.FlatAppearance.BorderSize = 0
         Me.BTNCART.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.BTNCART.Font = New System.Drawing.Font("Century Gothic", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.BTNCART.ForeColor = System.Drawing.SystemColors.Control
@@ -430,6 +430,7 @@ Partial Class ucTRANSACTION
         'BTNSAVE
         '
         Me.BTNSAVE.BackColor = System.Drawing.Color.MediumSeaGreen
+        Me.BTNSAVE.FlatAppearance.BorderSize = 0
         Me.BTNSAVE.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.BTNSAVE.Font = New System.Drawing.Font("Century Gothic", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.BTNSAVE.ForeColor = System.Drawing.SystemColors.Control
@@ -474,7 +475,7 @@ Partial Class ucTRANSACTION
         '
         'pnlpayment
         '
-        Me.pnlpayment.BackColor = System.Drawing.SystemColors.Control
+        Me.pnlpayment.BackColor = System.Drawing.SystemColors.InactiveCaption
         Me.pnlpayment.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.pnlpayment.Controls.Add(Me.TOTALBILL)
         Me.pnlpayment.Controls.Add(Me.Panel2)
@@ -507,7 +508,7 @@ Partial Class ucTRANSACTION
         '
         'Panel2
         '
-        Me.Panel2.BackColor = System.Drawing.Color.MediumSeaGreen
+        Me.Panel2.BackColor = System.Drawing.Color.FromArgb(CType(CType(37, Byte), Integer), CType(CType(46, Byte), Integer), CType(CType(59, Byte), Integer))
         Me.Panel2.Location = New System.Drawing.Point(0, 258)
         Me.Panel2.Name = "Panel2"
         Me.Panel2.Size = New System.Drawing.Size(429, 10)
@@ -525,7 +526,7 @@ Partial Class ucTRANSACTION
         '
         'Panel1
         '
-        Me.Panel1.BackColor = System.Drawing.Color.MediumSeaGreen
+        Me.Panel1.BackColor = System.Drawing.Color.FromArgb(CType(CType(37, Byte), Integer), CType(CType(46, Byte), Integer), CType(CType(59, Byte), Integer))
         Me.Panel1.Controls.Add(Me.Payment)
         Me.Panel1.Location = New System.Drawing.Point(0, 0)
         Me.Panel1.Name = "Panel1"
@@ -632,6 +633,7 @@ Partial Class ucTRANSACTION
         '
         Me.BTNDELETE.BackColor = System.Drawing.Color.Gray
         Me.BTNDELETE.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.BTNDELETE.FlatAppearance.BorderSize = 0
         Me.BTNDELETE.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.BTNDELETE.Font = New System.Drawing.Font("Century Gothic", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.BTNDELETE.ForeColor = System.Drawing.SystemColors.Control
@@ -646,6 +648,7 @@ Partial Class ucTRANSACTION
         '
         Me.BTNPAY.BackColor = System.Drawing.Color.MediumSeaGreen
         Me.BTNPAY.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.BTNPAY.FlatAppearance.BorderSize = 0
         Me.BTNPAY.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.BTNPAY.Font = New System.Drawing.Font("Century Gothic", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.BTNPAY.ForeColor = System.Drawing.SystemColors.Control
@@ -674,21 +677,11 @@ Partial Class ucTRANSACTION
         Me.lbldate.TabIndex = 76
         Me.lbldate.Text = "lbldate"
         '
-        'Button1
-        '
-        Me.Button1.Location = New System.Drawing.Point(489, 66)
-        Me.Button1.Name = "Button1"
-        Me.Button1.Size = New System.Drawing.Size(75, 23)
-        Me.Button1.TabIndex = 77
-        Me.Button1.Text = "Button1"
-        Me.Button1.UseVisualStyleBackColor = True
-        '
         'ucTRANSACTION
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.BackColor = System.Drawing.SystemColors.Control
-        Me.Controls.Add(Me.Button1)
+        Me.BackColor = System.Drawing.Color.White
         Me.Controls.Add(Me.TRANSADATE)
         Me.Controls.Add(Me.lbldate)
         Me.Controls.Add(Me.BTNDELETE)
@@ -776,5 +769,4 @@ Partial Class ucTRANSACTION
     Friend WithEvents TOTALBILL As TextBox
     Friend WithEvents TRANSADATE As DateTimePicker
     Friend WithEvents lbldate As Label
-    Friend WithEvents Button1 As Button
 End Class

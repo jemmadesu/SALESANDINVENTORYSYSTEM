@@ -33,10 +33,10 @@ Partial Class ucSETTINGS
         Me.Guna2ShadowPanel1 = New Guna.UI2.WinForms.Guna2ShadowPanel()
         Me.Label3 = New System.Windows.Forms.Label()
         Me.Label2 = New System.Windows.Forms.Label()
-        Me.BTNRESTORE = New Guna.UI2.WinForms.Guna2Button()
-        Me.BTNBACKUP = New Guna.UI2.WinForms.Guna2Button()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.Guna2PictureBox1 = New Guna.UI2.WinForms.Guna2PictureBox()
+        Me.BTNBACKUP = New Guna.UI2.WinForms.Guna2Button()
+        Me.BTNRESTORE = New Guna.UI2.WinForms.Guna2Button()
         Me.Panel2.SuspendLayout()
         Me.Guna2ShadowPanel1.SuspendLayout()
         CType(Me.Guna2PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -67,7 +67,7 @@ Partial Class ucSETTINGS
         Me.BTNSTOCKIN.ForeColor = System.Drawing.Color.White
         Me.BTNSTOCKIN.Image = CType(resources.GetObject("BTNSTOCKIN.Image"), System.Drawing.Image)
         Me.BTNSTOCKIN.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.BTNSTOCKIN.Location = New System.Drawing.Point(387, 2)
+        Me.BTNSTOCKIN.Location = New System.Drawing.Point(420, 0)
         Me.BTNSTOCKIN.Name = "BTNSTOCKIN"
         Me.BTNSTOCKIN.Size = New System.Drawing.Size(112, 49)
         Me.BTNSTOCKIN.TabIndex = 49
@@ -85,7 +85,7 @@ Partial Class ucSETTINGS
         Me.BTNPI.ForeColor = System.Drawing.Color.White
         Me.BTNPI.Image = CType(resources.GetObject("BTNPI.Image"), System.Drawing.Image)
         Me.BTNPI.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.BTNPI.Location = New System.Drawing.Point(246, 3)
+        Me.BTNPI.Location = New System.Drawing.Point(237, -3)
         Me.BTNPI.Name = "BTNPI"
         Me.BTNPI.Size = New System.Drawing.Size(125, 49)
         Me.BTNPI.TabIndex = 49
@@ -103,7 +103,7 @@ Partial Class ucSETTINGS
         Me.BTNINVENTORY.ForeColor = System.Drawing.Color.White
         Me.BTNINVENTORY.Image = CType(resources.GetObject("BTNINVENTORY.Image"), System.Drawing.Image)
         Me.BTNINVENTORY.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.BTNINVENTORY.Location = New System.Drawing.Point(32, 7)
+        Me.BTNINVENTORY.Location = New System.Drawing.Point(3, 0)
         Me.BTNINVENTORY.Name = "BTNINVENTORY"
         Me.BTNINVENTORY.Size = New System.Drawing.Size(192, 43)
         Me.BTNINVENTORY.TabIndex = 50
@@ -121,7 +121,7 @@ Partial Class ucSETTINGS
         Me.BTNSUP.ForeColor = System.Drawing.Color.White
         Me.BTNSUP.Image = CType(resources.GetObject("BTNSUP.Image"), System.Drawing.Image)
         Me.BTNSUP.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.BTNSUP.Location = New System.Drawing.Point(818, 2)
+        Me.BTNSUP.Location = New System.Drawing.Point(999, 1)
         Me.BTNSUP.Name = "BTNSUP"
         Me.BTNSUP.Size = New System.Drawing.Size(120, 49)
         Me.BTNSUP.TabIndex = 49
@@ -139,7 +139,7 @@ Partial Class ucSETTINGS
         Me.BTNCATEGORY.ForeColor = System.Drawing.Color.White
         Me.BTNCATEGORY.Image = CType(resources.GetObject("BTNCATEGORY.Image"), System.Drawing.Image)
         Me.BTNCATEGORY.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.BTNCATEGORY.Location = New System.Drawing.Point(523, 1)
+        Me.BTNCATEGORY.Location = New System.Drawing.Point(597, 0)
         Me.BTNCATEGORY.Name = "BTNCATEGORY"
         Me.BTNCATEGORY.Size = New System.Drawing.Size(119, 49)
         Me.BTNCATEGORY.TabIndex = 48
@@ -157,7 +157,7 @@ Partial Class ucSETTINGS
         Me.BTNUM.ForeColor = System.Drawing.Color.White
         Me.BTNUM.Image = CType(resources.GetObject("BTNUM.Image"), System.Drawing.Image)
         Me.BTNUM.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.BTNUM.Location = New System.Drawing.Point(658, -1)
+        Me.BTNUM.Location = New System.Drawing.Point(798, 0)
         Me.BTNUM.Name = "BTNUM"
         Me.BTNUM.Size = New System.Drawing.Size(136, 52)
         Me.BTNUM.TabIndex = 47
@@ -168,10 +168,10 @@ Partial Class ucSETTINGS
         'Guna2ShadowPanel1
         '
         Me.Guna2ShadowPanel1.BackColor = System.Drawing.Color.Transparent
-        Me.Guna2ShadowPanel1.Controls.Add(Me.Label3)
-        Me.Guna2ShadowPanel1.Controls.Add(Me.Label2)
         Me.Guna2ShadowPanel1.Controls.Add(Me.BTNRESTORE)
         Me.Guna2ShadowPanel1.Controls.Add(Me.BTNBACKUP)
+        Me.Guna2ShadowPanel1.Controls.Add(Me.Label3)
+        Me.Guna2ShadowPanel1.Controls.Add(Me.Label2)
         Me.Guna2ShadowPanel1.FillColor = System.Drawing.Color.White
         Me.Guna2ShadowPanel1.Location = New System.Drawing.Point(750, 98)
         Me.Guna2ShadowPanel1.Name = "Guna2ShadowPanel1"
@@ -195,71 +195,73 @@ Partial Class ucSETTINGS
         Me.Label2.AutoSize = True
         Me.Label2.Font = New System.Drawing.Font("Century Gothic", 11.25!, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label2.ForeColor = System.Drawing.Color.MediumSeaGreen
-        Me.Label2.Location = New System.Drawing.Point(64, 304)
+        Me.Label2.Location = New System.Drawing.Point(322, 307)
         Me.Label2.Name = "Label2"
         Me.Label2.Size = New System.Drawing.Size(129, 20)
         Me.Label2.TabIndex = 49
         Me.Label2.Text = "Backup Records"
-        '
-        'BTNRESTORE
-        '
-        Me.BTNRESTORE.CheckedState.Parent = Me.BTNRESTORE
-        Me.BTNRESTORE.CustomImages.Parent = Me.BTNRESTORE
-        Me.BTNRESTORE.FillColor = System.Drawing.Color.LightGray
-        Me.BTNRESTORE.Font = New System.Drawing.Font("Segoe UI", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.BTNRESTORE.ForeColor = System.Drawing.SystemColors.ControlDarkDark
-        Me.BTNRESTORE.HoverState.Parent = Me.BTNRESTORE
-        Me.BTNRESTORE.Image = Global.SALESANDINVENTORYSYSTEM.My.Resources.Resources.restore
-        Me.BTNRESTORE.ImageAlign = System.Windows.Forms.HorizontalAlignment.Right
-        Me.BTNRESTORE.ImageSize = New System.Drawing.Size(50, 45)
-        Me.BTNRESTORE.Location = New System.Drawing.Point(58, 188)
-        Me.BTNRESTORE.Name = "BTNRESTORE"
-        Me.BTNRESTORE.ShadowDecoration.Parent = Me.BTNRESTORE
-        Me.BTNRESTORE.Size = New System.Drawing.Size(352, 83)
-        Me.BTNRESTORE.TabIndex = 46
-        Me.BTNRESTORE.Text = "Restore"
-        Me.BTNRESTORE.TextAlign = System.Windows.Forms.HorizontalAlignment.Left
-        '
-        'BTNBACKUP
-        '
-        Me.BTNBACKUP.CheckedState.Parent = Me.BTNBACKUP
-        Me.BTNBACKUP.CustomImages.Parent = Me.BTNBACKUP
-        Me.BTNBACKUP.FillColor = System.Drawing.Color.LightGray
-        Me.BTNBACKUP.Font = New System.Drawing.Font("Segoe UI", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.BTNBACKUP.ForeColor = System.Drawing.SystemColors.ControlDarkDark
-        Me.BTNBACKUP.HoverState.Parent = Me.BTNBACKUP
-        Me.BTNBACKUP.Image = Global.SALESANDINVENTORYSYSTEM.My.Resources.Resources.noun_data_backup_45505892
-        Me.BTNBACKUP.ImageAlign = System.Windows.Forms.HorizontalAlignment.Right
-        Me.BTNBACKUP.ImageSize = New System.Drawing.Size(50, 45)
-        Me.BTNBACKUP.Location = New System.Drawing.Point(58, 63)
-        Me.BTNBACKUP.Name = "BTNBACKUP"
-        Me.BTNBACKUP.ShadowDecoration.Parent = Me.BTNBACKUP
-        Me.BTNBACKUP.Size = New System.Drawing.Size(352, 83)
-        Me.BTNBACKUP.TabIndex = 45
-        Me.BTNBACKUP.Text = "Create Backup"
-        Me.BTNBACKUP.TextAlign = System.Windows.Forms.HorizontalAlignment.Left
         '
         'Label1
         '
         Me.Label1.AutoSize = True
         Me.Label1.Font = New System.Drawing.Font("Century Gothic", 20.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label1.ForeColor = System.Drawing.SystemColors.ControlText
-        Me.Label1.Location = New System.Drawing.Point(231, 312)
+        Me.Label1.Location = New System.Drawing.Point(233, 350)
         Me.Label1.Name = "Label1"
         Me.Label1.Size = New System.Drawing.Size(301, 33)
-        Me.Label1.TabIndex = 48
+        Me.Label1.TabIndex = 52
         Me.Label1.Text = "BACKUP AND RESTORE"
         '
         'Guna2PictureBox1
         '
-        Me.Guna2PictureBox1.Image = Global.SALESANDINVENTORYSYSTEM.My.Resources.Resources.noun_restore_down_1387364
-        Me.Guna2PictureBox1.Location = New System.Drawing.Point(105, 98)
+        Me.Guna2PictureBox1.Image = CType(resources.GetObject("Guna2PictureBox1.Image"), System.Drawing.Image)
+        Me.Guna2PictureBox1.Location = New System.Drawing.Point(295, 161)
         Me.Guna2PictureBox1.Name = "Guna2PictureBox1"
         Me.Guna2PictureBox1.ShadowDecoration.Parent = Me.Guna2PictureBox1
         Me.Guna2PictureBox1.Size = New System.Drawing.Size(175, 166)
         Me.Guna2PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
-        Me.Guna2PictureBox1.TabIndex = 47
+        Me.Guna2PictureBox1.TabIndex = 51
         Me.Guna2PictureBox1.TabStop = False
+        '
+        'BTNBACKUP
+        '
+        Me.BTNBACKUP.BackColor = System.Drawing.SystemColors.InactiveCaption
+        Me.BTNBACKUP.CheckedState.Parent = Me.BTNBACKUP
+        Me.BTNBACKUP.CustomImages.Parent = Me.BTNBACKUP
+        Me.BTNBACKUP.FillColor = System.Drawing.Color.LightGray
+        Me.BTNBACKUP.Font = New System.Drawing.Font("Century Gothic", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.BTNBACKUP.ForeColor = System.Drawing.SystemColors.ControlDarkDark
+        Me.BTNBACKUP.HoverState.Parent = Me.BTNBACKUP
+        Me.BTNBACKUP.Image = CType(resources.GetObject("BTNBACKUP.Image"), System.Drawing.Image)
+        Me.BTNBACKUP.ImageAlign = System.Windows.Forms.HorizontalAlignment.Right
+        Me.BTNBACKUP.ImageSize = New System.Drawing.Size(50, 45)
+        Me.BTNBACKUP.Location = New System.Drawing.Point(58, 73)
+        Me.BTNBACKUP.Name = "BTNBACKUP"
+        Me.BTNBACKUP.ShadowDecoration.Parent = Me.BTNBACKUP
+        Me.BTNBACKUP.Size = New System.Drawing.Size(352, 83)
+        Me.BTNBACKUP.TabIndex = 51
+        Me.BTNBACKUP.Text = "Create Backup"
+        Me.BTNBACKUP.TextAlign = System.Windows.Forms.HorizontalAlignment.Left
+        '
+        'BTNRESTORE
+        '
+        Me.BTNRESTORE.BackColor = System.Drawing.SystemColors.InactiveCaption
+        Me.BTNRESTORE.CheckedState.Parent = Me.BTNRESTORE
+        Me.BTNRESTORE.CustomImages.Parent = Me.BTNRESTORE
+        Me.BTNRESTORE.FillColor = System.Drawing.Color.LightGray
+        Me.BTNRESTORE.Font = New System.Drawing.Font("Century Gothic", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.BTNRESTORE.ForeColor = System.Drawing.SystemColors.ControlDarkDark
+        Me.BTNRESTORE.HoverState.Parent = Me.BTNRESTORE
+        Me.BTNRESTORE.Image = CType(resources.GetObject("BTNRESTORE.Image"), System.Drawing.Image)
+        Me.BTNRESTORE.ImageAlign = System.Windows.Forms.HorizontalAlignment.Right
+        Me.BTNRESTORE.ImageSize = New System.Drawing.Size(50, 45)
+        Me.BTNRESTORE.Location = New System.Drawing.Point(58, 183)
+        Me.BTNRESTORE.Name = "BTNRESTORE"
+        Me.BTNRESTORE.ShadowDecoration.Parent = Me.BTNRESTORE
+        Me.BTNRESTORE.Size = New System.Drawing.Size(352, 83)
+        Me.BTNRESTORE.TabIndex = 52
+        Me.BTNRESTORE.Text = "Restore"
+        Me.BTNRESTORE.TextAlign = System.Windows.Forms.HorizontalAlignment.Left
         '
         'ucSETTINGS
         '
@@ -267,8 +269,8 @@ Partial Class ucSETTINGS
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.White
         Me.Controls.Add(Me.Label1)
-        Me.Controls.Add(Me.Guna2PictureBox1)
         Me.Controls.Add(Me.Guna2ShadowPanel1)
+        Me.Controls.Add(Me.Guna2PictureBox1)
         Me.Controls.Add(Me.Panel2)
         Me.Name = "ucSETTINGS"
         Me.Size = New System.Drawing.Size(1322, 801)
@@ -282,17 +284,17 @@ Partial Class ucSETTINGS
     End Sub
 
     Friend WithEvents Panel2 As Panel
-    Friend WithEvents BTNBACKUP As Guna.UI2.WinForms.Guna2Button
     Friend WithEvents Guna2ShadowPanel1 As Guna.UI2.WinForms.Guna2ShadowPanel
-    Friend WithEvents BTNRESTORE As Guna.UI2.WinForms.Guna2Button
-    Friend WithEvents Guna2PictureBox1 As Guna.UI2.WinForms.Guna2PictureBox
     Friend WithEvents Label3 As Label
     Friend WithEvents Label2 As Label
-    Friend WithEvents Label1 As Label
     Friend WithEvents BTNINVENTORY As Button
     Friend WithEvents BTNSUP As Button
     Friend WithEvents BTNCATEGORY As Button
     Friend WithEvents BTNUM As Button
     Friend WithEvents BTNPI As Button
     Friend WithEvents BTNSTOCKIN As Button
+    Friend WithEvents Label1 As Label
+    Friend WithEvents Guna2PictureBox1 As Guna.UI2.WinForms.Guna2PictureBox
+    Friend WithEvents BTNBACKUP As Guna.UI2.WinForms.Guna2Button
+    Friend WithEvents BTNRESTORE As Guna.UI2.WinForms.Guna2Button
 End Class

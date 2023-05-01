@@ -97,7 +97,7 @@ Public Class ucSETTINGS
         SUPPLIER.Dock = DockStyle.Fill
     End Sub
 
-    Private Sub BTNBACKUP_Click(sender As Object, e As EventArgs) Handles BTNBACKUP.Click
+    Private Sub BTNBACKUP_Click_1(sender As Object, e As EventArgs) Handles BTNBACKUP.Click
         Dim backup As New SaveFileDialog
         backup.InitialDirectory = “C:\"
         backup.Title = "Database Backup”
@@ -125,7 +125,7 @@ Public Class ucSETTINGS
 
     End Sub
 
-    Private Sub BTNRESTORE_Click(sender As Object, e As EventArgs) Handles BTNRESTORE.Click
+    Private Sub BTNRESTORE_Click_1(sender As Object, e As EventArgs) Handles BTNRESTORE.Click
         Dim restore As New OpenFileDialog
         restore.InitialDirectory = "C:\"
         restore.Title = "Restore Database”
@@ -148,5 +148,4 @@ Public Class ucSETTINGS
         End If
         'FRMRESTORE.ShowDialog()
     End Sub
-
 End Class

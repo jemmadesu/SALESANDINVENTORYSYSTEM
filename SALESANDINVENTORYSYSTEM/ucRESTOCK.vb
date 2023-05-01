@@ -90,7 +90,7 @@ Public Class ucRESTOCK
 
     Private Sub Button1_Click(sender As Object, e As EventArgs) Handles BTNSAVE.Click
 
-        BTNSAVE.Text = "Save"
+
 
         Me.TXTQTY.ReadOnly = False
 
@@ -148,6 +148,8 @@ Public Class ucRESTOCK
     End Sub
 
     Private Sub DGVMAIN_CellClick_1(sender As Object, e As DataGridViewCellEventArgs) Handles DGVMAIN.CellContentClick
+
+        BTNSAVE.Text = "Save"
         con.Close()
 
         If e.RowIndex >= 0 Then
