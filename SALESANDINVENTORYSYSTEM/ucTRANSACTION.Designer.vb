@@ -671,11 +671,13 @@ Partial Class ucTRANSACTION
         'lbldate
         '
         Me.lbldate.AutoSize = True
+        Me.lbldate.ForeColor = System.Drawing.Color.White
         Me.lbldate.Location = New System.Drawing.Point(133, 785)
         Me.lbldate.Name = "lbldate"
         Me.lbldate.Size = New System.Drawing.Size(38, 13)
         Me.lbldate.TabIndex = 76
         Me.lbldate.Text = "lbldate"
+        Me.lbldate.Visible = False
         '
         'ucTRANSACTION
         '

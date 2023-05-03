@@ -31,6 +31,7 @@ Partial Class FRMREPORTS
         Dim ReportDataSource6 As Microsoft.Reporting.WinForms.ReportDataSource = New Microsoft.Reporting.WinForms.ReportDataSource()
         Dim ReportDataSource7 As Microsoft.Reporting.WinForms.ReportDataSource = New Microsoft.Reporting.WinForms.ReportDataSource()
         Dim ReportDataSource8 As Microsoft.Reporting.WinForms.ReportDataSource = New Microsoft.Reporting.WinForms.ReportDataSource()
+        Dim ReportDataSource9 As Microsoft.Reporting.WinForms.ReportDataSource = New Microsoft.Reporting.WinForms.ReportDataSource()
         Me.tbl_actlogBindingSource = New System.Windows.Forms.BindingSource(Me.components)
         Me.inventory_dbDataSet = New SALESANDINVENTORYSYSTEM.inventory_dbDataSet()
         Me.tbl_salesBindingSource = New System.Windows.Forms.BindingSource(Me.components)
@@ -68,11 +69,6 @@ Partial Class FRMREPORTS
         Me.RPTSUP = New Microsoft.Reporting.WinForms.ReportViewer()
         Me.TPPRODS = New System.Windows.Forms.TabPage()
         Me.RPTPRODUCTS = New Microsoft.Reporting.WinForms.ReportViewer()
-        Me.Label3 = New System.Windows.Forms.Label()
-        Me.BTNCLRDATE = New Guna.UI2.WinForms.Guna2Button()
-        Me.BTNFILL = New Guna.UI2.WinForms.Guna2Button()
-        Me.Date2 = New Guna.UI2.WinForms.Guna2DateTimePicker()
-        Me.Date1 = New Guna.UI2.WinForms.Guna2DateTimePicker()
         Me.TPUSERS = New System.Windows.Forms.TabPage()
         Me.RPTUSERS = New Microsoft.Reporting.WinForms.ReportViewer()
         Me.BTNCLEAR = New Guna.UI2.WinForms.Guna2Button()
@@ -81,7 +77,6 @@ Partial Class FRMREPORTS
         Me.CBOUT = New Guna.UI2.WinForms.Guna2ComboBox()
         Me.TCREPORTS = New System.Windows.Forms.TabControl()
         Me.TPSTOCKS = New System.Windows.Forms.TabPage()
-        Me.Label4 = New System.Windows.Forms.Label()
         Me.STOCKCLR = New Guna.UI2.WinForms.Guna2Button()
         Me.STOCKSFILL = New Guna.UI2.WinForms.Guna2Button()
         Me.Guna2DateTimePicker1 = New Guna.UI2.WinForms.Guna2DateTimePicker()
@@ -96,6 +91,10 @@ Partial Class FRMREPORTS
         Me.tbl_actlogTableAdapter = New SALESANDINVENTORYSYSTEM.inventory_dbDataSetTableAdapters.tbl_actlogTableAdapter()
         Me.tbl_stocksTableAdapter = New SALESANDINVENTORYSYSTEM.inventory_dbDataSetTableAdapters.tbl_stocksTableAdapter()
         Me.tbl_productsTableAdapter = New SALESANDINVENTORYSYSTEM.inventory_dbDataSetTableAdapters.tbl_productsTableAdapter()
+        Me.TPTRANSREC = New System.Windows.Forms.TabPage()
+        Me.RPTTRANSACTIONRECORDS = New Microsoft.Reporting.WinForms.ReportViewer()
+        Me.tbl_transactionBindingSource = New System.Windows.Forms.BindingSource(Me.components)
+        Me.tbl_transactionTableAdapter = New SALESANDINVENTORYSYSTEM.inventory_dbDataSetTableAdapters.tbl_transactionTableAdapter()
         CType(Me.tbl_actlogBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.inventory_dbDataSet, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.tbl_salesBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -114,6 +113,8 @@ Partial Class FRMREPORTS
         Me.TPUSERS.SuspendLayout()
         Me.TCREPORTS.SuspendLayout()
         Me.TPSTOCKS.SuspendLayout()
+        Me.TPTRANSREC.SuspendLayout()
+        CType(Me.tbl_transactionBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'tbl_actlogBindingSource
@@ -185,7 +186,7 @@ Partial Class FRMREPORTS
         Me.ACTCLR.Font = New System.Drawing.Font("Segoe UI", 9.0!)
         Me.ACTCLR.ForeColor = System.Drawing.Color.White
         Me.ACTCLR.HoverState.Parent = Me.ACTCLR
-        Me.ACTCLR.Location = New System.Drawing.Point(608, 26)
+        Me.ACTCLR.Location = New System.Drawing.Point(508, 26)
         Me.ACTCLR.Name = "ACTCLR"
         Me.ACTCLR.ShadowDecoration.Parent = Me.ACTCLR
         Me.ACTCLR.Size = New System.Drawing.Size(98, 36)
@@ -200,7 +201,7 @@ Partial Class FRMREPORTS
         Me.ACTFILL.Font = New System.Drawing.Font("Segoe UI", 9.0!)
         Me.ACTFILL.ForeColor = System.Drawing.Color.White
         Me.ACTFILL.HoverState.Parent = Me.ACTFILL
-        Me.ACTFILL.Location = New System.Drawing.Point(490, 26)
+        Me.ACTFILL.Location = New System.Drawing.Point(379, 26)
         Me.ACTFILL.Name = "ACTFILL"
         Me.ACTFILL.ShadowDecoration.Parent = Me.ACTFILL
         Me.ACTFILL.Size = New System.Drawing.Size(98, 36)
@@ -221,7 +222,7 @@ Partial Class FRMREPORTS
         Me.CBOTYPE.ItemHeight = 30
         Me.CBOTYPE.Items.AddRange(New Object() {"Admin", "Cashier", "Manager"})
         Me.CBOTYPE.ItemsAppearance.Parent = Me.CBOTYPE
-        Me.CBOTYPE.Location = New System.Drawing.Point(315, 41)
+        Me.CBOTYPE.Location = New System.Drawing.Point(204, 25)
         Me.CBOTYPE.Name = "CBOTYPE"
         Me.CBOTYPE.ShadowDecoration.Parent = Me.CBOTYPE
         Me.CBOTYPE.Size = New System.Drawing.Size(140, 36)
@@ -231,7 +232,7 @@ Partial Class FRMREPORTS
         '
         Me.Label1.AutoSize = True
         Me.Label1.Font = New System.Drawing.Font("Century Gothic", 11.25!)
-        Me.Label1.Location = New System.Drawing.Point(156, 42)
+        Me.Label1.Location = New System.Drawing.Point(27, 26)
         Me.Label1.Name = "Label1"
         Me.Label1.Size = New System.Drawing.Size(139, 20)
         Me.Label1.TabIndex = 2
@@ -273,7 +274,7 @@ Partial Class FRMREPORTS
         Me.SALESCLR.Font = New System.Drawing.Font("Segoe UI", 9.0!)
         Me.SALESCLR.ForeColor = System.Drawing.Color.White
         Me.SALESCLR.HoverState.Parent = Me.SALESCLR
-        Me.SALESCLR.Location = New System.Drawing.Point(877, 23)
+        Me.SALESCLR.Location = New System.Drawing.Point(666, 26)
         Me.SALESCLR.Name = "SALESCLR"
         Me.SALESCLR.ShadowDecoration.Parent = Me.SALESCLR
         Me.SALESCLR.Size = New System.Drawing.Size(98, 36)
@@ -288,7 +289,7 @@ Partial Class FRMREPORTS
         Me.SALESFILL.Font = New System.Drawing.Font("Segoe UI", 9.0!)
         Me.SALESFILL.ForeColor = System.Drawing.Color.White
         Me.SALESFILL.HoverState.Parent = Me.SALESFILL
-        Me.SALESFILL.Location = New System.Drawing.Point(737, 23)
+        Me.SALESFILL.Location = New System.Drawing.Point(531, 26)
         Me.SALESFILL.Name = "SALESFILL"
         Me.SALESFILL.ShadowDecoration.Parent = Me.SALESFILL
         Me.SALESFILL.Size = New System.Drawing.Size(98, 36)
@@ -302,7 +303,7 @@ Partial Class FRMREPORTS
         Me.Date2SALES.ForeColor = System.Drawing.Color.White
         Me.Date2SALES.Format = System.Windows.Forms.DateTimePickerFormat.[Long]
         Me.Date2SALES.HoverState.Parent = Me.Date2SALES
-        Me.Date2SALES.Location = New System.Drawing.Point(479, 23)
+        Me.Date2SALES.Location = New System.Drawing.Point(273, 26)
         Me.Date2SALES.MaxDate = New Date(9998, 12, 31, 0, 0, 0, 0)
         Me.Date2SALES.MinDate = New Date(1753, 1, 1, 0, 0, 0, 0)
         Me.Date2SALES.Name = "Date2SALES"
@@ -318,7 +319,7 @@ Partial Class FRMREPORTS
         Me.Date1SALES.ForeColor = System.Drawing.Color.White
         Me.Date1SALES.Format = System.Windows.Forms.DateTimePickerFormat.[Long]
         Me.Date1SALES.HoverState.Parent = Me.Date1SALES
-        Me.Date1SALES.Location = New System.Drawing.Point(238, 23)
+        Me.Date1SALES.Location = New System.Drawing.Point(32, 26)
         Me.Date1SALES.MaxDate = New Date(9998, 12, 31, 0, 0, 0, 0)
         Me.Date1SALES.MinDate = New Date(1753, 1, 1, 0, 0, 0, 0)
         Me.Date1SALES.Name = "Date1SALES"
@@ -363,7 +364,7 @@ Partial Class FRMREPORTS
         Me.OUTCLR.Font = New System.Drawing.Font("Segoe UI", 9.0!)
         Me.OUTCLR.ForeColor = System.Drawing.Color.White
         Me.OUTCLR.HoverState.Parent = Me.OUTCLR
-        Me.OUTCLR.Location = New System.Drawing.Point(858, 18)
+        Me.OUTCLR.Location = New System.Drawing.Point(672, 20)
         Me.OUTCLR.Name = "OUTCLR"
         Me.OUTCLR.ShadowDecoration.Parent = Me.OUTCLR
         Me.OUTCLR.Size = New System.Drawing.Size(98, 36)
@@ -378,7 +379,7 @@ Partial Class FRMREPORTS
         Me.OUTFILL.Font = New System.Drawing.Font("Segoe UI", 9.0!)
         Me.OUTFILL.ForeColor = System.Drawing.Color.White
         Me.OUTFILL.HoverState.Parent = Me.OUTFILL
-        Me.OUTFILL.Location = New System.Drawing.Point(718, 18)
+        Me.OUTFILL.Location = New System.Drawing.Point(534, 20)
         Me.OUTFILL.Name = "OUTFILL"
         Me.OUTFILL.ShadowDecoration.Parent = Me.OUTFILL
         Me.OUTFILL.Size = New System.Drawing.Size(98, 36)
@@ -392,7 +393,7 @@ Partial Class FRMREPORTS
         Me.Date2OUT.ForeColor = System.Drawing.Color.White
         Me.Date2OUT.Format = System.Windows.Forms.DateTimePickerFormat.[Long]
         Me.Date2OUT.HoverState.Parent = Me.Date2OUT
-        Me.Date2OUT.Location = New System.Drawing.Point(460, 18)
+        Me.Date2OUT.Location = New System.Drawing.Point(276, 20)
         Me.Date2OUT.MaxDate = New Date(9998, 12, 31, 0, 0, 0, 0)
         Me.Date2OUT.MinDate = New Date(1753, 1, 1, 0, 0, 0, 0)
         Me.Date2OUT.Name = "Date2OUT"
@@ -408,7 +409,7 @@ Partial Class FRMREPORTS
         Me.Date1OUT.ForeColor = System.Drawing.Color.White
         Me.Date1OUT.Format = System.Windows.Forms.DateTimePickerFormat.[Long]
         Me.Date1OUT.HoverState.Parent = Me.Date1OUT
-        Me.Date1OUT.Location = New System.Drawing.Point(219, 18)
+        Me.Date1OUT.Location = New System.Drawing.Point(35, 20)
         Me.Date1OUT.MaxDate = New Date(9998, 12, 31, 0, 0, 0, 0)
         Me.Date1OUT.MinDate = New Date(1753, 1, 1, 0, 0, 0, 0)
         Me.Date1OUT.Name = "Date1OUT"
@@ -453,7 +454,7 @@ Partial Class FRMREPORTS
         Me.EXPCLR.Font = New System.Drawing.Font("Segoe UI", 9.0!)
         Me.EXPCLR.ForeColor = System.Drawing.Color.White
         Me.EXPCLR.HoverState.Parent = Me.EXPCLR
-        Me.EXPCLR.Location = New System.Drawing.Point(879, 18)
+        Me.EXPCLR.Location = New System.Drawing.Point(676, 24)
         Me.EXPCLR.Name = "EXPCLR"
         Me.EXPCLR.ShadowDecoration.Parent = Me.EXPCLR
         Me.EXPCLR.Size = New System.Drawing.Size(98, 36)
@@ -468,7 +469,7 @@ Partial Class FRMREPORTS
         Me.EXPFILL.Font = New System.Drawing.Font("Segoe UI", 9.0!)
         Me.EXPFILL.ForeColor = System.Drawing.Color.White
         Me.EXPFILL.HoverState.Parent = Me.EXPFILL
-        Me.EXPFILL.Location = New System.Drawing.Point(739, 18)
+        Me.EXPFILL.Location = New System.Drawing.Point(536, 24)
         Me.EXPFILL.Name = "EXPFILL"
         Me.EXPFILL.ShadowDecoration.Parent = Me.EXPFILL
         Me.EXPFILL.Size = New System.Drawing.Size(98, 36)
@@ -482,7 +483,7 @@ Partial Class FRMREPORTS
         Me.DAte2EXP.ForeColor = System.Drawing.Color.White
         Me.DAte2EXP.Format = System.Windows.Forms.DateTimePickerFormat.[Long]
         Me.DAte2EXP.HoverState.Parent = Me.DAte2EXP
-        Me.DAte2EXP.Location = New System.Drawing.Point(481, 18)
+        Me.DAte2EXP.Location = New System.Drawing.Point(278, 24)
         Me.DAte2EXP.MaxDate = New Date(9998, 12, 31, 0, 0, 0, 0)
         Me.DAte2EXP.MinDate = New Date(1753, 1, 1, 0, 0, 0, 0)
         Me.DAte2EXP.Name = "DAte2EXP"
@@ -498,7 +499,7 @@ Partial Class FRMREPORTS
         Me.Date1EXP.ForeColor = System.Drawing.Color.White
         Me.Date1EXP.Format = System.Windows.Forms.DateTimePickerFormat.[Long]
         Me.Date1EXP.HoverState.Parent = Me.Date1EXP
-        Me.Date1EXP.Location = New System.Drawing.Point(240, 18)
+        Me.Date1EXP.Location = New System.Drawing.Point(37, 24)
         Me.Date1EXP.MaxDate = New Date(9998, 12, 31, 0, 0, 0, 0)
         Me.Date1EXP.MinDate = New Date(1753, 1, 1, 0, 0, 0, 0)
         Me.Date1EXP.Name = "Date1EXP"
@@ -545,11 +546,6 @@ Partial Class FRMREPORTS
         'TPPRODS
         '
         Me.TPPRODS.Controls.Add(Me.RPTPRODUCTS)
-        Me.TPPRODS.Controls.Add(Me.Label3)
-        Me.TPPRODS.Controls.Add(Me.BTNCLRDATE)
-        Me.TPPRODS.Controls.Add(Me.BTNFILL)
-        Me.TPPRODS.Controls.Add(Me.Date2)
-        Me.TPPRODS.Controls.Add(Me.Date1)
         Me.TPPRODS.Location = New System.Drawing.Point(4, 29)
         Me.TPPRODS.Name = "TPPRODS"
         Me.TPPRODS.Padding = New System.Windows.Forms.Padding(3)
@@ -560,7 +556,7 @@ Partial Class FRMREPORTS
         '
         'RPTPRODUCTS
         '
-        ReportDataSource6.Name = "DataSet1"
+        ReportDataSource6.Name = "DataSet_inv"
         ReportDataSource6.Value = Me.tbl_productsBindingSource
         Me.RPTPRODUCTS.LocalReport.DataSources.Add(ReportDataSource6)
         Me.RPTPRODUCTS.LocalReport.ReportEmbeddedResource = "SALESANDINVENTORYSYSTEM.RPTPRODUCTS.rdlc"
@@ -569,79 +565,6 @@ Partial Class FRMREPORTS
         Me.RPTPRODUCTS.ServerReport.BearerToken = Nothing
         Me.RPTPRODUCTS.Size = New System.Drawing.Size(1480, 610)
         Me.RPTPRODUCTS.TabIndex = 8
-        '
-        'Label3
-        '
-        Me.Label3.AutoSize = True
-        Me.Label3.Font = New System.Drawing.Font("Century Gothic", 11.25!)
-        Me.Label3.Location = New System.Drawing.Point(27, 25)
-        Me.Label3.Name = "Label3"
-        Me.Label3.Size = New System.Drawing.Size(112, 20)
-        Me.Label3.TabIndex = 6
-        Me.Label3.Text = "Filter by Date :"
-        '
-        'BTNCLRDATE
-        '
-        Me.BTNCLRDATE.BackColor = System.Drawing.Color.Transparent
-        Me.BTNCLRDATE.CheckedState.Parent = Me.BTNCLRDATE
-        Me.BTNCLRDATE.CustomImages.Parent = Me.BTNCLRDATE
-        Me.BTNCLRDATE.FillColor = System.Drawing.SystemColors.ControlDark
-        Me.BTNCLRDATE.Font = New System.Drawing.Font("Segoe UI", 9.0!)
-        Me.BTNCLRDATE.ForeColor = System.Drawing.Color.White
-        Me.BTNCLRDATE.HoverState.Parent = Me.BTNCLRDATE
-        Me.BTNCLRDATE.Location = New System.Drawing.Point(759, 25)
-        Me.BTNCLRDATE.Name = "BTNCLRDATE"
-        Me.BTNCLRDATE.ShadowDecoration.Parent = Me.BTNCLRDATE
-        Me.BTNCLRDATE.Size = New System.Drawing.Size(98, 36)
-        Me.BTNCLRDATE.TabIndex = 5
-        Me.BTNCLRDATE.Text = "Clear Filter"
-        '
-        'BTNFILL
-        '
-        Me.BTNFILL.CheckedState.Parent = Me.BTNFILL
-        Me.BTNFILL.CustomImages.Parent = Me.BTNFILL
-        Me.BTNFILL.FillColor = System.Drawing.Color.MediumSeaGreen
-        Me.BTNFILL.Font = New System.Drawing.Font("Segoe UI", 9.0!)
-        Me.BTNFILL.ForeColor = System.Drawing.Color.White
-        Me.BTNFILL.HoverState.Parent = Me.BTNFILL
-        Me.BTNFILL.Location = New System.Drawing.Point(639, 25)
-        Me.BTNFILL.Name = "BTNFILL"
-        Me.BTNFILL.ShadowDecoration.Parent = Me.BTNFILL
-        Me.BTNFILL.Size = New System.Drawing.Size(98, 36)
-        Me.BTNFILL.TabIndex = 4
-        Me.BTNFILL.Text = "Filter"
-        '
-        'Date2
-        '
-        Me.Date2.CheckedState.Parent = Me.Date2
-        Me.Date2.FillColor = System.Drawing.Color.MediumSeaGreen
-        Me.Date2.ForeColor = System.Drawing.Color.White
-        Me.Date2.Format = System.Windows.Forms.DateTimePickerFormat.[Long]
-        Me.Date2.HoverState.Parent = Me.Date2
-        Me.Date2.Location = New System.Drawing.Point(394, 25)
-        Me.Date2.MaxDate = New Date(9998, 12, 31, 0, 0, 0, 0)
-        Me.Date2.MinDate = New Date(1753, 1, 1, 0, 0, 0, 0)
-        Me.Date2.Name = "Date2"
-        Me.Date2.ShadowDecoration.Parent = Me.Date2
-        Me.Date2.Size = New System.Drawing.Size(200, 36)
-        Me.Date2.TabIndex = 2
-        Me.Date2.Value = New Date(2023, 4, 15, 23, 18, 1, 623)
-        '
-        'Date1
-        '
-        Me.Date1.CheckedState.Parent = Me.Date1
-        Me.Date1.FillColor = System.Drawing.Color.MediumSeaGreen
-        Me.Date1.ForeColor = System.Drawing.Color.White
-        Me.Date1.Format = System.Windows.Forms.DateTimePickerFormat.[Long]
-        Me.Date1.HoverState.Parent = Me.Date1
-        Me.Date1.Location = New System.Drawing.Point(171, 25)
-        Me.Date1.MaxDate = New Date(9998, 12, 31, 0, 0, 0, 0)
-        Me.Date1.MinDate = New Date(1753, 1, 1, 0, 0, 0, 0)
-        Me.Date1.Name = "Date1"
-        Me.Date1.ShadowDecoration.Parent = Me.Date1
-        Me.Date1.Size = New System.Drawing.Size(200, 36)
-        Me.Date1.TabIndex = 1
-        Me.Date1.Value = New Date(2023, 4, 15, 23, 18, 1, 623)
         '
         'TPUSERS
         '
@@ -742,6 +665,7 @@ Partial Class FRMREPORTS
         Me.TCREPORTS.Controls.Add(Me.TPOUT)
         Me.TCREPORTS.Controls.Add(Me.TPSALES)
         Me.TCREPORTS.Controls.Add(Me.TPACT)
+        Me.TCREPORTS.Controls.Add(Me.TPTRANSREC)
         Me.TCREPORTS.Font = New System.Drawing.Font("Century Gothic", 11.25!)
         Me.TCREPORTS.Location = New System.Drawing.Point(1, 31)
         Me.TCREPORTS.Name = "TCREPORTS"
@@ -751,7 +675,6 @@ Partial Class FRMREPORTS
         '
         'TPSTOCKS
         '
-        Me.TPSTOCKS.Controls.Add(Me.Label4)
         Me.TPSTOCKS.Controls.Add(Me.STOCKCLR)
         Me.TPSTOCKS.Controls.Add(Me.STOCKSFILL)
         Me.TPSTOCKS.Controls.Add(Me.Guna2DateTimePicker1)
@@ -764,16 +687,6 @@ Partial Class FRMREPORTS
         Me.TPSTOCKS.Text = "Stocks"
         Me.TPSTOCKS.UseVisualStyleBackColor = True
         '
-        'Label4
-        '
-        Me.Label4.AutoSize = True
-        Me.Label4.Font = New System.Drawing.Font("Century Gothic", 11.25!)
-        Me.Label4.Location = New System.Drawing.Point(31, 12)
-        Me.Label4.Name = "Label4"
-        Me.Label4.Size = New System.Drawing.Size(112, 20)
-        Me.Label4.TabIndex = 12
-        Me.Label4.Text = "Filter by Date :"
-        '
         'STOCKCLR
         '
         Me.STOCKCLR.BackColor = System.Drawing.Color.Transparent
@@ -783,7 +696,7 @@ Partial Class FRMREPORTS
         Me.STOCKCLR.Font = New System.Drawing.Font("Segoe UI", 9.0!)
         Me.STOCKCLR.ForeColor = System.Drawing.Color.White
         Me.STOCKCLR.HoverState.Parent = Me.STOCKCLR
-        Me.STOCKCLR.Location = New System.Drawing.Point(763, 12)
+        Me.STOCKCLR.Location = New System.Drawing.Point(626, 15)
         Me.STOCKCLR.Name = "STOCKCLR"
         Me.STOCKCLR.ShadowDecoration.Parent = Me.STOCKCLR
         Me.STOCKCLR.Size = New System.Drawing.Size(98, 36)
@@ -798,7 +711,7 @@ Partial Class FRMREPORTS
         Me.STOCKSFILL.Font = New System.Drawing.Font("Segoe UI", 9.0!)
         Me.STOCKSFILL.ForeColor = System.Drawing.Color.White
         Me.STOCKSFILL.HoverState.Parent = Me.STOCKSFILL
-        Me.STOCKSFILL.Location = New System.Drawing.Point(643, 12)
+        Me.STOCKSFILL.Location = New System.Drawing.Point(506, 15)
         Me.STOCKSFILL.Name = "STOCKSFILL"
         Me.STOCKSFILL.ShadowDecoration.Parent = Me.STOCKSFILL
         Me.STOCKSFILL.Size = New System.Drawing.Size(98, 36)
@@ -812,7 +725,7 @@ Partial Class FRMREPORTS
         Me.Guna2DateTimePicker1.ForeColor = System.Drawing.Color.White
         Me.Guna2DateTimePicker1.Format = System.Windows.Forms.DateTimePickerFormat.[Long]
         Me.Guna2DateTimePicker1.HoverState.Parent = Me.Guna2DateTimePicker1
-        Me.Guna2DateTimePicker1.Location = New System.Drawing.Point(398, 12)
+        Me.Guna2DateTimePicker1.Location = New System.Drawing.Point(261, 15)
         Me.Guna2DateTimePicker1.MaxDate = New Date(9998, 12, 31, 0, 0, 0, 0)
         Me.Guna2DateTimePicker1.MinDate = New Date(1753, 1, 1, 0, 0, 0, 0)
         Me.Guna2DateTimePicker1.Name = "Guna2DateTimePicker1"
@@ -828,7 +741,7 @@ Partial Class FRMREPORTS
         Me.Guna2DateTimePicker2.ForeColor = System.Drawing.Color.White
         Me.Guna2DateTimePicker2.Format = System.Windows.Forms.DateTimePickerFormat.[Long]
         Me.Guna2DateTimePicker2.HoverState.Parent = Me.Guna2DateTimePicker2
-        Me.Guna2DateTimePicker2.Location = New System.Drawing.Point(175, 12)
+        Me.Guna2DateTimePicker2.Location = New System.Drawing.Point(38, 15)
         Me.Guna2DateTimePicker2.MaxDate = New Date(9998, 12, 31, 0, 0, 0, 0)
         Me.Guna2DateTimePicker2.MinDate = New Date(1753, 1, 1, 0, 0, 0, 0)
         Me.Guna2DateTimePicker2.Name = "Guna2DateTimePicker2"
@@ -895,6 +808,37 @@ Partial Class FRMREPORTS
         '
         Me.tbl_productsTableAdapter.ClearBeforeFill = True
         '
+        'TPTRANSREC
+        '
+        Me.TPTRANSREC.Controls.Add(Me.RPTTRANSACTIONRECORDS)
+        Me.TPTRANSREC.Location = New System.Drawing.Point(4, 29)
+        Me.TPTRANSREC.Name = "TPTRANSREC"
+        Me.TPTRANSREC.Size = New System.Drawing.Size(1547, 695)
+        Me.TPTRANSREC.TabIndex = 8
+        Me.TPTRANSREC.Text = "Transaction Records"
+        Me.TPTRANSREC.UseVisualStyleBackColor = True
+        '
+        'RPTTRANSACTIONRECORDS
+        '
+        ReportDataSource9.Name = "DataSet"
+        ReportDataSource9.Value = Me.tbl_transactionBindingSource
+        Me.RPTTRANSACTIONRECORDS.LocalReport.DataSources.Add(ReportDataSource9)
+        Me.RPTTRANSACTIONRECORDS.LocalReport.ReportEmbeddedResource = "SALESANDINVENTORYSYSTEM.RPTTRANSACTIONRECORDS.rdlc"
+        Me.RPTTRANSACTIONRECORDS.Location = New System.Drawing.Point(33, 42)
+        Me.RPTTRANSACTIONRECORDS.Name = "RPTTRANSACTIONRECORDS"
+        Me.RPTTRANSACTIONRECORDS.ServerReport.BearerToken = Nothing
+        Me.RPTTRANSACTIONRECORDS.Size = New System.Drawing.Size(1480, 610)
+        Me.RPTTRANSACTIONRECORDS.TabIndex = 2
+        '
+        'tbl_transactionBindingSource
+        '
+        Me.tbl_transactionBindingSource.DataMember = "tbl_transaction"
+        Me.tbl_transactionBindingSource.DataSource = Me.inventory_dbDataSet
+        '
+        'tbl_transactionTableAdapter
+        '
+        Me.tbl_transactionTableAdapter.ClearBeforeFill = True
+        '
         'FRMREPORTS
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -922,12 +866,12 @@ Partial Class FRMREPORTS
         Me.TPEXP.ResumeLayout(False)
         Me.TPSUP.ResumeLayout(False)
         Me.TPPRODS.ResumeLayout(False)
-        Me.TPPRODS.PerformLayout()
         Me.TPUSERS.ResumeLayout(False)
         Me.TPUSERS.PerformLayout()
         Me.TCREPORTS.ResumeLayout(False)
         Me.TPSTOCKS.ResumeLayout(False)
-        Me.TPSTOCKS.PerformLayout()
+        Me.TPTRANSREC.ResumeLayout(False)
+        CType(Me.tbl_transactionBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
 
     End Sub
@@ -971,11 +915,6 @@ Partial Class FRMREPORTS
     Friend WithEvents TPSUP As TabPage
     Friend WithEvents RPTSUP As Microsoft.Reporting.WinForms.ReportViewer
     Friend WithEvents TPPRODS As TabPage
-    Friend WithEvents Label3 As Label
-    Friend WithEvents BTNCLRDATE As Guna.UI2.WinForms.Guna2Button
-    Friend WithEvents BTNFILL As Guna.UI2.WinForms.Guna2Button
-    Friend WithEvents Date2 As Guna.UI2.WinForms.Guna2DateTimePicker
-    Friend WithEvents Date1 As Guna.UI2.WinForms.Guna2DateTimePicker
     Friend WithEvents TPUSERS As TabPage
     Friend WithEvents RPTUSERS As Microsoft.Reporting.WinForms.ReportViewer
     Friend WithEvents BTNCLEAR As Guna.UI2.WinForms.Guna2Button
@@ -985,7 +924,6 @@ Partial Class FRMREPORTS
     Friend WithEvents TCREPORTS As TabControl
     Friend WithEvents BTNCLOSE As Button
     Friend WithEvents TPSTOCKS As TabPage
-    Friend WithEvents Label4 As Label
     Friend WithEvents STOCKCLR As Guna.UI2.WinForms.Guna2Button
     Friend WithEvents STOCKSFILL As Guna.UI2.WinForms.Guna2Button
     Friend WithEvents Guna2DateTimePicker1 As Guna.UI2.WinForms.Guna2DateTimePicker
@@ -993,7 +931,11 @@ Partial Class FRMREPORTS
     Friend WithEvents RPTSTOCKS As Microsoft.Reporting.WinForms.ReportViewer
     Friend WithEvents tbl_stocksBindingSource As BindingSource
     Friend WithEvents tbl_stocksTableAdapter As inventory_dbDataSetTableAdapters.tbl_stocksTableAdapter
+    Friend WithEvents RPTPRODUCTS As Microsoft.Reporting.WinForms.ReportViewer
     Friend WithEvents tbl_productsBindingSource As BindingSource
     Friend WithEvents tbl_productsTableAdapter As inventory_dbDataSetTableAdapters.tbl_productsTableAdapter
-    Friend WithEvents RPTPRODUCTS As Microsoft.Reporting.WinForms.ReportViewer
+    Friend WithEvents TPTRANSREC As TabPage
+    Friend WithEvents RPTTRANSACTIONRECORDS As Microsoft.Reporting.WinForms.ReportViewer
+    Friend WithEvents tbl_transactionBindingSource As BindingSource
+    Friend WithEvents tbl_transactionTableAdapter As inventory_dbDataSetTableAdapters.tbl_transactionTableAdapter
 End Class

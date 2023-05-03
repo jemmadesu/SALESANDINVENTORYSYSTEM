@@ -1,6 +1,10 @@
 ﻿Imports MySql.Data.MySqlClient
 Public Class FRMREPORTS
     Private Sub FRMREPORTS_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        'TODO: This line of code loads data into the 'inventory_dbDataSet.tbl_transaction' table. You can move, or remove it, as needed.
+        Me.RPTTRANSACTIONRECORDS.SetDisplayMode(Microsoft.Reporting.WinForms.DisplayMode.PrintLayout)
+        Me.tbl_transactionTableAdapter.Fill(Me.inventory_dbDataSet.tbl_transaction)
+
         'TODO: This line of code loads data into the 'inventory_dbDataSet.tbl_stocks' table. You can move, or remove it, as needed.
         Me.RPTSTOCKS.SetDisplayMode(Microsoft.Reporting.WinForms.DisplayMode.PrintLayout)
         Me.tbl_stocksTableAdapter.Fill(Me.inventory_dbDataSet.tbl_stocks)
@@ -67,13 +71,13 @@ Public Class FRMREPORTS
     Private Sub BTNCLEAR_Click(sender As Object, e As EventArgs) Handles BTNCLEAR.Click
         clear()
     End Sub
-    Private Sub BTNFILL_Click(sender As Object, e As EventArgs) Handles BTNFILL.Click
-        Me.tbl_productsTableAdapter.FillByDate(Me.inventory_dbDataSet.tbl_products, Date1.Value.ToShortDateString, Date2.Value.ToShortDateString)
+    'Private Sub BTNFILL_Click(sender As Object, e As EventArgs)
+    '    Me.tbl_productsTableAdapter.FillByDate(Me.inventory_dbDataSet.tbl_products, Date1.Value.ToShortDateString, Date2.Value.ToShortDateString)
 
-        Me.RPTPRODUCTS.RefreshReport()
-    End Sub
+    '    Me.RPTPRODUCTS.RefreshReport()
+    'End Sub
 
-    Private Sub BTNCLRDATE_Click(sender As Object, e As EventArgs) Handles BTNCLRDATE.Click
+    Private Sub BTNCLRDATE_Click(sender As Object, e As EventArgs)
         Me.tbl_productsTableAdapter.Fill(Me.inventory_dbDataSet.tbl_products)
 
         Me.RPTPRODUCTS.RefreshReport()
@@ -142,7 +146,4 @@ Public Class FRMREPORTS
         Me.RPTSTOCKS.RefreshReport()
     End Sub
 
-    Private Sub RPTPRODUCTS_Load(sender As Object, e As EventArgs)
-
-    End Sub
 End Class

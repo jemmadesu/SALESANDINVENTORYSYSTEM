@@ -27,13 +27,13 @@ Partial Class ucPRODUCTLIST
         Me.BTNRD = New System.Windows.Forms.Button()
         Me.BTNEP = New System.Windows.Forms.Button()
         Me.BTNOS = New System.Windows.Forms.Button()
+        Me.BTNLOW = New System.Windows.Forms.Button()
         Me.BTNSTOCKS = New System.Windows.Forms.Button()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.Label2 = New System.Windows.Forms.Label()
         Me.TXTSEARCH = New Guna.UI2.WinForms.Guna2TextBox()
         Me.DGVPRODLIST = New System.Windows.Forms.DataGridView()
         Me.Label4 = New System.Windows.Forms.Label()
-        Me.BTNLOW = New System.Windows.Forms.Button()
         Me.Panel2.SuspendLayout()
         CType(Me.DGVPRODLIST, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
@@ -45,7 +45,6 @@ Partial Class ucPRODUCTLIST
         Me.Panel2.Controls.Add(Me.BTNEP)
         Me.Panel2.Controls.Add(Me.BTNOS)
         Me.Panel2.Controls.Add(Me.BTNLOW)
-        Me.Panel2.Controls.Add(Me.BTNSTOCKS)
         Me.Panel2.Dock = System.Windows.Forms.DockStyle.Top
         Me.Panel2.Location = New System.Drawing.Point(0, 0)
         Me.Panel2.Name = "Panel2"
@@ -106,6 +105,24 @@ Partial Class ucPRODUCTLIST
         Me.BTNOS.TextAlign = System.Drawing.ContentAlignment.MiddleRight
         Me.BTNOS.UseVisualStyleBackColor = False
         '
+        'BTNLOW
+        '
+        Me.BTNLOW.BackColor = System.Drawing.Color.FromArgb(CType(CType(37, Byte), Integer), CType(CType(46, Byte), Integer), CType(CType(59, Byte), Integer))
+        Me.BTNLOW.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None
+        Me.BTNLOW.FlatAppearance.BorderSize = 0
+        Me.BTNLOW.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.BTNLOW.Font = New System.Drawing.Font("Century Gothic", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.BTNLOW.ForeColor = System.Drawing.Color.White
+        Me.BTNLOW.Image = CType(resources.GetObject("BTNLOW.Image"), System.Drawing.Image)
+        Me.BTNLOW.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
+        Me.BTNLOW.Location = New System.Drawing.Point(166, 3)
+        Me.BTNLOW.Name = "BTNLOW"
+        Me.BTNLOW.Size = New System.Drawing.Size(191, 46)
+        Me.BTNLOW.TabIndex = 72
+        Me.BTNLOW.Text = "Running out of stocks"
+        Me.BTNLOW.TextAlign = System.Drawing.ContentAlignment.MiddleRight
+        Me.BTNLOW.UseVisualStyleBackColor = False
+        '
         'BTNSTOCKS
         '
         Me.BTNSTOCKS.BackColor = System.Drawing.Color.FromArgb(CType(CType(37, Byte), Integer), CType(CType(46, Byte), Integer), CType(CType(59, Byte), Integer))
@@ -116,7 +133,7 @@ Partial Class ucPRODUCTLIST
         Me.BTNSTOCKS.ForeColor = System.Drawing.Color.White
         Me.BTNSTOCKS.Image = CType(resources.GetObject("BTNSTOCKS.Image"), System.Drawing.Image)
         Me.BTNSTOCKS.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.BTNSTOCKS.Location = New System.Drawing.Point(236, 3)
+        Me.BTNSTOCKS.Location = New System.Drawing.Point(0, 0)
         Me.BTNSTOCKS.Name = "BTNSTOCKS"
         Me.BTNSTOCKS.Size = New System.Drawing.Size(114, 46)
         Me.BTNSTOCKS.TabIndex = 60
@@ -192,24 +209,6 @@ Partial Class ucPRODUCTLIST
         Me.Label4.Size = New System.Drawing.Size(0, 17)
         Me.Label4.TabIndex = 132
         '
-        'BTNLOW
-        '
-        Me.BTNLOW.BackColor = System.Drawing.Color.FromArgb(CType(CType(37, Byte), Integer), CType(CType(46, Byte), Integer), CType(CType(59, Byte), Integer))
-        Me.BTNLOW.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None
-        Me.BTNLOW.FlatAppearance.BorderSize = 0
-        Me.BTNLOW.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.BTNLOW.Font = New System.Drawing.Font("Century Gothic", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.BTNLOW.ForeColor = System.Drawing.Color.White
-        Me.BTNLOW.Image = CType(resources.GetObject("BTNLOW.Image"), System.Drawing.Image)
-        Me.BTNLOW.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.BTNLOW.Location = New System.Drawing.Point(0, 0)
-        Me.BTNLOW.Name = "BTNLOW"
-        Me.BTNLOW.Size = New System.Drawing.Size(191, 46)
-        Me.BTNLOW.TabIndex = 72
-        Me.BTNLOW.Text = "Running out of stocks"
-        Me.BTNLOW.TextAlign = System.Drawing.ContentAlignment.MiddleRight
-        Me.BTNLOW.UseVisualStyleBackColor = False
-        '
         'ucPRODUCTLIST
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 17.0!)
@@ -220,6 +219,7 @@ Partial Class ucPRODUCTLIST
         Me.Controls.Add(Me.TXTSEARCH)
         Me.Controls.Add(Me.DGVPRODLIST)
         Me.Controls.Add(Me.Label4)
+        Me.Controls.Add(Me.BTNSTOCKS)
         Me.Controls.Add(Me.Label1)
         Me.Controls.Add(Me.Panel2)
         Me.Font = New System.Drawing.Font("Century Gothic", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))

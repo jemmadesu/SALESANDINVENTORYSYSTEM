@@ -1,6 +1,8 @@
 ﻿
 Imports MySql.Data.MySqlClient
 Imports System.Drawing.Printing
+Imports System.IO
+
 
 Public Class ucTRANSACTION
 
@@ -404,11 +406,11 @@ Public Class ucTRANSACTION
 
 
 
-
-        If Val(TXTBILL.Text) <= Val(TXTPAYMENT.Text) Then
+        If (TXTPAYMENT.Text) < (TOTALBILL.Text) Then
             MessageBox.Show("The Payment is Insufficient", "Insufficient Payment", MessageBoxButtons.OK, MessageBoxIcon.Information)
             Exit Sub
         End If
+
 
         If CBODISCOUNT.Text = "-- Select --" Then
             MessageBox.Show("Please select Discount Type.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
@@ -423,6 +425,29 @@ Public Class ucTRANSACTION
             changelongpaper()
             PPD.Document = PD
             PPD.ShowDialog()
+
+            '-----------------------------------------------------
+
+            'Dim today As String = DateTime.Now.ToString("dd/MM/yyyy")
+            'Dim fileName As String = "receipt_" & today & ".pdf"
+
+            'Dim folderPath As String = "C:\Users\Jesse Celeridad\Desktop\Receipts"
+
+            '' Check if the folder exists, create it if it doesn't
+            'If Not Directory.Exists(folderPath) Then
+            '    Directory.CreateDirectory(folderPath)
+            'End If
+
+            '' Set the full path for the file
+            'Dim filePath As String = Path.Combine(folderPath, fileName)
+
+            '' Save the file
+            'PD.PrinterSettings.PrintToFile = True
+            'PD.PrinterSettings.PrintFileName = filePath
+            'PD.Print()
+
+            'MessageBox.Show("Receipt saved at " & filePath)
+            '-------------------------------------------------------------------------------
 
             activity = "Save purchase order. Order No:" + TXTOR.Text
             actlog()
@@ -578,24 +603,22 @@ Public Class ucTRANSACTION
             Exit Sub
         End If
 
-        ' Get the selected row in the cart DataGridView
-        Dim cartRow = DGVCART.CurrentRow
-
-        ' Construct the SQL query using parameterized queries
-        Dim sql = "UPDATE tbl_stocks SET Quantity = Quantity + @quantityToAdd WHERE prodid = @prodId"
-
-        ' Loop through each row in the products DataGridView
         For Each productRow As DataGridViewRow In DGVPRODUCTS.Rows
             ' Get the product ID and quantity from the current row
             Dim prodId = productRow.Cells(0).Value
             Dim quantity = productRow.Cells(7).Value
 
-            ' Calculate the new quantity by adding the quantity in the cart row
-            Dim newQuantity = quantity + cartRow.Cells(7).Value
+            ' Calculate the new quantity by adding the quantity in the cart rows
+            For Each cartRow As DataGridViewRow In DGVCART.Rows
+                If cartRow.Cells(0).Value = prodId Then
+                    quantity += cartRow.Cells(7).Value
+                End If
+            Next
 
-            ' Create the MySqlCommand and add the parameters
+            ' Construct the SQL query using parameterized queries
+            Dim sql = "UPDATE tbl_stocks SET Quantity = @newQuantity WHERE prodid = @prodId"
             Dim command As New MySqlCommand(sql, con)
-            command.Parameters.AddWithValue("@quantityToAdd", cartRow.Cells(7).Value)
+            command.Parameters.AddWithValue("@newQuantity", quantity)
             command.Parameters.AddWithValue("@prodId", prodId)
 
             ' Open the connection, execute the command, and close the connection

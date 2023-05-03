@@ -18,7 +18,7 @@
               <Width>1.60417in</Width>
             </TablixColumn>
             <TablixColumn>
-              <Width>1.875in</Width>
+              <Width>3.02083in</Width>
             </TablixColumn>
             <TablixColumn>
               <Width>2.09375in</Width>
@@ -595,9 +595,9 @@
         </TablixRowHierarchy>
         <DataSetName>DataSet_SUPPLIER</DataSetName>
         <Top>2.71875in</Top>
-        <Left>0.98958in</Left>
+        <Left>6.05208in</Left>
         <Height>0.5in</Height>
-        <Width>12.375in</Width>
+        <Width>13.52083in</Width>
         <Style>
           <Border>
             <Style>None</Style>
@@ -627,7 +627,7 @@
         </Paragraphs>
         <rd:DefaultName>Textbox1</rd:DefaultName>
         <Top>1.26142in</Top>
-        <Left>5.02174in</Left>
+        <Left>11.61805in</Left>
         <Height>0.57292in</Height>
         <Width>4.45833in</Width>
         <ZIndex>1</ZIndex>
@@ -646,7 +646,7 @@
         <Value>ID1681739519791</Value>
         <Sizing>FitProportional</Sizing>
         <Top>1.10219in</Top>
-        <Left>4.25785in</Left>
+        <Left>10.85416in</Left>
         <Height>0.90625in</Height>
         <Width>0.88542in</Width>
         <ZIndex>2</ZIndex>
@@ -678,7 +678,7 @@
         </Paragraphs>
         <rd:DefaultName>Textbox1</rd:DefaultName>
         <Top>2.13989in</Top>
-        <Left>5.68756in</Left>
+        <Left>12.28387in</Left>
         <Height>0.34375in</Height>
         <Width>2.46875in</Width>
         <ZIndex>3</ZIndex>
@@ -693,18 +693,17 @@
         </Style>
       </Textbox>
     </ReportItems>
-    <Height>11.69in</Height>
+    <Height>16.5in</Height>
     <Style>
       <Border>
         <Style>None</Style>
       </Border>
-      <BackgroundColor>LightGrey</BackgroundColor>
     </Style>
   </Body>
-  <Width>16.92542in</Width>
+  <Width>23.4in</Width>
   <Page>
-    <PageHeight>11.69in</PageHeight>
-    <PageWidth>16.54in</PageWidth>
+    <PageHeight>16.5in</PageHeight>
+    <PageWidth>23.54in</PageWidth>
     <LeftMargin>1in</LeftMargin>
     <RightMargin>1in</RightMargin>
     <TopMargin>1in</TopMargin>
