@@ -490,10 +490,6 @@ Public Class ucUSERMANAGEMENT
         Return emailRegex.IsMatch(emailAddress)
     End Function
 
-    Private Sub TXTADDRESS_TextChanged(sender As Object, e As EventArgs) Handles TXTADDRESS.TextChanged
-
-    End Sub
-
     Private Sub TXTADDRESS_Validating(sender As Object, e As CancelEventArgs) Handles TXTADDRESS.Validating
         ' Get the entered address from the TextBox
         Dim address As String = TXTADDRESS.Text.Trim()
@@ -533,4 +529,5 @@ Public Class ucUSERMANAGEMENT
 
         Return True
     End Function
+
 End Class

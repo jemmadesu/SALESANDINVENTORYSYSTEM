@@ -23,6 +23,9 @@ Partial Class ucNEWPRODUCT
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(ucNEWPRODUCT))
+        Dim DataGridViewCellStyle1 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle2 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle3 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Me.TXTCATCODE = New System.Windows.Forms.TextBox()
         Me.TXTBRAND = New System.Windows.Forms.TextBox()
         Me.BTNADD = New System.Windows.Forms.Button()
@@ -35,7 +38,6 @@ Partial Class ucNEWPRODUCT
         Me.BTNSAVE = New System.Windows.Forms.Button()
         Me.BTNEDIT = New System.Windows.Forms.Button()
         Me.BTNCSNCEL = New System.Windows.Forms.Button()
-        Me.TXTPM = New System.Windows.Forms.TextBox()
         Me.TXTPNA = New System.Windows.Forms.TextBox()
         Me.Label5 = New System.Windows.Forms.Label()
         Me.Label2 = New System.Windows.Forms.Label()
@@ -44,6 +46,7 @@ Partial Class ucNEWPRODUCT
         Me.Label10 = New System.Windows.Forms.Label()
         Me.DTP = New System.Windows.Forms.DateTimePicker()
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
+        Me.CBOMANUFACTURER = New System.Windows.Forms.ComboBox()
         Me.Panel2 = New System.Windows.Forms.Panel()
         Me.BTNBACK = New System.Windows.Forms.Button()
         Me.DGVPRODUCTS = New System.Windows.Forms.DataGridView()
@@ -195,16 +198,6 @@ Partial Class ucNEWPRODUCT
         Me.BTNCSNCEL.Text = "Clear"
         Me.BTNCSNCEL.UseVisualStyleBackColor = False
         '
-        'TXTPM
-        '
-        Me.TXTPM.Enabled = False
-        Me.TXTPM.Font = New System.Drawing.Font("Century Gothic", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.TXTPM.ForeColor = System.Drawing.SystemColors.ControlDarkDark
-        Me.TXTPM.Location = New System.Drawing.Point(258, 173)
-        Me.TXTPM.Name = "TXTPM"
-        Me.TXTPM.Size = New System.Drawing.Size(190, 23)
-        Me.TXTPM.TabIndex = 2
-        '
         'TXTPNA
         '
         Me.TXTPNA.Enabled = False
@@ -222,9 +215,9 @@ Partial Class ucNEWPRODUCT
         Me.Label5.ForeColor = System.Drawing.SystemColors.ControlDarkDark
         Me.Label5.Location = New System.Drawing.Point(74, 173)
         Me.Label5.Name = "Label5"
-        Me.Label5.Size = New System.Drawing.Size(181, 20)
+        Me.Label5.Size = New System.Drawing.Size(119, 20)
         Me.Label5.TabIndex = 10
-        Me.Label5.Text = "Product Manufacturer :"
+        Me.Label5.Text = "Manufacturer :"
         '
         'Label2
         '
@@ -281,6 +274,7 @@ Partial Class ucNEWPRODUCT
         '
         'GroupBox1
         '
+        Me.GroupBox1.Controls.Add(Me.CBOMANUFACTURER)
         Me.GroupBox1.Controls.Add(Me.TXTCATCODE)
         Me.GroupBox1.Controls.Add(Me.TXTPI)
         Me.GroupBox1.Controls.Add(Me.TXTBRAND)
@@ -289,7 +283,6 @@ Partial Class ucNEWPRODUCT
         Me.GroupBox1.Controls.Add(Me.Label5)
         Me.GroupBox1.Controls.Add(Me.TXTPNA)
         Me.GroupBox1.Controls.Add(Me.Label9)
-        Me.GroupBox1.Controls.Add(Me.TXTPM)
         Me.GroupBox1.Controls.Add(Me.BTNCSNCEL)
         Me.GroupBox1.Controls.Add(Me.CBOPRODCAT)
         Me.GroupBox1.Controls.Add(Me.BTNEDIT)
@@ -304,6 +297,17 @@ Partial Class ucNEWPRODUCT
         Me.GroupBox1.Size = New System.Drawing.Size(553, 586)
         Me.GroupBox1.TabIndex = 45
         Me.GroupBox1.TabStop = False
+        '
+        'CBOMANUFACTURER
+        '
+        Me.CBOMANUFACTURER.Enabled = False
+        Me.CBOMANUFACTURER.Font = New System.Drawing.Font("Century Gothic", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.CBOMANUFACTURER.ForeColor = System.Drawing.SystemColors.ControlDarkDark
+        Me.CBOMANUFACTURER.FormattingEnabled = True
+        Me.CBOMANUFACTURER.Location = New System.Drawing.Point(254, 173)
+        Me.CBOMANUFACTURER.Name = "CBOMANUFACTURER"
+        Me.CBOMANUFACTURER.Size = New System.Drawing.Size(192, 25)
+        Me.CBOMANUFACTURER.TabIndex = 74
         '
         'Panel2
         '
@@ -338,10 +342,34 @@ Partial Class ucNEWPRODUCT
         Me.DGVPRODUCTS.AllowUserToAddRows = False
         Me.DGVPRODUCTS.AllowUserToDeleteRows = False
         Me.DGVPRODUCTS.BackgroundColor = System.Drawing.Color.White
+        DataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control
+        DataGridViewCellStyle1.Font = New System.Drawing.Font("Century Gothic", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.ControlDarkDark
+        DataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.MediumSeaGreen
+        DataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+        DataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.DGVPRODUCTS.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle1
         Me.DGVPRODUCTS.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
+        DataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window
+        DataGridViewCellStyle2.Font = New System.Drawing.Font("Century Gothic", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlDarkDark
+        DataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.MediumSeaGreen
+        DataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+        DataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
+        Me.DGVPRODUCTS.DefaultCellStyle = DataGridViewCellStyle2
         Me.DGVPRODUCTS.Location = New System.Drawing.Point(27, 58)
         Me.DGVPRODUCTS.Name = "DGVPRODUCTS"
         Me.DGVPRODUCTS.ReadOnly = True
+        DataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Control
+        DataGridViewCellStyle3.Font = New System.Drawing.Font("Century Gothic", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.ControlDarkDark
+        DataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.MediumSeaGreen
+        DataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+        DataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.DGVPRODUCTS.RowHeadersDefaultCellStyle = DataGridViewCellStyle3
         Me.DGVPRODUCTS.RowHeadersVisible = False
         Me.DGVPRODUCTS.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
         Me.DGVPRODUCTS.Size = New System.Drawing.Size(533, 510)
@@ -400,7 +428,6 @@ Partial Class ucNEWPRODUCT
     Friend WithEvents BTNEDIT As Button
     Friend WithEvents TXTPI As TextBox
     Friend WithEvents BTNCSNCEL As Button
-    Friend WithEvents TXTPM As TextBox
     Friend WithEvents TXTPNA As TextBox
     Friend WithEvents Label5 As Label
     Friend WithEvents Label1 As Label
@@ -422,4 +449,5 @@ Partial Class ucNEWPRODUCT
     Friend WithEvents DGVPRODUCTS As DataGridView
     Friend WithEvents GroupBox2 As GroupBox
     Friend WithEvents LBLID As Label
+    Friend WithEvents CBOMANUFACTURER As ComboBox
 End Class

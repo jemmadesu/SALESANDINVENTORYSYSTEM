@@ -53,7 +53,7 @@ Public Class ucNEWPRODUCT
         TXTPNA.Enabled = True
         TXTBRAND.Enabled = True
         TXTBRAND.Enabled = True
-        TXTPM.Enabled = True
+        CBOMANUFACTURER.Enabled = True
 
 
     End Sub
@@ -67,7 +67,7 @@ Public Class ucNEWPRODUCT
         TXTPNA.Enabled = True
         TXTBRAND.Enabled = True
         TXTBRAND.Enabled = True
-        TXTPM.Enabled = True
+        CBOMANUFACTURER.Enabled = True
 
 
     End Sub
@@ -84,7 +84,8 @@ Public Class ucNEWPRODUCT
         TXTPNA.Enabled = False
         TXTBRAND.Enabled = False
         TXTBRAND.Enabled = False
-        TXTPM.Enabled = False
+        CBOMANUFACTURER.Enabled = False
+
 
     End Sub
 
@@ -155,6 +156,19 @@ Public Class ucNEWPRODUCT
         CBOPRODCAT.ValueMember = "catcode"
 
         '---------------------------------- MANUFACTURER COMBOBOX DATA ------------------------------
+        Dim cmd1 As New MySqlCommand("select companyname from tbl_supplier", con)
+        Dim da1 As New MySqlDataAdapter
+        da1.SelectCommand = cmd1
+        Dim tbl_supplier As New DataTable
+        da1.Fill(tbl_supplier)
+
+        Dim rowsup As DataRow = tbl_supplier.NewRow()
+
+        rowsup("companyname") = "-- Select --"
+        tbl_supplier.Rows.InsertAt(rowsup, 0)
+
+        CBOMANUFACTURER.DataSource = tbl_supplier
+        CBOMANUFACTURER.DisplayMember = "companyname"
 
 
 
@@ -190,7 +204,7 @@ Public Class ucNEWPRODUCT
         ' ---------------------------------------------------------------------------------------------------------- ERROR TRAPPING ----------------------------------------------------------------------------------------------------------
 
 
-        If TXTPI.Text = "" Or TXTPNA.Text = "" Or TXTPM.Text = "" Then
+        If TXTPI.Text = "" Or TXTPNA.Text = "" Or CBOMANUFACTURER.Text = "" Then
             MessageBox.Show("All fields are required!", "Error Saving", MessageBoxButtons.OK, MessageBoxIcon.Error)
             Exit Sub
         End If
@@ -209,7 +223,7 @@ Public Class ucNEWPRODUCT
             .AddWithValue("id", LBLID.Text)
             .AddWithValue("pid", TXTPI.Text)
             .AddWithValue("pna", TXTPNA.Text)
-            .AddWithValue("pm", TXTPM.Text)
+            .AddWithValue("pm", CBOMANUFACTURER.Text)
             .AddWithValue("pb", TXTBRAND.Text)
             .AddWithValue("pc", CBOPRODCAT.Text)
             .AddWithValue("cc", TXTCATCODE.Text)
@@ -225,7 +239,7 @@ Public Class ucNEWPRODUCT
         Function_Disabled()
         TXTPI.Text = ""
         TXTPNA.Text = ""
-        TXTPM.Text = ""
+        CBOMANUFACTURER.Text = ""
         TXTBRAND.Text = ""
         CBOPRODCAT.Text = ""
         TXTCATCODE.Text = ""
@@ -236,7 +250,7 @@ Public Class ucNEWPRODUCT
         ' ---------------------------------------------------------------------------------------------------------- ERROR CODE ----------------------------------------------------------------------------------------------------------
 
         If BTNEDIT.Text = "Edit" Then
-            If TXTPI.Text = "" Or TXTPNA.Text = "" Or TXTPM.Text = "" Then
+            If TXTPI.Text = "" Or TXTPNA.Text = "" Or CBOMANUFACTURER.Text = "" Then
 
                 MsgBox("Please select a record to edit!", vbOKOnly + vbCritical, "Error Editing")
                 Exit Sub
@@ -247,7 +261,7 @@ Public Class ucNEWPRODUCT
 
         ElseIf BTNEDIT.Text = "Update" Then
 
-            If TXTPI.Text = "" Or TXTPNA.Text = "" Or TXTPM.Text = "" Then
+            If TXTPI.Text = "" Or TXTPNA.Text = "" Or CBOMANUFACTURER.Text = "" Then
                 MsgBox("All fields are required!", vbOKOnly + vbCritical, "Error Saving")
                 TXTPI.Focus()
                 Exit Sub
@@ -260,7 +274,7 @@ Public Class ucNEWPRODUCT
             .AddWithValue("pi", TXTPI.Text)
             .AddWithValue("pb", TXTBRAND.Text)
             .AddWithValue("pna", TXTPNA.Text)
-            .AddWithValue("pm", TXTPM.Text)
+            .AddWithValue("pm", CBOMANUFACTURER.Text)
             .AddWithValue("pc", CBOPRODCAT.Text)
             .AddWithValue("cc", TXTCATCODE.Text)
 
@@ -272,7 +286,7 @@ Public Class ucNEWPRODUCT
         TXTPI.Text = ""
         TXTPNA.Text = ""
         TXTBRAND.Text = ""
-        TXTPM.Text = ""
+        CBOMANUFACTURER.Text = ""
         CBOPRODCAT.Text = ""
         TXTCATCODE.Text = ""
         Load_data()
@@ -294,11 +308,12 @@ Public Class ucNEWPRODUCT
 
         disabled()
         TXTBRAND.Text = ""
+        CBOMANUFACTURER.Text = "-- Select --"
         CBOPRODCAT.Text = "-- Select --"
         TXTCATCODE.Text = ""
         TXTPI.Text = ""
         TXTPNA.Text = ""
-        TXTPM.Text = ""
+        CBOMANUFACTURER.Text = ""
         TXTPI.Focus()
 
     End Sub
@@ -339,7 +354,7 @@ Public Class ucNEWPRODUCT
             row = DGVPRODUCTS.Rows(e.RowIndex)
             TXTPI.Text = row.Cells(0).Value
             TXTPNA.Text = row.Cells(1).Value
-            TXTPM.Text = row.Cells(2).Value
+            CBOMANUFACTURER.Text = row.Cells(2).Value
             TXTBRAND.Text = row.Cells(3).Value
             CBOPRODCAT.Text = row.Cells(4).Value
             TXTCATCODE.Text = row.Cells(5).Value

@@ -23,7 +23,11 @@ Partial Class ucSUPPLIER
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(ucSUPPLIER))
+        Dim DataGridViewCellStyle1 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle2 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle3 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Me.Panel2 = New System.Windows.Forms.Panel()
+        Me.BTNBACK = New System.Windows.Forms.Button()
         Me.Label22 = New System.Windows.Forms.Label()
         Me.TXTFN = New System.Windows.Forms.TextBox()
         Me.Label11 = New System.Windows.Forms.Label()
@@ -47,7 +51,6 @@ Partial Class ucSUPPLIER
         Me.DGVSUP = New System.Windows.Forms.DataGridView()
         Me.Label9 = New System.Windows.Forms.Label()
         Me.TXTSEARCH = New System.Windows.Forms.TextBox()
-        Me.BTNBACK = New System.Windows.Forms.Button()
         Me.Panel2.SuspendLayout()
         CType(Me.DGVSUP, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
@@ -61,6 +64,24 @@ Partial Class ucSUPPLIER
         Me.Panel2.Name = "Panel2"
         Me.Panel2.Size = New System.Drawing.Size(1322, 49)
         Me.Panel2.TabIndex = 128
+        '
+        'BTNBACK
+        '
+        Me.BTNBACK.BackColor = System.Drawing.Color.FromArgb(CType(CType(37, Byte), Integer), CType(CType(46, Byte), Integer), CType(CType(59, Byte), Integer))
+        Me.BTNBACK.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None
+        Me.BTNBACK.FlatAppearance.BorderSize = 0
+        Me.BTNBACK.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.BTNBACK.Font = New System.Drawing.Font("Century Gothic", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.BTNBACK.ForeColor = System.Drawing.Color.White
+        Me.BTNBACK.Image = CType(resources.GetObject("BTNBACK.Image"), System.Drawing.Image)
+        Me.BTNBACK.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
+        Me.BTNBACK.Location = New System.Drawing.Point(1200, 3)
+        Me.BTNBACK.Name = "BTNBACK"
+        Me.BTNBACK.Padding = New System.Windows.Forms.Padding(20, 0, 0, 0)
+        Me.BTNBACK.Size = New System.Drawing.Size(119, 46)
+        Me.BTNBACK.TabIndex = 3
+        Me.BTNBACK.Text = " Back"
+        Me.BTNBACK.UseVisualStyleBackColor = False
         '
         'Label22
         '
@@ -260,9 +281,9 @@ Partial Class ucSUPPLIER
         Me.Label8.ForeColor = System.Drawing.SystemColors.ControlDarkDark
         Me.Label8.Location = New System.Drawing.Point(62, 159)
         Me.Label8.Name = "Label8"
-        Me.Label8.Size = New System.Drawing.Size(102, 17)
+        Me.Label8.Size = New System.Drawing.Size(94, 17)
         Me.Label8.TabIndex = 160
-        Me.Label8.Text = "Supplier Name"
+        Me.Label8.Text = "Manufacturer"
         '
         'TXTCOM
         '
@@ -275,9 +296,34 @@ Partial Class ucSUPPLIER
         'DGVSUP
         '
         Me.DGVSUP.BackgroundColor = System.Drawing.Color.White
+        DataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control
+        DataGridViewCellStyle1.Font = New System.Drawing.Font("Century Gothic", 9.75!)
+        DataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.ControlDarkDark
+        DataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.MediumSeaGreen
+        DataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+        DataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.DGVSUP.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle1
         Me.DGVSUP.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
+        DataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window
+        DataGridViewCellStyle2.Font = New System.Drawing.Font("Century Gothic", 9.75!)
+        DataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlDarkDark
+        DataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.MediumSeaGreen
+        DataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+        DataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
+        Me.DGVSUP.DefaultCellStyle = DataGridViewCellStyle2
         Me.DGVSUP.Location = New System.Drawing.Point(608, 159)
         Me.DGVSUP.Name = "DGVSUP"
+        DataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Control
+        DataGridViewCellStyle3.Font = New System.Drawing.Font("Century Gothic", 9.75!)
+        DataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.ControlDarkDark
+        DataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.MediumSeaGreen
+        DataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+        DataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.DGVSUP.RowHeadersDefaultCellStyle = DataGridViewCellStyle3
+        Me.DGVSUP.RowHeadersVisible = False
         Me.DGVSUP.Size = New System.Drawing.Size(657, 542)
         Me.DGVSUP.TabIndex = 161
         '
@@ -298,24 +344,6 @@ Partial Class ucSUPPLIER
         Me.TXTSEARCH.Name = "TXTSEARCH"
         Me.TXTSEARCH.Size = New System.Drawing.Size(230, 20)
         Me.TXTSEARCH.TabIndex = 162
-        '
-        'BTNBACK
-        '
-        Me.BTNBACK.BackColor = System.Drawing.Color.FromArgb(CType(CType(37, Byte), Integer), CType(CType(46, Byte), Integer), CType(CType(59, Byte), Integer))
-        Me.BTNBACK.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None
-        Me.BTNBACK.FlatAppearance.BorderSize = 0
-        Me.BTNBACK.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.BTNBACK.Font = New System.Drawing.Font("Century Gothic", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.BTNBACK.ForeColor = System.Drawing.Color.White
-        Me.BTNBACK.Image = CType(resources.GetObject("BTNBACK.Image"), System.Drawing.Image)
-        Me.BTNBACK.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.BTNBACK.Location = New System.Drawing.Point(1200, 3)
-        Me.BTNBACK.Name = "BTNBACK"
-        Me.BTNBACK.Padding = New System.Windows.Forms.Padding(20, 0, 0, 0)
-        Me.BTNBACK.Size = New System.Drawing.Size(119, 46)
-        Me.BTNBACK.TabIndex = 3
-        Me.BTNBACK.Text = " Back"
-        Me.BTNBACK.UseVisualStyleBackColor = False
         '
         'ucSUPPLIER
         '

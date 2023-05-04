@@ -17,7 +17,48 @@ Public Class ucTRANSACTION
         dba.Fill(dbset)
         Me.DGVPRODUCTS.DataSource = dbset.Tables(0).DefaultView
     End Sub
+
+    Private Sub setsum()
+        DGVSUMMARY.Columns(0).Width = 300
+        DGVSUMMARY.Columns(0).HeaderText = "Products"
+        DGVSUMMARY.Columns(1).Width = 100
+        DGVSUMMARY.Columns(1).HeaderText = "Qty"
+    End Sub
+    Private Sub SUMMARY()
+        Try
+
+            Dim da As New MySqlDataAdapter("select prodname, quantity  from tbl_cart ", con)
+            Dim dt As New DataSet()
+            da.Fill(dt)
+            Me.DGVSUMMARY.DataSource = dt.Tables(0).DefaultView
+
+            setsum()
+        Catch ex As Exception
+
+            MessageBox.Show(ex.ToString())
+
+
+
+        End Try
+    End Sub
     Private Sub ucTRANSACTION_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+
+
+        DGVSUMMARY.EnableHeadersVisualStyles = False
+
+
+        ' Set the header cell backcolor
+        DGVSUMMARY.ColumnHeadersDefaultCellStyle.BackColor = Color.FromArgb(191, 205, 219
+)
+
+        ' Set the header cell forecolor
+        DGVSUMMARY.ColumnHeadersDefaultCellStyle.ForeColor = Color.DimGray
+
+        lblun.Text = FRMMAINMENU.LBLUSERNAME.Text
+        lblut.Text = FRMMAINMENU.LBLUSERTYPE.Text
+
+        SUMMARY()
+
         con.Close()
 
 
@@ -276,6 +317,7 @@ Public Class ucTRANSACTION
 
     Private Sub BTNCART_Click(sender As Object, e As EventArgs) Handles BTNCART.Click
 
+        ORNO.Text = TXTOR.Text
 
 
         ' ERROR TRAPPING FOR PRODUCTS
@@ -303,14 +345,6 @@ Public Class ucTRANSACTION
         End If
         If Me.NumericUpDown1.Value > 0 Or Me.NumericUpDown1.Value <= Me.DGVPRODUCTS.CurrentRow.Cells(7).Value Then
         End If
-
-
-
-
-
-
-
-
 
         BTNPAY.Visible = True
 
@@ -357,6 +391,28 @@ Public Class ucTRANSACTION
 
         ' Refresh the DataGridView to show the updated data
         showproducts()
+        SUMMARY()
+
+        ' PURCHASED SUMMARY ------------------------------------------------------------
+
+
+        'DGVCART.AllowUserToAddRows = False
+
+        'For row As Integer = 0 To DGVCART.RowCount - 1
+        '    Dim yPos As Integer = 120 + (row * 1) ' Increase the y-coordinate for each row
+
+        '    For col As Integer = 0 To DGVCART.ColumnCount - 1
+        '        Dim cellValue As String = DGVCART.Rows(row).Cells(col).Value.ToString()
+
+        '        Dim itemLabel As New Label()
+        '        itemLabel.Text = cellValue
+        '        itemLabel.Location = New Point(col * 100, yPos) ' Increase the x-coordinate for each column
+
+        '        ' Add the label to your form or container
+        '        'Me.Controls.Add(itemLabel)
+        '    Next
+        'Next
+
 
         ' ---------------------------------------------------------------------------- SAVING CODE FOR TBL_CART ----------------------------------------------------
 
@@ -394,6 +450,7 @@ Public Class ucTRANSACTION
 
         showproducts()
         showcart()
+        SUMMARY()
 
         Dim dba1 As New MySqlDataAdapter("SELECT SUM(Price) FROM tbl_cart", con)
         Dim dbset1 As New DataSet
@@ -515,6 +572,7 @@ Public Class ucTRANSACTION
         dlcmd.ExecuteNonQuery()
         con.Close()
         showcart()
+        SUMMARY()
 
         TXTBILL.Text = 0
         TXTCHANGE.Text = 0
@@ -539,6 +597,7 @@ Public Class ucTRANSACTION
             Discounted = Convert.ToInt32(TXTBILL.Text) - Discount
             TXTDISCAMOUNT.Text = Convert.ToString(Discounted)
             TOTALBILL.Text = TXTDISCAMOUNT.Text
+            TOTALAMOUNT.Text = "₱" + TXTDISCAMOUNT.Text
             TXTPAYMENT.Text = 0
 
 
@@ -546,6 +605,7 @@ Public Class ucTRANSACTION
             TXTPAYMENT.Text = 0
             TXTDISCAMOUNT.Text = 0
             TOTALBILL.Text = TXTBILL.Text
+            TOTALAMOUNT.Text = "₱" + TXTBILL.Text
         End If
 
     End Sub
@@ -642,6 +702,7 @@ Public Class ucTRANSACTION
             con.Close()
         Next
         showcart()
+        SUMMARY()
         showproducts()
         MessageBox.Show("Successfully removed from the cart.")
 
@@ -671,7 +732,9 @@ Public Class ucTRANSACTION
             TXTPAYMENT.Text = 0
             TXTDISCAMOUNT.Text = 0
             TOTALBILL.Text = TXTBILL.Text
+            TOTALAMOUNT.Text = TXTBILL.Text
         End If
+
 
         pnlpayment.Visible = True
     End Sub
@@ -696,5 +759,22 @@ Public Class ucTRANSACTION
 
     Private Sub NumericUpDown1_ValueChanged(sender As Object, e As EventArgs) Handles NumericUpDown1.ValueChanged
         If TXTUNIT.Text = "Pack/s" Then NumericUpDown1.Value = 10
+    End Sub
+    Private Sub TXTOR_KeyPress(sender As Object, e As KeyPressEventArgs) Handles TXTOR.KeyPress
+        If Not Char.IsNumber(e.KeyChar) And Not Char.IsControl(e.KeyChar) Then
+            e.Handled = True
+            MsgBox("Letter or Special character is not allowed", vbCritical, "Notice")
+        End If
+        If TXTOR.Text.Length >= 6 Then
+            If e.KeyChar <> ControlChars.Back Then
+                e.Handled = True
+                MsgBox("Number Exceed", vbCritical, "Notice")
+            End If
+        End If
+    End Sub
+
+    Private Sub DGVSUMMARY_CellFormatting(sender As Object, e As DataGridViewCellFormattingEventArgs) Handles DGVSUMMARY.CellFormatting
+
+
     End Sub
 End Class
