@@ -122,51 +122,7 @@ Public Class ucUSERMANAGEMENT
         SETTINGS.Dock = DockStyle.Fill
     End Sub
 
-    Private Sub DGVUSERS_CellClick(sender As Object, e As DataGridViewCellEventArgs) Handles DGVUSERS.CellContentClick
-        BTNDELETE.Enabled = True
-        BTNEDIT.Text = "Save Edit"
-        If BTNEDIT.Text = "Save Edit" Then BTNSAVE.Visible = False
 
-        BTNEDIT.Enabled = True
-        BTNCANCEL.Enabled = True
-
-
-        TXTFN.Enabled = True
-        TXTNAME.Enabled = True
-        TXTMN.Enabled = True
-        TXTLN.Enabled = True
-        TXTTEL.Enabled = True
-        TXTEMAIL.Enabled = True
-        TXTADDRESS.Enabled = True
-        TXTUN.Enabled = True
-        TXTCP.Enabled = True
-        TXTPW.Enabled = True
-        CBOSTATUS.Enabled = True
-
-
-
-        If e.RowIndex >= 0 Then
-            Dim row As DataGridViewRow
-
-
-            row = DGVUSERS.Rows(e.RowIndex)
-
-            TXTUN.Text = row.Cells(0).Value
-            CBOACCTYPE.Text = row.Cells(1).Value
-            TXTUI.Text = row.Cells(2).Value
-            TXTRI.Text = row.Cells(3).Value
-            CBOSTATUS.Text = row.Cells(4).Value
-            TXTPW.Text = row.Cells(5).Value
-            TXTCP.Text = row.Cells(5).Value
-            TXTFN.Text = row.Cells(6).Value
-            TXTMN.Text = row.Cells(7).Value
-            TXTLN.Text = row.Cells(8).Value
-            TXTTEL.Text = row.Cells(9).Value
-            TXTEMAIL.Text = row.Cells(10).Value
-            TXTADDRESS.Text = row.Cells(11).Value
-
-        End If
-    End Sub
 
     Private Sub BTNDELETE_Click(sender As Object, e As EventArgs) Handles BTNDELETE.Click
         ' NOT WORKING 
@@ -251,7 +207,6 @@ Public Class ucUSERMANAGEMENT
         con.Close()
 
 
-        'Function_Disabled()
         TXTUN.Text = ""
         CBOACCTYPE.Text = ""
         TXTUI.Text = ""
@@ -276,7 +231,7 @@ Public Class ucUSERMANAGEMENT
         TXTTEL.Enabled = False
         TXTEMAIL.Enabled = False
         TXTADDRESS.Enabled = False
-        TXTUN.Enabled = False
+
         TXTCP.Enabled = False
         TXTPW.Enabled = False
         CBOSTATUS.Enabled = False
@@ -314,11 +269,11 @@ Public Class ucUSERMANAGEMENT
         TXTTEL.Enabled = False
         TXTEMAIL.Enabled = False
         TXTADDRESS.Enabled = False
-        TXTUN.Enabled = False
+
         TXTCP.Enabled = False
         TXTPW.Enabled = False
         CBOSTATUS.Enabled = False
-        DGVUSERS.Enabled = True
+
 
 
 
@@ -359,7 +314,7 @@ Public Class ucUSERMANAGEMENT
         BTNSAVE.Visible = True
         BTNSAVE.Enabled = False
 
-        TXTUN.Text = ""
+
         CBOACCTYPE.Text = ""
         TXTUI.Text = ""
         TXTRI.Text = ""
@@ -382,23 +337,22 @@ Public Class ucUSERMANAGEMENT
         TXTTEL.Enabled = False
         TXTEMAIL.Enabled = False
         TXTADDRESS.Enabled = False
-        TXTUN.Enabled = False
+
         TXTCP.Enabled = False
         TXTPW.Enabled = False
         CBOSTATUS.Enabled = False
-        DGVUSERS.Enabled = True
+
     End Sub
 
     Private Sub CBOACCTYPE_SelectedIndexChanged(sender As Object, e As EventArgs) Handles CBOACCTYPE.SelectedIndexChanged
 
         BTNSAVE.Enabled = True
-        DGVUSERS.Enabled = False
+
         BTNCANCEL.Enabled = True
 
         Getmax()
         AutoID()
 
-        TXTUN.Text = ""
         TXTPW.Text = ""
         TXTCP.Text = ""
         TXTFN.Text = ""
@@ -409,6 +363,7 @@ Public Class ucUSERMANAGEMENT
         TXTADDRESS.Text = ""
         TXTFN.Focus()
 
+        TXTUN.Enabled = True
         TXTFN.Enabled = True
         TXTNAME.Enabled = True
         TXTMN.Enabled = True
@@ -416,7 +371,7 @@ Public Class ucUSERMANAGEMENT
         TXTTEL.Enabled = True
         TXTEMAIL.Enabled = True
         TXTADDRESS.Enabled = True
-        TXTUN.Enabled = True
+
         TXTCP.Enabled = True
         TXTPW.Enabled = True
         CBOSTATUS.Enabled = True
@@ -530,4 +485,51 @@ Public Class ucUSERMANAGEMENT
         Return True
     End Function
 
+    Private Sub DGVUSERS_CellClick(sender As Object, e As DataGridViewCellEventArgs) Handles DGVUSERS.CellClick
+
+
+
+        If e.RowIndex >= 0 Then
+            Dim row As DataGridViewRow = DGVUSERS.Rows(e.RowIndex)
+            TXTUN.Text = row.Cells(0).Value.ToString()
+            CBOACCTYPE.Text = row.Cells(1).Value.ToString()
+            TXTUI.Text = row.Cells(2).Value.ToString()
+            TXTRI.Text = row.Cells(3).Value.ToString()
+            CBOSTATUS.Text = row.Cells(4).Value.ToString()
+            TXTPW.Text = row.Cells(5).Value.ToString()
+            TXTCP.Text = row.Cells(5).Value.ToString()
+            TXTFN.Text = row.Cells(6).Value.ToString()
+            TXTMN.Text = row.Cells(7).Value.ToString()
+            TXTLN.Text = row.Cells(8).Value.ToString()
+            TXTTEL.Text = row.Cells(9).Value.ToString()
+            TXTEMAIL.Text = row.Cells(10).Value.ToString()
+            TXTADDRESS.Text = row.Cells(11).Value.ToString()
+        End If
+        BTNDELETE.Enabled = True
+        BTNEDIT.Text = "Save Edit"
+        If BTNEDIT.Text = "Save Edit" Then BTNSAVE.Visible = False
+
+        BTNEDIT.Enabled = True
+        BTNCANCEL.Enabled = True
+
+        TXTUN.Enabled = False
+        TXTFN.Enabled = True
+        TXTNAME.Enabled = True
+        TXTMN.Enabled = True
+        TXTLN.Enabled = True
+        TXTTEL.Enabled = True
+        TXTEMAIL.Enabled = True
+        TXTADDRESS.Enabled = True
+        TXTCP.Enabled = True
+        TXTPW.Enabled = True
+        CBOSTATUS.Enabled = True
+    End Sub
+
+    Private Sub DGVUSERS_CellContentClick(sender As Object, e As DataGridViewCellEventArgs) Handles DGVUSERS.CellContentClick
+
+    End Sub
+
+    Private Sub TXTUN_TextChanged(sender As Object, e As EventArgs) Handles TXTUN.TextChanged
+
+    End Sub
 End Class

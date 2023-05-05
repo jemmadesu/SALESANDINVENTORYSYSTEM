@@ -6,7 +6,7 @@
         <TablixBody>
           <TablixColumns>
             <TablixColumn>
-              <Width>1.26042in</Width>
+              <Width>3.01042in</Width>
             </TablixColumn>
             <TablixColumn>
               <Width>1.54167in</Width>
@@ -33,8 +33,8 @@
                             <TextRun>
                               <Value>Username</Value>
                               <Style>
-                                <FontSize>11pt</FontSize>
-                                <FontWeight>Bold</FontWeight>
+                                <FontFamily>Century Gothic</FontFamily>
+                                <FontSize>16pt</FontSize>
                                 <Color>#666666</Color>
                               </Style>
                             </TextRun>
@@ -202,7 +202,8 @@
                             <TextRun>
                               <Value>=Fields!username.Value</Value>
                               <Style>
-                                <FontWeight>Normal</FontWeight>
+                                <FontFamily>Century Gothic</FontFamily>
+                                <FontSize>14pt</FontSize>
                                 <Color>#333333</Color>
                               </Style>
                             </TextRun>
@@ -237,7 +238,8 @@
                             <TextRun>
                               <Value>=Fields!usertype.Value</Value>
                               <Style>
-                                <FontWeight>Normal</FontWeight>
+                                <FontFamily>Century Gothic</FontFamily>
+                                <FontSize>14pt</FontSize>
                                 <Color>#333333</Color>
                               </Style>
                             </TextRun>
@@ -357,7 +359,7 @@
         <Top>3.05803in</Top>
         <Left>6.18055in</Left>
         <Height>0.5in</Height>
-        <Width>8.07292in</Width>
+        <Width>9.82292in</Width>
         <Style>
           <Border>
             <Style>None</Style>

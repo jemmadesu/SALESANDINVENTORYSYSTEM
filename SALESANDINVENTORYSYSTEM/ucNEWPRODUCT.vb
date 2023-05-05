@@ -51,8 +51,8 @@ Public Class ucNEWPRODUCT
         TXTPI.Enabled = True
         CBOPRODCAT.Enabled = True
         TXTPNA.Enabled = True
-        TXTBRAND.Enabled = True
-        TXTBRAND.Enabled = True
+        CBOBRAND.Enabled = True
+        CBOBRAND.Enabled = True
         CBOMANUFACTURER.Enabled = True
 
 
@@ -65,8 +65,8 @@ Public Class ucNEWPRODUCT
         TXTPI.Enabled = True
         CBOPRODCAT.Enabled = True
         TXTPNA.Enabled = True
-        TXTBRAND.Enabled = True
-        TXTBRAND.Enabled = True
+        CBOBRAND.Enabled = True
+        CBOBRAND.Enabled = True
         CBOMANUFACTURER.Enabled = True
 
 
@@ -82,8 +82,8 @@ Public Class ucNEWPRODUCT
         TXTPI.Enabled = False
         CBOPRODCAT.Enabled = False
         TXTPNA.Enabled = False
-        TXTBRAND.Enabled = False
-        TXTBRAND.Enabled = False
+        CBOBRAND.Enabled = False
+        CBOBRAND.Enabled = False
         CBOMANUFACTURER.Enabled = False
 
 
@@ -224,7 +224,7 @@ Public Class ucNEWPRODUCT
             .AddWithValue("pid", TXTPI.Text)
             .AddWithValue("pna", TXTPNA.Text)
             .AddWithValue("pm", CBOMANUFACTURER.Text)
-            .AddWithValue("pb", TXTBRAND.Text)
+            .AddWithValue("pb", CBOBRAND.Text)
             .AddWithValue("pc", CBOPRODCAT.Text)
             .AddWithValue("cc", TXTCATCODE.Text)
             .AddWithValue("dap", Format(Date.Now, "yyyy-MM-dd"))
@@ -240,7 +240,7 @@ Public Class ucNEWPRODUCT
         TXTPI.Text = ""
         TXTPNA.Text = ""
         CBOMANUFACTURER.Text = ""
-        TXTBRAND.Text = ""
+        CBOBRAND.Text = ""
         CBOPRODCAT.Text = ""
         TXTCATCODE.Text = ""
         Load_data()
@@ -272,7 +272,7 @@ Public Class ucNEWPRODUCT
         With cmd.Parameters
             .Clear()
             .AddWithValue("pi", TXTPI.Text)
-            .AddWithValue("pb", TXTBRAND.Text)
+            .AddWithValue("pb", CBOBRAND.Text)
             .AddWithValue("pna", TXTPNA.Text)
             .AddWithValue("pm", CBOMANUFACTURER.Text)
             .AddWithValue("pc", CBOPRODCAT.Text)
@@ -285,7 +285,7 @@ Public Class ucNEWPRODUCT
         BTNEDIT.Text = "Edit"
         TXTPI.Text = ""
         TXTPNA.Text = ""
-        TXTBRAND.Text = ""
+        CBOBRAND.Text = ""
         CBOMANUFACTURER.Text = ""
         CBOPRODCAT.Text = ""
         TXTCATCODE.Text = ""
@@ -307,7 +307,7 @@ Public Class ucNEWPRODUCT
     Private Sub BTNCSNCEL_Click_1(sender As Object, e As EventArgs) Handles BTNCSNCEL.Click
 
         disabled()
-        TXTBRAND.Text = ""
+        CBOBRAND.Text = ""
         CBOMANUFACTURER.Text = "-- Select --"
         CBOPRODCAT.Text = "-- Select --"
         TXTCATCODE.Text = ""
@@ -355,7 +355,7 @@ Public Class ucNEWPRODUCT
             TXTPI.Text = row.Cells(0).Value
             TXTPNA.Text = row.Cells(1).Value
             CBOMANUFACTURER.Text = row.Cells(2).Value
-            TXTBRAND.Text = row.Cells(3).Value
+            CBOBRAND.Text = row.Cells(3).Value
             CBOPRODCAT.Text = row.Cells(4).Value
             TXTCATCODE.Text = row.Cells(5).Value
 

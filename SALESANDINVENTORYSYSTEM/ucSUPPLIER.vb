@@ -1,7 +1,22 @@
 ﻿Imports MySql.Data.MySqlClient
 Public Class ucSUPPLIER
 
+    Private Sub DGVSET()
+        DGVSUP.Columns(0).Width = 200
+        DGVSUP.Columns(0).HeaderText = "Manufacturer"
+        DGVSUP.Columns(1).Width = 200
+        DGVSUP.Columns(1).HeaderText = "First Name"
+        DGVSUP.Columns(2).Width = 200
+        DGVSUP.Columns(2).HeaderText = "Last Name"
+        DGVSUP.Columns(3).Width = 200
+        DGVSUP.Columns(3).HeaderText = "E-Mail"
+        DGVSUP.Columns(4).Width = 200
+        DGVSUP.Columns(4).HeaderText = "Phone No."
+        DGVSUP.Columns(5).Width = 200
+        DGVSUP.Columns(5).HeaderText = "Address"
 
+
+    End Sub
     Private Sub load_data()
         Try
 
@@ -10,7 +25,7 @@ Public Class ucSUPPLIER
             da.Fill(dt)
             DGVSUP.DataSource = dt.Tables(0)
 
-
+            DGVSET()
         Catch ex As Exception
 
             MessageBox.Show(ex.ToString())
@@ -124,7 +139,7 @@ Public Class ucSUPPLIER
         Next
         load_data()
         MessageBox.Show("data deleted succesfully")
-        activity = "deleted a supplier. Company Name: " + TXTCOM.Text
+        activity = "deleted a supplier. Manufacturer Name: " + TXTCOM.Text
         actlog()
         TXTCOM.Text = ""
         TXTFN.Text = ""
@@ -135,26 +150,6 @@ Public Class ucSUPPLIER
         load_data()
 
     End Sub
-
-    Private Sub DGVSUP_CellClick(sender As Object, e As DataGridViewCellEventArgs) Handles DGVSUP.CellContentClick
-        If e.RowIndex >= 0 Then
-            Dim row As DataGridViewRow
-            row = DGVSUP.Rows(e.RowIndex)
-
-
-            TXTCOM.Text = row.Cells(0).Value
-            TXTFN.Text = row.Cells(1).Value
-            TXTLN.Text = row.Cells(2).Value
-            TXTEMAIL.Text = row.Cells(3).Value
-            TXTNO.Text = row.Cells(4).Value
-            TXTADD.Text = row.Cells(5).Value
-
-
-        End If
-        BTNEDIT.Text = "Update"
-        BTNSAVE.Enabled = False
-    End Sub
-
     Private Sub BTNCANCEL_Click(sender As Object, e As EventArgs) Handles BTNCANCEL.Click
         TXTCOM.Text = ""
         TXTFN.Text = ""
@@ -185,7 +180,23 @@ Public Class ucSUPPLIER
         search()
     End Sub
 
-    Private Sub Label9_Click(sender As Object, e As EventArgs) Handles Label9.Click
+    Private Sub DGVSUP_CellClick(sender As Object, e As DataGridViewCellEventArgs) Handles DGVSUP.CellContentClick
 
+        If e.RowIndex >= 0 Then
+            Dim row As DataGridViewRow
+            row = DGVSUP.Rows(e.RowIndex)
+
+
+            TXTCOM.Text = row.Cells(0).Value
+            TXTFN.Text = row.Cells(1).Value
+            TXTLN.Text = row.Cells(2).Value
+            TXTEMAIL.Text = row.Cells(3).Value
+            TXTNO.Text = row.Cells(4).Value
+            TXTADD.Text = row.Cells(5).Value
+
+
+        End If
+        BTNEDIT.Text = "Update"
+        BTNSAVE.Enabled = False
     End Sub
 End Class

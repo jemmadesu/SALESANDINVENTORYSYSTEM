@@ -60,7 +60,8 @@
                             <TextRun>
                               <Value>Order No,</Value>
                               <Style>
-                                <FontSize>11pt</FontSize>
+                                <FontFamily>Century Gothic</FontFamily>
+                                <FontSize>16pt</FontSize>
                                 <FontWeight>Bold</FontWeight>
                                 <Color>#666666</Color>
                               </Style>
@@ -101,7 +102,8 @@
                             <TextRun>
                               <Value>Product ID</Value>
                               <Style>
-                                <FontSize>11pt</FontSize>
+                                <FontFamily>Century Gothic</FontFamily>
+                                <FontSize>16pt</FontSize>
                                 <FontWeight>Bold</FontWeight>
                                 <Color>#666666</Color>
                               </Style>
@@ -142,7 +144,8 @@
                             <TextRun>
                               <Value>Product Name</Value>
                               <Style>
-                                <FontSize>11pt</FontSize>
+                                <FontFamily>Century Gothic</FontFamily>
+                                <FontSize>16pt</FontSize>
                                 <FontWeight>Bold</FontWeight>
                                 <Color>#666666</Color>
                               </Style>
@@ -183,7 +186,8 @@
                             <TextRun>
                               <Value>Brand</Value>
                               <Style>
-                                <FontSize>11pt</FontSize>
+                                <FontFamily>Century Gothic</FontFamily>
+                                <FontSize>16pt</FontSize>
                                 <FontWeight>Bold</FontWeight>
                                 <Color>#666666</Color>
                               </Style>
@@ -598,6 +602,8 @@
                             <TextRun>
                               <Value>=Fields!orderno.Value</Value>
                               <Style>
+                                <FontFamily>Century Gothic</FontFamily>
+                                <FontSize>16pt</FontSize>
                                 <FontWeight>Normal</FontWeight>
                                 <Color>#333333</Color>
                               </Style>
@@ -633,6 +639,8 @@
                             <TextRun>
                               <Value>=Fields!prodid.Value</Value>
                               <Style>
+                                <FontFamily>Century Gothic</FontFamily>
+                                <FontSize>16pt</FontSize>
                                 <FontWeight>Normal</FontWeight>
                                 <Color>#333333</Color>
                               </Style>
@@ -668,6 +676,8 @@
                             <TextRun>
                               <Value>=Fields!prodname.Value</Value>
                               <Style>
+                                <FontFamily>Century Gothic</FontFamily>
+                                <FontSize>16pt</FontSize>
                                 <FontWeight>Normal</FontWeight>
                                 <Color>#333333</Color>
                               </Style>
@@ -725,6 +735,7 @@
                         <PaddingBottom>2pt</PaddingBottom>
                       </Style>
                     </Textbox>
+                    <rd:Selected>true</rd:Selected>
                   </CellContents>
                 </TablixCell>
                 <TablixCell>
@@ -1084,7 +1095,7 @@
           </SortExpression>
         </SortExpressions>
         <Top>2.48958in</Top>
-        <Left>1.3932in</Left>
+        <Left>0.00084in</Left>
         <Height>0.5in</Height>
         <Width>19.89361in</Width>
         <Style>
@@ -1102,8 +1113,8 @@
               <TextRun>
                 <Value>Rizal Provincial Hospital Employees and Community Multi-Purpose Cooperative</Value>
                 <Style>
-                  <FontFamily>Arial Rounded MT Bold</FontFamily>
-                  <FontSize>14pt</FontSize>
+                  <FontFamily>Century Gothic</FontFamily>
+                  <FontSize>20pt</FontSize>
                   <FontWeight>Bold</FontWeight>
                   <Color>SeaGreen</Color>
                 </Style>
@@ -1115,10 +1126,10 @@
           </Paragraph>
         </Paragraphs>
         <rd:DefaultName>Textbox1</rd:DefaultName>
-        <Top>0.52802in</Top>
-        <Left>8.97515in</Left>
-        <Height>0.57292in</Height>
-        <Width>4.45833in</Width>
+        <Top>0.52083in</Top>
+        <Left>6.79028in</Left>
+        <Height>1.07292in</Height>
+        <Width>6.31944in</Width>
         <ZIndex>1</ZIndex>
         <Style>
           <Border>
@@ -1134,10 +1145,10 @@
         <Source>Embedded</Source>
         <Value>ID1681739519791</Value>
         <Sizing>FitProportional</Sizing>
-        <Top>0.36879in</Top>
-        <Left>8.21126in</Left>
-        <Height>0.90625in</Height>
-        <Width>0.88542in</Width>
+        <Top>0.52083in</Top>
+        <Left>5.7382in</Left>
+        <Height>1.07292in</Height>
+        <Width>0.98264in</Width>
         <ZIndex>2</ZIndex>
         <Style>
           <Border>
@@ -1154,8 +1165,8 @@
               <TextRun>
                 <Value>TRANSACTION RECORDS</Value>
                 <Style>
-                  <FontFamily>Arial Rounded MT Bold</FontFamily>
-                  <FontSize>14pt</FontSize>
+                  <FontFamily>Century Gothic</FontFamily>
+                  <FontSize>20pt</FontSize>
                   <FontWeight>Bold</FontWeight>
                 </Style>
               </TextRun>
@@ -1166,10 +1177,10 @@
           </Paragraph>
         </Paragraphs>
         <rd:DefaultName>Textbox1</rd:DefaultName>
-        <Top>1.23983in</Top>
-        <Left>9.64097in</Left>
-        <Height>0.61458in</Height>
-        <Width>2.46875in</Width>
+        <Top>1.59375in</Top>
+        <Left>8.29807in</Left>
+        <Height>0.34375in</Height>
+        <Width>3.6875in</Width>
         <ZIndex>3</ZIndex>
         <Style>
           <Border>

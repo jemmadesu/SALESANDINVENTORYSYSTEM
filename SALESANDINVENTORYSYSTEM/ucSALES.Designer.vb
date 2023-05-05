@@ -34,6 +34,8 @@ Partial Class ucSALES
         Me.DATE1 = New Guna.UI2.WinForms.Guna2DateTimePicker()
         Me.DATE2 = New Guna.UI2.WinForms.Guna2DateTimePicker()
         Me.BTNCLEAR = New System.Windows.Forms.Button()
+        Me.Label6 = New System.Windows.Forms.Label()
+        Me.Label1 = New System.Windows.Forms.Label()
         CType(Me.DGVSALES, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
@@ -63,7 +65,7 @@ Partial Class ucSALES
         Me.BTNGENERATE.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.BTNGENERATE.Font = New System.Drawing.Font("Century Gothic", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.BTNGENERATE.ForeColor = System.Drawing.SystemColors.Control
-        Me.BTNGENERATE.Location = New System.Drawing.Point(1046, 108)
+        Me.BTNGENERATE.Location = New System.Drawing.Point(1049, 111)
         Me.BTNGENERATE.Name = "BTNGENERATE"
         Me.BTNGENERATE.Size = New System.Drawing.Size(83, 33)
         Me.BTNGENERATE.TabIndex = 44
@@ -134,9 +136,11 @@ Partial Class ucSALES
         Me.DATE1.BackColor = System.Drawing.Color.White
         Me.DATE1.CheckedState.Parent = Me.DATE1
         Me.DATE1.FillColor = System.Drawing.Color.White
+        Me.DATE1.Font = New System.Drawing.Font("Century Gothic", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.DATE1.ForeColor = System.Drawing.Color.DimGray
         Me.DATE1.Format = System.Windows.Forms.DateTimePickerFormat.[Long]
         Me.DATE1.HoverState.Parent = Me.DATE1
-        Me.DATE1.Location = New System.Drawing.Point(540, 105)
+        Me.DATE1.Location = New System.Drawing.Point(529, 108)
         Me.DATE1.MaxDate = New Date(9998, 12, 31, 0, 0, 0, 0)
         Me.DATE1.MinDate = New Date(1753, 1, 1, 0, 0, 0, 0)
         Me.DATE1.Name = "DATE1"
@@ -150,9 +154,11 @@ Partial Class ucSALES
         Me.DATE2.BackColor = System.Drawing.Color.White
         Me.DATE2.CheckedState.Parent = Me.DATE2
         Me.DATE2.FillColor = System.Drawing.Color.White
+        Me.DATE2.Font = New System.Drawing.Font("Century Gothic", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.DATE2.ForeColor = System.Drawing.Color.DimGray
         Me.DATE2.Format = System.Windows.Forms.DateTimePickerFormat.[Long]
         Me.DATE2.HoverState.Parent = Me.DATE2
-        Me.DATE2.Location = New System.Drawing.Point(806, 108)
+        Me.DATE2.Location = New System.Drawing.Point(799, 108)
         Me.DATE2.MaxDate = New Date(9998, 12, 31, 0, 0, 0, 0)
         Me.DATE2.MinDate = New Date(1753, 1, 1, 0, 0, 0, 0)
         Me.DATE2.Name = "DATE2"
@@ -167,18 +173,42 @@ Partial Class ucSALES
         Me.BTNCLEAR.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.BTNCLEAR.Font = New System.Drawing.Font("Century Gothic", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.BTNCLEAR.ForeColor = System.Drawing.SystemColors.Control
-        Me.BTNCLEAR.Location = New System.Drawing.Point(1156, 108)
+        Me.BTNCLEAR.Location = New System.Drawing.Point(1156, 113)
         Me.BTNCLEAR.Name = "BTNCLEAR"
         Me.BTNCLEAR.Size = New System.Drawing.Size(83, 33)
         Me.BTNCLEAR.TabIndex = 52
         Me.BTNCLEAR.Text = "Clear"
         Me.BTNCLEAR.UseVisualStyleBackColor = False
         '
+        'Label6
+        '
+        Me.Label6.AutoSize = True
+        Me.Label6.Font = New System.Drawing.Font("Century Gothic", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label6.ForeColor = System.Drawing.SystemColors.ControlDarkDark
+        Me.Label6.Location = New System.Drawing.Point(471, 113)
+        Me.Label6.Name = "Label6"
+        Me.Label6.Size = New System.Drawing.Size(52, 20)
+        Me.Label6.TabIndex = 53
+        Me.Label6.Text = "From :"
+        '
+        'Label1
+        '
+        Me.Label1.AutoSize = True
+        Me.Label1.Font = New System.Drawing.Font("Century Gothic", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label1.ForeColor = System.Drawing.SystemColors.ControlDarkDark
+        Me.Label1.Location = New System.Drawing.Point(748, 113)
+        Me.Label1.Name = "Label1"
+        Me.Label1.Size = New System.Drawing.Size(32, 20)
+        Me.Label1.TabIndex = 54
+        Me.Label1.Text = "To :"
+        '
         'ucSALES
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.White
+        Me.Controls.Add(Me.Label1)
+        Me.Controls.Add(Me.Label6)
         Me.Controls.Add(Me.BTNCLEAR)
         Me.Controls.Add(Me.DATE2)
         Me.Controls.Add(Me.DATE1)
@@ -206,4 +236,6 @@ Partial Class ucSALES
     Friend WithEvents DATE1 As Guna.UI2.WinForms.Guna2DateTimePicker
     Friend WithEvents DATE2 As Guna.UI2.WinForms.Guna2DateTimePicker
     Friend WithEvents BTNCLEAR As Button
+    Friend WithEvents Label6 As Label
+    Friend WithEvents Label1 As Label
 End Class

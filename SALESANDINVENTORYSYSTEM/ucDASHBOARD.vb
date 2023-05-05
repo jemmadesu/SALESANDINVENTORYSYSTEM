@@ -161,4 +161,12 @@ Public Class ucDASHBOARD
     Private Sub PictureBox8_Click(sender As Object, e As EventArgs)
 
     End Sub
+
+    Private Sub Chart1_Click(sender As Object, e As EventArgs) Handles Chart1.Click
+
+    End Sub
+
+    Private Sub DGVUSERS_CellContentClick(sender As Object, e As DataGridViewCellEventArgs) Handles DGVUSERS.CellContentClick
+
+    End Sub
 End Class

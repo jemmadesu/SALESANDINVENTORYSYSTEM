@@ -25,7 +25,6 @@ Partial Class ucSUPPLIER
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(ucSUPPLIER))
         Dim DataGridViewCellStyle1 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Dim DataGridViewCellStyle2 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle3 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Me.Panel2 = New System.Windows.Forms.Panel()
         Me.BTNBACK = New System.Windows.Forms.Button()
         Me.Label22 = New System.Windows.Forms.Label()
@@ -48,9 +47,9 @@ Partial Class ucSUPPLIER
         Me.TXTADD = New System.Windows.Forms.TextBox()
         Me.Label8 = New System.Windows.Forms.Label()
         Me.TXTCOM = New System.Windows.Forms.TextBox()
-        Me.DGVSUP = New System.Windows.Forms.DataGridView()
         Me.Label9 = New System.Windows.Forms.Label()
         Me.TXTSEARCH = New System.Windows.Forms.TextBox()
+        Me.DGVSUP = New System.Windows.Forms.DataGridView()
         Me.Panel2.SuspendLayout()
         CType(Me.DGVSUP, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
@@ -293,6 +292,24 @@ Partial Class ucSUPPLIER
         Me.TXTCOM.Size = New System.Drawing.Size(460, 22)
         Me.TXTCOM.TabIndex = 159
         '
+        'Label9
+        '
+        Me.Label9.AutoSize = True
+        Me.Label9.Font = New System.Drawing.Font("Century Gothic", 9.75!)
+        Me.Label9.ForeColor = System.Drawing.SystemColors.ControlDarkDark
+        Me.Label9.Location = New System.Drawing.Point(854, 122)
+        Me.Label9.Name = "Label9"
+        Me.Label9.Size = New System.Drawing.Size(157, 17)
+        Me.Label9.TabIndex = 163
+        Me.Label9.Text = "Search Supplier Name :"
+        '
+        'TXTSEARCH
+        '
+        Me.TXTSEARCH.Location = New System.Drawing.Point(1035, 119)
+        Me.TXTSEARCH.Name = "TXTSEARCH"
+        Me.TXTSEARCH.Size = New System.Drawing.Size(230, 20)
+        Me.TXTSEARCH.TabIndex = 162
+        '
         'DGVSUP
         '
         Me.DGVSUP.BackgroundColor = System.Drawing.Color.White
@@ -313,46 +330,22 @@ Partial Class ucSUPPLIER
         DataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText
         DataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
         Me.DGVSUP.DefaultCellStyle = DataGridViewCellStyle2
-        Me.DGVSUP.Location = New System.Drawing.Point(608, 159)
+        Me.DGVSUP.Location = New System.Drawing.Point(606, 159)
         Me.DGVSUP.Name = "DGVSUP"
-        DataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
-        DataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Control
-        DataGridViewCellStyle3.Font = New System.Drawing.Font("Century Gothic", 9.75!)
-        DataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.ControlDarkDark
-        DataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.MediumSeaGreen
-        DataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText
-        DataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
-        Me.DGVSUP.RowHeadersDefaultCellStyle = DataGridViewCellStyle3
+        Me.DGVSUP.ReadOnly = True
         Me.DGVSUP.RowHeadersVisible = False
-        Me.DGVSUP.Size = New System.Drawing.Size(657, 542)
-        Me.DGVSUP.TabIndex = 161
-        '
-        'Label9
-        '
-        Me.Label9.AutoSize = True
-        Me.Label9.Font = New System.Drawing.Font("Century Gothic", 9.75!)
-        Me.Label9.ForeColor = System.Drawing.SystemColors.ControlDarkDark
-        Me.Label9.Location = New System.Drawing.Point(854, 122)
-        Me.Label9.Name = "Label9"
-        Me.Label9.Size = New System.Drawing.Size(157, 17)
-        Me.Label9.TabIndex = 163
-        Me.Label9.Text = "Search Supplier Name :"
-        '
-        'TXTSEARCH
-        '
-        Me.TXTSEARCH.Location = New System.Drawing.Point(1035, 119)
-        Me.TXTSEARCH.Name = "TXTSEARCH"
-        Me.TXTSEARCH.Size = New System.Drawing.Size(230, 20)
-        Me.TXTSEARCH.TabIndex = 162
+        Me.DGVSUP.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
+        Me.DGVSUP.Size = New System.Drawing.Size(659, 542)
+        Me.DGVSUP.TabIndex = 164
         '
         'ucSUPPLIER
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.White
+        Me.Controls.Add(Me.DGVSUP)
         Me.Controls.Add(Me.Label9)
         Me.Controls.Add(Me.TXTSEARCH)
-        Me.Controls.Add(Me.DGVSUP)
         Me.Controls.Add(Me.Label8)
         Me.Controls.Add(Me.TXTCOM)
         Me.Controls.Add(Me.Label7)
@@ -405,7 +398,7 @@ Partial Class ucSUPPLIER
     Friend WithEvents TXTADD As TextBox
     Friend WithEvents Label8 As Label
     Friend WithEvents TXTCOM As TextBox
-    Friend WithEvents DGVSUP As DataGridView
     Friend WithEvents Label9 As Label
     Friend WithEvents TXTSEARCH As TextBox
+    Friend WithEvents DGVSUP As DataGridView
 End Class

@@ -102,7 +102,7 @@ Public Class FRMLOGIN
             dr = cmd.ExecuteReader()
             If dr.HasRows Then
                 Dim reslow As DialogResult
-                reslow = MessageBox.Show("You have products that is already ranning out of stocks on your inventory, do you want yo view the products?", "Notice", MessageBoxButtons.YesNo, MessageBoxIcon.Warning, MessageBoxDefaultButton.Button2)
+                reslow = MessageBox.Show("You have products that is already running out of stocks on your inventory, do you want yo view the products?", "Notice", MessageBoxButtons.YesNo, MessageBoxIcon.Warning, MessageBoxDefaultButton.Button2)
                 If reslow = DialogResult.Yes Then
                     FRMOUTOFSTOCKS.ShowDialog()
                 End If
@@ -131,9 +131,7 @@ Public Class FRMLOGIN
         Me.Close()
     End Sub
 
-    Private Sub FRMLOGIN_Load(sender As Object, e As EventArgs) Handles MyBase.Load
 
-    End Sub
 End Class
 
 

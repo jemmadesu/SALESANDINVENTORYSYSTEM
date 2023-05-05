@@ -19,7 +19,7 @@ Public Class ucTRANSACTION
     End Sub
 
     Private Sub setsum()
-        DGVSUMMARY.Columns(0).Width = 300
+        DGVSUMMARY.Columns(0).Width = 270
         DGVSUMMARY.Columns(0).HeaderText = "Products"
         DGVSUMMARY.Columns(1).Width = 100
         DGVSUMMARY.Columns(1).HeaderText = "Qty"
@@ -48,11 +48,25 @@ Public Class ucTRANSACTION
 
 
         ' Set the header cell backcolor
-        DGVSUMMARY.ColumnHeadersDefaultCellStyle.BackColor = Color.FromArgb(191, 205, 219
-)
+        DGVSUMMARY.ColumnHeadersDefaultCellStyle.BackColor = Color.FromArgb(191, 205, 219)
+
 
         ' Set the header cell forecolor
         DGVSUMMARY.ColumnHeadersDefaultCellStyle.ForeColor = Color.DimGray
+
+
+
+
+        ' Disable the default column header cell selection
+        DGVSUMMARY.SelectionMode = DataGridViewSelectionMode.CellSelect
+        DGVSUMMARY.ColumnHeadersDefaultCellStyle.SelectionBackColor = Color.FromArgb(191, 205, 219)
+        DGVSUMMARY.ColumnHeadersDefaultCellStyle.SelectionForeColor = Color.FromArgb(104, 104, 104)
+
+
+
+
+
+
 
         lblun.Text = FRMMAINMENU.LBLUSERNAME.Text
         lblut.Text = FRMMAINMENU.LBLUSERTYPE.Text
@@ -317,7 +331,6 @@ Public Class ucTRANSACTION
 
     Private Sub BTNCART_Click(sender As Object, e As EventArgs) Handles BTNCART.Click
 
-        ORNO.Text = TXTOR.Text
 
 
         ' ERROR TRAPPING FOR PRODUCTS
@@ -578,6 +591,8 @@ Public Class ucTRANSACTION
         TXTCHANGE.Text = 0
         TXTPAYMENT.Text = 0
         TXTDISCAMOUNT.Text = 0
+        TOTALAMOUNT.Text = "00,00"
+        ORNO.Text = "000000"
         CBODISCOUNT.Text = "-- Select --"
         TXTOR.Text = ""
         pnlpayment.Visible = False
@@ -761,6 +776,12 @@ Public Class ucTRANSACTION
         If TXTUNIT.Text = "Pack/s" Then NumericUpDown1.Value = 10
     End Sub
     Private Sub TXTOR_KeyPress(sender As Object, e As KeyPressEventArgs) Handles TXTOR.KeyPress
+
+
+        ORNO.Text = TXTOR.Text
+
+
+
         If Not Char.IsNumber(e.KeyChar) And Not Char.IsControl(e.KeyChar) Then
             e.Handled = True
             MsgBox("Letter or Special character is not allowed", vbCritical, "Notice")
@@ -777,4 +798,6 @@ Public Class ucTRANSACTION
 
 
     End Sub
+
+
 End Class

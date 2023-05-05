@@ -27,7 +27,6 @@ Partial Class ucNEWPRODUCT
         Dim DataGridViewCellStyle2 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Dim DataGridViewCellStyle3 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Me.TXTCATCODE = New System.Windows.Forms.TextBox()
-        Me.TXTBRAND = New System.Windows.Forms.TextBox()
         Me.BTNADD = New System.Windows.Forms.Button()
         Me.Label9 = New System.Windows.Forms.Label()
         Me.CBOPRODCAT = New System.Windows.Forms.ComboBox()
@@ -52,6 +51,7 @@ Partial Class ucNEWPRODUCT
         Me.DGVPRODUCTS = New System.Windows.Forms.DataGridView()
         Me.GroupBox2 = New System.Windows.Forms.GroupBox()
         Me.LBLID = New System.Windows.Forms.Label()
+        Me.CBOBRAND = New System.Windows.Forms.ComboBox()
         Me.GroupBox1.SuspendLayout()
         Me.Panel2.SuspendLayout()
         CType(Me.DGVPRODUCTS, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -67,16 +67,6 @@ Partial Class ucNEWPRODUCT
         Me.TXTCATCODE.Name = "TXTCATCODE"
         Me.TXTCATCODE.Size = New System.Drawing.Size(190, 23)
         Me.TXTCATCODE.TabIndex = 48
-        '
-        'TXTBRAND
-        '
-        Me.TXTBRAND.Enabled = False
-        Me.TXTBRAND.Font = New System.Drawing.Font("Century Gothic", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.TXTBRAND.ForeColor = System.Drawing.SystemColors.ControlDarkDark
-        Me.TXTBRAND.Location = New System.Drawing.Point(254, 225)
-        Me.TXTBRAND.Name = "TXTBRAND"
-        Me.TXTBRAND.Size = New System.Drawing.Size(190, 23)
-        Me.TXTBRAND.TabIndex = 46
         '
         'BTNADD
         '
@@ -98,9 +88,9 @@ Partial Class ucNEWPRODUCT
         Me.Label9.ForeColor = System.Drawing.SystemColors.ControlDarkDark
         Me.Label9.Location = New System.Drawing.Point(72, 228)
         Me.Label9.Name = "Label9"
-        Me.Label9.Size = New System.Drawing.Size(122, 20)
+        Me.Label9.Size = New System.Drawing.Size(60, 20)
         Me.Label9.TabIndex = 47
-        Me.Label9.Text = "Product Brand :"
+        Me.Label9.Text = "Brand :"
         '
         'CBOPRODCAT
         '
@@ -246,7 +236,7 @@ Partial Class ucNEWPRODUCT
         '
         Me.TXTSEARCH.Font = New System.Drawing.Font("Century Gothic", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.TXTSEARCH.ForeColor = System.Drawing.SystemColors.ControlDarkDark
-        Me.TXTSEARCH.Location = New System.Drawing.Point(282, 28)
+        Me.TXTSEARCH.Location = New System.Drawing.Point(306, 29)
         Me.TXTSEARCH.Name = "TXTSEARCH"
         Me.TXTSEARCH.Size = New System.Drawing.Size(254, 23)
         Me.TXTSEARCH.TabIndex = 40
@@ -256,7 +246,7 @@ Partial Class ucNEWPRODUCT
         Me.Label10.AutoSize = True
         Me.Label10.Font = New System.Drawing.Font("Century Gothic", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label10.ForeColor = System.Drawing.SystemColors.ControlDarkDark
-        Me.Label10.Location = New System.Drawing.Point(122, 31)
+        Me.Label10.Location = New System.Drawing.Point(146, 32)
         Me.Label10.Name = "Label10"
         Me.Label10.Size = New System.Drawing.Size(154, 17)
         Me.Label10.TabIndex = 44
@@ -274,10 +264,10 @@ Partial Class ucNEWPRODUCT
         '
         'GroupBox1
         '
+        Me.GroupBox1.Controls.Add(Me.CBOBRAND)
         Me.GroupBox1.Controls.Add(Me.CBOMANUFACTURER)
         Me.GroupBox1.Controls.Add(Me.TXTCATCODE)
         Me.GroupBox1.Controls.Add(Me.TXTPI)
-        Me.GroupBox1.Controls.Add(Me.TXTBRAND)
         Me.GroupBox1.Controls.Add(Me.Label2)
         Me.GroupBox1.Controls.Add(Me.BTNADD)
         Me.GroupBox1.Controls.Add(Me.Label5)
@@ -401,6 +391,17 @@ Partial Class ucNEWPRODUCT
         Me.LBLID.Text = "ID"
         Me.LBLID.Visible = False
         '
+        'CBOBRAND
+        '
+        Me.CBOBRAND.Enabled = False
+        Me.CBOBRAND.Font = New System.Drawing.Font("Century Gothic", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.CBOBRAND.ForeColor = System.Drawing.SystemColors.ControlDarkDark
+        Me.CBOBRAND.FormattingEnabled = True
+        Me.CBOBRAND.Location = New System.Drawing.Point(252, 223)
+        Me.CBOBRAND.Name = "CBOBRAND"
+        Me.CBOBRAND.Size = New System.Drawing.Size(192, 25)
+        Me.CBOBRAND.TabIndex = 75
+        '
         'ucNEWPRODUCT
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -438,7 +439,6 @@ Partial Class ucNEWPRODUCT
     Friend WithEvents CBOPRODCAT As ComboBox
     Friend WithEvents Label4 As Label
     Friend WithEvents BTNADD As Button
-    Friend WithEvents TXTBRAND As TextBox
     Friend WithEvents Label9 As Label
     Friend WithEvents Label10 As Label
     Friend WithEvents TXTCATCODE As TextBox
@@ -450,4 +450,5 @@ Partial Class ucNEWPRODUCT
     Friend WithEvents GroupBox2 As GroupBox
     Friend WithEvents LBLID As Label
     Friend WithEvents CBOMANUFACTURER As ComboBox
+    Friend WithEvents CBOBRAND As ComboBox
 End Class

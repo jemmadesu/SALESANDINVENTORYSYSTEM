@@ -87,6 +87,8 @@ Partial Class ucTRANSACTION
         Me.Panel3 = New System.Windows.Forms.Panel()
         Me.DGVSUMMARY = New System.Windows.Forms.DataGridView()
         Me.Panel5 = New System.Windows.Forms.Panel()
+        Me.Label20 = New System.Windows.Forms.Label()
+        Me.Label19 = New System.Windows.Forms.Label()
         Me.lblut = New System.Windows.Forms.Label()
         Me.TOTALAMOUNT = New System.Windows.Forms.Label()
         Me.lblun = New System.Windows.Forms.Label()
@@ -799,7 +801,7 @@ Partial Class ucTRANSACTION
         Me.DGVSUMMARY.DefaultCellStyle = DataGridViewCellStyle9
         Me.DGVSUMMARY.Enabled = False
         Me.DGVSUMMARY.GridColor = System.Drawing.SystemColors.InactiveCaption
-        Me.DGVSUMMARY.Location = New System.Drawing.Point(-1, 110)
+        Me.DGVSUMMARY.Location = New System.Drawing.Point(-1, 126)
         Me.DGVSUMMARY.Name = "DGVSUMMARY"
         Me.DGVSUMMARY.ReadOnly = True
         DataGridViewCellStyle10.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
@@ -811,6 +813,7 @@ Partial Class ucTRANSACTION
         DataGridViewCellStyle10.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
         Me.DGVSUMMARY.RowHeadersDefaultCellStyle = DataGridViewCellStyle10
         Me.DGVSUMMARY.RowHeadersVisible = False
+        Me.DGVSUMMARY.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing
         DataGridViewCellStyle11.BackColor = System.Drawing.SystemColors.InactiveCaption
         DataGridViewCellStyle11.ForeColor = System.Drawing.SystemColors.ControlDarkDark
         DataGridViewCellStyle11.SelectionBackColor = System.Drawing.SystemColors.InactiveCaption
@@ -818,12 +821,14 @@ Partial Class ucTRANSACTION
         Me.DGVSUMMARY.RowsDefaultCellStyle = DataGridViewCellStyle11
         Me.DGVSUMMARY.ScrollBars = System.Windows.Forms.ScrollBars.None
         Me.DGVSUMMARY.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
-        Me.DGVSUMMARY.Size = New System.Drawing.Size(394, 276)
+        Me.DGVSUMMARY.Size = New System.Drawing.Size(394, 260)
         Me.DGVSUMMARY.TabIndex = 55
         '
         'Panel5
         '
         Me.Panel5.BackColor = System.Drawing.SystemColors.GradientInactiveCaption
+        Me.Panel5.Controls.Add(Me.Label20)
+        Me.Panel5.Controls.Add(Me.Label19)
         Me.Panel5.Controls.Add(Me.lblut)
         Me.Panel5.Controls.Add(Me.TOTALAMOUNT)
         Me.Panel5.Controls.Add(Me.lblun)
@@ -833,16 +838,38 @@ Partial Class ucTRANSACTION
         Me.Panel5.Size = New System.Drawing.Size(428, 66)
         Me.Panel5.TabIndex = 53
         '
+        'Label20
+        '
+        Me.Label20.AutoSize = True
+        Me.Label20.Font = New System.Drawing.Font("Century Gothic", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label20.ForeColor = System.Drawing.Color.DimGray
+        Me.Label20.Location = New System.Drawing.Point(23, 14)
+        Me.Label20.Name = "Label20"
+        Me.Label20.Size = New System.Drawing.Size(81, 20)
+        Me.Label20.TabIndex = 58
+        Me.Label20.Text = "Account :"
+        '
+        'Label19
+        '
+        Me.Label19.AutoSize = True
+        Me.Label19.Font = New System.Drawing.Font("Century Gothic", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label19.ForeColor = System.Drawing.Color.DimGray
+        Me.Label19.Location = New System.Drawing.Point(23, 33)
+        Me.Label19.Name = "Label19"
+        Me.Label19.Size = New System.Drawing.Size(52, 20)
+        Me.Label19.TabIndex = 57
+        Me.Label19.Text = "USER :"
+        '
         'lblut
         '
         Me.lblut.AutoSize = True
-        Me.lblut.Font = New System.Drawing.Font("Century Gothic", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblut.Font = New System.Drawing.Font("Century Gothic", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lblut.ForeColor = System.Drawing.Color.DimGray
-        Me.lblut.Location = New System.Drawing.Point(23, 13)
+        Me.lblut.Location = New System.Drawing.Point(112, 13)
         Me.lblut.Name = "lblut"
-        Me.lblut.Size = New System.Drawing.Size(74, 20)
+        Me.lblut.Size = New System.Drawing.Size(21, 18)
         Me.lblut.TabIndex = 56
-        Me.lblut.Text = "Usertype"
+        Me.lblut.Text = "ut"
         '
         'TOTALAMOUNT
         '
@@ -858,24 +885,24 @@ Partial Class ucTRANSACTION
         'lblun
         '
         Me.lblun.AutoSize = True
-        Me.lblun.Font = New System.Drawing.Font("Century Gothic", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblun.Font = New System.Drawing.Font("Century Gothic", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lblun.ForeColor = System.Drawing.Color.DimGray
-        Me.lblun.Location = New System.Drawing.Point(23, 33)
+        Me.lblun.Location = New System.Drawing.Point(112, 33)
         Me.lblun.Name = "lblun"
-        Me.lblun.Size = New System.Drawing.Size(83, 20)
+        Me.lblun.Size = New System.Drawing.Size(26, 18)
         Me.lblun.TabIndex = 55
-        Me.lblun.Text = "Username"
+        Me.lblun.Text = "un"
         '
         'LBLCHUCHU
         '
         Me.LBLCHUCHU.AutoSize = True
         Me.LBLCHUCHU.Font = New System.Drawing.Font("Century Gothic", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.LBLCHUCHU.ForeColor = System.Drawing.SystemColors.ControlDarkDark
-        Me.LBLCHUCHU.Location = New System.Drawing.Point(237, 19)
+        Me.LBLCHUCHU.Location = New System.Drawing.Point(228, 18)
         Me.LBLCHUCHU.Name = "LBLCHUCHU"
-        Me.LBLCHUCHU.Size = New System.Drawing.Size(72, 20)
+        Me.LBLCHUCHU.Size = New System.Drawing.Size(90, 20)
         Me.LBLCHUCHU.TabIndex = 1
-        Me.LBLCHUCHU.Text = "Total Bill :"
+        Me.LBLCHUCHU.Text = "TOTAL BILL :"
         '
         'Panel4
         '
@@ -885,7 +912,7 @@ Partial Class ucTRANSACTION
         Me.Panel4.Controls.Add(Me.Label21)
         Me.Panel4.Location = New System.Drawing.Point(-1, -1)
         Me.Panel4.Name = "Panel4"
-        Me.Panel4.Size = New System.Drawing.Size(432, 66)
+        Me.Panel4.Size = New System.Drawing.Size(432, 65)
         Me.Panel4.TabIndex = 0
         '
         'Label18
@@ -902,11 +929,11 @@ Partial Class ucTRANSACTION
         'ORNO
         '
         Me.ORNO.AutoSize = True
-        Me.ORNO.Font = New System.Drawing.Font("Century Gothic", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.ORNO.Font = New System.Drawing.Font("Century Gothic", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.ORNO.ForeColor = System.Drawing.Color.White
         Me.ORNO.Location = New System.Drawing.Point(324, 16)
         Me.ORNO.Name = "ORNO"
-        Me.ORNO.Size = New System.Drawing.Size(57, 20)
+        Me.ORNO.Size = New System.Drawing.Size(56, 18)
         Me.ORNO.TabIndex = 53
         Me.ORNO.Text = "000000"
         '
@@ -1031,4 +1058,6 @@ Partial Class ucTRANSACTION
     Friend WithEvents lblut As Label
     Friend WithEvents lblun As Label
     Friend WithEvents Label18 As Label
+    Friend WithEvents Label20 As Label
+    Friend WithEvents Label19 As Label
 End Class

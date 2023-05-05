@@ -22,6 +22,7 @@ Partial Class ucDASHBOARD
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
+        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(ucDASHBOARD))
         Dim ChartArea1 As System.Windows.Forms.DataVisualization.Charting.ChartArea = New System.Windows.Forms.DataVisualization.Charting.ChartArea()
         Dim Legend1 As System.Windows.Forms.DataVisualization.Charting.Legend = New System.Windows.Forms.DataVisualization.Charting.Legend()
         Dim Series1 As System.Windows.Forms.DataVisualization.Charting.Series = New System.Windows.Forms.DataVisualization.Charting.Series()
@@ -31,7 +32,6 @@ Partial Class ucDASHBOARD
         Dim DataGridViewCellStyle1 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Dim DataGridViewCellStyle2 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Dim DataGridViewCellStyle3 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(ucDASHBOARD))
         Me.Panel7 = New System.Windows.Forms.Panel()
         Me.Panel8 = New System.Windows.Forms.Panel()
         Me.LBLYEAR = New System.Windows.Forms.Label()
@@ -41,15 +41,19 @@ Partial Class ucDASHBOARD
         Me.LBLDAY = New System.Windows.Forms.Label()
         Me.Panel5 = New System.Windows.Forms.Panel()
         Me.lblsales = New System.Windows.Forms.Label()
+        Me.PictureBox5 = New System.Windows.Forms.PictureBox()
         Me.Label10 = New System.Windows.Forms.Label()
         Me.Panel4 = New System.Windows.Forms.Panel()
         Me.lblexp = New System.Windows.Forms.Label()
+        Me.PictureBox4 = New System.Windows.Forms.PictureBox()
         Me.Label8 = New System.Windows.Forms.Label()
         Me.Panel3 = New System.Windows.Forms.Panel()
         Me.lblouofstock = New System.Windows.Forms.Label()
+        Me.PictureBox2 = New System.Windows.Forms.PictureBox()
         Me.Label6 = New System.Windows.Forms.Label()
         Me.panel2 = New System.Windows.Forms.Panel()
         Me.lblproducts = New System.Windows.Forms.Label()
+        Me.pictureBox3 = New System.Windows.Forms.PictureBox()
         Me.Label2 = New System.Windows.Forms.Label()
         Me.CHART = New System.Windows.Forms.DataVisualization.Charting.Chart()
         Me.Chart1 = New System.Windows.Forms.DataVisualization.Charting.Chart()
@@ -65,16 +69,16 @@ Partial Class ucDASHBOARD
         Me.PictureBox7 = New System.Windows.Forms.PictureBox()
         Me.PictureBox6 = New System.Windows.Forms.PictureBox()
         Me.PictureBox1 = New System.Windows.Forms.PictureBox()
-        Me.PictureBox5 = New System.Windows.Forms.PictureBox()
-        Me.PictureBox4 = New System.Windows.Forms.PictureBox()
-        Me.PictureBox2 = New System.Windows.Forms.PictureBox()
-        Me.pictureBox3 = New System.Windows.Forms.PictureBox()
         Me.Panel7.SuspendLayout()
         Me.Panel1.SuspendLayout()
         Me.Panel5.SuspendLayout()
+        CType(Me.PictureBox5, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.Panel4.SuspendLayout()
+        CType(Me.PictureBox4, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.Panel3.SuspendLayout()
+        CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.panel2.SuspendLayout()
+        CType(Me.pictureBox3, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.CHART, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.Chart1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.DGVUSERS, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -83,10 +87,6 @@ Partial Class ucDASHBOARD
         CType(Me.PictureBox7, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PictureBox6, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.PictureBox5, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.PictureBox4, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.pictureBox3, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'Panel7
@@ -97,7 +97,7 @@ Partial Class ucDASHBOARD
         Me.Panel7.Controls.Add(Me.Panel1)
         Me.Panel7.Controls.Add(Me.LBLDATE)
         Me.Panel7.Controls.Add(Me.LBLDAY)
-        Me.Panel7.Location = New System.Drawing.Point(1012, 60)
+        Me.Panel7.Location = New System.Drawing.Point(1028, 24)
         Me.Panel7.Name = "Panel7"
         Me.Panel7.Size = New System.Drawing.Size(267, 226)
         Me.Panel7.TabIndex = 41
@@ -169,9 +169,9 @@ Partial Class ucDASHBOARD
         Me.Panel5.Controls.Add(Me.lblsales)
         Me.Panel5.Controls.Add(Me.PictureBox5)
         Me.Panel5.Controls.Add(Me.Label10)
-        Me.Panel5.Location = New System.Drawing.Point(761, 404)
+        Me.Panel5.Location = New System.Drawing.Point(761, 339)
         Me.Panel5.Name = "Panel5"
-        Me.Panel5.Size = New System.Drawing.Size(232, 81)
+        Me.Panel5.Size = New System.Drawing.Size(232, 74)
         Me.Panel5.TabIndex = 37
         '
         'lblsales
@@ -184,6 +184,19 @@ Partial Class ucDASHBOARD
         Me.lblsales.Size = New System.Drawing.Size(24, 25)
         Me.lblsales.TabIndex = 22
         Me.lblsales.Text = "0"
+        '
+        'PictureBox5
+        '
+        Me.PictureBox5.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
+            Or System.Windows.Forms.AnchorStyles.Left) _
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.PictureBox5.Image = CType(resources.GetObject("PictureBox5.Image"), System.Drawing.Image)
+        Me.PictureBox5.ImageLocation = ""
+        Me.PictureBox5.Location = New System.Drawing.Point(8, 8)
+        Me.PictureBox5.Name = "PictureBox5"
+        Me.PictureBox5.Size = New System.Drawing.Size(68, 59)
+        Me.PictureBox5.TabIndex = 21
+        Me.PictureBox5.TabStop = False
         '
         'Label10
         '
@@ -202,9 +215,9 @@ Partial Class ucDASHBOARD
         Me.Panel4.Controls.Add(Me.lblexp)
         Me.Panel4.Controls.Add(Me.PictureBox4)
         Me.Panel4.Controls.Add(Me.Label8)
-        Me.Panel4.Location = New System.Drawing.Point(522, 404)
+        Me.Panel4.Location = New System.Drawing.Point(523, 339)
         Me.Panel4.Name = "Panel4"
-        Me.Panel4.Size = New System.Drawing.Size(232, 81)
+        Me.Panel4.Size = New System.Drawing.Size(232, 74)
         Me.Panel4.TabIndex = 38
         '
         'lblexp
@@ -217,6 +230,19 @@ Partial Class ucDASHBOARD
         Me.lblexp.Size = New System.Drawing.Size(24, 25)
         Me.lblexp.TabIndex = 22
         Me.lblexp.Text = "0"
+        '
+        'PictureBox4
+        '
+        Me.PictureBox4.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
+            Or System.Windows.Forms.AnchorStyles.Left) _
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.PictureBox4.Image = CType(resources.GetObject("PictureBox4.Image"), System.Drawing.Image)
+        Me.PictureBox4.ImageLocation = ""
+        Me.PictureBox4.Location = New System.Drawing.Point(8, 8)
+        Me.PictureBox4.Name = "PictureBox4"
+        Me.PictureBox4.Size = New System.Drawing.Size(68, 59)
+        Me.PictureBox4.TabIndex = 21
+        Me.PictureBox4.TabStop = False
         '
         'Label8
         '
@@ -235,9 +261,9 @@ Partial Class ucDASHBOARD
         Me.Panel3.Controls.Add(Me.lblouofstock)
         Me.Panel3.Controls.Add(Me.PictureBox2)
         Me.Panel3.Controls.Add(Me.Label6)
-        Me.Panel3.Location = New System.Drawing.Point(278, 404)
+        Me.Panel3.Location = New System.Drawing.Point(285, 339)
         Me.Panel3.Name = "Panel3"
-        Me.Panel3.Size = New System.Drawing.Size(232, 81)
+        Me.Panel3.Size = New System.Drawing.Size(232, 74)
         Me.Panel3.TabIndex = 36
         '
         'lblouofstock
@@ -250,6 +276,19 @@ Partial Class ucDASHBOARD
         Me.lblouofstock.Size = New System.Drawing.Size(24, 25)
         Me.lblouofstock.TabIndex = 22
         Me.lblouofstock.Text = "0"
+        '
+        'PictureBox2
+        '
+        Me.PictureBox2.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
+            Or System.Windows.Forms.AnchorStyles.Left) _
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.PictureBox2.Image = CType(resources.GetObject("PictureBox2.Image"), System.Drawing.Image)
+        Me.PictureBox2.ImageLocation = ""
+        Me.PictureBox2.Location = New System.Drawing.Point(8, 8)
+        Me.PictureBox2.Name = "PictureBox2"
+        Me.PictureBox2.Size = New System.Drawing.Size(68, 59)
+        Me.PictureBox2.TabIndex = 21
+        Me.PictureBox2.TabStop = False
         '
         'Label6
         '
@@ -268,9 +307,9 @@ Partial Class ucDASHBOARD
         Me.panel2.Controls.Add(Me.lblproducts)
         Me.panel2.Controls.Add(Me.pictureBox3)
         Me.panel2.Controls.Add(Me.Label2)
-        Me.panel2.Location = New System.Drawing.Point(40, 404)
+        Me.panel2.Location = New System.Drawing.Point(47, 339)
         Me.panel2.Name = "panel2"
-        Me.panel2.Size = New System.Drawing.Size(232, 81)
+        Me.panel2.Size = New System.Drawing.Size(232, 74)
         Me.panel2.TabIndex = 35
         '
         'lblproducts
@@ -283,6 +322,19 @@ Partial Class ucDASHBOARD
         Me.lblproducts.Size = New System.Drawing.Size(24, 25)
         Me.lblproducts.TabIndex = 22
         Me.lblproducts.Text = "0"
+        '
+        'pictureBox3
+        '
+        Me.pictureBox3.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
+            Or System.Windows.Forms.AnchorStyles.Left) _
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.pictureBox3.Image = CType(resources.GetObject("pictureBox3.Image"), System.Drawing.Image)
+        Me.pictureBox3.ImageLocation = ""
+        Me.pictureBox3.Location = New System.Drawing.Point(8, 8)
+        Me.pictureBox3.Name = "pictureBox3"
+        Me.pictureBox3.Size = New System.Drawing.Size(68, 59)
+        Me.pictureBox3.TabIndex = 21
+        Me.pictureBox3.TabStop = False
         '
         'Label2
         '
@@ -301,14 +353,14 @@ Partial Class ucDASHBOARD
         Me.CHART.ChartAreas.Add(ChartArea1)
         Legend1.Name = "Legend1"
         Me.CHART.Legends.Add(Legend1)
-        Me.CHART.Location = New System.Drawing.Point(40, 491)
+        Me.CHART.Location = New System.Drawing.Point(3, 419)
         Me.CHART.Name = "CHART"
         Me.CHART.Palette = System.Windows.Forms.DataVisualization.Charting.ChartColorPalette.SeaGreen
         Series1.ChartArea = "ChartArea1"
         Series1.Legend = "Legend1"
         Series1.Name = "Total Sales"
         Me.CHART.Series.Add(Series1)
-        Me.CHART.Size = New System.Drawing.Size(671, 234)
+        Me.CHART.Size = New System.Drawing.Size(920, 378)
         Me.CHART.TabIndex = 42
         Me.CHART.Text = "Chart1"
         '
@@ -318,7 +370,7 @@ Partial Class ucDASHBOARD
         Me.Chart1.ChartAreas.Add(ChartArea2)
         Legend2.Name = "Legend1"
         Me.Chart1.Legends.Add(Legend2)
-        Me.Chart1.Location = New System.Drawing.Point(736, 491)
+        Me.Chart1.Location = New System.Drawing.Point(769, 459)
         Me.Chart1.Name = "Chart1"
         Me.Chart1.Palette = System.Windows.Forms.DataVisualization.Charting.ChartColorPalette.SeaGreen
         Series2.ChartArea = "ChartArea1"
@@ -329,7 +381,7 @@ Partial Class ucDASHBOARD
         Series2.XValueMember = "Year"
         Series2.YValueMembers = "TotalBill"
         Me.Chart1.Series.Add(Series2)
-        Me.Chart1.Size = New System.Drawing.Size(257, 234)
+        Me.Chart1.Size = New System.Drawing.Size(271, 348)
         Me.Chart1.TabIndex = 46
         Me.Chart1.Text = "Chart1"
         '
@@ -356,7 +408,7 @@ Partial Class ucDASHBOARD
         DataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
         Me.DGVUSERS.DefaultCellStyle = DataGridViewCellStyle2
         Me.DGVUSERS.GridColor = System.Drawing.SystemColors.ControlDarkDark
-        Me.DGVUSERS.Location = New System.Drawing.Point(1012, 309)
+        Me.DGVUSERS.Location = New System.Drawing.Point(1028, 256)
         Me.DGVUSERS.Name = "DGVUSERS"
         Me.DGVUSERS.ReadOnly = True
         DataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
@@ -369,7 +421,7 @@ Partial Class ucDASHBOARD
         Me.DGVUSERS.RowHeadersDefaultCellStyle = DataGridViewCellStyle3
         Me.DGVUSERS.RowHeadersVisible = False
         Me.DGVUSERS.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
-        Me.DGVUSERS.Size = New System.Drawing.Size(267, 416)
+        Me.DGVUSERS.Size = New System.Drawing.Size(267, 524)
         Me.DGVUSERS.TabIndex = 72
         '
         'Label1
@@ -496,69 +548,18 @@ Partial Class ucDASHBOARD
         'PictureBox1
         '
         Me.PictureBox1.Image = Global.SALESANDINVENTORYSYSTEM.My.Resources.Resources.Media_230503_005719
-        Me.PictureBox1.Location = New System.Drawing.Point(40, 63)
+        Me.PictureBox1.Location = New System.Drawing.Point(47, 24)
         Me.PictureBox1.Name = "PictureBox1"
-        Me.PictureBox1.Size = New System.Drawing.Size(953, 309)
+        Me.PictureBox1.Size = New System.Drawing.Size(975, 309)
         Me.PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
         Me.PictureBox1.TabIndex = 73
         Me.PictureBox1.TabStop = False
-        '
-        'PictureBox5
-        '
-        Me.PictureBox5.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
-            Or System.Windows.Forms.AnchorStyles.Left) _
-            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.PictureBox5.Image = CType(resources.GetObject("PictureBox5.Image"), System.Drawing.Image)
-        Me.PictureBox5.ImageLocation = ""
-        Me.PictureBox5.Location = New System.Drawing.Point(8, 8)
-        Me.PictureBox5.Name = "PictureBox5"
-        Me.PictureBox5.Size = New System.Drawing.Size(68, 66)
-        Me.PictureBox5.TabIndex = 21
-        Me.PictureBox5.TabStop = False
-        '
-        'PictureBox4
-        '
-        Me.PictureBox4.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
-            Or System.Windows.Forms.AnchorStyles.Left) _
-            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.PictureBox4.Image = CType(resources.GetObject("PictureBox4.Image"), System.Drawing.Image)
-        Me.PictureBox4.ImageLocation = ""
-        Me.PictureBox4.Location = New System.Drawing.Point(8, 8)
-        Me.PictureBox4.Name = "PictureBox4"
-        Me.PictureBox4.Size = New System.Drawing.Size(68, 66)
-        Me.PictureBox4.TabIndex = 21
-        Me.PictureBox4.TabStop = False
-        '
-        'PictureBox2
-        '
-        Me.PictureBox2.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
-            Or System.Windows.Forms.AnchorStyles.Left) _
-            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.PictureBox2.Image = CType(resources.GetObject("PictureBox2.Image"), System.Drawing.Image)
-        Me.PictureBox2.ImageLocation = ""
-        Me.PictureBox2.Location = New System.Drawing.Point(8, 8)
-        Me.PictureBox2.Name = "PictureBox2"
-        Me.PictureBox2.Size = New System.Drawing.Size(68, 66)
-        Me.PictureBox2.TabIndex = 21
-        Me.PictureBox2.TabStop = False
-        '
-        'pictureBox3
-        '
-        Me.pictureBox3.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
-            Or System.Windows.Forms.AnchorStyles.Left) _
-            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.pictureBox3.Image = CType(resources.GetObject("pictureBox3.Image"), System.Drawing.Image)
-        Me.pictureBox3.ImageLocation = ""
-        Me.pictureBox3.Location = New System.Drawing.Point(8, 8)
-        Me.pictureBox3.Name = "pictureBox3"
-        Me.pictureBox3.Size = New System.Drawing.Size(68, 66)
-        Me.pictureBox3.TabIndex = 21
-        Me.pictureBox3.TabStop = False
         '
         'ucDASHBOARD
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
+        Me.AutoSize = True
         Me.BackColor = System.Drawing.Color.White
         Me.Controls.Add(Me.PictureBox8)
         Me.Controls.Add(Me.Label5)
@@ -581,19 +582,23 @@ Partial Class ucDASHBOARD
         Me.Controls.Add(Me.panel2)
         Me.ForeColor = System.Drawing.SystemColors.ControlDarkDark
         Me.Name = "ucDASHBOARD"
-        Me.Size = New System.Drawing.Size(1322, 801)
+        Me.Size = New System.Drawing.Size(1322, 810)
         Me.Panel7.ResumeLayout(False)
         Me.Panel7.PerformLayout()
         Me.Panel1.ResumeLayout(False)
         Me.Panel1.PerformLayout()
         Me.Panel5.ResumeLayout(False)
         Me.Panel5.PerformLayout()
+        CType(Me.PictureBox5, System.ComponentModel.ISupportInitialize).EndInit()
         Me.Panel4.ResumeLayout(False)
         Me.Panel4.PerformLayout()
+        CType(Me.PictureBox4, System.ComponentModel.ISupportInitialize).EndInit()
         Me.Panel3.ResumeLayout(False)
         Me.Panel3.PerformLayout()
+        CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).EndInit()
         Me.panel2.ResumeLayout(False)
         Me.panel2.PerformLayout()
+        CType(Me.pictureBox3, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.CHART, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.Chart1, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.DGVUSERS, System.ComponentModel.ISupportInitialize).EndInit()
@@ -602,10 +607,6 @@ Partial Class ucDASHBOARD
         CType(Me.PictureBox7, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.PictureBox6, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.PictureBox5, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.PictureBox4, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.pictureBox3, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 

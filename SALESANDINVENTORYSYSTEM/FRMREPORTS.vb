@@ -146,4 +146,11 @@ Public Class FRMREPORTS
         Me.RPTSTOCKS.RefreshReport()
     End Sub
 
+    Private Sub TCREPORTS_SelectedIndexChanged(sender As Object, e As EventArgs) Handles TCREPORTS.SelectedIndexChanged
+
+    End Sub
+
+    Private Sub TPPRODS_Click(sender As Object, e As EventArgs) Handles TPPRODS.Click
+
+    End Sub
 End Class

@@ -31,9 +31,18 @@ Public Class FRMNEAREXPIRY
         End Try
         con.Close()
 
+
+        ' Set the backcolor of the row
+        DGVEXP.Columns(5).DefaultCellStyle.BackColor = Color.IndianRed
+
+        ' Set the forecolor of the row
+        DGVEXP.Columns(5).DefaultCellStyle.ForeColor = Color.White
+
+
     End Sub
 
     Private Sub LBLEXIT_Click(sender As Object, e As EventArgs) Handles LBLEXIT.Click
         Me.Close()
     End Sub
+
 End Class

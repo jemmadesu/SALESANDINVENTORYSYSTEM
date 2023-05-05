@@ -105,8 +105,6 @@ Public Class ucRESTOCK
             Exit Sub
 
         End If
-        Me.BTNSAVE.Text = "Edit Quantity"
-
 
 
 
