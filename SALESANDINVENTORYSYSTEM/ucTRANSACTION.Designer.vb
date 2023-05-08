@@ -843,11 +843,11 @@ Partial Class ucTRANSACTION
         Me.Label20.AutoSize = True
         Me.Label20.Font = New System.Drawing.Font("Century Gothic", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label20.ForeColor = System.Drawing.Color.DimGray
-        Me.Label20.Location = New System.Drawing.Point(23, 14)
+        Me.Label20.Location = New System.Drawing.Point(14, 14)
         Me.Label20.Name = "Label20"
-        Me.Label20.Size = New System.Drawing.Size(81, 20)
+        Me.Label20.Size = New System.Drawing.Size(92, 20)
         Me.Label20.TabIndex = 58
-        Me.Label20.Text = "Account :"
+        Me.Label20.Text = "ACCOUNT :"
         '
         'Label19
         '

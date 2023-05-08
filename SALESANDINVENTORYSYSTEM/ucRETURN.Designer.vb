@@ -34,6 +34,10 @@ Partial Class ucRETURN
         Me.BTNRETURN = New System.Windows.Forms.Button()
         Me.Panel2 = New System.Windows.Forms.Panel()
         Me.BTNBACK = New System.Windows.Forms.Button()
+        Me.ACTCLR = New Guna.UI2.WinForms.Guna2Button()
+        Me.ACTFILL = New Guna.UI2.WinForms.Guna2Button()
+        Me.CBOTYPE = New Guna.UI2.WinForms.Guna2ComboBox()
+        Me.Label4 = New System.Windows.Forms.Label()
         CType(Me.DGVTRANS, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.Panel2.SuspendLayout()
         Me.SuspendLayout()
@@ -181,11 +185,76 @@ Partial Class ucRETURN
         Me.BTNBACK.Text = " Back"
         Me.BTNBACK.UseVisualStyleBackColor = False
         '
+        'ACTCLR
+        '
+        Me.ACTCLR.BackColor = System.Drawing.Color.Transparent
+        Me.ACTCLR.CheckedState.Parent = Me.ACTCLR
+        Me.ACTCLR.CustomImages.Parent = Me.ACTCLR
+        Me.ACTCLR.FillColor = System.Drawing.SystemColors.ControlDark
+        Me.ACTCLR.Font = New System.Drawing.Font("Segoe UI", 9.0!)
+        Me.ACTCLR.ForeColor = System.Drawing.Color.White
+        Me.ACTCLR.HoverState.Parent = Me.ACTCLR
+        Me.ACTCLR.Location = New System.Drawing.Point(853, 383)
+        Me.ACTCLR.Name = "ACTCLR"
+        Me.ACTCLR.ShadowDecoration.Parent = Me.ACTCLR
+        Me.ACTCLR.Size = New System.Drawing.Size(98, 36)
+        Me.ACTCLR.TabIndex = 132
+        Me.ACTCLR.Text = "Clear Filter"
+        '
+        'ACTFILL
+        '
+        Me.ACTFILL.CheckedState.Parent = Me.ACTFILL
+        Me.ACTFILL.CustomImages.Parent = Me.ACTFILL
+        Me.ACTFILL.FillColor = System.Drawing.Color.MediumSeaGreen
+        Me.ACTFILL.Font = New System.Drawing.Font("Segoe UI", 9.0!)
+        Me.ACTFILL.ForeColor = System.Drawing.Color.White
+        Me.ACTFILL.HoverState.Parent = Me.ACTFILL
+        Me.ACTFILL.Location = New System.Drawing.Point(724, 383)
+        Me.ACTFILL.Name = "ACTFILL"
+        Me.ACTFILL.ShadowDecoration.Parent = Me.ACTFILL
+        Me.ACTFILL.Size = New System.Drawing.Size(98, 36)
+        Me.ACTFILL.TabIndex = 131
+        Me.ACTFILL.Text = "Filter"
+        '
+        'CBOTYPE
+        '
+        Me.CBOTYPE.BackColor = System.Drawing.Color.Transparent
+        Me.CBOTYPE.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed
+        Me.CBOTYPE.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
+        Me.CBOTYPE.FocusedColor = System.Drawing.Color.Empty
+        Me.CBOTYPE.FocusedState.Parent = Me.CBOTYPE
+        Me.CBOTYPE.Font = New System.Drawing.Font("Segoe UI", 10.0!)
+        Me.CBOTYPE.ForeColor = System.Drawing.Color.FromArgb(CType(CType(68, Byte), Integer), CType(CType(88, Byte), Integer), CType(CType(112, Byte), Integer))
+        Me.CBOTYPE.FormattingEnabled = True
+        Me.CBOTYPE.HoverState.Parent = Me.CBOTYPE
+        Me.CBOTYPE.ItemHeight = 30
+        Me.CBOTYPE.Items.AddRange(New Object() {"Admin", "Cashier", "Manager"})
+        Me.CBOTYPE.ItemsAppearance.Parent = Me.CBOTYPE
+        Me.CBOTYPE.Location = New System.Drawing.Point(549, 382)
+        Me.CBOTYPE.Name = "CBOTYPE"
+        Me.CBOTYPE.ShadowDecoration.Parent = Me.CBOTYPE
+        Me.CBOTYPE.Size = New System.Drawing.Size(140, 36)
+        Me.CBOTYPE.TabIndex = 130
+        '
+        'Label4
+        '
+        Me.Label4.AutoSize = True
+        Me.Label4.Font = New System.Drawing.Font("Century Gothic", 11.25!)
+        Me.Label4.Location = New System.Drawing.Point(372, 383)
+        Me.Label4.Name = "Label4"
+        Me.Label4.Size = New System.Drawing.Size(139, 20)
+        Me.Label4.TabIndex = 129
+        Me.Label4.Text = "Filter by usertype :"
+        '
         'ucRETURN
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.White
+        Me.Controls.Add(Me.ACTCLR)
+        Me.Controls.Add(Me.ACTFILL)
+        Me.Controls.Add(Me.CBOTYPE)
+        Me.Controls.Add(Me.Label4)
         Me.Controls.Add(Me.Panel2)
         Me.Controls.Add(Me.BTNRETURN)
         Me.Controls.Add(Me.Label2)
@@ -210,4 +279,8 @@ Partial Class ucRETURN
     Friend WithEvents BTNRETURN As Button
     Friend WithEvents Panel2 As Panel
     Friend WithEvents BTNBACK As Button
+    Friend WithEvents ACTCLR As Guna.UI2.WinForms.Guna2Button
+    Friend WithEvents ACTFILL As Guna.UI2.WinForms.Guna2Button
+    Friend WithEvents CBOTYPE As Guna.UI2.WinForms.Guna2ComboBox
+    Friend WithEvents Label4 As Label
 End Class

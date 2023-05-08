@@ -37,7 +37,7 @@ Public Class FRMLOGIN
         If dr.HasRows Then
             dr.Read()
             FRMMAINMENU.LBLUSERNAME.Text = TXTUN.Text
-            If dr(1) = "Admin" Then
+            If dr(2) = "Admin" Then
                 activity = "Logged-in"
 
                 FRMMAINMENU.LBLUSERTYPE.Text = "Admin"
@@ -47,7 +47,7 @@ Public Class FRMLOGIN
 
 
                 '' Cashier
-            ElseIf dr(1) = "Cashier" Then
+            ElseIf dr(2) = "Cashier" Then
                 activity = "Logged-in"
                 FRMMAINMENU.LBLUSERTYPE.Text = "Cashier"
                 actlog()
@@ -56,7 +56,7 @@ Public Class FRMLOGIN
 
 
                 '' Manager
-            ElseIf dr(1) = "Manager" Then
+            ElseIf dr(2) = "Manager" Then
                 activity = "Logged-in"
                 FRMMAINMENU.LBLUSERTYPE.Text = "Manager"
                 actlog()
@@ -85,7 +85,7 @@ Public Class FRMLOGIN
             dr = cmd.ExecuteReader()
             If dr.HasRows Then
                 Dim res As DialogResult
-                res = MessageBox.Show("you have near-expiry products on your inventory, do you want view products?", "Notice", MessageBoxButtons.YesNo, MessageBoxIcon.Warning, MessageBoxDefaultButton.Button2)
+                res = MessageBox.Show("Please check if you have near-expiry products on your inventory, do you want view products?", "Notify Message", MessageBoxButtons.YesNo, MessageBoxIcon.Asterisk, MessageBoxDefaultButton.Button2)
                 If res = DialogResult.Yes Then
                     FRMNEAREXPIRY.Show()
                     con.Close()
@@ -102,7 +102,7 @@ Public Class FRMLOGIN
             dr = cmd.ExecuteReader()
             If dr.HasRows Then
                 Dim reslow As DialogResult
-                reslow = MessageBox.Show("You have products that is already running out of stocks on your inventory, do you want yo view the products?", "Notice", MessageBoxButtons.YesNo, MessageBoxIcon.Warning, MessageBoxDefaultButton.Button2)
+                reslow = MessageBox.Show("Please check if you have products that is already running out of stocks on your inventory, do you want yo view the products?", "Notify Message", MessageBoxButtons.YesNo, MessageBoxIcon.Asterisk, MessageBoxDefaultButton.Button2)
                 If reslow = DialogResult.Yes Then
                     FRMOUTOFSTOCKS.ShowDialog()
                 End If

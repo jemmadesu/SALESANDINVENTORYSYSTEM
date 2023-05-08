@@ -9,19 +9,19 @@
               <Width>1.19792in</Width>
             </TablixColumn>
             <TablixColumn>
-              <Width>2.15014in</Width>
+              <Width>3.15014in</Width>
             </TablixColumn>
             <TablixColumn>
-              <Width>3.09986in</Width>
+              <Width>3.84029in</Width>
             </TablixColumn>
             <TablixColumn>
-              <Width>2.125in</Width>
+              <Width>3.21875in</Width>
             </TablixColumn>
             <TablixColumn>
-              <Width>1.6875in</Width>
+              <Width>2.94012in</Width>
             </TablixColumn>
             <TablixColumn>
-              <Width>1in</Width>
+              <Width>2.05208in</Width>
             </TablixColumn>
           </TablixColumns>
           <TablixRows>
@@ -39,7 +39,8 @@
                             <TextRun>
                               <Value>Sales No.</Value>
                               <Style>
-                                <FontSize>11pt</FontSize>
+                                <FontFamily>Century Gothic</FontFamily>
+                                <FontSize>16pt</FontSize>
                                 <FontWeight>Bold</FontWeight>
                                 <Color>#666666</Color>
                               </Style>
@@ -53,11 +54,10 @@
                       <rd:DefaultName>Textbox2</rd:DefaultName>
                       <Style>
                         <Border>
-                          <Style>None</Style>
+                          <Style>Solid</Style>
                         </Border>
                         <BottomBorder>
                           <Color>LightGrey</Color>
-                          <Style>Solid</Style>
                           <Width>1pt</Width>
                         </BottomBorder>
                         <BackgroundColor>White</BackgroundColor>
@@ -80,7 +80,8 @@
                             <TextRun>
                               <Value>Order No.</Value>
                               <Style>
-                                <FontSize>11pt</FontSize>
+                                <FontFamily>Century Gothic</FontFamily>
+                                <FontSize>16pt</FontSize>
                                 <FontWeight>Bold</FontWeight>
                                 <Color>#666666</Color>
                               </Style>
@@ -94,11 +95,10 @@
                       <rd:DefaultName>Textbox3</rd:DefaultName>
                       <Style>
                         <Border>
-                          <Style>None</Style>
+                          <Style>Solid</Style>
                         </Border>
                         <BottomBorder>
                           <Color>LightGrey</Color>
-                          <Style>Solid</Style>
                           <Width>1pt</Width>
                         </BottomBorder>
                         <BackgroundColor>White</BackgroundColor>
@@ -121,7 +121,8 @@
                             <TextRun>
                               <Value>Transaction Date</Value>
                               <Style>
-                                <FontSize>11pt</FontSize>
+                                <FontFamily>Century Gothic</FontFamily>
+                                <FontSize>16pt</FontSize>
                                 <FontWeight>Bold</FontWeight>
                                 <Color>#666666</Color>
                               </Style>
@@ -135,11 +136,10 @@
                       <rd:DefaultName>Textbox5</rd:DefaultName>
                       <Style>
                         <Border>
-                          <Style>None</Style>
+                          <Style>Solid</Style>
                         </Border>
                         <BottomBorder>
                           <Color>LightGrey</Color>
-                          <Style>Solid</Style>
                           <Width>1pt</Width>
                         </BottomBorder>
                         <BackgroundColor>White</BackgroundColor>
@@ -162,7 +162,8 @@
                             <TextRun>
                               <Value>Discount Type</Value>
                               <Style>
-                                <FontSize>11pt</FontSize>
+                                <FontFamily>Century Gothic</FontFamily>
+                                <FontSize>16pt</FontSize>
                                 <FontWeight>Bold</FontWeight>
                                 <Color>#666666</Color>
                               </Style>
@@ -176,11 +177,10 @@
                       <rd:DefaultName>Textbox7</rd:DefaultName>
                       <Style>
                         <Border>
-                          <Style>None</Style>
+                          <Style>Solid</Style>
                         </Border>
                         <BottomBorder>
                           <Color>LightGrey</Color>
-                          <Style>Solid</Style>
                           <Width>1pt</Width>
                         </BottomBorder>
                         <BackgroundColor>White</BackgroundColor>
@@ -203,7 +203,8 @@
                             <TextRun>
                               <Value>Total Bill</Value>
                               <Style>
-                                <FontSize>11pt</FontSize>
+                                <FontFamily>Century Gothic</FontFamily>
+                                <FontSize>16pt</FontSize>
                                 <FontWeight>Bold</FontWeight>
                                 <Color>#666666</Color>
                               </Style>
@@ -217,11 +218,10 @@
                       <rd:DefaultName>Textbox9</rd:DefaultName>
                       <Style>
                         <Border>
-                          <Style>None</Style>
+                          <Style>Solid</Style>
                         </Border>
                         <BottomBorder>
                           <Color>LightGrey</Color>
-                          <Style>Solid</Style>
                           <Width>1pt</Width>
                         </BottomBorder>
                         <BackgroundColor>White</BackgroundColor>
@@ -244,7 +244,8 @@
                             <TextRun>
                               <Value>Payment </Value>
                               <Style>
-                                <FontSize>11pt</FontSize>
+                                <FontFamily>Century Gothic</FontFamily>
+                                <FontSize>16pt</FontSize>
                                 <FontWeight>Bold</FontWeight>
                                 <Color>#666666</Color>
                               </Style>
@@ -258,11 +259,10 @@
                       <rd:DefaultName>Textbox11</rd:DefaultName>
                       <Style>
                         <Border>
-                          <Style>None</Style>
+                          <Style>Solid</Style>
                         </Border>
                         <BottomBorder>
                           <Color>LightGrey</Color>
-                          <Style>Solid</Style>
                           <Width>1pt</Width>
                         </BottomBorder>
                         <BackgroundColor>White</BackgroundColor>
@@ -290,6 +290,8 @@
                             <TextRun>
                               <Value>=Sum(Fields!salesno.Value)</Value>
                               <Style>
+                                <FontFamily>Century Gothic</FontFamily>
+                                <FontSize>16pt</FontSize>
                                 <FontWeight>Normal</FontWeight>
                                 <Color>#333333</Color>
                               </Style>
@@ -303,7 +305,7 @@
                       <rd:DefaultName>salesno</rd:DefaultName>
                       <Style>
                         <Border>
-                          <Style>None</Style>
+                          <Style>Solid</Style>
                         </Border>
                         <BackgroundColor>White</BackgroundColor>
                         <PaddingLeft>2pt</PaddingLeft>
@@ -325,6 +327,8 @@
                             <TextRun>
                               <Value>=Fields!orderno.Value</Value>
                               <Style>
+                                <FontFamily>Century Gothic</FontFamily>
+                                <FontSize>16pt</FontSize>
                                 <FontWeight>Normal</FontWeight>
                                 <Color>#333333</Color>
                               </Style>
@@ -338,7 +342,7 @@
                       <rd:DefaultName>orderno</rd:DefaultName>
                       <Style>
                         <Border>
-                          <Style>None</Style>
+                          <Style>Solid</Style>
                         </Border>
                         <BackgroundColor>White</BackgroundColor>
                         <PaddingLeft>2pt</PaddingLeft>
@@ -358,8 +362,10 @@
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value>=Fields!transadate.Value</Value>
+                              <Value>=Format(Fields!transadate.Value, "MM-dd-yyyy")</Value>
                               <Style>
+                                <FontFamily>Century Gothic</FontFamily>
+                                <FontSize>16pt</FontSize>
                                 <FontWeight>Normal</FontWeight>
                                 <Color>#333333</Color>
                               </Style>
@@ -373,7 +379,7 @@
                       <rd:DefaultName>transadate</rd:DefaultName>
                       <Style>
                         <Border>
-                          <Style>None</Style>
+                          <Style>Solid</Style>
                         </Border>
                         <BackgroundColor>White</BackgroundColor>
                         <PaddingLeft>2pt</PaddingLeft>
@@ -395,6 +401,8 @@
                             <TextRun>
                               <Value>=Fields!discounttype.Value</Value>
                               <Style>
+                                <FontFamily>Century Gothic</FontFamily>
+                                <FontSize>16pt</FontSize>
                                 <FontWeight>Normal</FontWeight>
                                 <Color>#333333</Color>
                               </Style>
@@ -408,7 +416,7 @@
                       <rd:DefaultName>discounttype</rd:DefaultName>
                       <Style>
                         <Border>
-                          <Style>None</Style>
+                          <Style>Solid</Style>
                         </Border>
                         <BackgroundColor>White</BackgroundColor>
                         <PaddingLeft>2pt</PaddingLeft>
@@ -430,6 +438,8 @@
                             <TextRun>
                               <Value>=Sum(Fields!totalbill.Value)</Value>
                               <Style>
+                                <FontFamily>Century Gothic</FontFamily>
+                                <FontSize>16pt</FontSize>
                                 <FontWeight>Normal</FontWeight>
                                 <Color>#333333</Color>
                               </Style>
@@ -443,7 +453,7 @@
                       <rd:DefaultName>totalbill</rd:DefaultName>
                       <Style>
                         <Border>
-                          <Style>None</Style>
+                          <Style>Solid</Style>
                         </Border>
                         <BackgroundColor>White</BackgroundColor>
                         <PaddingLeft>2pt</PaddingLeft>
@@ -465,6 +475,8 @@
                             <TextRun>
                               <Value>=Sum(Fields!payment.Value)</Value>
                               <Style>
+                                <FontFamily>Century Gothic</FontFamily>
+                                <FontSize>16pt</FontSize>
                                 <FontWeight>Normal</FontWeight>
                                 <Color>#333333</Color>
                               </Style>
@@ -478,7 +490,7 @@
                       <rd:DefaultName>payment</rd:DefaultName>
                       <Style>
                         <Border>
-                          <Style>None</Style>
+                          <Style>Solid</Style>
                         </Border>
                         <BackgroundColor>White</BackgroundColor>
                         <PaddingLeft>2pt</PaddingLeft>
@@ -514,104 +526,15 @@
           </TablixMembers>
         </TablixRowHierarchy>
         <DataSetName>DataSet_Sales</DataSetName>
-        <Top>2.79167in</Top>
-        <Left>3.34029in</Left>
+        <Top>2.21876in</Top>
         <Height>0.5in</Height>
-        <Width>11.26042in</Width>
+        <Width>16.3993in</Width>
         <Style>
           <Border>
-            <Style>None</Style>
+            <Style>Solid</Style>
           </Border>
         </Style>
       </Tablix>
-      <Textbox Name="Textbox1">
-        <CanGrow>true</CanGrow>
-        <KeepTogether>true</KeepTogether>
-        <Paragraphs>
-          <Paragraph>
-            <TextRuns>
-              <TextRun>
-                <Value>Rizal Provincial Hospital Employees and Community Multi-Purpose Cooperative</Value>
-                <Style>
-                  <FontFamily>Arial Rounded MT Bold</FontFamily>
-                  <FontSize>14pt</FontSize>
-                  <FontWeight>Bold</FontWeight>
-                  <Color>SeaGreen</Color>
-                </Style>
-              </TextRun>
-            </TextRuns>
-            <Style>
-              <TextAlign>Center</TextAlign>
-            </Style>
-          </Paragraph>
-        </Paragraphs>
-        <rd:DefaultName>Textbox1</rd:DefaultName>
-        <Top>1.32392in</Top>
-        <Left>8.48697in</Left>
-        <Height>0.57292in</Height>
-        <Width>4.45833in</Width>
-        <ZIndex>1</ZIndex>
-        <Style>
-          <Border>
-            <Style>None</Style>
-          </Border>
-          <PaddingLeft>2pt</PaddingLeft>
-          <PaddingRight>2pt</PaddingRight>
-          <PaddingTop>2pt</PaddingTop>
-          <PaddingBottom>2pt</PaddingBottom>
-        </Style>
-      </Textbox>
-      <Image Name="Image1">
-        <Source>Embedded</Source>
-        <Value>ID1681739519791</Value>
-        <Sizing>FitProportional</Sizing>
-        <Top>1.16469in</Top>
-        <Left>7.72308in</Left>
-        <Height>0.90625in</Height>
-        <Width>0.88542in</Width>
-        <ZIndex>2</ZIndex>
-        <Style>
-          <Border>
-            <Style>None</Style>
-          </Border>
-        </Style>
-      </Image>
-      <Textbox Name="Textbox4">
-        <CanGrow>true</CanGrow>
-        <KeepTogether>true</KeepTogether>
-        <Paragraphs>
-          <Paragraph>
-            <TextRuns>
-              <TextRun>
-                <Value>SALES INCOME REPORT</Value>
-                <Style>
-                  <FontFamily>Arial Rounded MT Bold</FontFamily>
-                  <FontSize>14pt</FontSize>
-                  <FontWeight>Bold</FontWeight>
-                </Style>
-              </TextRun>
-            </TextRuns>
-            <Style>
-              <TextAlign>Center</TextAlign>
-            </Style>
-          </Paragraph>
-        </Paragraphs>
-        <rd:DefaultName>Textbox1</rd:DefaultName>
-        <Top>2.20239in</Top>
-        <Left>8.90279in</Left>
-        <Height>0.34375in</Height>
-        <Width>3.30208in</Width>
-        <ZIndex>3</ZIndex>
-        <Style>
-          <Border>
-            <Style>None</Style>
-          </Border>
-          <PaddingLeft>2pt</PaddingLeft>
-          <PaddingRight>2pt</PaddingRight>
-          <PaddingTop>2pt</PaddingTop>
-          <PaddingBottom>2pt</PaddingBottom>
-        </Style>
-      </Textbox>
       <Textbox Name="Textbox6">
         <CanGrow>true</CanGrow>
         <KeepTogether>true</KeepTogether>
@@ -620,18 +543,22 @@
             <TextRuns>
               <TextRun>
                 <Value>=format(Sum(Fields!totalbill.Value, "DataSet_Sales"),"#,##0.00")</Value>
-                <Style />
+                <Style>
+                  <FontFamily>Century Gothic</FontFamily>
+                  <FontSize>16pt</FontSize>
+                  <FontWeight>Bold</FontWeight>
+                </Style>
               </TextRun>
             </TextRuns>
             <Style />
           </Paragraph>
         </Paragraphs>
         <rd:DefaultName>Textbox6</rd:DefaultName>
-        <Top>2.29614in</Top>
-        <Left>15.29167in</Left>
-        <Height>0.25in</Height>
-        <Width>1in</Width>
-        <ZIndex>4</ZIndex>
+        <Top>1.82987in</Top>
+        <Left>14.29167in</Left>
+        <Height>0.36111in</Height>
+        <Width>2.05208in</Width>
+        <ZIndex>1</ZIndex>
         <Style>
           <Border>
             <Style>None</Style>
@@ -650,17 +577,108 @@
             <TextRuns>
               <TextRun>
                 <Value>Total Sales :</Value>
-                <Style />
+                <Style>
+                  <FontFamily>Century Gothic</FontFamily>
+                  <FontSize>16pt</FontSize>
+                  <FontWeight>Bold</FontWeight>
+                  <Color>DimGray</Color>
+                </Style>
               </TextRun>
             </TextRuns>
             <Style />
           </Paragraph>
         </Paragraphs>
         <rd:DefaultName>Textbox8</rd:DefaultName>
-        <Top>2.29614in</Top>
-        <Left>14.29167in</Left>
-        <Height>0.25in</Height>
-        <Width>1in</Width>
+        <Top>1.82987in</Top>
+        <Left>12.77084in</Left>
+        <Height>0.375in</Height>
+        <Width>1.52083in</Width>
+        <ZIndex>2</ZIndex>
+        <Style>
+          <Border>
+            <Style>None</Style>
+          </Border>
+          <PaddingLeft>2pt</PaddingLeft>
+          <PaddingRight>2pt</PaddingRight>
+          <PaddingTop>2pt</PaddingTop>
+          <PaddingBottom>2pt</PaddingBottom>
+        </Style>
+      </Textbox>
+      <Textbox Name="Textbox1">
+        <CanGrow>true</CanGrow>
+        <KeepTogether>true</KeepTogether>
+        <Paragraphs>
+          <Paragraph>
+            <TextRuns>
+              <TextRun>
+                <Value>Rizal Provincial Hospital Employees and Community Multi-Purpose Cooperative</Value>
+                <Style>
+                  <FontFamily>Century Gothic</FontFamily>
+                  <FontSize>20pt</FontSize>
+                  <FontWeight>Bold</FontWeight>
+                  <Color>SeaGreen</Color>
+                </Style>
+              </TextRun>
+            </TextRuns>
+            <Style>
+              <TextAlign>Center</TextAlign>
+            </Style>
+          </Paragraph>
+        </Paragraphs>
+        <rd:DefaultName>Textbox1</rd:DefaultName>
+        <Top>0.20834in</Top>
+        <Left>0.98264in</Left>
+        <Height>1.07292in</Height>
+        <Width>6.31944in</Width>
+        <ZIndex>3</ZIndex>
+        <Style>
+          <Border>
+            <Style>None</Style>
+          </Border>
+          <PaddingLeft>2pt</PaddingLeft>
+          <PaddingRight>2pt</PaddingRight>
+          <PaddingTop>2pt</PaddingTop>
+          <PaddingBottom>2pt</PaddingBottom>
+        </Style>
+      </Textbox>
+      <Image Name="Image1">
+        <Source>Embedded</Source>
+        <Value>ID1681739519791</Value>
+        <Sizing>FitProportional</Sizing>
+        <Top>0.20834in</Top>
+        <Height>1.07292in</Height>
+        <Width>0.98264in</Width>
+        <ZIndex>4</ZIndex>
+        <Style>
+          <Border>
+            <Style>None</Style>
+          </Border>
+        </Style>
+      </Image>
+      <Textbox Name="Textbox4">
+        <CanGrow>true</CanGrow>
+        <KeepTogether>true</KeepTogether>
+        <Paragraphs>
+          <Paragraph>
+            <TextRuns>
+              <TextRun>
+                <Value>SALES</Value>
+                <Style>
+                  <FontFamily>Century Gothic</FontFamily>
+                  <FontSize>20pt</FontSize>
+                  <FontWeight>Bold</FontWeight>
+                </Style>
+              </TextRun>
+            </TextRuns>
+            <Style>
+              <TextAlign>Left</TextAlign>
+            </Style>
+          </Paragraph>
+        </Paragraphs>
+        <rd:DefaultName>Textbox1</rd:DefaultName>
+        <Top>1.87501in</Top>
+        <Height>0.34375in</Height>
+        <Width>3.6875in</Width>
         <ZIndex>5</ZIndex>
         <Style>
           <Border>

@@ -169,7 +169,7 @@ Partial Class ucDASHBOARD
         Me.Panel5.Controls.Add(Me.lblsales)
         Me.Panel5.Controls.Add(Me.PictureBox5)
         Me.Panel5.Controls.Add(Me.Label10)
-        Me.Panel5.Location = New System.Drawing.Point(761, 339)
+        Me.Panel5.Location = New System.Drawing.Point(761, 350)
         Me.Panel5.Name = "Panel5"
         Me.Panel5.Size = New System.Drawing.Size(232, 74)
         Me.Panel5.TabIndex = 37
@@ -215,7 +215,7 @@ Partial Class ucDASHBOARD
         Me.Panel4.Controls.Add(Me.lblexp)
         Me.Panel4.Controls.Add(Me.PictureBox4)
         Me.Panel4.Controls.Add(Me.Label8)
-        Me.Panel4.Location = New System.Drawing.Point(523, 339)
+        Me.Panel4.Location = New System.Drawing.Point(523, 350)
         Me.Panel4.Name = "Panel4"
         Me.Panel4.Size = New System.Drawing.Size(232, 74)
         Me.Panel4.TabIndex = 38
@@ -261,7 +261,7 @@ Partial Class ucDASHBOARD
         Me.Panel3.Controls.Add(Me.lblouofstock)
         Me.Panel3.Controls.Add(Me.PictureBox2)
         Me.Panel3.Controls.Add(Me.Label6)
-        Me.Panel3.Location = New System.Drawing.Point(285, 339)
+        Me.Panel3.Location = New System.Drawing.Point(285, 350)
         Me.Panel3.Name = "Panel3"
         Me.Panel3.Size = New System.Drawing.Size(232, 74)
         Me.Panel3.TabIndex = 36
@@ -307,7 +307,7 @@ Partial Class ucDASHBOARD
         Me.panel2.Controls.Add(Me.lblproducts)
         Me.panel2.Controls.Add(Me.pictureBox3)
         Me.panel2.Controls.Add(Me.Label2)
-        Me.panel2.Location = New System.Drawing.Point(47, 339)
+        Me.panel2.Location = New System.Drawing.Point(47, 350)
         Me.panel2.Name = "panel2"
         Me.panel2.Size = New System.Drawing.Size(232, 74)
         Me.panel2.TabIndex = 35
@@ -353,14 +353,14 @@ Partial Class ucDASHBOARD
         Me.CHART.ChartAreas.Add(ChartArea1)
         Legend1.Name = "Legend1"
         Me.CHART.Legends.Add(Legend1)
-        Me.CHART.Location = New System.Drawing.Point(3, 419)
+        Me.CHART.Location = New System.Drawing.Point(3, 423)
         Me.CHART.Name = "CHART"
         Me.CHART.Palette = System.Windows.Forms.DataVisualization.Charting.ChartColorPalette.SeaGreen
         Series1.ChartArea = "ChartArea1"
         Series1.Legend = "Legend1"
         Series1.Name = "Total Sales"
         Me.CHART.Series.Add(Series1)
-        Me.CHART.Size = New System.Drawing.Size(920, 378)
+        Me.CHART.Size = New System.Drawing.Size(920, 374)
         Me.CHART.TabIndex = 42
         Me.CHART.Text = "Chart1"
         '
@@ -389,33 +389,37 @@ Partial Class ucDASHBOARD
         '
         Me.DGVUSERS.AllowUserToAddRows = False
         Me.DGVUSERS.AllowUserToDeleteRows = False
-        Me.DGVUSERS.BackgroundColor = System.Drawing.SystemColors.Window
+        Me.DGVUSERS.BackgroundColor = System.Drawing.Color.White
+        Me.DGVUSERS.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D
+        Me.DGVUSERS.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.RaisedHorizontal
+        Me.DGVUSERS.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None
         DataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
-        DataGridViewCellStyle1.BackColor = System.Drawing.Color.SeaGreen
-        DataGridViewCellStyle1.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle1.ForeColor = System.Drawing.Color.Black
-        DataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.MediumSeaGreen
+        DataGridViewCellStyle1.BackColor = System.Drawing.Color.White
+        DataGridViewCellStyle1.Font = New System.Drawing.Font("Century Gothic", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle1.ForeColor = System.Drawing.Color.DimGray
+        DataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.FromArgb(CType(CType(86, Byte), Integer), CType(CType(172, Byte), Integer), CType(CType(143, Byte), Integer))
         DataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText
         DataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
         Me.DGVUSERS.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle1
         Me.DGVUSERS.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         DataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
-        DataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window
-        DataGridViewCellStyle2.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlDarkDark
-        DataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.MediumSeaGreen
-        DataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+        DataGridViewCellStyle2.BackColor = System.Drawing.Color.White
+        DataGridViewCellStyle2.Font = New System.Drawing.Font("Century Gothic", 9.75!)
+        DataGridViewCellStyle2.ForeColor = System.Drawing.Color.DimGray
+        DataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.FromArgb(CType(CType(196, Byte), Integer), CType(CType(227, Byte), Integer), CType(CType(214, Byte), Integer))
+        DataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.DimGray
         DataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
         Me.DGVUSERS.DefaultCellStyle = DataGridViewCellStyle2
         Me.DGVUSERS.GridColor = System.Drawing.SystemColors.ControlDarkDark
         Me.DGVUSERS.Location = New System.Drawing.Point(1028, 256)
         Me.DGVUSERS.Name = "DGVUSERS"
         Me.DGVUSERS.ReadOnly = True
+        Me.DGVUSERS.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None
         DataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
-        DataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Control
-        DataGridViewCellStyle3.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.WindowText
-        DataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.SeaGreen
+        DataGridViewCellStyle3.BackColor = System.Drawing.Color.MediumSeaGreen
+        DataGridViewCellStyle3.Font = New System.Drawing.Font("Century Gothic", 9.75!)
+        DataGridViewCellStyle3.ForeColor = System.Drawing.Color.DimGray
+        DataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(CType(CType(86, Byte), Integer), CType(CType(172, Byte), Integer), CType(CType(143, Byte), Integer))
         DataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText
         DataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
         Me.DGVUSERS.RowHeadersDefaultCellStyle = DataGridViewCellStyle3
@@ -550,7 +554,7 @@ Partial Class ucDASHBOARD
         Me.PictureBox1.Image = Global.SALESANDINVENTORYSYSTEM.My.Resources.Resources.Media_230503_005719
         Me.PictureBox1.Location = New System.Drawing.Point(47, 24)
         Me.PictureBox1.Name = "PictureBox1"
-        Me.PictureBox1.Size = New System.Drawing.Size(975, 309)
+        Me.PictureBox1.Size = New System.Drawing.Size(975, 320)
         Me.PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
         Me.PictureBox1.TabIndex = 73
         Me.PictureBox1.TabStop = False

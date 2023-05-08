@@ -229,7 +229,7 @@ Partial Class ucSUPPLIER
         Me.Label3.AutoSize = True
         Me.Label3.Font = New System.Drawing.Font("Century Gothic", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label3.ForeColor = System.Drawing.SystemColors.ControlDarkDark
-        Me.Label3.Location = New System.Drawing.Point(62, 518)
+        Me.Label3.Location = New System.Drawing.Point(60, 513)
         Me.Label3.Name = "Label3"
         Me.Label3.Size = New System.Drawing.Size(236, 17)
         Me.Label3.TabIndex = 156
@@ -240,7 +240,7 @@ Partial Class ucSUPPLIER
         Me.Label6.AutoSize = True
         Me.Label6.Font = New System.Drawing.Font("Century Gothic", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label6.ForeColor = System.Drawing.SystemColors.ControlDarkDark
-        Me.Label6.Location = New System.Drawing.Point(62, 461)
+        Me.Label6.Location = New System.Drawing.Point(60, 456)
         Me.Label6.Name = "Label6"
         Me.Label6.Size = New System.Drawing.Size(105, 17)
         Me.Label6.TabIndex = 155
@@ -249,7 +249,7 @@ Partial Class ucSUPPLIER
         'TXTNO
         '
         Me.TXTNO.Font = New System.Drawing.Font("Century Gothic", 9.0!)
-        Me.TXTNO.Location = New System.Drawing.Point(65, 493)
+        Me.TXTNO.Location = New System.Drawing.Point(63, 488)
         Me.TXTNO.Name = "TXTNO"
         Me.TXTNO.Size = New System.Drawing.Size(211, 22)
         Me.TXTNO.TabIndex = 154
@@ -299,9 +299,9 @@ Partial Class ucSUPPLIER
         Me.Label9.ForeColor = System.Drawing.SystemColors.ControlDarkDark
         Me.Label9.Location = New System.Drawing.Point(854, 122)
         Me.Label9.Name = "Label9"
-        Me.Label9.Size = New System.Drawing.Size(157, 17)
+        Me.Label9.Size = New System.Drawing.Size(149, 17)
         Me.Label9.TabIndex = 163
-        Me.Label9.Text = "Search Supplier Name :"
+        Me.Label9.Text = "Search Manufacturer :" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10)
         '
         'TXTSEARCH
         '

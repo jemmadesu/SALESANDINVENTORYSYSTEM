@@ -9,7 +9,7 @@
               <Width>1.34375in</Width>
             </TablixColumn>
             <TablixColumn>
-              <Width>1.75in</Width>
+              <Width>5.36805in</Width>
             </TablixColumn>
             <TablixColumn>
               <Width>1.70833in</Width>
@@ -18,7 +18,7 @@
               <Width>1.60417in</Width>
             </TablixColumn>
             <TablixColumn>
-              <Width>3.02083in</Width>
+              <Width>3.82291in</Width>
             </TablixColumn>
             <TablixColumn>
               <Width>2.09375in</Width>
@@ -42,7 +42,8 @@
                             <TextRun>
                               <Value>Ref No.</Value>
                               <Style>
-                                <FontSize>11pt</FontSize>
+                                <FontFamily>Century Gothic</FontFamily>
+                                <FontSize>16pt</FontSize>
                                 <FontWeight>Bold</FontWeight>
                                 <Color>#666666</Color>
                               </Style>
@@ -56,11 +57,10 @@
                       <rd:DefaultName>Textbox2</rd:DefaultName>
                       <Style>
                         <Border>
-                          <Style>None</Style>
+                          <Style>Solid</Style>
                         </Border>
                         <BottomBorder>
                           <Color>LightGrey</Color>
-                          <Style>Solid</Style>
                           <Width>1pt</Width>
                         </BottomBorder>
                         <BackgroundColor>White</BackgroundColor>
@@ -81,9 +81,10 @@
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value>Company Name</Value>
+                              <Value>Manufacturer</Value>
                               <Style>
-                                <FontSize>11pt</FontSize>
+                                <FontFamily>Century Gothic</FontFamily>
+                                <FontSize>16pt</FontSize>
                                 <FontWeight>Bold</FontWeight>
                                 <Color>#666666</Color>
                               </Style>
@@ -97,11 +98,10 @@
                       <rd:DefaultName>Textbox3</rd:DefaultName>
                       <Style>
                         <Border>
-                          <Style>None</Style>
+                          <Style>Solid</Style>
                         </Border>
                         <BottomBorder>
                           <Color>LightGrey</Color>
-                          <Style>Solid</Style>
                           <Width>1pt</Width>
                         </BottomBorder>
                         <BackgroundColor>White</BackgroundColor>
@@ -124,7 +124,8 @@
                             <TextRun>
                               <Value>First Name</Value>
                               <Style>
-                                <FontSize>11pt</FontSize>
+                                <FontFamily>Century Gothic</FontFamily>
+                                <FontSize>16pt</FontSize>
                                 <FontWeight>Bold</FontWeight>
                                 <Color>#666666</Color>
                               </Style>
@@ -138,11 +139,10 @@
                       <rd:DefaultName>Textbox5</rd:DefaultName>
                       <Style>
                         <Border>
-                          <Style>None</Style>
+                          <Style>Solid</Style>
                         </Border>
                         <BottomBorder>
                           <Color>LightGrey</Color>
-                          <Style>Solid</Style>
                           <Width>1pt</Width>
                         </BottomBorder>
                         <BackgroundColor>White</BackgroundColor>
@@ -165,7 +165,8 @@
                             <TextRun>
                               <Value>Last Name</Value>
                               <Style>
-                                <FontSize>11pt</FontSize>
+                                <FontFamily>Century Gothic</FontFamily>
+                                <FontSize>16pt</FontSize>
                                 <FontWeight>Bold</FontWeight>
                                 <Color>#666666</Color>
                               </Style>
@@ -179,11 +180,10 @@
                       <rd:DefaultName>Textbox7</rd:DefaultName>
                       <Style>
                         <Border>
-                          <Style>None</Style>
+                          <Style>Solid</Style>
                         </Border>
                         <BottomBorder>
                           <Color>LightGrey</Color>
-                          <Style>Solid</Style>
                           <Width>1pt</Width>
                         </BottomBorder>
                         <BackgroundColor>White</BackgroundColor>
@@ -206,7 +206,8 @@
                             <TextRun>
                               <Value>E-mail</Value>
                               <Style>
-                                <FontSize>11pt</FontSize>
+                                <FontFamily>Century Gothic</FontFamily>
+                                <FontSize>16pt</FontSize>
                                 <FontWeight>Bold</FontWeight>
                                 <Color>#666666</Color>
                               </Style>
@@ -220,12 +221,10 @@
                       <rd:DefaultName>Textbox9</rd:DefaultName>
                       <Style>
                         <Border>
-                          <Style>None</Style>
+                          <Style>Solid</Style>
                         </Border>
                         <BottomBorder>
                           <Color>LightGrey</Color>
-                          <Style>Solid</Style>
-                          <Width>1pt</Width>
                         </BottomBorder>
                         <BackgroundColor>White</BackgroundColor>
                         <PaddingLeft>2pt</PaddingLeft>
@@ -247,7 +246,8 @@
                             <TextRun>
                               <Value>Phone No.</Value>
                               <Style>
-                                <FontSize>11pt</FontSize>
+                                <FontFamily>Century Gothic</FontFamily>
+                                <FontSize>16pt</FontSize>
                                 <FontWeight>Bold</FontWeight>
                                 <Color>#666666</Color>
                               </Style>
@@ -261,12 +261,10 @@
                       <rd:DefaultName>Textbox11</rd:DefaultName>
                       <Style>
                         <Border>
-                          <Style>None</Style>
+                          <Style>Solid</Style>
                         </Border>
                         <BottomBorder>
                           <Color>LightGrey</Color>
-                          <Style>Solid</Style>
-                          <Width>1pt</Width>
                         </BottomBorder>
                         <BackgroundColor>White</BackgroundColor>
                         <PaddingLeft>2pt</PaddingLeft>
@@ -288,7 +286,8 @@
                             <TextRun>
                               <Value>Address</Value>
                               <Style>
-                                <FontSize>11pt</FontSize>
+                                <FontFamily>Century Gothic</FontFamily>
+                                <FontSize>16pt</FontSize>
                                 <FontWeight>Bold</FontWeight>
                                 <Color>#666666</Color>
                               </Style>
@@ -302,12 +301,10 @@
                       <rd:DefaultName>Textbox13</rd:DefaultName>
                       <Style>
                         <Border>
-                          <Style>None</Style>
+                          <Style>Solid</Style>
                         </Border>
                         <BottomBorder>
                           <Color>LightGrey</Color>
-                          <Style>Solid</Style>
-                          <Width>1pt</Width>
                         </BottomBorder>
                         <BackgroundColor>White</BackgroundColor>
                         <PaddingLeft>2pt</PaddingLeft>
@@ -332,8 +329,10 @@
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value>=Sum(Fields!RefNo.Value)</Value>
+                              <Value>=Fields!RefNo.Value</Value>
                               <Style>
+                                <FontFamily>Century Gothic</FontFamily>
+                                <FontSize>16pt</FontSize>
                                 <FontWeight>Normal</FontWeight>
                                 <Color>#333333</Color>
                               </Style>
@@ -347,7 +346,7 @@
                       <rd:DefaultName>RefNo</rd:DefaultName>
                       <Style>
                         <Border>
-                          <Style>None</Style>
+                          <Style>Solid</Style>
                         </Border>
                         <BackgroundColor>White</BackgroundColor>
                         <PaddingLeft>2pt</PaddingLeft>
@@ -369,6 +368,8 @@
                             <TextRun>
                               <Value>=Fields!Companyname.Value</Value>
                               <Style>
+                                <FontFamily>Century Gothic</FontFamily>
+                                <FontSize>16pt</FontSize>
                                 <FontWeight>Normal</FontWeight>
                                 <Color>#333333</Color>
                               </Style>
@@ -382,7 +383,7 @@
                       <rd:DefaultName>Companyname</rd:DefaultName>
                       <Style>
                         <Border>
-                          <Style>None</Style>
+                          <Style>Solid</Style>
                         </Border>
                         <BackgroundColor>White</BackgroundColor>
                         <PaddingLeft>2pt</PaddingLeft>
@@ -404,6 +405,8 @@
                             <TextRun>
                               <Value>=Fields!FirstName.Value</Value>
                               <Style>
+                                <FontFamily>Century Gothic</FontFamily>
+                                <FontSize>16pt</FontSize>
                                 <FontWeight>Normal</FontWeight>
                                 <Color>#333333</Color>
                               </Style>
@@ -417,7 +420,7 @@
                       <rd:DefaultName>FirstName</rd:DefaultName>
                       <Style>
                         <Border>
-                          <Style>None</Style>
+                          <Style>Solid</Style>
                         </Border>
                         <BackgroundColor>White</BackgroundColor>
                         <PaddingLeft>2pt</PaddingLeft>
@@ -439,6 +442,8 @@
                             <TextRun>
                               <Value>=Fields!LastName.Value</Value>
                               <Style>
+                                <FontFamily>Century Gothic</FontFamily>
+                                <FontSize>16pt</FontSize>
                                 <FontWeight>Normal</FontWeight>
                                 <Color>#333333</Color>
                               </Style>
@@ -452,7 +457,7 @@
                       <rd:DefaultName>LastName</rd:DefaultName>
                       <Style>
                         <Border>
-                          <Style>None</Style>
+                          <Style>Solid</Style>
                         </Border>
                         <BackgroundColor>White</BackgroundColor>
                         <PaddingLeft>2pt</PaddingLeft>
@@ -474,6 +479,8 @@
                             <TextRun>
                               <Value>=Fields!Email.Value</Value>
                               <Style>
+                                <FontFamily>Century Gothic</FontFamily>
+                                <FontSize>16pt</FontSize>
                                 <FontWeight>Normal</FontWeight>
                                 <Color>#333333</Color>
                               </Style>
@@ -487,7 +494,7 @@
                       <rd:DefaultName>Email</rd:DefaultName>
                       <Style>
                         <Border>
-                          <Style>None</Style>
+                          <Style>Solid</Style>
                         </Border>
                         <BackgroundColor>White</BackgroundColor>
                         <PaddingLeft>2pt</PaddingLeft>
@@ -509,6 +516,8 @@
                             <TextRun>
                               <Value>=Fields!PhoneNo.Value</Value>
                               <Style>
+                                <FontFamily>Century Gothic</FontFamily>
+                                <FontSize>16pt</FontSize>
                                 <FontWeight>Normal</FontWeight>
                                 <Color>#333333</Color>
                               </Style>
@@ -522,7 +531,7 @@
                       <rd:DefaultName>PhoneNo</rd:DefaultName>
                       <Style>
                         <Border>
-                          <Style>None</Style>
+                          <Style>Solid</Style>
                         </Border>
                         <BackgroundColor>White</BackgroundColor>
                         <PaddingLeft>2pt</PaddingLeft>
@@ -544,6 +553,8 @@
                             <TextRun>
                               <Value>=Fields!Address.Value</Value>
                               <Style>
+                                <FontFamily>Century Gothic</FontFamily>
+                                <FontSize>16pt</FontSize>
                                 <FontWeight>Normal</FontWeight>
                                 <Color>#333333</Color>
                               </Style>
@@ -557,7 +568,7 @@
                       <rd:DefaultName>Address</rd:DefaultName>
                       <Style>
                         <Border>
-                          <Style>None</Style>
+                          <Style>Solid</Style>
                         </Border>
                         <BackgroundColor>White</BackgroundColor>
                         <PaddingLeft>2pt</PaddingLeft>
@@ -594,13 +605,12 @@
           </TablixMembers>
         </TablixRowHierarchy>
         <DataSetName>DataSet_SUPPLIER</DataSetName>
-        <Top>2.71875in</Top>
-        <Left>6.05208in</Left>
+        <Top>2.23958in</Top>
         <Height>0.5in</Height>
-        <Width>13.52083in</Width>
+        <Width>17.94096in</Width>
         <Style>
           <Border>
-            <Style>None</Style>
+            <Style>Solid</Style>
           </Border>
         </Style>
       </Tablix>
@@ -613,8 +623,8 @@
               <TextRun>
                 <Value>Rizal Provincial Hospital Employees and Community Multi-Purpose Cooperative</Value>
                 <Style>
-                  <FontFamily>Arial Rounded MT Bold</FontFamily>
-                  <FontSize>14pt</FontSize>
+                  <FontFamily>Century Gothic</FontFamily>
+                  <FontSize>20pt</FontSize>
                   <FontWeight>Bold</FontWeight>
                   <Color>SeaGreen</Color>
                 </Style>
@@ -626,10 +636,10 @@
           </Paragraph>
         </Paragraphs>
         <rd:DefaultName>Textbox1</rd:DefaultName>
-        <Top>1.26142in</Top>
-        <Left>11.61805in</Left>
-        <Height>0.57292in</Height>
-        <Width>4.45833in</Width>
+        <Top>0.22916in</Top>
+        <Left>0.98264in</Left>
+        <Height>1.07292in</Height>
+        <Width>6.31944in</Width>
         <ZIndex>1</ZIndex>
         <Style>
           <Border>
@@ -645,10 +655,9 @@
         <Source>Embedded</Source>
         <Value>ID1681739519791</Value>
         <Sizing>FitProportional</Sizing>
-        <Top>1.10219in</Top>
-        <Left>10.85416in</Left>
-        <Height>0.90625in</Height>
-        <Width>0.88542in</Width>
+        <Top>0.22916in</Top>
+        <Height>1.07292in</Height>
+        <Width>0.98264in</Width>
         <ZIndex>2</ZIndex>
         <Style>
           <Border>
@@ -665,22 +674,21 @@
               <TextRun>
                 <Value>SUPPLIER</Value>
                 <Style>
-                  <FontFamily>Arial Rounded MT Bold</FontFamily>
-                  <FontSize>14pt</FontSize>
+                  <FontFamily>Century Gothic</FontFamily>
+                  <FontSize>20pt</FontSize>
                   <FontWeight>Bold</FontWeight>
                 </Style>
               </TextRun>
             </TextRuns>
             <Style>
-              <TextAlign>Center</TextAlign>
+              <TextAlign>Left</TextAlign>
             </Style>
           </Paragraph>
         </Paragraphs>
         <rd:DefaultName>Textbox1</rd:DefaultName>
-        <Top>2.13989in</Top>
-        <Left>12.28387in</Left>
+        <Top>1.89583in</Top>
         <Height>0.34375in</Height>
-        <Width>2.46875in</Width>
+        <Width>3.6875in</Width>
         <ZIndex>3</ZIndex>
         <Style>
           <Border>
@@ -700,10 +708,10 @@
       </Border>
     </Style>
   </Body>
-  <Width>23.4in</Width>
+  <Width>23.44167in</Width>
   <Page>
     <PageHeight>16.5in</PageHeight>
-    <PageWidth>23.54in</PageWidth>
+    <PageWidth>23.4in</PageWidth>
     <LeftMargin>1in</LeftMargin>
     <RightMargin>1in</RightMargin>
     <TopMargin>1in</TopMargin>

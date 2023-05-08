@@ -74,7 +74,7 @@ Public Class ucOUTOFSTOCKS
 
 
             con.Open()
-            command = New MySqlCommand("select stockid, prodid, prodname, prodman, prodbrand, prodcat, catcode, price, unit, quantity, expirationdate from tbl_products  WHERE quantity = 0;", con)
+            command = New MySqlCommand("select stockid, prodid, prodname, prodman, prodbrand, prodcat, catcode, price, unit, quantity, expirationdate from tbl_stocks  WHERE quantity = 0;", con)
             dataadapt.SelectCommand = command
             dataadapt.Fill(dataset)
             bindindsrc.DataSource = dataset
@@ -104,6 +104,10 @@ Public Class ucOUTOFSTOCKS
 
     Private Sub BTNARCHIVE_Click(sender As Object, e As EventArgs) Handles BTNARCHIVE.Click
 
+        If MessageBox.Show("Are you sure to remove this from the Stock List?", "Archive", MessageBoxButtons.YesNo, MessageBoxIcon.Information, MessageBoxDefaultButton.Button2) = DialogResult.No Then
+            Exit Sub
+        End If
+
         For Each row As DataGridViewRow In DGVOUTOFSTOCKS.SelectedRows
             Dim stockid As Integer = CInt(row.Cells("stockid").Value)
             Dim prodid As String = CStr(row.Cells("prodid").Value)
@@ -119,7 +123,7 @@ Public Class ucOUTOFSTOCKS
 
 
             'Insert selected columns into the destination table
-            Dim sqlInsert As String = "INSERT INTO tbl_stocksout (stockid, prodid, prodname, prodman, prodbrand, prodcat, catcode, price, unit, quantity, expirationdate) VALUES (@stockid, @prodid, @prodname, @prodman, @prodbrand, @prodcat, @catcode, @price, @unit, @quantity, @expirationdate)"
+            Dim sqlInsert As String = "INSERT INTO tbl_stocksout (stockid, prodid, prodname, prodman, prodbrand, prodcat, catcode, price, unit, quantity, expirationdate, dateadded) VALUES (@stockid, @prodid, @prodname, @prodman, @prodbrand, @prodcat, @catcode, @price, @unit, @quantity, @expirationdate, dateadded)"
             Using conn As New MySqlConnection(“Server=localhost;Port=3306;User=root;Password=password;Database=inventory_db”)
                 Using cmd As New MySqlCommand(sqlInsert, conn)
 
@@ -134,6 +138,8 @@ Public Class ucOUTOFSTOCKS
                     cmd.Parameters.AddWithValue("@unit", unit)
                     cmd.Parameters.AddWithValue("@quantity", quantity)
                     cmd.Parameters.AddWithValue("@expirationdate", expirationdate)
+                    cmd.Parameters.AddWithValue("@dateadded", Format(Date.Now, "yyyy-MM-dd"))
+
 
                     conn.Open()
                     cmd.ExecuteNonQuery()
@@ -144,7 +150,7 @@ Public Class ucOUTOFSTOCKS
         Next
 
         For i As Integer = 0 To DGVOUTOFSTOCKS.SelectedRows.Count - 1
-            Dim cmd As New MySqlCommand("delete from tbl_products where prodid = @prodid", con)
+            Dim cmd As New MySqlCommand("delete from tbl_stocks where prodid = @prodid", con)
             cmd.Parameters.AddWithValue("prodid", DGVOUTOFSTOCKS.SelectedRows(i).Cells(1).Value.ToString())
             con.Open()
             cmd.ExecuteNonQuery()

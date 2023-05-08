@@ -7,7 +7,7 @@ Public Class ucDASHBOARD
         'DGVUSERS.Columns(0).Width = 10
         DGVUSERS.Columns(0).HeaderText = "Username"
         'DGVUSERS.Columns(1).Width = 10
-        DGVUSERS.Columns(1).HeaderText = "User Type"
+        DGVUSERS.Columns(1).HeaderText = "Usertype"
         'DGVUSERS.Columns(2).Width = 10
         DGVUSERS.Columns(2).HeaderText = "Status"
 
@@ -31,6 +31,21 @@ Public Class ucDASHBOARD
         End Try
     End Sub
     Private Sub ucDASHBOARD_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+
+
+        DGVUSERS.EnableHeadersVisualStyles = False
+
+
+        ' Set the header cell backcolor
+        DGVUSERS.ColumnHeadersDefaultCellStyle.BackColor = Color.FromArgb(60, 179, 113)
+
+
+        ' Set the header cell forecolor
+        DGVUSERS.ColumnHeadersDefaultCellStyle.ForeColor = Color.White
+
+        ' Assuming you have a DataGridView control named "dataGridView1"
+
+
 
         users()
         DGVSETPROPERTY()

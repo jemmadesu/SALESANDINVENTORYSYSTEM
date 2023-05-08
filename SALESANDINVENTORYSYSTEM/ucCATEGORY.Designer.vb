@@ -35,7 +35,6 @@ Partial Class ucCATEGORY
         Me.Label11 = New System.Windows.Forms.Label()
         Me.Panel2 = New System.Windows.Forms.Panel()
         Me.BTNBACK = New System.Windows.Forms.Button()
-        Me.BTNADD = New System.Windows.Forms.Button()
         Me.BTNINSERT = New System.Windows.Forms.Button()
         Me.BTNUPDATE = New System.Windows.Forms.Button()
         Me.BTNDELETE = New System.Windows.Forms.Button()
@@ -45,6 +44,7 @@ Partial Class ucCATEGORY
         Me.Label3 = New System.Windows.Forms.Label()
         Me.TXTSEARCH = New System.Windows.Forms.TextBox()
         Me.BackgroundWorker1 = New System.ComponentModel.BackgroundWorker()
+        Me.BTNADD = New System.Windows.Forms.Button()
         Me.Panel2.SuspendLayout()
         CType(Me.DGVPRODUCTS, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.GroupBox1.SuspendLayout()
@@ -92,6 +92,7 @@ Partial Class ucCATEGORY
         '
         'TXTCATNAME
         '
+        Me.TXTCATNAME.Enabled = False
         Me.TXTCATNAME.Font = New System.Drawing.Font("Century Gothic", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.TXTCATNAME.ForeColor = System.Drawing.SystemColors.ControlDarkDark
         Me.TXTCATNAME.Location = New System.Drawing.Point(185, 136)
@@ -101,6 +102,7 @@ Partial Class ucCATEGORY
         '
         'TXTCATCODE
         '
+        Me.TXTCATCODE.Enabled = False
         Me.TXTCATCODE.Font = New System.Drawing.Font("Century Gothic", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.TXTCATCODE.ForeColor = System.Drawing.SystemColors.ControlDarkDark
         Me.TXTCATCODE.Location = New System.Drawing.Point(185, 71)
@@ -146,19 +148,6 @@ Partial Class ucCATEGORY
         Me.BTNBACK.TabIndex = 3
         Me.BTNBACK.Text = " Back"
         Me.BTNBACK.UseVisualStyleBackColor = False
-        '
-        'BTNADD
-        '
-        Me.BTNADD.BackColor = System.Drawing.Color.MediumSeaGreen
-        Me.BTNADD.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.BTNADD.Font = New System.Drawing.Font("Century Gothic", 9.0!)
-        Me.BTNADD.ForeColor = System.Drawing.Color.Snow
-        Me.BTNADD.Location = New System.Drawing.Point(343, 191)
-        Me.BTNADD.Name = "BTNADD"
-        Me.BTNADD.Size = New System.Drawing.Size(99, 36)
-        Me.BTNADD.TabIndex = 40
-        Me.BTNADD.Text = "Add"
-        Me.BTNADD.UseVisualStyleBackColor = False
         '
         'BTNINSERT
         '
@@ -289,6 +278,19 @@ Partial Class ucCATEGORY
         Me.TXTSEARCH.Size = New System.Drawing.Size(180, 23)
         Me.TXTSEARCH.TabIndex = 77
         '
+        'BTNADD
+        '
+        Me.BTNADD.BackColor = System.Drawing.Color.MediumSeaGreen
+        Me.BTNADD.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.BTNADD.Font = New System.Drawing.Font("Century Gothic", 9.0!)
+        Me.BTNADD.ForeColor = System.Drawing.Color.Snow
+        Me.BTNADD.Location = New System.Drawing.Point(343, 191)
+        Me.BTNADD.Name = "BTNADD"
+        Me.BTNADD.Size = New System.Drawing.Size(99, 36)
+        Me.BTNADD.TabIndex = 40
+        Me.BTNADD.Text = "Add"
+        Me.BTNADD.UseVisualStyleBackColor = False
+        '
         'ucCATEGORY
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -321,7 +323,6 @@ Partial Class ucCATEGORY
     Friend WithEvents Label11 As Label
     Friend WithEvents Panel2 As Panel
     Friend WithEvents BTNBACK As Button
-    Friend WithEvents BTNADD As Button
     Friend WithEvents BTNINSERT As Button
     Friend WithEvents BTNUPDATE As Button
     Friend WithEvents BTNDELETE As Button
@@ -331,4 +332,5 @@ Partial Class ucCATEGORY
     Friend WithEvents BackgroundWorker1 As System.ComponentModel.BackgroundWorker
     Friend WithEvents Label3 As Label
     Friend WithEvents TXTSEARCH As TextBox
+    Friend WithEvents BTNADD As Button
 End Class

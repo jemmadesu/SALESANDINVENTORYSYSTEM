@@ -47,6 +47,12 @@ Public Class ucNEAREXPIRY
 
         End Try
 
+        ' Set the backcolor of the row
+        DGVEXP.Columns(5).DefaultCellStyle.BackColor = Color.IndianRed
+
+        ' Set the forecolor of the row
+        DGVEXP.Columns(5).DefaultCellStyle.ForeColor = Color.White
+
     End Sub
 
     Private Sub DGVEXP_CellFormatting(sender As Object, e As DataGridViewCellFormattingEventArgs)

@@ -8,13 +8,13 @@ Public Class ucUSERMANAGEMENT
 
     Private Sub DGVSETPROPERTY()
         DGVUSERS.Columns(0).Width = 150
-        DGVUSERS.Columns(0).HeaderText = "Username"
+        DGVUSERS.Columns(0).HeaderText = "Ref ID"
         DGVUSERS.Columns(1).Width = 150
-        DGVUSERS.Columns(1).HeaderText = "User Type"
+        DGVUSERS.Columns(1).HeaderText = "Username"
         DGVUSERS.Columns(2).Width = 150
-        DGVUSERS.Columns(2).HeaderText = "User ID"
+        DGVUSERS.Columns(2).HeaderText = "Usertype"
         DGVUSERS.Columns(3).Width = 150
-        DGVUSERS.Columns(3).HeaderText = "Reference ID"
+        DGVUSERS.Columns(3).HeaderText = "User ID"
         DGVUSERS.Columns(4).Width = 150
         DGVUSERS.Columns(4).HeaderText = "Status"
         DGVUSERS.Columns(5).Width = 150
@@ -64,17 +64,17 @@ Public Class ucUSERMANAGEMENT
     End Sub
     Sub AutoID()
         If CBOACCTYPE.Text = "Admin" Then
-            TXTUI.Text = "USER" + "ADM" + "01" + TXTRI.Text
+            TXTUI.Text = "USER" + "RPHECMPC" + "01" + TXTRI.Text
 
         Else
         End If
         If CBOACCTYPE.Text = "Cashier" Then
-            TXTUI.Text = "USER" + "CHR" + "02" + TXTRI.Text
+            TXTUI.Text = "USER" + "RPHECMPC" + "02" + TXTRI.Text
 
         End If
 
         If CBOACCTYPE.Text = "Manager" Then
-            TXTUI.Text = "USER" + "MNG" + "03" + TXTRI.Text
+            TXTUI.Text = "USER" + "RPHECMPC" + "03" + TXTRI.Text
 
         End If
     End Sub
@@ -85,7 +85,7 @@ Public Class ucUSERMANAGEMENT
 
     Private Sub LOADUSERS()
         Try
-            Dim da As New MySqlDataAdapter("select username, usertype, userid, refid, status, password, firstname, middlename, lastname, telno, email, address from tbl_users", con)
+            Dim da As New MySqlDataAdapter("select refid, username, usertype, userid, status, password, firstname, middlename, lastname, telno, email, address from tbl_users", con)
             Dim dt As New DataSet()
             da.Fill(dt)
             DGVUSERS.DataSource = dt.Tables(0)
@@ -125,6 +125,11 @@ Public Class ucUSERMANAGEMENT
 
 
     Private Sub BTNDELETE_Click(sender As Object, e As EventArgs) Handles BTNDELETE.Click
+
+        If MessageBox.Show("Are you sure to remove this from the user Record?", "Delete", MessageBoxButtons.YesNo, MessageBoxIcon.Information, MessageBoxDefaultButton.Button2) = DialogResult.No Then
+            Exit Sub
+        End If
+
         ' NOT WORKING 
         For i As Integer = 0 To DGVUSERS.SelectedRows.Count - 1
             Dim cmd As New MySqlCommand("delete from tbl_users where userid = @userid ", con)
@@ -137,7 +142,20 @@ Public Class ucUSERMANAGEMENT
         MessageBox.Show("user deleted succesfully")
         activity = "deleted a user. user ID:" + TXTUI.Text
 
-
+        TXTUN.Text = ""
+        CBOACCTYPE.Text = ""
+        TXTUI.Text = ""
+        TXTRI.Text = ""
+        CBOSTATUS.Text = ""
+        TXTPW.Text = ""
+        TXTCP.Text = ""
+        TXTFN.Text = ""
+        TXTMN.Text = ""
+        TXTLN.Text = ""
+        TXTTEL.Text = ""
+        TXTEMAIL.Text = ""
+        TXTADDRESS.Text = ""
+        TXTNAME.Text = ""
 
         actlog()
 
@@ -147,8 +165,8 @@ Public Class ucUSERMANAGEMENT
 
         'ERROR TRAPPING
 
-        Getmax()
-        AutoID()
+        'Getmax()
+        'AutoID()
 
         TXTNAME.Text = TXTFN.Text + " " + TXTMN.Text + " " + TXTLN.Text
 
@@ -281,26 +299,35 @@ Public Class ucUSERMANAGEMENT
 
     Private Sub BTNEDIT_Click(sender As Object, e As EventArgs) Handles BTNEDIT.Click
 
-        con.Open()
-        cmd.CommandText = "Update tbl_users set username=@un, usertype=@ut, userid=@ui, refid=@ri, status=@st, password=@pw, firstname=@fn, middlename=@mn, lastname=@ln, telno=@tel, email=@mail, address=@add where userid= @ui"
+        PANELTYPE.Visible = False
 
-        With cmd.Parameters
-            .Clear()
-            .AddWithValue("un", TXTUN.Text)
-            .AddWithValue("ut", CBOACCTYPE.Text)
-            .AddWithValue("ui", TXTUI.Text)
-            .AddWithValue("ri", TXTRI.Text)
-            .AddWithValue("st", CBOSTATUS.Text)
-            .AddWithValue("pw", TXTPW.Text)
-            .AddWithValue("fn", TXTFN.Text)
-            .AddWithValue("mn", TXTMN.Text)
-            .AddWithValue("ln", TXTLN.Text)
-            .AddWithValue("tel", TXTTEL.Text)
-            .AddWithValue("mail", TXTEMAIL.Text)
-            .AddWithValue("add", TXTADDRESS.Text)
-        End With
-        cmd.ExecuteNonQuery()
-        con.Close()
+        Using con As New MySqlConnection(“Server=localhost;Port=3306;User=root;Password=password;Database=inventory_db”)
+            Using cmd As New MySqlCommand()
+                cmd.Connection = con
+                con.Open()
+
+                cmd.CommandText = "UPDATE tbl_users SET usertype = @ut, refid = @ri, status = @st, password = @pw, firstname = @fn, middlename = @mn, lastname = @ln, telno = @tel, email = @mail, address = @add WHERE userid = @ui"
+
+                cmd.Parameters.AddWithValue("@ut", CBOACC.Text)
+                cmd.Parameters.AddWithValue("@ui", TXTUI.Text)
+                cmd.Parameters.AddWithValue("@ri", TXTRI.Text)
+                cmd.Parameters.AddWithValue("@st", CBOSTATUS.Text)
+                cmd.Parameters.AddWithValue("@pw", TXTPW.Text)
+                cmd.Parameters.AddWithValue("@fn", TXTFN.Text)
+                cmd.Parameters.AddWithValue("@mn", TXTMN.Text)
+                cmd.Parameters.AddWithValue("@ln", TXTLN.Text)
+                cmd.Parameters.AddWithValue("@tel", TXTTEL.Text)
+                cmd.Parameters.AddWithValue("@mail", TXTEMAIL.Text)
+                cmd.Parameters.AddWithValue("@add", TXTADDRESS.Text)
+
+                cmd.ExecuteNonQuery()
+
+                con.Close()
+            End Using
+        End Using
+
+
+
         MsgBox("New user has been updated!", vbOKOnly + vbInformation, "Saving Successful")
         activity = "Updated a user. userID: " + TXTUI.Text
         actlog()
@@ -316,6 +343,7 @@ Public Class ucUSERMANAGEMENT
 
 
         CBOACCTYPE.Text = ""
+        TXTUN.Text = ""
         TXTUI.Text = ""
         TXTRI.Text = ""
         CBOSTATUS.Text = ""
@@ -330,6 +358,7 @@ Public Class ucUSERMANAGEMENT
         TXTNAME.Text = ""
         CHKPASS.Checked = False
 
+        TXTUN.Enabled = False
         TXTFN.Enabled = False
         TXTNAME.Enabled = False
         TXTMN.Enabled = False
@@ -347,20 +376,10 @@ Public Class ucUSERMANAGEMENT
     Private Sub CBOACCTYPE_SelectedIndexChanged(sender As Object, e As EventArgs) Handles CBOACCTYPE.SelectedIndexChanged
 
         BTNSAVE.Enabled = True
-
         BTNCANCEL.Enabled = True
 
         Getmax()
         AutoID()
-
-        TXTPW.Text = ""
-        TXTCP.Text = ""
-        TXTFN.Text = ""
-        TXTMN.Text = ""
-        TXTLN.Text = ""
-        TXTTEL.Text = ""
-        TXTEMAIL.Text = ""
-        TXTADDRESS.Text = ""
         TXTFN.Focus()
 
         TXTUN.Enabled = True
@@ -375,8 +394,7 @@ Public Class ucUSERMANAGEMENT
         TXTCP.Enabled = True
         TXTPW.Enabled = True
         CBOSTATUS.Enabled = True
-        Exit Sub
-        'End If
+
     End Sub
 
     Private Sub CBOSTATUS_SelectedIndexChanged(sender As Object, e As EventArgs) Handles CBOSTATUS.SelectedIndexChanged
@@ -487,14 +505,14 @@ Public Class ucUSERMANAGEMENT
 
     Private Sub DGVUSERS_CellClick(sender As Object, e As DataGridViewCellEventArgs) Handles DGVUSERS.CellClick
 
-
+        PANELTYPE.Visible = True
 
         If e.RowIndex >= 0 Then
             Dim row As DataGridViewRow = DGVUSERS.Rows(e.RowIndex)
-            TXTUN.Text = row.Cells(0).Value.ToString()
-            CBOACCTYPE.Text = row.Cells(1).Value.ToString()
-            TXTUI.Text = row.Cells(2).Value.ToString()
-            TXTRI.Text = row.Cells(3).Value.ToString()
+            TXTRI.Text = row.Cells(0).Value.ToString()
+            TXTUN.Text = row.Cells(1).Value.ToString()
+            CBOACCTYPE.Text = row.Cells(2).Value.ToString()
+            TXTUI.Text = row.Cells(3).Value.ToString()
             CBOSTATUS.Text = row.Cells(4).Value.ToString()
             TXTPW.Text = row.Cells(5).Value.ToString()
             TXTCP.Text = row.Cells(5).Value.ToString()
@@ -525,11 +543,5 @@ Public Class ucUSERMANAGEMENT
         CBOSTATUS.Enabled = True
     End Sub
 
-    Private Sub DGVUSERS_CellContentClick(sender As Object, e As DataGridViewCellEventArgs) Handles DGVUSERS.CellContentClick
 
-    End Sub
-
-    Private Sub TXTUN_TextChanged(sender As Object, e As EventArgs) Handles TXTUN.TextChanged
-
-    End Sub
 End Class

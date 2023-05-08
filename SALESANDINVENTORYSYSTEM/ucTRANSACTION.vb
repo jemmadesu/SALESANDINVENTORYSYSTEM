@@ -5,6 +5,8 @@ Imports System.IO
 
 
 Public Class ucTRANSACTION
+    Dim connection As MySqlConnection
+    Dim command As MySqlCommand
 
     Dim WithEvents PD As New PrintDocument
     Dim PPD As New PrintPreviewDialog
@@ -42,6 +44,9 @@ Public Class ucTRANSACTION
         End Try
     End Sub
     Private Sub ucTRANSACTION_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+
+
+        'FIFO
 
 
         DGVSUMMARY.EnableHeadersVisualStyles = False
@@ -219,6 +224,10 @@ Public Class ucTRANSACTION
         DGVPRODUCTS.Columns(6).HeaderText = "Unit"
         DGVPRODUCTS.Columns(7).Width = 200
         DGVPRODUCTS.Columns(7).HeaderText = "Stocks"
+        DGVPRODUCTS.Columns(8).Width = 200
+        DGVPRODUCTS.Columns(8).HeaderText = "Date Added"
+        DGVPRODUCTS.Columns(9).Width = 200
+        DGVPRODUCTS.Columns(9).HeaderText = "Remaining Days"
 
 
     End Sub
@@ -269,19 +278,31 @@ Public Class ucTRANSACTION
         '- FOR REFRESHING DATA FROM DATAGRID
         '- DISPLAYING THE HEADER NAMES
 
+        connection = New MySqlConnection
+
+
+        Dim dataset As New DataTable
+        Dim bindindsrc As New BindingSource
+        Dim dataadapt As New MySqlDataAdapter
 
         Try
 
-            Dim da As New MySqlDataAdapter("select prodid, prodname, prodbrand, prodcat, catcode, price, unit, quantity from tbl_stocks", con)
-            Dim dt As New DataSet()
-            da.Fill(dt)
-            Me.DGVPRODUCTS.DataSource = dt.Tables(0).DefaultView
+            con.Open()
+            command = New MySqlCommand("SELECT prodid, prodname, prodbrand, prodcat, catcode, price, unit, quantity, dateaddedstocks, DATEDIFF(dateaddedstocks, NOW()) AS Remaining_Days FROM tbl_stocks", con)
+
+            dataadapt.SelectCommand = command
+            dataadapt.Fill(dataset)
+            bindindsrc.DataSource = dataset
+
+            DGVPRODUCTS.DataSource = bindindsrc
+            dataadapt.Update(dataset)
+            con.Close()
+
             DGVSETPROPERTYPROD()
         Catch ex As Exception
 
-            MessageBox.Show(ex.ToString())
-
-
+        Finally
+            con.Dispose()
 
         End Try
     End Sub
@@ -476,9 +497,17 @@ Public Class ucTRANSACTION
 
 
 
-        If (TXTPAYMENT.Text) < (TOTALBILL.Text) Then
-            MessageBox.Show("The Payment is Insufficient", "Insufficient Payment", MessageBoxButtons.OK, MessageBoxIcon.Information)
-            Exit Sub
+        Dim payment As Double
+        Dim total As Double
+
+        If Double.TryParse(TXTPAYMENT.Text, payment) AndAlso Double.TryParse(TOTALBILL.Text, total) Then
+            If payment < total Then
+                MessageBox.Show("The Payment is Insufficient", "Insufficient Payment", MessageBoxButtons.OK, MessageBoxIcon.Information)
+                Exit Sub
+            End If
+        Else
+            ' Handle the case where the input values cannot be parsed as numbers
+            MessageBox.Show("Invalid payment or total bill amount", "Invalid Input", MessageBoxButtons.OK, MessageBoxIcon.Error)
         End If
 
 
@@ -522,11 +551,12 @@ Public Class ucTRANSACTION
             activity = "Save purchase order. Order No:" + TXTOR.Text
             actlog()
 
+
             Dim x As Integer
             For x = 0 To DGVCART.Rows.Count - 1
 
                 con.Open()
-                cmd.CommandText = "insert into tbl_transaction values (NULL, @or, @dt, @pi, @pn, @pb, @cn, @cc, @un, @qt, @pm, @tb, @ch, @da, @td, @rd)"
+                cmd.CommandText = "insert into tbl_transaction values (NULL, @or, @ut, @una, @dt, @pi, @pn, @pb, @cn, @cc, @un, @qt, @pm, @tb, @ch, @da, @td, @rd)"
 
 
 
@@ -536,6 +566,10 @@ Public Class ucTRANSACTION
 
 
                     .AddWithValue("or", TXTOR.Text)
+
+                    .AddWithValue("ut", lblut.Text)
+
+                    .AddWithValue("una", lblun.Text)
 
                     .AddWithValue("dt", CBODISCOUNT.Text)
 
@@ -559,9 +593,9 @@ Public Class ucTRANSACTION
 
                     .AddWithValue("ch", TXTCHANGE.Text)
 
-                    .AddWithValue("da", Convert.ToInt32(TXTDISCAMOUNT.Text))
+                    .AddWithValue("da", TXTBILL.Text)
 
-                    .AddWithValue("td", TRANSADATE.Value)
+                    .AddWithValue("td", Format(Date.Now, "yyyy-MM-dd"))
 
                     .AddWithValue("rd", DGVCART.Rows(x).Cells(9).Value.ToString)
 
@@ -572,7 +606,7 @@ Public Class ucTRANSACTION
 
                 MessageBox.Show("Thank you Very Much", "Thank you", MessageBoxButtons.OK, MessageBoxIcon.Information)
 
-                Dim insrtslecmd As New MySqlCommand("INSERT INTO tbl_sales (orderno, transadate, discounttype, totalbill, payment, totalchange) VALUES (" & Me.TXTOR.Text & ",'" & Me.lbldate.Text & "', '" & Me.CBODISCOUNT.Text & "', '" & Me.TXTBILL.Text & "', '" & Me.TXTPAYMENT.Text & "', '" & Me.TXTCHANGE.Text & "')", con)
+                Dim insrtslecmd As New MySqlCommand("INSERT INTO tbl_sales (orderno, transadate, discounttype, totalbill, payment, totalchange) VALUES (" & Me.TXTOR.Text & ",'" & Me.lbldate.Text & "', '" & Me.CBODISCOUNT.Text & "', '" & Me.TOTALBILL.Text & "', '" & Me.TXTPAYMENT.Text & "', '" & Me.TXTCHANGE.Text & "')", con)
                 con.Open()
                 insrtslecmd.ExecuteNonQuery()
                 con.Close()
@@ -794,10 +828,48 @@ Public Class ucTRANSACTION
         End If
     End Sub
 
-    Private Sub DGVSUMMARY_CellFormatting(sender As Object, e As DataGridViewCellFormattingEventArgs) Handles DGVSUMMARY.CellFormatting
+
+    Private Sub DGVPRODUCTS_CellFormatting(sender As Object, e As DataGridViewCellFormattingEventArgs) Handles DGVPRODUCTS.CellFormatting
+
+
+
+        ' Check if the current cell belongs to the Remaining_Days column
+        If DGVPRODUCTS.Columns(e.ColumnIndex).Name = "Remaining_Days" Then
+            ' Get the remaining days value from the cell
+            Dim remainingDays As Integer
+            If Integer.TryParse(e.Value.ToString(), remainingDays) Then
+                ' Check if the remaining days is less than or equal to 365 (1 year)
+                If remainingDays <= 365 Then
+                    ' Set the row style to red
+                    DGVPRODUCTS.Rows(e.RowIndex).DefaultCellStyle.BackColor = Color.Cornsilk
+                    DGVPRODUCTS.Rows(e.RowIndex).DefaultCellStyle.ForeColor = Color.DimGray
+                End If
+            End If
+        End If
+
+
+
+
+
+
+
+
+
+        '' Check if the current cell belongs to the ExpirationDate column
+        'If DGVPRODUCTS.Columns(e.ColumnIndex).Name = "dateadded" Then
+        '    ' Get the expiration date value from the cell
+        '    Dim expirationDate As Date
+        '    If Date.TryParse(e.Value.ToString(), expirationDate) Then
+        '        ' Compare with the current year
+        '        If expirationDate.Year = DateTime.Now.Year Then
+        '            ' Set the row style to red
+        '            DGVPRODUCTS.Rows(e.RowIndex).DefaultCellStyle.BackColor = Color.Red
+        '            DGVPRODUCTS.Rows(e.RowIndex).DefaultCellStyle.ForeColor = Color.White
+        '        End If
+        '    End If
+        'End If
 
 
     End Sub
-
 
 End Class

@@ -23,8 +23,8 @@ Partial Class ucUSERMANAGEMENT
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(ucUSERMANAGEMENT))
-        Dim DataGridViewCellStyle3 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle4 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle1 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle2 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Me.TXTMN = New System.Windows.Forms.TextBox()
         Me.CBOSTATUS = New System.Windows.Forms.ComboBox()
         Me.CBOACCTYPE = New System.Windows.Forms.ComboBox()
@@ -32,6 +32,7 @@ Partial Class ucUSERMANAGEMENT
         Me.txtsearch = New System.Windows.Forms.TextBox()
         Me.CHKPASS = New System.Windows.Forms.CheckBox()
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
+        Me.TXTUN = New System.Windows.Forms.TextBox()
         Me.Panel1 = New System.Windows.Forms.Panel()
         Me.Label12 = New System.Windows.Forms.Label()
         Me.TXTCP = New System.Windows.Forms.TextBox()
@@ -65,10 +66,13 @@ Partial Class ucUSERMANAGEMENT
         Me.BTNSAVE = New System.Windows.Forms.Button()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.DGVUSERS = New System.Windows.Forms.DataGridView()
-        Me.TXTUN = New System.Windows.Forms.TextBox()
+        Me.PANELTYPE = New System.Windows.Forms.Panel()
+        Me.Label2 = New System.Windows.Forms.Label()
+        Me.CBOACC = New System.Windows.Forms.ComboBox()
         Me.GroupBox1.SuspendLayout()
         Me.Panel2.SuspendLayout()
         CType(Me.DGVUSERS, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.PANELTYPE.SuspendLayout()
         Me.SuspendLayout()
         '
         'TXTMN
@@ -146,6 +150,16 @@ Partial Class ucUSERMANAGEMENT
         Me.GroupBox1.Size = New System.Drawing.Size(481, 174)
         Me.GroupBox1.TabIndex = 95
         Me.GroupBox1.TabStop = False
+        '
+        'TXTUN
+        '
+        Me.TXTUN.Enabled = False
+        Me.TXTUN.Font = New System.Drawing.Font("Century Gothic", 9.0!)
+        Me.TXTUN.Location = New System.Drawing.Point(150, 40)
+        Me.TXTUN.Multiline = True
+        Me.TXTUN.Name = "TXTUN"
+        Me.TXTUN.Size = New System.Drawing.Size(314, 20)
+        Me.TXTUN.TabIndex = 141
         '
         'Panel1
         '
@@ -500,23 +514,23 @@ Partial Class ucUSERMANAGEMENT
         'DGVUSERS
         '
         Me.DGVUSERS.BackgroundColor = System.Drawing.Color.White
-        DataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
-        DataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Control
-        DataGridViewCellStyle3.Font = New System.Drawing.Font("Century Gothic", 9.75!)
-        DataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.ControlDarkDark
-        DataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.MediumSeaGreen
-        DataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText
-        DataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
-        Me.DGVUSERS.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle3
+        DataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control
+        DataGridViewCellStyle1.Font = New System.Drawing.Font("Century Gothic", 9.75!)
+        DataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.ControlDarkDark
+        DataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.MediumSeaGreen
+        DataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+        DataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.DGVUSERS.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle1
         Me.DGVUSERS.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        DataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
-        DataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.Window
-        DataGridViewCellStyle4.Font = New System.Drawing.Font("Century Gothic", 9.75!)
-        DataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.ControlDarkDark
-        DataGridViewCellStyle4.SelectionBackColor = System.Drawing.Color.MediumSeaGreen
-        DataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText
-        DataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
-        Me.DGVUSERS.DefaultCellStyle = DataGridViewCellStyle4
+        DataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window
+        DataGridViewCellStyle2.Font = New System.Drawing.Font("Century Gothic", 9.75!)
+        DataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlDarkDark
+        DataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.MediumSeaGreen
+        DataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+        DataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
+        Me.DGVUSERS.DefaultCellStyle = DataGridViewCellStyle2
         Me.DGVUSERS.Location = New System.Drawing.Point(576, 136)
         Me.DGVUSERS.Name = "DGVUSERS"
         Me.DGVUSERS.ReadOnly = True
@@ -525,21 +539,43 @@ Partial Class ucUSERMANAGEMENT
         Me.DGVUSERS.Size = New System.Drawing.Size(692, 518)
         Me.DGVUSERS.TabIndex = 145
         '
-        'TXTUN
+        'PANELTYPE
         '
-        Me.TXTUN.Enabled = False
-        Me.TXTUN.Font = New System.Drawing.Font("Century Gothic", 9.0!)
-        Me.TXTUN.Location = New System.Drawing.Point(150, 40)
-        Me.TXTUN.Multiline = True
-        Me.TXTUN.Name = "TXTUN"
-        Me.TXTUN.Size = New System.Drawing.Size(314, 20)
-        Me.TXTUN.TabIndex = 141
+        Me.PANELTYPE.Controls.Add(Me.Label2)
+        Me.PANELTYPE.Controls.Add(Me.CBOACC)
+        Me.PANELTYPE.Location = New System.Drawing.Point(21, 136)
+        Me.PANELTYPE.Name = "PANELTYPE"
+        Me.PANELTYPE.Size = New System.Drawing.Size(272, 49)
+        Me.PANELTYPE.TabIndex = 146
+        Me.PANELTYPE.Visible = False
+        '
+        'Label2
+        '
+        Me.Label2.AutoSize = True
+        Me.Label2.Font = New System.Drawing.Font("Century Gothic", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label2.ForeColor = System.Drawing.SystemColors.ControlDarkDark
+        Me.Label2.Location = New System.Drawing.Point(36, 18)
+        Me.Label2.Name = "Label2"
+        Me.Label2.Size = New System.Drawing.Size(95, 17)
+        Me.Label2.TabIndex = 137
+        Me.Label2.Text = "Account Type"
+        '
+        'CBOACC
+        '
+        Me.CBOACC.Font = New System.Drawing.Font("Century Gothic", 9.0!)
+        Me.CBOACC.FormattingEnabled = True
+        Me.CBOACC.Items.AddRange(New Object() {"Admin", "Cashier", "Manager"})
+        Me.CBOACC.Location = New System.Drawing.Point(162, 18)
+        Me.CBOACC.Name = "CBOACC"
+        Me.CBOACC.Size = New System.Drawing.Size(102, 25)
+        Me.CBOACC.TabIndex = 136
         '
         'ucUSERMANAGEMENT
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.White
+        Me.Controls.Add(Me.PANELTYPE)
         Me.Controls.Add(Me.DGVUSERS)
         Me.Controls.Add(Me.Label1)
         Me.Controls.Add(Me.BTNCANCEL)
@@ -579,6 +615,8 @@ Partial Class ucUSERMANAGEMENT
         Me.GroupBox1.PerformLayout()
         Me.Panel2.ResumeLayout(False)
         CType(Me.DGVUSERS, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.PANELTYPE.ResumeLayout(False)
+        Me.PANELTYPE.PerformLayout()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -624,4 +662,7 @@ Partial Class ucUSERMANAGEMENT
     Friend WithEvents Label1 As Label
     Friend WithEvents DGVUSERS As DataGridView
     Friend WithEvents TXTUN As TextBox
+    Friend WithEvents PANELTYPE As Panel
+    Friend WithEvents Label2 As Label
+    Friend WithEvents CBOACC As ComboBox
 End Class

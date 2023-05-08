@@ -60,10 +60,19 @@ Public Class ucOBSELETEINVENTORY
 
         End Try
 
+        ' Set the backcolor of the row
+        DGVEXPIREDPROD.Columns(10).DefaultCellStyle.BackColor = Color.IndianRed
+
+        ' Set the forecolor of the row
+        DGVEXPIREDPROD.Columns(10).DefaultCellStyle.ForeColor = Color.White
 
     End Sub
 
     Private Sub BTNARCHIVE_Click(sender As Object, e As EventArgs) Handles BTNARCHIVE.Click
+
+        If MessageBox.Show("Are you sure to remove this from the Stock List?", "Archive", MessageBoxButtons.YesNo, MessageBoxIcon.Information, MessageBoxDefaultButton.Button2) = DialogResult.No Then
+            Exit Sub
+        End If
 
         For Each row As DataGridViewRow In DGVEXPIREDPROD.SelectedRows
             Dim stockid As Integer = CInt(row.Cells("stockid").Value)
@@ -80,7 +89,7 @@ Public Class ucOBSELETEINVENTORY
 
 
             'Insert selected columns into the destination table
-            Dim sqlInsert As String = "INSERT INTO tbl_expiredprod (stockid, prodid, prodname, prodman, prodbrand, prodcat, catcode, price, unit, quantity, expirationdate) VALUES (@stockid, @prodid, @prodname, @prodman, @prodbrand, @prodcat, @catcode, @price, @unit, @quantity, @expirationdate)"
+            Dim sqlInsert As String = "INSERT INTO tbl_expiredprod (stockid, prodid, prodname, prodman, prodbrand, prodcat, catcode, price, unit, quantity, expirationdate, dateadded) VALUES (@stockid, @prodid, @prodname, @prodman, @prodbrand, @prodcat, @catcode, @price, @unit, @quantity, @expirationdate, @dateadded)"
             Using conn As New MySqlConnection(“Server=localhost;Port=3306;User=root;Password=password;Database=inventory_db”)
                 Using cmd As New MySqlCommand(sqlInsert, conn)
 
@@ -95,6 +104,7 @@ Public Class ucOBSELETEINVENTORY
                     cmd.Parameters.AddWithValue("@unit", unit)
                     cmd.Parameters.AddWithValue("@quantity", quantity)
                     cmd.Parameters.AddWithValue("@expirationdate", expirationdate)
+                    cmd.Parameters.AddWithValue("@dateadded", Format(Date.Now, "yyyy-MM-dd"))
 
                     conn.Open()
                     cmd.ExecuteNonQuery()
@@ -105,7 +115,7 @@ Public Class ucOBSELETEINVENTORY
         Next
 
         For i As Integer = 0 To DGVEXPIREDPROD.SelectedRows.Count - 1
-            Dim cmd As New MySqlCommand("delete from tbl_products where prodid = @prodid", con)
+            Dim cmd As New MySqlCommand("delete from tbl_stocks where prodid = @prodid", con)
             cmd.Parameters.AddWithValue("prodid", DGVEXPIREDPROD.SelectedRows(i).Cells(1).Value.ToString())
             con.Open()
             cmd.ExecuteNonQuery()
@@ -122,7 +132,7 @@ Public Class ucOBSELETEINVENTORY
 
         Try
 
-            Dim da As New MySqlDataAdapter("select stockid, prodid, prodname, prodman, prodbrand, prodcat, catcode, price, unit, quantity, expirationdate from tbl_products  WHERE expirationdate  < Now();", con)
+            Dim da As New MySqlDataAdapter("select stockid, prodid, prodname, prodman, prodbrand, prodcat, catcode, price, unit, quantity, expirationdate from tbl_stocks  WHERE expirationdate  < Now();", con)
             Dim dt As New DataSet()
             da.Fill(dt)
             DGVEXPIREDPROD.DataSource = dt.Tables(0)

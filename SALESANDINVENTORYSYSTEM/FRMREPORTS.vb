@@ -1,6 +1,24 @@
 ﻿Imports MySql.Data.MySqlClient
 Public Class FRMREPORTS
     Private Sub FRMREPORTS_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        '------------------------------------- EXPIRED PRODUCTS -------------------------
+        'TODO: This line of code loads data into the 'inventory_dbDataSet.tbl_expiredprod' table. You can move, or remove it, as needed.
+        Me.RPTEXP.SetDisplayMode(Microsoft.Reporting.WinForms.DisplayMode.PrintLayout)
+        Me.tbl_expiredprodTableAdapter.Fill(Me.inventory_dbDataSet.tbl_expiredprod)
+
+        Me.RPTEXP.RefreshReport()
+        '------------------------------------- OUT OF STOCKS -------------------------
+        'TODO: This line of code loads data into the 'inventory_dbDataSet.tbl_stocksout' table. You can move, or remove it, as needed.
+        Me.RPTOUTOFSTOCKS.SetDisplayMode(Microsoft.Reporting.WinForms.DisplayMode.PrintLayout)
+        Me.tbl_stocksoutTableAdapter.Fill(Me.inventory_dbDataSet.tbl_stocksout)
+
+        Me.RPTOUTOFSTOCKS.RefreshReport()
+        ''--------------------------------- EXPIRED PRODUCTS ------------
+        ''TODO: This line of code loads data into the 'inventory_dbDataSet.tbl_expiredprod' table. You can move, or remove it, as needed.
+        'Me.RPTEXP.SetDisplayMode(Microsoft.Reporting.WinForms.DisplayMode.PrintLayout)
+        'Me.tbl_expiredprodTableAdapter.Fill(Me.inventory_dbDataSet.tbl_expiredprod)
+
+        'Me.RPTEXP.RefreshReport()
         'TODO: This line of code loads data into the 'inventory_dbDataSet.tbl_transaction' table. You can move, or remove it, as needed.
         Me.RPTTRANSACTIONRECORDS.SetDisplayMode(Microsoft.Reporting.WinForms.DisplayMode.PrintLayout)
         Me.tbl_transactionTableAdapter.Fill(Me.inventory_dbDataSet.tbl_transaction)
@@ -28,19 +46,6 @@ Public Class FRMREPORTS
 
 
         Me.RPTSALES.RefreshReport()
-        '------------------------------------- OUT OF STOCKS -------------------------
-        'TODO: This line of code loads data into the 'inventory_dbDataSet.tbl_stocksout' table. You can move, or remove it, as needed.
-        Me.RPTOUTOFSTOCKS.SetDisplayMode(Microsoft.Reporting.WinForms.DisplayMode.PrintLayout)
-        Me.tbl_stocksoutTableAdapter.Fill(Me.inventory_dbDataSet.tbl_stocksout)
-
-        Me.RPTOUTOFSTOCKS.RefreshReport()
-
-        '--------------------------------- EXPIRED PRODUCTS ------------
-        'TODO: This line of code loads data into the 'inventory_dbDataSet.tbl_expiredprod' table. You can move, or remove it, as needed.
-        Me.RPTEXP.SetDisplayMode(Microsoft.Reporting.WinForms.DisplayMode.PrintLayout)
-        Me.tbl_expiredprodTableAdapter.Fill(Me.inventory_dbDataSet.tbl_expiredprod)
-
-        Me.RPTEXP.RefreshReport()
         '------------------------- PRODUCTS ---------------------
         'TODO: This line of code loads data into the 'inventory_dbDataSet.tbl_products' table. You can move, or remove it, as needed.
         Me.RPTPRODUCTS.SetDisplayMode(Microsoft.Reporting.WinForms.DisplayMode.PrintLayout)
@@ -53,8 +58,6 @@ Public Class FRMREPORTS
         Me.tbl_usersTableAdapter.Fill(Me.inventory_dbDataSet.tbl_users)
 
         Me.RPTUSERS.RefreshReport()
-
-
     End Sub
     Private Sub BTNFILTER_Click(sender As Object, e As EventArgs) Handles BTNFILTER.Click
         Me.tbl_usersTableAdapter.FillByusertype(Me.inventory_dbDataSet.tbl_users, CBOUT.Text)
@@ -71,12 +74,16 @@ Public Class FRMREPORTS
     Private Sub BTNCLEAR_Click(sender As Object, e As EventArgs) Handles BTNCLEAR.Click
         clear()
     End Sub
-    'Private Sub BTNFILL_Click(sender As Object, e As EventArgs)
-    '    Me.tbl_productsTableAdapter.FillByDate(Me.inventory_dbDataSet.tbl_products, Date1.Value.ToShortDateString, Date2.Value.ToShortDateString)
+    Private Sub BTNFILL_Click_1(sender As Object, e As EventArgs) Handles BTNFILL.Click
+        Me.tbl_productsTableAdapter.FillByDate(Me.inventory_dbDataSet.tbl_products, Date1.Value.ToShortDateString, Date2.Value.ToShortDateString)
 
-    '    Me.RPTPRODUCTS.RefreshReport()
-    'End Sub
+        Me.RPTPRODUCTS.RefreshReport()
+    End Sub
+    Private Sub BTNCLR_Click(sender As Object, e As EventArgs) Handles BTNCLR.Click
+        Me.tbl_productsTableAdapter.Fill(Me.inventory_dbDataSet.tbl_products)
 
+        Me.RPTPRODUCTS.RefreshReport()
+    End Sub
     Private Sub BTNCLRDATE_Click(sender As Object, e As EventArgs)
         Me.tbl_productsTableAdapter.Fill(Me.inventory_dbDataSet.tbl_products)
 
@@ -95,17 +102,7 @@ Public Class FRMREPORTS
         Me.RPTEXP.RefreshReport()
     End Sub
 
-    Private Sub OUTFILL_Click(sender As Object, e As EventArgs) Handles OUTFILL.Click
-        Me.tbl_stocksoutTableAdapter.FillByOUT(Me.inventory_dbDataSet.tbl_stocksout, Date1OUT.Value.ToShortDateString, Date2OUT.Value.ToShortDateString)
 
-        Me.RPTOUTOFSTOCKS.RefreshReport()
-    End Sub
-
-    Private Sub OUTCLR_Click(sender As Object, e As EventArgs) Handles OUTCLR.Click
-        Me.tbl_stocksoutTableAdapter.Fill(Me.inventory_dbDataSet.tbl_stocksout)
-
-        Me.RPTOUTOFSTOCKS.RefreshReport()
-    End Sub
 
     Private Sub SALESFILL_Click(sender As Object, e As EventArgs) Handles SALESFILL.Click
         Me.tbl_salesTableAdapter.FillBySALES(Me.inventory_dbDataSet.tbl_sales, Date1SALES.Value.ToShortDateString, Date2SALES.Value.ToShortDateString)
@@ -135,7 +132,7 @@ Public Class FRMREPORTS
     End Sub
 
     Private Sub STOCKSFILL_Click(sender As Object, e As EventArgs) Handles STOCKSFILL.Click
-        Me.tbl_stocksTableAdapter.FillByADD(Me.inventory_dbDataSet.tbl_stocks, Date1SALES.Value.ToShortDateString, Date2SALES.Value.ToShortDateString)
+        Me.tbl_stocksTableAdapter.FillByADD(Me.inventory_dbDataSet.tbl_stocks, Date1St.Value.ToShortDateString, Date2St.Value.ToShortDateString)
 
         Me.RPTSALES.RefreshReport()
     End Sub
@@ -145,12 +142,25 @@ Public Class FRMREPORTS
 
         Me.RPTSTOCKS.RefreshReport()
     End Sub
+    Private Sub BTNFILLTRANS_Click(sender As Object, e As EventArgs) Handles BTNFILLTRANS.Click
+        Me.tbl_transactionTableAdapter.FillByTR(Me.inventory_dbDataSet.tbl_transaction, DT1.Value.ToShortDateString, DT2.Value.ToShortDateString)
 
-    Private Sub TCREPORTS_SelectedIndexChanged(sender As Object, e As EventArgs) Handles TCREPORTS.SelectedIndexChanged
+        Me.RPTTRANSACTIONRECORDS.RefreshReport()
+    End Sub
+    Private Sub BTNCLRTRANS_Click(sender As Object, e As EventArgs) Handles BTNCLRTRANS.Click
+        Me.tbl_transactionTableAdapter.Fill(Me.inventory_dbDataSet.tbl_transaction)
 
+        Me.RPTTRANSACTIONRECORDS.RefreshReport()
+    End Sub
+    Private Sub OUTFILL_Click(sender As Object, e As EventArgs) Handles OUTFILL.Click
+        Me.tbl_stocksoutTableAdapter.FillBy(Me.inventory_dbDataSet.tbl_stocksout, Date1OUT.Value.ToShortDateString, Date2OUT.Value.ToShortDateString)
+
+        Me.RPTOUTOFSTOCKS.RefreshReport()
     End Sub
 
-    Private Sub TPPRODS_Click(sender As Object, e As EventArgs) Handles TPPRODS.Click
+    Private Sub OUTCLR_Click(sender As Object, e As EventArgs) Handles OUTCLR.Click
+        Me.tbl_stocksoutTableAdapter.Fill(Me.inventory_dbDataSet.tbl_stocksout)
 
+        Me.RPTOUTOFSTOCKS.RefreshReport()
     End Sub
 End Class

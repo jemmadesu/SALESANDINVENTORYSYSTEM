@@ -24,7 +24,7 @@ Public Class ucLOWQTY
         DGVLOWQTY.Columns(8).Width = 150
         DGVLOWQTY.Columns(8).HeaderText = "Unit"
         DGVLOWQTY.Columns(9).Width = 150
-        DGVLOWQTY.Columns(9).HeaderText = "Quantity"
+        DGVLOWQTY.Columns(9).HeaderText = "Stocks"
         DGVLOWQTY.Columns(10).Width = 150
         DGVLOWQTY.Columns(10).HeaderText = "Expiration Date"
     End Sub
@@ -57,6 +57,12 @@ Public Class ucLOWQTY
             con.Dispose()
 
         End Try
+
+        ' Set the backcolor of the row
+        DGVLOWQTY.Columns(9).DefaultCellStyle.BackColor = Color.IndianRed
+
+        ' Set the forecolor of the row
+        DGVLOWQTY.Columns(9).DefaultCellStyle.ForeColor = Color.White
 
 
     End Sub

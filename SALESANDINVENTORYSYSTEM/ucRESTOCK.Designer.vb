@@ -174,7 +174,7 @@ Partial Class ucRESTOCK
         Me.BTNSAVE.Name = "BTNSAVE"
         Me.BTNSAVE.Size = New System.Drawing.Size(152, 31)
         Me.BTNSAVE.TabIndex = 8
-        Me.BTNSAVE.Text = "Restock"
+        Me.BTNSAVE.Text = "Add restock"
         Me.BTNSAVE.UseVisualStyleBackColor = False
         '
         'Label4

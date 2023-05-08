@@ -407,11 +407,11 @@
       <SubType>Designer</SubType>
       <LastGenOutput>Resources.Designer.vb</LastGenOutput>
     </EmbeddedResource>
+    <EmbeddedResource Include="RPTEXP.rdlc" />
+    <EmbeddedResource Include="RPTOUTOFSTOCKS.rdlc" />
     <EmbeddedResource Include="RPTPRODUCTS.rdlc" />
     <EmbeddedResource Include="RPTSTOCKS.rdlc" />
     <EmbeddedResource Include="RPTACTLOG.rdlc" />
-    <EmbeddedResource Include="RPTEXP.rdlc" />
-    <EmbeddedResource Include="RPTOUTOFSTOCKS.rdlc" />
     <EmbeddedResource Include="RPTSALES.rdlc" />
     <EmbeddedResource Include="RPTSUPPLIER.rdlc" />
     <EmbeddedResource Include="RPTTRANSACTIONRECORDS.rdlc" />

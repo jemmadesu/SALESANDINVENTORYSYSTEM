@@ -32,23 +32,23 @@ Public Class ucCATEGORY
 
         End Try
     End Sub
-    Private Sub Getmax()
-        OpenCon()
-        cmd.CommandText = "Select * from tbl_category"
-        dr = cmd.ExecuteReader
-        If dr.HasRows Then
-            Dim getno As Integer
-            con.Close()
-            OpenCon()
-            cmd.CommandText = "Select Max(ID) from tbl_category"
-            getno = Convert.ToInt64(cmd.ExecuteScalar())
-            con.Close()
-            TXTID.Text = getno + 1
-        Else
-            TXTID.Text = 1
-            con.Close()
-        End If
-    End Sub
+    'Private Sub Getmax()
+    '    OpenCon()
+    '    cmd.CommandText = "Select * from tbl_category"
+    '    dr = cmd.ExecuteReader
+    '    If dr.HasRows Then
+    '        Dim getno As Integer
+    '        con.Close()
+    '        OpenCon()
+    '        cmd.CommandText = "Select Max(ID) from tbl_category"
+    '        getno = Convert.ToInt64(cmd.ExecuteScalar())
+    '        con.Close()
+    '        TXTID.Text = getno + 1
+    '    Else
+    '        TXTID.Text = 1
+    '        con.Close()
+    '    End If
+    'End Sub
 
 
     Private Sub DGVSETPROPERTY()
@@ -95,7 +95,13 @@ Public Class ucCATEGORY
     End Sub
 
     Private Sub BTNADD_Click_1(sender As Object, e As EventArgs) Handles BTNADD.Click
-        Getmax()
+        TXTCATNAME.Enabled = True
+        TXTCATCODE.Enabled = True
+        BTNINSERT.Enabled = True
+        BTNUPDATE.Enabled = False
+        BTNDELETE.Enabled = False
+        BTNADD.Enabled = False
+        'Getmax()
     End Sub
 
     Private Sub BTNINSERT_Click_1(sender As Object, e As EventArgs) Handles BTNINSERT.Click
@@ -124,6 +130,8 @@ Public Class ucCATEGORY
         TXTID.Text = ""
         TXTCATNAME.Text = ""
         TXTCATCODE.Text = ""
+        TXTCATNAME.Enabled = False
+        TXTCATCODE.Enabled = False
         load_data()
 
     End Sub
@@ -152,10 +160,23 @@ Public Class ucCATEGORY
         TXTID.Text = ""
         TXTCATNAME.Text = ""
         TXTCATCODE.Text = ""
+        TXTCATNAME.Enabled = False
+        TXTCATCODE.Enabled = False
+        BTNADD.Enabled = True
+        BTNINSERT.Enabled = False
+        BTNUPDATE.Enabled = False
+        BTNDELETE.Enabled = False
+
         load_data()
     End Sub
 
     Private Sub BTNDELETE_Click_1(sender As Object, e As EventArgs) Handles BTNDELETE.Click
+
+        If MessageBox.Show("Are you sure to remove this from the Category Record?", "Delete", MessageBoxButtons.YesNo, MessageBoxIcon.Information, MessageBoxDefaultButton.Button2) = DialogResult.No Then
+            Exit Sub
+        End If
+
+
         For i As Integer = 0 To DGVPRODUCTS.SelectedRows.Count - 1
             Dim cmd As New MySqlCommand("delete from tbl_category where catcode = @cc ", con)
             cmd.Parameters.AddWithValue("cc", DGVPRODUCTS.SelectedRows(i).Cells(0).Value.ToString())
@@ -169,11 +190,25 @@ Public Class ucCATEGORY
         actlog()
         TXTCATCODE.Text = ""
         TXTCATNAME.Text = ""
+        BTNADD.Enabled = True
+        BTNUPDATE.Enabled = False
+        BTNDELETE.Enabled = False
+
     End Sub
 
 
 
     Private Sub DGVPRODUCTS_CellClick(sender As Object, e As DataGridViewCellEventArgs) Handles DGVPRODUCTS.CellContentClick
+
+        TXTCATNAME.Enabled = True
+        TXTCATCODE.Enabled = True
+        BTNADD.Enabled = False
+        BTNINSERT.Enabled = False
+
+        BTNUPDATE.Enabled = True
+        BTNDELETE.Enabled = True
+
+
         If e.RowIndex >= 0 Then
             Dim row As DataGridViewRow
             row = DGVPRODUCTS.Rows(e.RowIndex)

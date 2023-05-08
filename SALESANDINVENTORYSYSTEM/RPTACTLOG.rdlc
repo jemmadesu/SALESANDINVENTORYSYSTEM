@@ -12,10 +12,10 @@
               <Width>1.54167in</Width>
             </TablixColumn>
             <TablixColumn>
-              <Width>3.53125in</Width>
+              <Width>4.45833in</Width>
             </TablixColumn>
             <TablixColumn>
-              <Width>1.73958in</Width>
+              <Width>4.76041in</Width>
             </TablixColumn>
           </TablixColumns>
           <TablixRows>
@@ -35,6 +35,7 @@
                               <Style>
                                 <FontFamily>Century Gothic</FontFamily>
                                 <FontSize>16pt</FontSize>
+                                <FontWeight>Bold</FontWeight>
                                 <Color>#666666</Color>
                               </Style>
                             </TextRun>
@@ -47,12 +48,10 @@
                       <rd:DefaultName>Textbox2</rd:DefaultName>
                       <Style>
                         <Border>
-                          <Style>None</Style>
+                          <Style>Solid</Style>
                         </Border>
                         <BottomBorder>
                           <Color>LightGrey</Color>
-                          <Style>Solid</Style>
-                          <Width>1pt</Width>
                         </BottomBorder>
                         <BackgroundColor>White</BackgroundColor>
                         <PaddingLeft>2pt</PaddingLeft>
@@ -74,7 +73,8 @@
                             <TextRun>
                               <Value>Usertype</Value>
                               <Style>
-                                <FontSize>11pt</FontSize>
+                                <FontFamily>Century Gothic</FontFamily>
+                                <FontSize>16pt</FontSize>
                                 <FontWeight>Bold</FontWeight>
                                 <Color>#666666</Color>
                               </Style>
@@ -88,12 +88,10 @@
                       <rd:DefaultName>Textbox3</rd:DefaultName>
                       <Style>
                         <Border>
-                          <Style>None</Style>
+                          <Style>Solid</Style>
                         </Border>
                         <BottomBorder>
                           <Color>LightGrey</Color>
-                          <Style>Solid</Style>
-                          <Width>1pt</Width>
                         </BottomBorder>
                         <BackgroundColor>White</BackgroundColor>
                         <PaddingLeft>2pt</PaddingLeft>
@@ -115,7 +113,8 @@
                             <TextRun>
                               <Value>Activity</Value>
                               <Style>
-                                <FontSize>11pt</FontSize>
+                                <FontFamily>Century Gothic</FontFamily>
+                                <FontSize>16pt</FontSize>
                                 <FontWeight>Bold</FontWeight>
                                 <Color>#666666</Color>
                               </Style>
@@ -129,12 +128,10 @@
                       <rd:DefaultName>Textbox5</rd:DefaultName>
                       <Style>
                         <Border>
-                          <Style>None</Style>
+                          <Style>Solid</Style>
                         </Border>
                         <BottomBorder>
                           <Color>LightGrey</Color>
-                          <Style>Solid</Style>
-                          <Width>1pt</Width>
                         </BottomBorder>
                         <BackgroundColor>White</BackgroundColor>
                         <PaddingLeft>2pt</PaddingLeft>
@@ -156,7 +153,8 @@
                             <TextRun>
                               <Value>Date/Time</Value>
                               <Style>
-                                <FontSize>11pt</FontSize>
+                                <FontFamily>Century Gothic</FontFamily>
+                                <FontSize>16pt</FontSize>
                                 <FontWeight>Bold</FontWeight>
                                 <Color>#666666</Color>
                               </Style>
@@ -170,12 +168,10 @@
                       <rd:DefaultName>Textbox7</rd:DefaultName>
                       <Style>
                         <Border>
-                          <Style>None</Style>
+                          <Style>Solid</Style>
                         </Border>
                         <BottomBorder>
                           <Color>LightGrey</Color>
-                          <Style>Solid</Style>
-                          <Width>1pt</Width>
                         </BottomBorder>
                         <BackgroundColor>White</BackgroundColor>
                         <PaddingLeft>2pt</PaddingLeft>
@@ -216,7 +212,7 @@
                       <rd:DefaultName>username</rd:DefaultName>
                       <Style>
                         <Border>
-                          <Style>None</Style>
+                          <Style>Solid</Style>
                         </Border>
                         <BackgroundColor>White</BackgroundColor>
                         <PaddingLeft>2pt</PaddingLeft>
@@ -239,7 +235,7 @@
                               <Value>=Fields!usertype.Value</Value>
                               <Style>
                                 <FontFamily>Century Gothic</FontFamily>
-                                <FontSize>14pt</FontSize>
+                                <FontSize>16pt</FontSize>
                                 <Color>#333333</Color>
                               </Style>
                             </TextRun>
@@ -252,7 +248,7 @@
                       <rd:DefaultName>usertype</rd:DefaultName>
                       <Style>
                         <Border>
-                          <Style>None</Style>
+                          <Style>Solid</Style>
                         </Border>
                         <BackgroundColor>White</BackgroundColor>
                         <PaddingLeft>2pt</PaddingLeft>
@@ -274,6 +270,8 @@
                             <TextRun>
                               <Value>=Fields!activity.Value</Value>
                               <Style>
+                                <FontFamily>Century Gothic</FontFamily>
+                                <FontSize>16pt</FontSize>
                                 <FontWeight>Normal</FontWeight>
                                 <Color>#333333</Color>
                               </Style>
@@ -287,7 +285,7 @@
                       <rd:DefaultName>activity</rd:DefaultName>
                       <Style>
                         <Border>
-                          <Style>None</Style>
+                          <Style>Solid</Style>
                         </Border>
                         <BackgroundColor>White</BackgroundColor>
                         <PaddingLeft>2pt</PaddingLeft>
@@ -309,6 +307,8 @@
                             <TextRun>
                               <Value>=Fields!datetime.Value</Value>
                               <Style>
+                                <FontFamily>Century Gothic</FontFamily>
+                                <FontSize>16pt</FontSize>
                                 <FontWeight>Normal</FontWeight>
                                 <Color>#333333</Color>
                               </Style>
@@ -322,7 +322,7 @@
                       <rd:DefaultName>datetime</rd:DefaultName>
                       <Style>
                         <Border>
-                          <Style>None</Style>
+                          <Style>Solid</Style>
                         </Border>
                         <BackgroundColor>White</BackgroundColor>
                         <PaddingLeft>2pt</PaddingLeft>
@@ -356,13 +356,12 @@
           </TablixMembers>
         </TablixRowHierarchy>
         <DataSetName>DataSet_ACT</DataSetName>
-        <Top>3.05803in</Top>
-        <Left>6.18055in</Left>
+        <Top>2.26636in</Top>
         <Height>0.5in</Height>
-        <Width>9.82292in</Width>
+        <Width>13.77083in</Width>
         <Style>
           <Border>
-            <Style>None</Style>
+            <Style>Solid</Style>
           </Border>
         </Style>
       </Tablix>
@@ -375,8 +374,8 @@
               <TextRun>
                 <Value>Rizal Provincial Hospital Employees and Community Multi-Purpose Cooperative</Value>
                 <Style>
-                  <FontFamily>Arial Rounded MT Bold</FontFamily>
-                  <FontSize>14pt</FontSize>
+                  <FontFamily>Century Gothic</FontFamily>
+                  <FontSize>20pt</FontSize>
                   <FontWeight>Bold</FontWeight>
                   <Color>SeaGreen</Color>
                 </Style>
@@ -388,10 +387,10 @@
           </Paragraph>
         </Paragraphs>
         <rd:DefaultName>Textbox1</rd:DefaultName>
-        <Top>1.4757in</Top>
-        <Left>8.40279in</Left>
-        <Height>0.57292in</Height>
-        <Width>4.45833in</Width>
+        <Top>0.25594in</Top>
+        <Left>0.98264in</Left>
+        <Height>1.07292in</Height>
+        <Width>6.31944in</Width>
         <ZIndex>1</ZIndex>
         <Style>
           <Border>
@@ -407,10 +406,9 @@
         <Source>Embedded</Source>
         <Value>ID1681739519791</Value>
         <Sizing>FitProportional</Sizing>
-        <Top>1.31647in</Top>
-        <Left>7.6389in</Left>
-        <Height>0.90625in</Height>
-        <Width>0.88542in</Width>
+        <Top>0.25594in</Top>
+        <Height>1.07292in</Height>
+        <Width>0.98264in</Width>
         <ZIndex>2</ZIndex>
         <Style>
           <Border>
@@ -427,22 +425,21 @@
               <TextRun>
                 <Value>ACTIVITY LOG</Value>
                 <Style>
-                  <FontFamily>Arial Rounded MT Bold</FontFamily>
-                  <FontSize>14pt</FontSize>
+                  <FontFamily>Century Gothic</FontFamily>
+                  <FontSize>20pt</FontSize>
                   <FontWeight>Bold</FontWeight>
                 </Style>
               </TextRun>
             </TextRuns>
             <Style>
-              <TextAlign>Center</TextAlign>
+              <TextAlign>Left</TextAlign>
             </Style>
           </Paragraph>
         </Paragraphs>
         <rd:DefaultName>Textbox1</rd:DefaultName>
-        <Top>2.35417in</Top>
-        <Left>9.06861in</Left>
+        <Top>1.92261in</Top>
         <Height>0.34375in</Height>
-        <Width>2.46875in</Width>
+        <Width>3.6875in</Width>
         <ZIndex>3</ZIndex>
         <Style>
           <Border>

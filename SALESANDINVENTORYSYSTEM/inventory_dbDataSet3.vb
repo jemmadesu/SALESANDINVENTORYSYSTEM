@@ -16,6 +16,8 @@
 End Class
 
 Namespace inventory_dbDataSetTableAdapters
+    Partial Public Class tbl_stocksoutTableAdapter
+    End Class
 
     Partial Public Class tbl_productsTableAdapter
     End Class
