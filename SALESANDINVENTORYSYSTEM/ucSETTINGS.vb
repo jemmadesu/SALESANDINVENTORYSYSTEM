@@ -3,9 +3,48 @@ Imports MySql.Data.MySqlClient
 
 Public Class ucSETTINGS
 
+    Private Sub records()
+        con.Close()
+        OpenCon()
+        cmd.CommandText = "insert into tbl_backuprecords values (NULL, @un, @ut, @dt)"
+        With cmd.Parameters
+            .Clear()
+            .AddWithValue("un", FRMMAINMENU.LBLUSERNAME.Text)
+            .AddWithValue("ut", FRMMAINMENU.LBLUSERTYPE.Text)
+            .AddWithValue("dt", Format(Date.Now, "yyyy-MM-dd h:mm tt"))
+
+
+            cmd.ExecuteNonQuery()
+            con.Close()
+        End With
+    End Sub
+
+    Private Sub DGVSET()
+        DGVHISTORY.Columns(0).Width = 200
+        DGVHISTORY.Columns(0).HeaderText = "Username"
+        DGVHISTORY.Columns(1).Width = 200
+        DGVHISTORY.Columns(1).HeaderText = "Usertype"
+        DGVHISTORY.Columns(2).Width = 200
+        DGVHISTORY.Columns(2).HeaderText = "Date"
+    End Sub
     Private Sub VIEW()
 
-        ' ------------------------------------------------------------ FOR DISPLAYING THE COLUMN HEADER (PRODUCTS) -------------------------------------------------
+        ' ------------------------------------------------------------ FOR DISPLAYING THE COLUMN HEADER (HISTORY) -------------------------------------------------
+        Try
+
+            Dim da As New MySqlDataAdapter("select username, usertype, date from tbl_backuprecords", con)
+            Dim dt As New DataSet()
+            da.Fill(dt)
+            DGVHISTORY.DataSource = dt.Tables(0)
+
+            DGVSET()
+        Catch ex As Exception
+
+            MessageBox.Show(ex.ToString())
+
+
+
+        End Try
 
 
     End Sub
@@ -19,6 +58,23 @@ Public Class ucSETTINGS
     End Sub
 
     Private Sub ucSETTINGS_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+
+        DGVHISTORY.EnableHeadersVisualStyles = False
+
+
+        ' Set the header cell backcolor
+        DGVHISTORY.ColumnHeadersDefaultCellStyle.BackColor = Color.White
+
+
+        ' Set the header cell forecolor
+        DGVHISTORY.ColumnHeadersDefaultCellStyle.ForeColor = Color.DimGray
+
+
+        ' Disable the default column header cell selection
+        DGVHISTORY.SelectionMode = DataGridViewSelectionMode.CellSelect
+        DGVHISTORY.ColumnHeadersDefaultCellStyle.SelectionBackColor = Color.White
+        DGVHISTORY.ColumnHeadersDefaultCellStyle.SelectionForeColor = Color.DimGray
+
         VIEW()
     End Sub
 
@@ -119,7 +175,9 @@ Public Class ucSETTINGS
             Return
         End If
 
+
         MessageBox.Show("Successfully created a Backup”, "Notice", MessageBoxButtons.OK, MessageBoxIcon.Information)
+        records()
 
         'FRMBACKUP.ShowDialog()
 
@@ -148,4 +206,14 @@ Public Class ucSETTINGS
         End If
         'FRMRESTORE.ShowDialog()
     End Sub
+
+    Private Sub LBLHISTORY_Click(sender As Object, e As EventArgs) Handles LBLHISTORY.Click
+        PNLHISTORY.Visible = True
+    End Sub
+
+    Private Sub LBLCLOSE_Click(sender As Object, e As EventArgs) Handles LBLCLOSE.Click
+        PNLHISTORY.Visible = False
+    End Sub
+
+
 End Class

@@ -59,7 +59,7 @@ Public Class ucLOWQTY
         End Try
 
         ' Set the backcolor of the row
-        DGVLOWQTY.Columns(9).DefaultCellStyle.BackColor = Color.IndianRed
+        DGVLOWQTY.Columns(9).DefaultCellStyle.BackColor = Color.OrangeRed
 
         ' Set the forecolor of the row
         DGVLOWQTY.Columns(9).DefaultCellStyle.ForeColor = Color.White

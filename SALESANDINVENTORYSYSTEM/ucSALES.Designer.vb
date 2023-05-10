@@ -53,7 +53,7 @@ Partial Class ucSALES
         Me.Label8.BackColor = System.Drawing.Color.White
         Me.Label8.Font = New System.Drawing.Font("Century Gothic", 20.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label8.ForeColor = System.Drawing.Color.MediumSeaGreen
-        Me.Label8.Location = New System.Drawing.Point(57, 79)
+        Me.Label8.Location = New System.Drawing.Point(33, 91)
         Me.Label8.Name = "Label8"
         Me.Label8.Size = New System.Drawing.Size(207, 32)
         Me.Label8.TabIndex = 45
@@ -65,7 +65,7 @@ Partial Class ucSALES
         Me.BTNGENERATE.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.BTNGENERATE.Font = New System.Drawing.Font("Century Gothic", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.BTNGENERATE.ForeColor = System.Drawing.SystemColors.Control
-        Me.BTNGENERATE.Location = New System.Drawing.Point(1049, 111)
+        Me.BTNGENERATE.Location = New System.Drawing.Point(893, 92)
         Me.BTNGENERATE.Name = "BTNGENERATE"
         Me.BTNGENERATE.Size = New System.Drawing.Size(83, 33)
         Me.BTNGENERATE.TabIndex = 44
@@ -77,7 +77,7 @@ Partial Class ucSALES
         Me.Label2.AutoSize = True
         Me.Label2.Font = New System.Drawing.Font("Century Gothic", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label2.ForeColor = System.Drawing.Color.MediumSeaGreen
-        Me.Label2.Location = New System.Drawing.Point(960, 761)
+        Me.Label2.Location = New System.Drawing.Point(803, 645)
         Me.Label2.Name = "Label2"
         Me.Label2.Size = New System.Drawing.Size(110, 19)
         Me.Label2.TabIndex = 46
@@ -89,7 +89,7 @@ Partial Class ucSALES
         Me.Panel2.Dock = System.Windows.Forms.DockStyle.Top
         Me.Panel2.Location = New System.Drawing.Point(0, 0)
         Me.Panel2.Name = "Panel2"
-        Me.Panel2.Size = New System.Drawing.Size(1322, 49)
+        Me.Panel2.Size = New System.Drawing.Size(1113, 49)
         Me.Panel2.TabIndex = 48
         '
         'DGVSALES
@@ -112,12 +112,12 @@ Partial Class ucSALES
         DataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText
         DataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
         Me.DGVSALES.DefaultCellStyle = DataGridViewCellStyle2
-        Me.DGVSALES.Location = New System.Drawing.Point(72, 163)
+        Me.DGVSALES.Location = New System.Drawing.Point(28, 153)
         Me.DGVSALES.Name = "DGVSALES"
         Me.DGVSALES.ReadOnly = True
         Me.DGVSALES.RowHeadersVisible = False
         Me.DGVSALES.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
-        Me.DGVSALES.Size = New System.Drawing.Size(1167, 570)
+        Me.DGVSALES.Size = New System.Drawing.Size(1054, 470)
         Me.DGVSALES.TabIndex = 49
         '
         'TXTINCOME
@@ -126,7 +126,7 @@ Partial Class ucSALES
         Me.TXTINCOME.Enabled = False
         Me.TXTINCOME.Font = New System.Drawing.Font("Century Gothic", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.TXTINCOME.ForeColor = System.Drawing.Color.MediumSeaGreen
-        Me.TXTINCOME.Location = New System.Drawing.Point(1076, 758)
+        Me.TXTINCOME.Location = New System.Drawing.Point(919, 642)
         Me.TXTINCOME.Name = "TXTINCOME"
         Me.TXTINCOME.Size = New System.Drawing.Size(163, 27)
         Me.TXTINCOME.TabIndex = 47
@@ -140,7 +140,7 @@ Partial Class ucSALES
         Me.DATE1.ForeColor = System.Drawing.Color.DimGray
         Me.DATE1.Format = System.Windows.Forms.DateTimePickerFormat.[Long]
         Me.DATE1.HoverState.Parent = Me.DATE1
-        Me.DATE1.Location = New System.Drawing.Point(529, 108)
+        Me.DATE1.Location = New System.Drawing.Point(368, 92)
         Me.DATE1.MaxDate = New Date(9998, 12, 31, 0, 0, 0, 0)
         Me.DATE1.MinDate = New Date(1753, 1, 1, 0, 0, 0, 0)
         Me.DATE1.Name = "DATE1"
@@ -158,7 +158,7 @@ Partial Class ucSALES
         Me.DATE2.ForeColor = System.Drawing.Color.DimGray
         Me.DATE2.Format = System.Windows.Forms.DateTimePickerFormat.[Long]
         Me.DATE2.HoverState.Parent = Me.DATE2
-        Me.DATE2.Location = New System.Drawing.Point(799, 108)
+        Me.DATE2.Location = New System.Drawing.Point(638, 92)
         Me.DATE2.MaxDate = New Date(9998, 12, 31, 0, 0, 0, 0)
         Me.DATE2.MinDate = New Date(1753, 1, 1, 0, 0, 0, 0)
         Me.DATE2.Name = "DATE2"
@@ -173,7 +173,7 @@ Partial Class ucSALES
         Me.BTNCLEAR.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.BTNCLEAR.Font = New System.Drawing.Font("Century Gothic", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.BTNCLEAR.ForeColor = System.Drawing.SystemColors.Control
-        Me.BTNCLEAR.Location = New System.Drawing.Point(1156, 113)
+        Me.BTNCLEAR.Location = New System.Drawing.Point(999, 91)
         Me.BTNCLEAR.Name = "BTNCLEAR"
         Me.BTNCLEAR.Size = New System.Drawing.Size(83, 33)
         Me.BTNCLEAR.TabIndex = 52
@@ -185,7 +185,7 @@ Partial Class ucSALES
         Me.Label6.AutoSize = True
         Me.Label6.Font = New System.Drawing.Font("Century Gothic", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label6.ForeColor = System.Drawing.SystemColors.ControlDarkDark
-        Me.Label6.Location = New System.Drawing.Point(471, 113)
+        Me.Label6.Location = New System.Drawing.Point(310, 97)
         Me.Label6.Name = "Label6"
         Me.Label6.Size = New System.Drawing.Size(52, 20)
         Me.Label6.TabIndex = 53
@@ -196,7 +196,7 @@ Partial Class ucSALES
         Me.Label1.AutoSize = True
         Me.Label1.Font = New System.Drawing.Font("Century Gothic", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label1.ForeColor = System.Drawing.SystemColors.ControlDarkDark
-        Me.Label1.Location = New System.Drawing.Point(748, 113)
+        Me.Label1.Location = New System.Drawing.Point(587, 97)
         Me.Label1.Name = "Label1"
         Me.Label1.Size = New System.Drawing.Size(32, 20)
         Me.Label1.TabIndex = 54
@@ -220,7 +220,7 @@ Partial Class ucSALES
         Me.Controls.Add(Me.BTNGENERATE)
         Me.Controls.Add(Me.Label4)
         Me.Name = "ucSALES"
-        Me.Size = New System.Drawing.Size(1322, 801)
+        Me.Size = New System.Drawing.Size(1113, 682)
         CType(Me.DGVSALES, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()

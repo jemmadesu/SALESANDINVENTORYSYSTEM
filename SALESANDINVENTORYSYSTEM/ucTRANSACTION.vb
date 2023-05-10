@@ -14,7 +14,8 @@ Public Class ucTRANSACTION
 
 
     Private Sub search()
-        Dim dba As New MySqlDataAdapter("select prodid, prodname, prodbrand, prodcat, catcode, price, unit, quantity from tbl_stocks WHERE tbl_stocks.prodname LIKE '%" & Me.TXTSEARCH.Text & "%';", con)
+
+        Dim dba As New MySqlDataAdapter("SELECT prodid, prodname, prodbrand, prodcat, catcode, price, unit, quantity, dateaddedstocks, CONCAT('added ', DATEDIFF(dateaddedstocks, NOW()), ' days ago') AS Remaining_Days FROM tbl_stocks WHERE tbl_stocks.prodname Like '%" & Me.TXTSEARCH.Text & "%';", con)
         Dim dbset As New DataSet
         dba.Fill(dbset)
         Me.DGVPRODUCTS.DataSource = dbset.Tables(0).DefaultView
@@ -174,7 +175,7 @@ Public Class ucTRANSACTION
         e.Graphics.DrawString("Discount Type: " + CBODISCOUNT.Text.ToString, f10b, Brushes.Black, 0, 80 + height2)
         e.Graphics.DrawString("Change: " + TXTCHANGE.Text.ToString, f10b, Brushes.Black, 0, 95 + height2)
 
-        e.Graphics.DrawString("Thanks for Shopping”, f10, Brushes.Black, centermargin, 150 + height2, center)
+        e.Graphics.DrawString("Thanks for puchasing”, f10, Brushes.Black, centermargin, 150 + height2, center)
         e.Graphics.DrawString("This serves as your official receipt", f10, Brushes.Black, centermargin, 180 + height2, center)
 
     End Sub
@@ -226,8 +227,8 @@ Public Class ucTRANSACTION
         DGVPRODUCTS.Columns(7).HeaderText = "Stocks"
         DGVPRODUCTS.Columns(8).Width = 200
         DGVPRODUCTS.Columns(8).HeaderText = "Date Added"
-        DGVPRODUCTS.Columns(9).Width = 200
-        DGVPRODUCTS.Columns(9).HeaderText = "Remaining Days"
+        DGVPRODUCTS.Columns(9).Width = 300
+        DGVPRODUCTS.Columns(9).HeaderText = "Days ago after added"
 
 
     End Sub
@@ -278,25 +279,38 @@ Public Class ucTRANSACTION
         '- FOR REFRESHING DATA FROM DATAGRID
         '- DISPLAYING THE HEADER NAMES
 
-        connection = New MySqlConnection
-
-
         Dim dataset As New DataTable
         Dim bindindsrc As New BindingSource
         Dim dataadapt As New MySqlDataAdapter
 
         Try
-
             con.Open()
-            command = New MySqlCommand("SELECT prodid, prodname, prodbrand, prodcat, catcode, price, unit, quantity, dateaddedstocks, DATEDIFF(dateaddedstocks, NOW()) AS Remaining_Days FROM tbl_stocks", con)
+            command = New MySqlCommand("SELECT prodid, prodname, prodbrand, prodcat, catcode, price, unit, quantity, dateaddedstocks, CONCAT('added ', DATEDIFF(dateaddedstocks, NOW()), ' days ago') AS Remaining_Days FROM tbl_stocks", con)
 
             dataadapt.SelectCommand = command
             dataadapt.Fill(dataset)
+
+            '' Update the data in the DataTable
+            'For Each row As DataRow In dataset.Rows
+            '    Dim remainingDays As Object = row("Remaining_Days")
+            '    If Not IsDBNull(remainingDays) AndAlso TypeOf remainingDays Is String Then
+            '        row("Remaining_Days") = remainingDays & " days ago"
+            '    End If
+            'Next
+
             bindindsrc.DataSource = dataset
 
             DGVPRODUCTS.DataSource = bindindsrc
             dataadapt.Update(dataset)
             con.Close()
+
+            '' Update the column header
+            'DGVPRODUCTS.Columns(9).HeaderText = "Days added "
+
+            '' Update the row height and width
+            'DGVPRODUCTS.Columns(9).DefaultCellStyle.WrapMode = DataGridViewTriState.True
+            'DGVPRODUCTS.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.AllCells
+            'DGVPRODUCTS.Columns(9).AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells
 
             DGVSETPROPERTYPROD()
         Catch ex As Exception
@@ -305,6 +319,9 @@ Public Class ucTRANSACTION
             con.Dispose()
 
         End Try
+
+
+
     End Sub
 
 
@@ -374,7 +391,7 @@ Public Class ucTRANSACTION
             Exit Sub
         End If
         If Me.NumericUpDown1.Value > Me.DGVPRODUCTS.CurrentRow.Cells(7).Value Then
-            MessageBox.Show("The Quantity you have Entered is beyond the Stocks Limit.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
+            MessageBox.Show("The quantity you have entered is beyond the stocks limit.", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning)
             Exit Sub
         End If
         If Me.NumericUpDown1.Value > 0 Or Me.NumericUpDown1.Value <= Me.DGVPRODUCTS.CurrentRow.Cells(7).Value Then
@@ -471,7 +488,7 @@ Public Class ucTRANSACTION
         End With
         cmd.ExecuteNonQuery()
         con.Close()
-        MsgBox("New order has been added!", vbOKOnly + vbInformation, "adding Successful")
+        MsgBox("New product order has been added!", vbOKOnly + vbInformation, "Added Successfully")
         TXTPRODID.Text = ""
         TXTPRODNAME.Text = ""
         TXTPRODBRAND.Text = ""
@@ -502,7 +519,7 @@ Public Class ucTRANSACTION
 
         If Double.TryParse(TXTPAYMENT.Text, payment) AndAlso Double.TryParse(TOTALBILL.Text, total) Then
             If payment < total Then
-                MessageBox.Show("The Payment is Insufficient", "Insufficient Payment", MessageBoxButtons.OK, MessageBoxIcon.Information)
+               
                 Exit Sub
             End If
         Else
@@ -516,11 +533,11 @@ Public Class ucTRANSACTION
             Exit Sub
         End If
 
-        If MessageBox.Show("Finalize Ordering", "Are you sure?", MessageBoxButtons.YesNo, MessageBoxIcon.Information, MessageBoxDefaultButton.Button2) = DialogResult.No Then
+        If MessageBox.Show("Finalize Purchased Product", "Done order", MessageBoxButtons.YesNo, MessageBoxIcon.Information, MessageBoxDefaultButton.Button2) = DialogResult.No Then
             Exit Sub
         End If
 
-        If MessageBox.Show("Do you want receipt to print?", "Print Receipt", MessageBoxButtons.YesNo, MessageBoxIcon.Information, MessageBoxDefaultButton.Button2) = DialogResult.Yes Then
+        If MessageBox.Show("Do you want to print receipt?", "Purchased Receipt", MessageBoxButtons.YesNo, MessageBoxIcon.Information, MessageBoxDefaultButton.Button2) = DialogResult.Yes Then
             changelongpaper()
             PPD.Document = PD
             PPD.ShowDialog()
@@ -604,7 +621,7 @@ Public Class ucTRANSACTION
                 cmd.ExecuteNonQuery()
                 con.Close()
 
-                MessageBox.Show("Thank you Very Much", "Thank you", MessageBoxButtons.OK, MessageBoxIcon.Information)
+                MessageBox.Show("Order Transaction Done", "Thank you!", MessageBoxButtons.OK, MessageBoxIcon.Information)
 
                 Dim insrtslecmd As New MySqlCommand("INSERT INTO tbl_sales (orderno, transadate, discounttype, totalbill, payment, totalchange) VALUES (" & Me.TXTOR.Text & ",'" & Me.lbldate.Text & "', '" & Me.CBODISCOUNT.Text & "', '" & Me.TOTALBILL.Text & "', '" & Me.TXTPAYMENT.Text & "', '" & Me.TXTCHANGE.Text & "')", con)
                 con.Open()
@@ -665,14 +682,14 @@ Public Class ucTRANSACTION
         If CBODISCOUNT.SelectedItem = "Senior Citizen" Or CBODISCOUNT.SelectedItem = "PWD" Then
             If Val(TXTPAYMENT.Text) < Val(TXTDISCAMOUNT.Text) Then
 
-                TXTCHANGE.Text = 0
+                TXTCHANGE.Text = 0.00
             Else
                 TXTCHANGE.Text = Val(TXTPAYMENT.Text) - Val(TXTDISCAMOUNT.Text)
             End If
         ElseIf CBODISCOUNT.SelectedItem = "N/A" Then
             If Val(TXTPAYMENT.Text) < Val(TXTBILL.Text) Then
 
-                TXTCHANGE.Text = 0
+                TXTCHANGE.Text = 0.00
             Else
                 If CBODISCOUNT.SelectedItem = "N/A" Then
                     TXTCHANGE.Text = Val(TXTPAYMENT.Text) - Val(TXTBILL.Text)
@@ -682,6 +699,8 @@ Public Class ucTRANSACTION
                     TXTCHANGE.Text = Val(TXTPAYMENT.Text) - Val(TXTDISCAMOUNT.Text)
 
                 End If
+
+
             End If
         End If
 
@@ -793,15 +812,6 @@ Public Class ucTRANSACTION
         Format("yyyy-mm-dd")
         'Format(TRANSADATE.Value, "yyyy-mm-dd")
     End Sub
-    Private Sub TXTPRICE_TextChanged(sender As Object, e As EventArgs) Handles TXTSEARCH.TextChanged
-        search()
-    End Sub
-    'Private Sub Button1_Click(sender As Object, e As EventArgs)
-    '    changelongpaper()
-    '    PPD.Document = PD
-    '    PPD.ShowDialog()
-    'End Sub
-
     Private Sub TXTUNIT_TextChanged(sender As Object, e As EventArgs) Handles TXTUNIT.TextChanged
 
     End Sub
@@ -833,23 +843,29 @@ Public Class ucTRANSACTION
 
 
 
-        ' Check if the current cell belongs to the Remaining_Days column
-        If DGVPRODUCTS.Columns(e.ColumnIndex).Name = "Remaining_Days" Then
-            ' Get the remaining days value from the cell
-            Dim remainingDays As Integer
-            If Integer.TryParse(e.Value.ToString(), remainingDays) Then
-                ' Check if the remaining days is less than or equal to 365 (1 year)
-                If remainingDays <= 365 Then
-                    ' Set the row style to red
-                    DGVPRODUCTS.Rows(e.RowIndex).DefaultCellStyle.BackColor = Color.Cornsilk
-                    DGVPRODUCTS.Rows(e.RowIndex).DefaultCellStyle.ForeColor = Color.DimGray
-                End If
-            End If
+        '' Check if the current cell belongs to the Remaining_Days column
+        'If DGVPRODUCTS.Columns(e.ColumnIndex).Name = "Remaining_Days" Then
+        '    ' Get the remaining days value from the cell
+        '    Dim remainingDays As Integer
+        '    If Integer.TryParse(e.Value.ToString(), remainingDays) Then
+        '        ' Check if the remaining days is less than or equal to 365 (1 year)
+        '        If remainingDays <= 365 Then
+        '            ' Set the row style to red
+        '            DGVPRODUCTS.Rows(e.RowIndex).DefaultCellStyle.BackColor = Color.Cornsilk
+        '            DGVPRODUCTS.Rows(e.RowIndex).DefaultCellStyle.ForeColor = Color.DimGray
+        '        End If
+        '    End If
+        'End If
+
+
+
+
+
+        If e.ColumnIndex = DGVPRODUCTS.Columns(9).Index AndAlso e.Value IsNot Nothing Then
+            Dim cellValue As String = e.Value.ToString()
+            e.Value = cellValue.Replace("-", "")
+            e.FormattingApplied = True
         End If
-
-
-
-
 
 
 
@@ -872,4 +888,11 @@ Public Class ucTRANSACTION
 
     End Sub
 
+    Private Sub DGVPRODUCTS_CellContentClick(sender As Object, e As DataGridViewCellEventArgs) Handles DGVPRODUCTS.CellContentClick
+
+    End Sub
+
+    Private Sub TXTSEARCH_TextChanged(sender As Object, e As EventArgs) Handles TXTSEARCH.TextChanged
+        search()
+    End Sub
 End Class

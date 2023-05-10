@@ -42,7 +42,7 @@ Partial Class ucOUTOFSTOCKS
         Me.Panel2.Dock = System.Windows.Forms.DockStyle.Top
         Me.Panel2.Location = New System.Drawing.Point(0, 0)
         Me.Panel2.Name = "Panel2"
-        Me.Panel2.Size = New System.Drawing.Size(1322, 49)
+        Me.Panel2.Size = New System.Drawing.Size(1113, 49)
         Me.Panel2.TabIndex = 48
         '
         'BTNBACK
@@ -55,7 +55,7 @@ Partial Class ucOUTOFSTOCKS
         Me.BTNBACK.ForeColor = System.Drawing.Color.White
         Me.BTNBACK.Image = CType(resources.GetObject("BTNBACK.Image"), System.Drawing.Image)
         Me.BTNBACK.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.BTNBACK.Location = New System.Drawing.Point(1197, 3)
+        Me.BTNBACK.Location = New System.Drawing.Point(963, 3)
         Me.BTNBACK.Name = "BTNBACK"
         Me.BTNBACK.Padding = New System.Windows.Forms.Padding(20, 0, 0, 0)
         Me.BTNBACK.Size = New System.Drawing.Size(119, 46)
@@ -80,25 +80,25 @@ Partial Class ucOUTOFSTOCKS
         DataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
         DataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window
         DataGridViewCellStyle2.Font = New System.Drawing.Font("Century Gothic", 9.75!)
-        DataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlDarkDark
-        DataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.MediumSeaGreen
+        DataGridViewCellStyle2.ForeColor = System.Drawing.Color.DimGray
+        DataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.IndianRed
         DataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText
         DataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
         Me.DGVOUTOFSTOCKS.DefaultCellStyle = DataGridViewCellStyle2
-        Me.DGVOUTOFSTOCKS.Location = New System.Drawing.Point(63, 157)
+        Me.DGVOUTOFSTOCKS.Location = New System.Drawing.Point(39, 123)
         Me.DGVOUTOFSTOCKS.Name = "DGVOUTOFSTOCKS"
         Me.DGVOUTOFSTOCKS.ReadOnly = True
         DataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
         DataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Control
         DataGridViewCellStyle3.Font = New System.Drawing.Font("Century Gothic", 9.75!)
-        DataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.ControlDarkDark
-        DataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.MediumSeaGreen
+        DataGridViewCellStyle3.ForeColor = System.Drawing.Color.White
+        DataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.IndianRed
         DataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText
         DataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
         Me.DGVOUTOFSTOCKS.RowHeadersDefaultCellStyle = DataGridViewCellStyle3
         Me.DGVOUTOFSTOCKS.RowHeadersVisible = False
         Me.DGVOUTOFSTOCKS.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
-        Me.DGVOUTOFSTOCKS.Size = New System.Drawing.Size(1163, 562)
+        Me.DGVOUTOFSTOCKS.Size = New System.Drawing.Size(1043, 489)
         Me.DGVOUTOFSTOCKS.TabIndex = 75
         '
         'Label8
@@ -119,7 +119,7 @@ Partial Class ucOUTOFSTOCKS
         Me.BTNARCHIVE.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.BTNARCHIVE.Font = New System.Drawing.Font("Century Gothic", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.BTNARCHIVE.ForeColor = System.Drawing.Color.White
-        Me.BTNARCHIVE.Location = New System.Drawing.Point(1102, 740)
+        Me.BTNARCHIVE.Location = New System.Drawing.Point(958, 632)
         Me.BTNARCHIVE.Name = "BTNARCHIVE"
         Me.BTNARCHIVE.Size = New System.Drawing.Size(124, 34)
         Me.BTNARCHIVE.TabIndex = 76
@@ -136,7 +136,7 @@ Partial Class ucOUTOFSTOCKS
         Me.Controls.Add(Me.Label8)
         Me.Controls.Add(Me.Panel2)
         Me.Name = "ucOUTOFSTOCKS"
-        Me.Size = New System.Drawing.Size(1322, 801)
+        Me.Size = New System.Drawing.Size(1113, 682)
         Me.Panel2.ResumeLayout(False)
         CType(Me.DGVOUTOFSTOCKS, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)

@@ -97,9 +97,9 @@ Partial Class ucDASHBOARD
         Me.Panel7.Controls.Add(Me.Panel1)
         Me.Panel7.Controls.Add(Me.LBLDATE)
         Me.Panel7.Controls.Add(Me.LBLDAY)
-        Me.Panel7.Location = New System.Drawing.Point(1028, 24)
+        Me.Panel7.Location = New System.Drawing.Point(846, 14)
         Me.Panel7.Name = "Panel7"
-        Me.Panel7.Size = New System.Drawing.Size(267, 226)
+        Me.Panel7.Size = New System.Drawing.Size(232, 226)
         Me.Panel7.TabIndex = 41
         '
         'Panel8
@@ -115,7 +115,7 @@ Partial Class ucDASHBOARD
         Me.LBLYEAR.AutoSize = True
         Me.LBLYEAR.Font = New System.Drawing.Font("Century Gothic", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.LBLYEAR.ForeColor = System.Drawing.Color.Black
-        Me.LBLYEAR.Location = New System.Drawing.Point(117, 184)
+        Me.LBLYEAR.Location = New System.Drawing.Point(98, 187)
         Me.LBLYEAR.Name = "LBLYEAR"
         Me.LBLYEAR.Size = New System.Drawing.Size(46, 21)
         Me.LBLYEAR.TabIndex = 3
@@ -127,7 +127,7 @@ Partial Class ucDASHBOARD
         Me.Panel1.Controls.Add(Me.LBLMONTH)
         Me.Panel1.Location = New System.Drawing.Point(0, 3)
         Me.Panel1.Name = "Panel1"
-        Me.Panel1.Size = New System.Drawing.Size(267, 60)
+        Me.Panel1.Size = New System.Drawing.Size(232, 60)
         Me.Panel1.TabIndex = 0
         '
         'LBLMONTH
@@ -135,7 +135,7 @@ Partial Class ucDASHBOARD
         Me.LBLMONTH.AutoSize = True
         Me.LBLMONTH.Font = New System.Drawing.Font("Century Gothic", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.LBLMONTH.ForeColor = System.Drawing.Color.White
-        Me.LBLMONTH.Location = New System.Drawing.Point(117, 27)
+        Me.LBLMONTH.Location = New System.Drawing.Point(98, 27)
         Me.LBLMONTH.Name = "LBLMONTH"
         Me.LBLMONTH.Size = New System.Drawing.Size(51, 22)
         Me.LBLMONTH.TabIndex = 0
@@ -146,7 +146,7 @@ Partial Class ucDASHBOARD
         Me.LBLDATE.AutoSize = True
         Me.LBLDATE.Font = New System.Drawing.Font("Century Gothic", 36.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.LBLDATE.ForeColor = System.Drawing.Color.Black
-        Me.LBLDATE.Location = New System.Drawing.Point(100, 106)
+        Me.LBLDATE.Location = New System.Drawing.Point(81, 109)
         Me.LBLDATE.Name = "LBLDATE"
         Me.LBLDATE.Size = New System.Drawing.Size(78, 56)
         Me.LBLDATE.TabIndex = 2
@@ -157,7 +157,7 @@ Partial Class ucDASHBOARD
         Me.LBLDAY.AutoSize = True
         Me.LBLDAY.Font = New System.Drawing.Font("Century Gothic", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.LBLDAY.ForeColor = System.Drawing.Color.Black
-        Me.LBLDAY.Location = New System.Drawing.Point(103, 72)
+        Me.LBLDAY.Location = New System.Drawing.Point(84, 75)
         Me.LBLDAY.Name = "LBLDAY"
         Me.LBLDAY.Size = New System.Drawing.Size(75, 21)
         Me.LBLDAY.TabIndex = 1
@@ -169,9 +169,9 @@ Partial Class ucDASHBOARD
         Me.Panel5.Controls.Add(Me.lblsales)
         Me.Panel5.Controls.Add(Me.PictureBox5)
         Me.Panel5.Controls.Add(Me.Label10)
-        Me.Panel5.Location = New System.Drawing.Point(761, 350)
+        Me.Panel5.Location = New System.Drawing.Point(640, 342)
         Me.Panel5.Name = "Panel5"
-        Me.Panel5.Size = New System.Drawing.Size(232, 74)
+        Me.Panel5.Size = New System.Drawing.Size(200, 65)
         Me.Panel5.TabIndex = 37
         '
         'lblsales
@@ -179,7 +179,7 @@ Partial Class ucDASHBOARD
         Me.lblsales.AutoSize = True
         Me.lblsales.Font = New System.Drawing.Font("Century Gothic", 15.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lblsales.ForeColor = System.Drawing.SystemColors.ControlDarkDark
-        Me.lblsales.Location = New System.Drawing.Point(82, 40)
+        Me.lblsales.Location = New System.Drawing.Point(64, 29)
         Me.lblsales.Name = "lblsales"
         Me.lblsales.Size = New System.Drawing.Size(24, 25)
         Me.lblsales.TabIndex = 22
@@ -194,7 +194,8 @@ Partial Class ucDASHBOARD
         Me.PictureBox5.ImageLocation = ""
         Me.PictureBox5.Location = New System.Drawing.Point(8, 8)
         Me.PictureBox5.Name = "PictureBox5"
-        Me.PictureBox5.Size = New System.Drawing.Size(68, 59)
+        Me.PictureBox5.Size = New System.Drawing.Size(50, 50)
+        Me.PictureBox5.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
         Me.PictureBox5.TabIndex = 21
         Me.PictureBox5.TabStop = False
         '
@@ -203,7 +204,7 @@ Partial Class ucDASHBOARD
         Me.Label10.AutoSize = True
         Me.Label10.Font = New System.Drawing.Font("Century Gothic", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label10.ForeColor = System.Drawing.SystemColors.ControlDarkDark
-        Me.Label10.Location = New System.Drawing.Point(82, 8)
+        Me.Label10.Location = New System.Drawing.Point(64, 8)
         Me.Label10.Name = "Label10"
         Me.Label10.Size = New System.Drawing.Size(48, 21)
         Me.Label10.TabIndex = 0
@@ -215,9 +216,9 @@ Partial Class ucDASHBOARD
         Me.Panel4.Controls.Add(Me.lblexp)
         Me.Panel4.Controls.Add(Me.PictureBox4)
         Me.Panel4.Controls.Add(Me.Label8)
-        Me.Panel4.Location = New System.Drawing.Point(523, 350)
+        Me.Panel4.Location = New System.Drawing.Point(432, 342)
         Me.Panel4.Name = "Panel4"
-        Me.Panel4.Size = New System.Drawing.Size(232, 74)
+        Me.Panel4.Size = New System.Drawing.Size(200, 65)
         Me.Panel4.TabIndex = 38
         '
         'lblexp
@@ -225,7 +226,7 @@ Partial Class ucDASHBOARD
         Me.lblexp.AutoSize = True
         Me.lblexp.Font = New System.Drawing.Font("Century Gothic", 15.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lblexp.ForeColor = System.Drawing.SystemColors.ControlDarkDark
-        Me.lblexp.Location = New System.Drawing.Point(82, 40)
+        Me.lblexp.Location = New System.Drawing.Point(105, 33)
         Me.lblexp.Name = "lblexp"
         Me.lblexp.Size = New System.Drawing.Size(24, 25)
         Me.lblexp.TabIndex = 22
@@ -238,9 +239,10 @@ Partial Class ucDASHBOARD
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.PictureBox4.Image = CType(resources.GetObject("PictureBox4.Image"), System.Drawing.Image)
         Me.PictureBox4.ImageLocation = ""
-        Me.PictureBox4.Location = New System.Drawing.Point(8, 8)
+        Me.PictureBox4.Location = New System.Drawing.Point(3, 8)
         Me.PictureBox4.Name = "PictureBox4"
-        Me.PictureBox4.Size = New System.Drawing.Size(68, 59)
+        Me.PictureBox4.Size = New System.Drawing.Size(50, 50)
+        Me.PictureBox4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
         Me.PictureBox4.TabIndex = 21
         Me.PictureBox4.TabStop = False
         '
@@ -249,7 +251,7 @@ Partial Class ucDASHBOARD
         Me.Label8.AutoSize = True
         Me.Label8.Font = New System.Drawing.Font("Century Gothic", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label8.ForeColor = System.Drawing.SystemColors.ControlDarkDark
-        Me.Label8.Location = New System.Drawing.Point(82, 8)
+        Me.Label8.Location = New System.Drawing.Point(58, 8)
         Me.Label8.Name = "Label8"
         Me.Label8.Size = New System.Drawing.Size(139, 21)
         Me.Label8.TabIndex = 0
@@ -261,9 +263,9 @@ Partial Class ucDASHBOARD
         Me.Panel3.Controls.Add(Me.lblouofstock)
         Me.Panel3.Controls.Add(Me.PictureBox2)
         Me.Panel3.Controls.Add(Me.Label6)
-        Me.Panel3.Location = New System.Drawing.Point(285, 350)
+        Me.Panel3.Location = New System.Drawing.Point(226, 340)
         Me.Panel3.Name = "Panel3"
-        Me.Panel3.Size = New System.Drawing.Size(232, 74)
+        Me.Panel3.Size = New System.Drawing.Size(200, 65)
         Me.Panel3.TabIndex = 36
         '
         'lblouofstock
@@ -271,7 +273,7 @@ Partial Class ucDASHBOARD
         Me.lblouofstock.AutoSize = True
         Me.lblouofstock.Font = New System.Drawing.Font("Century Gothic", 15.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lblouofstock.ForeColor = System.Drawing.SystemColors.ControlDarkDark
-        Me.lblouofstock.Location = New System.Drawing.Point(82, 40)
+        Me.lblouofstock.Location = New System.Drawing.Point(104, 29)
         Me.lblouofstock.Name = "lblouofstock"
         Me.lblouofstock.Size = New System.Drawing.Size(24, 25)
         Me.lblouofstock.TabIndex = 22
@@ -286,7 +288,8 @@ Partial Class ucDASHBOARD
         Me.PictureBox2.ImageLocation = ""
         Me.PictureBox2.Location = New System.Drawing.Point(8, 8)
         Me.PictureBox2.Name = "PictureBox2"
-        Me.PictureBox2.Size = New System.Drawing.Size(68, 59)
+        Me.PictureBox2.Size = New System.Drawing.Size(50, 50)
+        Me.PictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
         Me.PictureBox2.TabIndex = 21
         Me.PictureBox2.TabStop = False
         '
@@ -295,7 +298,7 @@ Partial Class ucDASHBOARD
         Me.Label6.AutoSize = True
         Me.Label6.Font = New System.Drawing.Font("Century Gothic", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label6.ForeColor = System.Drawing.SystemColors.ControlDarkDark
-        Me.Label6.Location = New System.Drawing.Point(82, 8)
+        Me.Label6.Location = New System.Drawing.Point(67, 8)
         Me.Label6.Name = "Label6"
         Me.Label6.Size = New System.Drawing.Size(111, 21)
         Me.Label6.TabIndex = 0
@@ -307,9 +310,9 @@ Partial Class ucDASHBOARD
         Me.panel2.Controls.Add(Me.lblproducts)
         Me.panel2.Controls.Add(Me.pictureBox3)
         Me.panel2.Controls.Add(Me.Label2)
-        Me.panel2.Location = New System.Drawing.Point(47, 350)
+        Me.panel2.Location = New System.Drawing.Point(20, 340)
         Me.panel2.Name = "panel2"
-        Me.panel2.Size = New System.Drawing.Size(232, 74)
+        Me.panel2.Size = New System.Drawing.Size(200, 65)
         Me.panel2.TabIndex = 35
         '
         'lblproducts
@@ -317,7 +320,7 @@ Partial Class ucDASHBOARD
         Me.lblproducts.AutoSize = True
         Me.lblproducts.Font = New System.Drawing.Font("Century Gothic", 15.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lblproducts.ForeColor = System.Drawing.SystemColors.ControlDarkDark
-        Me.lblproducts.Location = New System.Drawing.Point(82, 40)
+        Me.lblproducts.Location = New System.Drawing.Point(82, 28)
         Me.lblproducts.Name = "lblproducts"
         Me.lblproducts.Size = New System.Drawing.Size(24, 25)
         Me.lblproducts.TabIndex = 22
@@ -332,7 +335,8 @@ Partial Class ucDASHBOARD
         Me.pictureBox3.ImageLocation = ""
         Me.pictureBox3.Location = New System.Drawing.Point(8, 8)
         Me.pictureBox3.Name = "pictureBox3"
-        Me.pictureBox3.Size = New System.Drawing.Size(68, 59)
+        Me.pictureBox3.Size = New System.Drawing.Size(50, 50)
+        Me.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
         Me.pictureBox3.TabIndex = 21
         Me.pictureBox3.TabStop = False
         '
@@ -341,7 +345,7 @@ Partial Class ucDASHBOARD
         Me.Label2.AutoSize = True
         Me.Label2.Font = New System.Drawing.Font("Century Gothic", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label2.ForeColor = System.Drawing.SystemColors.ControlDarkDark
-        Me.Label2.Location = New System.Drawing.Point(82, 8)
+        Me.Label2.Location = New System.Drawing.Point(64, 8)
         Me.Label2.Name = "Label2"
         Me.Label2.Size = New System.Drawing.Size(78, 21)
         Me.Label2.TabIndex = 0
@@ -353,14 +357,14 @@ Partial Class ucDASHBOARD
         Me.CHART.ChartAreas.Add(ChartArea1)
         Legend1.Name = "Legend1"
         Me.CHART.Legends.Add(Legend1)
-        Me.CHART.Location = New System.Drawing.Point(3, 423)
+        Me.CHART.Location = New System.Drawing.Point(20, 413)
         Me.CHART.Name = "CHART"
         Me.CHART.Palette = System.Windows.Forms.DataVisualization.Charting.ChartColorPalette.SeaGreen
         Series1.ChartArea = "ChartArea1"
         Series1.Legend = "Legend1"
         Series1.Name = "Total Sales"
         Me.CHART.Series.Add(Series1)
-        Me.CHART.Size = New System.Drawing.Size(920, 374)
+        Me.CHART.Size = New System.Drawing.Size(732, 281)
         Me.CHART.TabIndex = 42
         Me.CHART.Text = "Chart1"
         '
@@ -370,7 +374,7 @@ Partial Class ucDASHBOARD
         Me.Chart1.ChartAreas.Add(ChartArea2)
         Legend2.Name = "Legend1"
         Me.Chart1.Legends.Add(Legend2)
-        Me.Chart1.Location = New System.Drawing.Point(769, 459)
+        Me.Chart1.Location = New System.Drawing.Point(614, 452)
         Me.Chart1.Name = "Chart1"
         Me.Chart1.Palette = System.Windows.Forms.DataVisualization.Charting.ChartColorPalette.SeaGreen
         Series2.ChartArea = "ChartArea1"
@@ -381,7 +385,7 @@ Partial Class ucDASHBOARD
         Series2.XValueMember = "Year"
         Series2.YValueMembers = "TotalBill"
         Me.Chart1.Series.Add(Series2)
-        Me.Chart1.Size = New System.Drawing.Size(271, 348)
+        Me.Chart1.Size = New System.Drawing.Size(207, 242)
         Me.Chart1.TabIndex = 46
         Me.Chart1.Text = "Chart1"
         '
@@ -405,13 +409,13 @@ Partial Class ucDASHBOARD
         DataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
         DataGridViewCellStyle2.BackColor = System.Drawing.Color.White
         DataGridViewCellStyle2.Font = New System.Drawing.Font("Century Gothic", 9.75!)
-        DataGridViewCellStyle2.ForeColor = System.Drawing.Color.DimGray
+        DataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlDarkDark
         DataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.FromArgb(CType(CType(196, Byte), Integer), CType(CType(227, Byte), Integer), CType(CType(214, Byte), Integer))
         DataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.DimGray
         DataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
         Me.DGVUSERS.DefaultCellStyle = DataGridViewCellStyle2
         Me.DGVUSERS.GridColor = System.Drawing.SystemColors.ControlDarkDark
-        Me.DGVUSERS.Location = New System.Drawing.Point(1028, 256)
+        Me.DGVUSERS.Location = New System.Drawing.Point(846, 248)
         Me.DGVUSERS.Name = "DGVUSERS"
         Me.DGVUSERS.ReadOnly = True
         Me.DGVUSERS.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None
@@ -425,7 +429,7 @@ Partial Class ucDASHBOARD
         Me.DGVUSERS.RowHeadersDefaultCellStyle = DataGridViewCellStyle3
         Me.DGVUSERS.RowHeadersVisible = False
         Me.DGVUSERS.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
-        Me.DGVUSERS.Size = New System.Drawing.Size(267, 524)
+        Me.DGVUSERS.Size = New System.Drawing.Size(232, 446)
         Me.DGVUSERS.TabIndex = 72
         '
         'Label1
@@ -434,7 +438,7 @@ Partial Class ucDASHBOARD
         Me.Label1.BackColor = System.Drawing.Color.FromArgb(CType(CType(197, Byte), Integer), CType(CType(227, Byte), Integer), CType(CType(215, Byte), Integer))
         Me.Label1.Font = New System.Drawing.Font("Century Gothic", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label1.ForeColor = System.Drawing.Color.White
-        Me.Label1.Location = New System.Drawing.Point(54, 166)
+        Me.Label1.Location = New System.Drawing.Point(36, 98)
         Me.Label1.Name = "Label1"
         Me.Label1.Size = New System.Drawing.Size(351, 42)
         Me.Label1.TabIndex = 74
@@ -447,7 +451,7 @@ Partial Class ucDASHBOARD
         Me.Label3.BackColor = System.Drawing.Color.FromArgb(CType(CType(197, Byte), Integer), CType(CType(227, Byte), Integer), CType(CType(215, Byte), Integer))
         Me.Label3.Font = New System.Drawing.Font("Century Gothic", 15.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label3.ForeColor = System.Drawing.Color.White
-        Me.Label3.Location = New System.Drawing.Point(169, 132)
+        Me.Label3.Location = New System.Drawing.Point(151, 64)
         Me.Label3.Name = "Label3"
         Me.Label3.Size = New System.Drawing.Size(124, 25)
         Me.Label3.TabIndex = 75
@@ -459,7 +463,7 @@ Partial Class ucDASHBOARD
         Me.Label4.BackColor = System.Drawing.Color.FromArgb(CType(CType(197, Byte), Integer), CType(CType(227, Byte), Integer), CType(CType(215, Byte), Integer))
         Me.Label4.Font = New System.Drawing.Font("Century Gothic", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label4.ForeColor = System.Drawing.Color.White
-        Me.Label4.Location = New System.Drawing.Point(102, 271)
+        Me.Label4.Location = New System.Drawing.Point(84, 203)
         Me.Label4.Name = "Label4"
         Me.Label4.Size = New System.Drawing.Size(88, 17)
         Me.Label4.TabIndex = 79
@@ -472,7 +476,7 @@ Partial Class ucDASHBOARD
         Me.LinkLabel1.BackColor = System.Drawing.Color.FromArgb(CType(CType(197, Byte), Integer), CType(CType(227, Byte), Integer), CType(CType(215, Byte), Integer))
         Me.LinkLabel1.Font = New System.Drawing.Font("Century Gothic", 9.75!)
         Me.LinkLabel1.LinkColor = System.Drawing.Color.White
-        Me.LinkLabel1.Location = New System.Drawing.Point(102, 292)
+        Me.LinkLabel1.Location = New System.Drawing.Point(84, 224)
         Me.LinkLabel1.Name = "LinkLabel1"
         Me.LinkLabel1.Size = New System.Drawing.Size(243, 17)
         Me.LinkLabel1.TabIndex = 80
@@ -486,7 +490,7 @@ Partial Class ucDASHBOARD
         Me.LinkLabel2.BackColor = System.Drawing.Color.FromArgb(CType(CType(197, Byte), Integer), CType(CType(227, Byte), Integer), CType(CType(215, Byte), Integer))
         Me.LinkLabel2.Font = New System.Drawing.Font("Century Gothic", 9.75!)
         Me.LinkLabel2.LinkColor = System.Drawing.Color.White
-        Me.LinkLabel2.Location = New System.Drawing.Point(102, 316)
+        Me.LinkLabel2.Location = New System.Drawing.Point(84, 248)
         Me.LinkLabel2.Name = "LinkLabel2"
         Me.LinkLabel2.Size = New System.Drawing.Size(353, 17)
         Me.LinkLabel2.TabIndex = 84
@@ -499,7 +503,7 @@ Partial Class ucDASHBOARD
         Me.Label5.BackColor = System.Drawing.Color.FromArgb(CType(CType(197, Byte), Integer), CType(CType(227, Byte), Integer), CType(CType(215, Byte), Integer))
         Me.Label5.Font = New System.Drawing.Font("Century Gothic", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label5.ForeColor = System.Drawing.Color.White
-        Me.Label5.Location = New System.Drawing.Point(102, 248)
+        Me.Label5.Location = New System.Drawing.Point(84, 180)
         Me.Label5.Name = "Label5"
         Me.Label5.Size = New System.Drawing.Size(153, 17)
         Me.Label5.TabIndex = 85
@@ -509,7 +513,7 @@ Partial Class ucDASHBOARD
         '
         Me.PictureBox8.BackColor = System.Drawing.Color.FromArgb(CType(CType(197, Byte), Integer), CType(CType(227, Byte), Integer), CType(CType(215, Byte), Integer))
         Me.PictureBox8.Image = Global.SALESANDINVENTORYSYSTEM.My.Resources.Resources.clipart23997641
-        Me.PictureBox8.Location = New System.Drawing.Point(77, 317)
+        Me.PictureBox8.Location = New System.Drawing.Point(59, 249)
         Me.PictureBox8.Name = "PictureBox8"
         Me.PictureBox8.Size = New System.Drawing.Size(19, 16)
         Me.PictureBox8.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
@@ -520,7 +524,7 @@ Partial Class ucDASHBOARD
         '
         Me.PictureBox9.BackColor = System.Drawing.Color.FromArgb(CType(CType(197, Byte), Integer), CType(CType(227, Byte), Integer), CType(CType(215, Byte), Integer))
         Me.PictureBox9.Image = Global.SALESANDINVENTORYSYSTEM.My.Resources.Resources.toppng_com_white_envelope_icon_envelope_icon_white_464x338
-        Me.PictureBox9.Location = New System.Drawing.Point(77, 249)
+        Me.PictureBox9.Location = New System.Drawing.Point(59, 181)
         Me.PictureBox9.Name = "PictureBox9"
         Me.PictureBox9.Size = New System.Drawing.Size(19, 16)
         Me.PictureBox9.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
@@ -531,7 +535,7 @@ Partial Class ucDASHBOARD
         '
         Me.PictureBox7.BackColor = System.Drawing.Color.FromArgb(CType(CType(197, Byte), Integer), CType(CType(227, Byte), Integer), CType(CType(215, Byte), Integer))
         Me.PictureBox7.Image = Global.SALESANDINVENTORYSYSTEM.My.Resources.Resources._433_4333068_hover_icon_png1
-        Me.PictureBox7.Location = New System.Drawing.Point(77, 293)
+        Me.PictureBox7.Location = New System.Drawing.Point(59, 225)
         Me.PictureBox7.Name = "PictureBox7"
         Me.PictureBox7.Size = New System.Drawing.Size(19, 16)
         Me.PictureBox7.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
@@ -542,7 +546,7 @@ Partial Class ucDASHBOARD
         '
         Me.PictureBox6.BackColor = System.Drawing.Color.FromArgb(CType(CType(197, Byte), Integer), CType(CType(227, Byte), Integer), CType(CType(215, Byte), Integer))
         Me.PictureBox6.Image = Global.SALESANDINVENTORYSYSTEM.My.Resources.Resources.toppng1
-        Me.PictureBox6.Location = New System.Drawing.Point(77, 271)
+        Me.PictureBox6.Location = New System.Drawing.Point(59, 203)
         Me.PictureBox6.Name = "PictureBox6"
         Me.PictureBox6.Size = New System.Drawing.Size(19, 16)
         Me.PictureBox6.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
@@ -552,9 +556,9 @@ Partial Class ucDASHBOARD
         'PictureBox1
         '
         Me.PictureBox1.Image = Global.SALESANDINVENTORYSYSTEM.My.Resources.Resources.Media_230503_005719
-        Me.PictureBox1.Location = New System.Drawing.Point(47, 24)
+        Me.PictureBox1.Location = New System.Drawing.Point(20, 14)
         Me.PictureBox1.Name = "PictureBox1"
-        Me.PictureBox1.Size = New System.Drawing.Size(975, 320)
+        Me.PictureBox1.Size = New System.Drawing.Size(820, 320)
         Me.PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
         Me.PictureBox1.TabIndex = 73
         Me.PictureBox1.TabStop = False
@@ -586,7 +590,7 @@ Partial Class ucDASHBOARD
         Me.Controls.Add(Me.panel2)
         Me.ForeColor = System.Drawing.SystemColors.ControlDarkDark
         Me.Name = "ucDASHBOARD"
-        Me.Size = New System.Drawing.Size(1322, 810)
+        Me.Size = New System.Drawing.Size(1113, 697)
         Me.Panel7.ResumeLayout(False)
         Me.Panel7.PerformLayout()
         Me.Panel1.ResumeLayout(False)

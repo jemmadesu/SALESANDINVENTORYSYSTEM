@@ -135,21 +135,17 @@ Public Class ucPUTINTOINVENTORY
 
         LOADDATAPROD()
 
-        DTPED.Format = DateTimePickerFormat.Custom
-        DTPED.CustomFormat = "   "
+        'DTPED.Format = DateTimePickerFormat.Custom
+        'DTPED.CustomFormat = "   "
 
         ' -------------------------------------------------------- FOR GETTING DATA TABLE TO DATA GRID "WHOLE" (MAIN FORM) -------------------------------------------------
 
 
         LOADDATAMAIN()
-
-
     End Sub
     Private Sub DTPED_ValueChanged(sender As Object, e As EventArgs) Handles DTPED.ValueChanged
         DTPED.CustomFormat = "yyy/dd/MM"
     End Sub
-
-
     Private Sub DateTimePicker1_ValueChanged(sender As Object, e As EventArgs) Handles DTPAS.ValueChanged
         DTPAS.CustomFormat = "dd/MM/yyyy"
     End Sub
@@ -216,7 +212,7 @@ Public Class ucPUTINTOINVENTORY
 
     Private Sub BTNDELETE_Click_1(sender As Object, e As EventArgs) Handles BTNDELETE.Click
 
-        If MessageBox.Show("Are you sure to remove this from the Stock List?", "Delete", MessageBoxButtons.YesNo, MessageBoxIcon.Information, MessageBoxDefaultButton.Button2) = DialogResult.No Then
+        If MessageBox.Show("Are you sure To remove this from the Stock List?", "Delete", MessageBoxButtons.YesNo, MessageBoxIcon.Information, MessageBoxDefaultButton.Button2) = DialogResult.No Then
             Exit Sub
         End If
 
@@ -238,38 +234,33 @@ Public Class ucPUTINTOINVENTORY
 
         ' ------------------------------------------------------------- ERROR TRAPPING -------------------------------------------------------------------
 
-        'If TXTPI.Text <> TXTSAM.Text Then
-        '    OpenCon()
-        '    cmd.CommandText = "Select * from tbl_stocks where prodid = '" & TXTPI.Text & "'"
-        '    dr = cmd.ExecuteReader()
-        '    If dr.HasRows Then
-        '        MsgBox("Product is already added on the stocks", vbOKOnly + vbCritical, "Error Saving")
-        '        con.Close()
-        '        TXTPI.Text = ""
-        '        TXTPNA.Text = ""
-        '        TXTUNIT.Text = ""
-        '        CBOUNIT.Text = ""
-        '        TXTPRICE.Text = ""
-        '        NUDQUANTITY.Value = 0
-        '        txtmix.Text = ""
-
-        '        Exit Sub
-        '    End If
-        '    con.Close()
-        'End If
-
         If NUDQUANTITY.Text = "" Or TXTPRICE.Text = "" Or TXTUNIT.Text = "" Or CBOUNIT.Text = "" Then
             MsgBox("All fields are required!", vbOKOnly + vbCritical, "Notice")
             TXTPRICE.Focus()
+            Return ' Exit the method or function
         End If
 
+        ' Check if quantity is 0
         If NUDQUANTITY.Value = 0 Then
             MsgBox("The quantity is 0", vbOKOnly + vbCritical, "Notice")
+            Return ' Exit the method or function
+        End If
+
+        ' Check if expiration date is not set
+        If DTPED.Value = DateTimePicker.MinimumDateTime Then
+            MsgBox("Please select an expiration date.", vbOKOnly + vbCritical, "Notice")
+            Return ' Exit the method or function
+        End If
+
+        ' Check if date format is invalid
+        Dim expirationDate As String = DTPED.Value.ToString("yyyy-MM-dd")
+        If expirationDate = "0001-01-01" Then
+            MsgBox("Invalid date format for expiration date.", vbOKOnly + vbCritical, "Notice")
+            Return ' Exit the method or function
         End If
 
         con.Close()
         txtmix.Text = TXTUNIT.Text + " " + CBOUNIT.Text
-
 
         ' ----------------------------------------------------   SAVING CODE  --------------------------------------------------------------------------
 
@@ -309,7 +300,6 @@ Public Class ucPUTINTOINVENTORY
         searchprod()
     End Sub
     Private Sub search()
-
         Dim dba As New MySqlDataAdapter("select stockid, prodid, prodname, prodman, prodbrand, prodcat, catcode, price, unit, quantity, expirationdate from tbl_stocks  WHERE tbl_stocks.prodname LIKE '%" & Me.TXTSTOCKSEARCH.Text & "%' OR tbl_stocks.prodid LIKE '%" & Me.TXTSTOCKSEARCH.Text & "%'", con)
         Dim dbset As New DataSet
         dba.Fill(dbset)

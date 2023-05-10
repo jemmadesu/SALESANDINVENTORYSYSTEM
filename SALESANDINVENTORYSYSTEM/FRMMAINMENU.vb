@@ -1,6 +1,7 @@
 ﻿Imports MySql.Data.MySqlClient
 Public Class FRMMAINMENU
     Private Sub FRMMAINMENU_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+
         con.Close()
 
         If LBLUSERTYPE.Text = "Admin" Then
@@ -221,5 +222,9 @@ Public Class FRMMAINMENU
         BTNDASHBOARD.BackColor = Color.FromArgb(37, 46, 59)
         BTNSETTINGS.BackColor = Color.FromArgb(37, 46, 59)
         BTNLOGOUT.BackColor = Color.FromArgb(37, 46, 59)
+    End Sub
+
+    Private Sub Panel1_Paint(sender As Object, e As PaintEventArgs)
+
     End Sub
 End Class

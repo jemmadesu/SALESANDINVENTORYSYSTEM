@@ -276,6 +276,11 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
+    <Compile Include="restore_dbDataSet.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>restore_dbDataSet.xsd</DependentUpon>
+    </Compile>
     <Compile Include="ucCATEGORY.Designer.vb">
       <DependentUpon>ucCATEGORY.vb</DependentUpon>
     </Compile>
@@ -491,6 +496,17 @@
       <LastGenOutput>Settings.Designer.vb</LastGenOutput>
     </None>
     <None Include="App.config" />
+    <None Include="restore_dbDataSet.xsc">
+      <DependentUpon>restore_dbDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="restore_dbDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>restore_dbDataSet.Designer.vb</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="restore_dbDataSet.xss">
+      <DependentUpon>restore_dbDataSet.xsd</DependentUpon>
+    </None>
     <None Include="SALESANDINVENTORYSYSTEM_TemporaryKey.pfx" />
   </ItemGroup>
   <ItemGroup>
@@ -536,6 +552,9 @@
     <None Include="Resources\Vector-Facebook-Logo-Black-And-White-PNG-Picture.png" />
     <None Include="Resources\clipart2399764.png" />
     <None Include="Resources\clipart23997641.png" />
+    <None Include="Resources\x-mark-64.ico" />
+    <None Include="Resources\x-mark-24.ico" />
+    <None Include="Resources\x-mark-64 %281%29.ico" />
     <Content Include="SqlServerTypes\Loader.cs" />
     <Content Include="SqlServerTypes\readme.htm" />
     <Content Include="SqlServerTypes\x64\msvcr120.dll">

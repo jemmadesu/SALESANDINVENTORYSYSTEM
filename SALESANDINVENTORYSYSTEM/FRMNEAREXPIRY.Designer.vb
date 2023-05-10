@@ -40,7 +40,7 @@ Partial Class FRMNEAREXPIRY
         Me.Panel2.Dock = System.Windows.Forms.DockStyle.Top
         Me.Panel2.Location = New System.Drawing.Point(0, 0)
         Me.Panel2.Name = "Panel2"
-        Me.Panel2.Size = New System.Drawing.Size(1306, 49)
+        Me.Panel2.Size = New System.Drawing.Size(1113, 49)
         Me.Panel2.TabIndex = 129
         '
         'LBLEXIT
@@ -49,7 +49,7 @@ Partial Class FRMNEAREXPIRY
         Me.LBLEXIT.Cursor = System.Windows.Forms.Cursors.Hand
         Me.LBLEXIT.Font = New System.Drawing.Font("Century Gothic", 20.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.LBLEXIT.ForeColor = System.Drawing.Color.White
-        Me.LBLEXIT.Location = New System.Drawing.Point(1239, 9)
+        Me.LBLEXIT.Location = New System.Drawing.Point(1058, 9)
         Me.LBLEXIT.Name = "LBLEXIT"
         Me.LBLEXIT.Size = New System.Drawing.Size(30, 32)
         Me.LBLEXIT.TabIndex = 135
@@ -61,7 +61,7 @@ Partial Class FRMNEAREXPIRY
         Me.Label8.BackColor = System.Drawing.Color.White
         Me.Label8.Font = New System.Drawing.Font("Century Gothic", 20.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label8.ForeColor = System.Drawing.Color.MediumSeaGreen
-        Me.Label8.Location = New System.Drawing.Point(40, 77)
+        Me.Label8.Location = New System.Drawing.Point(16, 75)
         Me.Label8.Name = "Label8"
         Me.Label8.Size = New System.Drawing.Size(229, 32)
         Me.Label8.TabIndex = 134
@@ -89,7 +89,7 @@ Partial Class FRMNEAREXPIRY
         DataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText
         DataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
         Me.DGVEXP.DefaultCellStyle = DataGridViewCellStyle2
-        Me.DGVEXP.Location = New System.Drawing.Point(54, 136)
+        Me.DGVEXP.Location = New System.Drawing.Point(22, 131)
         Me.DGVEXP.Name = "DGVEXP"
         Me.DGVEXP.ReadOnly = True
         DataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
@@ -102,7 +102,7 @@ Partial Class FRMNEAREXPIRY
         Me.DGVEXP.RowHeadersDefaultCellStyle = DataGridViewCellStyle3
         Me.DGVEXP.RowHeadersVisible = False
         Me.DGVEXP.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
-        Me.DGVEXP.Size = New System.Drawing.Size(1181, 573)
+        Me.DGVEXP.Size = New System.Drawing.Size(1066, 521)
         Me.DGVEXP.TabIndex = 133
         '
         'FRMNEAREXPIRY
@@ -110,7 +110,7 @@ Partial Class FRMNEAREXPIRY
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.White
-        Me.ClientSize = New System.Drawing.Size(1306, 762)
+        Me.ClientSize = New System.Drawing.Size(1113, 682)
         Me.Controls.Add(Me.Label8)
         Me.Controls.Add(Me.Panel2)
         Me.Controls.Add(Me.DGVEXP)

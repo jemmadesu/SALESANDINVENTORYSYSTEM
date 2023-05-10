@@ -126,6 +126,7 @@ Public Class ucUSERMANAGEMENT
 
     Private Sub BTNDELETE_Click(sender As Object, e As EventArgs) Handles BTNDELETE.Click
 
+
         If MessageBox.Show("Are you sure to remove this from the user Record?", "Delete", MessageBoxButtons.YesNo, MessageBoxIcon.Information, MessageBoxDefaultButton.Button2) = DialogResult.No Then
             Exit Sub
         End If
@@ -133,7 +134,7 @@ Public Class ucUSERMANAGEMENT
         ' NOT WORKING 
         For i As Integer = 0 To DGVUSERS.SelectedRows.Count - 1
             Dim cmd As New MySqlCommand("delete from tbl_users where userid = @userid ", con)
-            cmd.Parameters.AddWithValue("userid", DGVUSERS.SelectedRows(i).Cells(2).Value.ToString())
+            cmd.Parameters.AddWithValue("userid", DGVUSERS.SelectedRows(i).Cells(3).Value.ToString())
             con.Open()
             cmd.ExecuteNonQuery()
             con.Close()
@@ -156,6 +157,8 @@ Public Class ucUSERMANAGEMENT
         TXTEMAIL.Text = ""
         TXTADDRESS.Text = ""
         TXTNAME.Text = ""
+        PANELTYPE.Visible = False
+        CBOACC.Text = ""
 
         actlog()
 
@@ -218,7 +221,7 @@ Public Class ucUSERMANAGEMENT
         End With
         cmd.ExecuteNonQuery()
         con.Close()
-        MsgBox("New user has been saved!", vbOKOnly + vbInformation, "Saving Successful")
+        MsgBox("User information has been edited successfully!", vbOKOnly + vbInformation, "Saved Successfully!")
         activity = "Added new user. userID: " + TXTUI.Text
         actlog()
 
@@ -264,6 +267,8 @@ Public Class ucUSERMANAGEMENT
 
 
 
+
+
         TXTUN.Text = ""
         CBOACCTYPE.Text = ""
         TXTUI.Text = ""
@@ -278,6 +283,8 @@ Public Class ucUSERMANAGEMENT
         TXTEMAIL.Text = ""
         TXTADDRESS.Text = ""
         TXTNAME.Text = ""
+        CBOACC.Text = ""
+        PANELTYPE.Visible = False
         CHKPASS.Checked = False
 
         TXTFN.Enabled = False
@@ -328,7 +335,7 @@ Public Class ucUSERMANAGEMENT
 
 
 
-        MsgBox("New user has been updated!", vbOKOnly + vbInformation, "Saving Successful")
+        MsgBox("User information has been edited successfully!", vbOKOnly + vbInformation, "Saved Successfully!")
         activity = "Updated a user. userID: " + TXTUI.Text
         actlog()
         LOADUSERS()
@@ -445,63 +452,63 @@ Public Class ucUSERMANAGEMENT
         End If
     End Sub
 
-    Private Sub TXTEMAIL_Validating(sender As Object, e As CancelEventArgs) Handles TXTEMAIL.Validating
-        ' Get the entered email address from the TextBox
-        Dim emailAddress As String = TXTEMAIL.Text.Trim()
+    'Private Sub TXTEMAIL_Validating(sender As Object, e As CancelEventArgs) Handles TXTEMAIL.Validating
+    '    ' Get the entered email address from the TextBox
+    '    Dim emailAddress As String = TXTEMAIL.Text.Trim()
 
-        ' Check if the email address is in a valid format
-        If Not IsValidEmail(emailAddress) Then
-            ' Display a warning message and cancel the event to prevent the TextBox from losing focus
-            MessageBox.Show("The email address you entered is not in a valid format. Please enter a valid email address.", "Invalid Email Address", MessageBoxButtons.OK, MessageBoxIcon.Warning)
-            e.Cancel = True
-        End If
-    End Sub
+    '    ' Check if the email address is in a valid format
+    '    If Not IsValidEmail(emailAddress) Then
+    '        ' Display a warning message and cancel the event to prevent the TextBox from losing focus
+    '        MessageBox.Show("The email address you entered is not in a valid format. Please enter a valid email address.", "Invalid Email Address", MessageBoxButtons.OK, MessageBoxIcon.Warning)
+    '        e.Cancel = True
+    '    End If
+    'End Sub
 
-    ' Helper function to check if an email address is in a valid format
-    Private Function IsValidEmail(ByVal emailAddress As String) As Boolean
-        Dim emailRegex As New System.Text.RegularExpressions.Regex("^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$")
-        Return emailRegex.IsMatch(emailAddress)
-    End Function
+    '' Helper function to check if an email address is in a valid format
+    'Private Function IsValidEmail(ByVal emailAddress As String) As Boolean
+    '    Dim emailRegex As New System.Text.RegularExpressions.Regex("^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$")
+    '    Return emailRegex.IsMatch(emailAddress)
+    'End Function
 
-    Private Sub TXTADDRESS_Validating(sender As Object, e As CancelEventArgs) Handles TXTADDRESS.Validating
-        ' Get the entered address from the TextBox
-        Dim address As String = TXTADDRESS.Text.Trim()
+    'Private Sub TXTADDRESS_Validating(sender As Object, e As CancelEventArgs) Handles TXTADDRESS.Validating
+    '    ' Get the entered address from the TextBox
+    '    Dim address As String = TXTADDRESS.Text.Trim()
 
-        ' Check if the address is in a valid format
-        If Not IsValidAddress(address) Then
-            ' Display a warning message and cancel the event to prevent the TextBox from losing focus
-            MessageBox.Show("The address you entered is not in a valid format. Please enter a valid address.", "Invalid Address", MessageBoxButtons.OK, MessageBoxIcon.Warning)
-            e.Cancel = True
-        End If
-    End Sub
+    '    ' Check if the address is in a valid format
+    '    If Not IsValidAddress(address) Then
+    '        ' Display a warning message and cancel the event to prevent the TextBox from losing focus
+    '        MessageBox.Show("The address you entered is not in a valid format. Please enter a valid address.", "Invalid Address", MessageBoxButtons.OK, MessageBoxIcon.Warning)
+    '        e.Cancel = True
+    '    End If
+    'End Sub
 
-    ' Helper function to check if an address is in a valid format
-    Private Function IsValidAddress(ByVal address As String) As Boolean
-        ' Check if the address is null or empty
-        If String.IsNullOrEmpty(address) Then
-            Return False
-        End If
+    '' Helper function to check if an address is in a valid format
+    'Private Function IsValidAddress(ByVal address As String) As Boolean
+    '    ' Check if the address is null or empty
+    '    If String.IsNullOrEmpty(address) Then
+    '        Return False
+    '    End If
 
-        ' Check if the address contains only letters, numbers, spaces, commas, and periods
-        Dim validChars As String = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789 ,."
-        For Each c As Char In address
-            If Not validChars.Contains(c) Then
-                Return False
-            End If
-        Next
+    '    ' Check if the address contains only letters, numbers, spaces, commas, and periods
+    '    Dim validChars As String = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789 ,."
+    '    For Each c As Char In address
+    '        If Not validChars.Contains(c) Then
+    '            Return False
+    '        End If
+    '    Next
 
-        ' Check if the address contains at least one letter or number
-        If Not address.Any(Function(c) Char.IsLetterOrDigit(c)) Then
-            Return False
-        End If
+    '    ' Check if the address contains at least one letter or number
+    '    If Not address.Any(Function(c) Char.IsLetterOrDigit(c)) Then
+    '        Return False
+    '    End If
 
-        ' Check if the address starts with a number or letter
-        If Not Char.IsLetterOrDigit(address(0)) Then
-            Return False
-        End If
+    '    ' Check if the address starts with a number or letter
+    '    If Not Char.IsLetterOrDigit(address(0)) Then
+    '        Return False
+    '    End If
 
-        Return True
-    End Function
+    '    Return True
+    'End Function
 
     Private Sub DGVUSERS_CellClick(sender As Object, e As DataGridViewCellEventArgs) Handles DGVUSERS.CellClick
 
@@ -512,6 +519,7 @@ Public Class ucUSERMANAGEMENT
             TXTRI.Text = row.Cells(0).Value.ToString()
             TXTUN.Text = row.Cells(1).Value.ToString()
             CBOACCTYPE.Text = row.Cells(2).Value.ToString()
+            CBOACC.Text = row.Cells(2).Value.ToString()
             TXTUI.Text = row.Cells(3).Value.ToString()
             CBOSTATUS.Text = row.Cells(4).Value.ToString()
             TXTPW.Text = row.Cells(5).Value.ToString()
@@ -542,6 +550,4 @@ Public Class ucUSERMANAGEMENT
         TXTPW.Enabled = True
         CBOSTATUS.Enabled = True
     End Sub
-
-
 End Class

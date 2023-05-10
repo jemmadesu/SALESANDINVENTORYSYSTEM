@@ -88,9 +88,9 @@ Partial Class ucRESTOCK
         Me.GroupBox3.Controls.Add(Me.Label1)
         Me.GroupBox3.Font = New System.Drawing.Font("Century Gothic", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.GroupBox3.ForeColor = System.Drawing.SystemColors.ControlDarkDark
-        Me.GroupBox3.Location = New System.Drawing.Point(46, 132)
+        Me.GroupBox3.Location = New System.Drawing.Point(54, 114)
         Me.GroupBox3.Name = "GroupBox3"
-        Me.GroupBox3.Size = New System.Drawing.Size(501, 622)
+        Me.GroupBox3.Size = New System.Drawing.Size(418, 544)
         Me.GroupBox3.TabIndex = 35
         Me.GroupBox3.TabStop = False
         Me.GroupBox3.Text = "Product Restock"
@@ -98,16 +98,16 @@ Partial Class ucRESTOCK
         'TXTQTYADD
         '
         Me.TXTQTYADD.ForeColor = System.Drawing.SystemColors.ControlDarkDark
-        Me.TXTQTYADD.Location = New System.Drawing.Point(186, 289)
+        Me.TXTQTYADD.Location = New System.Drawing.Point(186, 258)
         Me.TXTQTYADD.Name = "TXTQTYADD"
-        Me.TXTQTYADD.Size = New System.Drawing.Size(270, 23)
+        Me.TXTQTYADD.Size = New System.Drawing.Size(208, 23)
         Me.TXTQTYADD.TabIndex = 15
         '
         'Label9
         '
         Me.Label9.AutoSize = True
         Me.Label9.Font = New System.Drawing.Font("Century Gothic", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label9.Location = New System.Drawing.Point(29, 289)
+        Me.Label9.Location = New System.Drawing.Point(29, 258)
         Me.Label9.Name = "Label9"
         Me.Label9.Size = New System.Drawing.Size(145, 20)
         Me.Label9.TabIndex = 14
@@ -117,9 +117,9 @@ Partial Class ucRESTOCK
         '
         Me.TXTQTY.Enabled = False
         Me.TXTQTY.ForeColor = System.Drawing.SystemColors.ControlDarkDark
-        Me.TXTQTY.Location = New System.Drawing.Point(186, 236)
+        Me.TXTQTY.Location = New System.Drawing.Point(186, 205)
         Me.TXTQTY.Name = "TXTQTY"
-        Me.TXTQTY.Size = New System.Drawing.Size(270, 23)
+        Me.TXTQTY.Size = New System.Drawing.Size(208, 23)
         Me.TXTQTY.TabIndex = 13
         '
         'TXTMAN
@@ -127,17 +127,17 @@ Partial Class ucRESTOCK
         Me.TXTMAN.BackColor = System.Drawing.Color.White
         Me.TXTMAN.Enabled = False
         Me.TXTMAN.ForeColor = System.Drawing.SystemColors.ControlDarkDark
-        Me.TXTMAN.Location = New System.Drawing.Point(186, 351)
+        Me.TXTMAN.Location = New System.Drawing.Point(186, 320)
         Me.TXTMAN.Name = "TXTMAN"
         Me.TXTMAN.ReadOnly = True
-        Me.TXTMAN.Size = New System.Drawing.Size(270, 23)
+        Me.TXTMAN.Size = New System.Drawing.Size(208, 23)
         Me.TXTMAN.TabIndex = 12
         '
         'Label7
         '
         Me.Label7.AutoSize = True
         Me.Label7.Font = New System.Drawing.Font("Century Gothic", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label7.Location = New System.Drawing.Point(33, 351)
+        Me.Label7.Location = New System.Drawing.Point(33, 320)
         Me.Label7.Name = "Label7"
         Me.Label7.Size = New System.Drawing.Size(119, 20)
         Me.Label7.TabIndex = 11
@@ -148,17 +148,17 @@ Partial Class ucRESTOCK
         Me.TXTED.BackColor = System.Drawing.Color.White
         Me.TXTED.Enabled = False
         Me.TXTED.ForeColor = System.Drawing.SystemColors.ControlDarkDark
-        Me.TXTED.Location = New System.Drawing.Point(186, 410)
+        Me.TXTED.Location = New System.Drawing.Point(186, 379)
         Me.TXTED.Name = "TXTED"
         Me.TXTED.ReadOnly = True
-        Me.TXTED.Size = New System.Drawing.Size(270, 23)
+        Me.TXTED.Size = New System.Drawing.Size(208, 23)
         Me.TXTED.TabIndex = 10
         '
         'Label6
         '
         Me.Label6.AutoSize = True
         Me.Label6.Font = New System.Drawing.Font("Century Gothic", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label6.Location = New System.Drawing.Point(29, 131)
+        Me.Label6.Location = New System.Drawing.Point(29, 100)
         Me.Label6.Name = "Label6"
         Me.Label6.Size = New System.Drawing.Size(45, 20)
         Me.Label6.TabIndex = 9
@@ -170,7 +170,7 @@ Partial Class ucRESTOCK
         Me.BTNSAVE.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.BTNSAVE.Font = New System.Drawing.Font("Century Gothic", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.BTNSAVE.ForeColor = System.Drawing.Color.White
-        Me.BTNSAVE.Location = New System.Drawing.Point(304, 478)
+        Me.BTNSAVE.Location = New System.Drawing.Point(242, 452)
         Me.BTNSAVE.Name = "BTNSAVE"
         Me.BTNSAVE.Size = New System.Drawing.Size(152, 31)
         Me.BTNSAVE.TabIndex = 8
@@ -181,7 +181,7 @@ Partial Class ucRESTOCK
         '
         Me.Label4.AutoSize = True
         Me.Label4.Font = New System.Drawing.Font("Century Gothic", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label4.Location = New System.Drawing.Point(29, 413)
+        Me.Label4.Location = New System.Drawing.Point(29, 382)
         Me.Label4.Name = "Label4"
         Me.Label4.Size = New System.Drawing.Size(127, 20)
         Me.Label4.TabIndex = 6
@@ -192,17 +192,17 @@ Partial Class ucRESTOCK
         Me.TXTPRICE.BackColor = System.Drawing.Color.White
         Me.TXTPRICE.Enabled = False
         Me.TXTPRICE.ForeColor = System.Drawing.SystemColors.ControlDarkDark
-        Me.TXTPRICE.Location = New System.Drawing.Point(186, 183)
+        Me.TXTPRICE.Location = New System.Drawing.Point(186, 152)
         Me.TXTPRICE.Name = "TXTPRICE"
         Me.TXTPRICE.ReadOnly = True
-        Me.TXTPRICE.Size = New System.Drawing.Size(270, 23)
+        Me.TXTPRICE.Size = New System.Drawing.Size(208, 23)
         Me.TXTPRICE.TabIndex = 5
         '
         'Label3
         '
         Me.Label3.AutoSize = True
         Me.Label3.Font = New System.Drawing.Font("Century Gothic", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label3.Location = New System.Drawing.Point(29, 236)
+        Me.Label3.Location = New System.Drawing.Point(29, 205)
         Me.Label3.Name = "Label3"
         Me.Label3.Size = New System.Drawing.Size(137, 20)
         Me.Label3.TabIndex = 4
@@ -213,17 +213,17 @@ Partial Class ucRESTOCK
         Me.TXTUNIT.BackColor = System.Drawing.Color.White
         Me.TXTUNIT.Enabled = False
         Me.TXTUNIT.ForeColor = System.Drawing.SystemColors.ControlDarkDark
-        Me.TXTUNIT.Location = New System.Drawing.Point(186, 131)
+        Me.TXTUNIT.Location = New System.Drawing.Point(186, 100)
         Me.TXTUNIT.Name = "TXTUNIT"
         Me.TXTUNIT.ReadOnly = True
-        Me.TXTUNIT.Size = New System.Drawing.Size(270, 23)
+        Me.TXTUNIT.Size = New System.Drawing.Size(208, 23)
         Me.TXTUNIT.TabIndex = 3
         '
         'Label2
         '
         Me.Label2.AutoSize = True
         Me.Label2.Font = New System.Drawing.Font("Century Gothic", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label2.Location = New System.Drawing.Point(33, 186)
+        Me.Label2.Location = New System.Drawing.Point(33, 155)
         Me.Label2.Name = "Label2"
         Me.Label2.Size = New System.Drawing.Size(54, 20)
         Me.Label2.TabIndex = 2
@@ -234,17 +234,17 @@ Partial Class ucRESTOCK
         Me.TXTPRODNAME.BackColor = System.Drawing.Color.White
         Me.TXTPRODNAME.Enabled = False
         Me.TXTPRODNAME.ForeColor = System.Drawing.SystemColors.ControlDarkDark
-        Me.TXTPRODNAME.Location = New System.Drawing.Point(186, 78)
+        Me.TXTPRODNAME.Location = New System.Drawing.Point(186, 47)
         Me.TXTPRODNAME.Name = "TXTPRODNAME"
         Me.TXTPRODNAME.ReadOnly = True
-        Me.TXTPRODNAME.Size = New System.Drawing.Size(270, 23)
+        Me.TXTPRODNAME.Size = New System.Drawing.Size(208, 23)
         Me.TXTPRODNAME.TabIndex = 1
         '
         'Label1
         '
         Me.Label1.AutoSize = True
         Me.Label1.Font = New System.Drawing.Font("Century Gothic", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label1.Location = New System.Drawing.Point(29, 83)
+        Me.Label1.Location = New System.Drawing.Point(29, 52)
         Me.Label1.Name = "Label1"
         Me.Label1.Size = New System.Drawing.Size(123, 20)
         Me.Label1.TabIndex = 0
@@ -258,9 +258,9 @@ Partial Class ucRESTOCK
         Me.GroupBox1.Controls.Add(Me.TXTSEARCH)
         Me.GroupBox1.Font = New System.Drawing.Font("Century Gothic", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.GroupBox1.ForeColor = System.Drawing.SystemColors.ControlDarkDark
-        Me.GroupBox1.Location = New System.Drawing.Point(650, 132)
+        Me.GroupBox1.Location = New System.Drawing.Point(488, 70)
         Me.GroupBox1.Name = "GroupBox1"
-        Me.GroupBox1.Size = New System.Drawing.Size(625, 622)
+        Me.GroupBox1.Size = New System.Drawing.Size(604, 588)
         Me.GroupBox1.TabIndex = 34
         Me.GroupBox1.TabStop = False
         Me.GroupBox1.Text = "Stock List"
@@ -285,7 +285,7 @@ Partial Class ucRESTOCK
         DataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText
         DataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
         Me.DGVMAIN.DefaultCellStyle = DataGridViewCellStyle2
-        Me.DGVMAIN.Location = New System.Drawing.Point(22, 51)
+        Me.DGVMAIN.Location = New System.Drawing.Point(22, 62)
         Me.DGVMAIN.Name = "DGVMAIN"
         Me.DGVMAIN.ReadOnly = True
         DataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
@@ -298,7 +298,7 @@ Partial Class ucRESTOCK
         Me.DGVMAIN.RowHeadersDefaultCellStyle = DataGridViewCellStyle3
         Me.DGVMAIN.RowHeadersVisible = False
         Me.DGVMAIN.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
-        Me.DGVMAIN.Size = New System.Drawing.Size(581, 554)
+        Me.DGVMAIN.Size = New System.Drawing.Size(568, 509)
         Me.DGVMAIN.TabIndex = 33
         '
         'Label5
@@ -306,7 +306,7 @@ Partial Class ucRESTOCK
         Me.Label5.AutoSize = True
         Me.Label5.Font = New System.Drawing.Font("Century Gothic", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label5.ForeColor = System.Drawing.SystemColors.ControlDarkDark
-        Me.Label5.Location = New System.Drawing.Point(132, 25)
+        Me.Label5.Location = New System.Drawing.Point(241, 25)
         Me.Label5.Name = "Label5"
         Me.Label5.Size = New System.Drawing.Size(99, 17)
         Me.Label5.TabIndex = 9
@@ -316,7 +316,7 @@ Partial Class ucRESTOCK
         '
         Me.TXTSEARCH.Font = New System.Drawing.Font("Century Gothic", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.TXTSEARCH.ForeColor = System.Drawing.SystemColors.ControlDarkDark
-        Me.TXTSEARCH.Location = New System.Drawing.Point(233, 22)
+        Me.TXTSEARCH.Location = New System.Drawing.Point(342, 22)
         Me.TXTSEARCH.Name = "TXTSEARCH"
         Me.TXTSEARCH.Size = New System.Drawing.Size(248, 23)
         Me.TXTSEARCH.TabIndex = 7
@@ -339,7 +339,7 @@ Partial Class ucRESTOCK
         Me.Panel2.Dock = System.Windows.Forms.DockStyle.Top
         Me.Panel2.Location = New System.Drawing.Point(0, 0)
         Me.Panel2.Name = "Panel2"
-        Me.Panel2.Size = New System.Drawing.Size(1322, 49)
+        Me.Panel2.Size = New System.Drawing.Size(1113, 49)
         Me.Panel2.TabIndex = 45
         '
         'BTNBACK
@@ -352,7 +352,7 @@ Partial Class ucRESTOCK
         Me.BTNBACK.ForeColor = System.Drawing.Color.White
         Me.BTNBACK.Image = CType(resources.GetObject("BTNBACK.Image"), System.Drawing.Image)
         Me.BTNBACK.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.BTNBACK.Location = New System.Drawing.Point(1200, 3)
+        Me.BTNBACK.Location = New System.Drawing.Point(973, 3)
         Me.BTNBACK.Name = "BTNBACK"
         Me.BTNBACK.Padding = New System.Windows.Forms.Padding(20, 0, 0, 0)
         Me.BTNBACK.Size = New System.Drawing.Size(119, 46)
@@ -371,7 +371,7 @@ Partial Class ucRESTOCK
         Me.Controls.Add(Me.GroupBox1)
         Me.Controls.Add(Me.TXTSI)
         Me.Name = "ucRESTOCK"
-        Me.Size = New System.Drawing.Size(1322, 801)
+        Me.Size = New System.Drawing.Size(1113, 682)
         Me.GroupBox3.ResumeLayout(False)
         Me.GroupBox3.PerformLayout()
         Me.GroupBox1.ResumeLayout(False)

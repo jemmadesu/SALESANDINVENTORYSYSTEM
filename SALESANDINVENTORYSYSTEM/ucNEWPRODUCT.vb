@@ -196,7 +196,8 @@ Public Class ucNEWPRODUCT
     Private Sub BTNSAVE_Click_1(sender As Object, e As EventArgs) Handles BTNSAVE.Click
 
 
-        If CBOPRODCAT.Text = "-- Select --" Then
+
+        If CBOPRODCAT.Text = "-- Select --" Or CBOMANUFACTURER.Text = "-- Select --" Or CBOBRAND.Text = "-- Select --" Then
             MessageBox.Show("Please select a product category!", "Error Saving", MessageBoxButtons.OK, MessageBoxIcon.Error)
             Exit Sub
         End If
@@ -204,7 +205,7 @@ Public Class ucNEWPRODUCT
         ' ---------------------------------------------------------------------------------------------------------- ERROR TRAPPING ----------------------------------------------------------------------------------------------------------
 
 
-        If TXTPI.Text = "" Or TXTPNA.Text = "" Or CBOMANUFACTURER.Text = "" Then
+        If TXTPI.Text = "" Or TXTPNA.Text = "" Or TXTCATCODE.Text = "" Or CBOMANUFACTURER.Text = "" Or CBOBRAND.Text = "" Or CBOPRODCAT.Text = "" Then
             MessageBox.Show("All fields are required!", "Error Saving", MessageBoxButtons.OK, MessageBoxIcon.Error)
             Exit Sub
         End If
@@ -247,23 +248,24 @@ Public Class ucNEWPRODUCT
     End Sub
 
     Private Sub BTNEDIT_Click_1(sender As Object, e As EventArgs) Handles BTNEDIT.Click
+
         ' ---------------------------------------------------------------------------------------------------------- ERROR CODE ----------------------------------------------------------------------------------------------------------
+
+        If CBOPRODCAT.Text = "-- Select --" Or CBOMANUFACTURER.Text = "-- Select --" Or CBOBRAND.Text = "-- Select --" Then
+            MessageBox.Show("Please select a product category!", "Error Saving", MessageBoxButtons.OK, MessageBoxIcon.Error)
+            Exit Sub
+        End If
 
         If BTNEDIT.Text = "Edit" Then
             If TXTPI.Text = "" Or TXTPNA.Text = "" Or CBOMANUFACTURER.Text = "" Then
 
                 MsgBox("Please select a record to edit!", vbOKOnly + vbCritical, "Error Editing")
                 Exit Sub
-
-
-
             End If
 
         ElseIf BTNEDIT.Text = "Update" Then
-
-            If TXTPI.Text = "" Or TXTPNA.Text = "" Or CBOMANUFACTURER.Text = "" Then
-                MsgBox("All fields are required!", vbOKOnly + vbCritical, "Error Saving")
-                TXTPI.Focus()
+            If TXTPI.Text = "" Or TXTPNA.Text = "" Or TXTCATCODE.Text = "" Or CBOMANUFACTURER.Text = "" Or CBOBRAND.Text = "" Or CBOPRODCAT.Text = "" Then
+                MessageBox.Show("All fields are required!", "Error Saving", MessageBoxButtons.OK, MessageBoxIcon.Error)
                 Exit Sub
             End If
         End If
@@ -307,13 +309,13 @@ Public Class ucNEWPRODUCT
     Private Sub BTNCSNCEL_Click_1(sender As Object, e As EventArgs) Handles BTNCSNCEL.Click
 
         disabled()
-        CBOBRAND.Text = ""
         CBOMANUFACTURER.Text = "-- Select --"
+        CBOBRAND.Text = "-- Select --"
         CBOPRODCAT.Text = "-- Select --"
+        CBOMANUFACTURER.Text = "-- Select --"
         TXTCATCODE.Text = ""
         TXTPI.Text = ""
         TXTPNA.Text = ""
-        CBOMANUFACTURER.Text = ""
         TXTPI.Focus()
 
     End Sub

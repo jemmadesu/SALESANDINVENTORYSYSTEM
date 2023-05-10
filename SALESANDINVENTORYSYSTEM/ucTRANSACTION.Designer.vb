@@ -73,7 +73,7 @@ Partial Class ucTRANSACTION
         Me.Panel2 = New System.Windows.Forms.Panel()
         Me.TXTCHANGE = New System.Windows.Forms.TextBox()
         Me.Panel1 = New System.Windows.Forms.Panel()
-        Me.Payment = New System.Windows.Forms.Label()
+        Me.PAYMENT = New System.Windows.Forms.Label()
         Me.TXTDISCAMOUNT = New System.Windows.Forms.TextBox()
         Me.TXTDUN = New System.Windows.Forms.TextBox()
         Me.DTTD = New System.Windows.Forms.DateTimePicker()
@@ -113,11 +113,11 @@ Partial Class ucTRANSACTION
         'Label11
         '
         Me.Label11.AutoSize = True
-        Me.Label11.Font = New System.Drawing.Font("Century Gothic", 20.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label11.Font = New System.Drawing.Font("Century Gothic", 15.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label11.ForeColor = System.Drawing.Color.MediumSeaGreen
-        Me.Label11.Location = New System.Drawing.Point(510, 41)
+        Me.Label11.Location = New System.Drawing.Point(265, 14)
         Me.Label11.Name = "Label11"
-        Me.Label11.Size = New System.Drawing.Size(281, 32)
+        Me.Label11.Size = New System.Drawing.Size(221, 25)
         Me.Label11.TabIndex = 55
         Me.Label11.Text = "SALES TRANSACTION"
         '
@@ -126,7 +126,7 @@ Partial Class ucTRANSACTION
         Me.Label7.AutoSize = True
         Me.Label7.Font = New System.Drawing.Font("Century Gothic", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label7.ForeColor = System.Drawing.SystemColors.ControlDarkDark
-        Me.Label7.Location = New System.Drawing.Point(39, 93)
+        Me.Label7.Location = New System.Drawing.Point(30, 98)
         Me.Label7.Name = "Label7"
         Me.Label7.Size = New System.Drawing.Size(62, 17)
         Me.Label7.TabIndex = 14
@@ -137,10 +137,10 @@ Partial Class ucTRANSACTION
         Me.NumericUpDown1.BackColor = System.Drawing.SystemColors.Window
         Me.NumericUpDown1.Font = New System.Drawing.Font("Century Gothic", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.NumericUpDown1.ForeColor = System.Drawing.SystemColors.ControlDarkDark
-        Me.NumericUpDown1.Location = New System.Drawing.Point(135, 90)
+        Me.NumericUpDown1.Location = New System.Drawing.Point(126, 95)
         Me.NumericUpDown1.Maximum = New Decimal(New Integer() {1000, 0, 0, 0})
         Me.NumericUpDown1.Name = "NumericUpDown1"
-        Me.NumericUpDown1.Size = New System.Drawing.Size(179, 21)
+        Me.NumericUpDown1.Size = New System.Drawing.Size(121, 21)
         Me.NumericUpDown1.TabIndex = 13
         '
         'Label10
@@ -148,7 +148,7 @@ Partial Class ucTRANSACTION
         Me.Label10.AutoSize = True
         Me.Label10.Font = New System.Drawing.Font("Century Gothic", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label10.ForeColor = System.Drawing.SystemColors.ControlDarkDark
-        Me.Label10.Location = New System.Drawing.Point(27, 103)
+        Me.Label10.Location = New System.Drawing.Point(17, 58)
         Me.Label10.Name = "Label10"
         Me.Label10.Size = New System.Drawing.Size(110, 17)
         Me.Label10.TabIndex = 13
@@ -159,7 +159,7 @@ Partial Class ucTRANSACTION
         Me.TXTSEARCH.BackColor = System.Drawing.SystemColors.Window
         Me.TXTSEARCH.Font = New System.Drawing.Font("Century Gothic", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.TXTSEARCH.ForeColor = System.Drawing.SystemColors.ControlDarkDark
-        Me.TXTSEARCH.Location = New System.Drawing.Point(151, 100)
+        Me.TXTSEARCH.Location = New System.Drawing.Point(141, 55)
         Me.TXTSEARCH.Name = "TXTSEARCH"
         Me.TXTSEARCH.Size = New System.Drawing.Size(255, 23)
         Me.TXTSEARCH.TabIndex = 9
@@ -210,9 +210,9 @@ Partial Class ucTRANSACTION
         Me.GroupBox3.Controls.Add(Me.Label8)
         Me.GroupBox3.Font = New System.Drawing.Font("Century Gothic", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.GroupBox3.ForeColor = System.Drawing.SystemColors.ControlDarkDark
-        Me.GroupBox3.Location = New System.Drawing.Point(28, 300)
+        Me.GroupBox3.Location = New System.Drawing.Point(18, 225)
         Me.GroupBox3.Name = "GroupBox3"
-        Me.GroupBox3.Size = New System.Drawing.Size(490, 225)
+        Me.GroupBox3.Size = New System.Drawing.Size(406, 225)
         Me.GroupBox3.TabIndex = 51
         Me.GroupBox3.TabStop = False
         Me.GroupBox3.Text = "Product's Information"
@@ -223,16 +223,16 @@ Partial Class ucTRANSACTION
         Me.TXTPRC.Enabled = False
         Me.TXTPRC.Font = New System.Drawing.Font("Century Gothic", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.TXTPRC.ForeColor = System.Drawing.SystemColors.ControlDarkDark
-        Me.TXTPRC.Location = New System.Drawing.Point(333, 119)
+        Me.TXTPRC.Location = New System.Drawing.Point(282, 119)
         Me.TXTPRC.Name = "TXTPRC"
         Me.TXTPRC.ReadOnly = True
-        Me.TXTPRC.Size = New System.Drawing.Size(134, 21)
+        Me.TXTPRC.Size = New System.Drawing.Size(105, 21)
         Me.TXTPRC.TabIndex = 61
         '
         'Label17
         '
         Me.Label17.AutoSize = True
-        Me.Label17.Location = New System.Drawing.Point(173, 40)
+        Me.Label17.Location = New System.Drawing.Point(146, 40)
         Me.Label17.Name = "Label17"
         Me.Label17.Size = New System.Drawing.Size(118, 17)
         Me.Label17.TabIndex = 30
@@ -244,16 +244,16 @@ Partial Class ucTRANSACTION
         Me.TXTCATCODE.Enabled = False
         Me.TXTCATCODE.Font = New System.Drawing.Font("Century Gothic", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.TXTCATCODE.ForeColor = System.Drawing.SystemColors.ControlDarkDark
-        Me.TXTCATCODE.Location = New System.Drawing.Point(176, 63)
+        Me.TXTCATCODE.Location = New System.Drawing.Point(149, 63)
         Me.TXTCATCODE.Name = "TXTCATCODE"
         Me.TXTCATCODE.ReadOnly = True
-        Me.TXTCATCODE.Size = New System.Drawing.Size(134, 21)
+        Me.TXTCATCODE.Size = New System.Drawing.Size(105, 21)
         Me.TXTCATCODE.TabIndex = 29
         '
         'Label16
         '
         Me.Label16.AutoSize = True
-        Me.Label16.Location = New System.Drawing.Point(173, 99)
+        Me.Label16.Location = New System.Drawing.Point(146, 99)
         Me.Label16.Name = "Label16"
         Me.Label16.Size = New System.Drawing.Size(121, 17)
         Me.Label16.TabIndex = 28
@@ -277,7 +277,7 @@ Partial Class ucTRANSACTION
         Me.TXTPRODBRAND.Location = New System.Drawing.Point(21, 172)
         Me.TXTPRODBRAND.Name = "TXTPRODBRAND"
         Me.TXTPRODBRAND.ReadOnly = True
-        Me.TXTPRODBRAND.Size = New System.Drawing.Size(134, 21)
+        Me.TXTPRODBRAND.Size = New System.Drawing.Size(105, 21)
         Me.TXTPRODBRAND.TabIndex = 25
         '
         'TXTPRODCAT
@@ -286,10 +286,10 @@ Partial Class ucTRANSACTION
         Me.TXTPRODCAT.Enabled = False
         Me.TXTPRODCAT.Font = New System.Drawing.Font("Century Gothic", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.TXTPRODCAT.ForeColor = System.Drawing.SystemColors.ControlDarkDark
-        Me.TXTPRODCAT.Location = New System.Drawing.Point(176, 119)
+        Me.TXTPRODCAT.Location = New System.Drawing.Point(149, 119)
         Me.TXTPRODCAT.Name = "TXTPRODCAT"
         Me.TXTPRODCAT.ReadOnly = True
-        Me.TXTPRODCAT.Size = New System.Drawing.Size(134, 21)
+        Me.TXTPRODCAT.Size = New System.Drawing.Size(105, 21)
         Me.TXTPRODCAT.TabIndex = 27
         '
         'Label14
@@ -310,7 +310,7 @@ Partial Class ucTRANSACTION
         Me.TXTPRODNAME.Location = New System.Drawing.Point(16, 119)
         Me.TXTPRODNAME.Name = "TXTPRODNAME"
         Me.TXTPRODNAME.ReadOnly = True
-        Me.TXTPRODNAME.Size = New System.Drawing.Size(134, 21)
+        Me.TXTPRODNAME.Size = New System.Drawing.Size(105, 21)
         Me.TXTPRODNAME.TabIndex = 23
         '
         'Label13
@@ -331,7 +331,7 @@ Partial Class ucTRANSACTION
         Me.TXTPRODID.Location = New System.Drawing.Point(21, 63)
         Me.TXTPRODID.Name = "TXTPRODID"
         Me.TXTPRODID.ReadOnly = True
-        Me.TXTPRODID.Size = New System.Drawing.Size(134, 21)
+        Me.TXTPRODID.Size = New System.Drawing.Size(105, 21)
         Me.TXTPRODID.TabIndex = 21
         '
         'TXTUNIT
@@ -340,16 +340,16 @@ Partial Class ucTRANSACTION
         Me.TXTUNIT.Enabled = False
         Me.TXTUNIT.Font = New System.Drawing.Font("Century Gothic", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.TXTUNIT.ForeColor = System.Drawing.SystemColors.ControlDarkDark
-        Me.TXTUNIT.Location = New System.Drawing.Point(333, 176)
+        Me.TXTUNIT.Location = New System.Drawing.Point(282, 176)
         Me.TXTUNIT.Name = "TXTUNIT"
         Me.TXTUNIT.ReadOnly = True
-        Me.TXTUNIT.Size = New System.Drawing.Size(134, 21)
+        Me.TXTUNIT.Size = New System.Drawing.Size(105, 21)
         Me.TXTUNIT.TabIndex = 19
         '
         'Label12
         '
         Me.Label12.AutoSize = True
-        Me.Label12.Location = New System.Drawing.Point(330, 153)
+        Me.Label12.Location = New System.Drawing.Point(279, 153)
         Me.Label12.Name = "Label12"
         Me.Label12.Size = New System.Drawing.Size(36, 17)
         Me.Label12.TabIndex = 20
@@ -358,7 +358,7 @@ Partial Class ucTRANSACTION
         'Label4
         '
         Me.Label4.AutoSize = True
-        Me.Label4.Location = New System.Drawing.Point(330, 99)
+        Me.Label4.Location = New System.Drawing.Point(279, 99)
         Me.Label4.Name = "Label4"
         Me.Label4.Size = New System.Drawing.Size(43, 17)
         Me.Label4.TabIndex = 14
@@ -370,16 +370,16 @@ Partial Class ucTRANSACTION
         Me.TXTQTY.Enabled = False
         Me.TXTQTY.Font = New System.Drawing.Font("Century Gothic", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.TXTQTY.ForeColor = System.Drawing.SystemColors.ControlDarkDark
-        Me.TXTQTY.Location = New System.Drawing.Point(333, 63)
+        Me.TXTQTY.Location = New System.Drawing.Point(282, 63)
         Me.TXTQTY.Name = "TXTQTY"
         Me.TXTQTY.ReadOnly = True
-        Me.TXTQTY.Size = New System.Drawing.Size(134, 21)
+        Me.TXTQTY.Size = New System.Drawing.Size(105, 21)
         Me.TXTQTY.TabIndex = 17
         '
         'Label8
         '
         Me.Label8.AutoSize = True
-        Me.Label8.Location = New System.Drawing.Point(341, 40)
+        Me.Label8.Location = New System.Drawing.Point(290, 40)
         Me.Label8.Name = "Label8"
         Me.Label8.Size = New System.Drawing.Size(56, 17)
         Me.Label8.TabIndex = 18
@@ -394,9 +394,9 @@ Partial Class ucTRANSACTION
         Me.GroupBox1.Controls.Add(Me.TXTOR)
         Me.GroupBox1.Controls.Add(Me.Label1)
         Me.GroupBox1.ForeColor = System.Drawing.SystemColors.ControlDarkDark
-        Me.GroupBox1.Location = New System.Drawing.Point(535, 300)
+        Me.GroupBox1.Location = New System.Drawing.Point(430, 225)
         Me.GroupBox1.Name = "GroupBox1"
-        Me.GroupBox1.Size = New System.Drawing.Size(343, 225)
+        Me.GroupBox1.Size = New System.Drawing.Size(284, 225)
         Me.GroupBox1.TabIndex = 69
         Me.GroupBox1.TabStop = False
         '
@@ -408,7 +408,7 @@ Partial Class ucTRANSACTION
         Me.BTNCART.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.BTNCART.Font = New System.Drawing.Font("Century Gothic", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.BTNCART.ForeColor = System.Drawing.SystemColors.Control
-        Me.BTNCART.Location = New System.Drawing.Point(114, 157)
+        Me.BTNCART.Location = New System.Drawing.Point(67, 153)
         Me.BTNCART.Name = "BTNCART"
         Me.BTNCART.Size = New System.Drawing.Size(142, 40)
         Me.BTNCART.TabIndex = 60
@@ -420,9 +420,9 @@ Partial Class ucTRANSACTION
         Me.TXTOR.BackColor = System.Drawing.SystemColors.Window
         Me.TXTOR.Font = New System.Drawing.Font("Century Gothic", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.TXTOR.ForeColor = System.Drawing.SystemColors.ControlDarkDark
-        Me.TXTOR.Location = New System.Drawing.Point(135, 50)
+        Me.TXTOR.Location = New System.Drawing.Point(126, 55)
         Me.TXTOR.Name = "TXTOR"
-        Me.TXTOR.Size = New System.Drawing.Size(174, 21)
+        Me.TXTOR.Size = New System.Drawing.Size(116, 21)
         Me.TXTOR.TabIndex = 8
         '
         'Label1
@@ -430,7 +430,7 @@ Partial Class ucTRANSACTION
         Me.Label1.AutoSize = True
         Me.Label1.Font = New System.Drawing.Font("Century Gothic", 9.0!)
         Me.Label1.ForeColor = System.Drawing.SystemColors.ControlDarkDark
-        Me.Label1.Location = New System.Drawing.Point(39, 50)
+        Me.Label1.Location = New System.Drawing.Point(30, 55)
         Me.Label1.Name = "Label1"
         Me.Label1.Size = New System.Drawing.Size(84, 17)
         Me.Label1.TabIndex = 11
@@ -444,7 +444,7 @@ Partial Class ucTRANSACTION
         Me.CBODISCOUNT.Items.AddRange(New Object() {"N/A", "Senior Citizen", "PWD"})
         Me.CBODISCOUNT.Location = New System.Drawing.Point(131, 66)
         Me.CBODISCOUNT.Name = "CBODISCOUNT"
-        Me.CBODISCOUNT.Size = New System.Drawing.Size(229, 25)
+        Me.CBODISCOUNT.Size = New System.Drawing.Size(179, 25)
         Me.CBODISCOUNT.TabIndex = 13
         Me.CBODISCOUNT.Text = "-- Select --"
         '
@@ -477,7 +477,7 @@ Partial Class ucTRANSACTION
         Me.BTNSAVE.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.BTNSAVE.Font = New System.Drawing.Font("Century Gothic", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.BTNSAVE.ForeColor = System.Drawing.SystemColors.Control
-        Me.BTNSAVE.Location = New System.Drawing.Point(260, 206)
+        Me.BTNSAVE.Location = New System.Drawing.Point(210, 207)
         Me.BTNSAVE.Name = "BTNSAVE"
         Me.BTNSAVE.Size = New System.Drawing.Size(100, 31)
         Me.BTNSAVE.TabIndex = 16
@@ -490,7 +490,7 @@ Partial Class ucTRANSACTION
         Me.TXTPAYMENT.ForeColor = System.Drawing.SystemColors.ControlDarkDark
         Me.TXTPAYMENT.Location = New System.Drawing.Point(131, 137)
         Me.TXTPAYMENT.Name = "TXTPAYMENT"
-        Me.TXTPAYMENT.Size = New System.Drawing.Size(229, 20)
+        Me.TXTPAYMENT.Size = New System.Drawing.Size(179, 20)
         Me.TXTPAYMENT.TabIndex = 19
         Me.TXTPAYMENT.Text = "0"
         '
@@ -510,11 +510,11 @@ Partial Class ucTRANSACTION
         Me.Label6.AutoSize = True
         Me.Label6.Font = New System.Drawing.Font("Century Gothic", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label6.ForeColor = System.Drawing.SystemColors.ControlDarkDark
-        Me.Label6.Location = New System.Drawing.Point(25, 531)
+        Me.Label6.Location = New System.Drawing.Point(15, 456)
         Me.Label6.Name = "Label6"
-        Me.Label6.Size = New System.Drawing.Size(112, 17)
+        Me.Label6.Size = New System.Drawing.Size(77, 17)
         Me.Label6.TabIndex = 59
-        Me.Label6.Text = "Customer's Cart"
+        Me.Label6.Text = "Order Cart"
         '
         'pnlpayment
         '
@@ -532,9 +532,9 @@ Partial Class ucTRANSACTION
         Me.pnlpayment.Controls.Add(Me.Label5)
         Me.pnlpayment.Controls.Add(Me.TXTPAYMENT)
         Me.pnlpayment.Font = New System.Drawing.Font("Century Gothic", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.pnlpayment.Location = New System.Drawing.Point(897, 513)
+        Me.pnlpayment.Location = New System.Drawing.Point(731, 417)
         Me.pnlpayment.Name = "pnlpayment"
-        Me.pnlpayment.Size = New System.Drawing.Size(394, 255)
+        Me.pnlpayment.Size = New System.Drawing.Size(361, 255)
         Me.pnlpayment.TabIndex = 53
         Me.pnlpayment.Visible = False
         '
@@ -545,7 +545,7 @@ Partial Class ucTRANSACTION
         Me.TOTALBILL.ForeColor = System.Drawing.SystemColors.ControlDarkDark
         Me.TOTALBILL.Location = New System.Drawing.Point(131, 104)
         Me.TOTALBILL.Name = "TOTALBILL"
-        Me.TOTALBILL.Size = New System.Drawing.Size(229, 20)
+        Me.TOTALBILL.Size = New System.Drawing.Size(179, 20)
         Me.TOTALBILL.TabIndex = 70
         Me.TOTALBILL.Text = "0"
         '
@@ -564,28 +564,28 @@ Partial Class ucTRANSACTION
         Me.TXTCHANGE.ForeColor = System.Drawing.SystemColors.ControlDark
         Me.TXTCHANGE.Location = New System.Drawing.Point(131, 170)
         Me.TXTCHANGE.Name = "TXTCHANGE"
-        Me.TXTCHANGE.Size = New System.Drawing.Size(229, 20)
+        Me.TXTCHANGE.Size = New System.Drawing.Size(179, 20)
         Me.TXTCHANGE.TabIndex = 31
         '
         'Panel1
         '
         Me.Panel1.BackColor = System.Drawing.Color.FromArgb(CType(CType(37, Byte), Integer), CType(CType(46, Byte), Integer), CType(CType(59, Byte), Integer))
-        Me.Panel1.Controls.Add(Me.Payment)
+        Me.Panel1.Controls.Add(Me.PAYMENT)
         Me.Panel1.Location = New System.Drawing.Point(-1, -1)
         Me.Panel1.Name = "Panel1"
-        Me.Panel1.Size = New System.Drawing.Size(432, 46)
+        Me.Panel1.Size = New System.Drawing.Size(361, 46)
         Me.Panel1.TabIndex = 0
         '
-        'Payment
+        'PAYMENT
         '
-        Me.Payment.AutoSize = True
-        Me.Payment.Font = New System.Drawing.Font("Century Gothic", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Payment.ForeColor = System.Drawing.Color.White
-        Me.Payment.Location = New System.Drawing.Point(165, 15)
-        Me.Payment.Name = "Payment"
-        Me.Payment.Size = New System.Drawing.Size(73, 20)
-        Me.Payment.TabIndex = 0
-        Me.Payment.Text = "Payment"
+        Me.PAYMENT.AutoSize = True
+        Me.PAYMENT.Font = New System.Drawing.Font("Century Gothic", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.PAYMENT.ForeColor = System.Drawing.Color.White
+        Me.PAYMENT.Location = New System.Drawing.Point(146, 13)
+        Me.PAYMENT.Name = "PAYMENT"
+        Me.PAYMENT.Size = New System.Drawing.Size(73, 20)
+        Me.PAYMENT.TabIndex = 0
+        Me.PAYMENT.Text = "Payment"
         '
         'TXTDISCAMOUNT
         '
@@ -651,7 +651,7 @@ Partial Class ucTRANSACTION
         DataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText
         DataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
         Me.DGVCART.DefaultCellStyle = DataGridViewCellStyle2
-        Me.DGVCART.Location = New System.Drawing.Point(28, 559)
+        Me.DGVCART.Location = New System.Drawing.Point(20, 476)
         Me.DGVCART.Name = "DGVCART"
         Me.DGVCART.ReadOnly = True
         DataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
@@ -664,7 +664,7 @@ Partial Class ucTRANSACTION
         Me.DGVCART.RowHeadersDefaultCellStyle = DataGridViewCellStyle3
         Me.DGVCART.RowHeadersVisible = False
         Me.DGVCART.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
-        Me.DGVCART.Size = New System.Drawing.Size(850, 172)
+        Me.DGVCART.Size = New System.Drawing.Size(696, 146)
         Me.DGVCART.TabIndex = 32
         '
         'DGVPRODUCTS
@@ -689,7 +689,7 @@ Partial Class ucTRANSACTION
         DataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText
         DataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
         Me.DGVPRODUCTS.DefaultCellStyle = DataGridViewCellStyle5
-        Me.DGVPRODUCTS.Location = New System.Drawing.Point(28, 136)
+        Me.DGVPRODUCTS.Location = New System.Drawing.Point(18, 91)
         Me.DGVPRODUCTS.Name = "DGVPRODUCTS"
         Me.DGVPRODUCTS.ReadOnly = True
         DataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
@@ -702,7 +702,7 @@ Partial Class ucTRANSACTION
         Me.DGVPRODUCTS.RowHeadersDefaultCellStyle = DataGridViewCellStyle6
         Me.DGVPRODUCTS.RowHeadersVisible = False
         Me.DGVPRODUCTS.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
-        Me.DGVPRODUCTS.Size = New System.Drawing.Size(850, 158)
+        Me.DGVPRODUCTS.Size = New System.Drawing.Size(696, 128)
         Me.DGVPRODUCTS.TabIndex = 70
         '
         'BTNDELETE
@@ -713,7 +713,7 @@ Partial Class ucTRANSACTION
         Me.BTNDELETE.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.BTNDELETE.Font = New System.Drawing.Font("Century Gothic", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.BTNDELETE.ForeColor = System.Drawing.SystemColors.Control
-        Me.BTNDELETE.Location = New System.Drawing.Point(733, 737)
+        Me.BTNDELETE.Location = New System.Drawing.Point(569, 637)
         Me.BTNDELETE.Name = "BTNDELETE"
         Me.BTNDELETE.Size = New System.Drawing.Size(145, 31)
         Me.BTNDELETE.TabIndex = 71
@@ -728,7 +728,7 @@ Partial Class ucTRANSACTION
         Me.BTNPAY.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.BTNPAY.Font = New System.Drawing.Font("Century Gothic", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.BTNPAY.ForeColor = System.Drawing.SystemColors.Control
-        Me.BTNPAY.Location = New System.Drawing.Point(560, 737)
+        Me.BTNPAY.Location = New System.Drawing.Point(396, 637)
         Me.BTNPAY.Name = "BTNPAY"
         Me.BTNPAY.Size = New System.Drawing.Size(145, 31)
         Me.BTNPAY.TabIndex = 72
@@ -763,9 +763,9 @@ Partial Class ucTRANSACTION
         Me.Panel3.Controls.Add(Me.Panel5)
         Me.Panel3.Controls.Add(Me.Panel4)
         Me.Panel3.Font = New System.Drawing.Font("Century Gothic", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Panel3.Location = New System.Drawing.Point(897, 131)
+        Me.Panel3.Location = New System.Drawing.Point(731, 35)
         Me.Panel3.Name = "Panel3"
-        Me.Panel3.Size = New System.Drawing.Size(394, 387)
+        Me.Panel3.Size = New System.Drawing.Size(361, 387)
         Me.Panel3.TabIndex = 77
         '
         'DGVSUMMARY
@@ -821,7 +821,7 @@ Partial Class ucTRANSACTION
         Me.DGVSUMMARY.RowsDefaultCellStyle = DataGridViewCellStyle11
         Me.DGVSUMMARY.ScrollBars = System.Windows.Forms.ScrollBars.None
         Me.DGVSUMMARY.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
-        Me.DGVSUMMARY.Size = New System.Drawing.Size(394, 260)
+        Me.DGVSUMMARY.Size = New System.Drawing.Size(361, 260)
         Me.DGVSUMMARY.TabIndex = 55
         '
         'Panel5
@@ -841,31 +841,31 @@ Partial Class ucTRANSACTION
         'Label20
         '
         Me.Label20.AutoSize = True
-        Me.Label20.Font = New System.Drawing.Font("Century Gothic", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label20.Font = New System.Drawing.Font("Century Gothic", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label20.ForeColor = System.Drawing.Color.DimGray
-        Me.Label20.Location = New System.Drawing.Point(14, 14)
+        Me.Label20.Location = New System.Drawing.Point(21, 13)
         Me.Label20.Name = "Label20"
-        Me.Label20.Size = New System.Drawing.Size(92, 20)
+        Me.Label20.Size = New System.Drawing.Size(73, 17)
         Me.Label20.TabIndex = 58
-        Me.Label20.Text = "ACCOUNT :"
+        Me.Label20.Text = "POSITION :"
         '
         'Label19
         '
         Me.Label19.AutoSize = True
-        Me.Label19.Font = New System.Drawing.Font("Century Gothic", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label19.Font = New System.Drawing.Font("Century Gothic", 9.75!)
         Me.Label19.ForeColor = System.Drawing.Color.DimGray
-        Me.Label19.Location = New System.Drawing.Point(23, 33)
+        Me.Label19.Location = New System.Drawing.Point(21, 32)
         Me.Label19.Name = "Label19"
-        Me.Label19.Size = New System.Drawing.Size(52, 20)
+        Me.Label19.Size = New System.Drawing.Size(91, 17)
         Me.Label19.TabIndex = 57
-        Me.Label19.Text = "USER :"
+        Me.Label19.Text = "SYSTEM USER :"
         '
         'lblut
         '
         Me.lblut.AutoSize = True
         Me.lblut.Font = New System.Drawing.Font("Century Gothic", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lblut.ForeColor = System.Drawing.Color.DimGray
-        Me.lblut.Location = New System.Drawing.Point(112, 13)
+        Me.lblut.Location = New System.Drawing.Point(119, 12)
         Me.lblut.Name = "lblut"
         Me.lblut.Size = New System.Drawing.Size(21, 18)
         Me.lblut.TabIndex = 56
@@ -874,11 +874,11 @@ Partial Class ucTRANSACTION
         'TOTALAMOUNT
         '
         Me.TOTALAMOUNT.AutoSize = True
-        Me.TOTALAMOUNT.Font = New System.Drawing.Font("Century Gothic", 15.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.TOTALAMOUNT.Font = New System.Drawing.Font("Century Gothic", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.TOTALAMOUNT.ForeColor = System.Drawing.SystemColors.ControlDarkDark
-        Me.TOTALAMOUNT.Location = New System.Drawing.Point(315, 14)
+        Me.TOTALAMOUNT.Location = New System.Drawing.Point(298, 13)
         Me.TOTALAMOUNT.Name = "TOTALAMOUNT"
-        Me.TOTALAMOUNT.Size = New System.Drawing.Size(66, 25)
+        Me.TOTALAMOUNT.Size = New System.Drawing.Size(40, 16)
         Me.TOTALAMOUNT.TabIndex = 54
         Me.TOTALAMOUNT.Text = "00,00"
         '
@@ -887,7 +887,7 @@ Partial Class ucTRANSACTION
         Me.lblun.AutoSize = True
         Me.lblun.Font = New System.Drawing.Font("Century Gothic", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lblun.ForeColor = System.Drawing.Color.DimGray
-        Me.lblun.Location = New System.Drawing.Point(112, 33)
+        Me.lblun.Location = New System.Drawing.Point(119, 32)
         Me.lblun.Name = "lblun"
         Me.lblun.Size = New System.Drawing.Size(26, 18)
         Me.lblun.TabIndex = 55
@@ -896,11 +896,11 @@ Partial Class ucTRANSACTION
         'LBLCHUCHU
         '
         Me.LBLCHUCHU.AutoSize = True
-        Me.LBLCHUCHU.Font = New System.Drawing.Font("Century Gothic", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.LBLCHUCHU.Font = New System.Drawing.Font("Century Gothic", 9.75!)
         Me.LBLCHUCHU.ForeColor = System.Drawing.SystemColors.ControlDarkDark
-        Me.LBLCHUCHU.Location = New System.Drawing.Point(228, 18)
+        Me.LBLCHUCHU.Location = New System.Drawing.Point(211, 17)
         Me.LBLCHUCHU.Name = "LBLCHUCHU"
-        Me.LBLCHUCHU.Size = New System.Drawing.Size(90, 20)
+        Me.LBLCHUCHU.Size = New System.Drawing.Size(78, 17)
         Me.LBLCHUCHU.TabIndex = 1
         Me.LBLCHUCHU.Text = "TOTAL BILL :"
         '
@@ -912,17 +912,17 @@ Partial Class ucTRANSACTION
         Me.Panel4.Controls.Add(Me.Label21)
         Me.Panel4.Location = New System.Drawing.Point(-1, -1)
         Me.Panel4.Name = "Panel4"
-        Me.Panel4.Size = New System.Drawing.Size(432, 65)
+        Me.Panel4.Size = New System.Drawing.Size(361, 65)
         Me.Panel4.TabIndex = 0
         '
         'Label18
         '
         Me.Label18.AutoSize = True
-        Me.Label18.Font = New System.Drawing.Font("Century Gothic", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label18.Font = New System.Drawing.Font("Century Gothic", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label18.ForeColor = System.Drawing.Color.White
         Me.Label18.Location = New System.Drawing.Point(23, 16)
         Me.Label18.Name = "Label18"
-        Me.Label18.Size = New System.Drawing.Size(176, 20)
+        Me.Label18.Size = New System.Drawing.Size(141, 17)
         Me.Label18.TabIndex = 57
         Me.Label18.Text = "PURCHASED SUMMARY"
         '
@@ -931,7 +931,7 @@ Partial Class ucTRANSACTION
         Me.ORNO.AutoSize = True
         Me.ORNO.Font = New System.Drawing.Font("Century Gothic", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.ORNO.ForeColor = System.Drawing.Color.White
-        Me.ORNO.Location = New System.Drawing.Point(324, 16)
+        Me.ORNO.Location = New System.Drawing.Point(282, 15)
         Me.ORNO.Name = "ORNO"
         Me.ORNO.Size = New System.Drawing.Size(56, 18)
         Me.ORNO.TabIndex = 53
@@ -940,11 +940,11 @@ Partial Class ucTRANSACTION
         'Label21
         '
         Me.Label21.AutoSize = True
-        Me.Label21.Font = New System.Drawing.Font("Century Gothic", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label21.Font = New System.Drawing.Font("Century Gothic", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label21.ForeColor = System.Drawing.Color.White
-        Me.Label21.Location = New System.Drawing.Point(233, 16)
+        Me.Label21.Location = New System.Drawing.Point(191, 15)
         Me.Label21.Name = "Label21"
-        Me.Label21.Size = New System.Drawing.Size(85, 20)
+        Me.Label21.Size = New System.Drawing.Size(75, 17)
         Me.Label21.TabIndex = 0
         Me.Label21.Text = "Order No :"
         '
@@ -973,7 +973,7 @@ Partial Class ucTRANSACTION
         Me.Controls.Add(Me.Label11)
         Me.Controls.Add(Me.GroupBox3)
         Me.Name = "ucTRANSACTION"
-        Me.Size = New System.Drawing.Size(1322, 801)
+        Me.Size = New System.Drawing.Size(1113, 682)
         CType(Me.NumericUpDown1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.GroupBox3.ResumeLayout(False)
         Me.GroupBox3.PerformLayout()
@@ -1039,7 +1039,7 @@ Partial Class ucTRANSACTION
     Friend WithEvents TXTPRC As TextBox
     Friend WithEvents GroupBox1 As GroupBox
     Friend WithEvents Panel1 As Panel
-    Friend WithEvents Payment As Label
+    Friend WithEvents PAYMENT As Label
     Friend WithEvents Panel2 As Panel
     Friend WithEvents DGVPRODUCTS As DataGridView
     Friend WithEvents BTNDELETE As Button

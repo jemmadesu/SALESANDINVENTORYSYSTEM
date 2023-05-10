@@ -44,7 +44,7 @@ Partial Class ucSTOCKLIST
         Me.Panel2.Dock = System.Windows.Forms.DockStyle.Top
         Me.Panel2.Location = New System.Drawing.Point(0, 0)
         Me.Panel2.Name = "Panel2"
-        Me.Panel2.Size = New System.Drawing.Size(1322, 49)
+        Me.Panel2.Size = New System.Drawing.Size(1113, 49)
         Me.Panel2.TabIndex = 128
         '
         'BTNBACK
@@ -57,7 +57,7 @@ Partial Class ucSTOCKLIST
         Me.BTNBACK.ForeColor = System.Drawing.Color.White
         Me.BTNBACK.Image = CType(resources.GetObject("BTNBACK.Image"), System.Drawing.Image)
         Me.BTNBACK.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.BTNBACK.Location = New System.Drawing.Point(1200, 3)
+        Me.BTNBACK.Location = New System.Drawing.Point(963, 3)
         Me.BTNBACK.Name = "BTNBACK"
         Me.BTNBACK.Padding = New System.Windows.Forms.Padding(20, 0, 0, 0)
         Me.BTNBACK.Size = New System.Drawing.Size(119, 46)
@@ -81,7 +81,7 @@ Partial Class ucSTOCKLIST
         Me.Label2.AutoSize = True
         Me.Label2.Font = New System.Drawing.Font("Century Gothic", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label2.ForeColor = System.Drawing.SystemColors.ControlDarkDark
-        Me.Label2.Location = New System.Drawing.Point(814, 96)
+        Me.Label2.Location = New System.Drawing.Point(644, 85)
         Me.Label2.Name = "Label2"
         Me.Label2.Size = New System.Drawing.Size(138, 21)
         Me.Label2.TabIndex = 135
@@ -101,7 +101,7 @@ Partial Class ucSTOCKLIST
         Me.TXTSEARCH.Font = New System.Drawing.Font("Century Gothic", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.TXTSEARCH.HoverState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
         Me.TXTSEARCH.HoverState.Parent = Me.TXTSEARCH
-        Me.TXTSEARCH.Location = New System.Drawing.Point(959, 90)
+        Me.TXTSEARCH.Location = New System.Drawing.Point(789, 79)
         Me.TXTSEARCH.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.TXTSEARCH.Name = "TXTSEARCH"
         Me.TXTSEARCH.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
@@ -133,7 +133,7 @@ Partial Class ucSTOCKLIST
         DataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText
         DataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
         Me.DGVSTOCK.DefaultCellStyle = DataGridViewCellStyle2
-        Me.DGVSTOCK.Location = New System.Drawing.Point(71, 138)
+        Me.DGVSTOCK.Location = New System.Drawing.Point(39, 123)
         Me.DGVSTOCK.Name = "DGVSTOCK"
         Me.DGVSTOCK.ReadOnly = True
         DataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
@@ -146,7 +146,7 @@ Partial Class ucSTOCKLIST
         Me.DGVSTOCK.RowHeadersDefaultCellStyle = DataGridViewCellStyle3
         Me.DGVSTOCK.RowHeadersVisible = False
         Me.DGVSTOCK.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
-        Me.DGVSTOCK.Size = New System.Drawing.Size(1181, 614)
+        Me.DGVSTOCK.Size = New System.Drawing.Size(1043, 521)
         Me.DGVSTOCK.TabIndex = 133
         '
         'Label4
@@ -169,7 +169,7 @@ Partial Class ucSTOCKLIST
         Me.Controls.Add(Me.Label1)
         Me.Controls.Add(Me.Panel2)
         Me.Name = "ucSTOCKLIST"
-        Me.Size = New System.Drawing.Size(1322, 801)
+        Me.Size = New System.Drawing.Size(1113, 682)
         Me.Panel2.ResumeLayout(False)
         CType(Me.DGVSTOCK, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)

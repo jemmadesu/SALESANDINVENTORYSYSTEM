@@ -104,7 +104,7 @@ Public Class ucOUTOFSTOCKS
 
     Private Sub BTNARCHIVE_Click(sender As Object, e As EventArgs) Handles BTNARCHIVE.Click
 
-        If MessageBox.Show("Are you sure to remove this from the Stock List?", "Archive", MessageBoxButtons.YesNo, MessageBoxIcon.Information, MessageBoxDefaultButton.Button2) = DialogResult.No Then
+        If MessageBox.Show("This product is already out of stock, Do you really want to archive this product?", "Archive", MessageBoxButtons.YesNo, MessageBoxIcon.Warning, MessageBoxDefaultButton.Button2) = DialogResult.No Then
             Exit Sub
         End If
 
@@ -157,7 +157,7 @@ Public Class ucOUTOFSTOCKS
             con.Close()
             refreshgrid()
 
-            MessageBox.Show("Product has been successfully added to Archive", "Notice", MessageBoxButtons.OK, MessageBoxIcon.Information)
+            MessageBox.Show("Product has been added to Archive", "Notice", MessageBoxButtons.OK, MessageBoxIcon.Information)
             con.Close()
         Next
     End Sub

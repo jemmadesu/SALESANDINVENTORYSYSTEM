@@ -184,4 +184,8 @@ Public Class ucDASHBOARD
     Private Sub DGVUSERS_CellContentClick(sender As Object, e As DataGridViewCellEventArgs) Handles DGVUSERS.CellContentClick
 
     End Sub
+
+    Private Sub CHART_Click(sender As Object, e As EventArgs) Handles CHART.Click
+
+    End Sub
 End Class

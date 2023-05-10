@@ -45,13 +45,13 @@ Partial Class ucNEWPRODUCT
         Me.Label10 = New System.Windows.Forms.Label()
         Me.DTP = New System.Windows.Forms.DateTimePicker()
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
+        Me.CBOBRAND = New System.Windows.Forms.ComboBox()
         Me.CBOMANUFACTURER = New System.Windows.Forms.ComboBox()
         Me.Panel2 = New System.Windows.Forms.Panel()
         Me.BTNBACK = New System.Windows.Forms.Button()
         Me.DGVPRODUCTS = New System.Windows.Forms.DataGridView()
         Me.GroupBox2 = New System.Windows.Forms.GroupBox()
         Me.LBLID = New System.Windows.Forms.Label()
-        Me.CBOBRAND = New System.Windows.Forms.ComboBox()
         Me.GroupBox1.SuspendLayout()
         Me.Panel2.SuspendLayout()
         CType(Me.DGVPRODUCTS, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -63,7 +63,7 @@ Partial Class ucNEWPRODUCT
         Me.TXTCATCODE.Enabled = False
         Me.TXTCATCODE.Font = New System.Drawing.Font("Century Gothic", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.TXTCATCODE.ForeColor = System.Drawing.SystemColors.ControlDarkDark
-        Me.TXTCATCODE.Location = New System.Drawing.Point(254, 335)
+        Me.TXTCATCODE.Location = New System.Drawing.Point(221, 323)
         Me.TXTCATCODE.Name = "TXTCATCODE"
         Me.TXTCATCODE.Size = New System.Drawing.Size(190, 23)
         Me.TXTCATCODE.TabIndex = 48
@@ -74,7 +74,7 @@ Partial Class ucNEWPRODUCT
         Me.BTNADD.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.BTNADD.Font = New System.Drawing.Font("Century Gothic", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.BTNADD.ForeColor = System.Drawing.Color.White
-        Me.BTNADD.Location = New System.Drawing.Point(87, 427)
+        Me.BTNADD.Location = New System.Drawing.Point(36, 412)
         Me.BTNADD.Name = "BTNADD"
         Me.BTNADD.Size = New System.Drawing.Size(75, 30)
         Me.BTNADD.TabIndex = 45
@@ -86,7 +86,7 @@ Partial Class ucNEWPRODUCT
         Me.Label9.AutoSize = True
         Me.Label9.Font = New System.Drawing.Font("Century Gothic", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label9.ForeColor = System.Drawing.SystemColors.ControlDarkDark
-        Me.Label9.Location = New System.Drawing.Point(72, 228)
+        Me.Label9.Location = New System.Drawing.Point(39, 216)
         Me.Label9.Name = "Label9"
         Me.Label9.Size = New System.Drawing.Size(60, 20)
         Me.Label9.TabIndex = 47
@@ -98,7 +98,7 @@ Partial Class ucNEWPRODUCT
         Me.CBOPRODCAT.Font = New System.Drawing.Font("Century Gothic", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.CBOPRODCAT.ForeColor = System.Drawing.SystemColors.ControlDarkDark
         Me.CBOPRODCAT.FormattingEnabled = True
-        Me.CBOPRODCAT.Location = New System.Drawing.Point(252, 279)
+        Me.CBOPRODCAT.Location = New System.Drawing.Point(219, 267)
         Me.CBOPRODCAT.Name = "CBOPRODCAT"
         Me.CBOPRODCAT.Size = New System.Drawing.Size(192, 25)
         Me.CBOPRODCAT.TabIndex = 21
@@ -108,7 +108,7 @@ Partial Class ucNEWPRODUCT
         Me.Label4.AutoSize = True
         Me.Label4.Font = New System.Drawing.Font("Century Gothic", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label4.ForeColor = System.Drawing.SystemColors.ControlDarkDark
-        Me.Label4.Location = New System.Drawing.Point(74, 335)
+        Me.Label4.Location = New System.Drawing.Point(41, 323)
         Me.Label4.Name = "Label4"
         Me.Label4.Size = New System.Drawing.Size(133, 20)
         Me.Label4.TabIndex = 19
@@ -119,7 +119,7 @@ Partial Class ucNEWPRODUCT
         Me.TXTPI.Enabled = False
         Me.TXTPI.Font = New System.Drawing.Font("Century Gothic", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.TXTPI.ForeColor = System.Drawing.SystemColors.ControlDarkDark
-        Me.TXTPI.Location = New System.Drawing.Point(258, 81)
+        Me.TXTPI.Location = New System.Drawing.Point(225, 69)
         Me.TXTPI.Name = "TXTPI"
         Me.TXTPI.Size = New System.Drawing.Size(190, 23)
         Me.TXTPI.TabIndex = 0
@@ -129,7 +129,7 @@ Partial Class ucNEWPRODUCT
         Me.Label3.AutoSize = True
         Me.Label3.Font = New System.Drawing.Font("Century Gothic", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label3.ForeColor = System.Drawing.SystemColors.ControlDarkDark
-        Me.Label3.Location = New System.Drawing.Point(72, 279)
+        Me.Label3.Location = New System.Drawing.Point(39, 267)
         Me.Label3.Name = "Label3"
         Me.Label3.Size = New System.Drawing.Size(135, 20)
         Me.Label3.TabIndex = 17
@@ -140,7 +140,7 @@ Partial Class ucNEWPRODUCT
         Me.Label1.AutoSize = True
         Me.Label1.Font = New System.Drawing.Font("Century Gothic", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label1.ForeColor = System.Drawing.SystemColors.ControlDarkDark
-        Me.Label1.Location = New System.Drawing.Point(72, 85)
+        Me.Label1.Location = New System.Drawing.Point(39, 73)
         Me.Label1.Name = "Label1"
         Me.Label1.Size = New System.Drawing.Size(95, 20)
         Me.Label1.TabIndex = 6
@@ -153,7 +153,7 @@ Partial Class ucNEWPRODUCT
         Me.BTNSAVE.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.BTNSAVE.Font = New System.Drawing.Font("Century Gothic", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.BTNSAVE.ForeColor = System.Drawing.Color.White
-        Me.BTNSAVE.Location = New System.Drawing.Point(289, 427)
+        Me.BTNSAVE.Location = New System.Drawing.Point(238, 412)
         Me.BTNSAVE.Name = "BTNSAVE"
         Me.BTNSAVE.Size = New System.Drawing.Size(75, 30)
         Me.BTNSAVE.TabIndex = 14
@@ -167,7 +167,7 @@ Partial Class ucNEWPRODUCT
         Me.BTNEDIT.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.BTNEDIT.Font = New System.Drawing.Font("Century Gothic", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.BTNEDIT.ForeColor = System.Drawing.Color.White
-        Me.BTNEDIT.Location = New System.Drawing.Point(191, 427)
+        Me.BTNEDIT.Location = New System.Drawing.Point(140, 412)
         Me.BTNEDIT.Name = "BTNEDIT"
         Me.BTNEDIT.Size = New System.Drawing.Size(75, 30)
         Me.BTNEDIT.TabIndex = 12
@@ -181,7 +181,7 @@ Partial Class ucNEWPRODUCT
         Me.BTNCSNCEL.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.BTNCSNCEL.Font = New System.Drawing.Font("Century Gothic", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.BTNCSNCEL.ForeColor = System.Drawing.Color.White
-        Me.BTNCSNCEL.Location = New System.Drawing.Point(387, 427)
+        Me.BTNCSNCEL.Location = New System.Drawing.Point(336, 412)
         Me.BTNCSNCEL.Name = "BTNCSNCEL"
         Me.BTNCSNCEL.Size = New System.Drawing.Size(75, 30)
         Me.BTNCSNCEL.TabIndex = 15
@@ -193,7 +193,7 @@ Partial Class ucNEWPRODUCT
         Me.TXTPNA.Enabled = False
         Me.TXTPNA.Font = New System.Drawing.Font("Century Gothic", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.TXTPNA.ForeColor = System.Drawing.SystemColors.ControlDarkDark
-        Me.TXTPNA.Location = New System.Drawing.Point(258, 127)
+        Me.TXTPNA.Location = New System.Drawing.Point(225, 115)
         Me.TXTPNA.Name = "TXTPNA"
         Me.TXTPNA.Size = New System.Drawing.Size(190, 23)
         Me.TXTPNA.TabIndex = 5
@@ -203,7 +203,7 @@ Partial Class ucNEWPRODUCT
         Me.Label5.AutoSize = True
         Me.Label5.Font = New System.Drawing.Font("Century Gothic", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label5.ForeColor = System.Drawing.SystemColors.ControlDarkDark
-        Me.Label5.Location = New System.Drawing.Point(74, 173)
+        Me.Label5.Location = New System.Drawing.Point(41, 161)
         Me.Label5.Name = "Label5"
         Me.Label5.Size = New System.Drawing.Size(119, 20)
         Me.Label5.TabIndex = 10
@@ -214,7 +214,7 @@ Partial Class ucNEWPRODUCT
         Me.Label2.AutoSize = True
         Me.Label2.Font = New System.Drawing.Font("Century Gothic", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label2.ForeColor = System.Drawing.SystemColors.ControlDarkDark
-        Me.Label2.Location = New System.Drawing.Point(72, 130)
+        Me.Label2.Location = New System.Drawing.Point(39, 118)
         Me.Label2.Name = "Label2"
         Me.Label2.Size = New System.Drawing.Size(123, 20)
         Me.Label2.TabIndex = 7
@@ -284,9 +284,22 @@ Partial Class ucNEWPRODUCT
         Me.GroupBox1.ForeColor = System.Drawing.SystemColors.ControlDarkDark
         Me.GroupBox1.Location = New System.Drawing.Point(43, 132)
         Me.GroupBox1.Name = "GroupBox1"
-        Me.GroupBox1.Size = New System.Drawing.Size(553, 586)
+        Me.GroupBox1.Size = New System.Drawing.Size(452, 533)
         Me.GroupBox1.TabIndex = 45
         Me.GroupBox1.TabStop = False
+        '
+        'CBOBRAND
+        '
+        Me.CBOBRAND.Enabled = False
+        Me.CBOBRAND.Font = New System.Drawing.Font("Century Gothic", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.CBOBRAND.ForeColor = System.Drawing.SystemColors.ControlDarkDark
+        Me.CBOBRAND.FormattingEnabled = True
+        Me.CBOBRAND.Items.AddRange(New Object() {"ARBLOC", "AUGMENTIN", "AVARIN", "BIOGESI", "CATAFLAM", "CLOVIX", "COZAAR", "CORALAN", "DOXICON", "EXFORGE", "FENOFLEX", "FORXIGA", "GODEX", "KELTICAN", "LIVOLIN", "LYRICA", "NEBILET", "PLAVIX", "RENVELA", "VOLTAREN", "ZYRTEC"})
+        Me.CBOBRAND.Location = New System.Drawing.Point(219, 211)
+        Me.CBOBRAND.Name = "CBOBRAND"
+        Me.CBOBRAND.Size = New System.Drawing.Size(192, 25)
+        Me.CBOBRAND.TabIndex = 75
+        Me.CBOBRAND.Text = "-- Select --"
         '
         'CBOMANUFACTURER
         '
@@ -294,7 +307,7 @@ Partial Class ucNEWPRODUCT
         Me.CBOMANUFACTURER.Font = New System.Drawing.Font("Century Gothic", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.CBOMANUFACTURER.ForeColor = System.Drawing.SystemColors.ControlDarkDark
         Me.CBOMANUFACTURER.FormattingEnabled = True
-        Me.CBOMANUFACTURER.Location = New System.Drawing.Point(254, 173)
+        Me.CBOMANUFACTURER.Location = New System.Drawing.Point(221, 161)
         Me.CBOMANUFACTURER.Name = "CBOMANUFACTURER"
         Me.CBOMANUFACTURER.Size = New System.Drawing.Size(192, 25)
         Me.CBOMANUFACTURER.TabIndex = 74
@@ -306,7 +319,7 @@ Partial Class ucNEWPRODUCT
         Me.Panel2.Dock = System.Windows.Forms.DockStyle.Top
         Me.Panel2.Location = New System.Drawing.Point(0, 0)
         Me.Panel2.Name = "Panel2"
-        Me.Panel2.Size = New System.Drawing.Size(1322, 49)
+        Me.Panel2.Size = New System.Drawing.Size(1113, 49)
         Me.Panel2.TabIndex = 48
         '
         'BTNBACK
@@ -319,7 +332,7 @@ Partial Class ucNEWPRODUCT
         Me.BTNBACK.ForeColor = System.Drawing.Color.White
         Me.BTNBACK.Image = CType(resources.GetObject("BTNBACK.Image"), System.Drawing.Image)
         Me.BTNBACK.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.BTNBACK.Location = New System.Drawing.Point(1197, 3)
+        Me.BTNBACK.Location = New System.Drawing.Point(979, 3)
         Me.BTNBACK.Name = "BTNBACK"
         Me.BTNBACK.Padding = New System.Windows.Forms.Padding(20, 0, 0, 0)
         Me.BTNBACK.Size = New System.Drawing.Size(119, 46)
@@ -373,7 +386,7 @@ Partial Class ucNEWPRODUCT
         Me.GroupBox2.Controls.Add(Me.Label10)
         Me.GroupBox2.Font = New System.Drawing.Font("Century Gothic", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.GroupBox2.ForeColor = System.Drawing.SystemColors.ControlDarkDark
-        Me.GroupBox2.Location = New System.Drawing.Point(703, 132)
+        Me.GroupBox2.Location = New System.Drawing.Point(511, 79)
         Me.GroupBox2.Name = "GroupBox2"
         Me.GroupBox2.Size = New System.Drawing.Size(587, 586)
         Me.GroupBox2.TabIndex = 72
@@ -391,17 +404,6 @@ Partial Class ucNEWPRODUCT
         Me.LBLID.Text = "ID"
         Me.LBLID.Visible = False
         '
-        'CBOBRAND
-        '
-        Me.CBOBRAND.Enabled = False
-        Me.CBOBRAND.Font = New System.Drawing.Font("Century Gothic", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.CBOBRAND.ForeColor = System.Drawing.SystemColors.ControlDarkDark
-        Me.CBOBRAND.FormattingEnabled = True
-        Me.CBOBRAND.Location = New System.Drawing.Point(252, 223)
-        Me.CBOBRAND.Name = "CBOBRAND"
-        Me.CBOBRAND.Size = New System.Drawing.Size(192, 25)
-        Me.CBOBRAND.TabIndex = 75
-        '
         'ucNEWPRODUCT
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -414,7 +416,7 @@ Partial Class ucNEWPRODUCT
         Me.Controls.Add(Me.Label8)
         Me.Controls.Add(Me.DTP)
         Me.Name = "ucNEWPRODUCT"
-        Me.Size = New System.Drawing.Size(1322, 801)
+        Me.Size = New System.Drawing.Size(1113, 682)
         Me.GroupBox1.ResumeLayout(False)
         Me.GroupBox1.PerformLayout()
         Me.Panel2.ResumeLayout(False)

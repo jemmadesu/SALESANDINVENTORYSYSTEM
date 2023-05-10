@@ -40,11 +40,11 @@ Partial Class ucCATEGORY
         Me.BTNDELETE = New System.Windows.Forms.Button()
         Me.DGVPRODUCTS = New System.Windows.Forms.DataGridView()
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
+        Me.BTNADD = New System.Windows.Forms.Button()
         Me.GroupBox2 = New System.Windows.Forms.GroupBox()
         Me.Label3 = New System.Windows.Forms.Label()
         Me.TXTSEARCH = New System.Windows.Forms.TextBox()
         Me.BackgroundWorker1 = New System.ComponentModel.BackgroundWorker()
-        Me.BTNADD = New System.Windows.Forms.Button()
         Me.Panel2.SuspendLayout()
         CType(Me.DGVPRODUCTS, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.GroupBox1.SuspendLayout()
@@ -73,7 +73,7 @@ Partial Class ucCATEGORY
         Me.Label2.AutoSize = True
         Me.Label2.Font = New System.Drawing.Font("Century Gothic", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label2.ForeColor = System.Drawing.SystemColors.ControlDarkDark
-        Me.Label2.Location = New System.Drawing.Point(32, 136)
+        Me.Label2.Location = New System.Drawing.Point(17, 105)
         Me.Label2.Name = "Label2"
         Me.Label2.Size = New System.Drawing.Size(113, 17)
         Me.Label2.TabIndex = 37
@@ -84,7 +84,7 @@ Partial Class ucCATEGORY
         Me.Label1.AutoSize = True
         Me.Label1.Font = New System.Drawing.Font("Century Gothic", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label1.ForeColor = System.Drawing.SystemColors.ControlDarkDark
-        Me.Label1.Location = New System.Drawing.Point(35, 71)
+        Me.Label1.Location = New System.Drawing.Point(20, 40)
         Me.Label1.Name = "Label1"
         Me.Label1.Size = New System.Drawing.Size(110, 17)
         Me.Label1.TabIndex = 36
@@ -95,9 +95,9 @@ Partial Class ucCATEGORY
         Me.TXTCATNAME.Enabled = False
         Me.TXTCATNAME.Font = New System.Drawing.Font("Century Gothic", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.TXTCATNAME.ForeColor = System.Drawing.SystemColors.ControlDarkDark
-        Me.TXTCATNAME.Location = New System.Drawing.Point(185, 136)
+        Me.TXTCATNAME.Location = New System.Drawing.Point(170, 105)
         Me.TXTCATNAME.Name = "TXTCATNAME"
-        Me.TXTCATNAME.Size = New System.Drawing.Size(244, 23)
+        Me.TXTCATNAME.Size = New System.Drawing.Size(300, 23)
         Me.TXTCATNAME.TabIndex = 73
         '
         'TXTCATCODE
@@ -105,9 +105,9 @@ Partial Class ucCATEGORY
         Me.TXTCATCODE.Enabled = False
         Me.TXTCATCODE.Font = New System.Drawing.Font("Century Gothic", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.TXTCATCODE.ForeColor = System.Drawing.SystemColors.ControlDarkDark
-        Me.TXTCATCODE.Location = New System.Drawing.Point(185, 71)
+        Me.TXTCATCODE.Location = New System.Drawing.Point(170, 40)
         Me.TXTCATCODE.Name = "TXTCATCODE"
-        Me.TXTCATCODE.Size = New System.Drawing.Size(244, 23)
+        Me.TXTCATCODE.Size = New System.Drawing.Size(300, 23)
         Me.TXTCATCODE.TabIndex = 72
         '
         'Label11
@@ -128,7 +128,7 @@ Partial Class ucCATEGORY
         Me.Panel2.Dock = System.Windows.Forms.DockStyle.Top
         Me.Panel2.Location = New System.Drawing.Point(0, 0)
         Me.Panel2.Name = "Panel2"
-        Me.Panel2.Size = New System.Drawing.Size(1322, 49)
+        Me.Panel2.Size = New System.Drawing.Size(1113, 49)
         Me.Panel2.TabIndex = 75
         '
         'BTNBACK
@@ -141,7 +141,7 @@ Partial Class ucCATEGORY
         Me.BTNBACK.ForeColor = System.Drawing.Color.White
         Me.BTNBACK.Image = CType(resources.GetObject("BTNBACK.Image"), System.Drawing.Image)
         Me.BTNBACK.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.BTNBACK.Location = New System.Drawing.Point(1197, 3)
+        Me.BTNBACK.Location = New System.Drawing.Point(960, 3)
         Me.BTNBACK.Name = "BTNBACK"
         Me.BTNBACK.Padding = New System.Windows.Forms.Padding(20, 0, 0, 0)
         Me.BTNBACK.Size = New System.Drawing.Size(119, 46)
@@ -155,7 +155,7 @@ Partial Class ucCATEGORY
         Me.BTNINSERT.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.BTNINSERT.Font = New System.Drawing.Font("Century Gothic", 9.0!)
         Me.BTNINSERT.ForeColor = System.Drawing.Color.Snow
-        Me.BTNINSERT.Location = New System.Drawing.Point(470, 191)
+        Me.BTNINSERT.Location = New System.Drawing.Point(371, 161)
         Me.BTNINSERT.Name = "BTNINSERT"
         Me.BTNINSERT.Size = New System.Drawing.Size(99, 36)
         Me.BTNINSERT.TabIndex = 39
@@ -168,7 +168,7 @@ Partial Class ucCATEGORY
         Me.BTNUPDATE.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.BTNUPDATE.Font = New System.Drawing.Font("Century Gothic", 9.0!)
         Me.BTNUPDATE.ForeColor = System.Drawing.Color.Snow
-        Me.BTNUPDATE.Location = New System.Drawing.Point(343, 233)
+        Me.BTNUPDATE.Location = New System.Drawing.Point(244, 203)
         Me.BTNUPDATE.Name = "BTNUPDATE"
         Me.BTNUPDATE.Size = New System.Drawing.Size(99, 36)
         Me.BTNUPDATE.TabIndex = 38
@@ -181,7 +181,7 @@ Partial Class ucCATEGORY
         Me.BTNDELETE.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.BTNDELETE.Font = New System.Drawing.Font("Century Gothic", 9.0!)
         Me.BTNDELETE.ForeColor = System.Drawing.Color.Snow
-        Me.BTNDELETE.Location = New System.Drawing.Point(470, 233)
+        Me.BTNDELETE.Location = New System.Drawing.Point(371, 203)
         Me.BTNDELETE.Name = "BTNDELETE"
         Me.BTNDELETE.Size = New System.Drawing.Size(99, 36)
         Me.BTNDELETE.TabIndex = 37
@@ -242,10 +242,23 @@ Partial Class ucCATEGORY
         Me.GroupBox1.ForeColor = System.Drawing.SystemColors.ControlDarkDark
         Me.GroupBox1.Location = New System.Drawing.Point(79, 140)
         Me.GroupBox1.Name = "GroupBox1"
-        Me.GroupBox1.Size = New System.Drawing.Size(628, 356)
+        Me.GroupBox1.Size = New System.Drawing.Size(499, 295)
         Me.GroupBox1.TabIndex = 77
         Me.GroupBox1.TabStop = False
         Me.GroupBox1.Text = "Add category"
+        '
+        'BTNADD
+        '
+        Me.BTNADD.BackColor = System.Drawing.Color.MediumSeaGreen
+        Me.BTNADD.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.BTNADD.Font = New System.Drawing.Font("Century Gothic", 9.0!)
+        Me.BTNADD.ForeColor = System.Drawing.Color.Snow
+        Me.BTNADD.Location = New System.Drawing.Point(244, 161)
+        Me.BTNADD.Name = "BTNADD"
+        Me.BTNADD.Size = New System.Drawing.Size(99, 36)
+        Me.BTNADD.TabIndex = 40
+        Me.BTNADD.Text = "Add"
+        Me.BTNADD.UseVisualStyleBackColor = False
         '
         'GroupBox2
         '
@@ -255,9 +268,9 @@ Partial Class ucCATEGORY
         Me.GroupBox2.Controls.Add(Me.DGVPRODUCTS)
         Me.GroupBox2.Font = New System.Drawing.Font("Century Gothic", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.GroupBox2.ForeColor = System.Drawing.SystemColors.ControlDarkDark
-        Me.GroupBox2.Location = New System.Drawing.Point(754, 140)
+        Me.GroupBox2.Location = New System.Drawing.Point(596, 91)
         Me.GroupBox2.Name = "GroupBox2"
-        Me.GroupBox2.Size = New System.Drawing.Size(483, 565)
+        Me.GroupBox2.Size = New System.Drawing.Size(483, 562)
         Me.GroupBox2.TabIndex = 78
         Me.GroupBox2.TabStop = False
         Me.GroupBox2.Text = "Category List"
@@ -278,19 +291,6 @@ Partial Class ucCATEGORY
         Me.TXTSEARCH.Size = New System.Drawing.Size(180, 23)
         Me.TXTSEARCH.TabIndex = 77
         '
-        'BTNADD
-        '
-        Me.BTNADD.BackColor = System.Drawing.Color.MediumSeaGreen
-        Me.BTNADD.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.BTNADD.Font = New System.Drawing.Font("Century Gothic", 9.0!)
-        Me.BTNADD.ForeColor = System.Drawing.Color.Snow
-        Me.BTNADD.Location = New System.Drawing.Point(343, 191)
-        Me.BTNADD.Name = "BTNADD"
-        Me.BTNADD.Size = New System.Drawing.Size(99, 36)
-        Me.BTNADD.TabIndex = 40
-        Me.BTNADD.Text = "Add"
-        Me.BTNADD.UseVisualStyleBackColor = False
-        '
         'ucCATEGORY
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -303,7 +303,7 @@ Partial Class ucCATEGORY
         Me.Controls.Add(Me.Button1)
         Me.Controls.Add(Me.Label11)
         Me.Name = "ucCATEGORY"
-        Me.Size = New System.Drawing.Size(1322, 801)
+        Me.Size = New System.Drawing.Size(1113, 682)
         Me.Panel2.ResumeLayout(False)
         CType(Me.DGVPRODUCTS, System.ComponentModel.ISupportInitialize).EndInit()
         Me.GroupBox1.ResumeLayout(False)

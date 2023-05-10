@@ -231,62 +231,64 @@ Public Class ucSUPPLIER
         End If
     End Sub
 
-    Private Sub TXTEMAIL_Validating(sender As Object, e As CancelEventArgs) Handles TXTEMAIL.Validating
-        ' Get the entered email address from the TextBox
-        Dim emailAddress As String = TXTEMAIL.Text.Trim()
+    'Private Sub TXTEMAIL_Validating(sender As Object, e As CancelEventArgs) Handles TXTEMAIL.Validating
+    '    ' Get the entered email address from the TextBox
+    '    Dim emailAddress As String = TXTEMAIL.Text.Trim()
 
-        ' Check if the email address is in a valid format
-        If Not IsValidEmail(emailAddress) Then
-            ' Display a warning message and cancel the event to prevent the TextBox from losing focus
-            MessageBox.Show("The email address you entered is not in a valid format. Please enter a valid email address.", "Invalid Email Address", MessageBoxButtons.OK, MessageBoxIcon.Warning)
-            e.Cancel = True
-        End If
-    End Sub
+    '    ' Check if the email address is in a valid format
+    '    If Not IsValidEmail(emailAddress) Then
+    '        ' Display a warning message and cancel the event to prevent the TextBox from losing focus
+    '        Dim res As DialogResult
+    '        res = MessageBox.Show("The email address you entered is not in a valid format. Please enter a valid email address.", "Invalid Email Address", MessageBoxButtons.OKCancel, MessageBoxIcon.Warning)
+    '        'e.Cancel = True
+    '        'If res = DialogResult.Cancel Then
+    '        'End If
+    '    End If
+    'End Sub
 
-    ' Helper function to check if an email address is in a valid format
-    Private Function IsValidEmail(ByVal emailAddress As String) As Boolean
-        Dim emailRegex As New System.Text.RegularExpressions.Regex("^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$")
-        Return emailRegex.IsMatch(emailAddress)
-    End Function
+    '' Helper function to check if an email address is in a valid format
+    'Private Function IsValidEmail(ByVal emailAddress As String) As Boolean
+    '    Dim emailRegex As New System.Text.RegularExpressions.Regex("^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$")
+    '    Return emailRegex.IsMatch(emailAddress)
+    'End Function
 
-    Private Sub TXTADD_Validating(sender As Object, e As CancelEventArgs) Handles TXTADD.Validating
-        ' Get the entered address from the TextBox
-        Dim address As String = TXTADD.Text.Trim()
+    'Private Sub TXTADD_Validating(sender As Object, e As CancelEventArgs) Handles TXTADD.Validating
+    '    ' Get the entered address from the TextBox
+    '    Dim address As String = TXTADD.Text.Trim()
 
-        ' Check if the address is in a valid format
-        If Not IsValidAddress(address) Then
-            ' Display a warning message and cancel the event to prevent the TextBox from losing focus
-            MessageBox.Show("The address you entered is not in a valid format. Please enter a valid address.", "Invalid Address", MessageBoxButtons.OK, MessageBoxIcon.Warning)
-            e.Cancel = True
-        End If
-    End Sub
+    '    ' Check if the address is in a valid format
+    '    If Not IsValidAddress(address) Then
+    '        ' Display a warning message and cancel the event to prevent the TextBox from losing focus
+    '        MessageBox.Show("The address you entered is not in a valid format. Please enter a valid address.", "Invalid Address", MessageBoxButtons.OKCancel, MessageBoxIcon.Warning)
+    '        'e.Cancel = True
+    '    End If
+    'End Sub
 
-    ' Helper function to check if an address is in a valid format
-    Private Function IsValidAddress(ByVal address As String) As Boolean
-        ' Check if the address is null or empty
-        If String.IsNullOrEmpty(address) Then
-            Return False
-        End If
+    '' Helper function to check if an address is in a valid format
+    'Private Function IsValidAddress(ByVal address As String) As Boolean
+    '    ' Check if the address is null or empty
+    '    If String.IsNullOrEmpty(address) Then
+    '        Return False
+    '    End If
 
-        ' Check if the address contains only letters, numbers, spaces, commas, and periods
-        Dim validChars As String = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789 ,."
-        For Each c As Char In address
-            If Not validChars.Contains(c) Then
-                Return False
-            End If
-        Next
+    '    ' Check if the address contains only letters, numbers, spaces, commas, and periods
+    '    Dim validChars As String = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789 ,."
+    '    For Each c As Char In address
+    '        If Not validChars.Contains(c) Then
+    '            Return False
+    '        End If
+    '    Next
 
-        ' Check if the address contains at least one letter or number
-        If Not address.Any(Function(c) Char.IsLetterOrDigit(c)) Then
-            Return False
-        End If
+    '    ' Check if the address contains at least one letter or number
+    '    If Not address.Any(Function(c) Char.IsLetterOrDigit(c)) Then
+    '        Return False
+    '    End If
 
-        ' Check if the address starts with a number or letter
-        If Not Char.IsLetterOrDigit(address(0)) Then
-            Return False
-        End If
+    '    ' Check if the address starts with a number or letter
+    '    If Not Char.IsLetterOrDigit(address(0)) Then
+    '        Return False
+    '    End If
 
-        Return True
-    End Function
-
+    '    Return True
+    'End Function
 End Class

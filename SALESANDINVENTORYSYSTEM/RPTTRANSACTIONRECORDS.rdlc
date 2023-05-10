@@ -15,7 +15,7 @@
               <Width>1.55208in</Width>
             </TablixColumn>
             <TablixColumn>
-              <Width>2.20833in</Width>
+              <Width>1.55208in</Width>
             </TablixColumn>
             <TablixColumn>
               <Width>1.94792in</Width>
@@ -30,10 +30,10 @@
               <Width>2.23959in</Width>
             </TablixColumn>
             <TablixColumn>
-              <Width>1.64584in</Width>
+              <Width>1.10417in</Width>
             </TablixColumn>
             <TablixColumn>
-              <Width>0.92709in</Width>
+              <Width>1.31251in</Width>
             </TablixColumn>
             <TablixColumn>
               <Width>1.19792in</Width>
@@ -42,7 +42,7 @@
               <Width>1.07292in</Width>
             </TablixColumn>
             <TablixColumn>
-              <Width>2.46875in</Width>
+              <Width>1.88542in</Width>
             </TablixColumn>
           </TablixColumns>
           <TablixRows>
@@ -427,7 +427,7 @@
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value>Stocks</Value>
+                              <Value>Quantity</Value>
                               <Style>
                                 <FontFamily>Century Gothic</FontFamily>
                                 <FontSize>16pt</FontSize>
@@ -1045,6 +1045,7 @@
                                 <FontFamily>Century Gothic</FontFamily>
                                 <FontSize>16pt</FontSize>
                                 <FontWeight>Normal</FontWeight>
+                                <Format>MMMM d, yyyy</Format>
                                 <Color>#333333</Color>
                               </Style>
                             </TextRun>
@@ -1102,7 +1103,8 @@
         <DataSetName>DataSet1</DataSetName>
         <Top>2.27083in</Top>
         <Height>0.5in</Height>
-        <Width>22.07293in</Width>
+        <Width>20.67711in</Width>
+        <ToolTip>=Fields!transdate.Value</ToolTip>
         <Style>
           <Border>
             <Style>Solid</Style>
@@ -1132,7 +1134,7 @@
         </Paragraphs>
         <rd:DefaultName>Textbox1</rd:DefaultName>
         <Top>0.26041in</Top>
-        <Left>1.02431in</Left>
+        <Left>9.39931in</Left>
         <Height>1.07292in</Height>
         <Width>6.31944in</Width>
         <ZIndex>1</ZIndex>
@@ -1151,7 +1153,7 @@
         <Value>ID1681739519791</Value>
         <Sizing>FitProportional</Sizing>
         <Top>0.26041in</Top>
-        <Left>0.04167in</Left>
+        <Left>8.41667in</Left>
         <Height>1.07292in</Height>
         <Width>0.98264in</Width>
         <ZIndex>2</ZIndex>

@@ -45,4 +45,11 @@ Public Class FRMNEAREXPIRY
         Me.Close()
     End Sub
 
+    Private Sub Panel2_Paint(sender As Object, e As PaintEventArgs) Handles Panel2.Paint
+
+    End Sub
+
+    Private Sub DGVEXP_CellContentClick(sender As Object, e As DataGridViewCellEventArgs) Handles DGVEXP.CellContentClick
+
+    End Sub
 End Class

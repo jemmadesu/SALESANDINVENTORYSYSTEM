@@ -894,7 +894,7 @@
               <Mapping SourceColumn="dateaddedstocks" DataSetColumn="dateaddedstocks" />
             </Mappings>
             <Sources>
-              <DbSource ConnectionRef="inventory_dbConnectionString (MySettings)" DbObjectName="inventory_db.tbl_stocks" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="FillByADD" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetDataByADD" GeneratorSourceName="FillByADD" GetMethodModifier="Public" GetMethodName="GetDataByADD" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataByADD" UserSourceName="FillByADD">
+              <DbSource ConnectionRef="inventory_dbConnectionString (MySettings)" DbObjectName="inventory_db.tbl_stocks" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="FillByStocks" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetDataByStocks" GeneratorSourceName="FillByStocks" GetMethodModifier="Public" GetMethodName="GetDataByStocks" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataByStocks" UserSourceName="FillByStocks">
                 <SelectCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="true">
                     <CommandText>SELECT `stockid`, `prodid`, `prodname`, `prodman`, `prodbrand`, `prodcat`, `catcode`, `price`, `unit`, `quantity`, `expirationdate`, `dateaddedstocks` FROM `tbl_stocks` where dateaddedstocks  between @param1 and @param2 </CommandText>
@@ -1012,6 +1012,24 @@
                 </SelectCommand>
               </DbSource>
             </Sources>
+          </TableAdapter>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="tbl_backuprecordsTableAdapter" GeneratorDataComponentClassName="tbl_backuprecordsTableAdapter" Name="tbl_backuprecords" UserDataComponentName="tbl_backuprecordsTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="inventory_dbConnectionString (MySettings)" DbObjectName="inventory_db.tbl_backuprecords" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>SELECT `username`, `usertype`, `date` FROM `tbl_backuprecords`</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="username" DataSetColumn="username" />
+              <Mapping SourceColumn="usertype" DataSetColumn="usertype" />
+              <Mapping SourceColumn="date" DataSetColumn="date" />
+            </Mappings>
+            <Sources />
           </TableAdapter>
         </Tables>
         <Sources />
@@ -1638,6 +1656,33 @@
                 </xs:simpleType>
               </xs:element>
               <xs:element name="dateadded" msprop:Generator_ColumnVarNameInTable="columndateadded" msprop:Generator_ColumnPropNameInRow="dateadded" msprop:Generator_ColumnPropNameInTable="dateaddedColumn" msprop:Generator_UserColumnName="dateadded" type="xs:dateTime" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="tbl_backuprecords" msprop:Generator_TableClassName="tbl_backuprecordsDataTable" msprop:Generator_TableVarName="tabletbl_backuprecords" msprop:Generator_RowChangedName="tbl_backuprecordsRowChanged" msprop:Generator_TablePropName="tbl_backuprecords" msprop:Generator_RowDeletingName="tbl_backuprecordsRowDeleting" msprop:Generator_RowChangingName="tbl_backuprecordsRowChanging" msprop:Generator_RowEvHandlerName="tbl_backuprecordsRowChangeEventHandler" msprop:Generator_RowDeletedName="tbl_backuprecordsRowDeleted" msprop:Generator_RowClassName="tbl_backuprecordsRow" msprop:Generator_UserTableName="tbl_backuprecords" msprop:Generator_RowEvArgName="tbl_backuprecordsRowChangeEvent">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="username" msprop:Generator_ColumnVarNameInTable="columnusername" msprop:Generator_ColumnPropNameInRow="username" msprop:Generator_ColumnPropNameInTable="usernameColumn" msprop:Generator_UserColumnName="username">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="45" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="usertype" msprop:Generator_ColumnVarNameInTable="columnusertype" msprop:Generator_ColumnPropNameInRow="usertype" msprop:Generator_ColumnPropNameInTable="usertypeColumn" msprop:Generator_UserColumnName="usertype">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="45" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="date" msprop:Generator_ColumnVarNameInTable="columndate" msprop:Generator_ColumnPropNameInRow="_date" msprop:Generator_ColumnPropNameInTable="dateColumn" msprop:Generator_UserColumnName="date">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="45" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
             </xs:sequence>
           </xs:complexType>
         </xs:element>

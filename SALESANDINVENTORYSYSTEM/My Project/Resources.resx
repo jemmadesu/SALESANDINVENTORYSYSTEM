@@ -118,79 +118,88 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="restore" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\restore.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="icons8-cloud-backup-restore-100 (1)" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\icons8-cloud-backup-restore-100 (1).png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="toppng1" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\toppng.com-telephone-symbol-white-white-contact-icon-1776x18901.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="416-4169142_helpful-clip-art1" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\416-4169142_helpful-clip-art1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="image_processing20190919-3788-cuf3o4" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\image_processing20190919-3788-cuf3o4.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="clipart2399764" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\clipart2399764.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="Media_230503_005719" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Media_230503_005719.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="Vector-Facebook-Logo-Black-And-White-PNG-Picture" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Vector-Facebook-Logo-Black-And-White-PNG-Picture.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="[CITYPNG.COM]White Circle Round Question Mark Icon PNG - 1124x1124" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\[CITYPNG.COM]White Circle Round Question Mark Icon PNG - 1124x1124.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="noun-data-backup-45505891" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\noun-data-backup-45505891.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="416-4169142_helpful-clip-art" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\416-4169142_helpful-clip-art.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="x-symbol" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\x-symbol.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="toppng.com-telephone-symbol-white-white-contact-icon-1776x1890" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\toppng.com-telephone-symbol-white-white-contact-icon-1776x1890.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="1683043685638" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\1683043685638.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="image_processing20210910-19574-1qoobzd" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\image_processing20210910-19574-1qoobzd.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="433-4333068_hover-icon-png" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\433-4333068_hover-icon-png.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="noun-data-backup-45505892" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\noun-data-backup-45505892.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="noun-data-backup-4550589" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\noun-data-backup-4550589.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="noun-data-backup-45505892" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\noun-data-backup-45505892.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="lv_0_20230503003934" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\lv_0_20230503003934.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="image_processing20210910-19574-1qoobzd" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\image_processing20210910-19574-1qoobzd.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="image_processing20210910-19574-1qoobzd1" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\image_processing20210910-19574-1qoobzd1.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="416-4169142_helpful-clip-art" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\416-4169142_helpful-clip-art.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="1683043685638" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\1683043685638.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="lv_0_20230503003934" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\lv_0_20230503003934.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="clipart2399764" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\clipart2399764.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="toppng.com-white-envelope-icon-envelope-icon-white-464x338" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\toppng.com-white-envelope-icon-envelope-icon-white-464x338.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="icons8-cloud-backup-restore-100 (1)" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\icons8-cloud-backup-restore-100 (1).png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="x-symbol" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\x-symbol.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="restore" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\restore.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Media_230503_005719" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Media_230503_005719.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="image_processing20190919-3788-cuf3o4" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\image_processing20190919-3788-cuf3o4.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="x-mark-64" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\x-mark-64.ico;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="x-mark-24" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\x-mark-24.ico;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="416-4169142_helpful-clip-art1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\416-4169142_helpful-clip-art1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="[CITYPNG.COM]White Circle Round Question Mark Icon PNG - 1124x1124" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\[CITYPNG.COM]White Circle Round Question Mark Icon PNG - 1124x1124.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="noun-restore-down-1387364" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\noun-restore-down-1387364.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="433-4333068_hover-icon-png" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\433-4333068_hover-icon-png.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="433-4333068_hover-icon-png1" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\433-4333068_hover-icon-png1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Vector-Facebook-Logo-Black-And-White-PNG-Picture" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Vector-Facebook-Logo-Black-And-White-PNG-Picture.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="admin" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\admin.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="noun-data-backup-45505891" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\noun-data-backup-45505891.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="clipart23997641" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\clipart23997641.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="toppng.com-telephone-symbol-white-white-contact-icon-1776x1890" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\toppng.com-telephone-symbol-white-white-contact-icon-1776x1890.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="x-mark-64 (1)" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\x-mark-64 (1).ico;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>

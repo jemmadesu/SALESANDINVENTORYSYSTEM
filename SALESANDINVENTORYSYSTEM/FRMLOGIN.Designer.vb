@@ -77,7 +77,7 @@ Partial Class FRMLOGIN
         Me.CHKPASS.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.CHKPASS.Font = New System.Drawing.Font("Century Gothic", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.CHKPASS.ForeColor = System.Drawing.SystemColors.ControlDarkDark
-        Me.CHKPASS.Location = New System.Drawing.Point(346, 337)
+        Me.CHKPASS.Location = New System.Drawing.Point(325, 337)
         Me.CHKPASS.Name = "CHKPASS"
         Me.CHKPASS.Size = New System.Drawing.Size(114, 21)
         Me.CHKPASS.TabIndex = 30
@@ -92,7 +92,7 @@ Partial Class FRMLOGIN
         Me.panel3.Font = New System.Drawing.Font("Century Gothic", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.panel3.Location = New System.Drawing.Point(-1, 288)
         Me.panel3.Name = "panel3"
-        Me.panel3.Size = New System.Drawing.Size(466, 43)
+        Me.panel3.Size = New System.Drawing.Size(440, 43)
         Me.panel3.TabIndex = 29
         '
         'label5
@@ -135,7 +135,7 @@ Partial Class FRMLOGIN
         Me.panel2.Font = New System.Drawing.Font("Century Gothic", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.panel2.Location = New System.Drawing.Point(-1, 239)
         Me.panel2.Name = "panel2"
-        Me.panel2.Size = New System.Drawing.Size(466, 43)
+        Me.panel2.Size = New System.Drawing.Size(440, 43)
         Me.panel2.TabIndex = 28
         '
         'pictureBox3
@@ -211,9 +211,9 @@ Partial Class FRMLOGIN
         Me.Panel4.BackColor = System.Drawing.Color.FromArgb(CType(CType(37, Byte), Integer), CType(CType(46, Byte), Integer), CType(CType(59, Byte), Integer))
         Me.Panel4.Controls.Add(Me.Label3)
         Me.Panel4.Controls.Add(Me.PictureBox4)
-        Me.Panel4.Location = New System.Drawing.Point(466, -2)
+        Me.Panel4.Location = New System.Drawing.Point(445, -2)
         Me.Panel4.Name = "Panel4"
-        Me.Panel4.Size = New System.Drawing.Size(567, 554)
+        Me.Panel4.Size = New System.Drawing.Size(524, 554)
         Me.Panel4.TabIndex = 31
         '
         'Label3
@@ -233,8 +233,8 @@ Partial Class FRMLOGIN
         Me.PictureBox4.Image = CType(resources.GetObject("PictureBox4.Image"), System.Drawing.Image)
         Me.PictureBox4.Location = New System.Drawing.Point(23, 35)
         Me.PictureBox4.Name = "PictureBox4"
-        Me.PictureBox4.Size = New System.Drawing.Size(512, 512)
-        Me.PictureBox4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize
+        Me.PictureBox4.Size = New System.Drawing.Size(475, 451)
+        Me.PictureBox4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage
         Me.PictureBox4.TabIndex = 0
         Me.PictureBox4.TabStop = False
         '
@@ -256,8 +256,9 @@ Partial Class FRMLOGIN
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
+        Me.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink
         Me.BackColor = System.Drawing.Color.White
-        Me.ClientSize = New System.Drawing.Size(1023, 547)
+        Me.ClientSize = New System.Drawing.Size(968, 496)
         Me.Controls.Add(Me.BTNCANCEL)
         Me.Controls.Add(Me.Panel4)
         Me.Controls.Add(Me.CHKPASS)
@@ -270,7 +271,9 @@ Partial Class FRMLOGIN
         Me.Controls.Add(Me.exitLogin)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None
         Me.Name = "FRMLOGIN"
+        Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Form1"
+        Me.WindowState = System.Windows.Forms.FormWindowState.Minimized
         Me.panel3.ResumeLayout(False)
         Me.panel3.PerformLayout()
         CType(Me.pictureBox2, System.ComponentModel.ISupportInitialize).EndInit()

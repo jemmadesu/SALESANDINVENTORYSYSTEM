@@ -29,48 +29,47 @@ Public Class FRMLOGIN
     Private Sub BTNLOGIN_Click_1(sender As Object, e As EventArgs) Handles BTNLOGIN.Click
 
         OpenCon()
-        cmd.CommandText = "Select * from tbl_users where username = '" & TXTUN.Text & "' and password = '" & TXTPW.Text & "' and status = '" & status & "' "
-        cmd.ExecuteNonQuery()
+        cmd.CommandText = "SELECT * FROM tbl_users WHERE username = '" & TXTUN.Text & "' AND password = '" & TXTPW.Text & "'"
         dr = cmd.ExecuteReader
 
-        ''Admin 
         If dr.HasRows Then
             dr.Read()
-            FRMMAINMENU.LBLUSERNAME.Text = TXTUN.Text
-            If dr(2) = "Admin" Then
-                activity = "Logged-in"
+            If dr("status").ToString() = "Active" Then
+                FRMMAINMENU.LBLUSERNAME.Text = TXTUN.Text
 
-                FRMMAINMENU.LBLUSERTYPE.Text = "Admin"
-                actlog()
-                FRMMAINMENU.Show()
-                Me.Close()
-
-
-                '' Cashier
-            ElseIf dr(2) = "Cashier" Then
-                activity = "Logged-in"
-                FRMMAINMENU.LBLUSERTYPE.Text = "Cashier"
-                actlog()
-                FRMMAINMENU.Show()
-                Me.Close()
-
-
-                '' Manager
-            ElseIf dr(2) = "Manager" Then
-                activity = "Logged-in"
-                FRMMAINMENU.LBLUSERTYPE.Text = "Manager"
-                actlog()
-                FRMMAINMENU.Show()
-                Me.Close()
-
-
+                If dr("usertype").ToString() = "Admin" Then
+                    activity = "Logged-in"
+                    FRMMAINMENU.LBLUSERTYPE.Text = "Admin"
+                    actlog()
+                    FRMMAINMENU.Show()
+                    Me.Close()
+                ElseIf dr("usertype").ToString() = "Cashier" Then
+                    activity = "Logged-in"
+                    FRMMAINMENU.LBLUSERTYPE.Text = "Cashier"
+                    actlog()
+                    FRMMAINMENU.Show()
+                    Me.Close()
+                ElseIf dr("usertype").ToString() = "Manager" Then
+                    activity = "Logged-in"
+                    FRMMAINMENU.LBLUSERTYPE.Text = "Manager"
+                    actlog()
+                    FRMMAINMENU.Show()
+                    Me.Close()
+                End If
+            Else
+                MsgBox("Your account is deactivated. Please contact the administrator.", vbOKOnly + vbExclamation, "Account Deactivated")
+                TXTUN.Text = ""
+                TXTPW.Text = ""
+                TXTUN.Focus()
             End If
         Else
-            MsgBox("Sorry wrong username and password", vbOKOnly + vbCritical, "Error login")
+            MsgBox("Sorry, wrong username and password", vbOKOnly + vbCritical, "Error login")
             TXTUN.Text = ""
             TXTPW.Text = ""
             TXTUN.Focus()
         End If
+
+        dr.Close()
         con.Close()
 
 

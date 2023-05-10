@@ -13,20 +13,15 @@ Public Class FRMREPORTS
         Me.tbl_stocksoutTableAdapter.Fill(Me.inventory_dbDataSet.tbl_stocksout)
 
         Me.RPTOUTOFSTOCKS.RefreshReport()
-        ''--------------------------------- EXPIRED PRODUCTS ------------
-        ''TODO: This line of code loads data into the 'inventory_dbDataSet.tbl_expiredprod' table. You can move, or remove it, as needed.
-        'Me.RPTEXP.SetDisplayMode(Microsoft.Reporting.WinForms.DisplayMode.PrintLayout)
-        'Me.tbl_expiredprodTableAdapter.Fill(Me.inventory_dbDataSet.tbl_expiredprod)
-
-        'Me.RPTEXP.RefreshReport()
+        '--------------------------------- EXPIRED PRODUCTS ------------
         'TODO: This line of code loads data into the 'inventory_dbDataSet.tbl_transaction' table. You can move, or remove it, as needed.
         Me.RPTTRANSACTIONRECORDS.SetDisplayMode(Microsoft.Reporting.WinForms.DisplayMode.PrintLayout)
         Me.tbl_transactionTableAdapter.Fill(Me.inventory_dbDataSet.tbl_transaction)
-
+        '--------------------------------- STOCKS ----------------------
         'TODO: This line of code loads data into the 'inventory_dbDataSet.tbl_stocks' table. You can move, or remove it, as needed.
         Me.RPTSTOCKS.SetDisplayMode(Microsoft.Reporting.WinForms.DisplayMode.PrintLayout)
         Me.tbl_stocksTableAdapter.Fill(Me.inventory_dbDataSet.tbl_stocks)
-
+        '--------------------------------- ACTIVITY LOG -------------------
         Me.RPTSTOCKS.RefreshReport()
         'TODO: This line of code loads data into the 'inventory_dbDataSet.tbl_actlog' table. You can move, or remove it, as needed.
         Me.RPTACTLOG.SetDisplayMode(Microsoft.Reporting.WinForms.DisplayMode.PrintLayout)
@@ -44,7 +39,6 @@ Public Class FRMREPORTS
         Me.RPTSALES.SetDisplayMode(Microsoft.Reporting.WinForms.DisplayMode.PrintLayout)
         Me.tbl_salesTableAdapter.Fill(Me.inventory_dbDataSet.tbl_sales)
 
-
         Me.RPTSALES.RefreshReport()
         '------------------------- PRODUCTS ---------------------
         'TODO: This line of code loads data into the 'inventory_dbDataSet.tbl_products' table. You can move, or remove it, as needed.
@@ -58,6 +52,12 @@ Public Class FRMREPORTS
         Me.tbl_usersTableAdapter.Fill(Me.inventory_dbDataSet.tbl_users)
 
         Me.RPTUSERS.RefreshReport()
+        '------------------------------------- TRANSACTION RECORDS -------------------------
+        'TODO: This line of code loads data into the 'inventory_dbDataSet.tbl_expiredprod' table. You can move, or remove it, as needed.
+        Me.RPTTRANSACTIONRECORDS.SetDisplayMode(Microsoft.Reporting.WinForms.DisplayMode.PrintLayout)
+        Me.tbl_transactionTableAdapter.Fill(Me.inventory_dbDataSet.tbl_transaction)
+
+        Me.RPTTRANSACTIONRECORDS.RefreshReport()
     End Sub
     Private Sub BTNFILTER_Click(sender As Object, e As EventArgs) Handles BTNFILTER.Click
         Me.tbl_usersTableAdapter.FillByusertype(Me.inventory_dbDataSet.tbl_users, CBOUT.Text)
@@ -101,9 +101,6 @@ Public Class FRMREPORTS
 
         Me.RPTEXP.RefreshReport()
     End Sub
-
-
-
     Private Sub SALESFILL_Click(sender As Object, e As EventArgs) Handles SALESFILL.Click
         Me.tbl_salesTableAdapter.FillBySALES(Me.inventory_dbDataSet.tbl_sales, Date1SALES.Value.ToShortDateString, Date2SALES.Value.ToShortDateString)
 
@@ -132,9 +129,9 @@ Public Class FRMREPORTS
     End Sub
 
     Private Sub STOCKSFILL_Click(sender As Object, e As EventArgs) Handles STOCKSFILL.Click
-        Me.tbl_stocksTableAdapter.FillByADD(Me.inventory_dbDataSet.tbl_stocks, Date1St.Value.ToShortDateString, Date2St.Value.ToShortDateString)
+        Me.tbl_stocksTableAdapter.FillByStocks(Me.inventory_dbDataSet.tbl_stocks, Date1St.Value.ToShortDateString, Date2St.Value.ToShortDateString)
 
-        Me.RPTSALES.RefreshReport()
+        Me.RPTSTOCKS.RefreshReport()
     End Sub
 
     Private Sub STOCKCLR_Click(sender As Object, e As EventArgs) Handles STOCKCLR.Click

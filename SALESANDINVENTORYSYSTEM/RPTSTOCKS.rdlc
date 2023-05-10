@@ -1020,7 +1020,7 @@
         <DataSetName>inv_db</DataSetName>
         <Top>2.25in</Top>
         <Height>0.5in</Height>
-        <Width>20.48709in</Width>
+        <Width>20.4871in</Width>
         <Style>
           <Border>
             <Style>Solid</Style>
@@ -1050,7 +1050,7 @@
         </Paragraphs>
         <rd:DefaultName>Textbox1</rd:DefaultName>
         <Top>0.23958in</Top>
-        <Left>0.98264in</Left>
+        <Left>9.42014in</Left>
         <Height>1.07292in</Height>
         <Width>6.31944in</Width>
         <ZIndex>1</ZIndex>
@@ -1069,6 +1069,7 @@
         <Value>ID1681739519791</Value>
         <Sizing>FitProportional</Sizing>
         <Top>0.23958in</Top>
+        <Left>8.4375in</Left>
         <Height>1.07292in</Height>
         <Width>0.98264in</Width>
         <ZIndex>2</ZIndex>

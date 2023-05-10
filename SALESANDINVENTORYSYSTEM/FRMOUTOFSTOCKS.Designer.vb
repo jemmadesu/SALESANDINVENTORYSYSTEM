@@ -55,7 +55,7 @@ Partial Class FRMOUTOFSTOCKS
         DataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText
         DataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
         Me.DGVLOWQTY.DefaultCellStyle = DataGridViewCellStyle2
-        Me.DGVLOWQTY.Location = New System.Drawing.Point(74, 156)
+        Me.DGVLOWQTY.Location = New System.Drawing.Point(22, 131)
         Me.DGVLOWQTY.Name = "DGVLOWQTY"
         Me.DGVLOWQTY.ReadOnly = True
         DataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
@@ -68,7 +68,7 @@ Partial Class FRMOUTOFSTOCKS
         Me.DGVLOWQTY.RowHeadersDefaultCellStyle = DataGridViewCellStyle3
         Me.DGVLOWQTY.RowHeadersVisible = False
         Me.DGVLOWQTY.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
-        Me.DGVLOWQTY.Size = New System.Drawing.Size(1181, 573)
+        Me.DGVLOWQTY.Size = New System.Drawing.Size(1066, 521)
         Me.DGVLOWQTY.TabIndex = 73
         '
         'Label8
@@ -77,7 +77,7 @@ Partial Class FRMOUTOFSTOCKS
         Me.Label8.BackColor = System.Drawing.Color.White
         Me.Label8.Font = New System.Drawing.Font("Century Gothic", 20.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label8.ForeColor = System.Drawing.Color.MediumSeaGreen
-        Me.Label8.Location = New System.Drawing.Point(68, 94)
+        Me.Label8.Location = New System.Drawing.Point(16, 75)
         Me.Label8.Name = "Label8"
         Me.Label8.Size = New System.Drawing.Size(219, 32)
         Me.Label8.TabIndex = 72
@@ -90,7 +90,7 @@ Partial Class FRMOUTOFSTOCKS
         Me.Panel2.Dock = System.Windows.Forms.DockStyle.Top
         Me.Panel2.Location = New System.Drawing.Point(0, 0)
         Me.Panel2.Name = "Panel2"
-        Me.Panel2.Size = New System.Drawing.Size(1322, 49)
+        Me.Panel2.Size = New System.Drawing.Size(1113, 49)
         Me.Panel2.TabIndex = 74
         '
         'LBLEXIT
@@ -99,7 +99,7 @@ Partial Class FRMOUTOFSTOCKS
         Me.LBLEXIT.Cursor = System.Windows.Forms.Cursors.Hand
         Me.LBLEXIT.Font = New System.Drawing.Font("Century Gothic", 20.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.LBLEXIT.ForeColor = System.Drawing.Color.White
-        Me.LBLEXIT.Location = New System.Drawing.Point(1264, 9)
+        Me.LBLEXIT.Location = New System.Drawing.Point(1058, 9)
         Me.LBLEXIT.Name = "LBLEXIT"
         Me.LBLEXIT.Size = New System.Drawing.Size(30, 32)
         Me.LBLEXIT.TabIndex = 30
@@ -110,7 +110,7 @@ Partial Class FRMOUTOFSTOCKS
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.White
-        Me.ClientSize = New System.Drawing.Size(1322, 801)
+        Me.ClientSize = New System.Drawing.Size(1113, 682)
         Me.Controls.Add(Me.Panel2)
         Me.Controls.Add(Me.DGVLOWQTY)
         Me.Controls.Add(Me.Label8)

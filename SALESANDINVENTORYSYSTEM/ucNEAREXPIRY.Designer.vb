@@ -60,7 +60,7 @@ Partial Class ucNEAREXPIRY
         Me.Panel2.Dock = System.Windows.Forms.DockStyle.Top
         Me.Panel2.Location = New System.Drawing.Point(0, 0)
         Me.Panel2.Name = "Panel2"
-        Me.Panel2.Size = New System.Drawing.Size(1322, 49)
+        Me.Panel2.Size = New System.Drawing.Size(1113, 49)
         Me.Panel2.TabIndex = 128
         '
         'BTNBACK
@@ -73,7 +73,7 @@ Partial Class ucNEAREXPIRY
         Me.BTNBACK.ForeColor = System.Drawing.Color.White
         Me.BTNBACK.Image = CType(resources.GetObject("BTNBACK.Image"), System.Drawing.Image)
         Me.BTNBACK.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.BTNBACK.Location = New System.Drawing.Point(1200, 3)
+        Me.BTNBACK.Location = New System.Drawing.Point(963, 3)
         Me.BTNBACK.Name = "BTNBACK"
         Me.BTNBACK.Padding = New System.Windows.Forms.Padding(20, 0, 0, 0)
         Me.BTNBACK.Size = New System.Drawing.Size(119, 46)
@@ -103,7 +103,7 @@ Partial Class ucNEAREXPIRY
         DataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText
         DataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
         Me.DGVEXP.DefaultCellStyle = DataGridViewCellStyle2
-        Me.DGVEXP.Location = New System.Drawing.Point(71, 138)
+        Me.DGVEXP.Location = New System.Drawing.Point(39, 123)
         Me.DGVEXP.Name = "DGVEXP"
         Me.DGVEXP.ReadOnly = True
         DataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
@@ -116,7 +116,7 @@ Partial Class ucNEAREXPIRY
         Me.DGVEXP.RowHeadersDefaultCellStyle = DataGridViewCellStyle3
         Me.DGVEXP.RowHeadersVisible = False
         Me.DGVEXP.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
-        Me.DGVEXP.Size = New System.Drawing.Size(1181, 595)
+        Me.DGVEXP.Size = New System.Drawing.Size(1043, 521)
         Me.DGVEXP.TabIndex = 129
         '
         'Label8
@@ -125,7 +125,7 @@ Partial Class ucNEAREXPIRY
         Me.Label8.BackColor = System.Drawing.Color.White
         Me.Label8.Font = New System.Drawing.Font("Century Gothic", 20.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label8.ForeColor = System.Drawing.Color.MediumSeaGreen
-        Me.Label8.Location = New System.Drawing.Point(57, 79)
+        Me.Label8.Location = New System.Drawing.Point(33, 67)
         Me.Label8.Name = "Label8"
         Me.Label8.Size = New System.Drawing.Size(229, 32)
         Me.Label8.TabIndex = 132
@@ -142,7 +142,7 @@ Partial Class ucNEAREXPIRY
         Me.Controls.Add(Me.Button1)
         Me.Controls.Add(Me.Label4)
         Me.Name = "ucNEAREXPIRY"
-        Me.Size = New System.Drawing.Size(1322, 801)
+        Me.Size = New System.Drawing.Size(1113, 682)
         Me.Panel2.ResumeLayout(False)
         CType(Me.DGVEXP, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
