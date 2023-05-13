@@ -14,11 +14,11 @@ Public Class FRMREPORTS
         row("catname") = "-- Select --"
         tbl_category.Rows.InsertAt(row, 0)
 
-        CBOCATEGORY.DataSource = tbl_category
-        CBOCATEGORY.DisplayMember = "catname"
+        CBOPRODUCTSCATEGORY.DataSource = tbl_category
+        CBOPRODUCTSCATEGORY.DisplayMember = "catname"
 
-        CBOSTOCKS.DataSource = tbl_category
-        CBOSTOCKS.DisplayMember = "catname"
+        CBOSTOCKSCATEGORY.DataSource = tbl_category
+        CBOSTOCKSCATEGORY.DisplayMember = "catname"
 
         ' PRODUCTS REPORT -------------------------------------------------------------------------------------------------------------
 
@@ -44,13 +44,22 @@ Public Class FRMREPORTS
         Me.tbl_usersTableAdapter.Fill(Me.inventory_dbDataSet.tbl_users)
 
         Me.RPTUSERS.RefreshReport()
+
+
+        ' USER STOCKS -------------------------------------------------------------------------------------------------------------
+
+        'TODO: This line of code loads data into the 'inventory_dbDataSet.tbl_stocks' table. You can move, or remove it, as needed.
+        Me.RPTSTOCKS.SetDisplayMode(Microsoft.Reporting.WinForms.DisplayMode.PrintLayout)
+        Me.tbl_stocksTableAdapter.Fill(Me.inventory_dbDataSet.tbl_stocks)
+
+        Me.RPTSTOCKS.RefreshReport()
     End Sub
-    Private Sub BTNCLOSE_Click(sender As Object, e As EventArgs) Handles BTNCLOSE.Click
+    Private Sub BTNCLOSE_Click(sender As Object, e As EventArgs)
         Me.Close()
     End Sub
 
     Private Sub FILTERPRODUCTS_Click(sender As Object, e As EventArgs) Handles FILTERPRODUCTS.Click
-        Me.tbl_productsTableAdapter.FillByCategory(Me.inventory_dbDataSet.tbl_products, CBOCATEGORY.Text)
+        Me.tbl_productsTableAdapter.FillByCategory(Me.inventory_dbDataSet.tbl_products, CBOPRODUCTSCATEGORY.Text)
 
         Me.RPTPRODUCTS.RefreshReport()
     End Sub
@@ -152,5 +161,21 @@ Public Class FRMREPORTS
         Me.tbl_usersTableAdapter.Fill(Me.inventory_dbDataSet.tbl_users)
 
         Me.RPTUSERS.RefreshReport()
+    End Sub
+
+    Private Sub FILTERSTOCKS_Click(sender As Object, e As EventArgs) Handles FILTERSTOCKS.Click
+        Me.tbl_stocksTableAdapter.FillBySTOCKSCATEGORY(Me.inventory_dbDataSet.tbl_stocks, CBOSTOCKSCATEGORY.Text)
+
+        Me.RPTSTOCKS.RefreshReport()
+    End Sub
+
+    Private Sub CLEARSTOCKS_Click(sender As Object, e As EventArgs) Handles CLEARSTOCKS.Click
+        Me.tbl_stocksTableAdapter.Fill(Me.inventory_dbDataSet.tbl_stocks)
+
+        Me.RPTSTOCKS.RefreshReport()
+    End Sub
+
+    Private Sub LBLUSERNAME_Click(sender As Object, e As EventArgs) Handles LBLUSERNAME.Click
+        LBLUSERNAME.Text = FRMMAINMENU.LBLUSERNAME.Text
     End Sub
 End Class

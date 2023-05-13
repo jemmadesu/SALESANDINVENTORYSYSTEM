@@ -35,12 +35,10 @@ Partial Class FRMREPORTS
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(FRMREPORTS))
         Me.tbl_salesBindingSource = New System.Windows.Forms.BindingSource(Me.components)
         Me.inventory_dbDataSet = New SALESANDINVENTORYSYSTEM.inventory_dbDataSet()
+        Me.tbl_stocksBindingSource = New System.Windows.Forms.BindingSource(Me.components)
         Me.tbl_productsBindingSource = New System.Windows.Forms.BindingSource(Me.components)
         Me.tbl_usersBindingSource = New System.Windows.Forms.BindingSource(Me.components)
-        Me.BTNCLOSE = New System.Windows.Forms.Button()
-        Me.tbl_productsTableAdapter = New SALESANDINVENTORYSYSTEM.inventory_dbDataSetTableAdapters.tbl_productsTableAdapter()
         Me.Panel1 = New System.Windows.Forms.Panel()
-        Me.tbl_salesTableAdapter = New SALESANDINVENTORYSYSTEM.inventory_dbDataSetTableAdapters.tbl_salesTableAdapter()
         Me.TPTRANSREC = New System.Windows.Forms.TabPage()
         Me.Label13 = New System.Windows.Forms.Label()
         Me.Label14 = New System.Windows.Forms.Label()
@@ -86,12 +84,16 @@ Partial Class FRMREPORTS
         Me.DELIVERYFILTER = New Guna.UI2.WinForms.Guna2Button()
         Me.RPTDELIVERY = New Microsoft.Reporting.WinForms.ReportViewer()
         Me.TPSTOCKS = New System.Windows.Forms.TabPage()
+        Me.CLEARSTOCKS = New Guna.UI2.WinForms.Guna2Button()
+        Me.Label3 = New System.Windows.Forms.Label()
+        Me.FILTERSTOCKS = New Guna.UI2.WinForms.Guna2Button()
+        Me.CBOSTOCKSCATEGORY = New Guna.UI2.WinForms.Guna2ComboBox()
         Me.RPTSTOCKS = New Microsoft.Reporting.WinForms.ReportViewer()
         Me.TPPRODS = New System.Windows.Forms.TabPage()
         Me.CLEARPRODUCTS = New Guna.UI2.WinForms.Guna2Button()
         Me.Label5 = New System.Windows.Forms.Label()
         Me.FILTERPRODUCTS = New Guna.UI2.WinForms.Guna2Button()
-        Me.CBOCATEGORY = New Guna.UI2.WinForms.Guna2ComboBox()
+        Me.CBOPRODUCTSCATEGORY = New Guna.UI2.WinForms.Guna2ComboBox()
         Me.RPTPRODUCTS = New Microsoft.Reporting.WinForms.ReportViewer()
         Me.TPUSERS = New System.Windows.Forms.TabPage()
         Me.RPTUSERS = New Microsoft.Reporting.WinForms.ReportViewer()
@@ -100,13 +102,15 @@ Partial Class FRMREPORTS
         Me.FILTERUSERS = New Guna.UI2.WinForms.Guna2Button()
         Me.CBOUSERS = New Guna.UI2.WinForms.Guna2ComboBox()
         Me.TCREPORTS = New System.Windows.Forms.TabControl()
+        Me.tbl_productsTableAdapter = New SALESANDINVENTORYSYSTEM.inventory_dbDataSetTableAdapters.tbl_productsTableAdapter()
+        Me.tbl_salesTableAdapter = New SALESANDINVENTORYSYSTEM.inventory_dbDataSetTableAdapters.tbl_salesTableAdapter()
         Me.tbl_usersTableAdapter = New SALESANDINVENTORYSYSTEM.inventory_dbDataSetTableAdapters.tbl_usersTableAdapter()
-        Me.CLEARSTOCKS = New Guna.UI2.WinForms.Guna2Button()
-        Me.Label3 = New System.Windows.Forms.Label()
-        Me.FILTERSTOCKS = New Guna.UI2.WinForms.Guna2Button()
-        Me.CBOSTOCKS = New Guna.UI2.WinForms.Guna2ComboBox()
+        Me.tbl_stocksTableAdapter = New SALESANDINVENTORYSYSTEM.inventory_dbDataSetTableAdapters.tbl_stocksTableAdapter()
+        Me.LBLUSERNAME = New System.Windows.Forms.Label()
+        Me.Label6 = New System.Windows.Forms.Label()
         CType(Me.tbl_salesBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.inventory_dbDataSet, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.tbl_stocksBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.tbl_productsBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.tbl_usersBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.TPTRANSREC.SuspendLayout()
@@ -131,6 +135,11 @@ Partial Class FRMREPORTS
         Me.inventory_dbDataSet.DataSetName = "inventory_dbDataSet"
         Me.inventory_dbDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema
         '
+        'tbl_stocksBindingSource
+        '
+        Me.tbl_stocksBindingSource.DataMember = "tbl_stocks"
+        Me.tbl_stocksBindingSource.DataSource = Me.inventory_dbDataSet
+        '
         'tbl_productsBindingSource
         '
         Me.tbl_productsBindingSource.DataMember = "tbl_products"
@@ -141,34 +150,12 @@ Partial Class FRMREPORTS
         Me.tbl_usersBindingSource.DataMember = "tbl_users"
         Me.tbl_usersBindingSource.DataSource = Me.inventory_dbDataSet
         '
-        'BTNCLOSE
-        '
-        Me.BTNCLOSE.BackColor = System.Drawing.SystemColors.ControlDark
-        Me.BTNCLOSE.FlatAppearance.BorderSize = 0
-        Me.BTNCLOSE.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.BTNCLOSE.Font = New System.Drawing.Font("Segoe UI", 9.0!)
-        Me.BTNCLOSE.ForeColor = System.Drawing.Color.FromArgb(CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer))
-        Me.BTNCLOSE.Location = New System.Drawing.Point(1026, 12)
-        Me.BTNCLOSE.Name = "BTNCLOSE"
-        Me.BTNCLOSE.Size = New System.Drawing.Size(75, 30)
-        Me.BTNCLOSE.TabIndex = 5
-        Me.BTNCLOSE.Text = "Close"
-        Me.BTNCLOSE.UseVisualStyleBackColor = False
-        '
-        'tbl_productsTableAdapter
-        '
-        Me.tbl_productsTableAdapter.ClearBeforeFill = True
-        '
         'Panel1
         '
         Me.Panel1.Location = New System.Drawing.Point(152, 60)
         Me.Panel1.Name = "Panel1"
         Me.Panel1.Size = New System.Drawing.Size(1237, 25)
         Me.Panel1.TabIndex = 13
-        '
-        'tbl_salesTableAdapter
-        '
-        Me.tbl_salesTableAdapter.ClearBeforeFill = True
         '
         'TPTRANSREC
         '
@@ -836,7 +823,7 @@ Partial Class FRMREPORTS
         Me.TPSTOCKS.Controls.Add(Me.CLEARSTOCKS)
         Me.TPSTOCKS.Controls.Add(Me.Label3)
         Me.TPSTOCKS.Controls.Add(Me.FILTERSTOCKS)
-        Me.TPSTOCKS.Controls.Add(Me.CBOSTOCKS)
+        Me.TPSTOCKS.Controls.Add(Me.CBOSTOCKSCATEGORY)
         Me.TPSTOCKS.Controls.Add(Me.RPTSTOCKS)
         Me.TPSTOCKS.Location = New System.Drawing.Point(4, 29)
         Me.TPSTOCKS.Name = "TPSTOCKS"
@@ -845,10 +832,71 @@ Partial Class FRMREPORTS
         Me.TPSTOCKS.Text = "Stocks"
         Me.TPSTOCKS.UseVisualStyleBackColor = True
         '
+        'CLEARSTOCKS
+        '
+        Me.CLEARSTOCKS.BackColor = System.Drawing.Color.Transparent
+        Me.CLEARSTOCKS.CheckedState.Parent = Me.CLEARSTOCKS
+        Me.CLEARSTOCKS.CustomImages.Parent = Me.CLEARSTOCKS
+        Me.CLEARSTOCKS.FillColor = System.Drawing.SystemColors.ControlDark
+        Me.CLEARSTOCKS.Font = New System.Drawing.Font("Segoe UI", 9.0!)
+        Me.CLEARSTOCKS.ForeColor = System.Drawing.Color.White
+        Me.CLEARSTOCKS.HoverState.Parent = Me.CLEARSTOCKS
+        Me.CLEARSTOCKS.Location = New System.Drawing.Point(497, 28)
+        Me.CLEARSTOCKS.Name = "CLEARSTOCKS"
+        Me.CLEARSTOCKS.ShadowDecoration.Parent = Me.CLEARSTOCKS
+        Me.CLEARSTOCKS.Size = New System.Drawing.Size(98, 36)
+        Me.CLEARSTOCKS.TabIndex = 16
+        Me.CLEARSTOCKS.Text = "Clear Filter"
+        '
+        'Label3
+        '
+        Me.Label3.AutoSize = True
+        Me.Label3.Font = New System.Drawing.Font("Century Gothic", 11.25!)
+        Me.Label3.Location = New System.Drawing.Point(16, 28)
+        Me.Label3.Name = "Label3"
+        Me.Label3.Size = New System.Drawing.Size(138, 20)
+        Me.Label3.TabIndex = 13
+        Me.Label3.Text = "Filter by Category"
+        '
+        'FILTERSTOCKS
+        '
+        Me.FILTERSTOCKS.CheckedState.Parent = Me.FILTERSTOCKS
+        Me.FILTERSTOCKS.CustomImages.Parent = Me.FILTERSTOCKS
+        Me.FILTERSTOCKS.FillColor = System.Drawing.Color.MediumSeaGreen
+        Me.FILTERSTOCKS.Font = New System.Drawing.Font("Segoe UI", 9.0!)
+        Me.FILTERSTOCKS.ForeColor = System.Drawing.Color.White
+        Me.FILTERSTOCKS.HoverState.Parent = Me.FILTERSTOCKS
+        Me.FILTERSTOCKS.Location = New System.Drawing.Point(372, 28)
+        Me.FILTERSTOCKS.Name = "FILTERSTOCKS"
+        Me.FILTERSTOCKS.ShadowDecoration.Parent = Me.FILTERSTOCKS
+        Me.FILTERSTOCKS.Size = New System.Drawing.Size(98, 36)
+        Me.FILTERSTOCKS.TabIndex = 15
+        Me.FILTERSTOCKS.Text = "Filter"
+        '
+        'CBOSTOCKSCATEGORY
+        '
+        Me.CBOSTOCKSCATEGORY.BackColor = System.Drawing.Color.Transparent
+        Me.CBOSTOCKSCATEGORY.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed
+        Me.CBOSTOCKSCATEGORY.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
+        Me.CBOSTOCKSCATEGORY.FocusedColor = System.Drawing.Color.Empty
+        Me.CBOSTOCKSCATEGORY.FocusedState.Parent = Me.CBOSTOCKSCATEGORY
+        Me.CBOSTOCKSCATEGORY.Font = New System.Drawing.Font("Segoe UI", 10.0!)
+        Me.CBOSTOCKSCATEGORY.ForeColor = System.Drawing.Color.FromArgb(CType(CType(68, Byte), Integer), CType(CType(88, Byte), Integer), CType(CType(112, Byte), Integer))
+        Me.CBOSTOCKSCATEGORY.FormattingEnabled = True
+        Me.CBOSTOCKSCATEGORY.HoverState.Parent = Me.CBOSTOCKSCATEGORY
+        Me.CBOSTOCKSCATEGORY.ItemHeight = 30
+        Me.CBOSTOCKSCATEGORY.Items.AddRange(New Object() {"Admin", "Cashier", "Manager"})
+        Me.CBOSTOCKSCATEGORY.ItemsAppearance.Parent = Me.CBOSTOCKSCATEGORY
+        Me.CBOSTOCKSCATEGORY.Location = New System.Drawing.Point(189, 27)
+        Me.CBOSTOCKSCATEGORY.Name = "CBOSTOCKSCATEGORY"
+        Me.CBOSTOCKSCATEGORY.ShadowDecoration.Parent = Me.CBOSTOCKSCATEGORY
+        Me.CBOSTOCKSCATEGORY.Size = New System.Drawing.Size(140, 36)
+        Me.CBOSTOCKSCATEGORY.TabIndex = 14
+        '
         'RPTSTOCKS
         '
-        ReportDataSource7.Name = "inv_db"
-        ReportDataSource7.Value = Nothing
+        ReportDataSource7.Name = "DataSet1"
+        ReportDataSource7.Value = Me.tbl_stocksBindingSource
         Me.RPTSTOCKS.LocalReport.DataSources.Add(ReportDataSource7)
         Me.RPTSTOCKS.LocalReport.ReportEmbeddedResource = "SALESANDINVENTORYSYSTEM.RPTSTOCKS.rdlc"
         Me.RPTSTOCKS.Location = New System.Drawing.Point(20, 80)
@@ -862,7 +910,7 @@ Partial Class FRMREPORTS
         Me.TPPRODS.Controls.Add(Me.CLEARPRODUCTS)
         Me.TPPRODS.Controls.Add(Me.Label5)
         Me.TPPRODS.Controls.Add(Me.FILTERPRODUCTS)
-        Me.TPPRODS.Controls.Add(Me.CBOCATEGORY)
+        Me.TPPRODS.Controls.Add(Me.CBOPRODUCTSCATEGORY)
         Me.TPPRODS.Controls.Add(Me.RPTPRODUCTS)
         Me.TPPRODS.Location = New System.Drawing.Point(4, 29)
         Me.TPPRODS.Name = "TPPRODS"
@@ -913,25 +961,25 @@ Partial Class FRMREPORTS
         Me.FILTERPRODUCTS.TabIndex = 11
         Me.FILTERPRODUCTS.Text = "Filter"
         '
-        'CBOCATEGORY
+        'CBOPRODUCTSCATEGORY
         '
-        Me.CBOCATEGORY.BackColor = System.Drawing.Color.Transparent
-        Me.CBOCATEGORY.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed
-        Me.CBOCATEGORY.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
-        Me.CBOCATEGORY.FocusedColor = System.Drawing.Color.Empty
-        Me.CBOCATEGORY.FocusedState.Parent = Me.CBOCATEGORY
-        Me.CBOCATEGORY.Font = New System.Drawing.Font("Segoe UI", 10.0!)
-        Me.CBOCATEGORY.ForeColor = System.Drawing.Color.FromArgb(CType(CType(68, Byte), Integer), CType(CType(88, Byte), Integer), CType(CType(112, Byte), Integer))
-        Me.CBOCATEGORY.FormattingEnabled = True
-        Me.CBOCATEGORY.HoverState.Parent = Me.CBOCATEGORY
-        Me.CBOCATEGORY.ItemHeight = 30
-        Me.CBOCATEGORY.Items.AddRange(New Object() {"Admin", "Cashier", "Manager"})
-        Me.CBOCATEGORY.ItemsAppearance.Parent = Me.CBOCATEGORY
-        Me.CBOCATEGORY.Location = New System.Drawing.Point(189, 26)
-        Me.CBOCATEGORY.Name = "CBOCATEGORY"
-        Me.CBOCATEGORY.ShadowDecoration.Parent = Me.CBOCATEGORY
-        Me.CBOCATEGORY.Size = New System.Drawing.Size(140, 36)
-        Me.CBOCATEGORY.TabIndex = 10
+        Me.CBOPRODUCTSCATEGORY.BackColor = System.Drawing.Color.Transparent
+        Me.CBOPRODUCTSCATEGORY.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed
+        Me.CBOPRODUCTSCATEGORY.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
+        Me.CBOPRODUCTSCATEGORY.FocusedColor = System.Drawing.Color.Empty
+        Me.CBOPRODUCTSCATEGORY.FocusedState.Parent = Me.CBOPRODUCTSCATEGORY
+        Me.CBOPRODUCTSCATEGORY.Font = New System.Drawing.Font("Segoe UI", 10.0!)
+        Me.CBOPRODUCTSCATEGORY.ForeColor = System.Drawing.Color.FromArgb(CType(CType(68, Byte), Integer), CType(CType(88, Byte), Integer), CType(CType(112, Byte), Integer))
+        Me.CBOPRODUCTSCATEGORY.FormattingEnabled = True
+        Me.CBOPRODUCTSCATEGORY.HoverState.Parent = Me.CBOPRODUCTSCATEGORY
+        Me.CBOPRODUCTSCATEGORY.ItemHeight = 30
+        Me.CBOPRODUCTSCATEGORY.Items.AddRange(New Object() {"Admin", "Cashier", "Manager"})
+        Me.CBOPRODUCTSCATEGORY.ItemsAppearance.Parent = Me.CBOPRODUCTSCATEGORY
+        Me.CBOPRODUCTSCATEGORY.Location = New System.Drawing.Point(189, 26)
+        Me.CBOPRODUCTSCATEGORY.Name = "CBOPRODUCTSCATEGORY"
+        Me.CBOPRODUCTSCATEGORY.ShadowDecoration.Parent = Me.CBOPRODUCTSCATEGORY
+        Me.CBOPRODUCTSCATEGORY.Size = New System.Drawing.Size(140, 36)
+        Me.CBOPRODUCTSCATEGORY.TabIndex = 10
         '
         'RPTPRODUCTS
         '
@@ -947,6 +995,9 @@ Partial Class FRMREPORTS
         '
         'TPUSERS
         '
+        Me.TPUSERS.BackColor = System.Drawing.Color.White
+        Me.TPUSERS.Controls.Add(Me.Label6)
+        Me.TPUSERS.Controls.Add(Me.LBLUSERNAME)
         Me.TPUSERS.Controls.Add(Me.RPTUSERS)
         Me.TPUSERS.Controls.Add(Me.CLEARUSERS)
         Me.TPUSERS.Controls.Add(Me.Label2)
@@ -959,7 +1010,6 @@ Partial Class FRMREPORTS
         Me.TPUSERS.Size = New System.Drawing.Size(1108, 619)
         Me.TPUSERS.TabIndex = 0
         Me.TPUSERS.Text = "User Accounts"
-        Me.TPUSERS.UseVisualStyleBackColor = True
         '
         'RPTUSERS
         '
@@ -1052,87 +1102,58 @@ Partial Class FRMREPORTS
         Me.TCREPORTS.Size = New System.Drawing.Size(1116, 652)
         Me.TCREPORTS.TabIndex = 23
         '
+        'tbl_productsTableAdapter
+        '
+        Me.tbl_productsTableAdapter.ClearBeforeFill = True
+        '
+        'tbl_salesTableAdapter
+        '
+        Me.tbl_salesTableAdapter.ClearBeforeFill = True
+        '
         'tbl_usersTableAdapter
         '
         Me.tbl_usersTableAdapter.ClearBeforeFill = True
         '
-        'CLEARSTOCKS
+        'tbl_stocksTableAdapter
         '
-        Me.CLEARSTOCKS.BackColor = System.Drawing.Color.Transparent
-        Me.CLEARSTOCKS.CheckedState.Parent = Me.CLEARSTOCKS
-        Me.CLEARSTOCKS.CustomImages.Parent = Me.CLEARSTOCKS
-        Me.CLEARSTOCKS.FillColor = System.Drawing.SystemColors.ControlDark
-        Me.CLEARSTOCKS.Font = New System.Drawing.Font("Segoe UI", 9.0!)
-        Me.CLEARSTOCKS.ForeColor = System.Drawing.Color.White
-        Me.CLEARSTOCKS.HoverState.Parent = Me.CLEARSTOCKS
-        Me.CLEARSTOCKS.Location = New System.Drawing.Point(497, 28)
-        Me.CLEARSTOCKS.Name = "CLEARSTOCKS"
-        Me.CLEARSTOCKS.ShadowDecoration.Parent = Me.CLEARSTOCKS
-        Me.CLEARSTOCKS.Size = New System.Drawing.Size(98, 36)
-        Me.CLEARSTOCKS.TabIndex = 16
-        Me.CLEARSTOCKS.Text = "Clear Filter"
+        Me.tbl_stocksTableAdapter.ClearBeforeFill = True
         '
-        'Label3
+        'LBLUSERNAME
         '
-        Me.Label3.AutoSize = True
-        Me.Label3.Font = New System.Drawing.Font("Century Gothic", 11.25!)
-        Me.Label3.Location = New System.Drawing.Point(16, 28)
-        Me.Label3.Name = "Label3"
-        Me.Label3.Size = New System.Drawing.Size(138, 20)
-        Me.Label3.TabIndex = 13
-        Me.Label3.Text = "Filter by Category"
+        Me.LBLUSERNAME.AutoSize = True
+        Me.LBLUSERNAME.Location = New System.Drawing.Point(1004, 44)
+        Me.LBLUSERNAME.Name = "LBLUSERNAME"
+        Me.LBLUSERNAME.Size = New System.Drawing.Size(83, 20)
+        Me.LBLUSERNAME.TabIndex = 5
+        Me.LBLUSERNAME.Text = "Username"
         '
-        'FILTERSTOCKS
+        'Label6
         '
-        Me.FILTERSTOCKS.CheckedState.Parent = Me.FILTERSTOCKS
-        Me.FILTERSTOCKS.CustomImages.Parent = Me.FILTERSTOCKS
-        Me.FILTERSTOCKS.FillColor = System.Drawing.Color.MediumSeaGreen
-        Me.FILTERSTOCKS.Font = New System.Drawing.Font("Segoe UI", 9.0!)
-        Me.FILTERSTOCKS.ForeColor = System.Drawing.Color.White
-        Me.FILTERSTOCKS.HoverState.Parent = Me.FILTERSTOCKS
-        Me.FILTERSTOCKS.Location = New System.Drawing.Point(372, 28)
-        Me.FILTERSTOCKS.Name = "FILTERSTOCKS"
-        Me.FILTERSTOCKS.ShadowDecoration.Parent = Me.FILTERSTOCKS
-        Me.FILTERSTOCKS.Size = New System.Drawing.Size(98, 36)
-        Me.FILTERSTOCKS.TabIndex = 15
-        Me.FILTERSTOCKS.Text = "Filter"
-        '
-        'CBOSTOCKS
-        '
-        Me.CBOSTOCKS.BackColor = System.Drawing.Color.Transparent
-        Me.CBOSTOCKS.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed
-        Me.CBOSTOCKS.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
-        Me.CBOSTOCKS.FocusedColor = System.Drawing.Color.Empty
-        Me.CBOSTOCKS.FocusedState.Parent = Me.CBOSTOCKS
-        Me.CBOSTOCKS.Font = New System.Drawing.Font("Segoe UI", 10.0!)
-        Me.CBOSTOCKS.ForeColor = System.Drawing.Color.FromArgb(CType(CType(68, Byte), Integer), CType(CType(88, Byte), Integer), CType(CType(112, Byte), Integer))
-        Me.CBOSTOCKS.FormattingEnabled = True
-        Me.CBOSTOCKS.HoverState.Parent = Me.CBOSTOCKS
-        Me.CBOSTOCKS.ItemHeight = 30
-        Me.CBOSTOCKS.Items.AddRange(New Object() {"Admin", "Cashier", "Manager"})
-        Me.CBOSTOCKS.ItemsAppearance.Parent = Me.CBOSTOCKS
-        Me.CBOSTOCKS.Location = New System.Drawing.Point(189, 27)
-        Me.CBOSTOCKS.Name = "CBOSTOCKS"
-        Me.CBOSTOCKS.ShadowDecoration.Parent = Me.CBOSTOCKS
-        Me.CBOSTOCKS.Size = New System.Drawing.Size(140, 36)
-        Me.CBOSTOCKS.TabIndex = 14
+        Me.Label6.AutoSize = True
+        Me.Label6.Location = New System.Drawing.Point(890, 44)
+        Me.Label6.Name = "Label6"
+        Me.Label6.Size = New System.Drawing.Size(108, 20)
+        Me.Label6.TabIndex = 6
+        Me.Label6.Text = "Current User :"
         '
         'FRMREPORTS
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.White
-        Me.ClientSize = New System.Drawing.Size(1188, 682)
+        Me.ClientSize = New System.Drawing.Size(1107, 682)
         Me.Controls.Add(Me.Panel1)
-        Me.Controls.Add(Me.BTNCLOSE)
         Me.Controls.Add(Me.TCREPORTS)
-        Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None
+        Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D
         Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
+        Me.MaximizeBox = False
+        Me.MinimizeBox = False
         Me.Name = "FRMREPORTS"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
-        Me.Text = "FRMREPORTS"
+        Me.Text = "Reports"
         CType(Me.tbl_salesBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.inventory_dbDataSet, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.tbl_stocksBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.tbl_productsBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.tbl_usersBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
         Me.TPTRANSREC.ResumeLayout(False)
@@ -1157,7 +1178,6 @@ Partial Class FRMREPORTS
         Me.ResumeLayout(False)
 
     End Sub
-    Friend WithEvents BTNCLOSE As Button
     Friend WithEvents tbl_productsBindingSource As BindingSource
     Friend WithEvents inventory_dbDataSet As inventory_dbDataSet
     Friend WithEvents tbl_productsTableAdapter As inventory_dbDataSetTableAdapters.tbl_productsTableAdapter
@@ -1214,7 +1234,7 @@ Partial Class FRMREPORTS
     Friend WithEvents CLEARPRODUCTS As Guna.UI2.WinForms.Guna2Button
     Friend WithEvents Label5 As Label
     Friend WithEvents FILTERPRODUCTS As Guna.UI2.WinForms.Guna2Button
-    Friend WithEvents CBOCATEGORY As Guna.UI2.WinForms.Guna2ComboBox
+    Friend WithEvents CBOPRODUCTSCATEGORY As Guna.UI2.WinForms.Guna2ComboBox
     Friend WithEvents RPTPRODUCTS As Microsoft.Reporting.WinForms.ReportViewer
     Friend WithEvents TPUSERS As TabPage
     Friend WithEvents RPTUSERS As Microsoft.Reporting.WinForms.ReportViewer
@@ -1228,5 +1248,9 @@ Partial Class FRMREPORTS
     Friend WithEvents CLEARSTOCKS As Guna.UI2.WinForms.Guna2Button
     Friend WithEvents Label3 As Label
     Friend WithEvents FILTERSTOCKS As Guna.UI2.WinForms.Guna2Button
-    Friend WithEvents CBOSTOCKS As Guna.UI2.WinForms.Guna2ComboBox
+    Friend WithEvents CBOSTOCKSCATEGORY As Guna.UI2.WinForms.Guna2ComboBox
+    Friend WithEvents tbl_stocksBindingSource As BindingSource
+    Friend WithEvents tbl_stocksTableAdapter As inventory_dbDataSetTableAdapters.tbl_stocksTableAdapter
+    Friend WithEvents Label6 As Label
+    Friend WithEvents LBLUSERNAME As Label
 End Class
