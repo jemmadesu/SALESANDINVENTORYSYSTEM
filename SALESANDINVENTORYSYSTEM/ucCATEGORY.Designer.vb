@@ -53,7 +53,7 @@ Partial Class ucCATEGORY
         '
         'Button1
         '
-        Me.Button1.Location = New System.Drawing.Point(630, 630)
+        Me.Button1.Location = New System.Drawing.Point(606, 632)
         Me.Button1.Name = "Button1"
         Me.Button1.Size = New System.Drawing.Size(8, 8)
         Me.Button1.TabIndex = 2
@@ -115,7 +115,7 @@ Partial Class ucCATEGORY
         Me.Label11.AutoSize = True
         Me.Label11.Font = New System.Drawing.Font("Century Gothic", 20.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label11.ForeColor = System.Drawing.Color.MediumSeaGreen
-        Me.Label11.Location = New System.Drawing.Point(73, 79)
+        Me.Label11.Location = New System.Drawing.Point(49, 81)
         Me.Label11.Name = "Label11"
         Me.Label11.Size = New System.Drawing.Size(160, 32)
         Me.Label11.TabIndex = 74
@@ -128,7 +128,7 @@ Partial Class ucCATEGORY
         Me.Panel2.Dock = System.Windows.Forms.DockStyle.Top
         Me.Panel2.Location = New System.Drawing.Point(0, 0)
         Me.Panel2.Name = "Panel2"
-        Me.Panel2.Size = New System.Drawing.Size(1113, 49)
+        Me.Panel2.Size = New System.Drawing.Size(1091, 49)
         Me.Panel2.TabIndex = 75
         '
         'BTNBACK
@@ -240,7 +240,7 @@ Partial Class ucCATEGORY
         Me.GroupBox1.Controls.Add(Me.BTNDELETE)
         Me.GroupBox1.Font = New System.Drawing.Font("Century Gothic", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.GroupBox1.ForeColor = System.Drawing.SystemColors.ControlDarkDark
-        Me.GroupBox1.Location = New System.Drawing.Point(79, 140)
+        Me.GroupBox1.Location = New System.Drawing.Point(55, 142)
         Me.GroupBox1.Name = "GroupBox1"
         Me.GroupBox1.Size = New System.Drawing.Size(499, 295)
         Me.GroupBox1.TabIndex = 77
@@ -268,7 +268,7 @@ Partial Class ucCATEGORY
         Me.GroupBox2.Controls.Add(Me.DGVPRODUCTS)
         Me.GroupBox2.Font = New System.Drawing.Font("Century Gothic", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.GroupBox2.ForeColor = System.Drawing.SystemColors.ControlDarkDark
-        Me.GroupBox2.Location = New System.Drawing.Point(596, 91)
+        Me.GroupBox2.Location = New System.Drawing.Point(572, 93)
         Me.GroupBox2.Name = "GroupBox2"
         Me.GroupBox2.Size = New System.Drawing.Size(483, 562)
         Me.GroupBox2.TabIndex = 78
@@ -303,7 +303,7 @@ Partial Class ucCATEGORY
         Me.Controls.Add(Me.Button1)
         Me.Controls.Add(Me.Label11)
         Me.Name = "ucCATEGORY"
-        Me.Size = New System.Drawing.Size(1113, 682)
+        Me.Size = New System.Drawing.Size(1091, 729)
         Me.Panel2.ResumeLayout(False)
         CType(Me.DGVPRODUCTS, System.ComponentModel.ISupportInitialize).EndInit()
         Me.GroupBox1.ResumeLayout(False)

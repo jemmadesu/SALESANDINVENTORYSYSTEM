@@ -25,6 +25,7 @@ Partial Class FRMNEAREXPIRY
         Dim DataGridViewCellStyle1 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Dim DataGridViewCellStyle2 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Dim DataGridViewCellStyle3 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(FRMNEAREXPIRY))
         Me.Panel2 = New System.Windows.Forms.Panel()
         Me.LBLEXIT = New System.Windows.Forms.Label()
         Me.Label8 = New System.Windows.Forms.Label()
@@ -115,6 +116,7 @@ Partial Class FRMNEAREXPIRY
         Me.Controls.Add(Me.Panel2)
         Me.Controls.Add(Me.DGVEXP)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None
+        Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.Name = "FRMNEAREXPIRY"
         Me.Text = "FRMNEAREXPIRY"
         Me.Panel2.ResumeLayout(False)

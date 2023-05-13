@@ -3,25 +3,25 @@ Imports MySql.Data.MySqlClient
 Public Class ucSUPPLIER
 
     Private Sub DGVSET()
+
         DGVSUP.Columns(0).Width = 200
-        DGVSUP.Columns(0).HeaderText = "Manufacturer"
+        DGVSUP.Columns(0).HeaderText = "Ref. No"
         DGVSUP.Columns(1).Width = 200
-        DGVSUP.Columns(1).HeaderText = "First Name"
+        DGVSUP.Columns(1).HeaderText = "Company Name"
         DGVSUP.Columns(2).Width = 200
-        DGVSUP.Columns(2).HeaderText = "Last Name"
+        DGVSUP.Columns(2).HeaderText = "Name"
         DGVSUP.Columns(3).Width = 200
-        DGVSUP.Columns(3).HeaderText = "E-Mail"
+        DGVSUP.Columns(3).HeaderText = "Tel No."
         DGVSUP.Columns(4).Width = 200
-        DGVSUP.Columns(4).HeaderText = "Phone No."
-        DGVSUP.Columns(5).Width = 200
-        DGVSUP.Columns(5).HeaderText = "Address"
+        DGVSUP.Columns(4).HeaderText = "Status"
+
 
 
     End Sub
     Private Sub load_data()
         Try
 
-            Dim da As New MySqlDataAdapter("select Companyname, FirstName, LastName, Email, PhoneNo, Address from tbl_supplier ", con)
+            Dim da As New MySqlDataAdapter("select RefNo, Companyname, name, telno, status from tbl_supplier ", con)
             Dim dt As New DataSet()
             da.Fill(dt)
             DGVSUP.DataSource = dt.Tables(0)
@@ -52,25 +52,22 @@ Public Class ucSUPPLIER
     Private Sub BTNSAVE_Click(sender As Object, e As EventArgs) Handles BTNSAVE.Click
 
 
-        If TXTCOM.Text = "" Or TXTFN.Text = "" Or TXTLN.Text = "" Or TXTEMAIL.Text = "" Or TXTNO.Text = "" Or TXTADD.Text = "" Then
+        If TXTCOM.Text = "" Or TXTNAME.Text = "" Or TXTTEL.Text = "" Then
             MsgBox("All fields are required!", vbOKOnly + vbCritical, "Error Saving")
             TXTCOM.Focus()
             Exit Sub
         End If
 
         OpenCon()
-        cmd.CommandText = "insert into tbl_supplier (Companyname, FirstName, LastName, Email, PhoneNo, Address ) values ( @COM, @FN, @LN, @EM, @PN, @ADD)"
+        cmd.CommandText = "insert into tbl_supplier (Companyname, name, telno, status ) values (@COM, @NN, @TEL, @ST)"
         With cmd.Parameters
 
             .Clear()
 
-
             .AddWithValue("COM", TXTCOM.Text)
-            .AddWithValue("FN", TXTFN.Text)
-            .AddWithValue("LN", TXTLN.Text)
-            .AddWithValue("EM", TXTEMAIL.Text)
-            .AddWithValue("PN", TXTNO.Text)
-            .AddWithValue("ADD", TXTADD.Text)
+            .AddWithValue("NN", TXTNAME)
+            .AddWithValue("TEL", TXTTEL.Text)
+            .AddWithValue("ST", CBOSTATUS.Text)
 
         End With
         cmd.ExecuteNonQuery()
@@ -80,11 +77,9 @@ Public Class ucSUPPLIER
         actlog()
 
         TXTCOM.Text = ""
-        TXTFN.Text = ""
-        TXTLN.Text = ""
-        TXTEMAIL.Text = ""
-        TXTNO.Text = ""
-        TXTADD.Text = ""
+        TXTNAME.Text = ""
+        TXTTEL.Text = ""
+        CBOSTATUS.Text = ""
 
         load_data()
     End Sub
@@ -95,74 +90,72 @@ Public Class ucSUPPLIER
     End Sub
 
     Private Sub BTNEDIT_Click(sender As Object, e As EventArgs) Handles BTNEDIT.Click
-        If TXTCOM.Text = "" Or TXTFN.Text = "" Or TXTLN.Text = "" Or TXTEMAIL.Text = "" Or TXTNO.Text = "" Or TXTADD.Text = "" Then
+        If TXTCOM.Text = "" Or TXTNAME.Text = "" Or TXTTEL.Text = "" Then
             MsgBox("All fields are required!", vbOKOnly + vbCritical, "Error Saving")
             TXTCOM.Focus()
             Exit Sub
         End If
 
-        OpenCon()
-        cmd.CommandText = "Update tbl_supplier set Companyname=@COM, FirstName=@FN , LastName=@LN, Email=@EM, PhoneNo=@PN, Address=@ADD where PhoneNo=@PN"
-        With cmd.Parameters
+        Dim selectedRow As DataGridViewRow = DGVSUP.SelectedRows(0)
+        Dim refNoValue As String = selectedRow.Cells(0).Value.ToString()
 
+
+        OpenCon()
+        cmd.CommandText = "UPDATE tbl_supplier SET Companyname = @COM, name = @NN, telno = @TEL, status = @ST WHERE RefNo = @REF"
+
+        With cmd.Parameters
             .Clear()
             .AddWithValue("COM", TXTCOM.Text)
-            .AddWithValue("FN", TXTFN.Text)
-            .AddWithValue("LN", TXTLN.Text)
-            .AddWithValue("EM", TXTEMAIL.Text)
-            .AddWithValue("PN", TXTNO.Text)
-            .AddWithValue("ADD", TXTADD.Text)
-
-
+            .AddWithValue("NN", TXTNAME.Text)
+            .AddWithValue("TEL", TXTTEL.Text)
+            .AddWithValue("ST", CBOSTATUS.Text)
+            .AddWithValue("REF", refNoValue) ' Replace REFNoValue with the actual value of RefNo
         End With
+
         cmd.ExecuteNonQuery()
         con.Close()
+
         MsgBox("Record has been updated!", vbOKOnly + vbInformation, "Editing Successful")
 
         TXTCOM.Text = ""
-        TXTFN.Text = ""
-        TXTLN.Text = ""
-        TXTEMAIL.Text = ""
-        TXTNO.Text = ""
-        TXTADD.Text = ""
+        TXTNAME.Text = ""
+        CBOSTATUS.Text = ""
+        TXTTEL.Text = ""
         load_data()
 
         BTNSAVE.Enabled = True
     End Sub
 
-    Private Sub BTNDELETE_Click(sender As Object, e As EventArgs) Handles BTNDELETE.Click
+    'Private Sub BTNDELETE_Click(sender As Object, e As EventArgs)
 
-        If MessageBox.Show("Are you sure to remove this from the Supplier Record?", "Delete", MessageBoxButtons.YesNo, MessageBoxIcon.Information, MessageBoxDefaultButton.Button2) = DialogResult.No Then
-            Exit Sub
-        End If
+    '    If MessageBox.Show("Are you sure to remove this from the Supplier Record?", "Delete", MessageBoxButtons.YesNo, MessageBoxIcon.Information, MessageBoxDefaultButton.Button2) = DialogResult.No Then
+    '        Exit Sub
+    '    End If
 
-        For i As Integer = 0 To DGVSUP.SelectedRows.Count - 1
-            Dim cmd As New MySqlCommand("delete from tbl_supplier where PhoneNo = @PN ", con)
-            cmd.Parameters.AddWithValue("PN", DGVSUP.SelectedRows(i).Cells(4).Value.ToString())
-            con.Open()
-            cmd.ExecuteNonQuery()
-            con.Close()
-        Next
-        load_data()
-        MessageBox.Show("data deleted succesfully")
-        activity = "deleted a supplier. Manufacturer Name: " + TXTCOM.Text
-        actlog()
-        TXTCOM.Text = ""
-        TXTFN.Text = ""
-        TXTLN.Text = ""
-        TXTEMAIL.Text = ""
-        TXTNO.Text = ""
-        TXTADD.Text = ""
-        load_data()
+    '    For i As Integer = 0 To DGVSUP.SelectedRows.Count - 1
+    '        Dim cmd As New MySqlCommand("delete from tbl_supplier where PhoneNo = @PN ", con)
+    '        cmd.Parameters.AddWithValue("PN", DGVSUP.SelectedRows(i).Cells(4).Value.ToString())
+    '        con.Open()
+    '        cmd.ExecuteNonQuery()
+    '        con.Close()
+    '    Next
+    '    load_data()
+    '    MessageBox.Show("data deleted succesfully")
+    '    activity = "deleted a supplier. Manufacturer Name: " + TXTCOM.Text
+    '    actlog()
+    '    TXTCOM.Text = ""
+    '    TXTFN.Text = ""
+    '    TXTLN.Text = ""
+    '    TXTSTATUS.Text = ""
+    '    TXTADD.Text = ""
+    '    load_data()
 
-    End Sub
+    'End Sub
     Private Sub BTNCANCEL_Click(sender As Object, e As EventArgs) Handles BTNCANCEL.Click
         TXTCOM.Text = ""
-        TXTFN.Text = ""
-        TXTLN.Text = ""
-        TXTEMAIL.Text = ""
-        TXTNO.Text = ""
-        TXTADD.Text = ""
+        TXTNAME.Text = ""
+        CBOSTATUS.Text = ""
+        TXTTEL.Text = ""
     End Sub
 
     Private Sub BTNBACK_Click(sender As Object, e As EventArgs) Handles BTNBACK.Click
@@ -177,7 +170,7 @@ Public Class ucSUPPLIER
         SETTINGS.Dock = DockStyle.Fill
     End Sub
     Private Sub search()
-        Dim dba As New MySqlDataAdapter("select Companyname, FirstName, LastName, Email, PhoneNo, Address from tbl_supplier WHERE tbl_supplier.companyname LIKE '%" & Me.TXTSEARCH.Text & "%';", con)
+        Dim dba As New MySqlDataAdapter("select RefNo, Companyname, name, telno, status from tbl_supplier WHERE tbl_supplier.companyname LIKE '%" & Me.TXTSEARCH.Text & "%';", con)
         Dim dbset As New DataSet
         dba.Fill(dbset)
         Me.DGVSUP.DataSource = dbset.Tables(0).DefaultView
@@ -193,42 +186,31 @@ Public Class ucSUPPLIER
             row = DGVSUP.Rows(e.RowIndex)
 
 
-            TXTCOM.Text = row.Cells(0).Value
-            TXTFN.Text = row.Cells(1).Value
-            TXTLN.Text = row.Cells(2).Value
-            TXTEMAIL.Text = row.Cells(3).Value
-            TXTNO.Text = row.Cells(4).Value
-            TXTADD.Text = row.Cells(5).Value
-
+            TXTCOM.Text = row.Cells(1).Value
+            TXTNAME.Text = row.Cells(2).Value
+            TXTTEL.Text = row.Cells(3).Value
+            CBOSTATUS.Text = row.Cells(4).Value
 
         End If
         BTNEDIT.Text = "Update"
         BTNSAVE.Enabled = False
     End Sub
-    Private Sub TXTNO_KeyPress(sender As Object, e As KeyPressEventArgs) Handles TXTNO.KeyPress
-        If Not Char.IsNumber(e.KeyChar) And Not Char.IsControl(e.KeyChar) Then
-            e.Handled = True
-            MsgBox("Letter or Special character is not allowed", vbCritical, "Error")
-        End If
-        If TXTNO.Text.Length >= 12 Then
-            If e.KeyChar <> ControlChars.Back Then
-                e.Handled = True
-                MsgBox("Number Exceed", vbCritical, "Error")
-            End If
-        End If
-    End Sub
-    Private Sub TXTFN_KeyPress(sender As Object, e As KeyPressEventArgs) Handles TXTFN.KeyPress
+    Private Sub TXTFN_KeyPress(sender As Object, e As KeyPressEventArgs) Handles TXTNAME.KeyPress
         If Not Char.IsLetter(e.KeyChar) And Not e.KeyChar = Chr(Keys.Back) And Not e.KeyChar = Chr(Keys.Space) Then
             e.Handled = True
             MsgBox("Number or Special character is not allowed", MessageBoxIcon.Warning, "Error")
         End If
     End Sub
 
-    Private Sub TXTLN_KeyPress(sender As Object, e As KeyPressEventArgs) Handles TXTLN.KeyPress
+    Private Sub TXTLN_KeyPress(sender As Object, e As KeyPressEventArgs)
         If Not Char.IsLetter(e.KeyChar) And Not e.KeyChar = Chr(Keys.Back) And Not e.KeyChar = Chr(Keys.Space) Then
             e.Handled = True
             MsgBox("Number or Special character is not allowed", MessageBoxIcon.Warning, "Error")
         End If
+    End Sub
+
+    Private Sub CBOSTATUS_SelectedIndexChanged(sender As Object, e As EventArgs) Handles CBOSTATUS.SelectedIndexChanged
+
     End Sub
 
     'Private Sub TXTEMAIL_Validating(sender As Object, e As CancelEventArgs) Handles TXTEMAIL.Validating

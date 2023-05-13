@@ -23,8 +23,8 @@ Partial Class ucOBSELETEINVENTORY
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(ucOBSELETEINVENTORY))
-        Dim DataGridViewCellStyle1 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle2 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle3 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle4 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Me.BTNARCHIVE = New System.Windows.Forms.Button()
         Me.Panel2 = New System.Windows.Forms.Panel()
         Me.BTNBACK = New System.Windows.Forms.Button()
@@ -40,7 +40,7 @@ Partial Class ucOBSELETEINVENTORY
         Me.BTNARCHIVE.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.BTNARCHIVE.Font = New System.Drawing.Font("Century Gothic", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.BTNARCHIVE.ForeColor = System.Drawing.Color.White
-        Me.BTNARCHIVE.Location = New System.Drawing.Point(958, 631)
+        Me.BTNARCHIVE.Location = New System.Drawing.Point(938, 660)
         Me.BTNARCHIVE.Name = "BTNARCHIVE"
         Me.BTNARCHIVE.Size = New System.Drawing.Size(124, 34)
         Me.BTNARCHIVE.TabIndex = 46
@@ -54,7 +54,7 @@ Partial Class ucOBSELETEINVENTORY
         Me.Panel2.Dock = System.Windows.Forms.DockStyle.Top
         Me.Panel2.Location = New System.Drawing.Point(0, 0)
         Me.Panel2.Name = "Panel2"
-        Me.Panel2.Size = New System.Drawing.Size(1113, 49)
+        Me.Panel2.Size = New System.Drawing.Size(1091, 49)
         Me.Panel2.TabIndex = 47
         '
         'BTNBACK
@@ -81,7 +81,7 @@ Partial Class ucOBSELETEINVENTORY
         Me.Label8.BackColor = System.Drawing.Color.White
         Me.Label8.Font = New System.Drawing.Font("Century Gothic", 20.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label8.ForeColor = System.Drawing.Color.MediumSeaGreen
-        Me.Label8.Location = New System.Drawing.Point(57, 79)
+        Me.Label8.Location = New System.Drawing.Point(13, 87)
         Me.Label8.Name = "Label8"
         Me.Label8.Size = New System.Drawing.Size(442, 64)
         Me.Label8.TabIndex = 48
@@ -93,25 +93,25 @@ Partial Class ucOBSELETEINVENTORY
         Me.DGVEXPIREDPROD.AllowUserToDeleteRows = False
         Me.DGVEXPIREDPROD.BackgroundColor = System.Drawing.Color.White
         Me.DGVEXPIREDPROD.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        DataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
-        DataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Window
-        DataGridViewCellStyle1.Font = New System.Drawing.Font("Century Gothic", 9.75!)
-        DataGridViewCellStyle1.ForeColor = System.Drawing.Color.DimGray
-        DataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.IndianRed
-        DataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText
-        DataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
-        Me.DGVEXPIREDPROD.DefaultCellStyle = DataGridViewCellStyle1
-        Me.DGVEXPIREDPROD.Location = New System.Drawing.Point(39, 123)
+        DataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Window
+        DataGridViewCellStyle3.Font = New System.Drawing.Font("Century Gothic", 9.75!)
+        DataGridViewCellStyle3.ForeColor = System.Drawing.Color.DimGray
+        DataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.IndianRed
+        DataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+        DataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
+        Me.DGVEXPIREDPROD.DefaultCellStyle = DataGridViewCellStyle3
+        Me.DGVEXPIREDPROD.Location = New System.Drawing.Point(19, 154)
         Me.DGVEXPIREDPROD.Name = "DGVEXPIREDPROD"
         Me.DGVEXPIREDPROD.ReadOnly = True
-        DataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
-        DataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Control
-        DataGridViewCellStyle2.Font = New System.Drawing.Font("Century Gothic", 9.75!)
-        DataGridViewCellStyle2.ForeColor = System.Drawing.Color.White
-        DataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.IndianRed
-        DataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText
-        DataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
-        Me.DGVEXPIREDPROD.RowHeadersDefaultCellStyle = DataGridViewCellStyle2
+        DataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.Control
+        DataGridViewCellStyle4.Font = New System.Drawing.Font("Century Gothic", 9.75!)
+        DataGridViewCellStyle4.ForeColor = System.Drawing.Color.White
+        DataGridViewCellStyle4.SelectionBackColor = System.Drawing.Color.IndianRed
+        DataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+        DataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.DGVEXPIREDPROD.RowHeadersDefaultCellStyle = DataGridViewCellStyle4
         Me.DGVEXPIREDPROD.RowHeadersVisible = False
         Me.DGVEXPIREDPROD.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
         Me.DGVEXPIREDPROD.Size = New System.Drawing.Size(1043, 489)
@@ -127,7 +127,7 @@ Partial Class ucOBSELETEINVENTORY
         Me.Controls.Add(Me.Panel2)
         Me.Controls.Add(Me.BTNARCHIVE)
         Me.Name = "ucOBSELETEINVENTORY"
-        Me.Size = New System.Drawing.Size(1113, 682)
+        Me.Size = New System.Drawing.Size(1091, 729)
         Me.Panel2.ResumeLayout(False)
         CType(Me.DGVEXPIREDPROD, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)

@@ -1,163 +1,137 @@
 ﻿Imports MySql.Data.MySqlClient
+Imports Microsoft.Reporting.WinForms
 Public Class FRMREPORTS
     Private Sub FRMREPORTS_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        '------------------------------------- EXPIRED PRODUCTS -------------------------
-        'TODO: This line of code loads data into the 'inventory_dbDataSet.tbl_expiredprod' table. You can move, or remove it, as needed.
-        Me.RPTEXP.SetDisplayMode(Microsoft.Reporting.WinForms.DisplayMode.PrintLayout)
-        Me.tbl_expiredprodTableAdapter.Fill(Me.inventory_dbDataSet.tbl_expiredprod)
 
-        Me.RPTEXP.RefreshReport()
-        '------------------------------------- OUT OF STOCKS -------------------------
-        'TODO: This line of code loads data into the 'inventory_dbDataSet.tbl_stocksout' table. You can move, or remove it, as needed.
-        Me.RPTOUTOFSTOCKS.SetDisplayMode(Microsoft.Reporting.WinForms.DisplayMode.PrintLayout)
-        Me.tbl_stocksoutTableAdapter.Fill(Me.inventory_dbDataSet.tbl_stocksout)
+        ' ----- CODE FOR COMBO BOX CATEGORY -----
 
-        Me.RPTOUTOFSTOCKS.RefreshReport()
-        '--------------------------------- EXPIRED PRODUCTS ------------
-        'TODO: This line of code loads data into the 'inventory_dbDataSet.tbl_transaction' table. You can move, or remove it, as needed.
-        Me.RPTTRANSACTIONRECORDS.SetDisplayMode(Microsoft.Reporting.WinForms.DisplayMode.PrintLayout)
-        Me.tbl_transactionTableAdapter.Fill(Me.inventory_dbDataSet.tbl_transaction)
-        '--------------------------------- STOCKS ----------------------
-        'TODO: This line of code loads data into the 'inventory_dbDataSet.tbl_stocks' table. You can move, or remove it, as needed.
-        Me.RPTSTOCKS.SetDisplayMode(Microsoft.Reporting.WinForms.DisplayMode.PrintLayout)
-        Me.tbl_stocksTableAdapter.Fill(Me.inventory_dbDataSet.tbl_stocks)
-        '--------------------------------- ACTIVITY LOG -------------------
-        Me.RPTSTOCKS.RefreshReport()
-        'TODO: This line of code loads data into the 'inventory_dbDataSet.tbl_actlog' table. You can move, or remove it, as needed.
-        Me.RPTACTLOG.SetDisplayMode(Microsoft.Reporting.WinForms.DisplayMode.PrintLayout)
-        Me.tbl_actlogTableAdapter.Fill(Me.inventory_dbDataSet.tbl_actlog)
+        Dim cmd As New MySqlCommand("SELECT ID, catcode, catname FROM tbl_category", con)
+        Dim da As New MySqlDataAdapter(cmd)
+        Dim tbl_category As New DataTable()
+        da.Fill(tbl_category)
 
-        Me.RPTACTLOG.RefreshReport()
-        '-------------------------------------- SUPPLIER ---------------------
-        'TODO: This line of code loads data into the 'inventory_dbDataSet.tbl_supplier' table. You can move, or remove it, as needed.
-        Me.RPTSUP.SetDisplayMode(Microsoft.Reporting.WinForms.DisplayMode.PrintLayout)
-        Me.tbl_supplierTableAdapter.Fill(Me.inventory_dbDataSet.tbl_supplier)
+        Dim row As DataRow = tbl_category.NewRow()
+        row("catname") = "-- Select --"
+        tbl_category.Rows.InsertAt(row, 0)
 
-        Me.RPTSUP.RefreshReport()
-        '----------------------------------- SALES -----------------------------
-        'TODO: This line of code loads data into the 'inventory_dbDataSet.tbl_sales' table. You can move, or remove it, as needed.
-        Me.RPTSALES.SetDisplayMode(Microsoft.Reporting.WinForms.DisplayMode.PrintLayout)
-        Me.tbl_salesTableAdapter.Fill(Me.inventory_dbDataSet.tbl_sales)
+        CBOCATEGORY.DataSource = tbl_category
+        CBOCATEGORY.DisplayMember = "catname"
 
-        Me.RPTSALES.RefreshReport()
-        '------------------------- PRODUCTS ---------------------
+        '--------------------------------------------------------------------------------------------------------------------------
+
         'TODO: This line of code loads data into the 'inventory_dbDataSet.tbl_products' table. You can move, or remove it, as needed.
         Me.RPTPRODUCTS.SetDisplayMode(Microsoft.Reporting.WinForms.DisplayMode.PrintLayout)
         Me.tbl_productsTableAdapter.Fill(Me.inventory_dbDataSet.tbl_products)
 
         Me.RPTPRODUCTS.RefreshReport()
-        '---------------------------- USERS --------------------------------
-        'TODO: This line of code loads data into the 'inventory_dbDataSet.tbl_users' table. You can move, or remove it, as needed.
-        Me.RPTUSERS.SetDisplayMode(Microsoft.Reporting.WinForms.DisplayMode.PrintLayout)
-        Me.tbl_usersTableAdapter.Fill(Me.inventory_dbDataSet.tbl_users)
 
-        Me.RPTUSERS.RefreshReport()
-        '------------------------------------- TRANSACTION RECORDS -------------------------
-        'TODO: This line of code loads data into the 'inventory_dbDataSet.tbl_expiredprod' table. You can move, or remove it, as needed.
-        Me.RPTTRANSACTIONRECORDS.SetDisplayMode(Microsoft.Reporting.WinForms.DisplayMode.PrintLayout)
-        Me.tbl_transactionTableAdapter.Fill(Me.inventory_dbDataSet.tbl_transaction)
+        ' SALES REPORT -------------------------------------------------------------------------------------------------------------
 
-        Me.RPTTRANSACTIONRECORDS.RefreshReport()
-    End Sub
-    Private Sub BTNFILTER_Click(sender As Object, e As EventArgs) Handles BTNFILTER.Click
-        Me.tbl_usersTableAdapter.FillByusertype(Me.inventory_dbDataSet.tbl_users, CBOUT.Text)
-
-        Me.RPTUSERS.RefreshReport()
-    End Sub
-
-    Private Sub clear()
-        Me.tbl_usersTableAdapter.Fill(Me.inventory_dbDataSet.tbl_users)
-
-        Me.RPTUSERS.RefreshReport()
-    End Sub
-
-    Private Sub BTNCLEAR_Click(sender As Object, e As EventArgs) Handles BTNCLEAR.Click
-        clear()
-    End Sub
-    Private Sub BTNFILL_Click_1(sender As Object, e As EventArgs) Handles BTNFILL.Click
-        Me.tbl_productsTableAdapter.FillByDate(Me.inventory_dbDataSet.tbl_products, Date1.Value.ToShortDateString, Date2.Value.ToShortDateString)
-
-        Me.RPTPRODUCTS.RefreshReport()
-    End Sub
-    Private Sub BTNCLR_Click(sender As Object, e As EventArgs) Handles BTNCLR.Click
-        Me.tbl_productsTableAdapter.Fill(Me.inventory_dbDataSet.tbl_products)
-
-        Me.RPTPRODUCTS.RefreshReport()
-    End Sub
-    Private Sub BTNCLRDATE_Click(sender As Object, e As EventArgs)
-        Me.tbl_productsTableAdapter.Fill(Me.inventory_dbDataSet.tbl_products)
-
-        Me.RPTPRODUCTS.RefreshReport()
-    End Sub
-
-    Private Sub EXPFILL_Click(sender As Object, e As EventArgs) Handles EXPFILL.Click
-        Me.tbl_expiredprodTableAdapter.FillByEXP(Me.inventory_dbDataSet.tbl_expiredprod, Date1EXP.Value.ToShortDateString, DAte2EXP.Value.ToShortDateString)
-
-        Me.RPTEXP.RefreshReport()
-    End Sub
-
-    Private Sub EXPCLR_Click(sender As Object, e As EventArgs) Handles EXPCLR.Click
-        Me.tbl_expiredprodTableAdapter.Fill(Me.inventory_dbDataSet.tbl_expiredprod)
-
-        Me.RPTEXP.RefreshReport()
-    End Sub
-    Private Sub SALESFILL_Click(sender As Object, e As EventArgs) Handles SALESFILL.Click
-        Me.tbl_salesTableAdapter.FillBySALES(Me.inventory_dbDataSet.tbl_sales, Date1SALES.Value.ToShortDateString, Date2SALES.Value.ToShortDateString)
-
-        Me.RPTSALES.RefreshReport()
-    End Sub
-
-    Private Sub SALESCLR_Click(sender As Object, e As EventArgs) Handles SALESCLR.Click
+        'TODO: This line of code loads data into the 'inventory_dbDataSet.tbl_sales' table. You can move, or remove it, as needed.
+        Me.RPTSALES.SetDisplayMode(Microsoft.Reporting.WinForms.DisplayMode.PrintLayout)
         Me.tbl_salesTableAdapter.Fill(Me.inventory_dbDataSet.tbl_sales)
 
-
         Me.RPTSALES.RefreshReport()
     End Sub
-    Private Sub ACTFILL_Click(sender As Object, e As EventArgs) Handles ACTFILL.Click
-        Me.tbl_actlogTableAdapter.FillByACT(Me.inventory_dbDataSet.tbl_actlog, CBOTYPE.Text)
-
-        Me.RPTACTLOG.RefreshReport()
-    End Sub
-    Private Sub ACTCLR_Click(sender As Object, e As EventArgs) Handles ACTCLR.Click
-        Me.tbl_actlogTableAdapter.Fill(Me.inventory_dbDataSet.tbl_actlog)
-
-        Me.RPTACTLOG.RefreshReport()
-    End Sub
-
     Private Sub BTNCLOSE_Click(sender As Object, e As EventArgs) Handles BTNCLOSE.Click
         Me.Close()
     End Sub
 
-    Private Sub STOCKSFILL_Click(sender As Object, e As EventArgs) Handles STOCKSFILL.Click
-        Me.tbl_stocksTableAdapter.FillByStocks(Me.inventory_dbDataSet.tbl_stocks, Date1St.Value.ToShortDateString, Date2St.Value.ToShortDateString)
+    Private Sub FILTERPRODUCTS_Click(sender As Object, e As EventArgs) Handles FILTERPRODUCTS.Click
+        Me.tbl_productsTableAdapter.FillByCategory(Me.inventory_dbDataSet.tbl_products, CBOCATEGORY.Text)
 
-        Me.RPTSTOCKS.RefreshReport()
+        Me.RPTPRODUCTS.RefreshReport()
     End Sub
 
-    Private Sub STOCKCLR_Click(sender As Object, e As EventArgs) Handles STOCKCLR.Click
-        Me.tbl_stocksTableAdapter.Fill(Me.inventory_dbDataSet.tbl_stocks)
+    Private Sub CLEARPRODUCTS_Click(sender As Object, e As EventArgs) Handles CLEARPRODUCTS.Click
+        Me.RPTPRODUCTS.SetDisplayMode(Microsoft.Reporting.WinForms.DisplayMode.PrintLayout)
 
-        Me.RPTSTOCKS.RefreshReport()
+        Me.RPTPRODUCTS.RefreshReport()
     End Sub
-    Private Sub BTNFILLTRANS_Click(sender As Object, e As EventArgs) Handles BTNFILLTRANS.Click
-        Me.tbl_transactionTableAdapter.FillByTR(Me.inventory_dbDataSet.tbl_transaction, DT1.Value.ToShortDateString, DT2.Value.ToShortDateString)
+    Private Function RetrieveFilteredData(filterStartDate As DateTime, filterEndDate As DateTime) As DataTable
+        ' Implement your data retrieval logic here
+        ' Connect to your database or data source
+        ' Execute a query or call a stored procedure to retrieve the filtered data
 
-        Me.RPTTRANSACTIONRECORDS.RefreshReport()
+        Dim dataTable As New DataTable()
+
+        ' Fill the DataTable with the filtered data
+        Using connection As New MySqlConnection("Server=localhost;Port=3306;User=root;Password=password;Database=inventory_db")
+            Dim query As String = "SELECT * FROM tbl_sales WHERE transadate >= @FilterStartDate AND transadate <= @FilterEndDate"
+            Using command As New MySqlCommand(query, connection)
+                command.Parameters.AddWithValue("@FilterStartDate", filterStartDate)
+                command.Parameters.AddWithValue("@FilterEndDate", filterEndDate)
+                Dim adapter As New MySqlDataAdapter(command)
+                adapter.Fill(dataTable)
+            End Using
+        End Using
+
+        Return dataTable
+    End Function
+    Private Sub FILTERSALES_Click(sender As Object, e As EventArgs) Handles FILTERSALES.Click
+        If DAILY.Checked Then
+            ' Daily filter
+            Dim filterDate As DateTime = DateTime.Today
+
+            ' Retrieve the data based on the filterDate using your data retrieval logic
+            Dim filteredData As DataTable = RetrieveFilteredData(filterDate, filterDate)
+
+            ' Bind the filtered data to the report viewer
+            RPTSALES.LocalReport.DataSources.Clear()
+            RPTSALES.LocalReport.DataSources.Add(New ReportDataSource("DataSet1", filteredData))
+
+            ' Pass the filter value to the RDLC report
+            RPTSALES.LocalReport.SetParameters(New ReportParameter("FilterStartDate", filterDate.ToString("yyyy-MM-dd")))
+            RPTSALES.LocalReport.SetParameters(New ReportParameter("FilterEndDate", filterDate.ToString("yyyy-MM-dd")))
+
+            ' Refresh the report viewer
+            RPTSALES.RefreshReport()
+        ElseIf WEEKLY.Checked Then
+            ' Weekly filter
+            Dim filterStartDate As DateTime = DateTime.Today
+            Dim filterEndDate As DateTime = filterStartDate.AddDays(7)
+
+            ' Retrieve the data based on the filter start and end dates using your data retrieval logic
+            Dim filteredData As DataTable = RetrieveFilteredData(filterStartDate, filterEndDate)
+
+            ' Bind the filtered data to the report viewer
+            RPTSALES.LocalReport.DataSources.Clear()
+            RPTSALES.LocalReport.DataSources.Add(New ReportDataSource("DataSet1", filteredData))
+
+            ' Pass the filter values to the RDLC report
+            RPTSALES.LocalReport.SetParameters(New ReportParameter("FilterStartDate", filterStartDate.ToString("yyyy-MM-dd")))
+            RPTSALES.LocalReport.SetParameters(New ReportParameter("FilterEndDate", filterEndDate.ToString("yyyy-MM-dd")))
+
+            ' Refresh the report viewer
+            RPTSALES.RefreshReport()
+        ElseIf MONTHLY.Checked Then
+            ' Monthly filter
+            Dim filterStartDate As DateTime = New DateTime(DateTime.Today.Year, DateTime.Today.Month, 1)
+            Dim filterEndDate As DateTime = filterStartDate.AddMonths(1).AddDays(-1)
+
+            ' Retrieve the data based on the filter start and end dates using your data retrieval logic
+            Dim filteredData As DataTable = RetrieveFilteredData(filterStartDate, filterEndDate)
+
+            ' Bind the filtered data to the report viewer
+            RPTSALES.LocalReport.DataSources.Clear()
+            RPTSALES.LocalReport.DataSources.Add(New ReportDataSource("DataSet1", filteredData))
+
+            ' Pass the filter values to the RDLC report
+            RPTSALES.LocalReport.SetParameters(New ReportParameter("FilterStartDate", filterStartDate.ToString("yyyy-MM-dd")))
+            RPTSALES.LocalReport.SetParameters(New ReportParameter("FilterEndDate", filterEndDate.ToString("yyyy-MM-dd")))
+
+            ' Refresh the report viewer
+            RPTSALES.RefreshReport()
+        End If
     End Sub
-    Private Sub BTNCLRTRANS_Click(sender As Object, e As EventArgs) Handles BTNCLRTRANS.Click
-        Me.tbl_transactionTableAdapter.Fill(Me.inventory_dbDataSet.tbl_transaction)
 
-        Me.RPTTRANSACTIONRECORDS.RefreshReport()
-    End Sub
-    Private Sub OUTFILL_Click(sender As Object, e As EventArgs) Handles OUTFILL.Click
-        Me.tbl_stocksoutTableAdapter.FillBy(Me.inventory_dbDataSet.tbl_stocksout, Date1OUT.Value.ToShortDateString, Date2OUT.Value.ToShortDateString)
+    Private Sub CLEARSALES_Click(sender As Object, e As EventArgs) Handles CLEARSALES.Click
+        Me.RPTSALES.SetDisplayMode(Microsoft.Reporting.WinForms.DisplayMode.PrintLayout)
 
-        Me.RPTOUTOFSTOCKS.RefreshReport()
+        Me.RPTSALES.RefreshReport()
     End Sub
 
-    Private Sub OUTCLR_Click(sender As Object, e As EventArgs) Handles OUTCLR.Click
-        Me.tbl_stocksoutTableAdapter.Fill(Me.inventory_dbDataSet.tbl_stocksout)
+    Private Sub DELIVERYFILTER_Click(sender As Object, e As EventArgs) Handles DELIVERYFILTER.Click
 
-        Me.RPTOUTOFSTOCKS.RefreshReport()
     End Sub
 End Class

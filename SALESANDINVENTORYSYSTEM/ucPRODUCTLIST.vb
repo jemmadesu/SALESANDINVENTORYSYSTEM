@@ -8,25 +8,34 @@ Public Class ucPRODUCTLIST
         DGVPRODLIST.Columns(0).HeaderText = "Product ID"
 
         DGVPRODLIST.Columns(1).Width = 200
-        DGVPRODLIST.Columns(1).HeaderText = "Product Name"
+        DGVPRODLIST.Columns(1).HeaderText = "Product Code"
 
         DGVPRODLIST.Columns(2).Width = 200
-        DGVPRODLIST.Columns(2).HeaderText = "Product Manufacturer"
+        DGVPRODLIST.Columns(2).HeaderText = "Product Name"
 
         DGVPRODLIST.Columns(3).Width = 200
-        DGVPRODLIST.Columns(3).HeaderText = "Product Brand"
+        DGVPRODLIST.Columns(3).HeaderText = "Manufacturer"
 
         DGVPRODLIST.Columns(4).Width = 200
-        DGVPRODLIST.Columns(4).HeaderText = "Category Name"
+        DGVPRODLIST.Columns(4).HeaderText = "Brand"
 
         DGVPRODLIST.Columns(5).Width = 200
-        DGVPRODLIST.Columns(5).HeaderText = "Category Code"
+        DGVPRODLIST.Columns(5).HeaderText = "Category"
+
+        DGVPRODLIST.Columns(6).Width = 200
+        DGVPRODLIST.Columns(6).HeaderText = "Category Code"
+
+        DGVPRODLIST.Columns(7).Width = 200
+        DGVPRODLIST.Columns(7).HeaderText = "Unit"
+
+        DGVPRODLIST.Columns(8).Width = 200
+        DGVPRODLIST.Columns(8).HeaderText = "Price "
 
     End Sub
     Private Sub VIEW()
         Try
 
-            Dim da As New MySqlDataAdapter("select prodid, prodname, prodman, prodbrand, prodcat, catcode  from tbl_products ", con)
+            Dim da As New MySqlDataAdapter("select id, prodcode, prodname, manufacturer, brand, category, catcode, unit, price from tbl_products ", con)
             Dim dt As New DataSet()
             da.Fill(dt)
             DGVPRODLIST.DataSource = dt.Tables(0)
@@ -36,38 +45,11 @@ Public Class ucPRODUCTLIST
 
             MessageBox.Show(ex.ToString())
 
-
-
         End Try
-    End Sub
-
-    Private Sub SelectedColumnsDisplayInGridView_Load(sender As Object, e As Object) Handles MyBase.Load
-        VIEW()
     End Sub
     Private Sub ucPRODUCTLIST_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        con.Close()
-        Try
-
-            Dim da As New MySqlDataAdapter("select prodid, prodname, prodman, prodbrand, prodcat, catcode from tbl_products ", con)
-            Dim dt As New DataSet()
-            da.Fill(dt)
-            DGVPRODLIST.DataSource = dt.Tables(0)
-
-            DGVSETPROPERTY()
-        Catch ex As Exception
-
-            MessageBox.Show(ex.ToString())
-
-
-
-        End Try
+        VIEW()
     End Sub
-
-    Private Sub BTNBACK_Click(sender As Object, e As EventArgs)
-
-    End Sub
-
-
     Private Sub BTNSTOCKS_Click(sender As Object, e As EventArgs) Handles BTNSTOCKS.Click
         Dim i As Integer
         For i = 0 To 0
@@ -139,19 +121,27 @@ Public Class ucPRODUCTLIST
         OUT.Show()
         OUT.Dock = DockStyle.Fill
     End Sub
-    Private Sub searchprod()
 
-        Dim dba As New MySqlDataAdapter("select prodid, prodname, prodman, prodbrand, prodcat, catcode  from tbl_products  WHERE tbl_products.prodname LIKE '%" & Me.TXTSEARCH.Text & "%' OR tbl_products.prodid LIKE '%" & Me.TXTSEARCH.Text & "%'", con)
-        Dim dbset As New DataSet
-        dba.Fill(dbset)
-        Me.DGVPRODLIST.DataSource = dbset.Tables(0).DefaultView
-
-
-    End Sub
-    Private Sub TXTSEARCH_TextChanged_1(sender As Object, e As EventArgs) Handles TXTSEARCH.TextChanged
-        searchprod()
-
+    Private Sub TXTSEARCH_TextChanged(sender As Object, e As EventArgs) Handles TXTSEARCH.TextChanged
+        PerformSearchAndLoadData(TXTSEARCH.Text)
     End Sub
 
+    Private Sub PerformSearchAndLoadData(keyword As String)
+        ' Perform the search and load the data
+        Dim query As String = " SELECT id, prodcode, prodname, manufacturer, brand, category, catcode, unit, price  FROM tbl_products WHERE tbl_products.id & tbl_products.prodcode & tbl_products.prodname & tbl_products.manufacturer & tbl_products.brand LIKE @Keyword"
+        Dim connectionString As String = “Server=localhost;Port=3306;User=root;Password=password;Database=inventory_db”
+
+        Using connection As New MySqlConnection(connectionString)
+            Using command As New MySqlCommand(query, connection)
+                command.Parameters.AddWithValue("@Keyword", "%" & keyword & "%")
+
+                Dim adapter As New MySqlDataAdapter(command)
+                Dim table As New DataTable()
+                adapter.Fill(table)
+
+                DGVPRODLIST.DataSource = table
+            End Using
+        End Using
+    End Sub
 
 End Class

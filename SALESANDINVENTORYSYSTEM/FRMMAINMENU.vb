@@ -2,6 +2,7 @@
 Public Class FRMMAINMENU
     Private Sub FRMMAINMENU_Load(sender As Object, e As EventArgs) Handles MyBase.Load
 
+
         con.Close()
 
         If LBLUSERTYPE.Text = "Admin" Then
@@ -224,7 +225,7 @@ Public Class FRMMAINMENU
         BTNLOGOUT.BackColor = Color.FromArgb(37, 46, 59)
     End Sub
 
-    Private Sub Panel1_Paint(sender As Object, e As PaintEventArgs)
+    Private Sub PNLMAIN_Paint(sender As Object, e As PaintEventArgs) Handles PNLMAIN.Paint
 
     End Sub
 End Class

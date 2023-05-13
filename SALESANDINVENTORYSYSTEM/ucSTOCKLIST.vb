@@ -3,42 +3,37 @@ Public Class ucSTOCKLIST
     Private Sub ucSTOCKLIST_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         LOADDATAMAIN()
     End Sub
-
-    Private Sub search()
-        Dim dba As New MySqlDataAdapter("select stockid, prodid, prodname, prodman, prodbrand, prodcat, catcode, price, unit, quantity, expirationdate from tbl_stocks  WHERE tbl_stocks.prodname LIKE '%" & Me.TXTSEARCH.Text & "%' OR tbl_stocks.prodid LIKE '%" & Me.TXTSEARCH.Text & "%'", con)
-        Dim dbset As New DataSet
-        dba.Fill(dbset)
-        Me.DGVSTOCK.DataSource = dbset.Tables(0).DefaultView
-    End Sub
     Private Sub DGVMAINSET()
         DGVSTOCK.Columns(0).Width = 200
-        DGVSTOCK.Columns(0).HeaderText = "Stock ID"
+        DGVSTOCK.Columns(0).HeaderText = "Product ID"
         DGVSTOCK.Columns(1).Width = 200
-        DGVSTOCK.Columns(1).HeaderText = "Product ID"
+        DGVSTOCK.Columns(1).HeaderText = "Product Code"
         DGVSTOCK.Columns(2).Width = 200
         DGVSTOCK.Columns(2).HeaderText = "Product Name"
         DGVSTOCK.Columns(3).Width = 200
-        DGVSTOCK.Columns(3).HeaderText = "Product Manufacturer"
+        DGVSTOCK.Columns(3).HeaderText = "Manufacturer"
         DGVSTOCK.Columns(4).Width = 200
-        DGVSTOCK.Columns(4).HeaderText = "Product Brand"
+        DGVSTOCK.Columns(4).HeaderText = "Brand"
         DGVSTOCK.Columns(5).Width = 200
-        DGVSTOCK.Columns(5).HeaderText = "Category Name"
+        DGVSTOCK.Columns(5).HeaderText = "Category"
         DGVSTOCK.Columns(6).Width = 200
         DGVSTOCK.Columns(6).HeaderText = "Category Code"
         DGVSTOCK.Columns(7).Width = 200
-        DGVSTOCK.Columns(7).HeaderText = "Price"
+        DGVSTOCK.Columns(7).HeaderText = "Unit"
         DGVSTOCK.Columns(8).Width = 200
-        DGVSTOCK.Columns(8).HeaderText = "Unit"
+        DGVSTOCK.Columns(8).HeaderText = "Price"
         DGVSTOCK.Columns(9).Width = 200
         DGVSTOCK.Columns(9).HeaderText = "Stocks"
         DGVSTOCK.Columns(10).Width = 200
-        DGVSTOCK.Columns(10).HeaderText = "Expiration Date"
+        DGVSTOCK.Columns(10).HeaderText = "Manufactured Date"
+        DGVSTOCK.Columns(11).Width = 200
+        DGVSTOCK.Columns(11).HeaderText = "Expiration Date"
 
     End Sub
     Private Sub LOADDATAMAIN()
         Try
 
-            Dim da As New MySqlDataAdapter("select stockid, prodid, prodname, prodman, prodbrand, prodcat, catcode, price, unit, quantity, expirationdate from tbl_stocks ", con)
+            Dim da As New MySqlDataAdapter("select id, prodcode, prodname, manufacturer, brand, category, catcode, unit, price, quantity, manufactureddate, expirationdate from tbl_stocks ", con)
             Dim dt As New DataSet()
             da.Fill(dt)
             DGVSTOCK.DataSource = dt.Tables(0)
@@ -67,8 +62,24 @@ Public Class ucSTOCKLIST
     End Sub
 
     Private Sub TXTSEARCH_TextChanged(sender As Object, e As EventArgs) Handles TXTSEARCH.TextChanged
-        search()
+        PerformSearchAndLoadData(TXTSEARCH.Text)
     End Sub
+    Private Sub PerformSearchAndLoadData(keyword As String)
+        ' Perform the search and load the data
+        Dim query As String = "SELECT id, prodcode, prodname, manufacturer, brand, category, catcode, unit, price, quantity, manufactureddate, expirationdate FROM tbl_stocks WHERE CONCAT( id, prodcode, prodname, manufacturer, brand) LIKE @Keyword"
+        Dim connectionString As String = "Server=localhost;Port=3306;User=root;Password=password;Database=inventory_db"
 
+        Using connection As New MySqlConnection(connectionString)
+            Using command As New MySqlCommand(query, connection)
+                command.Parameters.AddWithValue("@Keyword", "%" & keyword & "%")
+
+                Dim adapter As New MySqlDataAdapter(command)
+                Dim table As New DataTable()
+                adapter.Fill(table)
+
+                DGVSTOCK.DataSource = table
+            End Using
+        End Using
+    End Sub
 
 End Class

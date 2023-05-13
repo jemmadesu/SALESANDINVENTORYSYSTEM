@@ -25,6 +25,7 @@ Partial Class FRMOUTOFSTOCKS
         Dim DataGridViewCellStyle1 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Dim DataGridViewCellStyle2 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Dim DataGridViewCellStyle3 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(FRMOUTOFSTOCKS))
         Me.DGVLOWQTY = New System.Windows.Forms.DataGridView()
         Me.Label8 = New System.Windows.Forms.Label()
         Me.Panel2 = New System.Windows.Forms.Panel()
@@ -79,9 +80,9 @@ Partial Class FRMOUTOFSTOCKS
         Me.Label8.ForeColor = System.Drawing.Color.MediumSeaGreen
         Me.Label8.Location = New System.Drawing.Point(16, 75)
         Me.Label8.Name = "Label8"
-        Me.Label8.Size = New System.Drawing.Size(219, 32)
+        Me.Label8.Size = New System.Drawing.Size(338, 32)
         Me.Label8.TabIndex = 72
-        Me.Label8.Text = "OUT OF STOCKS"
+        Me.Label8.Text = "RUNNING OUT OF STOCK"
         '
         'Panel2
         '
@@ -115,6 +116,7 @@ Partial Class FRMOUTOFSTOCKS
         Me.Controls.Add(Me.DGVLOWQTY)
         Me.Controls.Add(Me.Label8)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None
+        Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.Name = "FRMOUTOFSTOCKS"
         Me.Text = "FRMOUTSTOCK"
         CType(Me.DGVLOWQTY, System.ComponentModel.ISupportInitialize).EndInit()

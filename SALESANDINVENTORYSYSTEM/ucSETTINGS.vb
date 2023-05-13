@@ -103,8 +103,7 @@ Public Class ucSETTINGS
         CATEGORY.Show()
         CATEGORY.Dock = DockStyle.Fill
     End Sub
-
-    Private Sub BTNINVENTORY_Click_1(sender As Object, e As EventArgs) Handles BTNINVENTORY.Click
+    Private Sub BTNPI_Click(sender As Object, e As EventArgs) Handles BTNINVENTORY.Click
         Dim i As Integer
         For i = 0 To 0
             FRMMAINMENU.PNLMAIN.Controls.RemoveAt(i)
@@ -114,18 +113,6 @@ Public Class ucSETTINGS
         INVENTORY.Parent = FRMMAINMENU.PNLMAIN
         INVENTORY.Show()
         INVENTORY.Dock = DockStyle.Fill
-    End Sub
-
-    Private Sub BTNPI_Click(sender As Object, e As EventArgs) Handles BTNPI.Click
-        Dim i As Integer
-        For i = 0 To 0
-            FRMMAINMENU.PNLMAIN.Controls.RemoveAt(i)
-        Next
-
-        Dim STOCKIN As New ucPUTINTOINVENTORY
-        STOCKIN.Parent = FRMMAINMENU.PNLMAIN
-        STOCKIN.Show()
-        STOCKIN.Dock = DockStyle.Fill
     End Sub
 
     Private Sub BTNSTOCKIN_Click(sender As Object, e As EventArgs) Handles BTNSTOCKIN.Click
@@ -214,6 +201,27 @@ Public Class ucSETTINGS
     Private Sub LBLCLOSE_Click(sender As Object, e As EventArgs) Handles LBLCLOSE.Click
         PNLHISTORY.Visible = False
     End Sub
+    Private Sub BTNBRAND_Click_1(sender As Object, e As EventArgs) Handles BTNBRAND.Click
+        Dim i As Integer
+        For i = 0 To 0
+            FRMMAINMENU.PNLMAIN.Controls.RemoveAt(i)
+        Next
 
+        Dim BRAND As New ucBRAND
+        BRAND.Parent = FRMMAINMENU.PNLMAIN
+        BRAND.Show()
+        BRAND.Dock = DockStyle.Fill
+    End Sub
 
+    Private Sub Button1_Click(sender As Object, e As EventArgs) 
+        Dim i As Integer
+        For i = 0 To 0
+            FRMMAINMENU.PNLMAIN.Controls.RemoveAt(i)
+        Next
+
+        Dim MANUFACTURER As New ucMANUFACTURER
+        MANUFACTURER.Parent = FRMMAINMENU.PNLMAIN
+        MANUFACTURER.Show()
+        MANUFACTURER.Dock = DockStyle.Fill
+    End Sub
 End Class

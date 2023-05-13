@@ -590,7 +590,7 @@ Partial Class ucDASHBOARD
         Me.Controls.Add(Me.panel2)
         Me.ForeColor = System.Drawing.SystemColors.ControlDarkDark
         Me.Name = "ucDASHBOARD"
-        Me.Size = New System.Drawing.Size(1113, 697)
+        Me.Size = New System.Drawing.Size(1091, 729)
         Me.Panel7.ResumeLayout(False)
         Me.Panel7.PerformLayout()
         Me.Panel1.ResumeLayout(False)

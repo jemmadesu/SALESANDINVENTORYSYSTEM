@@ -82,7 +82,7 @@ Public Class ucDASHBOARD
 
         Dim exp As String
         OpenCon()
-        cmd.CommandText = "select count(prodname) from tbl_expiredprod"
+        cmd.CommandText = "select count(prodname) from tbl_expiredproducts"
         exp = cmd.ExecuteScalar()
         lblexp.Text = exp
         con.Close()

@@ -256,7 +256,6 @@ Partial Class FRMLOGIN
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink
         Me.BackColor = System.Drawing.Color.White
         Me.ClientSize = New System.Drawing.Size(968, 496)
         Me.Controls.Add(Me.BTNCANCEL)
@@ -270,10 +269,10 @@ Partial Class FRMLOGIN
         Me.Controls.Add(Me.Label1)
         Me.Controls.Add(Me.exitLogin)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None
+        Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.Name = "FRMLOGIN"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Form1"
-        Me.WindowState = System.Windows.Forms.FormWindowState.Minimized
         Me.panel3.ResumeLayout(False)
         Me.panel3.PerformLayout()
         CType(Me.pictureBox2, System.ComponentModel.ISupportInitialize).EndInit()

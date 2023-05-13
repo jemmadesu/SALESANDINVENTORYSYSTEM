@@ -41,7 +41,7 @@ Partial Class ucLOWQTY
         Me.Panel2.Dock = System.Windows.Forms.DockStyle.Top
         Me.Panel2.Location = New System.Drawing.Point(0, 0)
         Me.Panel2.Name = "Panel2"
-        Me.Panel2.Size = New System.Drawing.Size(1113, 49)
+        Me.Panel2.Size = New System.Drawing.Size(1091, 49)
         Me.Panel2.TabIndex = 46
         '
         'BTNBACK
@@ -68,7 +68,7 @@ Partial Class ucLOWQTY
         Me.Label8.BackColor = System.Drawing.Color.White
         Me.Label8.Font = New System.Drawing.Font("Century Gothic", 20.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label8.ForeColor = System.Drawing.Color.MediumSeaGreen
-        Me.Label8.Location = New System.Drawing.Point(33, 69)
+        Me.Label8.Location = New System.Drawing.Point(15, 68)
         Me.Label8.Name = "Label8"
         Me.Label8.Size = New System.Drawing.Size(352, 32)
         Me.Label8.TabIndex = 43
@@ -96,7 +96,7 @@ Partial Class ucLOWQTY
         DataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText
         DataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
         Me.DGVLOWQTY.DefaultCellStyle = DataGridViewCellStyle2
-        Me.DGVLOWQTY.Location = New System.Drawing.Point(39, 123)
+        Me.DGVLOWQTY.Location = New System.Drawing.Point(21, 123)
         Me.DGVLOWQTY.Name = "DGVLOWQTY"
         Me.DGVLOWQTY.ReadOnly = True
         DataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
@@ -121,7 +121,7 @@ Partial Class ucLOWQTY
         Me.Controls.Add(Me.Label8)
         Me.Controls.Add(Me.Panel2)
         Me.Name = "ucLOWQTY"
-        Me.Size = New System.Drawing.Size(1113, 682)
+        Me.Size = New System.Drawing.Size(1091, 729)
         Me.Panel2.ResumeLayout(False)
         CType(Me.DGVLOWQTY, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)

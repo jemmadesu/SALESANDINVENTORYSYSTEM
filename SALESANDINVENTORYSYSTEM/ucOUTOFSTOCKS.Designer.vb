@@ -42,7 +42,7 @@ Partial Class ucOUTOFSTOCKS
         Me.Panel2.Dock = System.Windows.Forms.DockStyle.Top
         Me.Panel2.Location = New System.Drawing.Point(0, 0)
         Me.Panel2.Name = "Panel2"
-        Me.Panel2.Size = New System.Drawing.Size(1113, 49)
+        Me.Panel2.Size = New System.Drawing.Size(1091, 49)
         Me.Panel2.TabIndex = 48
         '
         'BTNBACK
@@ -85,7 +85,7 @@ Partial Class ucOUTOFSTOCKS
         DataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText
         DataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
         Me.DGVOUTOFSTOCKS.DefaultCellStyle = DataGridViewCellStyle2
-        Me.DGVOUTOFSTOCKS.Location = New System.Drawing.Point(39, 123)
+        Me.DGVOUTOFSTOCKS.Location = New System.Drawing.Point(39, 143)
         Me.DGVOUTOFSTOCKS.Name = "DGVOUTOFSTOCKS"
         Me.DGVOUTOFSTOCKS.ReadOnly = True
         DataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
@@ -98,7 +98,7 @@ Partial Class ucOUTOFSTOCKS
         Me.DGVOUTOFSTOCKS.RowHeadersDefaultCellStyle = DataGridViewCellStyle3
         Me.DGVOUTOFSTOCKS.RowHeadersVisible = False
         Me.DGVOUTOFSTOCKS.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
-        Me.DGVOUTOFSTOCKS.Size = New System.Drawing.Size(1043, 489)
+        Me.DGVOUTOFSTOCKS.Size = New System.Drawing.Size(1025, 489)
         Me.DGVOUTOFSTOCKS.TabIndex = 75
         '
         'Label8
@@ -107,11 +107,11 @@ Partial Class ucOUTOFSTOCKS
         Me.Label8.BackColor = System.Drawing.Color.White
         Me.Label8.Font = New System.Drawing.Font("Century Gothic", 20.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label8.ForeColor = System.Drawing.Color.MediumSeaGreen
-        Me.Label8.Location = New System.Drawing.Point(57, 79)
+        Me.Label8.Location = New System.Drawing.Point(33, 99)
         Me.Label8.Name = "Label8"
-        Me.Label8.Size = New System.Drawing.Size(219, 32)
+        Me.Label8.Size = New System.Drawing.Size(205, 32)
         Me.Label8.TabIndex = 73
-        Me.Label8.Text = "OUT OF STOCKS"
+        Me.Label8.Text = "OUT OF STOCK"
         '
         'BTNARCHIVE
         '
@@ -119,7 +119,7 @@ Partial Class ucOUTOFSTOCKS
         Me.BTNARCHIVE.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.BTNARCHIVE.Font = New System.Drawing.Font("Century Gothic", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.BTNARCHIVE.ForeColor = System.Drawing.Color.White
-        Me.BTNARCHIVE.Location = New System.Drawing.Point(958, 632)
+        Me.BTNARCHIVE.Location = New System.Drawing.Point(940, 663)
         Me.BTNARCHIVE.Name = "BTNARCHIVE"
         Me.BTNARCHIVE.Size = New System.Drawing.Size(124, 34)
         Me.BTNARCHIVE.TabIndex = 76
@@ -136,7 +136,7 @@ Partial Class ucOUTOFSTOCKS
         Me.Controls.Add(Me.Label8)
         Me.Controls.Add(Me.Panel2)
         Me.Name = "ucOUTOFSTOCKS"
-        Me.Size = New System.Drawing.Size(1113, 682)
+        Me.Size = New System.Drawing.Size(1091, 729)
         Me.Panel2.ResumeLayout(False)
         CType(Me.DGVOUTOFSTOCKS, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)

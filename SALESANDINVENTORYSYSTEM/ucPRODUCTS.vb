@@ -21,28 +21,38 @@ Public Class ucNEWPRODUCT
     'Dim con As New MySqlConnection("Data Source=. ;initial Catalog=DatabaseSql; User ID = root;Password = password")
     Private Sub DGVSETPROPERTY()
 
+
         DGVPRODUCTS.Columns(0).Width = 200
         DGVPRODUCTS.Columns(0).HeaderText = "Product ID"
 
         DGVPRODUCTS.Columns(1).Width = 200
-        DGVPRODUCTS.Columns(1).HeaderText = "Product Name"
+        DGVPRODUCTS.Columns(1).HeaderText = "Product Code"
 
         DGVPRODUCTS.Columns(2).Width = 200
-        DGVPRODUCTS.Columns(2).HeaderText = "Product Manufacturer"
+        DGVPRODUCTS.Columns(2).HeaderText = "Product Name"
 
         DGVPRODUCTS.Columns(3).Width = 200
-        DGVPRODUCTS.Columns(3).HeaderText = "Product Brand"
+        DGVPRODUCTS.Columns(3).HeaderText = "Manufacturer"
 
         DGVPRODUCTS.Columns(4).Width = 200
-        DGVPRODUCTS.Columns(4).HeaderText = "Category Name"
+        DGVPRODUCTS.Columns(4).HeaderText = "Product Brand"
 
         DGVPRODUCTS.Columns(5).Width = 200
-        DGVPRODUCTS.Columns(5).HeaderText = "Category Code"
+        DGVPRODUCTS.Columns(5).HeaderText = "Category Name"
+
+        DGVPRODUCTS.Columns(6).Width = 200
+        DGVPRODUCTS.Columns(6).HeaderText = "Category Code"
+
+        DGVPRODUCTS.Columns(7).Width = 200
+        DGVPRODUCTS.Columns(7).HeaderText = "Unit"
+
+        DGVPRODUCTS.Columns(8).Width = 200
+        DGVPRODUCTS.Columns(8).HeaderText = "Price"
 
     End Sub
 
 
-    Private Sub Function_Enabled()
+    Private Sub Functionadd()
 
 
         BTNSAVE.Enabled = True
@@ -52,12 +62,14 @@ Public Class ucNEWPRODUCT
         CBOPRODCAT.Enabled = True
         TXTPNA.Enabled = True
         CBOBRAND.Enabled = True
-        CBOBRAND.Enabled = True
         CBOMANUFACTURER.Enabled = True
+        TXTUNIT.Enabled = True
+        TXTPRICE.Enabled = True
 
 
     End Sub
-    Private Sub Function_Disabled()
+    Private Sub Functionupdate()
+
         BTNADD.Enabled = False
         BTNSAVE.Enabled = False
         BTNEDIT.Enabled = True
@@ -66,18 +78,19 @@ Public Class ucNEWPRODUCT
         CBOPRODCAT.Enabled = True
         TXTPNA.Enabled = True
         CBOBRAND.Enabled = True
-        CBOBRAND.Enabled = True
         CBOMANUFACTURER.Enabled = True
+        TXTUNIT.Enabled = True
+        TXTPRICE.Enabled = True
 
 
     End Sub
 
 
-    Private Sub disabled()
+    Private Sub Functionafterupdate()
 
         BTNADD.Enabled = True
         BTNSAVE.Enabled = False
-        BTNEDIT.Enabled = True
+        BTNEDIT.Enabled = False
         BTNCSNCEL.Enabled = True
         TXTPI.Enabled = False
         CBOPRODCAT.Enabled = False
@@ -85,12 +98,16 @@ Public Class ucNEWPRODUCT
         CBOBRAND.Enabled = False
         CBOBRAND.Enabled = False
         CBOMANUFACTURER.Enabled = False
+        TXTUNIT.Enabled = False
+        TXTPRICE.Enabled = False
+
+
 
 
     End Sub
 
     Private Sub searchproducts()
-        Dim dba As New MySqlDataAdapter("select prodid, prodname, prodman, prodbrand, prodcat, catcode  from tbl_products  WHERE tbl_products.prodname LIKE '%" & Me.TXTSEARCH.Text & "%' OR tbl_products.prodid LIKE '%" & Me.TXTSEARCH.Text & "%'", con)
+        Dim dba As New MySqlDataAdapter("select id, prodcode, prodname, manufacturer, brand, category, catcode, unit, price  from tbl_products  WHERE tbl_products.prodname LIKE '%" & Me.TXTSEARCH.Text & "%' OR tbl_products.prodcode LIKE '%" & Me.TXTSEARCH.Text & "%'", con)
         Dim dbset As New DataSet
         dba.Fill(dbset)
         Me.DGVPRODUCTS.DataSource = dbset.Tables(0).DefaultView
@@ -120,7 +137,7 @@ Public Class ucNEWPRODUCT
     Private Sub VIEW()
         Try
 
-            Dim da As New MySqlDataAdapter("select prodid, prodname, prodman, prodbrand, prodcat, catcode  from tbl_products ", con)
+            Dim da As New MySqlDataAdapter("select id, prodcode, prodname, manufacturer, brand, category, catcode, unit, price from tbl_products ", con)
             Dim dt As New DataSet()
             da.Fill(dt)
             DGVPRODUCTS.DataSource = dt.Tables(0)
@@ -147,7 +164,7 @@ Public Class ucNEWPRODUCT
         Dim row As DataRow = tbl_category.NewRow
 
         row(0) = 0
-        row(1) = "-- Select --"
+        row(1) = "-- select --"
 
         tbl_category.Rows.InsertAt(row, 0)
         CBOPRODCAT.DataSource = tbl_category
@@ -156,43 +173,34 @@ Public Class ucNEWPRODUCT
         CBOPRODCAT.ValueMember = "catcode"
 
         '---------------------------------- MANUFACTURER COMBOBOX DATA ------------------------------
-        Dim cmd1 As New MySqlCommand("select companyname from tbl_supplier", con)
-        Dim da1 As New MySqlDataAdapter
-        da1.SelectCommand = cmd1
-        Dim tbl_supplier As New DataTable
-        da1.Fill(tbl_supplier)
 
-        Dim rowsup As DataRow = tbl_supplier.NewRow()
+        Dim cmd1 As New MySqlCommand("SELECT refno, manufacturer, status FROM tbl_manufacturer WHERE status = 'Active'", con)
+        Dim da1 As New MySqlDataAdapter(cmd1)
+        Dim tbl_manufacturer As New DataTable()
+        da1.Fill(tbl_manufacturer)
 
-        rowsup("companyname") = "-- Select --"
-        tbl_supplier.Rows.InsertAt(rowsup, 0)
+        Dim rowsup As DataRow = tbl_manufacturer.NewRow()
+        rowsup("manufacturer") = "-- Select --"
+        tbl_manufacturer.Rows.InsertAt(rowsup, 0)
 
-        CBOMANUFACTURER.DataSource = tbl_supplier
-        CBOMANUFACTURER.DisplayMember = "companyname"
+        CBOMANUFACTURER.DataSource = tbl_manufacturer
+        CBOMANUFACTURER.DisplayMember = "manufacturer"
 
+        '---------------------------------- BRAND COMBOBOX DATA ------------------------------
 
+        Dim cmd3 As New MySqlCommand("SELECT refno, manufacturer, brand, status FROM tbl_brand WHERE status = 'Active'", con)
+        Dim da3 As New MySqlDataAdapter(cmd3)
+        Dim tbl_brand As New DataTable()
+        da3.Fill(tbl_brand)
+
+        Dim rowbrand As DataRow = tbl_brand.NewRow()
+        rowbrand("brand") = "-- Select --"
+        tbl_brand.Rows.InsertAt(rowbrand, 0)
+
+        CBOBRAND.DataSource = tbl_brand
+        CBOBRAND.DisplayMember = "brand"
 
     End Sub
-
-
-    Private Sub Load_data()
-        Try
-
-            Dim da As New MySqlDataAdapter("select prodid, prodname, prodman, prodbrand, prodcat, catcode  from tbl_products ", con)
-            Dim dt As New DataSet()
-            da.Fill(dt)
-            DGVPRODUCTS.DataSource = dt.Tables(0)
-
-
-        Catch ex As Exception
-
-            MessageBox.Show(ex.ToString())
-
-
-
-        End Try
-    End Sub
-
     Private Sub BTNSAVE_Click_1(sender As Object, e As EventArgs) Handles BTNSAVE.Click
 
 
@@ -213,11 +221,13 @@ Public Class ucNEWPRODUCT
 
         ' ---------------------------------------------------------------------------------------------------------- SAVING CODE ----------------------------------------------------------------------------------------------------------
 
+        'Dim result As String = TXTUNIT.Text & CBOUNIT.Text
+
+
         TXTPI.Focus()
+
         OpenCon()
-
-
-        cmd.CommandText = "insert into tbl_products (id, prodid, prodname, prodman, prodbrand, prodcat, catcode, dateaddedprod) values (@id, @pid, @pna, @pm, @pb, @pc, @cc, @dap)"
+        cmd.CommandText = "insert into tbl_products (id, prodid, prodname, manufacturer, brand, category, catcode, unit, price dateaddedprod) values (@id, @pid, @pna, @pm, @pb, @pc, @cc, @un, @pr, @dap)"
         With cmd.Parameters
 
             .Clear()
@@ -228,6 +238,8 @@ Public Class ucNEWPRODUCT
             .AddWithValue("pb", CBOBRAND.Text)
             .AddWithValue("pc", CBOPRODCAT.Text)
             .AddWithValue("cc", TXTCATCODE.Text)
+            .AddWithValue("un", TXTUNIT.Text)
+            .AddWithValue("pr", TXTPRICE.Text)
             .AddWithValue("dap", Format(Date.Now, "yyyy-MM-dd"))
 
 
@@ -237,14 +249,16 @@ Public Class ucNEWPRODUCT
         MsgBox("New product has been saved!", vbOKOnly + vbInformation, "Saving Successfully")
         activity = "Added new product. Product Name: " + TXTPNA.Text
         actlog()
-        Function_Disabled()
+
+        Functionupdate()
+
         TXTPI.Text = ""
         TXTPNA.Text = ""
         CBOMANUFACTURER.Text = ""
         CBOBRAND.Text = ""
         CBOPRODCAT.Text = ""
         TXTCATCODE.Text = ""
-        Load_data()
+        VIEW()
     End Sub
 
     Private Sub BTNEDIT_Click_1(sender As Object, e As EventArgs) Handles BTNEDIT.Click
@@ -264,25 +278,39 @@ Public Class ucNEWPRODUCT
             End If
 
         ElseIf BTNEDIT.Text = "Update" Then
-            If TXTPI.Text = "" Or TXTPNA.Text = "" Or TXTCATCODE.Text = "" Or CBOMANUFACTURER.Text = "" Or CBOBRAND.Text = "" Or CBOPRODCAT.Text = "" Then
+            If TXTPI.Text = "" Or TXTPNA.Text = "" Or TXTCATCODE.Text = "" Or CBOMANUFACTURER.Text = "" Or CBOBRAND.Text = "" Or CBOPRODCAT.Text = "" Or TXTPRICE.Text = "" Then
                 MessageBox.Show("All fields are required!", "Error Saving", MessageBoxButtons.OK, MessageBoxIcon.Error)
                 Exit Sub
             End If
         End If
-        OpenCon()
-        cmd.CommandText = "Update tbl_products set prodid =@pi, prodname=@pna, prodman=@pm, prodbrand=@pb, prodcat=@pc, catcode=@cc where prodid= @pi"
-        With cmd.Parameters
-            .Clear()
-            .AddWithValue("pi", TXTPI.Text)
-            .AddWithValue("pb", CBOBRAND.Text)
-            .AddWithValue("pna", TXTPNA.Text)
-            .AddWithValue("pm", CBOMANUFACTURER.Text)
-            .AddWithValue("pc", CBOPRODCAT.Text)
-            .AddWithValue("cc", TXTCATCODE.Text)
 
-        End With
-        cmd.ExecuteNonQuery()
-        con.Close()
+        Dim selectedRow As DataGridViewRow = DGVPRODUCTS.SelectedRows(0)
+        Dim ID As String = selectedRow.Cells(0).Value.ToString()
+
+
+        Using con As New MySqlConnection(“Server=localhost;Port=3306;User=root;Password=password;Database=inventory_db”)
+            Using cmd As New MySqlCommand()
+                cmd.Connection = con
+                con.Open()
+
+                cmd.CommandText = "Update tbl_products set id=@id, prodcode =@pi, prodname=@pna, manufacturer=@pm, brand=@pb, category=@pc, catcode=@cc, price=@pr, unit=@un where id=@id"
+
+                cmd.Parameters.AddWithValue("@id", ID)
+                cmd.Parameters.AddWithValue("@pi", TXTPI.Text)
+                cmd.Parameters.AddWithValue("@pb", CBOBRAND.Text)
+                cmd.Parameters.AddWithValue("@pna", TXTPNA.Text)
+                cmd.Parameters.AddWithValue("@pm", CBOMANUFACTURER.Text)
+                cmd.Parameters.AddWithValue("@pc", CBOPRODCAT.Text)
+                cmd.Parameters.AddWithValue("@cc", TXTCATCODE.Text)
+                cmd.Parameters.AddWithValue("@pr", TXTPRICE.Text)
+                cmd.Parameters.AddWithValue("@un", TXTUNIT.Text)
+
+                cmd.ExecuteNonQuery()
+
+                con.Close()
+            End Using
+        End Using
+
         MsgBox("Record has been updated!", vbOKOnly + vbInformation, "Editing Successful")
         BTNEDIT.Text = "Edit"
         TXTPI.Text = ""
@@ -291,7 +319,10 @@ Public Class ucNEWPRODUCT
         CBOMANUFACTURER.Text = ""
         CBOPRODCAT.Text = ""
         TXTCATCODE.Text = ""
-        Load_data()
+        TXTUNIT.Text = ""
+        TXTPRICE.Text = ""
+
+        VIEW()
 
     End Sub
 
@@ -302,13 +333,13 @@ Public Class ucNEWPRODUCT
 
 
     Private Sub BTNADD_Click(sender As Object, e As EventArgs) Handles BTNADD.Click
-        Function_Enabled()
+        Functionadd()
         Getmax()
     End Sub
 
     Private Sub BTNCSNCEL_Click_1(sender As Object, e As EventArgs) Handles BTNCSNCEL.Click
 
-        disabled()
+        Functionafterupdate()
         CBOMANUFACTURER.Text = "-- Select --"
         CBOBRAND.Text = "-- Select --"
         CBOPRODCAT.Text = "-- Select --"
@@ -316,6 +347,8 @@ Public Class ucNEWPRODUCT
         TXTCATCODE.Text = ""
         TXTPI.Text = ""
         TXTPNA.Text = ""
+        TXTPRICE.Text = ""
+        TXTUNIT.Text = ""
         TXTPI.Focus()
 
     End Sub
@@ -328,11 +361,6 @@ Public Class ucNEWPRODUCT
         FRMLOGIN.Show()
 
     End Sub
-    Private Sub TXTSEARCH_TextChanged(sender As Object, e As EventArgs) Handles TXTSEARCH.TextChanged
-        searchproducts()
-    End Sub
-
-
     Private Sub CBOPRODCAT_SelectionChangeCommitted(sender As Object, e As EventArgs) Handles CBOPRODCAT.SelectionChangeCommitted
         TXTCATCODE.Text = CBOPRODCAT.SelectedValue
     End Sub
@@ -349,24 +377,47 @@ Public Class ucNEWPRODUCT
         SETTINGS.Dock = DockStyle.Fill
     End Sub
 
-    Private Sub DGVPRODUCTS_CellClick(sender As Object, e As DataGridViewCellEventArgs) Handles DGVPRODUCTS.CellContentClick
-        Function_Disabled()
+    Private Sub DGVPRODUCTS_CellClick(sender As Object, e As DataGridViewCellEventArgs) Handles DGVPRODUCTS.CellClick
+        Functionupdate()
         If e.RowIndex >= 0 Then
             Dim row As DataGridViewRow
             row = DGVPRODUCTS.Rows(e.RowIndex)
-            TXTPI.Text = row.Cells(0).Value
-            TXTPNA.Text = row.Cells(1).Value
-            CBOMANUFACTURER.Text = row.Cells(2).Value
-            CBOBRAND.Text = row.Cells(3).Value
-            CBOPRODCAT.Text = row.Cells(4).Value
-            TXTCATCODE.Text = row.Cells(5).Value
+
+            TXTPI.Text = row.Cells(1).Value
+            TXTPNA.Text = row.Cells(2).Value
+            CBOMANUFACTURER.Text = row.Cells(3).Value
+            CBOBRAND.Text = row.Cells(4).Value
+            CBOPRODCAT.Text = row.Cells(5).Value
+            TXTCATCODE.Text = row.Cells(6).Value
+            TXTUNIT.Text = row.Cells(7).Value
+            TXTPRICE.Text = row.Cells(8).Value
 
         End If
         BTNEDIT.Text = "Update"
 
     End Sub
 
+    Private Sub TXTSEARCH_TextChanged(sender As Object, e As EventArgs) Handles TXTSEARCH.TextChanged
+        PerformSearchAndLoadData(TXTSEARCH.Text)
+    End Sub
 
+    Private Sub PerformSearchAndLoadData(keyword As String)
+        ' Perform the search and load the data
+        Dim query As String = "SELECT id, prodcode, prodname, manufacturer, brand, category, catcode, unit, price FROM tbl_products WHERE CONCAT(id, prodcode, prodname, manufacturer, brand) LIKE @Keyword"
+        Dim connectionString As String = "Server=localhost;Port=3306;User=root;Password=password;Database=inventory_db"
+
+        Using connection As New MySqlConnection(connectionString)
+            Using command As New MySqlCommand(query, connection)
+                command.Parameters.AddWithValue("@Keyword", "%" & keyword & "%")
+
+                Dim adapter As New MySqlDataAdapter(command)
+                Dim table As New DataTable()
+                adapter.Fill(table)
+
+                DGVPRODUCTS.DataSource = table
+            End Using
+        End Using
+    End Sub
 End Class
 
 

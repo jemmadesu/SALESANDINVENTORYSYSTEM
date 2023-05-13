@@ -5,28 +5,32 @@ Public Class ucOUTOFSTOCKS
     Dim command As MySqlCommand
 
     Private Sub DGVSETPROPERTY()
-        DGVOUTOFSTOCKS.Columns(0).Width = 150
-        DGVOUTOFSTOCKS.Columns(0).HeaderText = "Stock ID"
-        DGVOUTOFSTOCKS.Columns(1).Width = 150
-        DGVOUTOFSTOCKS.Columns(1).HeaderText = "Product ID"
-        DGVOUTOFSTOCKS.Columns(2).Width = 150
+
+        DGVOUTOFSTOCKS.Columns(0).Width = 200
+        DGVOUTOFSTOCKS.Columns(0).HeaderText = "Product ID"
+        DGVOUTOFSTOCKS.Columns(1).Width = 200
+        DGVOUTOFSTOCKS.Columns(1).HeaderText = "Product Code"
+        DGVOUTOFSTOCKS.Columns(2).Width = 200
         DGVOUTOFSTOCKS.Columns(2).HeaderText = "Product Name"
-        DGVOUTOFSTOCKS.Columns(3).Width = 150
+        DGVOUTOFSTOCKS.Columns(3).Width = 200
         DGVOUTOFSTOCKS.Columns(3).HeaderText = "Manufacturer"
-        DGVOUTOFSTOCKS.Columns(4).Width = 150
+        DGVOUTOFSTOCKS.Columns(4).Width = 200
         DGVOUTOFSTOCKS.Columns(4).HeaderText = "Brand"
-        DGVOUTOFSTOCKS.Columns(5).Width = 150
-        DGVOUTOFSTOCKS.Columns(5).HeaderText = "Product Category"
-        DGVOUTOFSTOCKS.Columns(6).Width = 150
+        DGVOUTOFSTOCKS.Columns(5).Width = 200
+        DGVOUTOFSTOCKS.Columns(5).HeaderText = "Category"
+        DGVOUTOFSTOCKS.Columns(6).Width = 200
         DGVOUTOFSTOCKS.Columns(6).HeaderText = "Category Code"
-        DGVOUTOFSTOCKS.Columns(7).Width = 150
-        DGVOUTOFSTOCKS.Columns(7).HeaderText = "Price"
-        DGVOUTOFSTOCKS.Columns(8).Width = 150
-        DGVOUTOFSTOCKS.Columns(8).HeaderText = "Unit"
-        DGVOUTOFSTOCKS.Columns(9).Width = 150
-        DGVOUTOFSTOCKS.Columns(9).HeaderText = "Quantity"
-        DGVOUTOFSTOCKS.Columns(10).Width = 150
-        DGVOUTOFSTOCKS.Columns(10).HeaderText = "Expiration Date"
+        DGVOUTOFSTOCKS.Columns(7).Width = 200
+        DGVOUTOFSTOCKS.Columns(7).HeaderText = "Unit"
+        DGVOUTOFSTOCKS.Columns(8).Width = 200
+        DGVOUTOFSTOCKS.Columns(8).HeaderText = "Price"
+        DGVOUTOFSTOCKS.Columns(9).Width = 200
+        DGVOUTOFSTOCKS.Columns(9).HeaderText = "Stocks"
+        DGVOUTOFSTOCKS.Columns(10).Width = 200
+        DGVOUTOFSTOCKS.Columns(10).HeaderText = "Manufactured Date"
+        DGVOUTOFSTOCKS.Columns(11).Width = 200
+        DGVOUTOFSTOCKS.Columns(11).HeaderText = "Expiration Date"
+
     End Sub
     Private Sub ucOUTOFSTOCKS_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         connection = New MySqlConnection
@@ -42,7 +46,7 @@ Public Class ucOUTOFSTOCKS
 
 
             con.Open()
-            command = New MySqlCommand("select stockid, prodid, prodname, prodman, prodbrand, prodcat, catcode, price, unit, quantity, expirationdate from tbl_stocks  WHERE quantity = 0;", con)
+            command = New MySqlCommand("select id, prodcode, prodname, manufacturer, brand, category, catcode, unit, price, quantity, manufactureddate, expirationdate from tbl_stocks  WHERE quantity = 0;", con)
             dataadapt.SelectCommand = command
             dataadapt.Fill(dataset)
             bindindsrc.DataSource = dataset
@@ -71,10 +75,8 @@ Public Class ucOUTOFSTOCKS
 
         Try
 
-
-
             con.Open()
-            command = New MySqlCommand("select stockid, prodid, prodname, prodman, prodbrand, prodcat, catcode, price, unit, quantity, expirationdate from tbl_stocks  WHERE quantity = 0;", con)
+            command = New MySqlCommand("select id, prodcode, prodname, manufacturer, brand, category, catcode, unit, price, quantity, manufactureddate, expirationdate from tbl_stocks  WHERE quantity = 0;", con)
             dataadapt.SelectCommand = command
             dataadapt.Fill(dataset)
             bindindsrc.DataSource = dataset
@@ -109,36 +111,62 @@ Public Class ucOUTOFSTOCKS
         End If
 
         For Each row As DataGridViewRow In DGVOUTOFSTOCKS.SelectedRows
-            Dim stockid As Integer = CInt(row.Cells("stockid").Value)
-            Dim prodid As String = CStr(row.Cells("prodid").Value)
+
+
+            Dim id As Integer = CStr(row.Cells("id").Value)
+
+            Dim prodcode As String = CStr(row.Cells("prodcode").Value)
+
             Dim prodname As String = CStr(row.Cells("prodname").Value)
-            Dim prodman As String = CStr(row.Cells("prodman").Value)
-            Dim prodbrand As String = CStr(row.Cells("prodbrand").Value)
-            Dim prodcat As String = CStr(row.Cells("prodcat").Value)
+
+            Dim manufacturer As String = CStr(row.Cells("manufacturer").Value)
+
+            Dim brand As String = CStr(row.Cells("brand").Value)
+
+            Dim category As String = CStr(row.Cells("category").Value)
+
             Dim catcode As String = CStr(row.Cells("catcode").Value)
+
             Dim price As Integer = CInt(row.Cells("price").Value)
+
             Dim unit As String = CStr(row.Cells("unit").Value)
+
             Dim quantity As Integer = CInt(row.Cells("quantity").Value)
+
+            Dim manufactureddate As String = CStr(row.Cells("manufactureddate").Value)
+
             Dim expirationdate As String = CStr(row.Cells("expirationdate").Value)
 
-
             'Insert selected columns into the destination table
-            Dim sqlInsert As String = "INSERT INTO tbl_stocksout (stockid, prodid, prodname, prodman, prodbrand, prodcat, catcode, price, unit, quantity, expirationdate, dateadded) VALUES (@stockid, @prodid, @prodname, @prodman, @prodbrand, @prodcat, @catcode, @price, @unit, @quantity, @expirationdate, dateadded)"
+            Dim sqlInsert As String = "INSERT INTO tbl_outofstocks (id, prodcode, prodname, manufacturer, brand, category, catcode, unit, price, quantity, manufactureddate, expirationdate, dateremoved) VALUES (@id, @prodcode, @prodname, @manufacturer, @brand, @category, @catcode, @unit, @price, @quantity, @manufactureddate, @expirationdate, @dateremoved)"
             Using conn As New MySqlConnection(“Server=localhost;Port=3306;User=root;Password=password;Database=inventory_db”)
                 Using cmd As New MySqlCommand(sqlInsert, conn)
 
-                    cmd.Parameters.AddWithValue("@stockid", stockid)
-                    cmd.Parameters.AddWithValue("@prodid", prodid)
+                    cmd.Parameters.AddWithValue("@id", id)
+
+                    cmd.Parameters.AddWithValue("@prodcode", prodcode)
+
                     cmd.Parameters.AddWithValue("@prodname", prodname)
-                    cmd.Parameters.AddWithValue("@prodman", prodman)
-                    cmd.Parameters.AddWithValue("@prodbrand", prodbrand)
-                    cmd.Parameters.AddWithValue("@prodcat", prodcat)
+
+                    cmd.Parameters.AddWithValue("@manufacturer", manufacturer)
+
+                    cmd.Parameters.AddWithValue("@brand", brand)
+
+                    cmd.Parameters.AddWithValue("@category", category)
+
                     cmd.Parameters.AddWithValue("@catcode", catcode)
+
                     cmd.Parameters.AddWithValue("@price", price)
+
                     cmd.Parameters.AddWithValue("@unit", unit)
+
                     cmd.Parameters.AddWithValue("@quantity", quantity)
+
+                    cmd.Parameters.AddWithValue("@manufactureddate", manufactureddate)
+
                     cmd.Parameters.AddWithValue("@expirationdate", expirationdate)
-                    cmd.Parameters.AddWithValue("@dateadded", Format(Date.Now, "yyyy-MM-dd"))
+
+                    cmd.Parameters.AddWithValue("@dateremoved", Format(Date.Now, "yyyy-MM-dd"))
 
 
                     conn.Open()
@@ -150,8 +178,8 @@ Public Class ucOUTOFSTOCKS
         Next
 
         For i As Integer = 0 To DGVOUTOFSTOCKS.SelectedRows.Count - 1
-            Dim cmd As New MySqlCommand("delete from tbl_stocks where prodid = @prodid", con)
-            cmd.Parameters.AddWithValue("prodid", DGVOUTOFSTOCKS.SelectedRows(i).Cells(1).Value.ToString())
+            Dim cmd As New MySqlCommand("delete from tbl_stocks where id = @id", con)
+            cmd.Parameters.AddWithValue("id", DGVOUTOFSTOCKS.SelectedRows(i).Cells(0).Value.ToString())
             con.Open()
             cmd.ExecuteNonQuery()
             con.Close()
@@ -160,5 +188,9 @@ Public Class ucOUTOFSTOCKS
             MessageBox.Show("Product has been added to Archive", "Notice", MessageBoxButtons.OK, MessageBoxIcon.Information)
             con.Close()
         Next
+    End Sub
+
+    Private Sub DGVOUTOFSTOCKS_CellContentClick(sender As Object, e As DataGridViewCellEventArgs) Handles DGVOUTOFSTOCKS.CellContentClick
+
     End Sub
 End Class

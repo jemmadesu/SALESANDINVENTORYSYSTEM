@@ -51,7 +51,7 @@ Partial Class ucPRODUCTLIST
         Me.Panel2.Dock = System.Windows.Forms.DockStyle.Top
         Me.Panel2.Location = New System.Drawing.Point(0, 0)
         Me.Panel2.Name = "Panel2"
-        Me.Panel2.Size = New System.Drawing.Size(1113, 49)
+        Me.Panel2.Size = New System.Drawing.Size(1091, 49)
         Me.Panel2.TabIndex = 49
         '
         'BTNRD
@@ -122,7 +122,7 @@ Partial Class ucPRODUCTLIST
         Me.BTNLOW.Name = "BTNLOW"
         Me.BTNLOW.Size = New System.Drawing.Size(191, 46)
         Me.BTNLOW.TabIndex = 72
-        Me.BTNLOW.Text = "Running out of stocks"
+        Me.BTNLOW.Text = "    Running out of stocks"
         Me.BTNLOW.TextAlign = System.Drawing.ContentAlignment.MiddleRight
         Me.BTNLOW.UseVisualStyleBackColor = False
         '
@@ -149,18 +149,18 @@ Partial Class ucPRODUCTLIST
         Me.Label1.AutoSize = True
         Me.Label1.Font = New System.Drawing.Font("Century Gothic", 20.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label1.ForeColor = System.Drawing.Color.MediumSeaGreen
-        Me.Label1.Location = New System.Drawing.Point(20, 68)
+        Me.Label1.Location = New System.Drawing.Point(21, 97)
         Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(257, 32)
+        Me.Label1.Size = New System.Drawing.Size(191, 32)
         Me.Label1.TabIndex = 50
-        Me.Label1.Text = "NEW PRODUCT LIST"
+        Me.Label1.Text = "PRODUCT LIST"
         '
         'Label2
         '
         Me.Label2.AutoSize = True
         Me.Label2.Font = New System.Drawing.Font("Century Gothic", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label2.ForeColor = System.Drawing.SystemColors.ControlDarkDark
-        Me.Label2.Location = New System.Drawing.Point(644, 79)
+        Me.Label2.Location = New System.Drawing.Point(632, 106)
         Me.Label2.Name = "Label2"
         Me.Label2.Size = New System.Drawing.Size(138, 21)
         Me.Label2.TabIndex = 135
@@ -180,7 +180,7 @@ Partial Class ucPRODUCTLIST
         Me.TXTSEARCH.Font = New System.Drawing.Font("Century Gothic", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.TXTSEARCH.HoverState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
         Me.TXTSEARCH.HoverState.Parent = Me.TXTSEARCH
-        Me.TXTSEARCH.Location = New System.Drawing.Point(789, 73)
+        Me.TXTSEARCH.Location = New System.Drawing.Point(777, 100)
         Me.TXTSEARCH.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.TXTSEARCH.Name = "TXTSEARCH"
         Me.TXTSEARCH.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
@@ -213,7 +213,7 @@ Partial Class ucPRODUCTLIST
         DataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText
         DataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
         Me.DGVPRODLIST.DefaultCellStyle = DataGridViewCellStyle2
-        Me.DGVPRODLIST.Location = New System.Drawing.Point(39, 123)
+        Me.DGVPRODLIST.Location = New System.Drawing.Point(27, 150)
         Me.DGVPRODLIST.Name = "DGVPRODLIST"
         Me.DGVPRODLIST.ReadOnly = True
         DataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
@@ -253,7 +253,7 @@ Partial Class ucPRODUCTLIST
         Me.Font = New System.Drawing.Font("Century Gothic", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Margin = New System.Windows.Forms.Padding(0)
         Me.Name = "ucPRODUCTLIST"
-        Me.Size = New System.Drawing.Size(1113, 682)
+        Me.Size = New System.Drawing.Size(1091, 729)
         Me.Panel2.ResumeLayout(False)
         CType(Me.DGVPRODLIST, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)

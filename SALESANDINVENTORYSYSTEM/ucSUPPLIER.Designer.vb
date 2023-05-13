@@ -23,33 +23,25 @@ Partial Class ucSUPPLIER
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(ucSUPPLIER))
-        Dim DataGridViewCellStyle3 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle4 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle1 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle2 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Me.Panel2 = New System.Windows.Forms.Panel()
         Me.BTNBACK = New System.Windows.Forms.Button()
         Me.Label22 = New System.Windows.Forms.Label()
-        Me.TXTFN = New System.Windows.Forms.TextBox()
+        Me.TXTNAME = New System.Windows.Forms.TextBox()
         Me.Label11 = New System.Windows.Forms.Label()
         Me.BTNCANCEL = New System.Windows.Forms.Button()
         Me.BTNEDIT = New System.Windows.Forms.Button()
-        Me.BTNDELETE = New System.Windows.Forms.Button()
         Me.BTNSAVE = New System.Windows.Forms.Button()
-        Me.Label1 = New System.Windows.Forms.Label()
-        Me.Label2 = New System.Windows.Forms.Label()
-        Me.TXTLN = New System.Windows.Forms.TextBox()
-        Me.Label4 = New System.Windows.Forms.Label()
         Me.Label5 = New System.Windows.Forms.Label()
-        Me.TXTEMAIL = New System.Windows.Forms.TextBox()
-        Me.Label3 = New System.Windows.Forms.Label()
-        Me.Label6 = New System.Windows.Forms.Label()
-        Me.TXTNO = New System.Windows.Forms.TextBox()
         Me.Label7 = New System.Windows.Forms.Label()
-        Me.TXTADD = New System.Windows.Forms.TextBox()
+        Me.TXTTEL = New System.Windows.Forms.TextBox()
         Me.Label8 = New System.Windows.Forms.Label()
         Me.TXTCOM = New System.Windows.Forms.TextBox()
         Me.Label9 = New System.Windows.Forms.Label()
         Me.TXTSEARCH = New System.Windows.Forms.TextBox()
         Me.DGVSUP = New System.Windows.Forms.DataGridView()
+        Me.CBOSTATUS = New System.Windows.Forms.ComboBox()
         Me.Panel2.SuspendLayout()
         CType(Me.DGVSUP, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
@@ -61,7 +53,7 @@ Partial Class ucSUPPLIER
         Me.Panel2.Dock = System.Windows.Forms.DockStyle.Top
         Me.Panel2.Location = New System.Drawing.Point(0, 0)
         Me.Panel2.Name = "Panel2"
-        Me.Panel2.Size = New System.Drawing.Size(1113, 49)
+        Me.Panel2.Size = New System.Drawing.Size(1091, 49)
         Me.Panel2.TabIndex = 128
         '
         'BTNBACK
@@ -87,26 +79,26 @@ Partial Class ucSUPPLIER
         Me.Label22.AutoSize = True
         Me.Label22.Font = New System.Drawing.Font("Century Gothic", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label22.ForeColor = System.Drawing.SystemColors.ControlDarkDark
-        Me.Label22.Location = New System.Drawing.Point(38, 185)
+        Me.Label22.Location = New System.Drawing.Point(46, 269)
         Me.Label22.Name = "Label22"
-        Me.Label22.Size = New System.Drawing.Size(109, 17)
+        Me.Label22.Size = New System.Drawing.Size(102, 17)
         Me.Label22.TabIndex = 134
-        Me.Label22.Text = "Contact Person"
+        Me.Label22.Text = "Supplier Name"
         '
-        'TXTFN
+        'TXTNAME
         '
-        Me.TXTFN.Font = New System.Drawing.Font("Century Gothic", 9.0!)
-        Me.TXTFN.Location = New System.Drawing.Point(41, 218)
-        Me.TXTFN.Name = "TXTFN"
-        Me.TXTFN.Size = New System.Drawing.Size(211, 22)
-        Me.TXTFN.TabIndex = 131
+        Me.TXTNAME.Font = New System.Drawing.Font("Century Gothic", 9.0!)
+        Me.TXTNAME.Location = New System.Drawing.Point(49, 302)
+        Me.TXTNAME.Name = "TXTNAME"
+        Me.TXTNAME.Size = New System.Drawing.Size(313, 22)
+        Me.TXTNAME.TabIndex = 131
         '
         'Label11
         '
         Me.Label11.AutoSize = True
         Me.Label11.Font = New System.Drawing.Font("Century Gothic", 20.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label11.ForeColor = System.Drawing.Color.MediumSeaGreen
-        Me.Label11.Location = New System.Drawing.Point(35, 65)
+        Me.Label11.Location = New System.Drawing.Point(41, 113)
         Me.Label11.Name = "Label11"
         Me.Label11.Size = New System.Drawing.Size(321, 32)
         Me.Label11.TabIndex = 135
@@ -118,7 +110,7 @@ Partial Class ucSUPPLIER
         Me.BTNCANCEL.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.BTNCANCEL.Font = New System.Drawing.Font("Century Gothic", 9.0!)
         Me.BTNCANCEL.ForeColor = System.Drawing.Color.White
-        Me.BTNCANCEL.Location = New System.Drawing.Point(400, 615)
+        Me.BTNCANCEL.Location = New System.Drawing.Point(283, 546)
         Me.BTNCANCEL.Name = "BTNCANCEL"
         Me.BTNCANCEL.Size = New System.Drawing.Size(99, 36)
         Me.BTNCANCEL.TabIndex = 147
@@ -131,25 +123,12 @@ Partial Class ucSUPPLIER
         Me.BTNEDIT.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.BTNEDIT.Font = New System.Drawing.Font("Century Gothic", 9.0!)
         Me.BTNEDIT.ForeColor = System.Drawing.SystemColors.Control
-        Me.BTNEDIT.Location = New System.Drawing.Point(153, 615)
+        Me.BTNEDIT.Location = New System.Drawing.Point(160, 546)
         Me.BTNEDIT.Name = "BTNEDIT"
         Me.BTNEDIT.Size = New System.Drawing.Size(99, 36)
         Me.BTNEDIT.TabIndex = 146
         Me.BTNEDIT.Text = "Edit"
         Me.BTNEDIT.UseVisualStyleBackColor = False
-        '
-        'BTNDELETE
-        '
-        Me.BTNDELETE.BackColor = System.Drawing.Color.Gray
-        Me.BTNDELETE.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.BTNDELETE.Font = New System.Drawing.Font("Century Gothic", 9.0!)
-        Me.BTNDELETE.ForeColor = System.Drawing.SystemColors.Control
-        Me.BTNDELETE.Location = New System.Drawing.Point(286, 615)
-        Me.BTNDELETE.Name = "BTNDELETE"
-        Me.BTNDELETE.Size = New System.Drawing.Size(99, 36)
-        Me.BTNDELETE.TabIndex = 145
-        Me.BTNDELETE.Text = "Delete"
-        Me.BTNDELETE.UseVisualStyleBackColor = False
         '
         'BTNSAVE
         '
@@ -157,139 +136,60 @@ Partial Class ucSUPPLIER
         Me.BTNSAVE.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.BTNSAVE.Font = New System.Drawing.Font("Century Gothic", 9.0!)
         Me.BTNSAVE.ForeColor = System.Drawing.SystemColors.Control
-        Me.BTNSAVE.Location = New System.Drawing.Point(39, 615)
+        Me.BTNSAVE.Location = New System.Drawing.Point(41, 546)
         Me.BTNSAVE.Name = "BTNSAVE"
         Me.BTNSAVE.Size = New System.Drawing.Size(99, 36)
         Me.BTNSAVE.TabIndex = 144
         Me.BTNSAVE.Text = "Save"
         Me.BTNSAVE.UseVisualStyleBackColor = False
         '
-        'Label1
-        '
-        Me.Label1.AutoSize = True
-        Me.Label1.Font = New System.Drawing.Font("Century Gothic", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label1.ForeColor = System.Drawing.SystemColors.ControlDarkDark
-        Me.Label1.Location = New System.Drawing.Point(38, 243)
-        Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(75, 17)
-        Me.Label1.TabIndex = 148
-        Me.Label1.Text = "First Name"
-        '
-        'Label2
-        '
-        Me.Label2.AutoSize = True
-        Me.Label2.Font = New System.Drawing.Font("Century Gothic", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label2.ForeColor = System.Drawing.SystemColors.ControlDarkDark
-        Me.Label2.Location = New System.Drawing.Point(285, 243)
-        Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(77, 17)
-        Me.Label2.TabIndex = 150
-        Me.Label2.Text = "Last Name"
-        '
-        'TXTLN
-        '
-        Me.TXTLN.Font = New System.Drawing.Font("Century Gothic", 9.0!)
-        Me.TXTLN.Location = New System.Drawing.Point(288, 218)
-        Me.TXTLN.Name = "TXTLN"
-        Me.TXTLN.Size = New System.Drawing.Size(211, 22)
-        Me.TXTLN.TabIndex = 149
-        '
-        'Label4
-        '
-        Me.Label4.AutoSize = True
-        Me.Label4.Font = New System.Drawing.Font("Century Gothic", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label4.ForeColor = System.Drawing.SystemColors.ControlDarkDark
-        Me.Label4.Location = New System.Drawing.Point(38, 355)
-        Me.Label4.Name = "Label4"
-        Me.Label4.Size = New System.Drawing.Size(155, 17)
-        Me.Label4.TabIndex = 153
-        Me.Label4.Text = "Example@sample.com"
-        '
         'Label5
         '
         Me.Label5.AutoSize = True
         Me.Label5.Font = New System.Drawing.Font("Century Gothic", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label5.ForeColor = System.Drawing.SystemColors.ControlDarkDark
-        Me.Label5.Location = New System.Drawing.Point(38, 295)
+        Me.Label5.Location = New System.Drawing.Point(45, 456)
         Me.Label5.Name = "Label5"
-        Me.Label5.Size = New System.Drawing.Size(45, 17)
+        Me.Label5.Size = New System.Drawing.Size(46, 17)
         Me.Label5.TabIndex = 152
-        Me.Label5.Text = "E-Mail"
-        '
-        'TXTEMAIL
-        '
-        Me.TXTEMAIL.Font = New System.Drawing.Font("Century Gothic", 9.0!)
-        Me.TXTEMAIL.Location = New System.Drawing.Point(41, 330)
-        Me.TXTEMAIL.Name = "TXTEMAIL"
-        Me.TXTEMAIL.Size = New System.Drawing.Size(211, 22)
-        Me.TXTEMAIL.TabIndex = 151
-        '
-        'Label3
-        '
-        Me.Label3.AutoSize = True
-        Me.Label3.Font = New System.Drawing.Font("Century Gothic", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label3.ForeColor = System.Drawing.SystemColors.ControlDarkDark
-        Me.Label3.Location = New System.Drawing.Point(36, 463)
-        Me.Label3.Name = "Label3"
-        Me.Label3.Size = New System.Drawing.Size(236, 17)
-        Me.Label3.TabIndex = 156
-        Me.Label3.Text = "Please Enter a valid phone Number"
-        '
-        'Label6
-        '
-        Me.Label6.AutoSize = True
-        Me.Label6.Font = New System.Drawing.Font("Century Gothic", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label6.ForeColor = System.Drawing.SystemColors.ControlDarkDark
-        Me.Label6.Location = New System.Drawing.Point(36, 406)
-        Me.Label6.Name = "Label6"
-        Me.Label6.Size = New System.Drawing.Size(105, 17)
-        Me.Label6.TabIndex = 155
-        Me.Label6.Text = "Phone Number"
-        '
-        'TXTNO
-        '
-        Me.TXTNO.Font = New System.Drawing.Font("Century Gothic", 9.0!)
-        Me.TXTNO.Location = New System.Drawing.Point(39, 438)
-        Me.TXTNO.Name = "TXTNO"
-        Me.TXTNO.Size = New System.Drawing.Size(211, 22)
-        Me.TXTNO.TabIndex = 154
+        Me.Label5.Text = "Status"
         '
         'Label7
         '
         Me.Label7.AutoSize = True
         Me.Label7.Font = New System.Drawing.Font("Century Gothic", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label7.ForeColor = System.Drawing.SystemColors.ControlDarkDark
-        Me.Label7.Location = New System.Drawing.Point(38, 522)
+        Me.Label7.Location = New System.Drawing.Point(45, 363)
         Me.Label7.Name = "Label7"
-        Me.Label7.Size = New System.Drawing.Size(61, 17)
+        Me.Label7.Size = New System.Drawing.Size(51, 17)
         Me.Label7.TabIndex = 158
-        Me.Label7.Text = "Address "
+        Me.Label7.Text = "Tel No."
         '
-        'TXTADD
+        'TXTTEL
         '
-        Me.TXTADD.Font = New System.Drawing.Font("Century Gothic", 9.0!)
-        Me.TXTADD.Location = New System.Drawing.Point(39, 556)
-        Me.TXTADD.Name = "TXTADD"
-        Me.TXTADD.Size = New System.Drawing.Size(460, 22)
-        Me.TXTADD.TabIndex = 157
+        Me.TXTTEL.Font = New System.Drawing.Font("Century Gothic", 9.0!)
+        Me.TXTTEL.Location = New System.Drawing.Point(47, 392)
+        Me.TXTTEL.Name = "TXTTEL"
+        Me.TXTTEL.Size = New System.Drawing.Size(315, 22)
+        Me.TXTTEL.TabIndex = 157
         '
         'Label8
         '
         Me.Label8.AutoSize = True
         Me.Label8.Font = New System.Drawing.Font("Century Gothic", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label8.ForeColor = System.Drawing.SystemColors.ControlDarkDark
-        Me.Label8.Location = New System.Drawing.Point(38, 109)
+        Me.Label8.Location = New System.Drawing.Point(46, 193)
         Me.Label8.Name = "Label8"
-        Me.Label8.Size = New System.Drawing.Size(94, 17)
+        Me.Label8.Size = New System.Drawing.Size(117, 17)
         Me.Label8.TabIndex = 160
-        Me.Label8.Text = "Manufacturer"
+        Me.Label8.Text = "Company Name"
         '
         'TXTCOM
         '
         Me.TXTCOM.Font = New System.Drawing.Font("Century Gothic", 9.0!)
-        Me.TXTCOM.Location = New System.Drawing.Point(39, 141)
+        Me.TXTCOM.Location = New System.Drawing.Point(47, 225)
         Me.TXTCOM.Name = "TXTCOM"
-        Me.TXTCOM.Size = New System.Drawing.Size(460, 22)
+        Me.TXTCOM.Size = New System.Drawing.Size(315, 22)
         Me.TXTCOM.TabIndex = 159
         '
         'Label9
@@ -297,78 +197,79 @@ Partial Class ucSUPPLIER
         Me.Label9.AutoSize = True
         Me.Label9.Font = New System.Drawing.Font("Century Gothic", 9.75!)
         Me.Label9.ForeColor = System.Drawing.SystemColors.ControlDarkDark
-        Me.Label9.Location = New System.Drawing.Point(664, 80)
+        Me.Label9.Location = New System.Drawing.Point(716, 120)
         Me.Label9.Name = "Label9"
-        Me.Label9.Size = New System.Drawing.Size(149, 17)
+        Me.Label9.Size = New System.Drawing.Size(51, 17)
         Me.Label9.TabIndex = 163
-        Me.Label9.Text = "Search Manufacturer :" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10)
+        Me.Label9.Text = "Search"
         '
         'TXTSEARCH
         '
-        Me.TXTSEARCH.Location = New System.Drawing.Point(845, 77)
+        Me.TXTSEARCH.Location = New System.Drawing.Point(773, 117)
         Me.TXTSEARCH.Name = "TXTSEARCH"
-        Me.TXTSEARCH.Size = New System.Drawing.Size(230, 20)
+        Me.TXTSEARCH.Size = New System.Drawing.Size(285, 20)
         Me.TXTSEARCH.TabIndex = 162
         '
         'DGVSUP
         '
         Me.DGVSUP.BackgroundColor = System.Drawing.Color.White
-        DataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
-        DataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Control
-        DataGridViewCellStyle3.Font = New System.Drawing.Font("Century Gothic", 9.75!)
-        DataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.ControlDarkDark
-        DataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.MediumSeaGreen
-        DataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText
-        DataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
-        Me.DGVSUP.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle3
+        DataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control
+        DataGridViewCellStyle1.Font = New System.Drawing.Font("Century Gothic", 9.75!)
+        DataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.ControlDarkDark
+        DataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.MediumSeaGreen
+        DataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+        DataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.DGVSUP.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle1
         Me.DGVSUP.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        DataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
-        DataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.Window
-        DataGridViewCellStyle4.Font = New System.Drawing.Font("Century Gothic", 9.75!)
-        DataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.ControlDarkDark
-        DataGridViewCellStyle4.SelectionBackColor = System.Drawing.Color.MediumSeaGreen
-        DataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText
-        DataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
-        Me.DGVSUP.DefaultCellStyle = DataGridViewCellStyle4
-        Me.DGVSUP.Location = New System.Drawing.Point(556, 120)
+        DataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window
+        DataGridViewCellStyle2.Font = New System.Drawing.Font("Century Gothic", 9.75!)
+        DataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlDarkDark
+        DataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.MediumSeaGreen
+        DataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+        DataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
+        Me.DGVSUP.DefaultCellStyle = DataGridViewCellStyle2
+        Me.DGVSUP.Location = New System.Drawing.Point(427, 160)
         Me.DGVSUP.Name = "DGVSUP"
         Me.DGVSUP.ReadOnly = True
         Me.DGVSUP.RowHeadersVisible = False
         Me.DGVSUP.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
-        Me.DGVSUP.Size = New System.Drawing.Size(519, 542)
+        Me.DGVSUP.Size = New System.Drawing.Size(631, 500)
         Me.DGVSUP.TabIndex = 164
+        '
+        'CBOSTATUS
+        '
+        Me.CBOSTATUS.FormattingEnabled = True
+        Me.CBOSTATUS.Items.AddRange(New Object() {"Active", "Inactive"})
+        Me.CBOSTATUS.Location = New System.Drawing.Point(49, 482)
+        Me.CBOSTATUS.Name = "CBOSTATUS"
+        Me.CBOSTATUS.Size = New System.Drawing.Size(313, 21)
+        Me.CBOSTATUS.TabIndex = 165
         '
         'ucSUPPLIER
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.White
+        Me.Controls.Add(Me.CBOSTATUS)
         Me.Controls.Add(Me.DGVSUP)
         Me.Controls.Add(Me.Label9)
         Me.Controls.Add(Me.TXTSEARCH)
         Me.Controls.Add(Me.Label8)
         Me.Controls.Add(Me.TXTCOM)
         Me.Controls.Add(Me.Label7)
-        Me.Controls.Add(Me.TXTADD)
-        Me.Controls.Add(Me.Label3)
-        Me.Controls.Add(Me.Label6)
-        Me.Controls.Add(Me.TXTNO)
-        Me.Controls.Add(Me.Label4)
+        Me.Controls.Add(Me.TXTTEL)
         Me.Controls.Add(Me.Label5)
-        Me.Controls.Add(Me.TXTEMAIL)
-        Me.Controls.Add(Me.Label2)
-        Me.Controls.Add(Me.TXTLN)
-        Me.Controls.Add(Me.Label1)
         Me.Controls.Add(Me.BTNCANCEL)
         Me.Controls.Add(Me.BTNEDIT)
-        Me.Controls.Add(Me.BTNDELETE)
         Me.Controls.Add(Me.BTNSAVE)
         Me.Controls.Add(Me.Label11)
         Me.Controls.Add(Me.Label22)
         Me.Controls.Add(Me.Panel2)
-        Me.Controls.Add(Me.TXTFN)
+        Me.Controls.Add(Me.TXTNAME)
         Me.Name = "ucSUPPLIER"
-        Me.Size = New System.Drawing.Size(1113, 682)
+        Me.Size = New System.Drawing.Size(1091, 729)
         Me.Panel2.ResumeLayout(False)
         CType(Me.DGVSUP, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
@@ -379,26 +280,18 @@ Partial Class ucSUPPLIER
     Friend WithEvents Panel2 As Panel
     Friend WithEvents BTNBACK As Button
     Friend WithEvents Label22 As Label
-    Friend WithEvents TXTFN As TextBox
+    Friend WithEvents TXTNAME As TextBox
     Friend WithEvents Label11 As Label
     Friend WithEvents BTNCANCEL As Button
     Friend WithEvents BTNEDIT As Button
-    Friend WithEvents BTNDELETE As Button
     Friend WithEvents BTNSAVE As Button
-    Friend WithEvents Label1 As Label
-    Friend WithEvents Label2 As Label
-    Friend WithEvents TXTLN As TextBox
-    Friend WithEvents Label4 As Label
     Friend WithEvents Label5 As Label
-    Friend WithEvents TXTEMAIL As TextBox
-    Friend WithEvents Label3 As Label
-    Friend WithEvents Label6 As Label
-    Friend WithEvents TXTNO As TextBox
     Friend WithEvents Label7 As Label
-    Friend WithEvents TXTADD As TextBox
+    Friend WithEvents TXTTEL As TextBox
     Friend WithEvents Label8 As Label
     Friend WithEvents TXTCOM As TextBox
     Friend WithEvents Label9 As Label
     Friend WithEvents TXTSEARCH As TextBox
     Friend WithEvents DGVSUP As DataGridView
+    Friend WithEvents CBOSTATUS As ComboBox
 End Class

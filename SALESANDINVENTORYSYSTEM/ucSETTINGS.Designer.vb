@@ -29,12 +29,12 @@ Partial Class ucSETTINGS
         Dim DataGridViewCellStyle4 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Dim DataGridViewCellStyle5 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Me.Panel2 = New System.Windows.Forms.Panel()
+        Me.BTNBRAND = New System.Windows.Forms.Button()
+        Me.BTNUM = New System.Windows.Forms.Button()
         Me.BTNSTOCKIN = New System.Windows.Forms.Button()
-        Me.BTNPI = New System.Windows.Forms.Button()
         Me.BTNINVENTORY = New System.Windows.Forms.Button()
         Me.BTNSUP = New System.Windows.Forms.Button()
         Me.BTNCATEGORY = New System.Windows.Forms.Button()
-        Me.BTNUM = New System.Windows.Forms.Button()
         Me.Guna2ShadowPanel1 = New Guna.UI2.WinForms.Guna2ShadowPanel()
         Me.BTNRESTORE = New Guna.UI2.WinForms.Guna2Button()
         Me.BTNBACKUP = New Guna.UI2.WinForms.Guna2Button()
@@ -42,10 +42,10 @@ Partial Class ucSETTINGS
         Me.Label1 = New System.Windows.Forms.Label()
         Me.PNLHISTORY = New System.Windows.Forms.Panel()
         Me.Panel1 = New System.Windows.Forms.Panel()
+        Me.Label2 = New System.Windows.Forms.Label()
         Me.LBLCLOSE = New System.Windows.Forms.PictureBox()
         Me.DGVHISTORY = New System.Windows.Forms.DataGridView()
         Me.Guna2PictureBox1 = New Guna.UI2.WinForms.Guna2PictureBox()
-        Me.Label2 = New System.Windows.Forms.Label()
         Me.Panel2.SuspendLayout()
         Me.Guna2ShadowPanel1.SuspendLayout()
         Me.PNLHISTORY.SuspendLayout()
@@ -58,17 +58,53 @@ Partial Class ucSETTINGS
         'Panel2
         '
         Me.Panel2.BackColor = System.Drawing.Color.FromArgb(CType(CType(37, Byte), Integer), CType(CType(46, Byte), Integer), CType(CType(59, Byte), Integer))
+        Me.Panel2.Controls.Add(Me.BTNBRAND)
+        Me.Panel2.Controls.Add(Me.BTNUM)
         Me.Panel2.Controls.Add(Me.BTNSTOCKIN)
-        Me.Panel2.Controls.Add(Me.BTNPI)
         Me.Panel2.Controls.Add(Me.BTNINVENTORY)
         Me.Panel2.Controls.Add(Me.BTNSUP)
         Me.Panel2.Controls.Add(Me.BTNCATEGORY)
-        Me.Panel2.Controls.Add(Me.BTNUM)
         Me.Panel2.Dock = System.Windows.Forms.DockStyle.Top
         Me.Panel2.Location = New System.Drawing.Point(0, 0)
         Me.Panel2.Name = "Panel2"
-        Me.Panel2.Size = New System.Drawing.Size(1113, 49)
+        Me.Panel2.Size = New System.Drawing.Size(1091, 49)
         Me.Panel2.TabIndex = 44
+        '
+        'BTNBRAND
+        '
+        Me.BTNBRAND.BackColor = System.Drawing.Color.FromArgb(CType(CType(37, Byte), Integer), CType(CType(46, Byte), Integer), CType(CType(59, Byte), Integer))
+        Me.BTNBRAND.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None
+        Me.BTNBRAND.FlatAppearance.BorderSize = 0
+        Me.BTNBRAND.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.BTNBRAND.Font = New System.Drawing.Font("Century Gothic", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.BTNBRAND.ForeColor = System.Drawing.Color.White
+        Me.BTNBRAND.Image = CType(resources.GetObject("BTNBRAND.Image"), System.Drawing.Image)
+        Me.BTNBRAND.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
+        Me.BTNBRAND.Location = New System.Drawing.Point(3, 0)
+        Me.BTNBRAND.Name = "BTNBRAND"
+        Me.BTNBRAND.Size = New System.Drawing.Size(112, 49)
+        Me.BTNBRAND.TabIndex = 54
+        Me.BTNBRAND.Text = "Brand"
+        Me.BTNBRAND.TextAlign = System.Drawing.ContentAlignment.MiddleRight
+        Me.BTNBRAND.UseVisualStyleBackColor = False
+        '
+        'BTNUM
+        '
+        Me.BTNUM.BackColor = System.Drawing.Color.FromArgb(CType(CType(37, Byte), Integer), CType(CType(46, Byte), Integer), CType(CType(59, Byte), Integer))
+        Me.BTNUM.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None
+        Me.BTNUM.FlatAppearance.BorderSize = 0
+        Me.BTNUM.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.BTNUM.Font = New System.Drawing.Font("Century Gothic", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.BTNUM.ForeColor = System.Drawing.Color.White
+        Me.BTNUM.Image = CType(resources.GetObject("BTNUM.Image"), System.Drawing.Image)
+        Me.BTNUM.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
+        Me.BTNUM.Location = New System.Drawing.Point(790, -3)
+        Me.BTNUM.Name = "BTNUM"
+        Me.BTNUM.Size = New System.Drawing.Size(136, 52)
+        Me.BTNUM.TabIndex = 47
+        Me.BTNUM.Text = "User Account"
+        Me.BTNUM.TextAlign = System.Drawing.ContentAlignment.MiddleRight
+        Me.BTNUM.UseVisualStyleBackColor = False
         '
         'BTNSTOCKIN
         '
@@ -80,31 +116,13 @@ Partial Class ucSETTINGS
         Me.BTNSTOCKIN.ForeColor = System.Drawing.Color.White
         Me.BTNSTOCKIN.Image = CType(resources.GetObject("BTNSTOCKIN.Image"), System.Drawing.Image)
         Me.BTNSTOCKIN.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.BTNSTOCKIN.Location = New System.Drawing.Point(347, 3)
+        Me.BTNSTOCKIN.Location = New System.Drawing.Point(635, 0)
         Me.BTNSTOCKIN.Name = "BTNSTOCKIN"
         Me.BTNSTOCKIN.Size = New System.Drawing.Size(112, 49)
         Me.BTNSTOCKIN.TabIndex = 49
-        Me.BTNSTOCKIN.Text = "Restock"
+        Me.BTNSTOCKIN.Text = "Delivery"
         Me.BTNSTOCKIN.TextAlign = System.Drawing.ContentAlignment.MiddleRight
         Me.BTNSTOCKIN.UseVisualStyleBackColor = False
-        '
-        'BTNPI
-        '
-        Me.BTNPI.BackColor = System.Drawing.Color.FromArgb(CType(CType(37, Byte), Integer), CType(CType(46, Byte), Integer), CType(CType(59, Byte), Integer))
-        Me.BTNPI.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None
-        Me.BTNPI.FlatAppearance.BorderSize = 0
-        Me.BTNPI.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.BTNPI.Font = New System.Drawing.Font("Century Gothic", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.BTNPI.ForeColor = System.Drawing.Color.White
-        Me.BTNPI.Image = CType(resources.GetObject("BTNPI.Image"), System.Drawing.Image)
-        Me.BTNPI.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.BTNPI.Location = New System.Drawing.Point(201, 1)
-        Me.BTNPI.Name = "BTNPI"
-        Me.BTNPI.Size = New System.Drawing.Size(125, 49)
-        Me.BTNPI.TabIndex = 49
-        Me.BTNPI.Text = "Stock In"
-        Me.BTNPI.TextAlign = System.Drawing.ContentAlignment.MiddleRight
-        Me.BTNPI.UseVisualStyleBackColor = False
         '
         'BTNINVENTORY
         '
@@ -116,11 +134,11 @@ Partial Class ucSETTINGS
         Me.BTNINVENTORY.ForeColor = System.Drawing.Color.White
         Me.BTNINVENTORY.Image = CType(resources.GetObject("BTNINVENTORY.Image"), System.Drawing.Image)
         Me.BTNINVENTORY.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.BTNINVENTORY.Location = New System.Drawing.Point(3, 0)
+        Me.BTNINVENTORY.Location = New System.Drawing.Point(438, -3)
         Me.BTNINVENTORY.Name = "BTNINVENTORY"
-        Me.BTNINVENTORY.Size = New System.Drawing.Size(192, 43)
-        Me.BTNINVENTORY.TabIndex = 50
-        Me.BTNINVENTORY.Text = "Add New Product"
+        Me.BTNINVENTORY.Size = New System.Drawing.Size(174, 49)
+        Me.BTNINVENTORY.TabIndex = 49
+        Me.BTNINVENTORY.Text = "Manage Product"
         Me.BTNINVENTORY.TextAlign = System.Drawing.ContentAlignment.MiddleRight
         Me.BTNINVENTORY.UseVisualStyleBackColor = False
         '
@@ -134,7 +152,7 @@ Partial Class ucSETTINGS
         Me.BTNSUP.ForeColor = System.Drawing.Color.White
         Me.BTNSUP.Image = CType(resources.GetObject("BTNSUP.Image"), System.Drawing.Image)
         Me.BTNSUP.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.BTNSUP.Location = New System.Drawing.Point(778, 1)
+        Me.BTNSUP.Location = New System.Drawing.Point(138, 0)
         Me.BTNSUP.Name = "BTNSUP"
         Me.BTNSUP.Size = New System.Drawing.Size(120, 49)
         Me.BTNSUP.TabIndex = 49
@@ -152,31 +170,13 @@ Partial Class ucSETTINGS
         Me.BTNCATEGORY.ForeColor = System.Drawing.Color.White
         Me.BTNCATEGORY.Image = CType(resources.GetObject("BTNCATEGORY.Image"), System.Drawing.Image)
         Me.BTNCATEGORY.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.BTNCATEGORY.Location = New System.Drawing.Point(488, 0)
+        Me.BTNCATEGORY.Location = New System.Drawing.Point(292, 0)
         Me.BTNCATEGORY.Name = "BTNCATEGORY"
         Me.BTNCATEGORY.Size = New System.Drawing.Size(119, 49)
         Me.BTNCATEGORY.TabIndex = 48
         Me.BTNCATEGORY.Text = "Category"
         Me.BTNCATEGORY.TextAlign = System.Drawing.ContentAlignment.MiddleRight
         Me.BTNCATEGORY.UseVisualStyleBackColor = False
-        '
-        'BTNUM
-        '
-        Me.BTNUM.BackColor = System.Drawing.Color.FromArgb(CType(CType(37, Byte), Integer), CType(CType(46, Byte), Integer), CType(CType(59, Byte), Integer))
-        Me.BTNUM.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None
-        Me.BTNUM.FlatAppearance.BorderSize = 0
-        Me.BTNUM.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.BTNUM.Font = New System.Drawing.Font("Century Gothic", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.BTNUM.ForeColor = System.Drawing.Color.White
-        Me.BTNUM.Image = CType(resources.GetObject("BTNUM.Image"), System.Drawing.Image)
-        Me.BTNUM.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.BTNUM.Location = New System.Drawing.Point(622, -2)
-        Me.BTNUM.Name = "BTNUM"
-        Me.BTNUM.Size = New System.Drawing.Size(136, 52)
-        Me.BTNUM.TabIndex = 47
-        Me.BTNUM.Text = "User Account"
-        Me.BTNUM.TextAlign = System.Drawing.ContentAlignment.MiddleRight
-        Me.BTNUM.UseVisualStyleBackColor = False
         '
         'Guna2ShadowPanel1
         '
@@ -185,7 +185,7 @@ Partial Class ucSETTINGS
         Me.Guna2ShadowPanel1.Controls.Add(Me.BTNBACKUP)
         Me.Guna2ShadowPanel1.Controls.Add(Me.LBLHISTORY)
         Me.Guna2ShadowPanel1.FillColor = System.Drawing.Color.White
-        Me.Guna2ShadowPanel1.Location = New System.Drawing.Point(549, 75)
+        Me.Guna2ShadowPanel1.Location = New System.Drawing.Point(515, 98)
         Me.Guna2ShadowPanel1.Name = "Guna2ShadowPanel1"
         Me.Guna2ShadowPanel1.ShadowColor = System.Drawing.Color.Black
         Me.Guna2ShadowPanel1.Size = New System.Drawing.Size(495, 550)
@@ -248,7 +248,7 @@ Partial Class ucSETTINGS
         Me.Label1.AutoSize = True
         Me.Label1.Font = New System.Drawing.Font("Century Gothic", 20.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label1.ForeColor = System.Drawing.SystemColors.ControlText
-        Me.Label1.Location = New System.Drawing.Point(110, 347)
+        Me.Label1.Location = New System.Drawing.Point(76, 370)
         Me.Label1.Name = "Label1"
         Me.Label1.Size = New System.Drawing.Size(301, 33)
         Me.Label1.TabIndex = 52
@@ -259,7 +259,7 @@ Partial Class ucSETTINGS
         Me.PNLHISTORY.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.PNLHISTORY.Controls.Add(Me.Panel1)
         Me.PNLHISTORY.Controls.Add(Me.DGVHISTORY)
-        Me.PNLHISTORY.Location = New System.Drawing.Point(518, 383)
+        Me.PNLHISTORY.Location = New System.Drawing.Point(484, 406)
         Me.PNLHISTORY.Name = "PNLHISTORY"
         Me.PNLHISTORY.Size = New System.Drawing.Size(441, 264)
         Me.PNLHISTORY.TabIndex = 53
@@ -275,6 +275,17 @@ Partial Class ucSETTINGS
         Me.Panel1.Name = "Panel1"
         Me.Panel1.Size = New System.Drawing.Size(439, 45)
         Me.Panel1.TabIndex = 54
+        '
+        'Label2
+        '
+        Me.Label2.AutoSize = True
+        Me.Label2.Font = New System.Drawing.Font("Century Gothic", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label2.ForeColor = System.Drawing.Color.White
+        Me.Label2.Location = New System.Drawing.Point(18, 15)
+        Me.Label2.Name = "Label2"
+        Me.Label2.Size = New System.Drawing.Size(101, 17)
+        Me.Label2.TabIndex = 58
+        Me.Label2.Text = "Backup History"
         '
         'LBLCLOSE
         '
@@ -347,24 +358,13 @@ Partial Class ucSETTINGS
         'Guna2PictureBox1
         '
         Me.Guna2PictureBox1.Image = CType(resources.GetObject("Guna2PictureBox1.Image"), System.Drawing.Image)
-        Me.Guna2PictureBox1.Location = New System.Drawing.Point(172, 158)
+        Me.Guna2PictureBox1.Location = New System.Drawing.Point(138, 181)
         Me.Guna2PictureBox1.Name = "Guna2PictureBox1"
         Me.Guna2PictureBox1.ShadowDecoration.Parent = Me.Guna2PictureBox1
         Me.Guna2PictureBox1.Size = New System.Drawing.Size(175, 166)
         Me.Guna2PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
         Me.Guna2PictureBox1.TabIndex = 51
         Me.Guna2PictureBox1.TabStop = False
-        '
-        'Label2
-        '
-        Me.Label2.AutoSize = True
-        Me.Label2.Font = New System.Drawing.Font("Century Gothic", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label2.ForeColor = System.Drawing.Color.White
-        Me.Label2.Location = New System.Drawing.Point(18, 15)
-        Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(101, 17)
-        Me.Label2.TabIndex = 58
-        Me.Label2.Text = "Backup History"
         '
         'ucSETTINGS
         '
@@ -377,7 +377,7 @@ Partial Class ucSETTINGS
         Me.Controls.Add(Me.Guna2PictureBox1)
         Me.Controls.Add(Me.Panel2)
         Me.Name = "ucSETTINGS"
-        Me.Size = New System.Drawing.Size(1113, 682)
+        Me.Size = New System.Drawing.Size(1091, 729)
         Me.Panel2.ResumeLayout(False)
         Me.Guna2ShadowPanel1.ResumeLayout(False)
         Me.Guna2ShadowPanel1.PerformLayout()
@@ -395,11 +395,10 @@ Partial Class ucSETTINGS
     Friend WithEvents Panel2 As Panel
     Friend WithEvents Guna2ShadowPanel1 As Guna.UI2.WinForms.Guna2ShadowPanel
     Friend WithEvents LBLHISTORY As Label
-    Friend WithEvents BTNINVENTORY As Button
     Friend WithEvents BTNSUP As Button
     Friend WithEvents BTNCATEGORY As Button
     Friend WithEvents BTNUM As Button
-    Friend WithEvents BTNPI As Button
+    Friend WithEvents BTNINVENTORY As Button
     Friend WithEvents BTNSTOCKIN As Button
     Friend WithEvents Label1 As Label
     Friend WithEvents Guna2PictureBox1 As Guna.UI2.WinForms.Guna2PictureBox
@@ -410,4 +409,5 @@ Partial Class ucSETTINGS
     Friend WithEvents LBLCLOSE As PictureBox
     Friend WithEvents Panel1 As Panel
     Friend WithEvents Label2 As Label
+    Friend WithEvents BTNBRAND As Button
 End Class

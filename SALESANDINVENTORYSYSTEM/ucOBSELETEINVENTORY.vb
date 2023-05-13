@@ -6,30 +6,35 @@ Public Class ucOBSELETEINVENTORY
     Dim command As MySqlCommand
 
     Private Sub DGVSETPROPERTY()
-        DGVEXPIREDPROD.Columns(0).Width = 150
-        DGVEXPIREDPROD.Columns(0).HeaderText = "Stock ID"
-        DGVEXPIREDPROD.Columns(1).Width = 150
-        DGVEXPIREDPROD.Columns(1).HeaderText = "Product ID"
-        DGVEXPIREDPROD.Columns(2).Width = 150
+
+        DGVEXPIREDPROD.Columns(0).Width = 200
+        DGVEXPIREDPROD.Columns(0).HeaderText = "Product ID"
+        DGVEXPIREDPROD.Columns(1).Width = 200
+        DGVEXPIREDPROD.Columns(1).HeaderText = "Product Code"
+        DGVEXPIREDPROD.Columns(2).Width = 200
         DGVEXPIREDPROD.Columns(2).HeaderText = "Product Name"
-        DGVEXPIREDPROD.Columns(3).Width = 150
+        DGVEXPIREDPROD.Columns(3).Width = 200
         DGVEXPIREDPROD.Columns(3).HeaderText = "Manufacturer"
-        DGVEXPIREDPROD.Columns(4).Width = 150
+        DGVEXPIREDPROD.Columns(4).Width = 200
         DGVEXPIREDPROD.Columns(4).HeaderText = "Brand"
-        DGVEXPIREDPROD.Columns(5).Width = 150
-        DGVEXPIREDPROD.Columns(5).HeaderText = "Product Category"
-        DGVEXPIREDPROD.Columns(6).Width = 150
+        DGVEXPIREDPROD.Columns(5).Width = 200
+        DGVEXPIREDPROD.Columns(5).HeaderText = "Category"
+        DGVEXPIREDPROD.Columns(6).Width = 200
         DGVEXPIREDPROD.Columns(6).HeaderText = "Category Code"
-        DGVEXPIREDPROD.Columns(7).Width = 150
-        DGVEXPIREDPROD.Columns(7).HeaderText = "Price"
-        DGVEXPIREDPROD.Columns(8).Width = 150
-        DGVEXPIREDPROD.Columns(8).HeaderText = "Unit"
-        DGVEXPIREDPROD.Columns(9).Width = 150
-        DGVEXPIREDPROD.Columns(9).HeaderText = "Quantity"
-        DGVEXPIREDPROD.Columns(10).Width = 150
-        DGVEXPIREDPROD.Columns(10).HeaderText = "Expiration Date"
+        DGVEXPIREDPROD.Columns(7).Width = 200
+        DGVEXPIREDPROD.Columns(7).HeaderText = "Unit"
+        DGVEXPIREDPROD.Columns(8).Width = 200
+        DGVEXPIREDPROD.Columns(8).HeaderText = "Price"
+        DGVEXPIREDPROD.Columns(9).Width = 200
+        DGVEXPIREDPROD.Columns(9).HeaderText = "Stocks"
+        DGVEXPIREDPROD.Columns(10).Width = 200
+        DGVEXPIREDPROD.Columns(10).HeaderText = "Manufactured Date"
+        DGVEXPIREDPROD.Columns(11).Width = 200
+        DGVEXPIREDPROD.Columns(11).HeaderText = "Expiration Date"
+
     End Sub
-    Private Sub ucOBSELETEINVENTORY_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+
+    Private Sub view()
         connection = New MySqlConnection
 
 
@@ -42,7 +47,7 @@ Public Class ucOBSELETEINVENTORY
 
 
             con.Open()
-            command = New MySqlCommand("select stockid, prodid, prodname, prodman, prodbrand, prodcat, catcode, price, unit, quantity, expirationdate from tbl_stocks  WHERE expirationdate  < Now();", con)
+            command = New MySqlCommand("select id, prodcode, prodname, manufacturer, brand, category, catcode, unit, price, quantity, manufactureddate, expirationdate from tbl_stocks  WHERE expirationdate  < Now();", con)
 
             dataadapt.SelectCommand = command
             dataadapt.Fill(dataset)
@@ -59,6 +64,10 @@ Public Class ucOBSELETEINVENTORY
             con.Dispose()
 
         End Try
+    End Sub
+    Private Sub ucOBSELETEINVENTORY_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+
+        view()
 
         ' Set the backcolor of the row
         DGVEXPIREDPROD.Columns(10).DefaultCellStyle.BackColor = Color.IndianRed
@@ -75,36 +84,64 @@ Public Class ucOBSELETEINVENTORY
         End If
 
         For Each row As DataGridViewRow In DGVEXPIREDPROD.SelectedRows
-            Dim stockid As Integer = CInt(row.Cells("stockid").Value)
-            Dim prodid As String = CStr(row.Cells("prodid").Value)
+
+
+            Dim id As Integer = CStr(row.Cells("id").Value)
+
+            Dim prodcode As String = CStr(row.Cells("prodcode").Value)
+
             Dim prodname As String = CStr(row.Cells("prodname").Value)
-            Dim prodman As String = CStr(row.Cells("prodman").Value)
-            Dim prodbrand As String = CStr(row.Cells("prodbrand").Value)
-            Dim prodcat As String = CStr(row.Cells("prodcat").Value)
+
+            Dim manufacturer As String = CStr(row.Cells("manufacturer").Value)
+
+            Dim brand As String = CStr(row.Cells("brand").Value)
+
+            Dim category As String = CStr(row.Cells("category").Value)
+
             Dim catcode As String = CStr(row.Cells("catcode").Value)
+
             Dim price As Integer = CInt(row.Cells("price").Value)
+
             Dim unit As String = CStr(row.Cells("unit").Value)
+
             Dim quantity As Integer = CInt(row.Cells("quantity").Value)
+
+            Dim manufactureddate As String = CStr(row.Cells("manufactureddate").Value)
+
             Dim expirationdate As String = CStr(row.Cells("expirationdate").Value)
 
 
             'Insert selected columns into the destination table
-            Dim sqlInsert As String = "INSERT INTO tbl_expiredprod (stockid, prodid, prodname, prodman, prodbrand, prodcat, catcode, price, unit, quantity, expirationdate, dateadded) VALUES (@stockid, @prodid, @prodname, @prodman, @prodbrand, @prodcat, @catcode, @price, @unit, @quantity, @expirationdate, @dateadded)"
+            Dim sqlInsert As String = "INSERT INTO tbl_expiredproducts (id, prodcode, prodname, manufacturer, brand, category, catcode, unit, price, quantity, manufactureddate, expirationdate, dateremoved) VALUES (@id, @prodcode, @prodname, @manufacturer, @brand, @category, @catcode, @unit, @price, @quantity, @manufactureddate, @expirationdate, @dateremoved)"
             Using conn As New MySqlConnection(“Server=localhost;Port=3306;User=root;Password=password;Database=inventory_db”)
                 Using cmd As New MySqlCommand(sqlInsert, conn)
 
-                    cmd.Parameters.AddWithValue("@stockid", stockid)
-                    cmd.Parameters.AddWithValue("@prodid", prodid)
+                    cmd.Parameters.AddWithValue("@id", id)
+
+                    cmd.Parameters.AddWithValue("@prodcode", prodcode)
+
                     cmd.Parameters.AddWithValue("@prodname", prodname)
-                    cmd.Parameters.AddWithValue("@prodman", prodman)
-                    cmd.Parameters.AddWithValue("@prodbrand", prodbrand)
-                    cmd.Parameters.AddWithValue("@prodcat", prodcat)
+
+                    cmd.Parameters.AddWithValue("@manufacturer", manufacturer)
+
+                    cmd.Parameters.AddWithValue("@brand", brand)
+
+                    cmd.Parameters.AddWithValue("@category", category)
+
                     cmd.Parameters.AddWithValue("@catcode", catcode)
+
                     cmd.Parameters.AddWithValue("@price", price)
+
                     cmd.Parameters.AddWithValue("@unit", unit)
+
                     cmd.Parameters.AddWithValue("@quantity", quantity)
+
+                    cmd.Parameters.AddWithValue("@manufactureddate", manufactureddate)
+
                     cmd.Parameters.AddWithValue("@expirationdate", expirationdate)
-                    cmd.Parameters.AddWithValue("@dateadded", Format(Date.Now, "yyyy-MM-dd"))
+
+                    cmd.Parameters.AddWithValue("@dateremoved", Format(Date.Now, "yyyy-MM-dd"))
+
 
                     conn.Open()
                     cmd.ExecuteNonQuery()
@@ -115,38 +152,17 @@ Public Class ucOBSELETEINVENTORY
         Next
 
         For i As Integer = 0 To DGVEXPIREDPROD.SelectedRows.Count - 1
-            Dim cmd As New MySqlCommand("delete from tbl_stocks where prodid = @prodid", con)
-            cmd.Parameters.AddWithValue("prodid", DGVEXPIREDPROD.SelectedRows(i).Cells(1).Value.ToString())
+            Dim cmd As New MySqlCommand("delete from tbl_stocks where id = @id", con)
+            cmd.Parameters.AddWithValue("id", DGVEXPIREDPROD.SelectedRows(i).Cells(0).Value.ToString())
             con.Open()
             cmd.ExecuteNonQuery()
             con.Close()
-            refreshgrid()
+            view()
 
-            MessageBox.Show("Expired product has been added to Archive", "Notice", MessageBoxButtons.OK, MessageBoxIcon.Information)
+            MessageBox.Show("Product has been added to Archive", "Notice", MessageBoxButtons.OK, MessageBoxIcon.Information)
             con.Close()
         Next
-
     End Sub
-
-    Private Sub refreshgrid()
-
-        Try
-
-            Dim da As New MySqlDataAdapter("select stockid, prodid, prodname, prodman, prodbrand, prodcat, catcode, price, unit, quantity, expirationdate from tbl_stocks  WHERE expirationdate  < Now();", con)
-            Dim dt As New DataSet()
-            da.Fill(dt)
-            DGVEXPIREDPROD.DataSource = dt.Tables(0)
-
-
-        Catch ex As Exception
-
-            MessageBox.Show(ex.ToString())
-
-
-
-        End Try
-    End Sub
-
     Private Sub BTNBACK_Click_1(sender As Object, e As EventArgs) Handles BTNBACK.Click
         Dim i As Integer
         For i = 0 To 0

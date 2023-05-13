@@ -25,12 +25,6 @@ Public Class ucUSERMANAGEMENT
         DGVUSERS.Columns(7).HeaderText = "Middle Name"
         DGVUSERS.Columns(8).Width = 150
         DGVUSERS.Columns(8).HeaderText = "Last Name"
-        DGVUSERS.Columns(9).Width = 150
-        DGVUSERS.Columns(9).HeaderText = "Telephone No."
-        DGVUSERS.Columns(10).Width = 150
-        DGVUSERS.Columns(10).HeaderText = "E-Mail"
-        DGVUSERS.Columns(11).Width = 150
-        DGVUSERS.Columns(11).HeaderText = "Address"
     End Sub
     Private Sub actlog()
         con.Close()
@@ -85,7 +79,7 @@ Public Class ucUSERMANAGEMENT
 
     Private Sub LOADUSERS()
         Try
-            Dim da As New MySqlDataAdapter("select refid, username, usertype, userid, status, password, firstname, middlename, lastname, telno, email, address from tbl_users", con)
+            Dim da As New MySqlDataAdapter("select refid, username, usertype, userid, status, password, firstname, middlename, lastname from tbl_users", con)
             Dim dt As New DataSet()
             da.Fill(dt)
             DGVUSERS.DataSource = dt.Tables(0)
@@ -121,59 +115,14 @@ Public Class ucUSERMANAGEMENT
         SETTINGS.Show()
         SETTINGS.Dock = DockStyle.Fill
     End Sub
-
-
-
-    Private Sub BTNDELETE_Click(sender As Object, e As EventArgs) Handles BTNDELETE.Click
-
-
-        If MessageBox.Show("Are you sure to remove this from the user Record?", "Delete", MessageBoxButtons.YesNo, MessageBoxIcon.Information, MessageBoxDefaultButton.Button2) = DialogResult.No Then
-            Exit Sub
-        End If
-
-        ' NOT WORKING 
-        For i As Integer = 0 To DGVUSERS.SelectedRows.Count - 1
-            Dim cmd As New MySqlCommand("delete from tbl_users where userid = @userid ", con)
-            cmd.Parameters.AddWithValue("userid", DGVUSERS.SelectedRows(i).Cells(3).Value.ToString())
-            con.Open()
-            cmd.ExecuteNonQuery()
-            con.Close()
-        Next
-        LOADUSERS()
-        MessageBox.Show("user deleted succesfully")
-        activity = "deleted a user. user ID:" + TXTUI.Text
-
-        TXTUN.Text = ""
-        CBOACCTYPE.Text = ""
-        TXTUI.Text = ""
-        TXTRI.Text = ""
-        CBOSTATUS.Text = ""
-        TXTPW.Text = ""
-        TXTCP.Text = ""
-        TXTFN.Text = ""
-        TXTMN.Text = ""
-        TXTLN.Text = ""
-        TXTTEL.Text = ""
-        TXTEMAIL.Text = ""
-        TXTADDRESS.Text = ""
-        TXTNAME.Text = ""
-        PANELTYPE.Visible = False
-        CBOACC.Text = ""
-
-        actlog()
-
-    End Sub
     Private Sub BTNSAVE_Click(sender As Object, e As EventArgs) Handles BTNSAVE.Click
-
 
         'ERROR TRAPPING
 
         'Getmax()
         'AutoID()
 
-        TXTNAME.Text = TXTFN.Text + " " + TXTMN.Text + " " + TXTLN.Text
-
-        If CBOACCTYPE.Text = "" Or CBOSTATUS.Text = "" Or TXTUI.Text = "" Or TXTMN.Text = "" Or TXTLN.Text = "" Or TXTTEL.Text = "" Or TXTEMAIL.Text = "" Or TXTUN.Text = "" Or TXTCP.Text = "" Or TXTRI.Text = "" Then
+        If CBOACCTYPE.Text = "" Or CBOSTATUS.Text = "" Or TXTUI.Text = "" Or TXTMN.Text = "" Or TXTLN.Text = "" Or TXTUN.Text = "" Or TXTCP.Text = "" Or TXTRI.Text = "" Then
             MsgBox("All fields are required!", vbOKOnly + vbCritical, "Error Saving")
             TXTFN.Focus()
             Exit Sub
@@ -194,37 +143,31 @@ Public Class ucUSERMANAGEMENT
                 TXTUN.Focus()
                 Exit Sub
             End If
-            con.Close()
         End If
+        con.Close()
 
 
-
-        OpenCon()
-        cmd.CommandText = "insert into tbl_users values (@un, @ut, @ui, @ri, @st, @pw, @fn, @mn, @ln, @tel, @mail, @add)"
+        con.Open()
+        cmd.CommandText = "insert into tbl_users values (@ri, @un, @ut, @ui,  @st, @pw, @fn, @mn, @ln)"
         With cmd.Parameters
             .Clear()
+            .AddWithValue("ri", TXTRI.Text)
             .AddWithValue("un", TXTUN.Text)
             .AddWithValue("ut", CBOACCTYPE.Text)
             .AddWithValue("ui", TXTUI.Text)
-            .AddWithValue("ri", TXTRI.Text)
             .AddWithValue("st", CBOSTATUS.Text)
             .AddWithValue("pw", TXTPW.Text)
             .AddWithValue("fn", TXTFN.Text)
             .AddWithValue("mn", TXTMN.Text)
             .AddWithValue("ln", TXTLN.Text)
-            .AddWithValue("tel", TXTTEL.Text)
-            .AddWithValue("mail", TXTEMAIL.Text)
-            .AddWithValue("add", TXTADDRESS.Text)
-
 
 
         End With
         cmd.ExecuteNonQuery()
         con.Close()
-        MsgBox("User information has been edited successfully!", vbOKOnly + vbInformation, "Saved Successfully!")
+        MsgBox("User information has been saved successfully!", vbOKOnly + vbInformation, "Saved Successfully!")
         activity = "Added new user. userID: " + TXTUI.Text
         actlog()
-
         con.Close()
 
 
@@ -238,9 +181,6 @@ Public Class ucUSERMANAGEMENT
         TXTFN.Text = ""
         TXTMN.Text = ""
         TXTLN.Text = ""
-        TXTTEL.Text = ""
-        TXTEMAIL.Text = ""
-        TXTADDRESS.Text = ""
         TXTNAME.Text = ""
         CHKPASS.Checked = False
 
@@ -249,9 +189,6 @@ Public Class ucUSERMANAGEMENT
         TXTNAME.Enabled = False
         TXTMN.Enabled = False
         TXTLN.Enabled = False
-        TXTTEL.Enabled = False
-        TXTEMAIL.Enabled = False
-        TXTADDRESS.Enabled = False
 
         TXTCP.Enabled = False
         TXTPW.Enabled = False
@@ -279,9 +216,6 @@ Public Class ucUSERMANAGEMENT
         TXTFN.Text = ""
         TXTMN.Text = ""
         TXTLN.Text = ""
-        TXTTEL.Text = ""
-        TXTEMAIL.Text = ""
-        TXTADDRESS.Text = ""
         TXTNAME.Text = ""
         CBOACC.Text = ""
         PANELTYPE.Visible = False
@@ -291,9 +225,6 @@ Public Class ucUSERMANAGEMENT
         TXTNAME.Enabled = False
         TXTMN.Enabled = False
         TXTLN.Enabled = False
-        TXTTEL.Enabled = False
-        TXTEMAIL.Enabled = False
-        TXTADDRESS.Enabled = False
 
         TXTCP.Enabled = False
         TXTPW.Enabled = False
@@ -313,7 +244,7 @@ Public Class ucUSERMANAGEMENT
                 cmd.Connection = con
                 con.Open()
 
-                cmd.CommandText = "UPDATE tbl_users SET usertype = @ut, refid = @ri, status = @st, password = @pw, firstname = @fn, middlename = @mn, lastname = @ln, telno = @tel, email = @mail, address = @add WHERE userid = @ui"
+                cmd.CommandText = "UPDATE tbl_users SET usertype = @ut, refid = @ri, status = @st, password = @pw, firstname = @fn, middlename = @mn, lastname = @ln WHERE userid = @ui"
 
                 cmd.Parameters.AddWithValue("@ut", CBOACC.Text)
                 cmd.Parameters.AddWithValue("@ui", TXTUI.Text)
@@ -323,9 +254,6 @@ Public Class ucUSERMANAGEMENT
                 cmd.Parameters.AddWithValue("@fn", TXTFN.Text)
                 cmd.Parameters.AddWithValue("@mn", TXTMN.Text)
                 cmd.Parameters.AddWithValue("@ln", TXTLN.Text)
-                cmd.Parameters.AddWithValue("@tel", TXTTEL.Text)
-                cmd.Parameters.AddWithValue("@mail", TXTEMAIL.Text)
-                cmd.Parameters.AddWithValue("@add", TXTADDRESS.Text)
 
                 cmd.ExecuteNonQuery()
 
@@ -359,9 +287,6 @@ Public Class ucUSERMANAGEMENT
         TXTFN.Text = ""
         TXTMN.Text = ""
         TXTLN.Text = ""
-        TXTTEL.Text = ""
-        TXTEMAIL.Text = ""
-        TXTADDRESS.Text = ""
         TXTNAME.Text = ""
         CHKPASS.Checked = False
 
@@ -370,9 +295,6 @@ Public Class ucUSERMANAGEMENT
         TXTNAME.Enabled = False
         TXTMN.Enabled = False
         TXTLN.Enabled = False
-        TXTTEL.Enabled = False
-        TXTEMAIL.Enabled = False
-        TXTADDRESS.Enabled = False
 
         TXTCP.Enabled = False
         TXTPW.Enabled = False
@@ -394,22 +316,14 @@ Public Class ucUSERMANAGEMENT
         TXTNAME.Enabled = True
         TXTMN.Enabled = True
         TXTLN.Enabled = True
-        TXTTEL.Enabled = True
-        TXTEMAIL.Enabled = True
-        TXTADDRESS.Enabled = True
 
         TXTCP.Enabled = True
         TXTPW.Enabled = True
         CBOSTATUS.Enabled = True
 
     End Sub
-
-    Private Sub CBOSTATUS_SelectedIndexChanged(sender As Object, e As EventArgs) Handles CBOSTATUS.SelectedIndexChanged
-
-    End Sub
-
     Private Sub searchuser()
-        Dim dba As New MySqlDataAdapter("Select username, usertype, userid, refid, status, password, firstname, middlename, lastname, telno, email, address from tbl_users WHERE tbl_users.username Like '%" & Me.txtsearch.Text & "%';", con)
+        Dim dba As New MySqlDataAdapter("Select username, usertype, userid, refid, status, password, firstname, middlename, lastname from tbl_users WHERE tbl_users.username Like '%" & Me.txtsearch.Text & "%';", con)
         Dim dbset As New DataSet
         dba.Fill(dbset)
         Me.DGVUSERS.DataSource = dbset.Tables(0).DefaultView
@@ -418,19 +332,6 @@ Public Class ucUSERMANAGEMENT
 
     Private Sub txtsearch_TextChanged(sender As Object, e As EventArgs) Handles txtsearch.TextChanged
         searchuser()
-    End Sub
-
-    Private Sub TXTTEL_KeyPress(sender As Object, e As KeyPressEventArgs) Handles TXTTEL.KeyPress
-        If Not Char.IsNumber(e.KeyChar) And Not Char.IsControl(e.KeyChar) Then
-            e.Handled = True
-            MsgBox("Letter or Special character is not allowed", vbCritical, "Error")
-        End If
-        If TXTTEL.Text.Length >= 12 Then
-            If e.KeyChar <> ControlChars.Back Then
-                e.Handled = True
-                MsgBox("Number Exceed", vbCritical, "Error")
-            End If
-        End If
     End Sub
 
     Private Sub TXTFN_KeyPress(sender As Object, e As KeyPressEventArgs) Handles TXTFN.KeyPress
@@ -452,64 +353,6 @@ Public Class ucUSERMANAGEMENT
         End If
     End Sub
 
-    'Private Sub TXTEMAIL_Validating(sender As Object, e As CancelEventArgs) Handles TXTEMAIL.Validating
-    '    ' Get the entered email address from the TextBox
-    '    Dim emailAddress As String = TXTEMAIL.Text.Trim()
-
-    '    ' Check if the email address is in a valid format
-    '    If Not IsValidEmail(emailAddress) Then
-    '        ' Display a warning message and cancel the event to prevent the TextBox from losing focus
-    '        MessageBox.Show("The email address you entered is not in a valid format. Please enter a valid email address.", "Invalid Email Address", MessageBoxButtons.OK, MessageBoxIcon.Warning)
-    '        e.Cancel = True
-    '    End If
-    'End Sub
-
-    '' Helper function to check if an email address is in a valid format
-    'Private Function IsValidEmail(ByVal emailAddress As String) As Boolean
-    '    Dim emailRegex As New System.Text.RegularExpressions.Regex("^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$")
-    '    Return emailRegex.IsMatch(emailAddress)
-    'End Function
-
-    'Private Sub TXTADDRESS_Validating(sender As Object, e As CancelEventArgs) Handles TXTADDRESS.Validating
-    '    ' Get the entered address from the TextBox
-    '    Dim address As String = TXTADDRESS.Text.Trim()
-
-    '    ' Check if the address is in a valid format
-    '    If Not IsValidAddress(address) Then
-    '        ' Display a warning message and cancel the event to prevent the TextBox from losing focus
-    '        MessageBox.Show("The address you entered is not in a valid format. Please enter a valid address.", "Invalid Address", MessageBoxButtons.OK, MessageBoxIcon.Warning)
-    '        e.Cancel = True
-    '    End If
-    'End Sub
-
-    '' Helper function to check if an address is in a valid format
-    'Private Function IsValidAddress(ByVal address As String) As Boolean
-    '    ' Check if the address is null or empty
-    '    If String.IsNullOrEmpty(address) Then
-    '        Return False
-    '    End If
-
-    '    ' Check if the address contains only letters, numbers, spaces, commas, and periods
-    '    Dim validChars As String = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789 ,."
-    '    For Each c As Char In address
-    '        If Not validChars.Contains(c) Then
-    '            Return False
-    '        End If
-    '    Next
-
-    '    ' Check if the address contains at least one letter or number
-    '    If Not address.Any(Function(c) Char.IsLetterOrDigit(c)) Then
-    '        Return False
-    '    End If
-
-    '    ' Check if the address starts with a number or letter
-    '    If Not Char.IsLetterOrDigit(address(0)) Then
-    '        Return False
-    '    End If
-
-    '    Return True
-    'End Function
-
     Private Sub DGVUSERS_CellClick(sender As Object, e As DataGridViewCellEventArgs) Handles DGVUSERS.CellClick
 
         PANELTYPE.Visible = True
@@ -527,11 +370,7 @@ Public Class ucUSERMANAGEMENT
             TXTFN.Text = row.Cells(6).Value.ToString()
             TXTMN.Text = row.Cells(7).Value.ToString()
             TXTLN.Text = row.Cells(8).Value.ToString()
-            TXTTEL.Text = row.Cells(9).Value.ToString()
-            TXTEMAIL.Text = row.Cells(10).Value.ToString()
-            TXTADDRESS.Text = row.Cells(11).Value.ToString()
         End If
-        BTNDELETE.Enabled = True
         BTNEDIT.Text = "Save Edit"
         If BTNEDIT.Text = "Save Edit" Then BTNSAVE.Visible = False
 
@@ -543,9 +382,6 @@ Public Class ucUSERMANAGEMENT
         TXTNAME.Enabled = True
         TXTMN.Enabled = True
         TXTLN.Enabled = True
-        TXTTEL.Enabled = True
-        TXTEMAIL.Enabled = True
-        TXTADDRESS.Enabled = True
         TXTCP.Enabled = True
         TXTPW.Enabled = True
         CBOSTATUS.Enabled = True

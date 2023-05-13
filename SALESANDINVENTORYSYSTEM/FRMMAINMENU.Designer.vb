@@ -48,14 +48,14 @@ Partial Class FRMMAINMENU
         'PNLMAIN
         '
         Me.PNLMAIN.BackColor = System.Drawing.Color.White
-        Me.PNLMAIN.Location = New System.Drawing.Point(251, -3)
+        Me.PNLMAIN.Dock = System.Windows.Forms.DockStyle.Bottom
+        Me.PNLMAIN.Location = New System.Drawing.Point(259, 0)
         Me.PNLMAIN.Name = "PNLMAIN"
-        Me.PNLMAIN.Size = New System.Drawing.Size(1113, 682)
+        Me.PNLMAIN.Size = New System.Drawing.Size(1091, 729)
         Me.PNLMAIN.TabIndex = 18
         '
         'Panel1
         '
-        Me.Panel1.Anchor = System.Windows.Forms.AnchorStyles.None
         Me.Panel1.BackColor = System.Drawing.Color.FromArgb(CType(CType(37, Byte), Integer), CType(CType(46, Byte), Integer), CType(CType(59, Byte), Integer))
         Me.Panel1.Controls.Add(Me.Label2)
         Me.Panel1.Controls.Add(Me.BTNSALES)
@@ -71,9 +71,10 @@ Partial Class FRMMAINMENU
         Me.Panel1.Controls.Add(Me.BTNLOGOUT)
         Me.Panel1.Controls.Add(Me.BTNSETTINGS)
         Me.Panel1.Controls.Add(Me.BTNDASHBOARD)
-        Me.Panel1.Location = New System.Drawing.Point(-6, -41)
+        Me.Panel1.Dock = System.Windows.Forms.DockStyle.Left
+        Me.Panel1.Location = New System.Drawing.Point(0, 0)
         Me.Panel1.Name = "Panel1"
-        Me.Panel1.Size = New System.Drawing.Size(259, 720)
+        Me.Panel1.Size = New System.Drawing.Size(259, 729)
         Me.Panel1.TabIndex = 20
         '
         'Label2
@@ -300,13 +301,17 @@ Partial Class FRMMAINMENU
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(1364, 678)
-        Me.Controls.Add(Me.Panel1)
+        Me.AutoSize = True
+        Me.ClientSize = New System.Drawing.Size(1350, 729)
         Me.Controls.Add(Me.PNLMAIN)
-        Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None
+        Me.Controls.Add(Me.Panel1)
+        Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D
+        Me.HelpButton = True
+        Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.Name = "FRMMAINMENU"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Main Menu"
+        Me.TransparencyKey = System.Drawing.SystemColors.Desktop
         Me.Panel1.ResumeLayout(False)
         Me.Panel1.PerformLayout()
         CType(Me.Guna2CirclePictureBox1, System.ComponentModel.ISupportInitialize).EndInit()

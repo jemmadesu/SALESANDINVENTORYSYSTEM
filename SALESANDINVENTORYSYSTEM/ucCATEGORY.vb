@@ -32,32 +32,11 @@ Public Class ucCATEGORY
 
         End Try
     End Sub
-    'Private Sub Getmax()
-    '    OpenCon()
-    '    cmd.CommandText = "Select * from tbl_category"
-    '    dr = cmd.ExecuteReader
-    '    If dr.HasRows Then
-    '        Dim getno As Integer
-    '        con.Close()
-    '        OpenCon()
-    '        cmd.CommandText = "Select Max(ID) from tbl_category"
-    '        getno = Convert.ToInt64(cmd.ExecuteScalar())
-    '        con.Close()
-    '        TXTID.Text = getno + 1
-    '    Else
-    '        TXTID.Text = 1
-    '        con.Close()
-    '    End If
-    'End Sub
-
-
     Private Sub DGVSETPROPERTY()
         DGVPRODUCTS.Columns(0).Width = 200
         DGVPRODUCTS.Columns(0).HeaderText = "Category Code"
         DGVPRODUCTS.Columns(1).Width = 200
         DGVPRODUCTS.Columns(1).HeaderText = "Category Name"
-
-
     End Sub
 
 
@@ -75,8 +54,6 @@ Public Class ucCATEGORY
         Catch ex As Exception
 
             MessageBox.Show(ex.ToString())
-
-
 
         End Try
 
@@ -106,17 +83,11 @@ Public Class ucCATEGORY
 
     Private Sub BTNINSERT_Click_1(sender As Object, e As EventArgs) Handles BTNINSERT.Click
 
-
         OpenCon()
-
-
         cmd.CommandText = "insert into tbl_category values (NULL, @cc, @cn)"
         With cmd.Parameters
 
             .Clear()
-
-
-
             .AddWithValue("cc", TXTCATCODE.Text)
             .AddWithValue("cn", TXTCATNAME.Text)
 
@@ -198,7 +169,7 @@ Public Class ucCATEGORY
 
 
 
-    Private Sub DGVPRODUCTS_CellClick(sender As Object, e As DataGridViewCellEventArgs) Handles DGVPRODUCTS.CellContentClick
+    Private Sub DGVPRODUCTS_CellClick(sender As Object, e As DataGridViewCellEventArgs) Handles DGVPRODUCTS.CellClick
 
         TXTCATNAME.Enabled = True
         TXTCATCODE.Enabled = True
