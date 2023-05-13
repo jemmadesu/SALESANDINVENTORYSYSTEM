@@ -19,7 +19,7 @@
     <Shape ID="DesignTable:tbl_expiredproducts" ZOrder="4" X="2923" Y="0" Height="305" Width="261" AdapterExpanded="true" DataTableExpanded="true" OldAdapterHeight="0" OldDataTableHeight="0" SplitterPosition="254" />
     <Shape ID="DesignTable:tbl_brand" ZOrder="3" X="0" Y="0" Height="90" Width="158" AdapterExpanded="true" DataTableExpanded="true" OldAdapterHeight="0" OldDataTableHeight="0" SplitterPosition="0" />
     <Shape ID="DesignTable:tbl_manufacturer" ZOrder="2" X="3254" Y="0" Height="134" Width="244" AdapterExpanded="true" DataTableExpanded="true" OldAdapterHeight="0" OldDataTableHeight="0" SplitterPosition="83" />
-    <Shape ID="DesignTable:tbl_delivery" ZOrder="6" X="0" Y="0" Height="90" Width="158" AdapterExpanded="true" DataTableExpanded="true" OldAdapterHeight="0" OldDataTableHeight="0" SplitterPosition="0" />
+    <Shape ID="DesignTable:tbl_delivery" ZOrder="6" X="0" Y="0" Height="248" Width="212" AdapterExpanded="true" DataTableExpanded="true" OldAdapterHeight="0" OldDataTableHeight="0" SplitterPosition="197" />
     <Shape ID="DesignTable:tbl_cart" ZOrder="1" X="3568" Y="0" Height="267" Width="188" AdapterExpanded="true" DataTableExpanded="true" OldAdapterHeight="0" OldDataTableHeight="0" SplitterPosition="216" />
   </Shapes>
   <Connectors>

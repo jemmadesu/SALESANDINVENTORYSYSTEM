@@ -5592,6 +5592,8 @@ Partial Public Class inventory_dbDataSet
         
         Private columndatedelivered As Global.System.Data.DataColumn
         
+        Private columnprodcode As Global.System.Data.DataColumn
+        
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
         Public Sub New()
@@ -5692,6 +5694,14 @@ Partial Public Class inventory_dbDataSet
         End Property
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
+        Public ReadOnly Property prodcodeColumn() As Global.System.Data.DataColumn
+            Get
+                Return Me.columnprodcode
+            End Get
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0"),  _
          Global.System.ComponentModel.Browsable(false)>  _
         Public ReadOnly Property Count() As Integer
@@ -5728,9 +5738,9 @@ Partial Public Class inventory_dbDataSet
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
-        Public Overloads Function Addtbl_deliveryRow(ByVal Supplier As String, ByVal prodid As String, ByVal prodname As String, ByVal quantity As Integer, ByVal manufactureddate As Date, ByVal expirationdate As Date, ByVal datedelivered As String) As tbl_deliveryRow
+        Public Overloads Function Addtbl_deliveryRow(ByVal Supplier As String, ByVal prodid As String, ByVal prodname As String, ByVal quantity As Integer, ByVal manufactureddate As Date, ByVal expirationdate As Date, ByVal datedelivered As String, ByVal prodcode As String) As tbl_deliveryRow
             Dim rowtbl_deliveryRow As tbl_deliveryRow = CType(Me.NewRow,tbl_deliveryRow)
-            Dim columnValuesArray() As Object = New Object() {Nothing, Supplier, prodid, prodname, quantity, manufactureddate, expirationdate, datedelivered}
+            Dim columnValuesArray() As Object = New Object() {Nothing, Supplier, prodid, prodname, quantity, manufactureddate, expirationdate, datedelivered, prodcode}
             rowtbl_deliveryRow.ItemArray = columnValuesArray
             Me.Rows.Add(rowtbl_deliveryRow)
             Return rowtbl_deliveryRow
@@ -5767,6 +5777,7 @@ Partial Public Class inventory_dbDataSet
             Me.columnmanufactureddate = MyBase.Columns("manufactureddate")
             Me.columnexpirationdate = MyBase.Columns("expirationdate")
             Me.columndatedelivered = MyBase.Columns("datedelivered")
+            Me.columnprodcode = MyBase.Columns("prodcode")
         End Sub
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
@@ -5788,6 +5799,8 @@ Partial Public Class inventory_dbDataSet
             MyBase.Columns.Add(Me.columnexpirationdate)
             Me.columndatedelivered = New Global.System.Data.DataColumn("datedelivered", GetType(String), Nothing, Global.System.Data.MappingType.Element)
             MyBase.Columns.Add(Me.columndatedelivered)
+            Me.columnprodcode = New Global.System.Data.DataColumn("prodcode", GetType(String), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columnprodcode)
             Me.Constraints.Add(New Global.System.Data.UniqueConstraint("Constraint1", New Global.System.Data.DataColumn() {Me.columnrefno}, true))
             Me.columnrefno.AutoIncrement = true
             Me.columnrefno.AutoIncrementSeed = -1
@@ -5805,6 +5818,7 @@ Partial Public Class inventory_dbDataSet
             Me.columnexpirationdate.AllowDBNull = false
             Me.columndatedelivered.AllowDBNull = false
             Me.columndatedelivered.MaxLength = 45
+            Me.columnprodcode.MaxLength = 45
         End Sub
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
@@ -8176,6 +8190,33 @@ Partial Public Class inventory_dbDataSet
                 Me(Me.tabletbl_delivery.datedeliveredColumn) = value
             End Set
         End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
+        Public Property prodcode() As String
+            Get
+                Try 
+                    Return CType(Me(Me.tabletbl_delivery.prodcodeColumn),String)
+                Catch e As Global.System.InvalidCastException
+                    Throw New Global.System.Data.StrongTypingException("The value for column 'prodcode' in table 'tbl_delivery' is DBNull.", e)
+                End Try
+            End Get
+            Set
+                Me(Me.tabletbl_delivery.prodcodeColumn) = value
+            End Set
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
+        Public Function IsprodcodeNull() As Boolean
+            Return Me.IsNull(Me.tabletbl_delivery.prodcodeColumn)
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
+        Public Sub SetprodcodeNull()
+            Me(Me.tabletbl_delivery.prodcodeColumn) = Global.System.Convert.DBNull
+        End Sub
     End Class
     
     '''<summary>
@@ -18318,12 +18359,14 @@ Namespace inventory_dbDataSetTableAdapters
             tableMapping.ColumnMappings.Add("manufactureddate", "manufactureddate")
             tableMapping.ColumnMappings.Add("expirationdate", "expirationdate")
             tableMapping.ColumnMappings.Add("datedelivered", "datedelivered")
+            tableMapping.ColumnMappings.Add("prodcode", "prodcode")
             Me._adapter.TableMappings.Add(tableMapping)
             Me._adapter.DeleteCommand = New Global.MySql.Data.MySqlClient.MySqlCommand()
             Me._adapter.DeleteCommand.Connection = Me.Connection
             Me._adapter.DeleteCommand.CommandText = "DELETE FROM `tbl_delivery` WHERE ((`refno` = @p1) AND (`Supplier` = @p2) AND (`pr"& _ 
                 "odid` = @p3) AND (`prodname` = @p4) AND (`quantity` = @p5) AND (`manufactureddat"& _ 
-                "e` = @p6) AND (`expirationdate` = @p7) AND (`datedelivered` = @p8))"
+                "e` = @p6) AND (`expirationdate` = @p7) AND (`datedelivered` = @p8) AND ((@p9 = 1"& _ 
+                " AND `prodcode` IS NULL) OR (`prodcode` = @p10)))"
             Me._adapter.DeleteCommand.CommandType = Global.System.Data.CommandType.Text
             Dim param As Global.MySql.Data.MySqlClient.MySqlParameter = New Global.MySql.Data.MySqlClient.MySqlParameter()
             param.ParameterName = "@p1"
@@ -18383,17 +18426,34 @@ Namespace inventory_dbDataSetTableAdapters
             Me._adapter.DeleteCommand.Parameters.Add(param)
             param = New Global.MySql.Data.MySqlClient.MySqlParameter()
             param.ParameterName = "@p8"
+            param.DbType = Global.System.Data.DbType.[Date]
+            param.MySqlDbType = Global.MySql.Data.MySqlClient.MySqlDbType.[Date]
+            param.IsNullable = true
+            param.SourceColumn = "datedelivered"
+            param.SourceVersion = Global.System.Data.DataRowVersion.Original
+            Me._adapter.DeleteCommand.Parameters.Add(param)
+            param = New Global.MySql.Data.MySqlClient.MySqlParameter()
+            param.ParameterName = "@p9"
+            param.DbType = Global.System.Data.DbType.Int32
+            param.MySqlDbType = Global.MySql.Data.MySqlClient.MySqlDbType.Int32
+            param.IsNullable = true
+            param.SourceColumn = "prodcode"
+            param.SourceVersion = Global.System.Data.DataRowVersion.Original
+            param.SourceColumnNullMapping = true
+            Me._adapter.DeleteCommand.Parameters.Add(param)
+            param = New Global.MySql.Data.MySqlClient.MySqlParameter()
+            param.ParameterName = "@p10"
             param.DbType = Global.System.Data.DbType.[String]
             param.MySqlDbType = Global.MySql.Data.MySqlClient.MySqlDbType.VarChar
             param.IsNullable = true
-            param.SourceColumn = "datedelivered"
+            param.SourceColumn = "prodcode"
             param.SourceVersion = Global.System.Data.DataRowVersion.Original
             Me._adapter.DeleteCommand.Parameters.Add(param)
             Me._adapter.InsertCommand = New Global.MySql.Data.MySqlClient.MySqlCommand()
             Me._adapter.InsertCommand.Connection = Me.Connection
             Me._adapter.InsertCommand.CommandText = "INSERT INTO `tbl_delivery` (`Supplier`, `prodid`, `prodname`, `quantity`, `manufa"& _ 
-                "ctureddate`, `expirationdate`, `datedelivered`) VALUES (@p1, @p2, @p3, @p4, @p5,"& _ 
-                " @p6, @p7)"
+                "ctureddate`, `expirationdate`, `datedelivered`, `prodcode`) VALUES (@p1, @p2, @p"& _ 
+                "3, @p4, @p5, @p6, @p7, @p8)"
             Me._adapter.InsertCommand.CommandType = Global.System.Data.CommandType.Text
             param = New Global.MySql.Data.MySqlClient.MySqlParameter()
             param.ParameterName = "@p1"
@@ -18445,19 +18505,28 @@ Namespace inventory_dbDataSetTableAdapters
             Me._adapter.InsertCommand.Parameters.Add(param)
             param = New Global.MySql.Data.MySqlClient.MySqlParameter()
             param.ParameterName = "@p7"
+            param.DbType = Global.System.Data.DbType.[Date]
+            param.MySqlDbType = Global.MySql.Data.MySqlClient.MySqlDbType.[Date]
+            param.IsNullable = true
+            param.SourceColumn = "datedelivered"
+            param.SourceVersion = Global.System.Data.DataRowVersion.Current
+            Me._adapter.InsertCommand.Parameters.Add(param)
+            param = New Global.MySql.Data.MySqlClient.MySqlParameter()
+            param.ParameterName = "@p8"
             param.DbType = Global.System.Data.DbType.[String]
             param.MySqlDbType = Global.MySql.Data.MySqlClient.MySqlDbType.VarChar
             param.IsNullable = true
-            param.SourceColumn = "datedelivered"
+            param.SourceColumn = "prodcode"
             param.SourceVersion = Global.System.Data.DataRowVersion.Current
             Me._adapter.InsertCommand.Parameters.Add(param)
             Me._adapter.UpdateCommand = New Global.MySql.Data.MySqlClient.MySqlCommand()
             Me._adapter.UpdateCommand.Connection = Me.Connection
             Me._adapter.UpdateCommand.CommandText = "UPDATE `tbl_delivery` SET `Supplier` = @p1, `prodid` = @p2, `prodname` = @p3, `qu"& _ 
                 "antity` = @p4, `manufactureddate` = @p5, `expirationdate` = @p6, `datedelivered`"& _ 
-                " = @p7 WHERE ((`refno` = @p8) AND (`Supplier` = @p9) AND (`prodid` = @p10) AND ("& _ 
-                "`prodname` = @p11) AND (`quantity` = @p12) AND (`manufactureddate` = @p13) AND ("& _ 
-                "`expirationdate` = @p14) AND (`datedelivered` = @p15))"
+                " = @p7, `prodcode` = @p8 WHERE ((`refno` = @p9) AND (`Supplier` = @p10) AND (`pr"& _ 
+                "odid` = @p11) AND (`prodname` = @p12) AND (`quantity` = @p13) AND (`manufactured"& _ 
+                "date` = @p14) AND (`expirationdate` = @p15) AND (`datedelivered` = @p16) AND ((@"& _ 
+                "p17 = 1 AND `prodcode` IS NULL) OR (`prodcode` = @p18)))"
             Me._adapter.UpdateCommand.CommandType = Global.System.Data.CommandType.Text
             param = New Global.MySql.Data.MySqlClient.MySqlParameter()
             param.ParameterName = "@p1"
@@ -18509,14 +18578,22 @@ Namespace inventory_dbDataSetTableAdapters
             Me._adapter.UpdateCommand.Parameters.Add(param)
             param = New Global.MySql.Data.MySqlClient.MySqlParameter()
             param.ParameterName = "@p7"
-            param.DbType = Global.System.Data.DbType.[String]
-            param.MySqlDbType = Global.MySql.Data.MySqlClient.MySqlDbType.VarChar
+            param.DbType = Global.System.Data.DbType.[Date]
+            param.MySqlDbType = Global.MySql.Data.MySqlClient.MySqlDbType.[Date]
             param.IsNullable = true
             param.SourceColumn = "datedelivered"
             param.SourceVersion = Global.System.Data.DataRowVersion.Current
             Me._adapter.UpdateCommand.Parameters.Add(param)
             param = New Global.MySql.Data.MySqlClient.MySqlParameter()
             param.ParameterName = "@p8"
+            param.DbType = Global.System.Data.DbType.[String]
+            param.MySqlDbType = Global.MySql.Data.MySqlClient.MySqlDbType.VarChar
+            param.IsNullable = true
+            param.SourceColumn = "prodcode"
+            param.SourceVersion = Global.System.Data.DataRowVersion.Current
+            Me._adapter.UpdateCommand.Parameters.Add(param)
+            param = New Global.MySql.Data.MySqlClient.MySqlParameter()
+            param.ParameterName = "@p9"
             param.DbType = Global.System.Data.DbType.Int32
             param.MySqlDbType = Global.MySql.Data.MySqlClient.MySqlDbType.Int32
             param.IsNullable = true
@@ -18524,7 +18601,7 @@ Namespace inventory_dbDataSetTableAdapters
             param.SourceVersion = Global.System.Data.DataRowVersion.Original
             Me._adapter.UpdateCommand.Parameters.Add(param)
             param = New Global.MySql.Data.MySqlClient.MySqlParameter()
-            param.ParameterName = "@p9"
+            param.ParameterName = "@p10"
             param.DbType = Global.System.Data.DbType.[String]
             param.MySqlDbType = Global.MySql.Data.MySqlClient.MySqlDbType.VarChar
             param.IsNullable = true
@@ -18532,7 +18609,7 @@ Namespace inventory_dbDataSetTableAdapters
             param.SourceVersion = Global.System.Data.DataRowVersion.Original
             Me._adapter.UpdateCommand.Parameters.Add(param)
             param = New Global.MySql.Data.MySqlClient.MySqlParameter()
-            param.ParameterName = "@p10"
+            param.ParameterName = "@p11"
             param.DbType = Global.System.Data.DbType.[String]
             param.MySqlDbType = Global.MySql.Data.MySqlClient.MySqlDbType.VarChar
             param.IsNullable = true
@@ -18540,7 +18617,7 @@ Namespace inventory_dbDataSetTableAdapters
             param.SourceVersion = Global.System.Data.DataRowVersion.Original
             Me._adapter.UpdateCommand.Parameters.Add(param)
             param = New Global.MySql.Data.MySqlClient.MySqlParameter()
-            param.ParameterName = "@p11"
+            param.ParameterName = "@p12"
             param.DbType = Global.System.Data.DbType.[String]
             param.MySqlDbType = Global.MySql.Data.MySqlClient.MySqlDbType.VarChar
             param.IsNullable = true
@@ -18548,7 +18625,7 @@ Namespace inventory_dbDataSetTableAdapters
             param.SourceVersion = Global.System.Data.DataRowVersion.Original
             Me._adapter.UpdateCommand.Parameters.Add(param)
             param = New Global.MySql.Data.MySqlClient.MySqlParameter()
-            param.ParameterName = "@p12"
+            param.ParameterName = "@p13"
             param.DbType = Global.System.Data.DbType.Int32
             param.MySqlDbType = Global.MySql.Data.MySqlClient.MySqlDbType.Int32
             param.IsNullable = true
@@ -18556,7 +18633,7 @@ Namespace inventory_dbDataSetTableAdapters
             param.SourceVersion = Global.System.Data.DataRowVersion.Original
             Me._adapter.UpdateCommand.Parameters.Add(param)
             param = New Global.MySql.Data.MySqlClient.MySqlParameter()
-            param.ParameterName = "@p13"
+            param.ParameterName = "@p14"
             param.DbType = Global.System.Data.DbType.[Date]
             param.MySqlDbType = Global.MySql.Data.MySqlClient.MySqlDbType.[Date]
             param.IsNullable = true
@@ -18564,7 +18641,7 @@ Namespace inventory_dbDataSetTableAdapters
             param.SourceVersion = Global.System.Data.DataRowVersion.Original
             Me._adapter.UpdateCommand.Parameters.Add(param)
             param = New Global.MySql.Data.MySqlClient.MySqlParameter()
-            param.ParameterName = "@p14"
+            param.ParameterName = "@p15"
             param.DbType = Global.System.Data.DbType.[Date]
             param.MySqlDbType = Global.MySql.Data.MySqlClient.MySqlDbType.[Date]
             param.IsNullable = true
@@ -18572,11 +18649,28 @@ Namespace inventory_dbDataSetTableAdapters
             param.SourceVersion = Global.System.Data.DataRowVersion.Original
             Me._adapter.UpdateCommand.Parameters.Add(param)
             param = New Global.MySql.Data.MySqlClient.MySqlParameter()
-            param.ParameterName = "@p15"
+            param.ParameterName = "@p16"
+            param.DbType = Global.System.Data.DbType.[Date]
+            param.MySqlDbType = Global.MySql.Data.MySqlClient.MySqlDbType.[Date]
+            param.IsNullable = true
+            param.SourceColumn = "datedelivered"
+            param.SourceVersion = Global.System.Data.DataRowVersion.Original
+            Me._adapter.UpdateCommand.Parameters.Add(param)
+            param = New Global.MySql.Data.MySqlClient.MySqlParameter()
+            param.ParameterName = "@p17"
+            param.DbType = Global.System.Data.DbType.Int32
+            param.MySqlDbType = Global.MySql.Data.MySqlClient.MySqlDbType.Int32
+            param.IsNullable = true
+            param.SourceColumn = "prodcode"
+            param.SourceVersion = Global.System.Data.DataRowVersion.Original
+            param.SourceColumnNullMapping = true
+            Me._adapter.UpdateCommand.Parameters.Add(param)
+            param = New Global.MySql.Data.MySqlClient.MySqlParameter()
+            param.ParameterName = "@p18"
             param.DbType = Global.System.Data.DbType.[String]
             param.MySqlDbType = Global.MySql.Data.MySqlClient.MySqlDbType.VarChar
             param.IsNullable = true
-            param.SourceColumn = "datedelivered"
+            param.SourceColumn = "prodcode"
             param.SourceVersion = Global.System.Data.DataRowVersion.Original
             Me._adapter.UpdateCommand.Parameters.Add(param)
         End Sub
@@ -18594,8 +18688,8 @@ Namespace inventory_dbDataSetTableAdapters
             Me._commandCollection = New Global.MySql.Data.MySqlClient.MySqlCommand(0) {}
             Me._commandCollection(0) = New Global.MySql.Data.MySqlClient.MySqlCommand()
             Me._commandCollection(0).Connection = Me.Connection
-            Me._commandCollection(0).CommandText = "SELECT `refno`, `Supplier`, `prodid`, `prodname`, `quantity`, `manufactureddate`,"& _ 
-                " `expirationdate`, `datedelivered` FROM `tbl_delivery`"
+            Me._commandCollection(0).CommandText = "SELECT refno, Supplier, prodid, prodname, quantity, manufactureddate, expirationd"& _ 
+                "ate, datedelivered, prodcode FROM tbl_delivery"
             Me._commandCollection(0).CommandType = Global.System.Data.CommandType.Text
         End Sub
         
@@ -18655,7 +18749,7 @@ Namespace inventory_dbDataSetTableAdapters
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0"),  _
          Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"),  _
          Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.Delete, true)>  _
-        Public Overloads Overridable Function Delete(ByVal p1 As Integer, ByVal p2 As String, ByVal p3 As String, ByVal p4 As String, ByVal p5 As Integer, ByVal p6 As Date, ByVal p7 As Date, ByVal p8 As String) As Integer
+        Public Overloads Overridable Function Delete(ByVal p1 As Integer, ByVal p2 As String, ByVal p3 As String, ByVal p4 As String, ByVal p5 As Integer, ByVal p6 As Date, ByVal p7 As Date, ByVal p8 As Date, ByVal p10 As String) As Integer
             Me.Adapter.DeleteCommand.Parameters(0).Value = CType(p1,Integer)
             If (p2 Is Nothing) Then
                 Throw New Global.System.ArgumentNullException("p2")
@@ -18675,10 +18769,13 @@ Namespace inventory_dbDataSetTableAdapters
             Me.Adapter.DeleteCommand.Parameters(4).Value = CType(p5,Integer)
             Me.Adapter.DeleteCommand.Parameters(5).Value = CType(p6,Date)
             Me.Adapter.DeleteCommand.Parameters(6).Value = CType(p7,Date)
-            If (p8 Is Nothing) Then
-                Throw New Global.System.ArgumentNullException("p8")
+            Me.Adapter.DeleteCommand.Parameters(7).Value = CType(p8,Date)
+            If (p10 Is Nothing) Then
+                Me.Adapter.DeleteCommand.Parameters(8).Value = CType(1,Object)
+                Me.Adapter.DeleteCommand.Parameters(9).Value = Global.System.DBNull.Value
             Else
-                Me.Adapter.DeleteCommand.Parameters(7).Value = CType(p8,String)
+                Me.Adapter.DeleteCommand.Parameters(8).Value = CType(0,Object)
+                Me.Adapter.DeleteCommand.Parameters(9).Value = CType(p10,String)
             End If
             Dim previousConnectionState As Global.System.Data.ConnectionState = Me.Adapter.DeleteCommand.Connection.State
             If ((Me.Adapter.DeleteCommand.Connection.State And Global.System.Data.ConnectionState.Open)  _
@@ -18699,7 +18796,7 @@ Namespace inventory_dbDataSetTableAdapters
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0"),  _
          Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"),  _
          Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.Insert, true)>  _
-        Public Overloads Overridable Function Insert(ByVal p1 As String, ByVal p2 As String, ByVal p3 As String, ByVal p4 As Integer, ByVal p5 As Date, ByVal p6 As Date, ByVal p7 As String) As Integer
+        Public Overloads Overridable Function Insert(ByVal p1 As String, ByVal p2 As String, ByVal p3 As String, ByVal p4 As Integer, ByVal p5 As Date, ByVal p6 As Date, ByVal p7 As Date, ByVal p8 As String) As Integer
             If (p1 Is Nothing) Then
                 Throw New Global.System.ArgumentNullException("p1")
             Else
@@ -18718,10 +18815,11 @@ Namespace inventory_dbDataSetTableAdapters
             Me.Adapter.InsertCommand.Parameters(3).Value = CType(p4,Integer)
             Me.Adapter.InsertCommand.Parameters(4).Value = CType(p5,Date)
             Me.Adapter.InsertCommand.Parameters(5).Value = CType(p6,Date)
-            If (p7 Is Nothing) Then
-                Throw New Global.System.ArgumentNullException("p7")
+            Me.Adapter.InsertCommand.Parameters(6).Value = CType(p7,Date)
+            If (p8 Is Nothing) Then
+                Me.Adapter.InsertCommand.Parameters(7).Value = Global.System.DBNull.Value
             Else
-                Me.Adapter.InsertCommand.Parameters(6).Value = CType(p7,String)
+                Me.Adapter.InsertCommand.Parameters(7).Value = CType(p8,String)
             End If
             Dim previousConnectionState As Global.System.Data.ConnectionState = Me.Adapter.InsertCommand.Connection.State
             If ((Me.Adapter.InsertCommand.Connection.State And Global.System.Data.ConnectionState.Open)  _
@@ -18742,7 +18840,24 @@ Namespace inventory_dbDataSetTableAdapters
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0"),  _
          Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"),  _
          Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.Update, true)>  _
-        Public Overloads Overridable Function Update(ByVal p1 As String, ByVal p2 As String, ByVal p3 As String, ByVal p4 As Integer, ByVal p5 As Date, ByVal p6 As Date, ByVal p7 As String, ByVal p8 As Integer, ByVal p9 As String, ByVal p10 As String, ByVal p11 As String, ByVal p12 As Integer, ByVal p13 As Date, ByVal p14 As Date, ByVal p15 As String) As Integer
+        Public Overloads Overridable Function Update( _
+                    ByVal p1 As String,  _
+                    ByVal p2 As String,  _
+                    ByVal p3 As String,  _
+                    ByVal p4 As Integer,  _
+                    ByVal p5 As Date,  _
+                    ByVal p6 As Date,  _
+                    ByVal p7 As Date,  _
+                    ByVal p8 As String,  _
+                    ByVal p9 As Integer,  _
+                    ByVal p10 As String,  _
+                    ByVal p11 As String,  _
+                    ByVal p12 As String,  _
+                    ByVal p13 As Integer,  _
+                    ByVal p14 As Date,  _
+                    ByVal p15 As Date,  _
+                    ByVal p16 As Date,  _
+                    ByVal p18 As String) As Integer
             If (p1 Is Nothing) Then
                 Throw New Global.System.ArgumentNullException("p1")
             Else
@@ -18761,17 +18876,13 @@ Namespace inventory_dbDataSetTableAdapters
             Me.Adapter.UpdateCommand.Parameters(3).Value = CType(p4,Integer)
             Me.Adapter.UpdateCommand.Parameters(4).Value = CType(p5,Date)
             Me.Adapter.UpdateCommand.Parameters(5).Value = CType(p6,Date)
-            If (p7 Is Nothing) Then
-                Throw New Global.System.ArgumentNullException("p7")
+            Me.Adapter.UpdateCommand.Parameters(6).Value = CType(p7,Date)
+            If (p8 Is Nothing) Then
+                Me.Adapter.UpdateCommand.Parameters(7).Value = Global.System.DBNull.Value
             Else
-                Me.Adapter.UpdateCommand.Parameters(6).Value = CType(p7,String)
+                Me.Adapter.UpdateCommand.Parameters(7).Value = CType(p8,String)
             End If
-            Me.Adapter.UpdateCommand.Parameters(7).Value = CType(p8,Integer)
-            If (p9 Is Nothing) Then
-                Throw New Global.System.ArgumentNullException("p9")
-            Else
-                Me.Adapter.UpdateCommand.Parameters(8).Value = CType(p9,String)
-            End If
+            Me.Adapter.UpdateCommand.Parameters(8).Value = CType(p9,Integer)
             If (p10 Is Nothing) Then
                 Throw New Global.System.ArgumentNullException("p10")
             Else
@@ -18782,13 +18893,21 @@ Namespace inventory_dbDataSetTableAdapters
             Else
                 Me.Adapter.UpdateCommand.Parameters(10).Value = CType(p11,String)
             End If
-            Me.Adapter.UpdateCommand.Parameters(11).Value = CType(p12,Integer)
-            Me.Adapter.UpdateCommand.Parameters(12).Value = CType(p13,Date)
-            Me.Adapter.UpdateCommand.Parameters(13).Value = CType(p14,Date)
-            If (p15 Is Nothing) Then
-                Throw New Global.System.ArgumentNullException("p15")
+            If (p12 Is Nothing) Then
+                Throw New Global.System.ArgumentNullException("p12")
             Else
-                Me.Adapter.UpdateCommand.Parameters(14).Value = CType(p15,String)
+                Me.Adapter.UpdateCommand.Parameters(11).Value = CType(p12,String)
+            End If
+            Me.Adapter.UpdateCommand.Parameters(12).Value = CType(p13,Integer)
+            Me.Adapter.UpdateCommand.Parameters(13).Value = CType(p14,Date)
+            Me.Adapter.UpdateCommand.Parameters(14).Value = CType(p15,Date)
+            Me.Adapter.UpdateCommand.Parameters(15).Value = CType(p16,Date)
+            If (p18 Is Nothing) Then
+                Me.Adapter.UpdateCommand.Parameters(16).Value = CType(1,Object)
+                Me.Adapter.UpdateCommand.Parameters(17).Value = Global.System.DBNull.Value
+            Else
+                Me.Adapter.UpdateCommand.Parameters(16).Value = CType(0,Object)
+                Me.Adapter.UpdateCommand.Parameters(17).Value = CType(p18,String)
             End If
             Dim previousConnectionState As Global.System.Data.ConnectionState = Me.Adapter.UpdateCommand.Connection.State
             If ((Me.Adapter.UpdateCommand.Connection.State And Global.System.Data.ConnectionState.Open)  _

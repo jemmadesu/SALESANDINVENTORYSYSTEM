@@ -3,6 +3,16 @@ Imports MySql.Data.MySqlClient
 Public Class FRMREPORTS
     Private Sub FRMREPORTS_Load(sender As Object, e As EventArgs) Handles MyBase.Load
 
+
+        Dim userType As String = LBLUSERNAME.Text
+        Dim parameter As New ReportParameter("UserType", userType)
+        RPTSTOCKS.LocalReport.SetParameters(parameter)
+
+
+        RPTSTOCKS.LocalReport.ReportPath = "c:\users\jesse celeridad\source\repos\salesandinventorysystem\SALESANDINVENTORYSYSTEM\RPTSTOCKS.rdlc" ' Set the path to your RDLC file
+        RPTSTOCKS.RefreshReport()
+
+
         ' ----- CODE FOR COMBO BOX CATEGORY -----
 
         Dim cmd As New MySqlCommand("SELECT ID, catcode, catname FROM tbl_category", con)

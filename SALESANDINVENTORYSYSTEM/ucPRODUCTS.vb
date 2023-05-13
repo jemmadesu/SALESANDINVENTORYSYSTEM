@@ -227,7 +227,7 @@ Public Class ucNEWPRODUCT
         TXTPI.Focus()
 
         OpenCon()
-        cmd.CommandText = "insert into tbl_products (id, prodid, prodname, manufacturer, brand, category, catcode, unit, price dateaddedprod) values (@id, @pid, @pna, @pm, @pb, @pc, @cc, @un, @pr, @dap)"
+        cmd.CommandText = "insert into tbl_products (id, prodcode, prodname, manufacturer, brand, category, catcode, unit, price, dateaddedprod) values (@id, @pid, @pna, @pm, @pb, @pc, @cc, @un, @pr, @dap)"
         With cmd.Parameters
 
             .Clear()

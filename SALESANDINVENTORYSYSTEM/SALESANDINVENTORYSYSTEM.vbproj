@@ -420,6 +420,7 @@
       <SubType>Designer</SubType>
       <LastGenOutput>Resources.Designer.vb</LastGenOutput>
     </EmbeddedResource>
+    <EmbeddedResource Include="RPTDELIVERY.rdlc" />
     <EmbeddedResource Include="RPTPRODUCTS.rdlc" />
     <EmbeddedResource Include="RPTSALES.rdlc" />
     <EmbeddedResource Include="RPTSTOCKS.rdlc" />

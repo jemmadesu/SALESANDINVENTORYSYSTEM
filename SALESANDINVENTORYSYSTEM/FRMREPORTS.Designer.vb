@@ -33,11 +33,6 @@ Partial Class FRMREPORTS
         Dim ReportDataSource8 As Microsoft.Reporting.WinForms.ReportDataSource = New Microsoft.Reporting.WinForms.ReportDataSource()
         Dim ReportDataSource9 As Microsoft.Reporting.WinForms.ReportDataSource = New Microsoft.Reporting.WinForms.ReportDataSource()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(FRMREPORTS))
-        Me.tbl_salesBindingSource = New System.Windows.Forms.BindingSource(Me.components)
-        Me.inventory_dbDataSet = New SALESANDINVENTORYSYSTEM.inventory_dbDataSet()
-        Me.tbl_stocksBindingSource = New System.Windows.Forms.BindingSource(Me.components)
-        Me.tbl_productsBindingSource = New System.Windows.Forms.BindingSource(Me.components)
-        Me.tbl_usersBindingSource = New System.Windows.Forms.BindingSource(Me.components)
         Me.Panel1 = New System.Windows.Forms.Panel()
         Me.TPTRANSREC = New System.Windows.Forms.TabPage()
         Me.Label13 = New System.Windows.Forms.Label()
@@ -96,23 +91,23 @@ Partial Class FRMREPORTS
         Me.CBOPRODUCTSCATEGORY = New Guna.UI2.WinForms.Guna2ComboBox()
         Me.RPTPRODUCTS = New Microsoft.Reporting.WinForms.ReportViewer()
         Me.TPUSERS = New System.Windows.Forms.TabPage()
+        Me.Label6 = New System.Windows.Forms.Label()
+        Me.LBLUSERNAME = New System.Windows.Forms.Label()
         Me.RPTUSERS = New Microsoft.Reporting.WinForms.ReportViewer()
         Me.CLEARUSERS = New Guna.UI2.WinForms.Guna2Button()
         Me.Label2 = New System.Windows.Forms.Label()
         Me.FILTERUSERS = New Guna.UI2.WinForms.Guna2Button()
         Me.CBOUSERS = New Guna.UI2.WinForms.Guna2ComboBox()
         Me.TCREPORTS = New System.Windows.Forms.TabControl()
+        Me.tbl_usersBindingSource = New System.Windows.Forms.BindingSource(Me.components)
+        Me.inventory_dbDataSet = New SALESANDINVENTORYSYSTEM.inventory_dbDataSet()
+        Me.tbl_productsBindingSource = New System.Windows.Forms.BindingSource(Me.components)
+        Me.tbl_stocksBindingSource = New System.Windows.Forms.BindingSource(Me.components)
+        Me.tbl_salesBindingSource = New System.Windows.Forms.BindingSource(Me.components)
         Me.tbl_productsTableAdapter = New SALESANDINVENTORYSYSTEM.inventory_dbDataSetTableAdapters.tbl_productsTableAdapter()
         Me.tbl_salesTableAdapter = New SALESANDINVENTORYSYSTEM.inventory_dbDataSetTableAdapters.tbl_salesTableAdapter()
         Me.tbl_usersTableAdapter = New SALESANDINVENTORYSYSTEM.inventory_dbDataSetTableAdapters.tbl_usersTableAdapter()
         Me.tbl_stocksTableAdapter = New SALESANDINVENTORYSYSTEM.inventory_dbDataSetTableAdapters.tbl_stocksTableAdapter()
-        Me.LBLUSERNAME = New System.Windows.Forms.Label()
-        Me.Label6 = New System.Windows.Forms.Label()
-        CType(Me.tbl_salesBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.inventory_dbDataSet, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.tbl_stocksBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.tbl_productsBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.tbl_usersBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.TPTRANSREC.SuspendLayout()
         Me.TPACT.SuspendLayout()
         Me.TPSALES.SuspendLayout()
@@ -123,32 +118,12 @@ Partial Class FRMREPORTS
         Me.TPPRODS.SuspendLayout()
         Me.TPUSERS.SuspendLayout()
         Me.TCREPORTS.SuspendLayout()
+        CType(Me.tbl_usersBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.inventory_dbDataSet, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.tbl_productsBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.tbl_stocksBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.tbl_salesBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
-        '
-        'tbl_salesBindingSource
-        '
-        Me.tbl_salesBindingSource.DataMember = "tbl_sales"
-        Me.tbl_salesBindingSource.DataSource = Me.inventory_dbDataSet
-        '
-        'inventory_dbDataSet
-        '
-        Me.inventory_dbDataSet.DataSetName = "inventory_dbDataSet"
-        Me.inventory_dbDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema
-        '
-        'tbl_stocksBindingSource
-        '
-        Me.tbl_stocksBindingSource.DataMember = "tbl_stocks"
-        Me.tbl_stocksBindingSource.DataSource = Me.inventory_dbDataSet
-        '
-        'tbl_productsBindingSource
-        '
-        Me.tbl_productsBindingSource.DataMember = "tbl_products"
-        Me.tbl_productsBindingSource.DataSource = Me.inventory_dbDataSet
-        '
-        'tbl_usersBindingSource
-        '
-        Me.tbl_usersBindingSource.DataMember = "tbl_users"
-        Me.tbl_usersBindingSource.DataSource = Me.inventory_dbDataSet
         '
         'Panel1
         '
@@ -1011,6 +986,24 @@ Partial Class FRMREPORTS
         Me.TPUSERS.TabIndex = 0
         Me.TPUSERS.Text = "User Accounts"
         '
+        'Label6
+        '
+        Me.Label6.AutoSize = True
+        Me.Label6.Location = New System.Drawing.Point(890, 44)
+        Me.Label6.Name = "Label6"
+        Me.Label6.Size = New System.Drawing.Size(108, 20)
+        Me.Label6.TabIndex = 6
+        Me.Label6.Text = "Current User :"
+        '
+        'LBLUSERNAME
+        '
+        Me.LBLUSERNAME.AutoSize = True
+        Me.LBLUSERNAME.Location = New System.Drawing.Point(1004, 44)
+        Me.LBLUSERNAME.Name = "LBLUSERNAME"
+        Me.LBLUSERNAME.Size = New System.Drawing.Size(83, 20)
+        Me.LBLUSERNAME.TabIndex = 5
+        Me.LBLUSERNAME.Text = "Username"
+        '
         'RPTUSERS
         '
         ReportDataSource9.Name = "DataSet1"
@@ -1102,6 +1095,31 @@ Partial Class FRMREPORTS
         Me.TCREPORTS.Size = New System.Drawing.Size(1116, 652)
         Me.TCREPORTS.TabIndex = 23
         '
+        'tbl_usersBindingSource
+        '
+        Me.tbl_usersBindingSource.DataMember = "tbl_users"
+        Me.tbl_usersBindingSource.DataSource = Me.inventory_dbDataSet
+        '
+        'inventory_dbDataSet
+        '
+        Me.inventory_dbDataSet.DataSetName = "inventory_dbDataSet"
+        Me.inventory_dbDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema
+        '
+        'tbl_productsBindingSource
+        '
+        Me.tbl_productsBindingSource.DataMember = "tbl_products"
+        Me.tbl_productsBindingSource.DataSource = Me.inventory_dbDataSet
+        '
+        'tbl_stocksBindingSource
+        '
+        Me.tbl_stocksBindingSource.DataMember = "tbl_stocks"
+        Me.tbl_stocksBindingSource.DataSource = Me.inventory_dbDataSet
+        '
+        'tbl_salesBindingSource
+        '
+        Me.tbl_salesBindingSource.DataMember = "tbl_sales"
+        Me.tbl_salesBindingSource.DataSource = Me.inventory_dbDataSet
+        '
         'tbl_productsTableAdapter
         '
         Me.tbl_productsTableAdapter.ClearBeforeFill = True
@@ -1118,24 +1136,6 @@ Partial Class FRMREPORTS
         '
         Me.tbl_stocksTableAdapter.ClearBeforeFill = True
         '
-        'LBLUSERNAME
-        '
-        Me.LBLUSERNAME.AutoSize = True
-        Me.LBLUSERNAME.Location = New System.Drawing.Point(1004, 44)
-        Me.LBLUSERNAME.Name = "LBLUSERNAME"
-        Me.LBLUSERNAME.Size = New System.Drawing.Size(83, 20)
-        Me.LBLUSERNAME.TabIndex = 5
-        Me.LBLUSERNAME.Text = "Username"
-        '
-        'Label6
-        '
-        Me.Label6.AutoSize = True
-        Me.Label6.Location = New System.Drawing.Point(890, 44)
-        Me.Label6.Name = "Label6"
-        Me.Label6.Size = New System.Drawing.Size(108, 20)
-        Me.Label6.TabIndex = 6
-        Me.Label6.Text = "Current User :"
-        '
         'FRMREPORTS
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -1151,11 +1151,6 @@ Partial Class FRMREPORTS
         Me.Name = "FRMREPORTS"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Reports"
-        CType(Me.tbl_salesBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.inventory_dbDataSet, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.tbl_stocksBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.tbl_productsBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.tbl_usersBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
         Me.TPTRANSREC.ResumeLayout(False)
         Me.TPTRANSREC.PerformLayout()
         Me.TPACT.ResumeLayout(False)
@@ -1175,6 +1170,11 @@ Partial Class FRMREPORTS
         Me.TPUSERS.ResumeLayout(False)
         Me.TPUSERS.PerformLayout()
         Me.TCREPORTS.ResumeLayout(False)
+        CType(Me.tbl_usersBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.inventory_dbDataSet, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.tbl_productsBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.tbl_stocksBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.tbl_salesBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
 
     End Sub

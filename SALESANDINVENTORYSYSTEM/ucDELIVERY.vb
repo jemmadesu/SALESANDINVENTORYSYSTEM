@@ -140,12 +140,13 @@ Public Class ucRESTOCK
         actlog()
 
 
-        Dim cmdrec As New MySqlCommand("INSERT INTO tbl_delivery (supplier, prodid, prodname, quantity, manufactureddate, expirationdate, datedelivered) VALUES (@supplier, @prodid, @prodname, @quantity, @manufactureddate, @expirationdate, @datedelivered)", con)
+        Dim cmdrec As New MySqlCommand("INSERT INTO tbl_delivery (supplier, prodid, prodcode, prodname, quantity, manufactureddate, expirationdate, datedelivered) VALUES (@supplier, @prodid, @prodcode, @prodname, @quantity, @manufactureddate, @expirationdate, @datedelivered)", con)
 
         With cmdrec.Parameters
             .Clear()
             .AddWithValue("@supplier", CBOSUPPLIER.Text)
             .AddWithValue("@prodid", DGVPRODUCTS.CurrentRow.Cells(0).Value)
+            .AddWithValue("@prodcode", DGVPRODUCTS.CurrentRow.Cells(1).Value)
             .AddWithValue("@prodname", TXTPRODNAME.Text)
             .AddWithValue("@quantity", QTY.Text)
             .AddWithValue("@manufactureddate", Me.MANU.Value.ToString("yyyy-MM-dd"))
