@@ -1,5 +1,4 @@
-﻿Imports System.ComponentModel
-Imports MySql.Data.MySqlClient
+﻿Imports MySql.Data.MySqlClient
 Public Class ucSUPPLIER
 
     Private Sub DGVSET()

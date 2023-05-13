@@ -1,7 +1,6 @@
 ﻿
-Imports MySql.Data.MySqlClient
 Imports System.Drawing.Printing
-Imports System.IO
+Imports MySql.Data.MySqlClient
 
 
 Public Class ucTRANSACTION
@@ -474,7 +473,7 @@ Public Class ucTRANSACTION
 
         If Double.TryParse(TXTPAYMENT.Text, payment) AndAlso Double.TryParse(TOTALBILL.Text, total) Then
             If payment < total Then
-               
+
                 Exit Sub
             End If
         Else
@@ -751,7 +750,7 @@ Public Class ucTRANSACTION
 
     End Sub
 
-    Private Sub NumericUpDown1_ValueChanged(sender As Object, e As EventArgs) Handles NumericUpDown1.ValueChanged
+    Private Sub NumericUpDown1_ValueChanged(sender As Object, e As EventArgs)
         If TXTUNIT.Text = "Pack/s" Then NumericUpDown1.Value = 10
     End Sub
     Private Sub TXTOR_KeyPress(sender As Object, e As KeyPressEventArgs) Handles TXTOR.KeyPress

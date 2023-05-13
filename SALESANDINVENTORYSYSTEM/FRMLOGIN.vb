@@ -1,6 +1,4 @@
-﻿Imports MySql.Data.MySqlClient
-
-Public Class FRMLOGIN
+﻿Public Class FRMLOGIN
 
 
     Dim status As String = "Active"

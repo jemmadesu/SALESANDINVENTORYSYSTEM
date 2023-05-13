@@ -213,7 +213,7 @@ Public Class ucSETTINGS
         BRAND.Dock = DockStyle.Fill
     End Sub
 
-    Private Sub Button1_Click(sender As Object, e As EventArgs) 
+    Private Sub Button1_Click(sender As Object, e As EventArgs)
         Dim i As Integer
         For i = 0 To 0
             FRMMAINMENU.PNLMAIN.Controls.RemoveAt(i)

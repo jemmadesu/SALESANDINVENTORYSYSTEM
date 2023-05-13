@@ -35,7 +35,6 @@ Partial Class ucTRANSACTION
         Dim DataGridViewCellStyle11 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Me.Label11 = New System.Windows.Forms.Label()
         Me.Label7 = New System.Windows.Forms.Label()
-        Me.NumericUpDown1 = New System.Windows.Forms.NumericUpDown()
         Me.Label10 = New System.Windows.Forms.Label()
         Me.TXTSEARCH = New System.Windows.Forms.TextBox()
         Me.Label5 = New System.Windows.Forms.Label()
@@ -94,7 +93,7 @@ Partial Class ucTRANSACTION
         Me.Label18 = New System.Windows.Forms.Label()
         Me.ORNO = New System.Windows.Forms.Label()
         Me.Label21 = New System.Windows.Forms.Label()
-        CType(Me.NumericUpDown1, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.NumericUpDown1 = New Guna.UI2.WinForms.Guna2NumericUpDown()
         Me.GroupBox3.SuspendLayout()
         Me.GroupBox1.SuspendLayout()
         Me.pnlpayment.SuspendLayout()
@@ -105,6 +104,7 @@ Partial Class ucTRANSACTION
         CType(Me.DGVSUMMARY, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.Panel5.SuspendLayout()
         Me.Panel4.SuspendLayout()
+        CType(Me.NumericUpDown1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'Label11
@@ -128,17 +128,6 @@ Partial Class ucTRANSACTION
         Me.Label7.Size = New System.Drawing.Size(62, 17)
         Me.Label7.TabIndex = 14
         Me.Label7.Text = "Quantity:"
-        '
-        'NumericUpDown1
-        '
-        Me.NumericUpDown1.BackColor = System.Drawing.SystemColors.Window
-        Me.NumericUpDown1.Font = New System.Drawing.Font("Century Gothic", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.NumericUpDown1.ForeColor = System.Drawing.SystemColors.ControlDarkDark
-        Me.NumericUpDown1.Location = New System.Drawing.Point(126, 95)
-        Me.NumericUpDown1.Maximum = New Decimal(New Integer() {1000, 0, 0, 0})
-        Me.NumericUpDown1.Name = "NumericUpDown1"
-        Me.NumericUpDown1.Size = New System.Drawing.Size(121, 21)
-        Me.NumericUpDown1.TabIndex = 13
         '
         'Label10
         '
@@ -385,8 +374,8 @@ Partial Class ucTRANSACTION
         'GroupBox1
         '
         Me.GroupBox1.BackColor = System.Drawing.Color.White
-        Me.GroupBox1.Controls.Add(Me.Label7)
         Me.GroupBox1.Controls.Add(Me.NumericUpDown1)
+        Me.GroupBox1.Controls.Add(Me.Label7)
         Me.GroupBox1.Controls.Add(Me.BTNCART)
         Me.GroupBox1.Controls.Add(Me.TXTOR)
         Me.GroupBox1.Controls.Add(Me.Label1)
@@ -915,6 +904,27 @@ Partial Class ucTRANSACTION
         Me.Label21.TabIndex = 0
         Me.Label21.Text = "Order No :"
         '
+        'NumericUpDown1
+        '
+        Me.NumericUpDown1.BackColor = System.Drawing.Color.Transparent
+        Me.NumericUpDown1.Cursor = System.Windows.Forms.Cursors.IBeam
+        Me.NumericUpDown1.DisabledState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(208, Byte), Integer), CType(CType(208, Byte), Integer), CType(CType(208, Byte), Integer))
+        Me.NumericUpDown1.DisabledState.FillColor = System.Drawing.Color.FromArgb(CType(CType(226, Byte), Integer), CType(CType(226, Byte), Integer), CType(CType(226, Byte), Integer))
+        Me.NumericUpDown1.DisabledState.ForeColor = System.Drawing.Color.FromArgb(CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer))
+        Me.NumericUpDown1.DisabledState.Parent = Me.NumericUpDown1
+        Me.NumericUpDown1.DisabledState.UpDownButtonFillColor = System.Drawing.Color.FromArgb(CType(CType(177, Byte), Integer), CType(CType(177, Byte), Integer), CType(CType(177, Byte), Integer))
+        Me.NumericUpDown1.DisabledState.UpDownButtonForeColor = System.Drawing.Color.FromArgb(CType(CType(203, Byte), Integer), CType(CType(203, Byte), Integer), CType(CType(203, Byte), Integer))
+        Me.NumericUpDown1.FocusedState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
+        Me.NumericUpDown1.FocusedState.Parent = Me.NumericUpDown1
+        Me.NumericUpDown1.Font = New System.Drawing.Font("Segoe UI", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.NumericUpDown1.ForeColor = System.Drawing.Color.FromArgb(CType(CType(126, Byte), Integer), CType(CType(137, Byte), Integer), CType(CType(149, Byte), Integer))
+        Me.NumericUpDown1.Location = New System.Drawing.Point(126, 95)
+        Me.NumericUpDown1.Name = "NumericUpDown1"
+        Me.NumericUpDown1.ShadowDecoration.Parent = Me.NumericUpDown1
+        Me.NumericUpDown1.Size = New System.Drawing.Size(116, 21)
+        Me.NumericUpDown1.TabIndex = 78
+        Me.NumericUpDown1.UpDownButtonFillColor = System.Drawing.Color.MediumSeaGreen
+        '
         'ucTRANSACTION
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -938,7 +948,6 @@ Partial Class ucTRANSACTION
         Me.Controls.Add(Me.GroupBox3)
         Me.Name = "ucTRANSACTION"
         Me.Size = New System.Drawing.Size(1091, 855)
-        CType(Me.NumericUpDown1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.GroupBox3.ResumeLayout(False)
         Me.GroupBox3.PerformLayout()
         Me.GroupBox1.ResumeLayout(False)
@@ -955,13 +964,13 @@ Partial Class ucTRANSACTION
         Me.Panel5.PerformLayout()
         Me.Panel4.ResumeLayout(False)
         Me.Panel4.PerformLayout()
+        CType(Me.NumericUpDown1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
     End Sub
     Friend WithEvents Label11 As Label
     Friend WithEvents Label7 As Label
-    Friend WithEvents NumericUpDown1 As NumericUpDown
     Friend WithEvents Label10 As Label
     Friend WithEvents Label5 As Label
     Friend WithEvents TXTBILL As TextBox
@@ -1021,4 +1030,5 @@ Partial Class ucTRANSACTION
     Friend WithEvents Label18 As Label
     Friend WithEvents Label20 As Label
     Friend WithEvents Label19 As Label
+    Friend WithEvents NumericUpDown1 As Guna.UI2.WinForms.Guna2NumericUpDown
 End Class

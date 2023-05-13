@@ -1,5 +1,5 @@
-﻿Imports MySql.Data.MySqlClient
-Imports Microsoft.Reporting.WinForms
+﻿Imports Microsoft.Reporting.WinForms
+Imports MySql.Data.MySqlClient
 Public Class FRMREPORTS
     Private Sub FRMREPORTS_Load(sender As Object, e As EventArgs) Handles MyBase.Load
 
@@ -17,7 +17,10 @@ Public Class FRMREPORTS
         CBOCATEGORY.DataSource = tbl_category
         CBOCATEGORY.DisplayMember = "catname"
 
-        '--------------------------------------------------------------------------------------------------------------------------
+        CBOSTOCKS.DataSource = tbl_category
+        CBOSTOCKS.DisplayMember = "catname"
+
+        ' PRODUCTS REPORT -------------------------------------------------------------------------------------------------------------
 
         'TODO: This line of code loads data into the 'inventory_dbDataSet.tbl_products' table. You can move, or remove it, as needed.
         Me.RPTPRODUCTS.SetDisplayMode(Microsoft.Reporting.WinForms.DisplayMode.PrintLayout)
@@ -32,6 +35,15 @@ Public Class FRMREPORTS
         Me.tbl_salesTableAdapter.Fill(Me.inventory_dbDataSet.tbl_sales)
 
         Me.RPTSALES.RefreshReport()
+
+
+        ' USER REPORT -------------------------------------------------------------------------------------------------------------
+
+        'TODO: This line of code loads data into the 'inventory_dbDataSet.tbl_users' table. You can move, or remove it, as needed.
+        Me.RPTUSERS.SetDisplayMode(Microsoft.Reporting.WinForms.DisplayMode.PrintLayout)
+        Me.tbl_usersTableAdapter.Fill(Me.inventory_dbDataSet.tbl_users)
+
+        Me.RPTUSERS.RefreshReport()
     End Sub
     Private Sub BTNCLOSE_Click(sender As Object, e As EventArgs) Handles BTNCLOSE.Click
         Me.Close()
@@ -130,8 +142,15 @@ Public Class FRMREPORTS
 
         Me.RPTSALES.RefreshReport()
     End Sub
+    Private Sub FILTERUSERS_Click(sender As Object, e As EventArgs) Handles FILTERUSERS.Click
+        Me.tbl_usersTableAdapter.FillByusertype(Me.inventory_dbDataSet.tbl_users, CBOUSERS.Text)
 
-    Private Sub DELIVERYFILTER_Click(sender As Object, e As EventArgs) Handles DELIVERYFILTER.Click
+        Me.RPTUSERS.RefreshReport()
+    End Sub
 
+    Private Sub CLEARUSERS_Click(sender As Object, e As EventArgs) Handles CLEARUSERS.Click
+        Me.tbl_usersTableAdapter.Fill(Me.inventory_dbDataSet.tbl_users)
+
+        Me.RPTUSERS.RefreshReport()
     End Sub
 End Class

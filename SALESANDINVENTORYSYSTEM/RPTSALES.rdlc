@@ -67,19 +67,19 @@
                   <Width>1in</Width>
                 </TablixColumn>
                 <TablixColumn>
-                  <Width>1in</Width>
+                  <Width>1.3in</Width>
                 </TablixColumn>
                 <TablixColumn>
-                  <Width>1.2in</Width>
-                </TablixColumn>
-                <TablixColumn>
-                  <Width>1in</Width>
+                  <Width>1.3in</Width>
                 </TablixColumn>
                 <TablixColumn>
                   <Width>1in</Width>
                 </TablixColumn>
                 <TablixColumn>
-                  <Width>1.5in</Width>
+                  <Width>1in</Width>
+                </TablixColumn>
+                <TablixColumn>
+                  <Width>1.3in</Width>
                 </TablixColumn>
               </TablixColumns>
               <TablixRows>
@@ -97,7 +97,7 @@
                                 <TextRun>
                                   <Value>Sales No.</Value>
                                   <Style>
-                                    <FontSize>8pt</FontSize>
+                                    <FontWeight>Bold</FontWeight>
                                   </Style>
                                 </TextRun>
                               </TextRuns>
@@ -130,7 +130,7 @@
                                 <TextRun>
                                   <Value>Order No.</Value>
                                   <Style>
-                                    <FontSize>8pt</FontSize>
+                                    <FontWeight>Bold</FontWeight>
                                   </Style>
                                 </TextRun>
                               </TextRuns>
@@ -163,7 +163,7 @@
                                 <TextRun>
                                   <Value>Discount Type</Value>
                                   <Style>
-                                    <FontSize>8pt</FontSize>
+                                    <FontWeight>Bold</FontWeight>
                                   </Style>
                                 </TextRun>
                               </TextRuns>
@@ -196,7 +196,7 @@
                                 <TextRun>
                                   <Value>Total Bill</Value>
                                   <Style>
-                                    <FontSize>8pt</FontSize>
+                                    <FontWeight>Bold</FontWeight>
                                   </Style>
                                 </TextRun>
                               </TextRuns>
@@ -229,7 +229,7 @@
                                 <TextRun>
                                   <Value>Payment</Value>
                                   <Style>
-                                    <FontSize>8pt</FontSize>
+                                    <FontWeight>Bold</FontWeight>
                                   </Style>
                                 </TextRun>
                               </TextRuns>
@@ -262,7 +262,7 @@
                                 <TextRun>
                                   <Value>Transaction Date</Value>
                                   <Style>
-                                    <FontSize>8pt</FontSize>
+                                    <FontWeight>Bold</FontWeight>
                                   </Style>
                                 </TextRun>
                               </TextRuns>
@@ -513,7 +513,7 @@
             </TablixRowHierarchy>
             <DataSetName>DataSet1</DataSetName>
             <Height>0.5in</Height>
-            <Width>6.7in</Width>
+            <Width>6.9in</Width>
             <Style>
               <Border>
                 <Style>Solid</Style>
@@ -524,7 +524,7 @@
         <Height>0.51042in</Height>
         <Style />
       </Body>
-      <Width>8.21875in</Width>
+      <Width>6.91667in</Width>
       <Page>
         <PageHeader>
           <Height>1in</Height>
@@ -536,8 +536,8 @@
             </Border>
           </Style>
         </PageHeader>
-        <LeftMargin>1in</LeftMargin>
-        <RightMargin>1in</RightMargin>
+        <LeftMargin>0.8in</LeftMargin>
+        <RightMargin>0.8in</RightMargin>
         <Style />
       </Page>
     </ReportSection>
@@ -545,10 +545,12 @@
   <ReportParameters>
     <ReportParameter Name="FilterStartDate">
       <DataType>DateTime</DataType>
+      <Nullable>true</Nullable>
       <Prompt>ReportParameter1</Prompt>
     </ReportParameter>
     <ReportParameter Name="FilterEndDate">
       <DataType>DateTime</DataType>
+      <Nullable>true</Nullable>
       <Prompt>ReportParameter1</Prompt>
     </ReportParameter>
   </ReportParameters>

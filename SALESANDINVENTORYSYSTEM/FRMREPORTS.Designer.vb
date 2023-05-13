@@ -36,78 +36,79 @@ Partial Class FRMREPORTS
         Me.tbl_salesBindingSource = New System.Windows.Forms.BindingSource(Me.components)
         Me.inventory_dbDataSet = New SALESANDINVENTORYSYSTEM.inventory_dbDataSet()
         Me.tbl_productsBindingSource = New System.Windows.Forms.BindingSource(Me.components)
+        Me.tbl_usersBindingSource = New System.Windows.Forms.BindingSource(Me.components)
         Me.BTNCLOSE = New System.Windows.Forms.Button()
         Me.tbl_productsTableAdapter = New SALESANDINVENTORYSYSTEM.inventory_dbDataSetTableAdapters.tbl_productsTableAdapter()
         Me.Panel1 = New System.Windows.Forms.Panel()
         Me.tbl_salesTableAdapter = New SALESANDINVENTORYSYSTEM.inventory_dbDataSetTableAdapters.tbl_salesTableAdapter()
         Me.TPTRANSREC = New System.Windows.Forms.TabPage()
-        Me.RPTTRANSACTIONRECORDS = New Microsoft.Reporting.WinForms.ReportViewer()
-        Me.DT1 = New Guna.UI2.WinForms.Guna2DateTimePicker()
-        Me.DT2 = New Guna.UI2.WinForms.Guna2DateTimePicker()
-        Me.BTNFILLTRANS = New Guna.UI2.WinForms.Guna2Button()
-        Me.BTNCLRTRANS = New Guna.UI2.WinForms.Guna2Button()
-        Me.Label14 = New System.Windows.Forms.Label()
         Me.Label13 = New System.Windows.Forms.Label()
+        Me.Label14 = New System.Windows.Forms.Label()
+        Me.BTNCLRTRANS = New Guna.UI2.WinForms.Guna2Button()
+        Me.BTNFILLTRANS = New Guna.UI2.WinForms.Guna2Button()
+        Me.DT2 = New Guna.UI2.WinForms.Guna2DateTimePicker()
+        Me.DT1 = New Guna.UI2.WinForms.Guna2DateTimePicker()
+        Me.RPTTRANSACTIONRECORDS = New Microsoft.Reporting.WinForms.ReportViewer()
         Me.TPACT = New System.Windows.Forms.TabPage()
-        Me.RPTACTLOG = New Microsoft.Reporting.WinForms.ReportViewer()
-        Me.Label1 = New System.Windows.Forms.Label()
-        Me.CBOTYPE = New Guna.UI2.WinForms.Guna2ComboBox()
-        Me.ACTFILL = New Guna.UI2.WinForms.Guna2Button()
         Me.ACTCLR = New Guna.UI2.WinForms.Guna2Button()
+        Me.ACTFILL = New Guna.UI2.WinForms.Guna2Button()
+        Me.CBOTYPE = New Guna.UI2.WinForms.Guna2ComboBox()
+        Me.Label1 = New System.Windows.Forms.Label()
+        Me.RPTACTLOG = New Microsoft.Reporting.WinForms.ReportViewer()
         Me.TPSALES = New System.Windows.Forms.TabPage()
-        Me.RPTSALES = New Microsoft.Reporting.WinForms.ReportViewer()
-        Me.FILTERSALES = New Guna.UI2.WinForms.Guna2Button()
-        Me.CLEARSALES = New Guna.UI2.WinForms.Guna2Button()
-        Me.DAILY = New Guna.UI2.WinForms.Guna2RadioButton()
-        Me.WEEKLY = New Guna.UI2.WinForms.Guna2RadioButton()
         Me.MONTHLY = New Guna.UI2.WinForms.Guna2RadioButton()
+        Me.WEEKLY = New Guna.UI2.WinForms.Guna2RadioButton()
+        Me.DAILY = New Guna.UI2.WinForms.Guna2RadioButton()
+        Me.CLEARSALES = New Guna.UI2.WinForms.Guna2Button()
+        Me.FILTERSALES = New Guna.UI2.WinForms.Guna2Button()
+        Me.RPTSALES = New Microsoft.Reporting.WinForms.ReportViewer()
         Me.TPOUT = New System.Windows.Forms.TabPage()
-        Me.RPTOUTOFSTOCKS = New Microsoft.Reporting.WinForms.ReportViewer()
-        Me.Date1OUT = New Guna.UI2.WinForms.Guna2DateTimePicker()
-        Me.Date2OUT = New Guna.UI2.WinForms.Guna2DateTimePicker()
-        Me.OUTFILL = New Guna.UI2.WinForms.Guna2Button()
-        Me.OUTCLR = New Guna.UI2.WinForms.Guna2Button()
-        Me.Label9 = New System.Windows.Forms.Label()
         Me.Label10 = New System.Windows.Forms.Label()
+        Me.Label9 = New System.Windows.Forms.Label()
+        Me.OUTCLR = New Guna.UI2.WinForms.Guna2Button()
+        Me.OUTFILL = New Guna.UI2.WinForms.Guna2Button()
+        Me.Date2OUT = New Guna.UI2.WinForms.Guna2DateTimePicker()
+        Me.Date1OUT = New Guna.UI2.WinForms.Guna2DateTimePicker()
+        Me.RPTOUTOFSTOCKS = New Microsoft.Reporting.WinForms.ReportViewer()
         Me.TPEXP = New System.Windows.Forms.TabPage()
-        Me.Date1EXP = New Guna.UI2.WinForms.Guna2DateTimePicker()
-        Me.DAte2EXP = New Guna.UI2.WinForms.Guna2DateTimePicker()
-        Me.EXPFILL = New Guna.UI2.WinForms.Guna2Button()
-        Me.EXPCLR = New Guna.UI2.WinForms.Guna2Button()
-        Me.Label7 = New System.Windows.Forms.Label()
-        Me.Label8 = New System.Windows.Forms.Label()
         Me.RPTEXP = New Microsoft.Reporting.WinForms.ReportViewer()
+        Me.Label8 = New System.Windows.Forms.Label()
+        Me.Label7 = New System.Windows.Forms.Label()
+        Me.EXPCLR = New Guna.UI2.WinForms.Guna2Button()
+        Me.EXPFILL = New Guna.UI2.WinForms.Guna2Button()
+        Me.DAte2EXP = New Guna.UI2.WinForms.Guna2DateTimePicker()
+        Me.Date1EXP = New Guna.UI2.WinForms.Guna2DateTimePicker()
         Me.TPDELIVERY = New System.Windows.Forms.TabPage()
-        Me.RPTDELIVERY = New Microsoft.Reporting.WinForms.ReportViewer()
-        Me.TPSTOCKS = New System.Windows.Forms.TabPage()
-        Me.RPTSTOCKS = New Microsoft.Reporting.WinForms.ReportViewer()
-        Me.Date1St = New Guna.UI2.WinForms.Guna2DateTimePicker()
-        Me.Date2St = New Guna.UI2.WinForms.Guna2DateTimePicker()
-        Me.STOCKSFILL = New Guna.UI2.WinForms.Guna2Button()
-        Me.STOCKCLR = New Guna.UI2.WinForms.Guna2Button()
-        Me.Label3 = New System.Windows.Forms.Label()
-        Me.Label4 = New System.Windows.Forms.Label()
-        Me.TPPRODS = New System.Windows.Forms.TabPage()
-        Me.RPTPRODUCTS = New Microsoft.Reporting.WinForms.ReportViewer()
-        Me.CBOCATEGORY = New Guna.UI2.WinForms.Guna2ComboBox()
-        Me.FILTERPRODUCTS = New Guna.UI2.WinForms.Guna2Button()
-        Me.Label5 = New System.Windows.Forms.Label()
-        Me.CLEARPRODUCTS = New Guna.UI2.WinForms.Guna2Button()
-        Me.TPUSERS = New System.Windows.Forms.TabPage()
-        Me.CBOUT = New Guna.UI2.WinForms.Guna2ComboBox()
-        Me.BTNFILTER = New Guna.UI2.WinForms.Guna2Button()
-        Me.Label2 = New System.Windows.Forms.Label()
-        Me.BTNCLEAR = New Guna.UI2.WinForms.Guna2Button()
-        Me.RPTUSERS = New Microsoft.Reporting.WinForms.ReportViewer()
-        Me.TCREPORTS = New System.Windows.Forms.TabControl()
         Me.MONTHLYDELIVERY = New Guna.UI2.WinForms.Guna2RadioButton()
         Me.WEEKLYDELIVERY = New Guna.UI2.WinForms.Guna2RadioButton()
         Me.DAILYDELIVERY = New Guna.UI2.WinForms.Guna2RadioButton()
         Me.DELIVERYCLEARFILTER = New Guna.UI2.WinForms.Guna2Button()
         Me.DELIVERYFILTER = New Guna.UI2.WinForms.Guna2Button()
+        Me.RPTDELIVERY = New Microsoft.Reporting.WinForms.ReportViewer()
+        Me.TPSTOCKS = New System.Windows.Forms.TabPage()
+        Me.RPTSTOCKS = New Microsoft.Reporting.WinForms.ReportViewer()
+        Me.TPPRODS = New System.Windows.Forms.TabPage()
+        Me.CLEARPRODUCTS = New Guna.UI2.WinForms.Guna2Button()
+        Me.Label5 = New System.Windows.Forms.Label()
+        Me.FILTERPRODUCTS = New Guna.UI2.WinForms.Guna2Button()
+        Me.CBOCATEGORY = New Guna.UI2.WinForms.Guna2ComboBox()
+        Me.RPTPRODUCTS = New Microsoft.Reporting.WinForms.ReportViewer()
+        Me.TPUSERS = New System.Windows.Forms.TabPage()
+        Me.RPTUSERS = New Microsoft.Reporting.WinForms.ReportViewer()
+        Me.CLEARUSERS = New Guna.UI2.WinForms.Guna2Button()
+        Me.Label2 = New System.Windows.Forms.Label()
+        Me.FILTERUSERS = New Guna.UI2.WinForms.Guna2Button()
+        Me.CBOUSERS = New Guna.UI2.WinForms.Guna2ComboBox()
+        Me.TCREPORTS = New System.Windows.Forms.TabControl()
+        Me.tbl_usersTableAdapter = New SALESANDINVENTORYSYSTEM.inventory_dbDataSetTableAdapters.tbl_usersTableAdapter()
+        Me.CLEARSTOCKS = New Guna.UI2.WinForms.Guna2Button()
+        Me.Label3 = New System.Windows.Forms.Label()
+        Me.FILTERSTOCKS = New Guna.UI2.WinForms.Guna2Button()
+        Me.CBOSTOCKS = New Guna.UI2.WinForms.Guna2ComboBox()
         CType(Me.tbl_salesBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.inventory_dbDataSet, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.tbl_productsBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.tbl_usersBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.TPTRANSREC.SuspendLayout()
         Me.TPACT.SuspendLayout()
         Me.TPSALES.SuspendLayout()
@@ -134,6 +135,11 @@ Partial Class FRMREPORTS
         '
         Me.tbl_productsBindingSource.DataMember = "tbl_products"
         Me.tbl_productsBindingSource.DataSource = Me.inventory_dbDataSet
+        '
+        'tbl_usersBindingSource
+        '
+        Me.tbl_usersBindingSource.DataMember = "tbl_users"
+        Me.tbl_usersBindingSource.DataSource = Me.inventory_dbDataSet
         '
         'BTNCLOSE
         '
@@ -180,34 +186,54 @@ Partial Class FRMREPORTS
         Me.TPTRANSREC.Text = "Transaction Records"
         Me.TPTRANSREC.UseVisualStyleBackColor = True
         '
-        'RPTTRANSACTIONRECORDS
+        'Label13
         '
-        ReportDataSource1.Name = "DataSet1"
-        ReportDataSource1.Value = Nothing
-        Me.RPTTRANSACTIONRECORDS.LocalReport.DataSources.Add(ReportDataSource1)
-        Me.RPTTRANSACTIONRECORDS.LocalReport.ReportEmbeddedResource = "SALESANDINVENTORYSYSTEM.RPTTRANSACTIONRECORDS.rdlc"
-        Me.RPTTRANSACTIONRECORDS.Location = New System.Drawing.Point(20, 80)
-        Me.RPTTRANSACTIONRECORDS.Name = "RPTTRANSACTIONRECORDS"
-        Me.RPTTRANSACTIONRECORDS.ServerReport.BearerToken = Nothing
-        Me.RPTTRANSACTIONRECORDS.Size = New System.Drawing.Size(1067, 513)
-        Me.RPTTRANSACTIONRECORDS.TabIndex = 2
+        Me.Label13.AutoSize = True
+        Me.Label13.Location = New System.Drawing.Point(313, 27)
+        Me.Label13.Name = "Label13"
+        Me.Label13.Size = New System.Drawing.Size(32, 20)
+        Me.Label13.TabIndex = 22
+        Me.Label13.Text = "To :"
         '
-        'DT1
+        'Label14
         '
-        Me.DT1.CheckedState.Parent = Me.DT1
-        Me.DT1.FillColor = System.Drawing.Color.MediumSeaGreen
-        Me.DT1.Font = New System.Drawing.Font("Century Gothic", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.DT1.ForeColor = System.Drawing.Color.White
-        Me.DT1.Format = System.Windows.Forms.DateTimePickerFormat.[Long]
-        Me.DT1.HoverState.Parent = Me.DT1
-        Me.DT1.Location = New System.Drawing.Point(90, 26)
-        Me.DT1.MaxDate = New Date(9998, 12, 31, 0, 0, 0, 0)
-        Me.DT1.MinDate = New Date(1753, 1, 1, 0, 0, 0, 0)
-        Me.DT1.Name = "DT1"
-        Me.DT1.ShadowDecoration.Parent = Me.DT1
-        Me.DT1.Size = New System.Drawing.Size(200, 36)
-        Me.DT1.TabIndex = 17
-        Me.DT1.Value = New Date(2023, 4, 15, 23, 18, 1, 623)
+        Me.Label14.AutoSize = True
+        Me.Label14.Location = New System.Drawing.Point(27, 27)
+        Me.Label14.Name = "Label14"
+        Me.Label14.Size = New System.Drawing.Size(52, 20)
+        Me.Label14.TabIndex = 21
+        Me.Label14.Text = "From :"
+        '
+        'BTNCLRTRANS
+        '
+        Me.BTNCLRTRANS.BackColor = System.Drawing.Color.Transparent
+        Me.BTNCLRTRANS.CheckedState.Parent = Me.BTNCLRTRANS
+        Me.BTNCLRTRANS.CustomImages.Parent = Me.BTNCLRTRANS
+        Me.BTNCLRTRANS.FillColor = System.Drawing.SystemColors.ControlDark
+        Me.BTNCLRTRANS.Font = New System.Drawing.Font("Century Gothic", 9.0!)
+        Me.BTNCLRTRANS.ForeColor = System.Drawing.Color.White
+        Me.BTNCLRTRANS.HoverState.Parent = Me.BTNCLRTRANS
+        Me.BTNCLRTRANS.Location = New System.Drawing.Point(740, 27)
+        Me.BTNCLRTRANS.Name = "BTNCLRTRANS"
+        Me.BTNCLRTRANS.ShadowDecoration.Parent = Me.BTNCLRTRANS
+        Me.BTNCLRTRANS.Size = New System.Drawing.Size(98, 36)
+        Me.BTNCLRTRANS.TabIndex = 20
+        Me.BTNCLRTRANS.Text = "Clear Filter"
+        '
+        'BTNFILLTRANS
+        '
+        Me.BTNFILLTRANS.CheckedState.Parent = Me.BTNFILLTRANS
+        Me.BTNFILLTRANS.CustomImages.Parent = Me.BTNFILLTRANS
+        Me.BTNFILLTRANS.FillColor = System.Drawing.Color.MediumSeaGreen
+        Me.BTNFILLTRANS.Font = New System.Drawing.Font("Century Gothic", 9.0!)
+        Me.BTNFILLTRANS.ForeColor = System.Drawing.Color.White
+        Me.BTNFILLTRANS.HoverState.Parent = Me.BTNFILLTRANS
+        Me.BTNFILLTRANS.Location = New System.Drawing.Point(610, 26)
+        Me.BTNFILLTRANS.Name = "BTNFILLTRANS"
+        Me.BTNFILLTRANS.ShadowDecoration.Parent = Me.BTNFILLTRANS
+        Me.BTNFILLTRANS.Size = New System.Drawing.Size(98, 36)
+        Me.BTNFILLTRANS.TabIndex = 19
+        Me.BTNFILLTRANS.Text = "Filter"
         '
         'DT2
         '
@@ -226,54 +252,34 @@ Partial Class FRMREPORTS
         Me.DT2.TabIndex = 18
         Me.DT2.Value = New Date(2023, 4, 15, 23, 18, 1, 623)
         '
-        'BTNFILLTRANS
+        'DT1
         '
-        Me.BTNFILLTRANS.CheckedState.Parent = Me.BTNFILLTRANS
-        Me.BTNFILLTRANS.CustomImages.Parent = Me.BTNFILLTRANS
-        Me.BTNFILLTRANS.FillColor = System.Drawing.Color.MediumSeaGreen
-        Me.BTNFILLTRANS.Font = New System.Drawing.Font("Century Gothic", 9.0!)
-        Me.BTNFILLTRANS.ForeColor = System.Drawing.Color.White
-        Me.BTNFILLTRANS.HoverState.Parent = Me.BTNFILLTRANS
-        Me.BTNFILLTRANS.Location = New System.Drawing.Point(610, 26)
-        Me.BTNFILLTRANS.Name = "BTNFILLTRANS"
-        Me.BTNFILLTRANS.ShadowDecoration.Parent = Me.BTNFILLTRANS
-        Me.BTNFILLTRANS.Size = New System.Drawing.Size(98, 36)
-        Me.BTNFILLTRANS.TabIndex = 19
-        Me.BTNFILLTRANS.Text = "Filter"
+        Me.DT1.CheckedState.Parent = Me.DT1
+        Me.DT1.FillColor = System.Drawing.Color.MediumSeaGreen
+        Me.DT1.Font = New System.Drawing.Font("Century Gothic", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.DT1.ForeColor = System.Drawing.Color.White
+        Me.DT1.Format = System.Windows.Forms.DateTimePickerFormat.[Long]
+        Me.DT1.HoverState.Parent = Me.DT1
+        Me.DT1.Location = New System.Drawing.Point(90, 26)
+        Me.DT1.MaxDate = New Date(9998, 12, 31, 0, 0, 0, 0)
+        Me.DT1.MinDate = New Date(1753, 1, 1, 0, 0, 0, 0)
+        Me.DT1.Name = "DT1"
+        Me.DT1.ShadowDecoration.Parent = Me.DT1
+        Me.DT1.Size = New System.Drawing.Size(200, 36)
+        Me.DT1.TabIndex = 17
+        Me.DT1.Value = New Date(2023, 4, 15, 23, 18, 1, 623)
         '
-        'BTNCLRTRANS
+        'RPTTRANSACTIONRECORDS
         '
-        Me.BTNCLRTRANS.BackColor = System.Drawing.Color.Transparent
-        Me.BTNCLRTRANS.CheckedState.Parent = Me.BTNCLRTRANS
-        Me.BTNCLRTRANS.CustomImages.Parent = Me.BTNCLRTRANS
-        Me.BTNCLRTRANS.FillColor = System.Drawing.SystemColors.ControlDark
-        Me.BTNCLRTRANS.Font = New System.Drawing.Font("Century Gothic", 9.0!)
-        Me.BTNCLRTRANS.ForeColor = System.Drawing.Color.White
-        Me.BTNCLRTRANS.HoverState.Parent = Me.BTNCLRTRANS
-        Me.BTNCLRTRANS.Location = New System.Drawing.Point(740, 27)
-        Me.BTNCLRTRANS.Name = "BTNCLRTRANS"
-        Me.BTNCLRTRANS.ShadowDecoration.Parent = Me.BTNCLRTRANS
-        Me.BTNCLRTRANS.Size = New System.Drawing.Size(98, 36)
-        Me.BTNCLRTRANS.TabIndex = 20
-        Me.BTNCLRTRANS.Text = "Clear Filter"
-        '
-        'Label14
-        '
-        Me.Label14.AutoSize = True
-        Me.Label14.Location = New System.Drawing.Point(27, 27)
-        Me.Label14.Name = "Label14"
-        Me.Label14.Size = New System.Drawing.Size(52, 20)
-        Me.Label14.TabIndex = 21
-        Me.Label14.Text = "From :"
-        '
-        'Label13
-        '
-        Me.Label13.AutoSize = True
-        Me.Label13.Location = New System.Drawing.Point(313, 27)
-        Me.Label13.Name = "Label13"
-        Me.Label13.Size = New System.Drawing.Size(32, 20)
-        Me.Label13.TabIndex = 22
-        Me.Label13.Text = "To :"
+        ReportDataSource1.Name = "DataSet1"
+        ReportDataSource1.Value = Nothing
+        Me.RPTTRANSACTIONRECORDS.LocalReport.DataSources.Add(ReportDataSource1)
+        Me.RPTTRANSACTIONRECORDS.LocalReport.ReportEmbeddedResource = "SALESANDINVENTORYSYSTEM.RPTTRANSACTIONRECORDS.rdlc"
+        Me.RPTTRANSACTIONRECORDS.Location = New System.Drawing.Point(20, 80)
+        Me.RPTTRANSACTIONRECORDS.Name = "RPTTRANSACTIONRECORDS"
+        Me.RPTTRANSACTIONRECORDS.ServerReport.BearerToken = Nothing
+        Me.RPTTRANSACTIONRECORDS.Size = New System.Drawing.Size(1067, 513)
+        Me.RPTTRANSACTIONRECORDS.TabIndex = 2
         '
         'TPACT
         '
@@ -290,27 +296,36 @@ Partial Class FRMREPORTS
         Me.TPACT.Text = "Activity Log"
         Me.TPACT.UseVisualStyleBackColor = True
         '
-        'RPTACTLOG
+        'ACTCLR
         '
-        ReportDataSource2.Name = "DataSet_ACT"
-        ReportDataSource2.Value = Nothing
-        Me.RPTACTLOG.LocalReport.DataSources.Add(ReportDataSource2)
-        Me.RPTACTLOG.LocalReport.ReportEmbeddedResource = "SALESANDINVENTORYSYSTEM.RPTACTLOG.rdlc"
-        Me.RPTACTLOG.Location = New System.Drawing.Point(20, 80)
-        Me.RPTACTLOG.Name = "RPTACTLOG"
-        Me.RPTACTLOG.ServerReport.BearerToken = Nothing
-        Me.RPTACTLOG.Size = New System.Drawing.Size(1067, 513)
-        Me.RPTACTLOG.TabIndex = 1
+        Me.ACTCLR.BackColor = System.Drawing.Color.Transparent
+        Me.ACTCLR.CheckedState.Parent = Me.ACTCLR
+        Me.ACTCLR.CustomImages.Parent = Me.ACTCLR
+        Me.ACTCLR.FillColor = System.Drawing.SystemColors.ControlDark
+        Me.ACTCLR.Font = New System.Drawing.Font("Segoe UI", 9.0!)
+        Me.ACTCLR.ForeColor = System.Drawing.Color.White
+        Me.ACTCLR.HoverState.Parent = Me.ACTCLR
+        Me.ACTCLR.Location = New System.Drawing.Point(508, 26)
+        Me.ACTCLR.Name = "ACTCLR"
+        Me.ACTCLR.ShadowDecoration.Parent = Me.ACTCLR
+        Me.ACTCLR.Size = New System.Drawing.Size(98, 36)
+        Me.ACTCLR.TabIndex = 6
+        Me.ACTCLR.Text = "Clear Filter"
         '
-        'Label1
+        'ACTFILL
         '
-        Me.Label1.AutoSize = True
-        Me.Label1.Font = New System.Drawing.Font("Century Gothic", 11.25!)
-        Me.Label1.Location = New System.Drawing.Point(27, 26)
-        Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(139, 20)
-        Me.Label1.TabIndex = 2
-        Me.Label1.Text = "Filter by usertype :"
+        Me.ACTFILL.CheckedState.Parent = Me.ACTFILL
+        Me.ACTFILL.CustomImages.Parent = Me.ACTFILL
+        Me.ACTFILL.FillColor = System.Drawing.Color.MediumSeaGreen
+        Me.ACTFILL.Font = New System.Drawing.Font("Segoe UI", 9.0!)
+        Me.ACTFILL.ForeColor = System.Drawing.Color.White
+        Me.ACTFILL.HoverState.Parent = Me.ACTFILL
+        Me.ACTFILL.Location = New System.Drawing.Point(383, 26)
+        Me.ACTFILL.Name = "ACTFILL"
+        Me.ACTFILL.ShadowDecoration.Parent = Me.ACTFILL
+        Me.ACTFILL.Size = New System.Drawing.Size(98, 36)
+        Me.ACTFILL.TabIndex = 5
+        Me.ACTFILL.Text = "Filter"
         '
         'CBOTYPE
         '
@@ -332,36 +347,27 @@ Partial Class FRMREPORTS
         Me.CBOTYPE.Size = New System.Drawing.Size(140, 36)
         Me.CBOTYPE.TabIndex = 3
         '
-        'ACTFILL
+        'Label1
         '
-        Me.ACTFILL.CheckedState.Parent = Me.ACTFILL
-        Me.ACTFILL.CustomImages.Parent = Me.ACTFILL
-        Me.ACTFILL.FillColor = System.Drawing.Color.MediumSeaGreen
-        Me.ACTFILL.Font = New System.Drawing.Font("Segoe UI", 9.0!)
-        Me.ACTFILL.ForeColor = System.Drawing.Color.White
-        Me.ACTFILL.HoverState.Parent = Me.ACTFILL
-        Me.ACTFILL.Location = New System.Drawing.Point(383, 26)
-        Me.ACTFILL.Name = "ACTFILL"
-        Me.ACTFILL.ShadowDecoration.Parent = Me.ACTFILL
-        Me.ACTFILL.Size = New System.Drawing.Size(98, 36)
-        Me.ACTFILL.TabIndex = 5
-        Me.ACTFILL.Text = "Filter"
+        Me.Label1.AutoSize = True
+        Me.Label1.Font = New System.Drawing.Font("Century Gothic", 11.25!)
+        Me.Label1.Location = New System.Drawing.Point(27, 26)
+        Me.Label1.Name = "Label1"
+        Me.Label1.Size = New System.Drawing.Size(139, 20)
+        Me.Label1.TabIndex = 2
+        Me.Label1.Text = "Filter by usertype :"
         '
-        'ACTCLR
+        'RPTACTLOG
         '
-        Me.ACTCLR.BackColor = System.Drawing.Color.Transparent
-        Me.ACTCLR.CheckedState.Parent = Me.ACTCLR
-        Me.ACTCLR.CustomImages.Parent = Me.ACTCLR
-        Me.ACTCLR.FillColor = System.Drawing.SystemColors.ControlDark
-        Me.ACTCLR.Font = New System.Drawing.Font("Segoe UI", 9.0!)
-        Me.ACTCLR.ForeColor = System.Drawing.Color.White
-        Me.ACTCLR.HoverState.Parent = Me.ACTCLR
-        Me.ACTCLR.Location = New System.Drawing.Point(508, 26)
-        Me.ACTCLR.Name = "ACTCLR"
-        Me.ACTCLR.ShadowDecoration.Parent = Me.ACTCLR
-        Me.ACTCLR.Size = New System.Drawing.Size(98, 36)
-        Me.ACTCLR.TabIndex = 6
-        Me.ACTCLR.Text = "Clear Filter"
+        ReportDataSource2.Name = "DataSet_ACT"
+        ReportDataSource2.Value = Nothing
+        Me.RPTACTLOG.LocalReport.DataSources.Add(ReportDataSource2)
+        Me.RPTACTLOG.LocalReport.ReportEmbeddedResource = "SALESANDINVENTORYSYSTEM.RPTACTLOG.rdlc"
+        Me.RPTACTLOG.Location = New System.Drawing.Point(20, 80)
+        Me.RPTACTLOG.Name = "RPTACTLOG"
+        Me.RPTACTLOG.ServerReport.BearerToken = Nothing
+        Me.RPTACTLOG.Size = New System.Drawing.Size(1067, 513)
+        Me.RPTACTLOG.TabIndex = 1
         '
         'TPSALES
         '
@@ -378,89 +384,6 @@ Partial Class FRMREPORTS
         Me.TPSALES.TabIndex = 4
         Me.TPSALES.Text = "Sales Report"
         Me.TPSALES.UseVisualStyleBackColor = True
-        '
-        'RPTSALES
-        '
-        ReportDataSource3.Name = "DataSet1"
-        ReportDataSource3.Value = Me.tbl_salesBindingSource
-        Me.RPTSALES.LocalReport.DataSources.Add(ReportDataSource3)
-        Me.RPTSALES.LocalReport.ReportEmbeddedResource = "SALESANDINVENTORYSYSTEM.RPTSALES.rdlc"
-        Me.RPTSALES.Location = New System.Drawing.Point(20, 80)
-        Me.RPTSALES.Name = "RPTSALES"
-        Me.RPTSALES.ServerReport.BearerToken = Nothing
-        Me.RPTSALES.Size = New System.Drawing.Size(1067, 513)
-        Me.RPTSALES.TabIndex = 10
-        '
-        'FILTERSALES
-        '
-        Me.FILTERSALES.CheckedState.Parent = Me.FILTERSALES
-        Me.FILTERSALES.CustomImages.Parent = Me.FILTERSALES
-        Me.FILTERSALES.FillColor = System.Drawing.Color.MediumSeaGreen
-        Me.FILTERSALES.Font = New System.Drawing.Font("Century Gothic", 9.0!)
-        Me.FILTERSALES.ForeColor = System.Drawing.Color.White
-        Me.FILTERSALES.HoverState.Parent = Me.FILTERSALES
-        Me.FILTERSALES.Location = New System.Drawing.Point(313, 26)
-        Me.FILTERSALES.Name = "FILTERSALES"
-        Me.FILTERSALES.ShadowDecoration.Parent = Me.FILTERSALES
-        Me.FILTERSALES.Size = New System.Drawing.Size(98, 36)
-        Me.FILTERSALES.TabIndex = 13
-        Me.FILTERSALES.Text = "Filter"
-        '
-        'CLEARSALES
-        '
-        Me.CLEARSALES.BackColor = System.Drawing.Color.Transparent
-        Me.CLEARSALES.CheckedState.Parent = Me.CLEARSALES
-        Me.CLEARSALES.CustomImages.Parent = Me.CLEARSALES
-        Me.CLEARSALES.FillColor = System.Drawing.SystemColors.ControlDark
-        Me.CLEARSALES.Font = New System.Drawing.Font("Century Gothic", 9.0!)
-        Me.CLEARSALES.ForeColor = System.Drawing.Color.White
-        Me.CLEARSALES.HoverState.Parent = Me.CLEARSALES
-        Me.CLEARSALES.Location = New System.Drawing.Point(443, 27)
-        Me.CLEARSALES.Name = "CLEARSALES"
-        Me.CLEARSALES.ShadowDecoration.Parent = Me.CLEARSALES
-        Me.CLEARSALES.Size = New System.Drawing.Size(98, 36)
-        Me.CLEARSALES.TabIndex = 14
-        Me.CLEARSALES.Text = "Clear Filter"
-        '
-        'DAILY
-        '
-        Me.DAILY.AutoSize = True
-        Me.DAILY.CheckedState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
-        Me.DAILY.CheckedState.BorderThickness = 0
-        Me.DAILY.CheckedState.FillColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
-        Me.DAILY.CheckedState.InnerColor = System.Drawing.Color.White
-        Me.DAILY.CheckedState.InnerOffset = -4
-        Me.DAILY.Location = New System.Drawing.Point(20, 27)
-        Me.DAILY.Name = "DAILY"
-        Me.DAILY.Size = New System.Drawing.Size(62, 24)
-        Me.DAILY.TabIndex = 16
-        Me.DAILY.TabStop = True
-        Me.DAILY.Text = "Daily"
-        Me.DAILY.UncheckedState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(125, Byte), Integer), CType(CType(137, Byte), Integer), CType(CType(149, Byte), Integer))
-        Me.DAILY.UncheckedState.BorderThickness = 2
-        Me.DAILY.UncheckedState.FillColor = System.Drawing.Color.Transparent
-        Me.DAILY.UncheckedState.InnerColor = System.Drawing.Color.Transparent
-        Me.DAILY.UseVisualStyleBackColor = True
-        '
-        'WEEKLY
-        '
-        Me.WEEKLY.AutoSize = True
-        Me.WEEKLY.CheckedState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
-        Me.WEEKLY.CheckedState.BorderThickness = 0
-        Me.WEEKLY.CheckedState.FillColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
-        Me.WEEKLY.CheckedState.InnerColor = System.Drawing.Color.White
-        Me.WEEKLY.CheckedState.InnerOffset = -4
-        Me.WEEKLY.Location = New System.Drawing.Point(98, 26)
-        Me.WEEKLY.Name = "WEEKLY"
-        Me.WEEKLY.Size = New System.Drawing.Size(81, 24)
-        Me.WEEKLY.TabIndex = 17
-        Me.WEEKLY.TabStop = True
-        Me.WEEKLY.Text = "Weekly"
-        Me.WEEKLY.UncheckedState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(125, Byte), Integer), CType(CType(137, Byte), Integer), CType(CType(149, Byte), Integer))
-        Me.WEEKLY.UncheckedState.BorderThickness = 2
-        Me.WEEKLY.UncheckedState.FillColor = System.Drawing.Color.Transparent
-        Me.WEEKLY.UncheckedState.InnerColor = System.Drawing.Color.Transparent
-        Me.WEEKLY.UseVisualStyleBackColor = True
         '
         'MONTHLY
         '
@@ -482,6 +405,89 @@ Partial Class FRMREPORTS
         Me.MONTHLY.UncheckedState.InnerColor = System.Drawing.Color.Transparent
         Me.MONTHLY.UseVisualStyleBackColor = True
         '
+        'WEEKLY
+        '
+        Me.WEEKLY.AutoSize = True
+        Me.WEEKLY.CheckedState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
+        Me.WEEKLY.CheckedState.BorderThickness = 0
+        Me.WEEKLY.CheckedState.FillColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
+        Me.WEEKLY.CheckedState.InnerColor = System.Drawing.Color.White
+        Me.WEEKLY.CheckedState.InnerOffset = -4
+        Me.WEEKLY.Location = New System.Drawing.Point(98, 26)
+        Me.WEEKLY.Name = "WEEKLY"
+        Me.WEEKLY.Size = New System.Drawing.Size(81, 24)
+        Me.WEEKLY.TabIndex = 17
+        Me.WEEKLY.TabStop = True
+        Me.WEEKLY.Text = "Weekly"
+        Me.WEEKLY.UncheckedState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(125, Byte), Integer), CType(CType(137, Byte), Integer), CType(CType(149, Byte), Integer))
+        Me.WEEKLY.UncheckedState.BorderThickness = 2
+        Me.WEEKLY.UncheckedState.FillColor = System.Drawing.Color.Transparent
+        Me.WEEKLY.UncheckedState.InnerColor = System.Drawing.Color.Transparent
+        Me.WEEKLY.UseVisualStyleBackColor = True
+        '
+        'DAILY
+        '
+        Me.DAILY.AutoSize = True
+        Me.DAILY.CheckedState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
+        Me.DAILY.CheckedState.BorderThickness = 0
+        Me.DAILY.CheckedState.FillColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
+        Me.DAILY.CheckedState.InnerColor = System.Drawing.Color.White
+        Me.DAILY.CheckedState.InnerOffset = -4
+        Me.DAILY.Location = New System.Drawing.Point(20, 27)
+        Me.DAILY.Name = "DAILY"
+        Me.DAILY.Size = New System.Drawing.Size(62, 24)
+        Me.DAILY.TabIndex = 16
+        Me.DAILY.TabStop = True
+        Me.DAILY.Text = "Daily"
+        Me.DAILY.UncheckedState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(125, Byte), Integer), CType(CType(137, Byte), Integer), CType(CType(149, Byte), Integer))
+        Me.DAILY.UncheckedState.BorderThickness = 2
+        Me.DAILY.UncheckedState.FillColor = System.Drawing.Color.Transparent
+        Me.DAILY.UncheckedState.InnerColor = System.Drawing.Color.Transparent
+        Me.DAILY.UseVisualStyleBackColor = True
+        '
+        'CLEARSALES
+        '
+        Me.CLEARSALES.BackColor = System.Drawing.Color.Transparent
+        Me.CLEARSALES.CheckedState.Parent = Me.CLEARSALES
+        Me.CLEARSALES.CustomImages.Parent = Me.CLEARSALES
+        Me.CLEARSALES.FillColor = System.Drawing.SystemColors.ControlDark
+        Me.CLEARSALES.Font = New System.Drawing.Font("Century Gothic", 9.0!)
+        Me.CLEARSALES.ForeColor = System.Drawing.Color.White
+        Me.CLEARSALES.HoverState.Parent = Me.CLEARSALES
+        Me.CLEARSALES.Location = New System.Drawing.Point(443, 27)
+        Me.CLEARSALES.Name = "CLEARSALES"
+        Me.CLEARSALES.ShadowDecoration.Parent = Me.CLEARSALES
+        Me.CLEARSALES.Size = New System.Drawing.Size(98, 36)
+        Me.CLEARSALES.TabIndex = 14
+        Me.CLEARSALES.Text = "Clear Filter"
+        '
+        'FILTERSALES
+        '
+        Me.FILTERSALES.CheckedState.Parent = Me.FILTERSALES
+        Me.FILTERSALES.CustomImages.Parent = Me.FILTERSALES
+        Me.FILTERSALES.FillColor = System.Drawing.Color.MediumSeaGreen
+        Me.FILTERSALES.Font = New System.Drawing.Font("Century Gothic", 9.0!)
+        Me.FILTERSALES.ForeColor = System.Drawing.Color.White
+        Me.FILTERSALES.HoverState.Parent = Me.FILTERSALES
+        Me.FILTERSALES.Location = New System.Drawing.Point(313, 26)
+        Me.FILTERSALES.Name = "FILTERSALES"
+        Me.FILTERSALES.ShadowDecoration.Parent = Me.FILTERSALES
+        Me.FILTERSALES.Size = New System.Drawing.Size(98, 36)
+        Me.FILTERSALES.TabIndex = 13
+        Me.FILTERSALES.Text = "Filter"
+        '
+        'RPTSALES
+        '
+        ReportDataSource3.Name = "DataSet1"
+        ReportDataSource3.Value = Me.tbl_salesBindingSource
+        Me.RPTSALES.LocalReport.DataSources.Add(ReportDataSource3)
+        Me.RPTSALES.LocalReport.ReportEmbeddedResource = "SALESANDINVENTORYSYSTEM.RPTSALES.rdlc"
+        Me.RPTSALES.Location = New System.Drawing.Point(20, 80)
+        Me.RPTSALES.Name = "RPTSALES"
+        Me.RPTSALES.ServerReport.BearerToken = Nothing
+        Me.RPTSALES.Size = New System.Drawing.Size(1067, 513)
+        Me.RPTSALES.TabIndex = 10
+        '
         'TPOUT
         '
         Me.TPOUT.Controls.Add(Me.Label10)
@@ -499,34 +505,54 @@ Partial Class FRMREPORTS
         Me.TPOUT.Text = "Out of Stocks"
         Me.TPOUT.UseVisualStyleBackColor = True
         '
-        'RPTOUTOFSTOCKS
+        'Label10
         '
-        ReportDataSource4.Name = "DataSet1"
-        ReportDataSource4.Value = Nothing
-        Me.RPTOUTOFSTOCKS.LocalReport.DataSources.Add(ReportDataSource4)
-        Me.RPTOUTOFSTOCKS.LocalReport.ReportEmbeddedResource = "SALESANDINVENTORYSYSTEM.RPTOUTOFSTOCKS.rdlc"
-        Me.RPTOUTOFSTOCKS.Location = New System.Drawing.Point(20, 80)
-        Me.RPTOUTOFSTOCKS.Name = "RPTOUTOFSTOCKS"
-        Me.RPTOUTOFSTOCKS.ServerReport.BearerToken = Nothing
-        Me.RPTOUTOFSTOCKS.Size = New System.Drawing.Size(1067, 513)
-        Me.RPTOUTOFSTOCKS.TabIndex = 10
+        Me.Label10.AutoSize = True
+        Me.Label10.Location = New System.Drawing.Point(313, 27)
+        Me.Label10.Name = "Label10"
+        Me.Label10.Size = New System.Drawing.Size(32, 20)
+        Me.Label10.TabIndex = 16
+        Me.Label10.Text = "To :"
         '
-        'Date1OUT
+        'Label9
         '
-        Me.Date1OUT.CheckedState.Parent = Me.Date1OUT
-        Me.Date1OUT.FillColor = System.Drawing.Color.MediumSeaGreen
-        Me.Date1OUT.Font = New System.Drawing.Font("Century Gothic", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Date1OUT.ForeColor = System.Drawing.Color.White
-        Me.Date1OUT.Format = System.Windows.Forms.DateTimePickerFormat.[Long]
-        Me.Date1OUT.HoverState.Parent = Me.Date1OUT
-        Me.Date1OUT.Location = New System.Drawing.Point(90, 26)
-        Me.Date1OUT.MaxDate = New Date(9998, 12, 31, 0, 0, 0, 0)
-        Me.Date1OUT.MinDate = New Date(1753, 1, 1, 0, 0, 0, 0)
-        Me.Date1OUT.Name = "Date1OUT"
-        Me.Date1OUT.ShadowDecoration.Parent = Me.Date1OUT
-        Me.Date1OUT.Size = New System.Drawing.Size(200, 36)
-        Me.Date1OUT.TabIndex = 11
-        Me.Date1OUT.Value = New Date(2023, 4, 15, 23, 18, 1, 623)
+        Me.Label9.AutoSize = True
+        Me.Label9.Location = New System.Drawing.Point(27, 27)
+        Me.Label9.Name = "Label9"
+        Me.Label9.Size = New System.Drawing.Size(52, 20)
+        Me.Label9.TabIndex = 15
+        Me.Label9.Text = "From :"
+        '
+        'OUTCLR
+        '
+        Me.OUTCLR.BackColor = System.Drawing.Color.Transparent
+        Me.OUTCLR.CheckedState.Parent = Me.OUTCLR
+        Me.OUTCLR.CustomImages.Parent = Me.OUTCLR
+        Me.OUTCLR.FillColor = System.Drawing.SystemColors.ControlDark
+        Me.OUTCLR.Font = New System.Drawing.Font("Century Gothic", 9.0!)
+        Me.OUTCLR.ForeColor = System.Drawing.Color.White
+        Me.OUTCLR.HoverState.Parent = Me.OUTCLR
+        Me.OUTCLR.Location = New System.Drawing.Point(740, 27)
+        Me.OUTCLR.Name = "OUTCLR"
+        Me.OUTCLR.ShadowDecoration.Parent = Me.OUTCLR
+        Me.OUTCLR.Size = New System.Drawing.Size(98, 36)
+        Me.OUTCLR.TabIndex = 14
+        Me.OUTCLR.Text = "Clear Filter"
+        '
+        'OUTFILL
+        '
+        Me.OUTFILL.CheckedState.Parent = Me.OUTFILL
+        Me.OUTFILL.CustomImages.Parent = Me.OUTFILL
+        Me.OUTFILL.FillColor = System.Drawing.Color.MediumSeaGreen
+        Me.OUTFILL.Font = New System.Drawing.Font("Century Gothic", 9.0!)
+        Me.OUTFILL.ForeColor = System.Drawing.Color.White
+        Me.OUTFILL.HoverState.Parent = Me.OUTFILL
+        Me.OUTFILL.Location = New System.Drawing.Point(610, 26)
+        Me.OUTFILL.Name = "OUTFILL"
+        Me.OUTFILL.ShadowDecoration.Parent = Me.OUTFILL
+        Me.OUTFILL.Size = New System.Drawing.Size(98, 36)
+        Me.OUTFILL.TabIndex = 13
+        Me.OUTFILL.Text = "Filter"
         '
         'Date2OUT
         '
@@ -545,54 +571,34 @@ Partial Class FRMREPORTS
         Me.Date2OUT.TabIndex = 12
         Me.Date2OUT.Value = New Date(2023, 4, 15, 23, 18, 1, 623)
         '
-        'OUTFILL
+        'Date1OUT
         '
-        Me.OUTFILL.CheckedState.Parent = Me.OUTFILL
-        Me.OUTFILL.CustomImages.Parent = Me.OUTFILL
-        Me.OUTFILL.FillColor = System.Drawing.Color.MediumSeaGreen
-        Me.OUTFILL.Font = New System.Drawing.Font("Century Gothic", 9.0!)
-        Me.OUTFILL.ForeColor = System.Drawing.Color.White
-        Me.OUTFILL.HoverState.Parent = Me.OUTFILL
-        Me.OUTFILL.Location = New System.Drawing.Point(610, 26)
-        Me.OUTFILL.Name = "OUTFILL"
-        Me.OUTFILL.ShadowDecoration.Parent = Me.OUTFILL
-        Me.OUTFILL.Size = New System.Drawing.Size(98, 36)
-        Me.OUTFILL.TabIndex = 13
-        Me.OUTFILL.Text = "Filter"
+        Me.Date1OUT.CheckedState.Parent = Me.Date1OUT
+        Me.Date1OUT.FillColor = System.Drawing.Color.MediumSeaGreen
+        Me.Date1OUT.Font = New System.Drawing.Font("Century Gothic", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Date1OUT.ForeColor = System.Drawing.Color.White
+        Me.Date1OUT.Format = System.Windows.Forms.DateTimePickerFormat.[Long]
+        Me.Date1OUT.HoverState.Parent = Me.Date1OUT
+        Me.Date1OUT.Location = New System.Drawing.Point(90, 26)
+        Me.Date1OUT.MaxDate = New Date(9998, 12, 31, 0, 0, 0, 0)
+        Me.Date1OUT.MinDate = New Date(1753, 1, 1, 0, 0, 0, 0)
+        Me.Date1OUT.Name = "Date1OUT"
+        Me.Date1OUT.ShadowDecoration.Parent = Me.Date1OUT
+        Me.Date1OUT.Size = New System.Drawing.Size(200, 36)
+        Me.Date1OUT.TabIndex = 11
+        Me.Date1OUT.Value = New Date(2023, 4, 15, 23, 18, 1, 623)
         '
-        'OUTCLR
+        'RPTOUTOFSTOCKS
         '
-        Me.OUTCLR.BackColor = System.Drawing.Color.Transparent
-        Me.OUTCLR.CheckedState.Parent = Me.OUTCLR
-        Me.OUTCLR.CustomImages.Parent = Me.OUTCLR
-        Me.OUTCLR.FillColor = System.Drawing.SystemColors.ControlDark
-        Me.OUTCLR.Font = New System.Drawing.Font("Century Gothic", 9.0!)
-        Me.OUTCLR.ForeColor = System.Drawing.Color.White
-        Me.OUTCLR.HoverState.Parent = Me.OUTCLR
-        Me.OUTCLR.Location = New System.Drawing.Point(740, 27)
-        Me.OUTCLR.Name = "OUTCLR"
-        Me.OUTCLR.ShadowDecoration.Parent = Me.OUTCLR
-        Me.OUTCLR.Size = New System.Drawing.Size(98, 36)
-        Me.OUTCLR.TabIndex = 14
-        Me.OUTCLR.Text = "Clear Filter"
-        '
-        'Label9
-        '
-        Me.Label9.AutoSize = True
-        Me.Label9.Location = New System.Drawing.Point(27, 27)
-        Me.Label9.Name = "Label9"
-        Me.Label9.Size = New System.Drawing.Size(52, 20)
-        Me.Label9.TabIndex = 15
-        Me.Label9.Text = "From :"
-        '
-        'Label10
-        '
-        Me.Label10.AutoSize = True
-        Me.Label10.Location = New System.Drawing.Point(313, 27)
-        Me.Label10.Name = "Label10"
-        Me.Label10.Size = New System.Drawing.Size(32, 20)
-        Me.Label10.TabIndex = 16
-        Me.Label10.Text = "To :"
+        ReportDataSource4.Name = "DataSet1"
+        ReportDataSource4.Value = Nothing
+        Me.RPTOUTOFSTOCKS.LocalReport.DataSources.Add(ReportDataSource4)
+        Me.RPTOUTOFSTOCKS.LocalReport.ReportEmbeddedResource = "SALESANDINVENTORYSYSTEM.RPTOUTOFSTOCKS.rdlc"
+        Me.RPTOUTOFSTOCKS.Location = New System.Drawing.Point(20, 80)
+        Me.RPTOUTOFSTOCKS.Name = "RPTOUTOFSTOCKS"
+        Me.RPTOUTOFSTOCKS.ServerReport.BearerToken = Nothing
+        Me.RPTOUTOFSTOCKS.Size = New System.Drawing.Size(1067, 513)
+        Me.RPTOUTOFSTOCKS.TabIndex = 10
         '
         'TPEXP
         '
@@ -611,22 +617,66 @@ Partial Class FRMREPORTS
         Me.TPEXP.Text = "Expired Products"
         Me.TPEXP.UseVisualStyleBackColor = True
         '
-        'Date1EXP
+        'RPTEXP
         '
-        Me.Date1EXP.CheckedState.Parent = Me.Date1EXP
-        Me.Date1EXP.FillColor = System.Drawing.Color.MediumSeaGreen
-        Me.Date1EXP.Font = New System.Drawing.Font("Century Gothic", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Date1EXP.ForeColor = System.Drawing.Color.White
-        Me.Date1EXP.Format = System.Windows.Forms.DateTimePickerFormat.[Long]
-        Me.Date1EXP.HoverState.Parent = Me.Date1EXP
-        Me.Date1EXP.Location = New System.Drawing.Point(90, 26)
-        Me.Date1EXP.MaxDate = New Date(9998, 12, 31, 0, 0, 0, 0)
-        Me.Date1EXP.MinDate = New Date(1753, 1, 1, 0, 0, 0, 0)
-        Me.Date1EXP.Name = "Date1EXP"
-        Me.Date1EXP.ShadowDecoration.Parent = Me.Date1EXP
-        Me.Date1EXP.Size = New System.Drawing.Size(200, 36)
-        Me.Date1EXP.TabIndex = 6
-        Me.Date1EXP.Value = New Date(2023, 4, 15, 23, 18, 1, 623)
+        ReportDataSource5.Name = "DataSet1"
+        ReportDataSource5.Value = Nothing
+        Me.RPTEXP.LocalReport.DataSources.Add(ReportDataSource5)
+        Me.RPTEXP.LocalReport.ReportEmbeddedResource = "SALESANDINVENTORYSYSTEM.RPTEXP.rdlc"
+        Me.RPTEXP.Location = New System.Drawing.Point(20, 80)
+        Me.RPTEXP.Name = "RPTEXP"
+        Me.RPTEXP.ServerReport.BearerToken = Nothing
+        Me.RPTEXP.Size = New System.Drawing.Size(1067, 513)
+        Me.RPTEXP.TabIndex = 12
+        '
+        'Label8
+        '
+        Me.Label8.AutoSize = True
+        Me.Label8.Location = New System.Drawing.Point(27, 27)
+        Me.Label8.Name = "Label8"
+        Me.Label8.Size = New System.Drawing.Size(52, 20)
+        Me.Label8.TabIndex = 11
+        Me.Label8.Text = "From :"
+        '
+        'Label7
+        '
+        Me.Label7.AutoSize = True
+        Me.Label7.Location = New System.Drawing.Point(313, 27)
+        Me.Label7.Name = "Label7"
+        Me.Label7.Size = New System.Drawing.Size(32, 20)
+        Me.Label7.TabIndex = 10
+        Me.Label7.Text = "To :"
+        '
+        'EXPCLR
+        '
+        Me.EXPCLR.BackColor = System.Drawing.Color.Transparent
+        Me.EXPCLR.CheckedState.Parent = Me.EXPCLR
+        Me.EXPCLR.CustomImages.Parent = Me.EXPCLR
+        Me.EXPCLR.FillColor = System.Drawing.SystemColors.ControlDark
+        Me.EXPCLR.Font = New System.Drawing.Font("Century Gothic", 9.0!)
+        Me.EXPCLR.ForeColor = System.Drawing.Color.White
+        Me.EXPCLR.HoverState.Parent = Me.EXPCLR
+        Me.EXPCLR.Location = New System.Drawing.Point(740, 27)
+        Me.EXPCLR.Name = "EXPCLR"
+        Me.EXPCLR.ShadowDecoration.Parent = Me.EXPCLR
+        Me.EXPCLR.Size = New System.Drawing.Size(98, 36)
+        Me.EXPCLR.TabIndex = 9
+        Me.EXPCLR.Text = "Clear Filter"
+        '
+        'EXPFILL
+        '
+        Me.EXPFILL.CheckedState.Parent = Me.EXPFILL
+        Me.EXPFILL.CustomImages.Parent = Me.EXPFILL
+        Me.EXPFILL.FillColor = System.Drawing.Color.MediumSeaGreen
+        Me.EXPFILL.Font = New System.Drawing.Font("Century Gothic", 9.0!)
+        Me.EXPFILL.ForeColor = System.Drawing.Color.White
+        Me.EXPFILL.HoverState.Parent = Me.EXPFILL
+        Me.EXPFILL.Location = New System.Drawing.Point(610, 26)
+        Me.EXPFILL.Name = "EXPFILL"
+        Me.EXPFILL.ShadowDecoration.Parent = Me.EXPFILL
+        Me.EXPFILL.Size = New System.Drawing.Size(98, 36)
+        Me.EXPFILL.TabIndex = 8
+        Me.EXPFILL.Text = "Filter"
         '
         'DAte2EXP
         '
@@ -645,66 +695,22 @@ Partial Class FRMREPORTS
         Me.DAte2EXP.TabIndex = 7
         Me.DAte2EXP.Value = New Date(2023, 4, 15, 23, 18, 1, 623)
         '
-        'EXPFILL
+        'Date1EXP
         '
-        Me.EXPFILL.CheckedState.Parent = Me.EXPFILL
-        Me.EXPFILL.CustomImages.Parent = Me.EXPFILL
-        Me.EXPFILL.FillColor = System.Drawing.Color.MediumSeaGreen
-        Me.EXPFILL.Font = New System.Drawing.Font("Century Gothic", 9.0!)
-        Me.EXPFILL.ForeColor = System.Drawing.Color.White
-        Me.EXPFILL.HoverState.Parent = Me.EXPFILL
-        Me.EXPFILL.Location = New System.Drawing.Point(610, 26)
-        Me.EXPFILL.Name = "EXPFILL"
-        Me.EXPFILL.ShadowDecoration.Parent = Me.EXPFILL
-        Me.EXPFILL.Size = New System.Drawing.Size(98, 36)
-        Me.EXPFILL.TabIndex = 8
-        Me.EXPFILL.Text = "Filter"
-        '
-        'EXPCLR
-        '
-        Me.EXPCLR.BackColor = System.Drawing.Color.Transparent
-        Me.EXPCLR.CheckedState.Parent = Me.EXPCLR
-        Me.EXPCLR.CustomImages.Parent = Me.EXPCLR
-        Me.EXPCLR.FillColor = System.Drawing.SystemColors.ControlDark
-        Me.EXPCLR.Font = New System.Drawing.Font("Century Gothic", 9.0!)
-        Me.EXPCLR.ForeColor = System.Drawing.Color.White
-        Me.EXPCLR.HoverState.Parent = Me.EXPCLR
-        Me.EXPCLR.Location = New System.Drawing.Point(740, 27)
-        Me.EXPCLR.Name = "EXPCLR"
-        Me.EXPCLR.ShadowDecoration.Parent = Me.EXPCLR
-        Me.EXPCLR.Size = New System.Drawing.Size(98, 36)
-        Me.EXPCLR.TabIndex = 9
-        Me.EXPCLR.Text = "Clear Filter"
-        '
-        'Label7
-        '
-        Me.Label7.AutoSize = True
-        Me.Label7.Location = New System.Drawing.Point(313, 27)
-        Me.Label7.Name = "Label7"
-        Me.Label7.Size = New System.Drawing.Size(32, 20)
-        Me.Label7.TabIndex = 10
-        Me.Label7.Text = "To :"
-        '
-        'Label8
-        '
-        Me.Label8.AutoSize = True
-        Me.Label8.Location = New System.Drawing.Point(27, 27)
-        Me.Label8.Name = "Label8"
-        Me.Label8.Size = New System.Drawing.Size(52, 20)
-        Me.Label8.TabIndex = 11
-        Me.Label8.Text = "From :"
-        '
-        'RPTEXP
-        '
-        ReportDataSource5.Name = "DataSet1"
-        ReportDataSource5.Value = Nothing
-        Me.RPTEXP.LocalReport.DataSources.Add(ReportDataSource5)
-        Me.RPTEXP.LocalReport.ReportEmbeddedResource = "SALESANDINVENTORYSYSTEM.RPTEXP.rdlc"
-        Me.RPTEXP.Location = New System.Drawing.Point(20, 80)
-        Me.RPTEXP.Name = "RPTEXP"
-        Me.RPTEXP.ServerReport.BearerToken = Nothing
-        Me.RPTEXP.Size = New System.Drawing.Size(1067, 513)
-        Me.RPTEXP.TabIndex = 12
+        Me.Date1EXP.CheckedState.Parent = Me.Date1EXP
+        Me.Date1EXP.FillColor = System.Drawing.Color.MediumSeaGreen
+        Me.Date1EXP.Font = New System.Drawing.Font("Century Gothic", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Date1EXP.ForeColor = System.Drawing.Color.White
+        Me.Date1EXP.Format = System.Windows.Forms.DateTimePickerFormat.[Long]
+        Me.Date1EXP.HoverState.Parent = Me.Date1EXP
+        Me.Date1EXP.Location = New System.Drawing.Point(90, 26)
+        Me.Date1EXP.MaxDate = New Date(9998, 12, 31, 0, 0, 0, 0)
+        Me.Date1EXP.MinDate = New Date(1753, 1, 1, 0, 0, 0, 0)
+        Me.Date1EXP.Name = "Date1EXP"
+        Me.Date1EXP.ShadowDecoration.Parent = Me.Date1EXP
+        Me.Date1EXP.Size = New System.Drawing.Size(200, 36)
+        Me.Date1EXP.TabIndex = 6
+        Me.Date1EXP.Value = New Date(2023, 4, 15, 23, 18, 1, 623)
         '
         'TPDELIVERY
         '
@@ -721,324 +727,6 @@ Partial Class FRMREPORTS
         Me.TPDELIVERY.TabIndex = 6
         Me.TPDELIVERY.Text = "Delivery"
         Me.TPDELIVERY.UseVisualStyleBackColor = True
-        '
-        'RPTDELIVERY
-        '
-        ReportDataSource6.Name = "DataSet_SUPPLIER"
-        ReportDataSource6.Value = Nothing
-        Me.RPTDELIVERY.LocalReport.DataSources.Add(ReportDataSource6)
-        Me.RPTDELIVERY.LocalReport.ReportEmbeddedResource = "SALESANDINVENTORYSYSTEM.RPTSUPPLIER.rdlc"
-        Me.RPTDELIVERY.Location = New System.Drawing.Point(20, 80)
-        Me.RPTDELIVERY.Name = "RPTDELIVERY"
-        Me.RPTDELIVERY.ServerReport.BearerToken = Nothing
-        Me.RPTDELIVERY.Size = New System.Drawing.Size(1067, 513)
-        Me.RPTDELIVERY.TabIndex = 1
-        '
-        'TPSTOCKS
-        '
-        Me.TPSTOCKS.Controls.Add(Me.Label4)
-        Me.TPSTOCKS.Controls.Add(Me.Label3)
-        Me.TPSTOCKS.Controls.Add(Me.STOCKCLR)
-        Me.TPSTOCKS.Controls.Add(Me.STOCKSFILL)
-        Me.TPSTOCKS.Controls.Add(Me.Date2St)
-        Me.TPSTOCKS.Controls.Add(Me.Date1St)
-        Me.TPSTOCKS.Controls.Add(Me.RPTSTOCKS)
-        Me.TPSTOCKS.Location = New System.Drawing.Point(4, 29)
-        Me.TPSTOCKS.Name = "TPSTOCKS"
-        Me.TPSTOCKS.Size = New System.Drawing.Size(1108, 619)
-        Me.TPSTOCKS.TabIndex = 7
-        Me.TPSTOCKS.Text = "Stocks"
-        Me.TPSTOCKS.UseVisualStyleBackColor = True
-        '
-        'RPTSTOCKS
-        '
-        ReportDataSource7.Name = "inv_db"
-        ReportDataSource7.Value = Nothing
-        Me.RPTSTOCKS.LocalReport.DataSources.Add(ReportDataSource7)
-        Me.RPTSTOCKS.LocalReport.ReportEmbeddedResource = "SALESANDINVENTORYSYSTEM.RPTSTOCKS.rdlc"
-        Me.RPTSTOCKS.Location = New System.Drawing.Point(20, 80)
-        Me.RPTSTOCKS.Name = "RPTSTOCKS"
-        Me.RPTSTOCKS.ServerReport.BearerToken = Nothing
-        Me.RPTSTOCKS.Size = New System.Drawing.Size(1067, 513)
-        Me.RPTSTOCKS.TabIndex = 7
-        '
-        'Date1St
-        '
-        Me.Date1St.CheckedState.Parent = Me.Date1St
-        Me.Date1St.FillColor = System.Drawing.Color.MediumSeaGreen
-        Me.Date1St.Font = New System.Drawing.Font("Century Gothic", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Date1St.ForeColor = System.Drawing.Color.White
-        Me.Date1St.Format = System.Windows.Forms.DateTimePickerFormat.[Long]
-        Me.Date1St.HoverState.Parent = Me.Date1St
-        Me.Date1St.Location = New System.Drawing.Point(90, 26)
-        Me.Date1St.MaxDate = New Date(9998, 12, 31, 0, 0, 0, 0)
-        Me.Date1St.MinDate = New Date(1753, 1, 1, 0, 0, 0, 0)
-        Me.Date1St.Name = "Date1St"
-        Me.Date1St.ShadowDecoration.Parent = Me.Date1St
-        Me.Date1St.Size = New System.Drawing.Size(200, 36)
-        Me.Date1St.TabIndex = 8
-        Me.Date1St.Value = New Date(2023, 4, 15, 23, 18, 1, 623)
-        '
-        'Date2St
-        '
-        Me.Date2St.CheckedState.Parent = Me.Date2St
-        Me.Date2St.FillColor = System.Drawing.Color.MediumSeaGreen
-        Me.Date2St.Font = New System.Drawing.Font("Century Gothic", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Date2St.ForeColor = System.Drawing.Color.White
-        Me.Date2St.Format = System.Windows.Forms.DateTimePickerFormat.[Long]
-        Me.Date2St.HoverState.Parent = Me.Date2St
-        Me.Date2St.Location = New System.Drawing.Point(372, 26)
-        Me.Date2St.MaxDate = New Date(9998, 12, 31, 0, 0, 0, 0)
-        Me.Date2St.MinDate = New Date(1753, 1, 1, 0, 0, 0, 0)
-        Me.Date2St.Name = "Date2St"
-        Me.Date2St.ShadowDecoration.Parent = Me.Date2St
-        Me.Date2St.Size = New System.Drawing.Size(200, 36)
-        Me.Date2St.TabIndex = 9
-        Me.Date2St.Value = New Date(2023, 4, 15, 23, 18, 1, 623)
-        '
-        'STOCKSFILL
-        '
-        Me.STOCKSFILL.CheckedState.Parent = Me.STOCKSFILL
-        Me.STOCKSFILL.CustomImages.Parent = Me.STOCKSFILL
-        Me.STOCKSFILL.FillColor = System.Drawing.Color.MediumSeaGreen
-        Me.STOCKSFILL.Font = New System.Drawing.Font("Century Gothic", 9.0!)
-        Me.STOCKSFILL.ForeColor = System.Drawing.Color.White
-        Me.STOCKSFILL.HoverState.Parent = Me.STOCKSFILL
-        Me.STOCKSFILL.Location = New System.Drawing.Point(610, 26)
-        Me.STOCKSFILL.Name = "STOCKSFILL"
-        Me.STOCKSFILL.ShadowDecoration.Parent = Me.STOCKSFILL
-        Me.STOCKSFILL.Size = New System.Drawing.Size(98, 36)
-        Me.STOCKSFILL.TabIndex = 10
-        Me.STOCKSFILL.Text = "Filter"
-        '
-        'STOCKCLR
-        '
-        Me.STOCKCLR.BackColor = System.Drawing.Color.Transparent
-        Me.STOCKCLR.CheckedState.Parent = Me.STOCKCLR
-        Me.STOCKCLR.CustomImages.Parent = Me.STOCKCLR
-        Me.STOCKCLR.FillColor = System.Drawing.SystemColors.ControlDark
-        Me.STOCKCLR.Font = New System.Drawing.Font("Century Gothic", 9.0!)
-        Me.STOCKCLR.ForeColor = System.Drawing.Color.White
-        Me.STOCKCLR.HoverState.Parent = Me.STOCKCLR
-        Me.STOCKCLR.Location = New System.Drawing.Point(740, 27)
-        Me.STOCKCLR.Name = "STOCKCLR"
-        Me.STOCKCLR.ShadowDecoration.Parent = Me.STOCKCLR
-        Me.STOCKCLR.Size = New System.Drawing.Size(98, 36)
-        Me.STOCKCLR.TabIndex = 11
-        Me.STOCKCLR.Text = "Clear Filter"
-        '
-        'Label3
-        '
-        Me.Label3.AutoSize = True
-        Me.Label3.Location = New System.Drawing.Point(27, 27)
-        Me.Label3.Name = "Label3"
-        Me.Label3.Size = New System.Drawing.Size(52, 20)
-        Me.Label3.TabIndex = 12
-        Me.Label3.Text = "From :"
-        '
-        'Label4
-        '
-        Me.Label4.AutoSize = True
-        Me.Label4.Location = New System.Drawing.Point(313, 27)
-        Me.Label4.Name = "Label4"
-        Me.Label4.Size = New System.Drawing.Size(32, 20)
-        Me.Label4.TabIndex = 13
-        Me.Label4.Text = "To :"
-        '
-        'TPPRODS
-        '
-        Me.TPPRODS.Controls.Add(Me.CLEARPRODUCTS)
-        Me.TPPRODS.Controls.Add(Me.Label5)
-        Me.TPPRODS.Controls.Add(Me.FILTERPRODUCTS)
-        Me.TPPRODS.Controls.Add(Me.CBOCATEGORY)
-        Me.TPPRODS.Controls.Add(Me.RPTPRODUCTS)
-        Me.TPPRODS.Location = New System.Drawing.Point(4, 29)
-        Me.TPPRODS.Name = "TPPRODS"
-        Me.TPPRODS.Padding = New System.Windows.Forms.Padding(3)
-        Me.TPPRODS.Size = New System.Drawing.Size(1108, 619)
-        Me.TPPRODS.TabIndex = 1
-        Me.TPPRODS.Text = "Products"
-        Me.TPPRODS.UseVisualStyleBackColor = True
-        '
-        'RPTPRODUCTS
-        '
-        ReportDataSource8.Name = "DataSet1"
-        ReportDataSource8.Value = Me.tbl_productsBindingSource
-        Me.RPTPRODUCTS.LocalReport.DataSources.Add(ReportDataSource8)
-        Me.RPTPRODUCTS.LocalReport.ReportEmbeddedResource = "SALESANDINVENTORYSYSTEM.RPTPRODUCTS.rdlc"
-        Me.RPTPRODUCTS.Location = New System.Drawing.Point(20, 80)
-        Me.RPTPRODUCTS.Name = "RPTPRODUCTS"
-        Me.RPTPRODUCTS.ServerReport.BearerToken = Nothing
-        Me.RPTPRODUCTS.Size = New System.Drawing.Size(1067, 513)
-        Me.RPTPRODUCTS.TabIndex = 8
-        '
-        'CBOCATEGORY
-        '
-        Me.CBOCATEGORY.BackColor = System.Drawing.Color.Transparent
-        Me.CBOCATEGORY.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed
-        Me.CBOCATEGORY.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
-        Me.CBOCATEGORY.FocusedColor = System.Drawing.Color.Empty
-        Me.CBOCATEGORY.FocusedState.Parent = Me.CBOCATEGORY
-        Me.CBOCATEGORY.Font = New System.Drawing.Font("Segoe UI", 10.0!)
-        Me.CBOCATEGORY.ForeColor = System.Drawing.Color.FromArgb(CType(CType(68, Byte), Integer), CType(CType(88, Byte), Integer), CType(CType(112, Byte), Integer))
-        Me.CBOCATEGORY.FormattingEnabled = True
-        Me.CBOCATEGORY.HoverState.Parent = Me.CBOCATEGORY
-        Me.CBOCATEGORY.ItemHeight = 30
-        Me.CBOCATEGORY.Items.AddRange(New Object() {"Admin", "Cashier", "Manager"})
-        Me.CBOCATEGORY.ItemsAppearance.Parent = Me.CBOCATEGORY
-        Me.CBOCATEGORY.Location = New System.Drawing.Point(189, 26)
-        Me.CBOCATEGORY.Name = "CBOCATEGORY"
-        Me.CBOCATEGORY.ShadowDecoration.Parent = Me.CBOCATEGORY
-        Me.CBOCATEGORY.Size = New System.Drawing.Size(140, 36)
-        Me.CBOCATEGORY.TabIndex = 10
-        '
-        'FILTERPRODUCTS
-        '
-        Me.FILTERPRODUCTS.CheckedState.Parent = Me.FILTERPRODUCTS
-        Me.FILTERPRODUCTS.CustomImages.Parent = Me.FILTERPRODUCTS
-        Me.FILTERPRODUCTS.FillColor = System.Drawing.Color.MediumSeaGreen
-        Me.FILTERPRODUCTS.Font = New System.Drawing.Font("Segoe UI", 9.0!)
-        Me.FILTERPRODUCTS.ForeColor = System.Drawing.Color.White
-        Me.FILTERPRODUCTS.HoverState.Parent = Me.FILTERPRODUCTS
-        Me.FILTERPRODUCTS.Location = New System.Drawing.Point(372, 27)
-        Me.FILTERPRODUCTS.Name = "FILTERPRODUCTS"
-        Me.FILTERPRODUCTS.ShadowDecoration.Parent = Me.FILTERPRODUCTS
-        Me.FILTERPRODUCTS.Size = New System.Drawing.Size(98, 36)
-        Me.FILTERPRODUCTS.TabIndex = 11
-        Me.FILTERPRODUCTS.Text = "Filter"
-        '
-        'Label5
-        '
-        Me.Label5.AutoSize = True
-        Me.Label5.Font = New System.Drawing.Font("Century Gothic", 11.25!)
-        Me.Label5.Location = New System.Drawing.Point(16, 27)
-        Me.Label5.Name = "Label5"
-        Me.Label5.Size = New System.Drawing.Size(138, 20)
-        Me.Label5.TabIndex = 9
-        Me.Label5.Text = "Filter by Category"
-        '
-        'CLEARPRODUCTS
-        '
-        Me.CLEARPRODUCTS.BackColor = System.Drawing.Color.Transparent
-        Me.CLEARPRODUCTS.CheckedState.Parent = Me.CLEARPRODUCTS
-        Me.CLEARPRODUCTS.CustomImages.Parent = Me.CLEARPRODUCTS
-        Me.CLEARPRODUCTS.FillColor = System.Drawing.SystemColors.ControlDark
-        Me.CLEARPRODUCTS.Font = New System.Drawing.Font("Segoe UI", 9.0!)
-        Me.CLEARPRODUCTS.ForeColor = System.Drawing.Color.White
-        Me.CLEARPRODUCTS.HoverState.Parent = Me.CLEARPRODUCTS
-        Me.CLEARPRODUCTS.Location = New System.Drawing.Point(497, 27)
-        Me.CLEARPRODUCTS.Name = "CLEARPRODUCTS"
-        Me.CLEARPRODUCTS.ShadowDecoration.Parent = Me.CLEARPRODUCTS
-        Me.CLEARPRODUCTS.Size = New System.Drawing.Size(98, 36)
-        Me.CLEARPRODUCTS.TabIndex = 12
-        Me.CLEARPRODUCTS.Text = "Clear Filter"
-        '
-        'TPUSERS
-        '
-        Me.TPUSERS.Controls.Add(Me.RPTUSERS)
-        Me.TPUSERS.Controls.Add(Me.BTNCLEAR)
-        Me.TPUSERS.Controls.Add(Me.Label2)
-        Me.TPUSERS.Controls.Add(Me.BTNFILTER)
-        Me.TPUSERS.Controls.Add(Me.CBOUT)
-        Me.TPUSERS.Font = New System.Drawing.Font("Century Gothic", 11.25!)
-        Me.TPUSERS.Location = New System.Drawing.Point(4, 29)
-        Me.TPUSERS.Name = "TPUSERS"
-        Me.TPUSERS.Padding = New System.Windows.Forms.Padding(3)
-        Me.TPUSERS.Size = New System.Drawing.Size(1108, 619)
-        Me.TPUSERS.TabIndex = 0
-        Me.TPUSERS.Text = "User Accounts"
-        Me.TPUSERS.UseVisualStyleBackColor = True
-        '
-        'CBOUT
-        '
-        Me.CBOUT.BackColor = System.Drawing.Color.Transparent
-        Me.CBOUT.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed
-        Me.CBOUT.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
-        Me.CBOUT.FocusedColor = System.Drawing.Color.Empty
-        Me.CBOUT.FocusedState.Parent = Me.CBOUT
-        Me.CBOUT.Font = New System.Drawing.Font("Segoe UI", 10.0!)
-        Me.CBOUT.ForeColor = System.Drawing.Color.FromArgb(CType(CType(68, Byte), Integer), CType(CType(88, Byte), Integer), CType(CType(112, Byte), Integer))
-        Me.CBOUT.FormattingEnabled = True
-        Me.CBOUT.HoverState.Parent = Me.CBOUT
-        Me.CBOUT.ItemHeight = 30
-        Me.CBOUT.Items.AddRange(New Object() {"Admin", "Cashier", "Manager"})
-        Me.CBOUT.ItemsAppearance.Parent = Me.CBOUT
-        Me.CBOUT.Location = New System.Drawing.Point(189, 27)
-        Me.CBOUT.Name = "CBOUT"
-        Me.CBOUT.ShadowDecoration.Parent = Me.CBOUT
-        Me.CBOUT.Size = New System.Drawing.Size(140, 36)
-        Me.CBOUT.TabIndex = 2
-        '
-        'BTNFILTER
-        '
-        Me.BTNFILTER.CheckedState.Parent = Me.BTNFILTER
-        Me.BTNFILTER.CustomImages.Parent = Me.BTNFILTER
-        Me.BTNFILTER.FillColor = System.Drawing.Color.MediumSeaGreen
-        Me.BTNFILTER.Font = New System.Drawing.Font("Segoe UI", 9.0!)
-        Me.BTNFILTER.ForeColor = System.Drawing.Color.White
-        Me.BTNFILTER.HoverState.Parent = Me.BTNFILTER
-        Me.BTNFILTER.Location = New System.Drawing.Point(372, 28)
-        Me.BTNFILTER.Name = "BTNFILTER"
-        Me.BTNFILTER.ShadowDecoration.Parent = Me.BTNFILTER
-        Me.BTNFILTER.Size = New System.Drawing.Size(98, 36)
-        Me.BTNFILTER.TabIndex = 3
-        Me.BTNFILTER.Text = "Filter"
-        '
-        'Label2
-        '
-        Me.Label2.AutoSize = True
-        Me.Label2.Font = New System.Drawing.Font("Century Gothic", 11.25!)
-        Me.Label2.Location = New System.Drawing.Point(16, 28)
-        Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(141, 20)
-        Me.Label2.TabIndex = 1
-        Me.Label2.Text = "Filter by Usertype :"
-        '
-        'BTNCLEAR
-        '
-        Me.BTNCLEAR.BackColor = System.Drawing.Color.Transparent
-        Me.BTNCLEAR.CheckedState.Parent = Me.BTNCLEAR
-        Me.BTNCLEAR.CustomImages.Parent = Me.BTNCLEAR
-        Me.BTNCLEAR.FillColor = System.Drawing.SystemColors.ControlDark
-        Me.BTNCLEAR.Font = New System.Drawing.Font("Segoe UI", 9.0!)
-        Me.BTNCLEAR.ForeColor = System.Drawing.Color.White
-        Me.BTNCLEAR.HoverState.Parent = Me.BTNCLEAR
-        Me.BTNCLEAR.Location = New System.Drawing.Point(497, 28)
-        Me.BTNCLEAR.Name = "BTNCLEAR"
-        Me.BTNCLEAR.ShadowDecoration.Parent = Me.BTNCLEAR
-        Me.BTNCLEAR.Size = New System.Drawing.Size(98, 36)
-        Me.BTNCLEAR.TabIndex = 4
-        Me.BTNCLEAR.Text = "Clear Filter"
-        '
-        'RPTUSERS
-        '
-        ReportDataSource9.Name = "DataSet_useraccounts"
-        ReportDataSource9.Value = Nothing
-        Me.RPTUSERS.LocalReport.DataSources.Add(ReportDataSource9)
-        Me.RPTUSERS.LocalReport.ReportEmbeddedResource = "SALESANDINVENTORYSYSTEM.RPTUSERACCOUNTS.rdlc"
-        Me.RPTUSERS.Location = New System.Drawing.Point(20, 80)
-        Me.RPTUSERS.Name = "RPTUSERS"
-        Me.RPTUSERS.ServerReport.BearerToken = Nothing
-        Me.RPTUSERS.Size = New System.Drawing.Size(1067, 513)
-        Me.RPTUSERS.TabIndex = 0
-        '
-        'TCREPORTS
-        '
-        Me.TCREPORTS.Controls.Add(Me.TPUSERS)
-        Me.TCREPORTS.Controls.Add(Me.TPPRODS)
-        Me.TCREPORTS.Controls.Add(Me.TPSTOCKS)
-        Me.TCREPORTS.Controls.Add(Me.TPDELIVERY)
-        Me.TCREPORTS.Controls.Add(Me.TPEXP)
-        Me.TCREPORTS.Controls.Add(Me.TPOUT)
-        Me.TCREPORTS.Controls.Add(Me.TPSALES)
-        Me.TCREPORTS.Controls.Add(Me.TPACT)
-        Me.TCREPORTS.Controls.Add(Me.TPTRANSREC)
-        Me.TCREPORTS.Font = New System.Drawing.Font("Century Gothic", 11.25!)
-        Me.TCREPORTS.Location = New System.Drawing.Point(-1, 31)
-        Me.TCREPORTS.Name = "TCREPORTS"
-        Me.TCREPORTS.SelectedIndex = 0
-        Me.TCREPORTS.Size = New System.Drawing.Size(1116, 652)
-        Me.TCREPORTS.TabIndex = 23
         '
         'MONTHLYDELIVERY
         '
@@ -1131,6 +819,304 @@ Partial Class FRMREPORTS
         Me.DELIVERYFILTER.TabIndex = 19
         Me.DELIVERYFILTER.Text = "Filter"
         '
+        'RPTDELIVERY
+        '
+        ReportDataSource6.Name = "DataSet_SUPPLIER"
+        ReportDataSource6.Value = Nothing
+        Me.RPTDELIVERY.LocalReport.DataSources.Add(ReportDataSource6)
+        Me.RPTDELIVERY.LocalReport.ReportEmbeddedResource = "SALESANDINVENTORYSYSTEM.RPTSUPPLIER.rdlc"
+        Me.RPTDELIVERY.Location = New System.Drawing.Point(20, 80)
+        Me.RPTDELIVERY.Name = "RPTDELIVERY"
+        Me.RPTDELIVERY.ServerReport.BearerToken = Nothing
+        Me.RPTDELIVERY.Size = New System.Drawing.Size(1067, 513)
+        Me.RPTDELIVERY.TabIndex = 1
+        '
+        'TPSTOCKS
+        '
+        Me.TPSTOCKS.Controls.Add(Me.CLEARSTOCKS)
+        Me.TPSTOCKS.Controls.Add(Me.Label3)
+        Me.TPSTOCKS.Controls.Add(Me.FILTERSTOCKS)
+        Me.TPSTOCKS.Controls.Add(Me.CBOSTOCKS)
+        Me.TPSTOCKS.Controls.Add(Me.RPTSTOCKS)
+        Me.TPSTOCKS.Location = New System.Drawing.Point(4, 29)
+        Me.TPSTOCKS.Name = "TPSTOCKS"
+        Me.TPSTOCKS.Size = New System.Drawing.Size(1108, 619)
+        Me.TPSTOCKS.TabIndex = 7
+        Me.TPSTOCKS.Text = "Stocks"
+        Me.TPSTOCKS.UseVisualStyleBackColor = True
+        '
+        'RPTSTOCKS
+        '
+        ReportDataSource7.Name = "inv_db"
+        ReportDataSource7.Value = Nothing
+        Me.RPTSTOCKS.LocalReport.DataSources.Add(ReportDataSource7)
+        Me.RPTSTOCKS.LocalReport.ReportEmbeddedResource = "SALESANDINVENTORYSYSTEM.RPTSTOCKS.rdlc"
+        Me.RPTSTOCKS.Location = New System.Drawing.Point(20, 80)
+        Me.RPTSTOCKS.Name = "RPTSTOCKS"
+        Me.RPTSTOCKS.ServerReport.BearerToken = Nothing
+        Me.RPTSTOCKS.Size = New System.Drawing.Size(1067, 513)
+        Me.RPTSTOCKS.TabIndex = 7
+        '
+        'TPPRODS
+        '
+        Me.TPPRODS.Controls.Add(Me.CLEARPRODUCTS)
+        Me.TPPRODS.Controls.Add(Me.Label5)
+        Me.TPPRODS.Controls.Add(Me.FILTERPRODUCTS)
+        Me.TPPRODS.Controls.Add(Me.CBOCATEGORY)
+        Me.TPPRODS.Controls.Add(Me.RPTPRODUCTS)
+        Me.TPPRODS.Location = New System.Drawing.Point(4, 29)
+        Me.TPPRODS.Name = "TPPRODS"
+        Me.TPPRODS.Padding = New System.Windows.Forms.Padding(3)
+        Me.TPPRODS.Size = New System.Drawing.Size(1108, 619)
+        Me.TPPRODS.TabIndex = 1
+        Me.TPPRODS.Text = "Products"
+        Me.TPPRODS.UseVisualStyleBackColor = True
+        '
+        'CLEARPRODUCTS
+        '
+        Me.CLEARPRODUCTS.BackColor = System.Drawing.Color.Transparent
+        Me.CLEARPRODUCTS.CheckedState.Parent = Me.CLEARPRODUCTS
+        Me.CLEARPRODUCTS.CustomImages.Parent = Me.CLEARPRODUCTS
+        Me.CLEARPRODUCTS.FillColor = System.Drawing.SystemColors.ControlDark
+        Me.CLEARPRODUCTS.Font = New System.Drawing.Font("Segoe UI", 9.0!)
+        Me.CLEARPRODUCTS.ForeColor = System.Drawing.Color.White
+        Me.CLEARPRODUCTS.HoverState.Parent = Me.CLEARPRODUCTS
+        Me.CLEARPRODUCTS.Location = New System.Drawing.Point(497, 27)
+        Me.CLEARPRODUCTS.Name = "CLEARPRODUCTS"
+        Me.CLEARPRODUCTS.ShadowDecoration.Parent = Me.CLEARPRODUCTS
+        Me.CLEARPRODUCTS.Size = New System.Drawing.Size(98, 36)
+        Me.CLEARPRODUCTS.TabIndex = 12
+        Me.CLEARPRODUCTS.Text = "Clear Filter"
+        '
+        'Label5
+        '
+        Me.Label5.AutoSize = True
+        Me.Label5.Font = New System.Drawing.Font("Century Gothic", 11.25!)
+        Me.Label5.Location = New System.Drawing.Point(16, 27)
+        Me.Label5.Name = "Label5"
+        Me.Label5.Size = New System.Drawing.Size(138, 20)
+        Me.Label5.TabIndex = 9
+        Me.Label5.Text = "Filter by Category"
+        '
+        'FILTERPRODUCTS
+        '
+        Me.FILTERPRODUCTS.CheckedState.Parent = Me.FILTERPRODUCTS
+        Me.FILTERPRODUCTS.CustomImages.Parent = Me.FILTERPRODUCTS
+        Me.FILTERPRODUCTS.FillColor = System.Drawing.Color.MediumSeaGreen
+        Me.FILTERPRODUCTS.Font = New System.Drawing.Font("Segoe UI", 9.0!)
+        Me.FILTERPRODUCTS.ForeColor = System.Drawing.Color.White
+        Me.FILTERPRODUCTS.HoverState.Parent = Me.FILTERPRODUCTS
+        Me.FILTERPRODUCTS.Location = New System.Drawing.Point(372, 27)
+        Me.FILTERPRODUCTS.Name = "FILTERPRODUCTS"
+        Me.FILTERPRODUCTS.ShadowDecoration.Parent = Me.FILTERPRODUCTS
+        Me.FILTERPRODUCTS.Size = New System.Drawing.Size(98, 36)
+        Me.FILTERPRODUCTS.TabIndex = 11
+        Me.FILTERPRODUCTS.Text = "Filter"
+        '
+        'CBOCATEGORY
+        '
+        Me.CBOCATEGORY.BackColor = System.Drawing.Color.Transparent
+        Me.CBOCATEGORY.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed
+        Me.CBOCATEGORY.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
+        Me.CBOCATEGORY.FocusedColor = System.Drawing.Color.Empty
+        Me.CBOCATEGORY.FocusedState.Parent = Me.CBOCATEGORY
+        Me.CBOCATEGORY.Font = New System.Drawing.Font("Segoe UI", 10.0!)
+        Me.CBOCATEGORY.ForeColor = System.Drawing.Color.FromArgb(CType(CType(68, Byte), Integer), CType(CType(88, Byte), Integer), CType(CType(112, Byte), Integer))
+        Me.CBOCATEGORY.FormattingEnabled = True
+        Me.CBOCATEGORY.HoverState.Parent = Me.CBOCATEGORY
+        Me.CBOCATEGORY.ItemHeight = 30
+        Me.CBOCATEGORY.Items.AddRange(New Object() {"Admin", "Cashier", "Manager"})
+        Me.CBOCATEGORY.ItemsAppearance.Parent = Me.CBOCATEGORY
+        Me.CBOCATEGORY.Location = New System.Drawing.Point(189, 26)
+        Me.CBOCATEGORY.Name = "CBOCATEGORY"
+        Me.CBOCATEGORY.ShadowDecoration.Parent = Me.CBOCATEGORY
+        Me.CBOCATEGORY.Size = New System.Drawing.Size(140, 36)
+        Me.CBOCATEGORY.TabIndex = 10
+        '
+        'RPTPRODUCTS
+        '
+        ReportDataSource8.Name = "DataSet1"
+        ReportDataSource8.Value = Me.tbl_productsBindingSource
+        Me.RPTPRODUCTS.LocalReport.DataSources.Add(ReportDataSource8)
+        Me.RPTPRODUCTS.LocalReport.ReportEmbeddedResource = "SALESANDINVENTORYSYSTEM.RPTPRODUCTS.rdlc"
+        Me.RPTPRODUCTS.Location = New System.Drawing.Point(20, 80)
+        Me.RPTPRODUCTS.Name = "RPTPRODUCTS"
+        Me.RPTPRODUCTS.ServerReport.BearerToken = Nothing
+        Me.RPTPRODUCTS.Size = New System.Drawing.Size(1067, 513)
+        Me.RPTPRODUCTS.TabIndex = 8
+        '
+        'TPUSERS
+        '
+        Me.TPUSERS.Controls.Add(Me.RPTUSERS)
+        Me.TPUSERS.Controls.Add(Me.CLEARUSERS)
+        Me.TPUSERS.Controls.Add(Me.Label2)
+        Me.TPUSERS.Controls.Add(Me.FILTERUSERS)
+        Me.TPUSERS.Controls.Add(Me.CBOUSERS)
+        Me.TPUSERS.Font = New System.Drawing.Font("Century Gothic", 11.25!)
+        Me.TPUSERS.Location = New System.Drawing.Point(4, 29)
+        Me.TPUSERS.Name = "TPUSERS"
+        Me.TPUSERS.Padding = New System.Windows.Forms.Padding(3)
+        Me.TPUSERS.Size = New System.Drawing.Size(1108, 619)
+        Me.TPUSERS.TabIndex = 0
+        Me.TPUSERS.Text = "User Accounts"
+        Me.TPUSERS.UseVisualStyleBackColor = True
+        '
+        'RPTUSERS
+        '
+        ReportDataSource9.Name = "DataSet1"
+        ReportDataSource9.Value = Me.tbl_usersBindingSource
+        Me.RPTUSERS.LocalReport.DataSources.Add(ReportDataSource9)
+        Me.RPTUSERS.LocalReport.ReportEmbeddedResource = "SALESANDINVENTORYSYSTEM.RPTUSERS.rdlc"
+        Me.RPTUSERS.Location = New System.Drawing.Point(20, 80)
+        Me.RPTUSERS.Name = "RPTUSERS"
+        Me.RPTUSERS.ServerReport.BearerToken = Nothing
+        Me.RPTUSERS.Size = New System.Drawing.Size(1067, 513)
+        Me.RPTUSERS.TabIndex = 0
+        '
+        'CLEARUSERS
+        '
+        Me.CLEARUSERS.BackColor = System.Drawing.Color.Transparent
+        Me.CLEARUSERS.CheckedState.Parent = Me.CLEARUSERS
+        Me.CLEARUSERS.CustomImages.Parent = Me.CLEARUSERS
+        Me.CLEARUSERS.FillColor = System.Drawing.SystemColors.ControlDark
+        Me.CLEARUSERS.Font = New System.Drawing.Font("Segoe UI", 9.0!)
+        Me.CLEARUSERS.ForeColor = System.Drawing.Color.White
+        Me.CLEARUSERS.HoverState.Parent = Me.CLEARUSERS
+        Me.CLEARUSERS.Location = New System.Drawing.Point(497, 28)
+        Me.CLEARUSERS.Name = "CLEARUSERS"
+        Me.CLEARUSERS.ShadowDecoration.Parent = Me.CLEARUSERS
+        Me.CLEARUSERS.Size = New System.Drawing.Size(98, 36)
+        Me.CLEARUSERS.TabIndex = 4
+        Me.CLEARUSERS.Text = "Clear Filter"
+        '
+        'Label2
+        '
+        Me.Label2.AutoSize = True
+        Me.Label2.Font = New System.Drawing.Font("Century Gothic", 11.25!)
+        Me.Label2.Location = New System.Drawing.Point(16, 28)
+        Me.Label2.Name = "Label2"
+        Me.Label2.Size = New System.Drawing.Size(141, 20)
+        Me.Label2.TabIndex = 1
+        Me.Label2.Text = "Filter by Usertype :"
+        '
+        'FILTERUSERS
+        '
+        Me.FILTERUSERS.CheckedState.Parent = Me.FILTERUSERS
+        Me.FILTERUSERS.CustomImages.Parent = Me.FILTERUSERS
+        Me.FILTERUSERS.FillColor = System.Drawing.Color.MediumSeaGreen
+        Me.FILTERUSERS.Font = New System.Drawing.Font("Segoe UI", 9.0!)
+        Me.FILTERUSERS.ForeColor = System.Drawing.Color.White
+        Me.FILTERUSERS.HoverState.Parent = Me.FILTERUSERS
+        Me.FILTERUSERS.Location = New System.Drawing.Point(372, 28)
+        Me.FILTERUSERS.Name = "FILTERUSERS"
+        Me.FILTERUSERS.ShadowDecoration.Parent = Me.FILTERUSERS
+        Me.FILTERUSERS.Size = New System.Drawing.Size(98, 36)
+        Me.FILTERUSERS.TabIndex = 3
+        Me.FILTERUSERS.Text = "Filter"
+        '
+        'CBOUSERS
+        '
+        Me.CBOUSERS.BackColor = System.Drawing.Color.Transparent
+        Me.CBOUSERS.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed
+        Me.CBOUSERS.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
+        Me.CBOUSERS.FocusedColor = System.Drawing.Color.Empty
+        Me.CBOUSERS.FocusedState.Parent = Me.CBOUSERS
+        Me.CBOUSERS.Font = New System.Drawing.Font("Segoe UI", 10.0!)
+        Me.CBOUSERS.ForeColor = System.Drawing.Color.FromArgb(CType(CType(68, Byte), Integer), CType(CType(88, Byte), Integer), CType(CType(112, Byte), Integer))
+        Me.CBOUSERS.FormattingEnabled = True
+        Me.CBOUSERS.HoverState.Parent = Me.CBOUSERS
+        Me.CBOUSERS.ItemHeight = 30
+        Me.CBOUSERS.Items.AddRange(New Object() {"Admin", "Cashier", "Manager"})
+        Me.CBOUSERS.ItemsAppearance.Parent = Me.CBOUSERS
+        Me.CBOUSERS.Location = New System.Drawing.Point(189, 27)
+        Me.CBOUSERS.Name = "CBOUSERS"
+        Me.CBOUSERS.ShadowDecoration.Parent = Me.CBOUSERS
+        Me.CBOUSERS.Size = New System.Drawing.Size(140, 36)
+        Me.CBOUSERS.TabIndex = 2
+        '
+        'TCREPORTS
+        '
+        Me.TCREPORTS.Controls.Add(Me.TPUSERS)
+        Me.TCREPORTS.Controls.Add(Me.TPPRODS)
+        Me.TCREPORTS.Controls.Add(Me.TPSTOCKS)
+        Me.TCREPORTS.Controls.Add(Me.TPDELIVERY)
+        Me.TCREPORTS.Controls.Add(Me.TPEXP)
+        Me.TCREPORTS.Controls.Add(Me.TPOUT)
+        Me.TCREPORTS.Controls.Add(Me.TPSALES)
+        Me.TCREPORTS.Controls.Add(Me.TPACT)
+        Me.TCREPORTS.Controls.Add(Me.TPTRANSREC)
+        Me.TCREPORTS.Font = New System.Drawing.Font("Century Gothic", 11.25!)
+        Me.TCREPORTS.Location = New System.Drawing.Point(-1, 31)
+        Me.TCREPORTS.Name = "TCREPORTS"
+        Me.TCREPORTS.SelectedIndex = 0
+        Me.TCREPORTS.Size = New System.Drawing.Size(1116, 652)
+        Me.TCREPORTS.TabIndex = 23
+        '
+        'tbl_usersTableAdapter
+        '
+        Me.tbl_usersTableAdapter.ClearBeforeFill = True
+        '
+        'CLEARSTOCKS
+        '
+        Me.CLEARSTOCKS.BackColor = System.Drawing.Color.Transparent
+        Me.CLEARSTOCKS.CheckedState.Parent = Me.CLEARSTOCKS
+        Me.CLEARSTOCKS.CustomImages.Parent = Me.CLEARSTOCKS
+        Me.CLEARSTOCKS.FillColor = System.Drawing.SystemColors.ControlDark
+        Me.CLEARSTOCKS.Font = New System.Drawing.Font("Segoe UI", 9.0!)
+        Me.CLEARSTOCKS.ForeColor = System.Drawing.Color.White
+        Me.CLEARSTOCKS.HoverState.Parent = Me.CLEARSTOCKS
+        Me.CLEARSTOCKS.Location = New System.Drawing.Point(497, 28)
+        Me.CLEARSTOCKS.Name = "CLEARSTOCKS"
+        Me.CLEARSTOCKS.ShadowDecoration.Parent = Me.CLEARSTOCKS
+        Me.CLEARSTOCKS.Size = New System.Drawing.Size(98, 36)
+        Me.CLEARSTOCKS.TabIndex = 16
+        Me.CLEARSTOCKS.Text = "Clear Filter"
+        '
+        'Label3
+        '
+        Me.Label3.AutoSize = True
+        Me.Label3.Font = New System.Drawing.Font("Century Gothic", 11.25!)
+        Me.Label3.Location = New System.Drawing.Point(16, 28)
+        Me.Label3.Name = "Label3"
+        Me.Label3.Size = New System.Drawing.Size(138, 20)
+        Me.Label3.TabIndex = 13
+        Me.Label3.Text = "Filter by Category"
+        '
+        'FILTERSTOCKS
+        '
+        Me.FILTERSTOCKS.CheckedState.Parent = Me.FILTERSTOCKS
+        Me.FILTERSTOCKS.CustomImages.Parent = Me.FILTERSTOCKS
+        Me.FILTERSTOCKS.FillColor = System.Drawing.Color.MediumSeaGreen
+        Me.FILTERSTOCKS.Font = New System.Drawing.Font("Segoe UI", 9.0!)
+        Me.FILTERSTOCKS.ForeColor = System.Drawing.Color.White
+        Me.FILTERSTOCKS.HoverState.Parent = Me.FILTERSTOCKS
+        Me.FILTERSTOCKS.Location = New System.Drawing.Point(372, 28)
+        Me.FILTERSTOCKS.Name = "FILTERSTOCKS"
+        Me.FILTERSTOCKS.ShadowDecoration.Parent = Me.FILTERSTOCKS
+        Me.FILTERSTOCKS.Size = New System.Drawing.Size(98, 36)
+        Me.FILTERSTOCKS.TabIndex = 15
+        Me.FILTERSTOCKS.Text = "Filter"
+        '
+        'CBOSTOCKS
+        '
+        Me.CBOSTOCKS.BackColor = System.Drawing.Color.Transparent
+        Me.CBOSTOCKS.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed
+        Me.CBOSTOCKS.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
+        Me.CBOSTOCKS.FocusedColor = System.Drawing.Color.Empty
+        Me.CBOSTOCKS.FocusedState.Parent = Me.CBOSTOCKS
+        Me.CBOSTOCKS.Font = New System.Drawing.Font("Segoe UI", 10.0!)
+        Me.CBOSTOCKS.ForeColor = System.Drawing.Color.FromArgb(CType(CType(68, Byte), Integer), CType(CType(88, Byte), Integer), CType(CType(112, Byte), Integer))
+        Me.CBOSTOCKS.FormattingEnabled = True
+        Me.CBOSTOCKS.HoverState.Parent = Me.CBOSTOCKS
+        Me.CBOSTOCKS.ItemHeight = 30
+        Me.CBOSTOCKS.Items.AddRange(New Object() {"Admin", "Cashier", "Manager"})
+        Me.CBOSTOCKS.ItemsAppearance.Parent = Me.CBOSTOCKS
+        Me.CBOSTOCKS.Location = New System.Drawing.Point(189, 27)
+        Me.CBOSTOCKS.Name = "CBOSTOCKS"
+        Me.CBOSTOCKS.ShadowDecoration.Parent = Me.CBOSTOCKS
+        Me.CBOSTOCKS.Size = New System.Drawing.Size(140, 36)
+        Me.CBOSTOCKS.TabIndex = 14
+        '
         'FRMREPORTS
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -1148,6 +1134,7 @@ Partial Class FRMREPORTS
         CType(Me.tbl_salesBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.inventory_dbDataSet, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.tbl_productsBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.tbl_usersBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
         Me.TPTRANSREC.ResumeLayout(False)
         Me.TPTRANSREC.PerformLayout()
         Me.TPACT.ResumeLayout(False)
@@ -1222,12 +1209,6 @@ Partial Class FRMREPORTS
     Friend WithEvents DELIVERYFILTER As Guna.UI2.WinForms.Guna2Button
     Friend WithEvents RPTDELIVERY As Microsoft.Reporting.WinForms.ReportViewer
     Friend WithEvents TPSTOCKS As TabPage
-    Friend WithEvents Label4 As Label
-    Friend WithEvents Label3 As Label
-    Friend WithEvents STOCKCLR As Guna.UI2.WinForms.Guna2Button
-    Friend WithEvents STOCKSFILL As Guna.UI2.WinForms.Guna2Button
-    Friend WithEvents Date2St As Guna.UI2.WinForms.Guna2DateTimePicker
-    Friend WithEvents Date1St As Guna.UI2.WinForms.Guna2DateTimePicker
     Friend WithEvents RPTSTOCKS As Microsoft.Reporting.WinForms.ReportViewer
     Friend WithEvents TPPRODS As TabPage
     Friend WithEvents CLEARPRODUCTS As Guna.UI2.WinForms.Guna2Button
@@ -1237,9 +1218,15 @@ Partial Class FRMREPORTS
     Friend WithEvents RPTPRODUCTS As Microsoft.Reporting.WinForms.ReportViewer
     Friend WithEvents TPUSERS As TabPage
     Friend WithEvents RPTUSERS As Microsoft.Reporting.WinForms.ReportViewer
-    Friend WithEvents BTNCLEAR As Guna.UI2.WinForms.Guna2Button
+    Friend WithEvents CLEARUSERS As Guna.UI2.WinForms.Guna2Button
     Friend WithEvents Label2 As Label
-    Friend WithEvents BTNFILTER As Guna.UI2.WinForms.Guna2Button
-    Friend WithEvents CBOUT As Guna.UI2.WinForms.Guna2ComboBox
+    Friend WithEvents FILTERUSERS As Guna.UI2.WinForms.Guna2Button
+    Friend WithEvents CBOUSERS As Guna.UI2.WinForms.Guna2ComboBox
     Friend WithEvents TCREPORTS As TabControl
+    Friend WithEvents tbl_usersBindingSource As BindingSource
+    Friend WithEvents tbl_usersTableAdapter As inventory_dbDataSetTableAdapters.tbl_usersTableAdapter
+    Friend WithEvents CLEARSTOCKS As Guna.UI2.WinForms.Guna2Button
+    Friend WithEvents Label3 As Label
+    Friend WithEvents FILTERSTOCKS As Guna.UI2.WinForms.Guna2Button
+    Friend WithEvents CBOSTOCKS As Guna.UI2.WinForms.Guna2ComboBox
 End Class

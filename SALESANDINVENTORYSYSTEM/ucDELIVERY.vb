@@ -128,7 +128,7 @@ Public Class ucRESTOCK
         cmd.Parameters.AddWithValue("@quantity", Me.QTY.Text)
         cmd.Parameters.AddWithValue("@manufactureddate", Me.MANU.Value.ToString("yyyy-MM-dd"))
         cmd.Parameters.AddWithValue("@expirationdate", Me.EXP.Value.ToString("yyyy-MM-dd"))
-        cmd.Parameters.AddWithValue("@dateaddedstocks", Date.Now.ToString("yyyy-MM-dd HH:mm:ss"))
+        cmd.Parameters.AddWithValue("@dateaddedstocks", Me.DELIVERED.Value.ToString("yyyy-MM-dd"))
 
         con.Open()
         cmd.ExecuteNonQuery()
@@ -148,9 +148,9 @@ Public Class ucRESTOCK
             .AddWithValue("@prodid", DGVPRODUCTS.CurrentRow.Cells(0).Value)
             .AddWithValue("@prodname", TXTPRODNAME.Text)
             .AddWithValue("@quantity", QTY.Text)
-            .AddWithValue("@manufactureddate", MANU.Value.ToString("yyyy-MM-dd"))
-            .AddWithValue("@expirationdate", EXP.Value.ToString("yyyy-MM-dd"))
-            .AddWithValue("@datedelivered", Format(Date.Now, "yyyy-MM-dd"))
+            .AddWithValue("@manufactureddate", Me.MANU.Value.ToString("yyyy-MM-dd"))
+            .AddWithValue("@expirationdate", Me.EXP.Value.ToString("yyyy-MM-dd"))
+            .AddWithValue("@datedelivered", Me.DELIVERED.Value.ToString("yyyy-MM-dd"))
         End With
 
         OpenCon()
@@ -181,11 +181,11 @@ Public Class ucRESTOCK
         SETTINGS.Dock = DockStyle.Fill
     End Sub
 
-    Private Sub EXP_ValueChanged(sender As Object, e As EventArgs) Handles EXP.ValueChanged
+    Private Sub EXP_ValueChanged(sender As Object, e As EventArgs) 
         EXP.CustomFormat = "dd/MM/yyyy"
     End Sub
 
-    Private Sub MANU_ValueChanged(sender As Object, e As EventArgs) Handles MANU.ValueChanged
+    Private Sub MANU_ValueChanged(sender As Object, e As EventArgs) 
         MANU.CustomFormat = "dd/MM/yyyy"
     End Sub
 

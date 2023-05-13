@@ -48,7 +48,7 @@
                             <TextRun>
                               <Value>Product ID</Value>
                               <Style>
-                                <FontSize>8pt</FontSize>
+                                <FontWeight>Bold</FontWeight>
                               </Style>
                             </TextRun>
                           </TextRuns>
@@ -82,7 +82,7 @@
                             <TextRun>
                               <Value>Product Code</Value>
                               <Style>
-                                <FontSize>8pt</FontSize>
+                                <FontWeight>Bold</FontWeight>
                               </Style>
                             </TextRun>
                           </TextRuns>
@@ -116,7 +116,7 @@
                             <TextRun>
                               <Value>Product Name</Value>
                               <Style>
-                                <FontSize>8pt</FontSize>
+                                <FontWeight>Bold</FontWeight>
                               </Style>
                             </TextRun>
                           </TextRuns>
@@ -150,7 +150,7 @@
                             <TextRun>
                               <Value>Manufacturer</Value>
                               <Style>
-                                <FontSize>8pt</FontSize>
+                                <FontWeight>Bold</FontWeight>
                               </Style>
                             </TextRun>
                           </TextRuns>
@@ -184,7 +184,7 @@
                             <TextRun>
                               <Value>Brand</Value>
                               <Style>
-                                <FontSize>8pt</FontSize>
+                                <FontWeight>Bold</FontWeight>
                               </Style>
                             </TextRun>
                           </TextRuns>
@@ -218,7 +218,7 @@
                             <TextRun>
                               <Value>Category</Value>
                               <Style>
-                                <FontSize>8pt</FontSize>
+                                <FontWeight>Bold</FontWeight>
                               </Style>
                             </TextRun>
                           </TextRuns>
@@ -252,7 +252,7 @@
                             <TextRun>
                               <Value>Category Code</Value>
                               <Style>
-                                <FontSize>8pt</FontSize>
+                                <FontWeight>Bold</FontWeight>
                               </Style>
                             </TextRun>
                           </TextRuns>
@@ -286,7 +286,7 @@
                             <TextRun>
                               <Value>Unit</Value>
                               <Style>
-                                <FontSize>8pt</FontSize>
+                                <FontWeight>Bold</FontWeight>
                               </Style>
                             </TextRun>
                           </TextRuns>
@@ -320,7 +320,7 @@
                             <TextRun>
                               <Value>Price</Value>
                               <Style>
-                                <FontSize>8pt</FontSize>
+                                <FontWeight>Bold</FontWeight>
                               </Style>
                             </TextRun>
                           </TextRuns>
@@ -710,8 +710,8 @@
     </PageHeader>
     <PageHeight>8.5in</PageHeight>
     <PageWidth>11in</PageWidth>
-    <LeftMargin>0.4in</LeftMargin>
-    <TopMargin>0.4in</TopMargin>
+    <LeftMargin>0.35in</LeftMargin>
+    <TopMargin>0.35in</TopMargin>
     <Style />
   </Page>
   <AutoRefresh>0</AutoRefresh>

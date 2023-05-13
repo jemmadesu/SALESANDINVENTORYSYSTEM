@@ -56,14 +56,16 @@ Partial Class ucRESTOCK
         Me.Panel2 = New System.Windows.Forms.Panel()
         Me.BTNBACK = New System.Windows.Forms.Button()
         Me.Label11 = New System.Windows.Forms.Label()
-        Me.EXP = New System.Windows.Forms.DateTimePicker()
-        Me.MANU = New System.Windows.Forms.DateTimePicker()
         Me.Label12 = New System.Windows.Forms.Label()
         Me.Label13 = New System.Windows.Forms.Label()
         Me.CBOSUPPLIER = New System.Windows.Forms.ComboBox()
         Me.GroupBox2 = New System.Windows.Forms.GroupBox()
         Me.QTY = New Guna.UI2.WinForms.Guna2NumericUpDown()
         Me.Panel1 = New System.Windows.Forms.Panel()
+        Me.Label16 = New System.Windows.Forms.Label()
+        Me.DELIVERED = New Guna.UI2.WinForms.Guna2DateTimePicker()
+        Me.EXP = New Guna.UI2.WinForms.Guna2DateTimePicker()
+        Me.MANU = New Guna.UI2.WinForms.Guna2DateTimePicker()
         Me.GroupBox3.SuspendLayout()
         Me.GroupBox1.SuspendLayout()
         CType(Me.DGVPRODUCTS, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -79,7 +81,7 @@ Partial Class ucRESTOCK
         Me.Label8.BackColor = System.Drawing.Color.White
         Me.Label8.Font = New System.Drawing.Font("Century Gothic", 20.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label8.ForeColor = System.Drawing.Color.MediumSeaGreen
-        Me.Label8.Location = New System.Drawing.Point(45, 89)
+        Me.Label8.Location = New System.Drawing.Point(45, 62)
         Me.Label8.Name = "Label8"
         Me.Label8.Size = New System.Drawing.Size(134, 32)
         Me.Label8.TabIndex = 38
@@ -312,7 +314,7 @@ Partial Class ucRESTOCK
         '
         Me.Label4.AutoSize = True
         Me.Label4.Font = New System.Drawing.Font("Century Gothic", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label4.Location = New System.Drawing.Point(578, 56)
+        Me.Label4.Location = New System.Drawing.Point(220, 90)
         Me.Label4.Name = "Label4"
         Me.Label4.Size = New System.Drawing.Size(127, 20)
         Me.Label4.TabIndex = 6
@@ -432,41 +434,17 @@ Partial Class ucRESTOCK
         '
         Me.Label11.AutoSize = True
         Me.Label11.Font = New System.Drawing.Font("Century Gothic", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label11.Location = New System.Drawing.Point(209, 55)
+        Me.Label11.Location = New System.Drawing.Point(20, 91)
         Me.Label11.Name = "Label11"
         Me.Label11.Size = New System.Drawing.Size(79, 20)
         Me.Label11.TabIndex = 19
         Me.Label11.Text = "Quantity :"
         '
-        'EXP
-        '
-        Me.EXP.Font = New System.Drawing.Font("Century Gothic", 9.75!)
-        Me.EXP.Format = System.Windows.Forms.DateTimePickerFormat.[Short]
-        Me.EXP.Location = New System.Drawing.Point(582, 79)
-        Me.EXP.MaxDate = New Date(9070, 12, 31, 0, 0, 0, 0)
-        Me.EXP.MinDate = New Date(2022, 12, 31, 0, 0, 0, 0)
-        Me.EXP.Name = "EXP"
-        Me.EXP.Size = New System.Drawing.Size(160, 23)
-        Me.EXP.TabIndex = 21
-        Me.EXP.Value = New Date(2023, 12, 31, 0, 0, 0, 0)
-        '
-        'MANU
-        '
-        Me.MANU.Font = New System.Drawing.Font("Century Gothic", 9.75!)
-        Me.MANU.Format = System.Windows.Forms.DateTimePickerFormat.[Short]
-        Me.MANU.Location = New System.Drawing.Point(394, 79)
-        Me.MANU.MaxDate = New Date(9070, 12, 31, 0, 0, 0, 0)
-        Me.MANU.MinDate = New Date(2022, 12, 31, 0, 0, 0, 0)
-        Me.MANU.Name = "MANU"
-        Me.MANU.Size = New System.Drawing.Size(158, 23)
-        Me.MANU.TabIndex = 22
-        Me.MANU.Value = New Date(2023, 12, 31, 0, 0, 0, 0)
-        '
         'Label12
         '
         Me.Label12.AutoSize = True
         Me.Label12.Font = New System.Drawing.Font("Century Gothic", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label12.Location = New System.Drawing.Point(390, 56)
+        Me.Label12.Location = New System.Drawing.Point(220, 18)
         Me.Label12.Name = "Label12"
         Me.Label12.Size = New System.Drawing.Size(164, 20)
         Me.Label12.TabIndex = 23
@@ -476,7 +454,7 @@ Partial Class ucRESTOCK
         '
         Me.Label13.AutoSize = True
         Me.Label13.Font = New System.Drawing.Font("Century Gothic", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label13.Location = New System.Drawing.Point(19, 54)
+        Me.Label13.Location = New System.Drawing.Point(20, 36)
         Me.Label13.Name = "Label13"
         Me.Label13.Size = New System.Drawing.Size(74, 20)
         Me.Label13.TabIndex = 24
@@ -485,7 +463,7 @@ Partial Class ucRESTOCK
         'CBOSUPPLIER
         '
         Me.CBOSUPPLIER.FormattingEnabled = True
-        Me.CBOSUPPLIER.Location = New System.Drawing.Point(23, 77)
+        Me.CBOSUPPLIER.Location = New System.Drawing.Point(24, 59)
         Me.CBOSUPPLIER.Name = "CBOSUPPLIER"
         Me.CBOSUPPLIER.Size = New System.Drawing.Size(158, 25)
         Me.CBOSUPPLIER.TabIndex = 25
@@ -493,19 +471,21 @@ Partial Class ucRESTOCK
         'GroupBox2
         '
         Me.GroupBox2.BackColor = System.Drawing.Color.White
+        Me.GroupBox2.Controls.Add(Me.MANU)
+        Me.GroupBox2.Controls.Add(Me.EXP)
+        Me.GroupBox2.Controls.Add(Me.DELIVERED)
+        Me.GroupBox2.Controls.Add(Me.Label16)
         Me.GroupBox2.Controls.Add(Me.QTY)
         Me.GroupBox2.Controls.Add(Me.CBOSUPPLIER)
         Me.GroupBox2.Controls.Add(Me.Label13)
         Me.GroupBox2.Controls.Add(Me.Label4)
         Me.GroupBox2.Controls.Add(Me.Label12)
         Me.GroupBox2.Controls.Add(Me.Label11)
-        Me.GroupBox2.Controls.Add(Me.MANU)
-        Me.GroupBox2.Controls.Add(Me.EXP)
         Me.GroupBox2.Font = New System.Drawing.Font("Century Gothic", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.GroupBox2.ForeColor = System.Drawing.SystemColors.ControlDarkDark
-        Me.GroupBox2.Location = New System.Drawing.Point(51, 139)
+        Me.GroupBox2.Location = New System.Drawing.Point(51, 112)
         Me.GroupBox2.Name = "GroupBox2"
-        Me.GroupBox2.Size = New System.Drawing.Size(993, 147)
+        Me.GroupBox2.Size = New System.Drawing.Size(993, 174)
         Me.GroupBox2.TabIndex = 46
         Me.GroupBox2.TabStop = False
         Me.GroupBox2.Text = "Delivered Products Information"
@@ -524,7 +504,7 @@ Partial Class ucRESTOCK
         Me.QTY.FocusedState.Parent = Me.QTY
         Me.QTY.Font = New System.Drawing.Font("Segoe UI", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.QTY.ForeColor = System.Drawing.Color.FromArgb(CType(CType(126, Byte), Integer), CType(CType(137, Byte), Integer), CType(CType(149, Byte), Integer))
-        Me.QTY.Location = New System.Drawing.Point(213, 79)
+        Me.QTY.Location = New System.Drawing.Point(24, 115)
         Me.QTY.Name = "QTY"
         Me.QTY.ShadowDecoration.Parent = Me.QTY
         Me.QTY.Size = New System.Drawing.Size(100, 23)
@@ -547,6 +527,67 @@ Partial Class ucRESTOCK
         Me.Panel1.Name = "Panel1"
         Me.Panel1.Size = New System.Drawing.Size(383, 216)
         Me.Panel1.TabIndex = 25
+        '
+        'Label16
+        '
+        Me.Label16.AutoSize = True
+        Me.Label16.Font = New System.Drawing.Font("Century Gothic", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label16.Location = New System.Drawing.Point(501, 90)
+        Me.Label16.Name = "Label16"
+        Me.Label16.Size = New System.Drawing.Size(129, 20)
+        Me.Label16.TabIndex = 48
+        Me.Label16.Text = "Date Delivered :"
+        '
+        'DELIVERED
+        '
+        Me.DELIVERED.CheckedState.Parent = Me.DELIVERED
+        Me.DELIVERED.FillColor = System.Drawing.Color.MediumSeaGreen
+        Me.DELIVERED.Font = New System.Drawing.Font("Century Gothic", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.DELIVERED.ForeColor = System.Drawing.Color.White
+        Me.DELIVERED.Format = System.Windows.Forms.DateTimePickerFormat.[Long]
+        Me.DELIVERED.HoverState.Parent = Me.DELIVERED
+        Me.DELIVERED.Location = New System.Drawing.Point(505, 120)
+        Me.DELIVERED.MaxDate = New Date(9998, 12, 31, 0, 0, 0, 0)
+        Me.DELIVERED.MinDate = New Date(1753, 1, 1, 0, 0, 0, 0)
+        Me.DELIVERED.Name = "DELIVERED"
+        Me.DELIVERED.ShadowDecoration.Parent = Me.DELIVERED
+        Me.DELIVERED.Size = New System.Drawing.Size(211, 36)
+        Me.DELIVERED.TabIndex = 47
+        Me.DELIVERED.Value = New Date(2023, 12, 31, 0, 0, 0, 0)
+        '
+        'EXP
+        '
+        Me.EXP.CheckedState.Parent = Me.EXP
+        Me.EXP.FillColor = System.Drawing.Color.MediumSeaGreen
+        Me.EXP.Font = New System.Drawing.Font("Century Gothic", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.EXP.ForeColor = System.Drawing.Color.White
+        Me.EXP.Format = System.Windows.Forms.DateTimePickerFormat.[Long]
+        Me.EXP.HoverState.Parent = Me.EXP
+        Me.EXP.Location = New System.Drawing.Point(224, 120)
+        Me.EXP.MaxDate = New Date(9998, 12, 31, 0, 0, 0, 0)
+        Me.EXP.MinDate = New Date(1753, 1, 1, 0, 0, 0, 0)
+        Me.EXP.Name = "EXP"
+        Me.EXP.ShadowDecoration.Parent = Me.EXP
+        Me.EXP.Size = New System.Drawing.Size(211, 36)
+        Me.EXP.TabIndex = 49
+        Me.EXP.Value = New Date(2023, 12, 31, 0, 0, 0, 0)
+        '
+        'MANU
+        '
+        Me.MANU.CheckedState.Parent = Me.MANU
+        Me.MANU.FillColor = System.Drawing.Color.MediumSeaGreen
+        Me.MANU.Font = New System.Drawing.Font("Century Gothic", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.MANU.ForeColor = System.Drawing.Color.White
+        Me.MANU.Format = System.Windows.Forms.DateTimePickerFormat.[Long]
+        Me.MANU.HoverState.Parent = Me.MANU
+        Me.MANU.Location = New System.Drawing.Point(224, 48)
+        Me.MANU.MaxDate = New Date(9998, 12, 31, 0, 0, 0, 0)
+        Me.MANU.MinDate = New Date(1753, 1, 1, 0, 0, 0, 0)
+        Me.MANU.Name = "MANU"
+        Me.MANU.ShadowDecoration.Parent = Me.MANU
+        Me.MANU.Size = New System.Drawing.Size(211, 36)
+        Me.MANU.TabIndex = 50
+        Me.MANU.Value = New Date(2023, 12, 31, 0, 0, 0, 0)
         '
         'ucRESTOCK
         '
@@ -605,8 +646,6 @@ Partial Class ucRESTOCK
     Friend WithEvents TXTBRAND As TextBox
     Friend WithEvents Label11 As Label
     Friend WithEvents Label12 As Label
-    Friend WithEvents MANU As DateTimePicker
-    Friend WithEvents EXP As DateTimePicker
     Friend WithEvents Label13 As Label
     Friend WithEvents CBOSUPPLIER As ComboBox
     Friend WithEvents GroupBox2 As GroupBox
@@ -616,4 +655,8 @@ Partial Class ucRESTOCK
     Friend WithEvents TXTID As TextBox
     Friend WithEvents Panel1 As Panel
     Friend WithEvents QTY As Guna.UI2.WinForms.Guna2NumericUpDown
+    Friend WithEvents Label16 As Label
+    Friend WithEvents DELIVERED As Guna.UI2.WinForms.Guna2DateTimePicker
+    Friend WithEvents MANU As Guna.UI2.WinForms.Guna2DateTimePicker
+    Friend WithEvents EXP As Guna.UI2.WinForms.Guna2DateTimePicker
 End Class

@@ -1,6 +1,4 @@
 ﻿Imports MySql.Data.MySqlClient
-Imports System.ComponentModel
-Imports System.IO
 
 
 Public Class ucUSERMANAGEMENT
