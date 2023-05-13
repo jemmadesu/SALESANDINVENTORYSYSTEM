@@ -233,9 +233,9 @@ Partial Class ucNEWPRODUCT
         Me.Label8.ForeColor = System.Drawing.Color.MediumSeaGreen
         Me.Label8.Location = New System.Drawing.Point(42, 90)
         Me.Label8.Name = "Label8"
-        Me.Label8.Size = New System.Drawing.Size(281, 32)
+        Me.Label8.Size = New System.Drawing.Size(344, 32)
         Me.Label8.TabIndex = 37
-        Me.Label8.Text = "MANAGE PRODUCTS"
+        Me.Label8.Text = "PRODUCT MANAGEMENT "
         '
         'TXTSEARCH
         '

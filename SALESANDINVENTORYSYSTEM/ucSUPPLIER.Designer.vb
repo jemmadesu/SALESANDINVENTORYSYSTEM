@@ -100,9 +100,9 @@ Partial Class ucSUPPLIER
         Me.Label11.ForeColor = System.Drawing.Color.MediumSeaGreen
         Me.Label11.Location = New System.Drawing.Point(41, 113)
         Me.Label11.Name = "Label11"
-        Me.Label11.Size = New System.Drawing.Size(321, 32)
+        Me.Label11.Size = New System.Drawing.Size(325, 32)
         Me.Label11.TabIndex = 135
-        Me.Label11.Text = "SUPPLIER INFORMATION"
+        Me.Label11.Text = "SUPPLIER MANAGEMENT"
         '
         'BTNCANCEL
         '
