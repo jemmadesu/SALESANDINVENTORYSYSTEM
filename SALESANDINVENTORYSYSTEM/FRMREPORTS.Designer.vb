@@ -33,6 +33,13 @@ Partial Class FRMREPORTS
         Dim ReportDataSource8 As Microsoft.Reporting.WinForms.ReportDataSource = New Microsoft.Reporting.WinForms.ReportDataSource()
         Dim ReportDataSource9 As Microsoft.Reporting.WinForms.ReportDataSource = New Microsoft.Reporting.WinForms.ReportDataSource()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(FRMREPORTS))
+        Me.tbl_usersBindingSource = New System.Windows.Forms.BindingSource(Me.components)
+        Me.inventory_dbDataSet = New SALESANDINVENTORYSYSTEM.inventory_dbDataSet()
+        Me.tbl_salesBindingSource = New System.Windows.Forms.BindingSource(Me.components)
+        Me.tbl_expiredproductsBindingSource = New System.Windows.Forms.BindingSource(Me.components)
+        Me.tbl_deliveryBindingSource = New System.Windows.Forms.BindingSource(Me.components)
+        Me.tbl_stocksBindingSource = New System.Windows.Forms.BindingSource(Me.components)
+        Me.tbl_productsBindingSource = New System.Windows.Forms.BindingSource(Me.components)
         Me.Panel1 = New System.Windows.Forms.Panel()
         Me.TPTRANSREC = New System.Windows.Forms.TabPage()
         Me.Label13 = New System.Windows.Forms.Label()
@@ -75,8 +82,8 @@ Partial Class FRMREPORTS
         Me.MONTHLYDELIVERY = New Guna.UI2.WinForms.Guna2RadioButton()
         Me.WEEKLYDELIVERY = New Guna.UI2.WinForms.Guna2RadioButton()
         Me.DAILYDELIVERY = New Guna.UI2.WinForms.Guna2RadioButton()
-        Me.DELIVERYCLEARFILTER = New Guna.UI2.WinForms.Guna2Button()
-        Me.DELIVERYFILTER = New Guna.UI2.WinForms.Guna2Button()
+        Me.CLEARDELIVERY = New Guna.UI2.WinForms.Guna2Button()
+        Me.FILTERDELIVERY = New Guna.UI2.WinForms.Guna2Button()
         Me.RPTDELIVERY = New Microsoft.Reporting.WinForms.ReportViewer()
         Me.TPSTOCKS = New System.Windows.Forms.TabPage()
         Me.CLEARSTOCKS = New Guna.UI2.WinForms.Guna2Button()
@@ -99,15 +106,19 @@ Partial Class FRMREPORTS
         Me.FILTERUSERS = New Guna.UI2.WinForms.Guna2Button()
         Me.CBOUSERS = New Guna.UI2.WinForms.Guna2ComboBox()
         Me.TCREPORTS = New System.Windows.Forms.TabControl()
-        Me.tbl_usersBindingSource = New System.Windows.Forms.BindingSource(Me.components)
-        Me.inventory_dbDataSet = New SALESANDINVENTORYSYSTEM.inventory_dbDataSet()
-        Me.tbl_productsBindingSource = New System.Windows.Forms.BindingSource(Me.components)
-        Me.tbl_stocksBindingSource = New System.Windows.Forms.BindingSource(Me.components)
-        Me.tbl_salesBindingSource = New System.Windows.Forms.BindingSource(Me.components)
         Me.tbl_productsTableAdapter = New SALESANDINVENTORYSYSTEM.inventory_dbDataSetTableAdapters.tbl_productsTableAdapter()
         Me.tbl_salesTableAdapter = New SALESANDINVENTORYSYSTEM.inventory_dbDataSetTableAdapters.tbl_salesTableAdapter()
         Me.tbl_usersTableAdapter = New SALESANDINVENTORYSYSTEM.inventory_dbDataSetTableAdapters.tbl_usersTableAdapter()
+        Me.tbl_expiredproductsTableAdapter = New SALESANDINVENTORYSYSTEM.inventory_dbDataSetTableAdapters.tbl_expiredproductsTableAdapter()
         Me.tbl_stocksTableAdapter = New SALESANDINVENTORYSYSTEM.inventory_dbDataSetTableAdapters.tbl_stocksTableAdapter()
+        Me.tbl_deliveryTableAdapter = New SALESANDINVENTORYSYSTEM.inventory_dbDataSetTableAdapters.tbl_deliveryTableAdapter()
+        CType(Me.tbl_usersBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.inventory_dbDataSet, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.tbl_salesBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.tbl_expiredproductsBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.tbl_deliveryBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.tbl_stocksBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.tbl_productsBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.TPTRANSREC.SuspendLayout()
         Me.TPACT.SuspendLayout()
         Me.TPSALES.SuspendLayout()
@@ -118,12 +129,42 @@ Partial Class FRMREPORTS
         Me.TPPRODS.SuspendLayout()
         Me.TPUSERS.SuspendLayout()
         Me.TCREPORTS.SuspendLayout()
-        CType(Me.tbl_usersBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.inventory_dbDataSet, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.tbl_productsBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.tbl_stocksBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.tbl_salesBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
+        '
+        'tbl_usersBindingSource
+        '
+        Me.tbl_usersBindingSource.DataMember = "tbl_users"
+        Me.tbl_usersBindingSource.DataSource = Me.inventory_dbDataSet
+        '
+        'inventory_dbDataSet
+        '
+        Me.inventory_dbDataSet.DataSetName = "inventory_dbDataSet"
+        Me.inventory_dbDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema
+        '
+        'tbl_salesBindingSource
+        '
+        Me.tbl_salesBindingSource.DataMember = "tbl_sales"
+        Me.tbl_salesBindingSource.DataSource = Me.inventory_dbDataSet
+        '
+        'tbl_expiredproductsBindingSource
+        '
+        Me.tbl_expiredproductsBindingSource.DataMember = "tbl_expiredproducts"
+        Me.tbl_expiredproductsBindingSource.DataSource = Me.inventory_dbDataSet
+        '
+        'tbl_deliveryBindingSource
+        '
+        Me.tbl_deliveryBindingSource.DataMember = "tbl_delivery"
+        Me.tbl_deliveryBindingSource.DataSource = Me.inventory_dbDataSet
+        '
+        'tbl_stocksBindingSource
+        '
+        Me.tbl_stocksBindingSource.DataMember = "tbl_stocks"
+        Me.tbl_stocksBindingSource.DataSource = Me.inventory_dbDataSet
+        '
+        'tbl_productsBindingSource
+        '
+        Me.tbl_productsBindingSource.DataMember = "tbl_products"
+        Me.tbl_productsBindingSource.DataSource = Me.inventory_dbDataSet
         '
         'Panel1
         '
@@ -234,9 +275,9 @@ Partial Class FRMREPORTS
         'RPTTRANSACTIONRECORDS
         '
         ReportDataSource1.Name = "DataSet1"
-        ReportDataSource1.Value = Nothing
+        ReportDataSource1.Value = Me.tbl_usersBindingSource
         Me.RPTTRANSACTIONRECORDS.LocalReport.DataSources.Add(ReportDataSource1)
-        Me.RPTTRANSACTIONRECORDS.LocalReport.ReportEmbeddedResource = "SALESANDINVENTORYSYSTEM.RPTTRANSACTIONRECORDS.rdlc"
+        Me.RPTTRANSACTIONRECORDS.LocalReport.ReportEmbeddedResource = "SALESANDINVENTORYSYSTEM.RPTUSERS.rdlc"
         Me.RPTTRANSACTIONRECORDS.Location = New System.Drawing.Point(20, 80)
         Me.RPTTRANSACTIONRECORDS.Name = "RPTTRANSACTIONRECORDS"
         Me.RPTTRANSACTIONRECORDS.ServerReport.BearerToken = Nothing
@@ -582,9 +623,9 @@ Partial Class FRMREPORTS
         'RPTEXP
         '
         ReportDataSource5.Name = "DataSet1"
-        ReportDataSource5.Value = Nothing
+        ReportDataSource5.Value = Me.tbl_expiredproductsBindingSource
         Me.RPTEXP.LocalReport.DataSources.Add(ReportDataSource5)
-        Me.RPTEXP.LocalReport.ReportEmbeddedResource = "SALESANDINVENTORYSYSTEM.RPTEXP.rdlc"
+        Me.RPTEXP.LocalReport.ReportEmbeddedResource = "SALESANDINVENTORYSYSTEM.RPTEXPIREDPRODUCTS.rdlc"
         Me.RPTEXP.Location = New System.Drawing.Point(20, 80)
         Me.RPTEXP.Name = "RPTEXP"
         Me.RPTEXP.ServerReport.BearerToken = Nothing
@@ -679,8 +720,8 @@ Partial Class FRMREPORTS
         Me.TPDELIVERY.Controls.Add(Me.MONTHLYDELIVERY)
         Me.TPDELIVERY.Controls.Add(Me.WEEKLYDELIVERY)
         Me.TPDELIVERY.Controls.Add(Me.DAILYDELIVERY)
-        Me.TPDELIVERY.Controls.Add(Me.DELIVERYCLEARFILTER)
-        Me.TPDELIVERY.Controls.Add(Me.DELIVERYFILTER)
+        Me.TPDELIVERY.Controls.Add(Me.CLEARDELIVERY)
+        Me.TPDELIVERY.Controls.Add(Me.FILTERDELIVERY)
         Me.TPDELIVERY.Controls.Add(Me.RPTDELIVERY)
         Me.TPDELIVERY.Location = New System.Drawing.Point(4, 29)
         Me.TPDELIVERY.Name = "TPDELIVERY"
@@ -750,43 +791,43 @@ Partial Class FRMREPORTS
         Me.DAILYDELIVERY.UncheckedState.InnerColor = System.Drawing.Color.Transparent
         Me.DAILYDELIVERY.UseVisualStyleBackColor = True
         '
-        'DELIVERYCLEARFILTER
+        'CLEARDELIVERY
         '
-        Me.DELIVERYCLEARFILTER.BackColor = System.Drawing.Color.Transparent
-        Me.DELIVERYCLEARFILTER.CheckedState.Parent = Me.DELIVERYCLEARFILTER
-        Me.DELIVERYCLEARFILTER.CustomImages.Parent = Me.DELIVERYCLEARFILTER
-        Me.DELIVERYCLEARFILTER.FillColor = System.Drawing.SystemColors.ControlDark
-        Me.DELIVERYCLEARFILTER.Font = New System.Drawing.Font("Century Gothic", 9.0!)
-        Me.DELIVERYCLEARFILTER.ForeColor = System.Drawing.Color.White
-        Me.DELIVERYCLEARFILTER.HoverState.Parent = Me.DELIVERYCLEARFILTER
-        Me.DELIVERYCLEARFILTER.Location = New System.Drawing.Point(443, 29)
-        Me.DELIVERYCLEARFILTER.Name = "DELIVERYCLEARFILTER"
-        Me.DELIVERYCLEARFILTER.ShadowDecoration.Parent = Me.DELIVERYCLEARFILTER
-        Me.DELIVERYCLEARFILTER.Size = New System.Drawing.Size(98, 36)
-        Me.DELIVERYCLEARFILTER.TabIndex = 20
-        Me.DELIVERYCLEARFILTER.Text = "Clear Filter"
+        Me.CLEARDELIVERY.BackColor = System.Drawing.Color.Transparent
+        Me.CLEARDELIVERY.CheckedState.Parent = Me.CLEARDELIVERY
+        Me.CLEARDELIVERY.CustomImages.Parent = Me.CLEARDELIVERY
+        Me.CLEARDELIVERY.FillColor = System.Drawing.SystemColors.ControlDark
+        Me.CLEARDELIVERY.Font = New System.Drawing.Font("Century Gothic", 9.0!)
+        Me.CLEARDELIVERY.ForeColor = System.Drawing.Color.White
+        Me.CLEARDELIVERY.HoverState.Parent = Me.CLEARDELIVERY
+        Me.CLEARDELIVERY.Location = New System.Drawing.Point(443, 29)
+        Me.CLEARDELIVERY.Name = "CLEARDELIVERY"
+        Me.CLEARDELIVERY.ShadowDecoration.Parent = Me.CLEARDELIVERY
+        Me.CLEARDELIVERY.Size = New System.Drawing.Size(98, 36)
+        Me.CLEARDELIVERY.TabIndex = 20
+        Me.CLEARDELIVERY.Text = "Clear Filter"
         '
-        'DELIVERYFILTER
+        'FILTERDELIVERY
         '
-        Me.DELIVERYFILTER.CheckedState.Parent = Me.DELIVERYFILTER
-        Me.DELIVERYFILTER.CustomImages.Parent = Me.DELIVERYFILTER
-        Me.DELIVERYFILTER.FillColor = System.Drawing.Color.MediumSeaGreen
-        Me.DELIVERYFILTER.Font = New System.Drawing.Font("Century Gothic", 9.0!)
-        Me.DELIVERYFILTER.ForeColor = System.Drawing.Color.White
-        Me.DELIVERYFILTER.HoverState.Parent = Me.DELIVERYFILTER
-        Me.DELIVERYFILTER.Location = New System.Drawing.Point(313, 28)
-        Me.DELIVERYFILTER.Name = "DELIVERYFILTER"
-        Me.DELIVERYFILTER.ShadowDecoration.Parent = Me.DELIVERYFILTER
-        Me.DELIVERYFILTER.Size = New System.Drawing.Size(98, 36)
-        Me.DELIVERYFILTER.TabIndex = 19
-        Me.DELIVERYFILTER.Text = "Filter"
+        Me.FILTERDELIVERY.CheckedState.Parent = Me.FILTERDELIVERY
+        Me.FILTERDELIVERY.CustomImages.Parent = Me.FILTERDELIVERY
+        Me.FILTERDELIVERY.FillColor = System.Drawing.Color.MediumSeaGreen
+        Me.FILTERDELIVERY.Font = New System.Drawing.Font("Century Gothic", 9.0!)
+        Me.FILTERDELIVERY.ForeColor = System.Drawing.Color.White
+        Me.FILTERDELIVERY.HoverState.Parent = Me.FILTERDELIVERY
+        Me.FILTERDELIVERY.Location = New System.Drawing.Point(313, 28)
+        Me.FILTERDELIVERY.Name = "FILTERDELIVERY"
+        Me.FILTERDELIVERY.ShadowDecoration.Parent = Me.FILTERDELIVERY
+        Me.FILTERDELIVERY.Size = New System.Drawing.Size(98, 36)
+        Me.FILTERDELIVERY.TabIndex = 19
+        Me.FILTERDELIVERY.Text = "Filter"
         '
         'RPTDELIVERY
         '
-        ReportDataSource6.Name = "DataSet_SUPPLIER"
-        ReportDataSource6.Value = Nothing
+        ReportDataSource6.Name = "DataSet1"
+        ReportDataSource6.Value = Me.tbl_deliveryBindingSource
         Me.RPTDELIVERY.LocalReport.DataSources.Add(ReportDataSource6)
-        Me.RPTDELIVERY.LocalReport.ReportEmbeddedResource = "SALESANDINVENTORYSYSTEM.RPTSUPPLIER.rdlc"
+        Me.RPTDELIVERY.LocalReport.ReportEmbeddedResource = "SALESANDINVENTORYSYSTEM.RPTDELIVERY.rdlc"
         Me.RPTDELIVERY.Location = New System.Drawing.Point(20, 80)
         Me.RPTDELIVERY.Name = "RPTDELIVERY"
         Me.RPTDELIVERY.ServerReport.BearerToken = Nothing
@@ -1095,31 +1136,6 @@ Partial Class FRMREPORTS
         Me.TCREPORTS.Size = New System.Drawing.Size(1116, 652)
         Me.TCREPORTS.TabIndex = 23
         '
-        'tbl_usersBindingSource
-        '
-        Me.tbl_usersBindingSource.DataMember = "tbl_users"
-        Me.tbl_usersBindingSource.DataSource = Me.inventory_dbDataSet
-        '
-        'inventory_dbDataSet
-        '
-        Me.inventory_dbDataSet.DataSetName = "inventory_dbDataSet"
-        Me.inventory_dbDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema
-        '
-        'tbl_productsBindingSource
-        '
-        Me.tbl_productsBindingSource.DataMember = "tbl_products"
-        Me.tbl_productsBindingSource.DataSource = Me.inventory_dbDataSet
-        '
-        'tbl_stocksBindingSource
-        '
-        Me.tbl_stocksBindingSource.DataMember = "tbl_stocks"
-        Me.tbl_stocksBindingSource.DataSource = Me.inventory_dbDataSet
-        '
-        'tbl_salesBindingSource
-        '
-        Me.tbl_salesBindingSource.DataMember = "tbl_sales"
-        Me.tbl_salesBindingSource.DataSource = Me.inventory_dbDataSet
-        '
         'tbl_productsTableAdapter
         '
         Me.tbl_productsTableAdapter.ClearBeforeFill = True
@@ -1132,9 +1148,17 @@ Partial Class FRMREPORTS
         '
         Me.tbl_usersTableAdapter.ClearBeforeFill = True
         '
+        'tbl_expiredproductsTableAdapter
+        '
+        Me.tbl_expiredproductsTableAdapter.ClearBeforeFill = True
+        '
         'tbl_stocksTableAdapter
         '
         Me.tbl_stocksTableAdapter.ClearBeforeFill = True
+        '
+        'tbl_deliveryTableAdapter
+        '
+        Me.tbl_deliveryTableAdapter.ClearBeforeFill = True
         '
         'FRMREPORTS
         '
@@ -1151,6 +1175,13 @@ Partial Class FRMREPORTS
         Me.Name = "FRMREPORTS"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Reports"
+        CType(Me.tbl_usersBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.inventory_dbDataSet, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.tbl_salesBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.tbl_expiredproductsBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.tbl_deliveryBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.tbl_stocksBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.tbl_productsBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
         Me.TPTRANSREC.ResumeLayout(False)
         Me.TPTRANSREC.PerformLayout()
         Me.TPACT.ResumeLayout(False)
@@ -1170,11 +1201,6 @@ Partial Class FRMREPORTS
         Me.TPUSERS.ResumeLayout(False)
         Me.TPUSERS.PerformLayout()
         Me.TCREPORTS.ResumeLayout(False)
-        CType(Me.tbl_usersBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.inventory_dbDataSet, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.tbl_productsBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.tbl_stocksBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.tbl_salesBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
 
     End Sub
@@ -1225,11 +1251,9 @@ Partial Class FRMREPORTS
     Friend WithEvents MONTHLYDELIVERY As Guna.UI2.WinForms.Guna2RadioButton
     Friend WithEvents WEEKLYDELIVERY As Guna.UI2.WinForms.Guna2RadioButton
     Friend WithEvents DAILYDELIVERY As Guna.UI2.WinForms.Guna2RadioButton
-    Friend WithEvents DELIVERYCLEARFILTER As Guna.UI2.WinForms.Guna2Button
-    Friend WithEvents DELIVERYFILTER As Guna.UI2.WinForms.Guna2Button
-    Friend WithEvents RPTDELIVERY As Microsoft.Reporting.WinForms.ReportViewer
+    Friend WithEvents CLEARDELIVERY As Guna.UI2.WinForms.Guna2Button
+    Friend WithEvents FILTERDELIVERY As Guna.UI2.WinForms.Guna2Button
     Friend WithEvents TPSTOCKS As TabPage
-    Friend WithEvents RPTSTOCKS As Microsoft.Reporting.WinForms.ReportViewer
     Friend WithEvents TPPRODS As TabPage
     Friend WithEvents CLEARPRODUCTS As Guna.UI2.WinForms.Guna2Button
     Friend WithEvents Label5 As Label
@@ -1249,8 +1273,14 @@ Partial Class FRMREPORTS
     Friend WithEvents Label3 As Label
     Friend WithEvents FILTERSTOCKS As Guna.UI2.WinForms.Guna2Button
     Friend WithEvents CBOSTOCKSCATEGORY As Guna.UI2.WinForms.Guna2ComboBox
-    Friend WithEvents tbl_stocksBindingSource As BindingSource
-    Friend WithEvents tbl_stocksTableAdapter As inventory_dbDataSetTableAdapters.tbl_stocksTableAdapter
     Friend WithEvents Label6 As Label
     Friend WithEvents LBLUSERNAME As Label
+    Friend WithEvents RPTSTOCKS As Microsoft.Reporting.WinForms.ReportViewer
+    Friend WithEvents RPTDELIVERY As Microsoft.Reporting.WinForms.ReportViewer
+    Friend WithEvents tbl_expiredproductsBindingSource As BindingSource
+    Friend WithEvents tbl_expiredproductsTableAdapter As inventory_dbDataSetTableAdapters.tbl_expiredproductsTableAdapter
+    Friend WithEvents tbl_stocksBindingSource As BindingSource
+    Friend WithEvents tbl_stocksTableAdapter As inventory_dbDataSetTableAdapters.tbl_stocksTableAdapter
+    Friend WithEvents tbl_deliveryBindingSource As BindingSource
+    Friend WithEvents tbl_deliveryTableAdapter As inventory_dbDataSetTableAdapters.tbl_deliveryTableAdapter
 End Class
