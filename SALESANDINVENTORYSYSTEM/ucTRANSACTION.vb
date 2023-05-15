@@ -169,7 +169,7 @@ Public Class ucTRANSACTION
         e.Graphics.DrawString("Discount Type: " + CBODISCOUNT.Text.ToString, f10b, Brushes.BlueViolet, 0, 145 + height2)
         e.Graphics.DrawString("Discount Amount: " + TXTDISCAMOUNT.Text.ToString, f10b, Brushes.BlueViolet, 0, 160 + height2)
         e.Graphics.DrawString(TXTNAME.Text.ToString, f10b, Brushes.BlueViolet, 0, 175 + height2)
-        e.Graphics.DrawString(TXTID.Text.ToString, f10b, Brushes.BlueViolet, 0, 205 + height2)
+        e.Graphics.DrawString(TXTID.Text.ToString, f10b, Brushes.BlueViolet, 0, 190 + height2)
 
         ' VAT -------------------------------------------------------
 
@@ -186,16 +186,30 @@ Public Class ucTRANSACTION
         e.Graphics.DrawString("0.00", f8, Brushes.BlueViolet, 220, 235 + height2)
 
 
-
-        e.Graphics.DrawString("Thanks for puchasing”, f8, Brushes.BlueViolet, centermargin, 255 + height2, center)
-        e.Graphics.DrawString("This serves as your official receipt", f8, Brushes.BlueViolet, centermargin, 270 + height2, center)
-
         ' OTHER DETAILS --------------------------------------------------
 
-        e.Graphics.DrawString("---------- SIS Accredited Supplier ----------", f8, Brushes.BlueViolet, centermargin, 290 + height2, center)
-        e.Graphics.DrawString("UNIVERSITY OF RIZAL SYSTEM, BINANGONAN CAMPUS", f8, Brushes.BlueViolet, centermargin, 305 + height2, center)
-        e.Graphics.DrawString("F5MQ+62W, Manila E Rd, Binangonan, 1940 Rizal", f8, Brushes.BlueViolet, centermargin, 320 + height2, center)
-        e.Graphics.DrawString("TIN: 005-037-570-000", f8, Brushes.BlueViolet, centermargin, 335 + height2, center)
+        e.Graphics.DrawString("- - - - - SIS Accredited Supplier - - - - -", f8, Brushes.BlueViolet, centermargin, 290 + height2, center)
+        e.Graphics.DrawString("UNIVERSITY OF RIZAL SYSTEM", f8, Brushes.BlueViolet, centermargin, 305 + height2, center)
+        e.Graphics.DrawString("BINANGONAN CAMPUS", f8, Brushes.BlueViolet, centermargin, 320 + height2, center)
+        e.Graphics.DrawString("F5MQ+62W, Manila E Rd, Binangonan, 1940 Rizal", f8, Brushes.BlueViolet, centermargin, 335 + height2, center)
+        e.Graphics.DrawString("TIN: 005-037-570-000", f8, Brushes.BlueViolet, centermargin, 350 + height2, center)
+        e.Graphics.DrawString("BIR Accre. #048005037570000011491", f8, Brushes.BlueViolet, centermargin, 365 + height2, center)
+        e.Graphics.DrawString("Date Issued: " & Format(Date.Now, "MM/yyyy/dd"), f8, Brushes.BlueViolet, centermargin, 380 + height2, center)
+        Dim validUntil As DateTime = Date.Now.AddYears(5)
+        e.Graphics.DrawString("Valid Until: " & validUntil.ToString("MM/yyyy/dd"), f8, Brushes.BlueViolet, centermargin, 395 + height2, center)
+        e.Graphics.DrawString("PTU # FP072015046004034600000", f8, Brushes.BlueViolet, centermargin, 410 + height2, center)
+        e.Graphics.DrawString("Date Issued: " & Format(Date.Now, "MM/yyyy/dd"), f8, Brushes.BlueViolet, centermargin, 425 + height2, center)
+        Dim validUntil2 As DateTime = Date.Now.AddYears(5)
+        e.Graphics.DrawString("Valid Until: " & validUntil2.ToString("MM/yyyy/dd"), f8, Brushes.BlueViolet, centermargin, 440 + height2, center)
+        e.Graphics.DrawString("THIS INVOICE RECEIPT SHALL BE", f8, Brushes.BlueViolet, centermargin, 455 + height2, center)
+        e.Graphics.DrawString("VALID FOR FIVE (5) YEARS", f8, Brushes.BlueViolet, centermargin, 470 + height2, center)
+        e.Graphics.DrawString("FROM THE DATE OF THE PERMIT TO USE ", f8, Brushes.BlueViolet, centermargin, 485 + height2, center)
+        e.Graphics.DrawString("THIS DOCUMENT IS NOT VALID FOR", f8, Brushes.BlueViolet, centermargin, 500 + height2, center)
+        e.Graphics.DrawString("CLAIM OF INPUT TAX", f8, Brushes.BlueViolet, centermargin, 515 + height2, center)
+
+
+        e.Graphics.DrawString("Thanks for purchasing”, f8, Brushes.BlueViolet, centermargin, 545 + height2, center)
+        e.Graphics.DrawString("This serves as your official receipt", f8, Brushes.BlueViolet, centermargin, 560 + height2, center)
 
 
 
@@ -793,7 +807,7 @@ Public Class ucTRANSACTION
         End If
     End Sub
 
-    Private Sub Guna2GradientTileButton1_Click(sender As Object, e As EventArgs) Handles Guna2GradientTileButton1.Click
+    Private Sub Guna2GradientTileButton1_Click(sender As Object, e As EventArgs)
         changelongpaper()
         PPD.Document = PD
         PPD.ShowDialog()

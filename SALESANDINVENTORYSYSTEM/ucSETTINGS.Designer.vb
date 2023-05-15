@@ -80,11 +80,11 @@ Partial Class ucSETTINGS
         Me.BTNBRAND.ForeColor = System.Drawing.Color.White
         Me.BTNBRAND.Image = CType(resources.GetObject("BTNBRAND.Image"), System.Drawing.Image)
         Me.BTNBRAND.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.BTNBRAND.Location = New System.Drawing.Point(3, 0)
+        Me.BTNBRAND.Location = New System.Drawing.Point(0, -12)
         Me.BTNBRAND.Name = "BTNBRAND"
-        Me.BTNBRAND.Size = New System.Drawing.Size(112, 49)
+        Me.BTNBRAND.Size = New System.Drawing.Size(147, 70)
         Me.BTNBRAND.TabIndex = 54
-        Me.BTNBRAND.Text = "Brand"
+        Me.BTNBRAND.Text = "Manage Brand"
         Me.BTNBRAND.TextAlign = System.Drawing.ContentAlignment.MiddleRight
         Me.BTNBRAND.UseVisualStyleBackColor = False
         '
@@ -98,11 +98,11 @@ Partial Class ucSETTINGS
         Me.BTNUM.ForeColor = System.Drawing.Color.White
         Me.BTNUM.Image = CType(resources.GetObject("BTNUM.Image"), System.Drawing.Image)
         Me.BTNUM.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.BTNUM.Location = New System.Drawing.Point(790, -3)
+        Me.BTNUM.Location = New System.Drawing.Point(917, -5)
         Me.BTNUM.Name = "BTNUM"
-        Me.BTNUM.Size = New System.Drawing.Size(136, 52)
+        Me.BTNUM.Size = New System.Drawing.Size(174, 52)
         Me.BTNUM.TabIndex = 47
-        Me.BTNUM.Text = "User Account"
+        Me.BTNUM.Text = "User Management" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10)
         Me.BTNUM.TextAlign = System.Drawing.ContentAlignment.MiddleRight
         Me.BTNUM.UseVisualStyleBackColor = False
         '
@@ -116,11 +116,11 @@ Partial Class ucSETTINGS
         Me.BTNSTOCKIN.ForeColor = System.Drawing.Color.White
         Me.BTNSTOCKIN.Image = CType(resources.GetObject("BTNSTOCKIN.Image"), System.Drawing.Image)
         Me.BTNSTOCKIN.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.BTNSTOCKIN.Location = New System.Drawing.Point(635, 0)
+        Me.BTNSTOCKIN.Location = New System.Drawing.Point(705, -2)
         Me.BTNSTOCKIN.Name = "BTNSTOCKIN"
-        Me.BTNSTOCKIN.Size = New System.Drawing.Size(112, 49)
+        Me.BTNSTOCKIN.Size = New System.Drawing.Size(210, 49)
         Me.BTNSTOCKIN.TabIndex = 49
-        Me.BTNSTOCKIN.Text = "Delivery"
+        Me.BTNSTOCKIN.Text = "Delivery Management"
         Me.BTNSTOCKIN.TextAlign = System.Drawing.ContentAlignment.MiddleRight
         Me.BTNSTOCKIN.UseVisualStyleBackColor = False
         '
@@ -134,11 +134,11 @@ Partial Class ucSETTINGS
         Me.BTNINVENTORY.ForeColor = System.Drawing.Color.White
         Me.BTNINVENTORY.Image = CType(resources.GetObject("BTNINVENTORY.Image"), System.Drawing.Image)
         Me.BTNINVENTORY.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.BTNINVENTORY.Location = New System.Drawing.Point(438, -3)
+        Me.BTNINVENTORY.Location = New System.Drawing.Point(328, -1)
         Me.BTNINVENTORY.Name = "BTNINVENTORY"
-        Me.BTNINVENTORY.Size = New System.Drawing.Size(174, 49)
+        Me.BTNINVENTORY.Size = New System.Drawing.Size(207, 49)
         Me.BTNINVENTORY.TabIndex = 49
-        Me.BTNINVENTORY.Text = "Manage Product"
+        Me.BTNINVENTORY.Text = "Product Management"
         Me.BTNINVENTORY.TextAlign = System.Drawing.ContentAlignment.MiddleRight
         Me.BTNINVENTORY.UseVisualStyleBackColor = False
         '
@@ -152,11 +152,11 @@ Partial Class ucSETTINGS
         Me.BTNSUP.ForeColor = System.Drawing.Color.White
         Me.BTNSUP.Image = CType(resources.GetObject("BTNSUP.Image"), System.Drawing.Image)
         Me.BTNSUP.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.BTNSUP.Location = New System.Drawing.Point(138, 0)
+        Me.BTNSUP.Location = New System.Drawing.Point(534, -2)
         Me.BTNSUP.Name = "BTNSUP"
-        Me.BTNSUP.Size = New System.Drawing.Size(120, 49)
+        Me.BTNSUP.Size = New System.Drawing.Size(169, 49)
         Me.BTNSUP.TabIndex = 49
-        Me.BTNSUP.Text = "Supplier"
+        Me.BTNSUP.Text = "Manage Supplier"
         Me.BTNSUP.TextAlign = System.Drawing.ContentAlignment.MiddleRight
         Me.BTNSUP.UseVisualStyleBackColor = False
         '
@@ -170,11 +170,11 @@ Partial Class ucSETTINGS
         Me.BTNCATEGORY.ForeColor = System.Drawing.Color.White
         Me.BTNCATEGORY.Image = CType(resources.GetObject("BTNCATEGORY.Image"), System.Drawing.Image)
         Me.BTNCATEGORY.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.BTNCATEGORY.Location = New System.Drawing.Point(292, 0)
+        Me.BTNCATEGORY.Location = New System.Drawing.Point(149, -21)
         Me.BTNCATEGORY.Name = "BTNCATEGORY"
-        Me.BTNCATEGORY.Size = New System.Drawing.Size(119, 49)
+        Me.BTNCATEGORY.Size = New System.Drawing.Size(183, 88)
         Me.BTNCATEGORY.TabIndex = 48
-        Me.BTNCATEGORY.Text = "Category"
+        Me.BTNCATEGORY.Text = "Manage Category"
         Me.BTNCATEGORY.TextAlign = System.Drawing.ContentAlignment.MiddleRight
         Me.BTNCATEGORY.UseVisualStyleBackColor = False
         '

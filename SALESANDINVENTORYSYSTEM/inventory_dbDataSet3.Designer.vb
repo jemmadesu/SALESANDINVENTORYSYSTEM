@@ -35,8 +35,6 @@ Partial Public Class inventory_dbDataSet
     
     Private tabletbl_backuprecords As tbl_backuprecordsDataTable
     
-    Private tabletbl_stocks As tbl_stocksDataTable
-    
     Private tabletbl_expiredproducts As tbl_expiredproductsDataTable
     
     Private tabletbl_manufacturer As tbl_manufacturerDataTable
@@ -54,6 +52,8 @@ Partial Public Class inventory_dbDataSet
     Private tabletbl_outofstocks As tbl_outofstocksDataTable
     
     Private tabletbl_sales As tbl_salesDataTable
+    
+    Private tabletbl_stocks As tbl_stocksDataTable
     
     Private relationUsers As Global.System.Data.DataRelation
     
@@ -101,9 +101,6 @@ Partial Public Class inventory_dbDataSet
             If (Not (ds.Tables("tbl_backuprecords")) Is Nothing) Then
                 MyBase.Tables.Add(New tbl_backuprecordsDataTable(ds.Tables("tbl_backuprecords")))
             End If
-            If (Not (ds.Tables("tbl_stocks")) Is Nothing) Then
-                MyBase.Tables.Add(New tbl_stocksDataTable(ds.Tables("tbl_stocks")))
-            End If
             If (Not (ds.Tables("tbl_expiredproducts")) Is Nothing) Then
                 MyBase.Tables.Add(New tbl_expiredproductsDataTable(ds.Tables("tbl_expiredproducts")))
             End If
@@ -130,6 +127,9 @@ Partial Public Class inventory_dbDataSet
             End If
             If (Not (ds.Tables("tbl_sales")) Is Nothing) Then
                 MyBase.Tables.Add(New tbl_salesDataTable(ds.Tables("tbl_sales")))
+            End If
+            If (Not (ds.Tables("tbl_stocks")) Is Nothing) Then
+                MyBase.Tables.Add(New tbl_stocksDataTable(ds.Tables("tbl_stocks")))
             End If
             Me.DataSetName = ds.DataSetName
             Me.Prefix = ds.Prefix
@@ -195,16 +195,6 @@ Partial Public Class inventory_dbDataSet
     Public ReadOnly Property tbl_backuprecords() As tbl_backuprecordsDataTable
         Get
             Return Me.tabletbl_backuprecords
-        End Get
-    End Property
-    
-    <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-     Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0"),  _
-     Global.System.ComponentModel.Browsable(false),  _
-     Global.System.ComponentModel.DesignerSerializationVisibility(Global.System.ComponentModel.DesignerSerializationVisibility.Content)>  _
-    Public ReadOnly Property tbl_stocks() As tbl_stocksDataTable
-        Get
-            Return Me.tabletbl_stocks
         End Get
     End Property
     
@@ -300,6 +290,16 @@ Partial Public Class inventory_dbDataSet
     
     <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
      Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0"),  _
+     Global.System.ComponentModel.Browsable(false),  _
+     Global.System.ComponentModel.DesignerSerializationVisibility(Global.System.ComponentModel.DesignerSerializationVisibility.Content)>  _
+    Public ReadOnly Property tbl_stocks() As tbl_stocksDataTable
+        Get
+            Return Me.tabletbl_stocks
+        End Get
+    End Property
+    
+    <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+     Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0"),  _
      Global.System.ComponentModel.BrowsableAttribute(true),  _
      Global.System.ComponentModel.DesignerSerializationVisibilityAttribute(Global.System.ComponentModel.DesignerSerializationVisibility.Visible)>  _
     Public Overrides Property SchemaSerializationMode() As Global.System.Data.SchemaSerializationMode
@@ -380,9 +380,6 @@ Partial Public Class inventory_dbDataSet
             If (Not (ds.Tables("tbl_backuprecords")) Is Nothing) Then
                 MyBase.Tables.Add(New tbl_backuprecordsDataTable(ds.Tables("tbl_backuprecords")))
             End If
-            If (Not (ds.Tables("tbl_stocks")) Is Nothing) Then
-                MyBase.Tables.Add(New tbl_stocksDataTable(ds.Tables("tbl_stocks")))
-            End If
             If (Not (ds.Tables("tbl_expiredproducts")) Is Nothing) Then
                 MyBase.Tables.Add(New tbl_expiredproductsDataTable(ds.Tables("tbl_expiredproducts")))
             End If
@@ -409,6 +406,9 @@ Partial Public Class inventory_dbDataSet
             End If
             If (Not (ds.Tables("tbl_sales")) Is Nothing) Then
                 MyBase.Tables.Add(New tbl_salesDataTable(ds.Tables("tbl_sales")))
+            End If
+            If (Not (ds.Tables("tbl_stocks")) Is Nothing) Then
+                MyBase.Tables.Add(New tbl_stocksDataTable(ds.Tables("tbl_stocks")))
             End If
             Me.DataSetName = ds.DataSetName
             Me.Prefix = ds.Prefix
@@ -472,12 +472,6 @@ Partial Public Class inventory_dbDataSet
                 Me.tabletbl_backuprecords.InitVars
             End If
         End If
-        Me.tabletbl_stocks = CType(MyBase.Tables("tbl_stocks"),tbl_stocksDataTable)
-        If (initTable = true) Then
-            If (Not (Me.tabletbl_stocks) Is Nothing) Then
-                Me.tabletbl_stocks.InitVars
-            End If
-        End If
         Me.tabletbl_expiredproducts = CType(MyBase.Tables("tbl_expiredproducts"),tbl_expiredproductsDataTable)
         If (initTable = true) Then
             If (Not (Me.tabletbl_expiredproducts) Is Nothing) Then
@@ -532,6 +526,12 @@ Partial Public Class inventory_dbDataSet
                 Me.tabletbl_sales.InitVars
             End If
         End If
+        Me.tabletbl_stocks = CType(MyBase.Tables("tbl_stocks"),tbl_stocksDataTable)
+        If (initTable = true) Then
+            If (Not (Me.tabletbl_stocks) Is Nothing) Then
+                Me.tabletbl_stocks.InitVars
+            End If
+        End If
         Me.relationUsers = Me.Relations("Users")
     End Sub
     
@@ -553,8 +553,6 @@ Partial Public Class inventory_dbDataSet
         MyBase.Tables.Add(Me.tabletbl_actlog)
         Me.tabletbl_backuprecords = New tbl_backuprecordsDataTable()
         MyBase.Tables.Add(Me.tabletbl_backuprecords)
-        Me.tabletbl_stocks = New tbl_stocksDataTable()
-        MyBase.Tables.Add(Me.tabletbl_stocks)
         Me.tabletbl_expiredproducts = New tbl_expiredproductsDataTable()
         MyBase.Tables.Add(Me.tabletbl_expiredproducts)
         Me.tabletbl_manufacturer = New tbl_manufacturerDataTable()
@@ -573,6 +571,8 @@ Partial Public Class inventory_dbDataSet
         MyBase.Tables.Add(Me.tabletbl_outofstocks)
         Me.tabletbl_sales = New tbl_salesDataTable()
         MyBase.Tables.Add(Me.tabletbl_sales)
+        Me.tabletbl_stocks = New tbl_stocksDataTable()
+        MyBase.Tables.Add(Me.tabletbl_stocks)
         Me.relationUsers = New Global.System.Data.DataRelation("Users", New Global.System.Data.DataColumn() {Me.tabletbl_users.usernameColumn}, New Global.System.Data.DataColumn() {Me.tabletbl_actlog.usernameColumn}, false)
         Me.Relations.Add(Me.relationUsers)
     End Sub
@@ -604,12 +604,6 @@ Partial Public Class inventory_dbDataSet
     <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
      Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
     Private Function ShouldSerializetbl_backuprecords() As Boolean
-        Return false
-    End Function
-    
-    <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-     Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
-    Private Function ShouldSerializetbl_stocks() As Boolean
         Return false
     End Function
     
@@ -664,6 +658,12 @@ Partial Public Class inventory_dbDataSet
     <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
      Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
     Private Function ShouldSerializetbl_sales() As Boolean
+        Return false
+    End Function
+    
+    <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+     Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
+    Private Function ShouldSerializetbl_stocks() As Boolean
         Return false
     End Function
     
@@ -741,9 +741,6 @@ Partial Public Class inventory_dbDataSet
     Public Delegate Sub tbl_backuprecordsRowChangeEventHandler(ByVal sender As Object, ByVal e As tbl_backuprecordsRowChangeEvent)
     
     <Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
-    Public Delegate Sub tbl_stocksRowChangeEventHandler(ByVal sender As Object, ByVal e As tbl_stocksRowChangeEvent)
-    
-    <Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
     Public Delegate Sub tbl_expiredproductsRowChangeEventHandler(ByVal sender As Object, ByVal e As tbl_expiredproductsRowChangeEvent)
     
     <Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
@@ -769,6 +766,9 @@ Partial Public Class inventory_dbDataSet
     
     <Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
     Public Delegate Sub tbl_salesRowChangeEventHandler(ByVal sender As Object, ByVal e As tbl_salesRowChangeEvent)
+    
+    <Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
+    Public Delegate Sub tbl_stocksRowChangeEventHandler(ByVal sender As Object, ByVal e As tbl_stocksRowChangeEvent)
     
     '''<summary>
     '''Represents the strongly named DataTable class.
@@ -2572,461 +2572,6 @@ Partial Public Class inventory_dbDataSet
             Dim attribute2 As Global.System.Xml.Schema.XmlSchemaAttribute = New Global.System.Xml.Schema.XmlSchemaAttribute()
             attribute2.Name = "tableTypeName"
             attribute2.FixedValue = "tbl_backuprecordsDataTable"
-            type.Attributes.Add(attribute2)
-            type.Particle = sequence
-            Dim dsSchema As Global.System.Xml.Schema.XmlSchema = ds.GetSchemaSerializable
-            If xs.Contains(dsSchema.TargetNamespace) Then
-                Dim s1 As Global.System.IO.MemoryStream = New Global.System.IO.MemoryStream()
-                Dim s2 As Global.System.IO.MemoryStream = New Global.System.IO.MemoryStream()
-                Try 
-                    Dim schema As Global.System.Xml.Schema.XmlSchema = Nothing
-                    dsSchema.Write(s1)
-                    Dim schemas As Global.System.Collections.IEnumerator = xs.Schemas(dsSchema.TargetNamespace).GetEnumerator
-                    Do While schemas.MoveNext
-                        schema = CType(schemas.Current,Global.System.Xml.Schema.XmlSchema)
-                        s2.SetLength(0)
-                        schema.Write(s2)
-                        If (s1.Length = s2.Length) Then
-                            s1.Position = 0
-                            s2.Position = 0
-                            
-                            Do While ((s1.Position <> s1.Length)  _
-                                        AndAlso (s1.ReadByte = s2.ReadByte))
-                                
-                                
-                            Loop
-                            If (s1.Position = s1.Length) Then
-                                Return type
-                            End If
-                        End If
-                        
-                    Loop
-                Finally
-                    If (Not (s1) Is Nothing) Then
-                        s1.Close
-                    End If
-                    If (Not (s2) Is Nothing) Then
-                        s2.Close
-                    End If
-                End Try
-            End If
-            xs.Add(dsSchema)
-            Return type
-        End Function
-    End Class
-    
-    '''<summary>
-    '''Represents the strongly named DataTable class.
-    '''</summary>
-    <Global.System.Serializable(),  _
-     Global.System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedTableSchema")>  _
-    Partial Public Class tbl_stocksDataTable
-        Inherits Global.System.Data.TypedTableBase(Of tbl_stocksRow)
-        
-        Private columnid As Global.System.Data.DataColumn
-        
-        Private columnprodcode As Global.System.Data.DataColumn
-        
-        Private columnprodname As Global.System.Data.DataColumn
-        
-        Private columnmanufacturer As Global.System.Data.DataColumn
-        
-        Private columnbrand As Global.System.Data.DataColumn
-        
-        Private columncategory As Global.System.Data.DataColumn
-        
-        Private columncatcode As Global.System.Data.DataColumn
-        
-        Private columnunit As Global.System.Data.DataColumn
-        
-        Private columnprice As Global.System.Data.DataColumn
-        
-        Private columnquantity As Global.System.Data.DataColumn
-        
-        Private columnmanufactureddate As Global.System.Data.DataColumn
-        
-        Private columnexpirationdate As Global.System.Data.DataColumn
-        
-        Private columndateaddedstocks As Global.System.Data.DataColumn
-        
-        Private columnstockid As Global.System.Data.DataColumn
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
-        Public Sub New()
-            MyBase.New
-            Me.TableName = "tbl_stocks"
-            Me.BeginInit
-            Me.InitClass
-            Me.EndInit
-        End Sub
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
-        Friend Sub New(ByVal table As Global.System.Data.DataTable)
-            MyBase.New
-            Me.TableName = table.TableName
-            If (table.CaseSensitive <> table.DataSet.CaseSensitive) Then
-                Me.CaseSensitive = table.CaseSensitive
-            End If
-            If (table.Locale.ToString <> table.DataSet.Locale.ToString) Then
-                Me.Locale = table.Locale
-            End If
-            If (table.Namespace <> table.DataSet.Namespace) Then
-                Me.Namespace = table.Namespace
-            End If
-            Me.Prefix = table.Prefix
-            Me.MinimumCapacity = table.MinimumCapacity
-        End Sub
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
-        Protected Sub New(ByVal info As Global.System.Runtime.Serialization.SerializationInfo, ByVal context As Global.System.Runtime.Serialization.StreamingContext)
-            MyBase.New(info, context)
-            Me.InitVars
-        End Sub
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
-        Public ReadOnly Property idColumn() As Global.System.Data.DataColumn
-            Get
-                Return Me.columnid
-            End Get
-        End Property
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
-        Public ReadOnly Property prodcodeColumn() As Global.System.Data.DataColumn
-            Get
-                Return Me.columnprodcode
-            End Get
-        End Property
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
-        Public ReadOnly Property prodnameColumn() As Global.System.Data.DataColumn
-            Get
-                Return Me.columnprodname
-            End Get
-        End Property
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
-        Public ReadOnly Property manufacturerColumn() As Global.System.Data.DataColumn
-            Get
-                Return Me.columnmanufacturer
-            End Get
-        End Property
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
-        Public ReadOnly Property brandColumn() As Global.System.Data.DataColumn
-            Get
-                Return Me.columnbrand
-            End Get
-        End Property
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
-        Public ReadOnly Property categoryColumn() As Global.System.Data.DataColumn
-            Get
-                Return Me.columncategory
-            End Get
-        End Property
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
-        Public ReadOnly Property catcodeColumn() As Global.System.Data.DataColumn
-            Get
-                Return Me.columncatcode
-            End Get
-        End Property
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
-        Public ReadOnly Property unitColumn() As Global.System.Data.DataColumn
-            Get
-                Return Me.columnunit
-            End Get
-        End Property
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
-        Public ReadOnly Property priceColumn() As Global.System.Data.DataColumn
-            Get
-                Return Me.columnprice
-            End Get
-        End Property
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
-        Public ReadOnly Property quantityColumn() As Global.System.Data.DataColumn
-            Get
-                Return Me.columnquantity
-            End Get
-        End Property
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
-        Public ReadOnly Property manufactureddateColumn() As Global.System.Data.DataColumn
-            Get
-                Return Me.columnmanufactureddate
-            End Get
-        End Property
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
-        Public ReadOnly Property expirationdateColumn() As Global.System.Data.DataColumn
-            Get
-                Return Me.columnexpirationdate
-            End Get
-        End Property
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
-        Public ReadOnly Property dateaddedstocksColumn() As Global.System.Data.DataColumn
-            Get
-                Return Me.columndateaddedstocks
-            End Get
-        End Property
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
-        Public ReadOnly Property stockidColumn() As Global.System.Data.DataColumn
-            Get
-                Return Me.columnstockid
-            End Get
-        End Property
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0"),  _
-         Global.System.ComponentModel.Browsable(false)>  _
-        Public ReadOnly Property Count() As Integer
-            Get
-                Return Me.Rows.Count
-            End Get
-        End Property
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
-        Public Default ReadOnly Property Item(ByVal index As Integer) As tbl_stocksRow
-            Get
-                Return CType(Me.Rows(index),tbl_stocksRow)
-            End Get
-        End Property
-        
-        <Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
-        Public Event tbl_stocksRowChanging As tbl_stocksRowChangeEventHandler
-        
-        <Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
-        Public Event tbl_stocksRowChanged As tbl_stocksRowChangeEventHandler
-        
-        <Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
-        Public Event tbl_stocksRowDeleting As tbl_stocksRowChangeEventHandler
-        
-        <Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
-        Public Event tbl_stocksRowDeleted As tbl_stocksRowChangeEventHandler
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
-        Public Overloads Sub Addtbl_stocksRow(ByVal row As tbl_stocksRow)
-            Me.Rows.Add(row)
-        End Sub
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
-        Public Overloads Function Addtbl_stocksRow(ByVal id As Integer, ByVal prodcode As String, ByVal prodname As String, ByVal manufacturer As String, ByVal brand As String, ByVal category As String, ByVal catcode As String, ByVal unit As String, ByVal price As Integer, ByVal quantity As Integer, ByVal manufactureddate As Date, ByVal expirationdate As Date, ByVal dateaddedstocks As Date) As tbl_stocksRow
-            Dim rowtbl_stocksRow As tbl_stocksRow = CType(Me.NewRow,tbl_stocksRow)
-            Dim columnValuesArray() As Object = New Object() {id, prodcode, prodname, manufacturer, brand, category, catcode, unit, price, quantity, manufactureddate, expirationdate, dateaddedstocks, Nothing}
-            rowtbl_stocksRow.ItemArray = columnValuesArray
-            Me.Rows.Add(rowtbl_stocksRow)
-            Return rowtbl_stocksRow
-        End Function
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
-        Public Function FindBydateaddedstocks(ByVal dateaddedstocks As Date) As tbl_stocksRow
-            Return CType(Me.Rows.Find(New Object() {dateaddedstocks}),tbl_stocksRow)
-        End Function
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
-        Public Overrides Function Clone() As Global.System.Data.DataTable
-            Dim cln As tbl_stocksDataTable = CType(MyBase.Clone,tbl_stocksDataTable)
-            cln.InitVars
-            Return cln
-        End Function
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
-        Protected Overrides Function CreateInstance() As Global.System.Data.DataTable
-            Return New tbl_stocksDataTable()
-        End Function
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
-        Friend Sub InitVars()
-            Me.columnid = MyBase.Columns("id")
-            Me.columnprodcode = MyBase.Columns("prodcode")
-            Me.columnprodname = MyBase.Columns("prodname")
-            Me.columnmanufacturer = MyBase.Columns("manufacturer")
-            Me.columnbrand = MyBase.Columns("brand")
-            Me.columncategory = MyBase.Columns("category")
-            Me.columncatcode = MyBase.Columns("catcode")
-            Me.columnunit = MyBase.Columns("unit")
-            Me.columnprice = MyBase.Columns("price")
-            Me.columnquantity = MyBase.Columns("quantity")
-            Me.columnmanufactureddate = MyBase.Columns("manufactureddate")
-            Me.columnexpirationdate = MyBase.Columns("expirationdate")
-            Me.columndateaddedstocks = MyBase.Columns("dateaddedstocks")
-            Me.columnstockid = MyBase.Columns("stockid")
-        End Sub
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
-        Private Sub InitClass()
-            Me.columnid = New Global.System.Data.DataColumn("id", GetType(Integer), Nothing, Global.System.Data.MappingType.Element)
-            MyBase.Columns.Add(Me.columnid)
-            Me.columnprodcode = New Global.System.Data.DataColumn("prodcode", GetType(String), Nothing, Global.System.Data.MappingType.Element)
-            MyBase.Columns.Add(Me.columnprodcode)
-            Me.columnprodname = New Global.System.Data.DataColumn("prodname", GetType(String), Nothing, Global.System.Data.MappingType.Element)
-            MyBase.Columns.Add(Me.columnprodname)
-            Me.columnmanufacturer = New Global.System.Data.DataColumn("manufacturer", GetType(String), Nothing, Global.System.Data.MappingType.Element)
-            MyBase.Columns.Add(Me.columnmanufacturer)
-            Me.columnbrand = New Global.System.Data.DataColumn("brand", GetType(String), Nothing, Global.System.Data.MappingType.Element)
-            MyBase.Columns.Add(Me.columnbrand)
-            Me.columncategory = New Global.System.Data.DataColumn("category", GetType(String), Nothing, Global.System.Data.MappingType.Element)
-            MyBase.Columns.Add(Me.columncategory)
-            Me.columncatcode = New Global.System.Data.DataColumn("catcode", GetType(String), Nothing, Global.System.Data.MappingType.Element)
-            MyBase.Columns.Add(Me.columncatcode)
-            Me.columnunit = New Global.System.Data.DataColumn("unit", GetType(String), Nothing, Global.System.Data.MappingType.Element)
-            MyBase.Columns.Add(Me.columnunit)
-            Me.columnprice = New Global.System.Data.DataColumn("price", GetType(Integer), Nothing, Global.System.Data.MappingType.Element)
-            MyBase.Columns.Add(Me.columnprice)
-            Me.columnquantity = New Global.System.Data.DataColumn("quantity", GetType(Integer), Nothing, Global.System.Data.MappingType.Element)
-            MyBase.Columns.Add(Me.columnquantity)
-            Me.columnmanufactureddate = New Global.System.Data.DataColumn("manufactureddate", GetType(Date), Nothing, Global.System.Data.MappingType.Element)
-            MyBase.Columns.Add(Me.columnmanufactureddate)
-            Me.columnexpirationdate = New Global.System.Data.DataColumn("expirationdate", GetType(Date), Nothing, Global.System.Data.MappingType.Element)
-            MyBase.Columns.Add(Me.columnexpirationdate)
-            Me.columndateaddedstocks = New Global.System.Data.DataColumn("dateaddedstocks", GetType(Date), Nothing, Global.System.Data.MappingType.Element)
-            MyBase.Columns.Add(Me.columndateaddedstocks)
-            Me.columnstockid = New Global.System.Data.DataColumn("stockid", GetType(Integer), Nothing, Global.System.Data.MappingType.Element)
-            MyBase.Columns.Add(Me.columnstockid)
-            Me.Constraints.Add(New Global.System.Data.UniqueConstraint("Constraint1", New Global.System.Data.DataColumn() {Me.columndateaddedstocks}, true))
-            Me.Constraints.Add(New Global.System.Data.UniqueConstraint("Constraint2", New Global.System.Data.DataColumn() {Me.columnstockid}, false))
-            Me.columnid.AllowDBNull = false
-            Me.columnprodcode.AllowDBNull = false
-            Me.columnprodcode.MaxLength = 45
-            Me.columnprodname.AllowDBNull = false
-            Me.columnprodname.MaxLength = 45
-            Me.columnmanufacturer.AllowDBNull = false
-            Me.columnmanufacturer.MaxLength = 45
-            Me.columnbrand.AllowDBNull = false
-            Me.columnbrand.MaxLength = 45
-            Me.columncategory.AllowDBNull = false
-            Me.columncategory.MaxLength = 45
-            Me.columncatcode.AllowDBNull = false
-            Me.columncatcode.MaxLength = 45
-            Me.columnunit.AllowDBNull = false
-            Me.columnunit.MaxLength = 45
-            Me.columnprice.AllowDBNull = false
-            Me.columnquantity.AllowDBNull = false
-            Me.columnmanufactureddate.AllowDBNull = false
-            Me.columnexpirationdate.AllowDBNull = false
-            Me.columndateaddedstocks.AllowDBNull = false
-            Me.columndateaddedstocks.Unique = true
-            Me.columnstockid.AutoIncrement = true
-            Me.columnstockid.AutoIncrementSeed = -1
-            Me.columnstockid.AutoIncrementStep = -1
-            Me.columnstockid.AllowDBNull = false
-            Me.columnstockid.Unique = true
-        End Sub
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
-        Public Function Newtbl_stocksRow() As tbl_stocksRow
-            Return CType(Me.NewRow,tbl_stocksRow)
-        End Function
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
-        Protected Overrides Function NewRowFromBuilder(ByVal builder As Global.System.Data.DataRowBuilder) As Global.System.Data.DataRow
-            Return New tbl_stocksRow(builder)
-        End Function
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
-        Protected Overrides Function GetRowType() As Global.System.Type
-            Return GetType(tbl_stocksRow)
-        End Function
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
-        Protected Overrides Sub OnRowChanged(ByVal e As Global.System.Data.DataRowChangeEventArgs)
-            MyBase.OnRowChanged(e)
-            If (Not (Me.tbl_stocksRowChangedEvent) Is Nothing) Then
-                RaiseEvent tbl_stocksRowChanged(Me, New tbl_stocksRowChangeEvent(CType(e.Row,tbl_stocksRow), e.Action))
-            End If
-        End Sub
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
-        Protected Overrides Sub OnRowChanging(ByVal e As Global.System.Data.DataRowChangeEventArgs)
-            MyBase.OnRowChanging(e)
-            If (Not (Me.tbl_stocksRowChangingEvent) Is Nothing) Then
-                RaiseEvent tbl_stocksRowChanging(Me, New tbl_stocksRowChangeEvent(CType(e.Row,tbl_stocksRow), e.Action))
-            End If
-        End Sub
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
-        Protected Overrides Sub OnRowDeleted(ByVal e As Global.System.Data.DataRowChangeEventArgs)
-            MyBase.OnRowDeleted(e)
-            If (Not (Me.tbl_stocksRowDeletedEvent) Is Nothing) Then
-                RaiseEvent tbl_stocksRowDeleted(Me, New tbl_stocksRowChangeEvent(CType(e.Row,tbl_stocksRow), e.Action))
-            End If
-        End Sub
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
-        Protected Overrides Sub OnRowDeleting(ByVal e As Global.System.Data.DataRowChangeEventArgs)
-            MyBase.OnRowDeleting(e)
-            If (Not (Me.tbl_stocksRowDeletingEvent) Is Nothing) Then
-                RaiseEvent tbl_stocksRowDeleting(Me, New tbl_stocksRowChangeEvent(CType(e.Row,tbl_stocksRow), e.Action))
-            End If
-        End Sub
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
-        Public Sub Removetbl_stocksRow(ByVal row As tbl_stocksRow)
-            Me.Rows.Remove(row)
-        End Sub
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
-        Public Shared Function GetTypedTableSchema(ByVal xs As Global.System.Xml.Schema.XmlSchemaSet) As Global.System.Xml.Schema.XmlSchemaComplexType
-            Dim type As Global.System.Xml.Schema.XmlSchemaComplexType = New Global.System.Xml.Schema.XmlSchemaComplexType()
-            Dim sequence As Global.System.Xml.Schema.XmlSchemaSequence = New Global.System.Xml.Schema.XmlSchemaSequence()
-            Dim ds As inventory_dbDataSet = New inventory_dbDataSet()
-            Dim any1 As Global.System.Xml.Schema.XmlSchemaAny = New Global.System.Xml.Schema.XmlSchemaAny()
-            any1.Namespace = "http://www.w3.org/2001/XMLSchema"
-            any1.MinOccurs = New Decimal(0)
-            any1.MaxOccurs = Decimal.MaxValue
-            any1.ProcessContents = Global.System.Xml.Schema.XmlSchemaContentProcessing.Lax
-            sequence.Items.Add(any1)
-            Dim any2 As Global.System.Xml.Schema.XmlSchemaAny = New Global.System.Xml.Schema.XmlSchemaAny()
-            any2.Namespace = "urn:schemas-microsoft-com:xml-diffgram-v1"
-            any2.MinOccurs = New Decimal(1)
-            any2.ProcessContents = Global.System.Xml.Schema.XmlSchemaContentProcessing.Lax
-            sequence.Items.Add(any2)
-            Dim attribute1 As Global.System.Xml.Schema.XmlSchemaAttribute = New Global.System.Xml.Schema.XmlSchemaAttribute()
-            attribute1.Name = "namespace"
-            attribute1.FixedValue = ds.Namespace
-            type.Attributes.Add(attribute1)
-            Dim attribute2 As Global.System.Xml.Schema.XmlSchemaAttribute = New Global.System.Xml.Schema.XmlSchemaAttribute()
-            attribute2.Name = "tableTypeName"
-            attribute2.FixedValue = "tbl_stocksDataTable"
             type.Attributes.Add(attribute2)
             type.Particle = sequence
             Dim dsSchema As Global.System.Xml.Schema.XmlSchema = ds.GetSchemaSerializable
@@ -6299,6 +5844,459 @@ Partial Public Class inventory_dbDataSet
     End Class
     
     '''<summary>
+    '''Represents the strongly named DataTable class.
+    '''</summary>
+    <Global.System.Serializable(),  _
+     Global.System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedTableSchema")>  _
+    Partial Public Class tbl_stocksDataTable
+        Inherits Global.System.Data.TypedTableBase(Of tbl_stocksRow)
+        
+        Private columnstockid As Global.System.Data.DataColumn
+        
+        Private columnid As Global.System.Data.DataColumn
+        
+        Private columnprodcode As Global.System.Data.DataColumn
+        
+        Private columnprodname As Global.System.Data.DataColumn
+        
+        Private columnmanufacturer As Global.System.Data.DataColumn
+        
+        Private columnbrand As Global.System.Data.DataColumn
+        
+        Private columncategory As Global.System.Data.DataColumn
+        
+        Private columncatcode As Global.System.Data.DataColumn
+        
+        Private columnunit As Global.System.Data.DataColumn
+        
+        Private columnprice As Global.System.Data.DataColumn
+        
+        Private columnquantity As Global.System.Data.DataColumn
+        
+        Private columnmanufactureddate As Global.System.Data.DataColumn
+        
+        Private columnexpirationdate As Global.System.Data.DataColumn
+        
+        Private columndateaddedstocks As Global.System.Data.DataColumn
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
+        Public Sub New()
+            MyBase.New
+            Me.TableName = "tbl_stocks"
+            Me.BeginInit
+            Me.InitClass
+            Me.EndInit
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
+        Friend Sub New(ByVal table As Global.System.Data.DataTable)
+            MyBase.New
+            Me.TableName = table.TableName
+            If (table.CaseSensitive <> table.DataSet.CaseSensitive) Then
+                Me.CaseSensitive = table.CaseSensitive
+            End If
+            If (table.Locale.ToString <> table.DataSet.Locale.ToString) Then
+                Me.Locale = table.Locale
+            End If
+            If (table.Namespace <> table.DataSet.Namespace) Then
+                Me.Namespace = table.Namespace
+            End If
+            Me.Prefix = table.Prefix
+            Me.MinimumCapacity = table.MinimumCapacity
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
+        Protected Sub New(ByVal info As Global.System.Runtime.Serialization.SerializationInfo, ByVal context As Global.System.Runtime.Serialization.StreamingContext)
+            MyBase.New(info, context)
+            Me.InitVars
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
+        Public ReadOnly Property stockidColumn() As Global.System.Data.DataColumn
+            Get
+                Return Me.columnstockid
+            End Get
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
+        Public ReadOnly Property idColumn() As Global.System.Data.DataColumn
+            Get
+                Return Me.columnid
+            End Get
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
+        Public ReadOnly Property prodcodeColumn() As Global.System.Data.DataColumn
+            Get
+                Return Me.columnprodcode
+            End Get
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
+        Public ReadOnly Property prodnameColumn() As Global.System.Data.DataColumn
+            Get
+                Return Me.columnprodname
+            End Get
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
+        Public ReadOnly Property manufacturerColumn() As Global.System.Data.DataColumn
+            Get
+                Return Me.columnmanufacturer
+            End Get
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
+        Public ReadOnly Property brandColumn() As Global.System.Data.DataColumn
+            Get
+                Return Me.columnbrand
+            End Get
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
+        Public ReadOnly Property categoryColumn() As Global.System.Data.DataColumn
+            Get
+                Return Me.columncategory
+            End Get
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
+        Public ReadOnly Property catcodeColumn() As Global.System.Data.DataColumn
+            Get
+                Return Me.columncatcode
+            End Get
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
+        Public ReadOnly Property unitColumn() As Global.System.Data.DataColumn
+            Get
+                Return Me.columnunit
+            End Get
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
+        Public ReadOnly Property priceColumn() As Global.System.Data.DataColumn
+            Get
+                Return Me.columnprice
+            End Get
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
+        Public ReadOnly Property quantityColumn() As Global.System.Data.DataColumn
+            Get
+                Return Me.columnquantity
+            End Get
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
+        Public ReadOnly Property manufactureddateColumn() As Global.System.Data.DataColumn
+            Get
+                Return Me.columnmanufactureddate
+            End Get
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
+        Public ReadOnly Property expirationdateColumn() As Global.System.Data.DataColumn
+            Get
+                Return Me.columnexpirationdate
+            End Get
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
+        Public ReadOnly Property dateaddedstocksColumn() As Global.System.Data.DataColumn
+            Get
+                Return Me.columndateaddedstocks
+            End Get
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0"),  _
+         Global.System.ComponentModel.Browsable(false)>  _
+        Public ReadOnly Property Count() As Integer
+            Get
+                Return Me.Rows.Count
+            End Get
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
+        Public Default ReadOnly Property Item(ByVal index As Integer) As tbl_stocksRow
+            Get
+                Return CType(Me.Rows(index),tbl_stocksRow)
+            End Get
+        End Property
+        
+        <Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
+        Public Event tbl_stocksRowChanging As tbl_stocksRowChangeEventHandler
+        
+        <Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
+        Public Event tbl_stocksRowChanged As tbl_stocksRowChangeEventHandler
+        
+        <Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
+        Public Event tbl_stocksRowDeleting As tbl_stocksRowChangeEventHandler
+        
+        <Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
+        Public Event tbl_stocksRowDeleted As tbl_stocksRowChangeEventHandler
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
+        Public Overloads Sub Addtbl_stocksRow(ByVal row As tbl_stocksRow)
+            Me.Rows.Add(row)
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
+        Public Overloads Function Addtbl_stocksRow(ByVal id As Integer, ByVal prodcode As String, ByVal prodname As String, ByVal manufacturer As String, ByVal brand As String, ByVal category As String, ByVal catcode As String, ByVal unit As String, ByVal price As Integer, ByVal quantity As Integer, ByVal manufactureddate As Date, ByVal expirationdate As Date, ByVal dateaddedstocks As Date) As tbl_stocksRow
+            Dim rowtbl_stocksRow As tbl_stocksRow = CType(Me.NewRow,tbl_stocksRow)
+            Dim columnValuesArray() As Object = New Object() {Nothing, id, prodcode, prodname, manufacturer, brand, category, catcode, unit, price, quantity, manufactureddate, expirationdate, dateaddedstocks}
+            rowtbl_stocksRow.ItemArray = columnValuesArray
+            Me.Rows.Add(rowtbl_stocksRow)
+            Return rowtbl_stocksRow
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
+        Public Function FindBystockid(ByVal stockid As Integer) As tbl_stocksRow
+            Return CType(Me.Rows.Find(New Object() {stockid}),tbl_stocksRow)
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
+        Public Overrides Function Clone() As Global.System.Data.DataTable
+            Dim cln As tbl_stocksDataTable = CType(MyBase.Clone,tbl_stocksDataTable)
+            cln.InitVars
+            Return cln
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
+        Protected Overrides Function CreateInstance() As Global.System.Data.DataTable
+            Return New tbl_stocksDataTable()
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
+        Friend Sub InitVars()
+            Me.columnstockid = MyBase.Columns("stockid")
+            Me.columnid = MyBase.Columns("id")
+            Me.columnprodcode = MyBase.Columns("prodcode")
+            Me.columnprodname = MyBase.Columns("prodname")
+            Me.columnmanufacturer = MyBase.Columns("manufacturer")
+            Me.columnbrand = MyBase.Columns("brand")
+            Me.columncategory = MyBase.Columns("category")
+            Me.columncatcode = MyBase.Columns("catcode")
+            Me.columnunit = MyBase.Columns("unit")
+            Me.columnprice = MyBase.Columns("price")
+            Me.columnquantity = MyBase.Columns("quantity")
+            Me.columnmanufactureddate = MyBase.Columns("manufactureddate")
+            Me.columnexpirationdate = MyBase.Columns("expirationdate")
+            Me.columndateaddedstocks = MyBase.Columns("dateaddedstocks")
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
+        Private Sub InitClass()
+            Me.columnstockid = New Global.System.Data.DataColumn("stockid", GetType(Integer), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columnstockid)
+            Me.columnid = New Global.System.Data.DataColumn("id", GetType(Integer), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columnid)
+            Me.columnprodcode = New Global.System.Data.DataColumn("prodcode", GetType(String), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columnprodcode)
+            Me.columnprodname = New Global.System.Data.DataColumn("prodname", GetType(String), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columnprodname)
+            Me.columnmanufacturer = New Global.System.Data.DataColumn("manufacturer", GetType(String), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columnmanufacturer)
+            Me.columnbrand = New Global.System.Data.DataColumn("brand", GetType(String), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columnbrand)
+            Me.columncategory = New Global.System.Data.DataColumn("category", GetType(String), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columncategory)
+            Me.columncatcode = New Global.System.Data.DataColumn("catcode", GetType(String), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columncatcode)
+            Me.columnunit = New Global.System.Data.DataColumn("unit", GetType(String), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columnunit)
+            Me.columnprice = New Global.System.Data.DataColumn("price", GetType(Integer), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columnprice)
+            Me.columnquantity = New Global.System.Data.DataColumn("quantity", GetType(Integer), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columnquantity)
+            Me.columnmanufactureddate = New Global.System.Data.DataColumn("manufactureddate", GetType(Date), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columnmanufactureddate)
+            Me.columnexpirationdate = New Global.System.Data.DataColumn("expirationdate", GetType(Date), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columnexpirationdate)
+            Me.columndateaddedstocks = New Global.System.Data.DataColumn("dateaddedstocks", GetType(Date), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columndateaddedstocks)
+            Me.Constraints.Add(New Global.System.Data.UniqueConstraint("Constraint1", New Global.System.Data.DataColumn() {Me.columnstockid}, true))
+            Me.columnstockid.AutoIncrement = true
+            Me.columnstockid.AutoIncrementSeed = -1
+            Me.columnstockid.AutoIncrementStep = -1
+            Me.columnstockid.AllowDBNull = false
+            Me.columnstockid.Unique = true
+            Me.columnid.AllowDBNull = false
+            Me.columnprodcode.AllowDBNull = false
+            Me.columnprodcode.MaxLength = 45
+            Me.columnprodname.AllowDBNull = false
+            Me.columnprodname.MaxLength = 45
+            Me.columnmanufacturer.AllowDBNull = false
+            Me.columnmanufacturer.MaxLength = 45
+            Me.columnbrand.AllowDBNull = false
+            Me.columnbrand.MaxLength = 45
+            Me.columncategory.AllowDBNull = false
+            Me.columncategory.MaxLength = 45
+            Me.columncatcode.AllowDBNull = false
+            Me.columncatcode.MaxLength = 45
+            Me.columnunit.AllowDBNull = false
+            Me.columnunit.MaxLength = 45
+            Me.columnprice.AllowDBNull = false
+            Me.columnquantity.AllowDBNull = false
+            Me.columnmanufactureddate.AllowDBNull = false
+            Me.columnexpirationdate.AllowDBNull = false
+            Me.columndateaddedstocks.AllowDBNull = false
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
+        Public Function Newtbl_stocksRow() As tbl_stocksRow
+            Return CType(Me.NewRow,tbl_stocksRow)
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
+        Protected Overrides Function NewRowFromBuilder(ByVal builder As Global.System.Data.DataRowBuilder) As Global.System.Data.DataRow
+            Return New tbl_stocksRow(builder)
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
+        Protected Overrides Function GetRowType() As Global.System.Type
+            Return GetType(tbl_stocksRow)
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
+        Protected Overrides Sub OnRowChanged(ByVal e As Global.System.Data.DataRowChangeEventArgs)
+            MyBase.OnRowChanged(e)
+            If (Not (Me.tbl_stocksRowChangedEvent) Is Nothing) Then
+                RaiseEvent tbl_stocksRowChanged(Me, New tbl_stocksRowChangeEvent(CType(e.Row,tbl_stocksRow), e.Action))
+            End If
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
+        Protected Overrides Sub OnRowChanging(ByVal e As Global.System.Data.DataRowChangeEventArgs)
+            MyBase.OnRowChanging(e)
+            If (Not (Me.tbl_stocksRowChangingEvent) Is Nothing) Then
+                RaiseEvent tbl_stocksRowChanging(Me, New tbl_stocksRowChangeEvent(CType(e.Row,tbl_stocksRow), e.Action))
+            End If
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
+        Protected Overrides Sub OnRowDeleted(ByVal e As Global.System.Data.DataRowChangeEventArgs)
+            MyBase.OnRowDeleted(e)
+            If (Not (Me.tbl_stocksRowDeletedEvent) Is Nothing) Then
+                RaiseEvent tbl_stocksRowDeleted(Me, New tbl_stocksRowChangeEvent(CType(e.Row,tbl_stocksRow), e.Action))
+            End If
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
+        Protected Overrides Sub OnRowDeleting(ByVal e As Global.System.Data.DataRowChangeEventArgs)
+            MyBase.OnRowDeleting(e)
+            If (Not (Me.tbl_stocksRowDeletingEvent) Is Nothing) Then
+                RaiseEvent tbl_stocksRowDeleting(Me, New tbl_stocksRowChangeEvent(CType(e.Row,tbl_stocksRow), e.Action))
+            End If
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
+        Public Sub Removetbl_stocksRow(ByVal row As tbl_stocksRow)
+            Me.Rows.Remove(row)
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
+        Public Shared Function GetTypedTableSchema(ByVal xs As Global.System.Xml.Schema.XmlSchemaSet) As Global.System.Xml.Schema.XmlSchemaComplexType
+            Dim type As Global.System.Xml.Schema.XmlSchemaComplexType = New Global.System.Xml.Schema.XmlSchemaComplexType()
+            Dim sequence As Global.System.Xml.Schema.XmlSchemaSequence = New Global.System.Xml.Schema.XmlSchemaSequence()
+            Dim ds As inventory_dbDataSet = New inventory_dbDataSet()
+            Dim any1 As Global.System.Xml.Schema.XmlSchemaAny = New Global.System.Xml.Schema.XmlSchemaAny()
+            any1.Namespace = "http://www.w3.org/2001/XMLSchema"
+            any1.MinOccurs = New Decimal(0)
+            any1.MaxOccurs = Decimal.MaxValue
+            any1.ProcessContents = Global.System.Xml.Schema.XmlSchemaContentProcessing.Lax
+            sequence.Items.Add(any1)
+            Dim any2 As Global.System.Xml.Schema.XmlSchemaAny = New Global.System.Xml.Schema.XmlSchemaAny()
+            any2.Namespace = "urn:schemas-microsoft-com:xml-diffgram-v1"
+            any2.MinOccurs = New Decimal(1)
+            any2.ProcessContents = Global.System.Xml.Schema.XmlSchemaContentProcessing.Lax
+            sequence.Items.Add(any2)
+            Dim attribute1 As Global.System.Xml.Schema.XmlSchemaAttribute = New Global.System.Xml.Schema.XmlSchemaAttribute()
+            attribute1.Name = "namespace"
+            attribute1.FixedValue = ds.Namespace
+            type.Attributes.Add(attribute1)
+            Dim attribute2 As Global.System.Xml.Schema.XmlSchemaAttribute = New Global.System.Xml.Schema.XmlSchemaAttribute()
+            attribute2.Name = "tableTypeName"
+            attribute2.FixedValue = "tbl_stocksDataTable"
+            type.Attributes.Add(attribute2)
+            type.Particle = sequence
+            Dim dsSchema As Global.System.Xml.Schema.XmlSchema = ds.GetSchemaSerializable
+            If xs.Contains(dsSchema.TargetNamespace) Then
+                Dim s1 As Global.System.IO.MemoryStream = New Global.System.IO.MemoryStream()
+                Dim s2 As Global.System.IO.MemoryStream = New Global.System.IO.MemoryStream()
+                Try 
+                    Dim schema As Global.System.Xml.Schema.XmlSchema = Nothing
+                    dsSchema.Write(s1)
+                    Dim schemas As Global.System.Collections.IEnumerator = xs.Schemas(dsSchema.TargetNamespace).GetEnumerator
+                    Do While schemas.MoveNext
+                        schema = CType(schemas.Current,Global.System.Xml.Schema.XmlSchema)
+                        s2.SetLength(0)
+                        schema.Write(s2)
+                        If (s1.Length = s2.Length) Then
+                            s1.Position = 0
+                            s2.Position = 0
+                            
+                            Do While ((s1.Position <> s1.Length)  _
+                                        AndAlso (s1.ReadByte = s2.ReadByte))
+                                
+                                
+                            Loop
+                            If (s1.Position = s1.Length) Then
+                                Return type
+                            End If
+                        End If
+                        
+                    Loop
+                Finally
+                    If (Not (s1) Is Nothing) Then
+                        s1.Close
+                    End If
+                    If (Not (s2) Is Nothing) Then
+                        s2.Close
+                    End If
+                End Try
+            End If
+            xs.Add(dsSchema)
+            Return type
+        End Function
+    End Class
+    
+    '''<summary>
     '''Represents strongly named DataRow class.
     '''</summary>
     Partial Public Class tbl_transactionRow
@@ -7177,176 +7175,6 @@ Partial Public Class inventory_dbDataSet
             End Get
             Set
                 Me(Me.tabletbl_backuprecords.dateColumn) = value
-            End Set
-        End Property
-    End Class
-    
-    '''<summary>
-    '''Represents strongly named DataRow class.
-    '''</summary>
-    Partial Public Class tbl_stocksRow
-        Inherits Global.System.Data.DataRow
-        
-        Private tabletbl_stocks As tbl_stocksDataTable
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
-        Friend Sub New(ByVal rb As Global.System.Data.DataRowBuilder)
-            MyBase.New(rb)
-            Me.tabletbl_stocks = CType(Me.Table,tbl_stocksDataTable)
-        End Sub
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
-        Public Property id() As Integer
-            Get
-                Return CType(Me(Me.tabletbl_stocks.idColumn),Integer)
-            End Get
-            Set
-                Me(Me.tabletbl_stocks.idColumn) = value
-            End Set
-        End Property
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
-        Public Property prodcode() As String
-            Get
-                Return CType(Me(Me.tabletbl_stocks.prodcodeColumn),String)
-            End Get
-            Set
-                Me(Me.tabletbl_stocks.prodcodeColumn) = value
-            End Set
-        End Property
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
-        Public Property prodname() As String
-            Get
-                Return CType(Me(Me.tabletbl_stocks.prodnameColumn),String)
-            End Get
-            Set
-                Me(Me.tabletbl_stocks.prodnameColumn) = value
-            End Set
-        End Property
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
-        Public Property manufacturer() As String
-            Get
-                Return CType(Me(Me.tabletbl_stocks.manufacturerColumn),String)
-            End Get
-            Set
-                Me(Me.tabletbl_stocks.manufacturerColumn) = value
-            End Set
-        End Property
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
-        Public Property brand() As String
-            Get
-                Return CType(Me(Me.tabletbl_stocks.brandColumn),String)
-            End Get
-            Set
-                Me(Me.tabletbl_stocks.brandColumn) = value
-            End Set
-        End Property
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
-        Public Property category() As String
-            Get
-                Return CType(Me(Me.tabletbl_stocks.categoryColumn),String)
-            End Get
-            Set
-                Me(Me.tabletbl_stocks.categoryColumn) = value
-            End Set
-        End Property
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
-        Public Property catcode() As String
-            Get
-                Return CType(Me(Me.tabletbl_stocks.catcodeColumn),String)
-            End Get
-            Set
-                Me(Me.tabletbl_stocks.catcodeColumn) = value
-            End Set
-        End Property
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
-        Public Property unit() As String
-            Get
-                Return CType(Me(Me.tabletbl_stocks.unitColumn),String)
-            End Get
-            Set
-                Me(Me.tabletbl_stocks.unitColumn) = value
-            End Set
-        End Property
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
-        Public Property price() As Integer
-            Get
-                Return CType(Me(Me.tabletbl_stocks.priceColumn),Integer)
-            End Get
-            Set
-                Me(Me.tabletbl_stocks.priceColumn) = value
-            End Set
-        End Property
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
-        Public Property quantity() As Integer
-            Get
-                Return CType(Me(Me.tabletbl_stocks.quantityColumn),Integer)
-            End Get
-            Set
-                Me(Me.tabletbl_stocks.quantityColumn) = value
-            End Set
-        End Property
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
-        Public Property manufactureddate() As Date
-            Get
-                Return CType(Me(Me.tabletbl_stocks.manufactureddateColumn),Date)
-            End Get
-            Set
-                Me(Me.tabletbl_stocks.manufactureddateColumn) = value
-            End Set
-        End Property
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
-        Public Property expirationdate() As Date
-            Get
-                Return CType(Me(Me.tabletbl_stocks.expirationdateColumn),Date)
-            End Get
-            Set
-                Me(Me.tabletbl_stocks.expirationdateColumn) = value
-            End Set
-        End Property
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
-        Public Property dateaddedstocks() As Date
-            Get
-                Return CType(Me(Me.tabletbl_stocks.dateaddedstocksColumn),Date)
-            End Get
-            Set
-                Me(Me.tabletbl_stocks.dateaddedstocksColumn) = value
-            End Set
-        End Property
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
-        Public Property stockid() As Integer
-            Get
-                Return CType(Me(Me.tabletbl_stocks.stockidColumn),Integer)
-            End Get
-            Set
-                Me(Me.tabletbl_stocks.stockidColumn) = value
             End Set
         End Property
     End Class
@@ -8276,6 +8104,176 @@ Partial Public Class inventory_dbDataSet
     End Class
     
     '''<summary>
+    '''Represents strongly named DataRow class.
+    '''</summary>
+    Partial Public Class tbl_stocksRow
+        Inherits Global.System.Data.DataRow
+        
+        Private tabletbl_stocks As tbl_stocksDataTable
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
+        Friend Sub New(ByVal rb As Global.System.Data.DataRowBuilder)
+            MyBase.New(rb)
+            Me.tabletbl_stocks = CType(Me.Table,tbl_stocksDataTable)
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
+        Public Property stockid() As Integer
+            Get
+                Return CType(Me(Me.tabletbl_stocks.stockidColumn),Integer)
+            End Get
+            Set
+                Me(Me.tabletbl_stocks.stockidColumn) = value
+            End Set
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
+        Public Property id() As Integer
+            Get
+                Return CType(Me(Me.tabletbl_stocks.idColumn),Integer)
+            End Get
+            Set
+                Me(Me.tabletbl_stocks.idColumn) = value
+            End Set
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
+        Public Property prodcode() As String
+            Get
+                Return CType(Me(Me.tabletbl_stocks.prodcodeColumn),String)
+            End Get
+            Set
+                Me(Me.tabletbl_stocks.prodcodeColumn) = value
+            End Set
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
+        Public Property prodname() As String
+            Get
+                Return CType(Me(Me.tabletbl_stocks.prodnameColumn),String)
+            End Get
+            Set
+                Me(Me.tabletbl_stocks.prodnameColumn) = value
+            End Set
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
+        Public Property manufacturer() As String
+            Get
+                Return CType(Me(Me.tabletbl_stocks.manufacturerColumn),String)
+            End Get
+            Set
+                Me(Me.tabletbl_stocks.manufacturerColumn) = value
+            End Set
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
+        Public Property brand() As String
+            Get
+                Return CType(Me(Me.tabletbl_stocks.brandColumn),String)
+            End Get
+            Set
+                Me(Me.tabletbl_stocks.brandColumn) = value
+            End Set
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
+        Public Property category() As String
+            Get
+                Return CType(Me(Me.tabletbl_stocks.categoryColumn),String)
+            End Get
+            Set
+                Me(Me.tabletbl_stocks.categoryColumn) = value
+            End Set
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
+        Public Property catcode() As String
+            Get
+                Return CType(Me(Me.tabletbl_stocks.catcodeColumn),String)
+            End Get
+            Set
+                Me(Me.tabletbl_stocks.catcodeColumn) = value
+            End Set
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
+        Public Property unit() As String
+            Get
+                Return CType(Me(Me.tabletbl_stocks.unitColumn),String)
+            End Get
+            Set
+                Me(Me.tabletbl_stocks.unitColumn) = value
+            End Set
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
+        Public Property price() As Integer
+            Get
+                Return CType(Me(Me.tabletbl_stocks.priceColumn),Integer)
+            End Get
+            Set
+                Me(Me.tabletbl_stocks.priceColumn) = value
+            End Set
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
+        Public Property quantity() As Integer
+            Get
+                Return CType(Me(Me.tabletbl_stocks.quantityColumn),Integer)
+            End Get
+            Set
+                Me(Me.tabletbl_stocks.quantityColumn) = value
+            End Set
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
+        Public Property manufactureddate() As Date
+            Get
+                Return CType(Me(Me.tabletbl_stocks.manufactureddateColumn),Date)
+            End Get
+            Set
+                Me(Me.tabletbl_stocks.manufactureddateColumn) = value
+            End Set
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
+        Public Property expirationdate() As Date
+            Get
+                Return CType(Me(Me.tabletbl_stocks.expirationdateColumn),Date)
+            End Get
+            Set
+                Me(Me.tabletbl_stocks.expirationdateColumn) = value
+            End Set
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
+        Public Property dateaddedstocks() As Date
+            Get
+                Return CType(Me(Me.tabletbl_stocks.dateaddedstocksColumn),Date)
+            End Get
+            Set
+                Me(Me.tabletbl_stocks.dateaddedstocksColumn) = value
+            End Set
+        End Property
+    End Class
+    
+    '''<summary>
     '''Row event argument class
     '''</summary>
     <Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
@@ -8441,42 +8439,6 @@ Partial Public Class inventory_dbDataSet
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
         Public ReadOnly Property Row() As tbl_backuprecordsRow
-            Get
-                Return Me.eventRow
-            End Get
-        End Property
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
-        Public ReadOnly Property Action() As Global.System.Data.DataRowAction
-            Get
-                Return Me.eventAction
-            End Get
-        End Property
-    End Class
-    
-    '''<summary>
-    '''Row event argument class
-    '''</summary>
-    <Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
-    Public Class tbl_stocksRowChangeEvent
-        Inherits Global.System.EventArgs
-        
-        Private eventRow As tbl_stocksRow
-        
-        Private eventAction As Global.System.Data.DataRowAction
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
-        Public Sub New(ByVal row As tbl_stocksRow, ByVal action As Global.System.Data.DataRowAction)
-            MyBase.New
-            Me.eventRow = row
-            Me.eventAction = action
-        End Sub
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
-        Public ReadOnly Property Row() As tbl_stocksRow
             Get
                 Return Me.eventRow
             End Get
@@ -8801,6 +8763,42 @@ Partial Public Class inventory_dbDataSet
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
         Public ReadOnly Property Row() As tbl_salesRow
+            Get
+                Return Me.eventRow
+            End Get
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
+        Public ReadOnly Property Action() As Global.System.Data.DataRowAction
+            Get
+                Return Me.eventAction
+            End Get
+        End Property
+    End Class
+    
+    '''<summary>
+    '''Row event argument class
+    '''</summary>
+    <Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
+    Public Class tbl_stocksRowChangeEvent
+        Inherits Global.System.EventArgs
+        
+        Private eventRow As tbl_stocksRow
+        
+        Private eventAction As Global.System.Data.DataRowAction
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
+        Public Sub New(ByVal row As tbl_stocksRow, ByVal action As Global.System.Data.DataRowAction)
+            MyBase.New
+            Me.eventRow = row
+            Me.eventAction = action
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
+        Public ReadOnly Property Row() As tbl_stocksRow
             Get
                 Return Me.eventRow
             End Get
@@ -12675,1016 +12673,6 @@ Namespace inventory_dbDataSetTableAdapters
             Dim dataTable As inventory_dbDataSet.tbl_backuprecordsDataTable = New inventory_dbDataSet.tbl_backuprecordsDataTable()
             Me.Adapter.Fill(dataTable)
             Return dataTable
-        End Function
-    End Class
-    
-    '''<summary>
-    '''Represents the connection and commands used to retrieve and save data.
-    '''</summary>
-    <Global.System.ComponentModel.DesignerCategoryAttribute("code"),  _
-     Global.System.ComponentModel.ToolboxItem(true),  _
-     Global.System.ComponentModel.DataObjectAttribute(true),  _
-     Global.System.ComponentModel.DesignerAttribute("Microsoft.VSDesigner.DataSource.Design.TableAdapterDesigner, Microsoft.VSDesigner"& _ 
-        ", Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a"),  _
-     Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")>  _
-    Partial Public Class tbl_stocksTableAdapter
-        Inherits Global.System.ComponentModel.Component
-        
-        Private WithEvents _adapter As Global.MySql.Data.MySqlClient.MySqlDataAdapter
-        
-        Private _connection As Global.MySql.Data.MySqlClient.MySqlConnection
-        
-        Private _transaction As Global.MySql.Data.MySqlClient.MySqlTransaction
-        
-        Private _commandCollection() As Global.MySql.Data.MySqlClient.MySqlCommand
-        
-        Private _clearBeforeFill As Boolean
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
-        Public Sub New()
-            MyBase.New
-            Me.ClearBeforeFill = true
-        End Sub
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
-        Protected Friend ReadOnly Property Adapter() As Global.MySql.Data.MySqlClient.MySqlDataAdapter
-            Get
-                If (Me._adapter Is Nothing) Then
-                    Me.InitAdapter
-                End If
-                Return Me._adapter
-            End Get
-        End Property
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
-        Friend Property Connection() As Global.MySql.Data.MySqlClient.MySqlConnection
-            Get
-                If (Me._connection Is Nothing) Then
-                    Me.InitConnection
-                End If
-                Return Me._connection
-            End Get
-            Set
-                Me._connection = value
-                If (Not (Me.Adapter.InsertCommand) Is Nothing) Then
-                    Me.Adapter.InsertCommand.Connection = value
-                End If
-                If (Not (Me.Adapter.DeleteCommand) Is Nothing) Then
-                    Me.Adapter.DeleteCommand.Connection = value
-                End If
-                If (Not (Me.Adapter.UpdateCommand) Is Nothing) Then
-                    Me.Adapter.UpdateCommand.Connection = value
-                End If
-                Dim i As Integer = 0
-                Do While (i < Me.CommandCollection.Length)
-                    If (Not (Me.CommandCollection(i)) Is Nothing) Then
-                        CType(Me.CommandCollection(i),Global.MySql.Data.MySqlClient.MySqlCommand).Connection = value
-                    End If
-                    i = (i + 1)
-                Loop
-            End Set
-        End Property
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
-        Friend Property Transaction() As Global.MySql.Data.MySqlClient.MySqlTransaction
-            Get
-                Return Me._transaction
-            End Get
-            Set
-                Me._transaction = value
-                Dim i As Integer = 0
-                Do While (i < Me.CommandCollection.Length)
-                    Me.CommandCollection(i).Transaction = Me._transaction
-                    i = (i + 1)
-                Loop
-                If ((Not (Me.Adapter) Is Nothing)  _
-                            AndAlso (Not (Me.Adapter.DeleteCommand) Is Nothing)) Then
-                    Me.Adapter.DeleteCommand.Transaction = Me._transaction
-                End If
-                If ((Not (Me.Adapter) Is Nothing)  _
-                            AndAlso (Not (Me.Adapter.InsertCommand) Is Nothing)) Then
-                    Me.Adapter.InsertCommand.Transaction = Me._transaction
-                End If
-                If ((Not (Me.Adapter) Is Nothing)  _
-                            AndAlso (Not (Me.Adapter.UpdateCommand) Is Nothing)) Then
-                    Me.Adapter.UpdateCommand.Transaction = Me._transaction
-                End If
-            End Set
-        End Property
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
-        Protected ReadOnly Property CommandCollection() As Global.MySql.Data.MySqlClient.MySqlCommand()
-            Get
-                If (Me._commandCollection Is Nothing) Then
-                    Me.InitCommandCollection
-                End If
-                Return Me._commandCollection
-            End Get
-        End Property
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
-        Public Property ClearBeforeFill() As Boolean
-            Get
-                Return Me._clearBeforeFill
-            End Get
-            Set
-                Me._clearBeforeFill = value
-            End Set
-        End Property
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
-        Private Sub InitAdapter()
-            Me._adapter = New Global.MySql.Data.MySqlClient.MySqlDataAdapter()
-            Dim tableMapping As Global.System.Data.Common.DataTableMapping = New Global.System.Data.Common.DataTableMapping()
-            tableMapping.SourceTable = "Table"
-            tableMapping.DataSetTable = "tbl_stocks"
-            tableMapping.ColumnMappings.Add("id", "id")
-            tableMapping.ColumnMappings.Add("prodcode", "prodcode")
-            tableMapping.ColumnMappings.Add("prodname", "prodname")
-            tableMapping.ColumnMappings.Add("manufacturer", "manufacturer")
-            tableMapping.ColumnMappings.Add("brand", "brand")
-            tableMapping.ColumnMappings.Add("category", "category")
-            tableMapping.ColumnMappings.Add("catcode", "catcode")
-            tableMapping.ColumnMappings.Add("unit", "unit")
-            tableMapping.ColumnMappings.Add("price", "price")
-            tableMapping.ColumnMappings.Add("quantity", "quantity")
-            tableMapping.ColumnMappings.Add("manufactureddate", "manufactureddate")
-            tableMapping.ColumnMappings.Add("expirationdate", "expirationdate")
-            tableMapping.ColumnMappings.Add("dateaddedstocks", "dateaddedstocks")
-            tableMapping.ColumnMappings.Add("stockid", "stockid")
-            Me._adapter.TableMappings.Add(tableMapping)
-            Me._adapter.DeleteCommand = New Global.MySql.Data.MySqlClient.MySqlCommand()
-            Me._adapter.DeleteCommand.Connection = Me.Connection
-            Me._adapter.DeleteCommand.CommandText = "DELETE FROM `tbl_stocks` WHERE ((`id` = @p1) AND (`prodcode` = @p2) AND (`prodnam"& _ 
-                "e` = @p3) AND (`manufacturer` = @p4) AND (`brand` = @p5) AND (`category` = @p6) "& _ 
-                "AND (`catcode` = @p7) AND (`unit` = @p8) AND (`price` = @p9) AND (`quantity` = @"& _ 
-                "p10) AND (`manufactureddate` = @p11) AND (`expirationdate` = @p12) AND (`dateadd"& _ 
-                "edstocks` = @p13) AND (`stockid` = @p14))"
-            Me._adapter.DeleteCommand.CommandType = Global.System.Data.CommandType.Text
-            Dim param As Global.MySql.Data.MySqlClient.MySqlParameter = New Global.MySql.Data.MySqlClient.MySqlParameter()
-            param.ParameterName = "@p1"
-            param.DbType = Global.System.Data.DbType.Int32
-            param.MySqlDbType = Global.MySql.Data.MySqlClient.MySqlDbType.Int32
-            param.IsNullable = true
-            param.SourceColumn = "id"
-            param.SourceVersion = Global.System.Data.DataRowVersion.Original
-            Me._adapter.DeleteCommand.Parameters.Add(param)
-            param = New Global.MySql.Data.MySqlClient.MySqlParameter()
-            param.ParameterName = "@p2"
-            param.DbType = Global.System.Data.DbType.[String]
-            param.MySqlDbType = Global.MySql.Data.MySqlClient.MySqlDbType.VarChar
-            param.IsNullable = true
-            param.SourceColumn = "prodcode"
-            param.SourceVersion = Global.System.Data.DataRowVersion.Original
-            Me._adapter.DeleteCommand.Parameters.Add(param)
-            param = New Global.MySql.Data.MySqlClient.MySqlParameter()
-            param.ParameterName = "@p3"
-            param.DbType = Global.System.Data.DbType.[String]
-            param.MySqlDbType = Global.MySql.Data.MySqlClient.MySqlDbType.VarChar
-            param.IsNullable = true
-            param.SourceColumn = "prodname"
-            param.SourceVersion = Global.System.Data.DataRowVersion.Original
-            Me._adapter.DeleteCommand.Parameters.Add(param)
-            param = New Global.MySql.Data.MySqlClient.MySqlParameter()
-            param.ParameterName = "@p4"
-            param.DbType = Global.System.Data.DbType.[String]
-            param.MySqlDbType = Global.MySql.Data.MySqlClient.MySqlDbType.VarChar
-            param.IsNullable = true
-            param.SourceColumn = "manufacturer"
-            param.SourceVersion = Global.System.Data.DataRowVersion.Original
-            Me._adapter.DeleteCommand.Parameters.Add(param)
-            param = New Global.MySql.Data.MySqlClient.MySqlParameter()
-            param.ParameterName = "@p5"
-            param.DbType = Global.System.Data.DbType.[String]
-            param.MySqlDbType = Global.MySql.Data.MySqlClient.MySqlDbType.VarChar
-            param.IsNullable = true
-            param.SourceColumn = "brand"
-            param.SourceVersion = Global.System.Data.DataRowVersion.Original
-            Me._adapter.DeleteCommand.Parameters.Add(param)
-            param = New Global.MySql.Data.MySqlClient.MySqlParameter()
-            param.ParameterName = "@p6"
-            param.DbType = Global.System.Data.DbType.[String]
-            param.MySqlDbType = Global.MySql.Data.MySqlClient.MySqlDbType.VarChar
-            param.IsNullable = true
-            param.SourceColumn = "category"
-            param.SourceVersion = Global.System.Data.DataRowVersion.Original
-            Me._adapter.DeleteCommand.Parameters.Add(param)
-            param = New Global.MySql.Data.MySqlClient.MySqlParameter()
-            param.ParameterName = "@p7"
-            param.DbType = Global.System.Data.DbType.[String]
-            param.MySqlDbType = Global.MySql.Data.MySqlClient.MySqlDbType.VarChar
-            param.IsNullable = true
-            param.SourceColumn = "catcode"
-            param.SourceVersion = Global.System.Data.DataRowVersion.Original
-            Me._adapter.DeleteCommand.Parameters.Add(param)
-            param = New Global.MySql.Data.MySqlClient.MySqlParameter()
-            param.ParameterName = "@p8"
-            param.DbType = Global.System.Data.DbType.[String]
-            param.MySqlDbType = Global.MySql.Data.MySqlClient.MySqlDbType.VarChar
-            param.IsNullable = true
-            param.SourceColumn = "unit"
-            param.SourceVersion = Global.System.Data.DataRowVersion.Original
-            Me._adapter.DeleteCommand.Parameters.Add(param)
-            param = New Global.MySql.Data.MySqlClient.MySqlParameter()
-            param.ParameterName = "@p9"
-            param.DbType = Global.System.Data.DbType.Int32
-            param.MySqlDbType = Global.MySql.Data.MySqlClient.MySqlDbType.Int32
-            param.IsNullable = true
-            param.SourceColumn = "price"
-            param.SourceVersion = Global.System.Data.DataRowVersion.Original
-            Me._adapter.DeleteCommand.Parameters.Add(param)
-            param = New Global.MySql.Data.MySqlClient.MySqlParameter()
-            param.ParameterName = "@p10"
-            param.DbType = Global.System.Data.DbType.Int32
-            param.MySqlDbType = Global.MySql.Data.MySqlClient.MySqlDbType.Int32
-            param.IsNullable = true
-            param.SourceColumn = "quantity"
-            param.SourceVersion = Global.System.Data.DataRowVersion.Original
-            Me._adapter.DeleteCommand.Parameters.Add(param)
-            param = New Global.MySql.Data.MySqlClient.MySqlParameter()
-            param.ParameterName = "@p11"
-            param.DbType = Global.System.Data.DbType.[Date]
-            param.MySqlDbType = Global.MySql.Data.MySqlClient.MySqlDbType.[Date]
-            param.IsNullable = true
-            param.SourceColumn = "manufactureddate"
-            param.SourceVersion = Global.System.Data.DataRowVersion.Original
-            Me._adapter.DeleteCommand.Parameters.Add(param)
-            param = New Global.MySql.Data.MySqlClient.MySqlParameter()
-            param.ParameterName = "@p12"
-            param.DbType = Global.System.Data.DbType.[Date]
-            param.MySqlDbType = Global.MySql.Data.MySqlClient.MySqlDbType.[Date]
-            param.IsNullable = true
-            param.SourceColumn = "expirationdate"
-            param.SourceVersion = Global.System.Data.DataRowVersion.Original
-            Me._adapter.DeleteCommand.Parameters.Add(param)
-            param = New Global.MySql.Data.MySqlClient.MySqlParameter()
-            param.ParameterName = "@p13"
-            param.DbType = Global.System.Data.DbType.[Date]
-            param.MySqlDbType = Global.MySql.Data.MySqlClient.MySqlDbType.[Date]
-            param.IsNullable = true
-            param.SourceColumn = "dateaddedstocks"
-            param.SourceVersion = Global.System.Data.DataRowVersion.Original
-            Me._adapter.DeleteCommand.Parameters.Add(param)
-            param = New Global.MySql.Data.MySqlClient.MySqlParameter()
-            param.ParameterName = "@p14"
-            param.DbType = Global.System.Data.DbType.Int32
-            param.MySqlDbType = Global.MySql.Data.MySqlClient.MySqlDbType.Int32
-            param.IsNullable = true
-            param.SourceColumn = "stockid"
-            param.SourceVersion = Global.System.Data.DataRowVersion.Original
-            Me._adapter.DeleteCommand.Parameters.Add(param)
-            Me._adapter.InsertCommand = New Global.MySql.Data.MySqlClient.MySqlCommand()
-            Me._adapter.InsertCommand.Connection = Me.Connection
-            Me._adapter.InsertCommand.CommandText = "INSERT INTO `tbl_stocks` (`id`, `prodcode`, `prodname`, `manufacturer`, `brand`, "& _ 
-                "`category`, `catcode`, `unit`, `price`, `quantity`, `manufactureddate`, `expirat"& _ 
-                "iondate`, `dateaddedstocks`) VALUES (@p1, @p2, @p3, @p4, @p5, @p6, @p7, @p8, @p9"& _ 
-                ", @p10, @p11, @p12, @p13)"
-            Me._adapter.InsertCommand.CommandType = Global.System.Data.CommandType.Text
-            param = New Global.MySql.Data.MySqlClient.MySqlParameter()
-            param.ParameterName = "@p1"
-            param.DbType = Global.System.Data.DbType.Int32
-            param.MySqlDbType = Global.MySql.Data.MySqlClient.MySqlDbType.Int32
-            param.IsNullable = true
-            param.SourceColumn = "id"
-            param.SourceVersion = Global.System.Data.DataRowVersion.Current
-            Me._adapter.InsertCommand.Parameters.Add(param)
-            param = New Global.MySql.Data.MySqlClient.MySqlParameter()
-            param.ParameterName = "@p2"
-            param.DbType = Global.System.Data.DbType.[String]
-            param.MySqlDbType = Global.MySql.Data.MySqlClient.MySqlDbType.VarChar
-            param.IsNullable = true
-            param.SourceColumn = "prodcode"
-            param.SourceVersion = Global.System.Data.DataRowVersion.Current
-            Me._adapter.InsertCommand.Parameters.Add(param)
-            param = New Global.MySql.Data.MySqlClient.MySqlParameter()
-            param.ParameterName = "@p3"
-            param.DbType = Global.System.Data.DbType.[String]
-            param.MySqlDbType = Global.MySql.Data.MySqlClient.MySqlDbType.VarChar
-            param.IsNullable = true
-            param.SourceColumn = "prodname"
-            param.SourceVersion = Global.System.Data.DataRowVersion.Current
-            Me._adapter.InsertCommand.Parameters.Add(param)
-            param = New Global.MySql.Data.MySqlClient.MySqlParameter()
-            param.ParameterName = "@p4"
-            param.DbType = Global.System.Data.DbType.[String]
-            param.MySqlDbType = Global.MySql.Data.MySqlClient.MySqlDbType.VarChar
-            param.IsNullable = true
-            param.SourceColumn = "manufacturer"
-            param.SourceVersion = Global.System.Data.DataRowVersion.Current
-            Me._adapter.InsertCommand.Parameters.Add(param)
-            param = New Global.MySql.Data.MySqlClient.MySqlParameter()
-            param.ParameterName = "@p5"
-            param.DbType = Global.System.Data.DbType.[String]
-            param.MySqlDbType = Global.MySql.Data.MySqlClient.MySqlDbType.VarChar
-            param.IsNullable = true
-            param.SourceColumn = "brand"
-            param.SourceVersion = Global.System.Data.DataRowVersion.Current
-            Me._adapter.InsertCommand.Parameters.Add(param)
-            param = New Global.MySql.Data.MySqlClient.MySqlParameter()
-            param.ParameterName = "@p6"
-            param.DbType = Global.System.Data.DbType.[String]
-            param.MySqlDbType = Global.MySql.Data.MySqlClient.MySqlDbType.VarChar
-            param.IsNullable = true
-            param.SourceColumn = "category"
-            param.SourceVersion = Global.System.Data.DataRowVersion.Current
-            Me._adapter.InsertCommand.Parameters.Add(param)
-            param = New Global.MySql.Data.MySqlClient.MySqlParameter()
-            param.ParameterName = "@p7"
-            param.DbType = Global.System.Data.DbType.[String]
-            param.MySqlDbType = Global.MySql.Data.MySqlClient.MySqlDbType.VarChar
-            param.IsNullable = true
-            param.SourceColumn = "catcode"
-            param.SourceVersion = Global.System.Data.DataRowVersion.Current
-            Me._adapter.InsertCommand.Parameters.Add(param)
-            param = New Global.MySql.Data.MySqlClient.MySqlParameter()
-            param.ParameterName = "@p8"
-            param.DbType = Global.System.Data.DbType.[String]
-            param.MySqlDbType = Global.MySql.Data.MySqlClient.MySqlDbType.VarChar
-            param.IsNullable = true
-            param.SourceColumn = "unit"
-            param.SourceVersion = Global.System.Data.DataRowVersion.Current
-            Me._adapter.InsertCommand.Parameters.Add(param)
-            param = New Global.MySql.Data.MySqlClient.MySqlParameter()
-            param.ParameterName = "@p9"
-            param.DbType = Global.System.Data.DbType.Int32
-            param.MySqlDbType = Global.MySql.Data.MySqlClient.MySqlDbType.Int32
-            param.IsNullable = true
-            param.SourceColumn = "price"
-            param.SourceVersion = Global.System.Data.DataRowVersion.Current
-            Me._adapter.InsertCommand.Parameters.Add(param)
-            param = New Global.MySql.Data.MySqlClient.MySqlParameter()
-            param.ParameterName = "@p10"
-            param.DbType = Global.System.Data.DbType.Int32
-            param.MySqlDbType = Global.MySql.Data.MySqlClient.MySqlDbType.Int32
-            param.IsNullable = true
-            param.SourceColumn = "quantity"
-            param.SourceVersion = Global.System.Data.DataRowVersion.Current
-            Me._adapter.InsertCommand.Parameters.Add(param)
-            param = New Global.MySql.Data.MySqlClient.MySqlParameter()
-            param.ParameterName = "@p11"
-            param.DbType = Global.System.Data.DbType.[Date]
-            param.MySqlDbType = Global.MySql.Data.MySqlClient.MySqlDbType.[Date]
-            param.IsNullable = true
-            param.SourceColumn = "manufactureddate"
-            param.SourceVersion = Global.System.Data.DataRowVersion.Current
-            Me._adapter.InsertCommand.Parameters.Add(param)
-            param = New Global.MySql.Data.MySqlClient.MySqlParameter()
-            param.ParameterName = "@p12"
-            param.DbType = Global.System.Data.DbType.[Date]
-            param.MySqlDbType = Global.MySql.Data.MySqlClient.MySqlDbType.[Date]
-            param.IsNullable = true
-            param.SourceColumn = "expirationdate"
-            param.SourceVersion = Global.System.Data.DataRowVersion.Current
-            Me._adapter.InsertCommand.Parameters.Add(param)
-            param = New Global.MySql.Data.MySqlClient.MySqlParameter()
-            param.ParameterName = "@p13"
-            param.DbType = Global.System.Data.DbType.[Date]
-            param.MySqlDbType = Global.MySql.Data.MySqlClient.MySqlDbType.[Date]
-            param.IsNullable = true
-            param.SourceColumn = "dateaddedstocks"
-            param.SourceVersion = Global.System.Data.DataRowVersion.Current
-            Me._adapter.InsertCommand.Parameters.Add(param)
-            Me._adapter.UpdateCommand = New Global.MySql.Data.MySqlClient.MySqlCommand()
-            Me._adapter.UpdateCommand.Connection = Me.Connection
-            Me._adapter.UpdateCommand.CommandText = "UPDATE `tbl_stocks` SET `id` = @p1, `prodcode` = @p2, `prodname` = @p3, `manufact"& _ 
-                "urer` = @p4, `brand` = @p5, `category` = @p6, `catcode` = @p7, `unit` = @p8, `pr"& _ 
-                "ice` = @p9, `quantity` = @p10, `manufactureddate` = @p11, `expirationdate` = @p1"& _ 
-                "2, `dateaddedstocks` = @p13 WHERE ((`id` = @p14) AND (`prodcode` = @p15) AND (`p"& _ 
-                "rodname` = @p16) AND (`manufacturer` = @p17) AND (`brand` = @p18) AND (`category"& _ 
-                "` = @p19) AND (`catcode` = @p20) AND (`unit` = @p21) AND (`price` = @p22) AND (`"& _ 
-                "quantity` = @p23) AND (`manufactureddate` = @p24) AND (`expirationdate` = @p25) "& _ 
-                "AND (`dateaddedstocks` = @p26) AND (`stockid` = @p27))"
-            Me._adapter.UpdateCommand.CommandType = Global.System.Data.CommandType.Text
-            param = New Global.MySql.Data.MySqlClient.MySqlParameter()
-            param.ParameterName = "@p1"
-            param.DbType = Global.System.Data.DbType.Int32
-            param.MySqlDbType = Global.MySql.Data.MySqlClient.MySqlDbType.Int32
-            param.IsNullable = true
-            param.SourceColumn = "id"
-            param.SourceVersion = Global.System.Data.DataRowVersion.Current
-            Me._adapter.UpdateCommand.Parameters.Add(param)
-            param = New Global.MySql.Data.MySqlClient.MySqlParameter()
-            param.ParameterName = "@p2"
-            param.DbType = Global.System.Data.DbType.[String]
-            param.MySqlDbType = Global.MySql.Data.MySqlClient.MySqlDbType.VarChar
-            param.IsNullable = true
-            param.SourceColumn = "prodcode"
-            param.SourceVersion = Global.System.Data.DataRowVersion.Current
-            Me._adapter.UpdateCommand.Parameters.Add(param)
-            param = New Global.MySql.Data.MySqlClient.MySqlParameter()
-            param.ParameterName = "@p3"
-            param.DbType = Global.System.Data.DbType.[String]
-            param.MySqlDbType = Global.MySql.Data.MySqlClient.MySqlDbType.VarChar
-            param.IsNullable = true
-            param.SourceColumn = "prodname"
-            param.SourceVersion = Global.System.Data.DataRowVersion.Current
-            Me._adapter.UpdateCommand.Parameters.Add(param)
-            param = New Global.MySql.Data.MySqlClient.MySqlParameter()
-            param.ParameterName = "@p4"
-            param.DbType = Global.System.Data.DbType.[String]
-            param.MySqlDbType = Global.MySql.Data.MySqlClient.MySqlDbType.VarChar
-            param.IsNullable = true
-            param.SourceColumn = "manufacturer"
-            param.SourceVersion = Global.System.Data.DataRowVersion.Current
-            Me._adapter.UpdateCommand.Parameters.Add(param)
-            param = New Global.MySql.Data.MySqlClient.MySqlParameter()
-            param.ParameterName = "@p5"
-            param.DbType = Global.System.Data.DbType.[String]
-            param.MySqlDbType = Global.MySql.Data.MySqlClient.MySqlDbType.VarChar
-            param.IsNullable = true
-            param.SourceColumn = "brand"
-            param.SourceVersion = Global.System.Data.DataRowVersion.Current
-            Me._adapter.UpdateCommand.Parameters.Add(param)
-            param = New Global.MySql.Data.MySqlClient.MySqlParameter()
-            param.ParameterName = "@p6"
-            param.DbType = Global.System.Data.DbType.[String]
-            param.MySqlDbType = Global.MySql.Data.MySqlClient.MySqlDbType.VarChar
-            param.IsNullable = true
-            param.SourceColumn = "category"
-            param.SourceVersion = Global.System.Data.DataRowVersion.Current
-            Me._adapter.UpdateCommand.Parameters.Add(param)
-            param = New Global.MySql.Data.MySqlClient.MySqlParameter()
-            param.ParameterName = "@p7"
-            param.DbType = Global.System.Data.DbType.[String]
-            param.MySqlDbType = Global.MySql.Data.MySqlClient.MySqlDbType.VarChar
-            param.IsNullable = true
-            param.SourceColumn = "catcode"
-            param.SourceVersion = Global.System.Data.DataRowVersion.Current
-            Me._adapter.UpdateCommand.Parameters.Add(param)
-            param = New Global.MySql.Data.MySqlClient.MySqlParameter()
-            param.ParameterName = "@p8"
-            param.DbType = Global.System.Data.DbType.[String]
-            param.MySqlDbType = Global.MySql.Data.MySqlClient.MySqlDbType.VarChar
-            param.IsNullable = true
-            param.SourceColumn = "unit"
-            param.SourceVersion = Global.System.Data.DataRowVersion.Current
-            Me._adapter.UpdateCommand.Parameters.Add(param)
-            param = New Global.MySql.Data.MySqlClient.MySqlParameter()
-            param.ParameterName = "@p9"
-            param.DbType = Global.System.Data.DbType.Int32
-            param.MySqlDbType = Global.MySql.Data.MySqlClient.MySqlDbType.Int32
-            param.IsNullable = true
-            param.SourceColumn = "price"
-            param.SourceVersion = Global.System.Data.DataRowVersion.Current
-            Me._adapter.UpdateCommand.Parameters.Add(param)
-            param = New Global.MySql.Data.MySqlClient.MySqlParameter()
-            param.ParameterName = "@p10"
-            param.DbType = Global.System.Data.DbType.Int32
-            param.MySqlDbType = Global.MySql.Data.MySqlClient.MySqlDbType.Int32
-            param.IsNullable = true
-            param.SourceColumn = "quantity"
-            param.SourceVersion = Global.System.Data.DataRowVersion.Current
-            Me._adapter.UpdateCommand.Parameters.Add(param)
-            param = New Global.MySql.Data.MySqlClient.MySqlParameter()
-            param.ParameterName = "@p11"
-            param.DbType = Global.System.Data.DbType.[Date]
-            param.MySqlDbType = Global.MySql.Data.MySqlClient.MySqlDbType.[Date]
-            param.IsNullable = true
-            param.SourceColumn = "manufactureddate"
-            param.SourceVersion = Global.System.Data.DataRowVersion.Current
-            Me._adapter.UpdateCommand.Parameters.Add(param)
-            param = New Global.MySql.Data.MySqlClient.MySqlParameter()
-            param.ParameterName = "@p12"
-            param.DbType = Global.System.Data.DbType.[Date]
-            param.MySqlDbType = Global.MySql.Data.MySqlClient.MySqlDbType.[Date]
-            param.IsNullable = true
-            param.SourceColumn = "expirationdate"
-            param.SourceVersion = Global.System.Data.DataRowVersion.Current
-            Me._adapter.UpdateCommand.Parameters.Add(param)
-            param = New Global.MySql.Data.MySqlClient.MySqlParameter()
-            param.ParameterName = "@p13"
-            param.DbType = Global.System.Data.DbType.[Date]
-            param.MySqlDbType = Global.MySql.Data.MySqlClient.MySqlDbType.[Date]
-            param.IsNullable = true
-            param.SourceColumn = "dateaddedstocks"
-            param.SourceVersion = Global.System.Data.DataRowVersion.Current
-            Me._adapter.UpdateCommand.Parameters.Add(param)
-            param = New Global.MySql.Data.MySqlClient.MySqlParameter()
-            param.ParameterName = "@p14"
-            param.DbType = Global.System.Data.DbType.Int32
-            param.MySqlDbType = Global.MySql.Data.MySqlClient.MySqlDbType.Int32
-            param.IsNullable = true
-            param.SourceColumn = "id"
-            param.SourceVersion = Global.System.Data.DataRowVersion.Original
-            Me._adapter.UpdateCommand.Parameters.Add(param)
-            param = New Global.MySql.Data.MySqlClient.MySqlParameter()
-            param.ParameterName = "@p15"
-            param.DbType = Global.System.Data.DbType.[String]
-            param.MySqlDbType = Global.MySql.Data.MySqlClient.MySqlDbType.VarChar
-            param.IsNullable = true
-            param.SourceColumn = "prodcode"
-            param.SourceVersion = Global.System.Data.DataRowVersion.Original
-            Me._adapter.UpdateCommand.Parameters.Add(param)
-            param = New Global.MySql.Data.MySqlClient.MySqlParameter()
-            param.ParameterName = "@p16"
-            param.DbType = Global.System.Data.DbType.[String]
-            param.MySqlDbType = Global.MySql.Data.MySqlClient.MySqlDbType.VarChar
-            param.IsNullable = true
-            param.SourceColumn = "prodname"
-            param.SourceVersion = Global.System.Data.DataRowVersion.Original
-            Me._adapter.UpdateCommand.Parameters.Add(param)
-            param = New Global.MySql.Data.MySqlClient.MySqlParameter()
-            param.ParameterName = "@p17"
-            param.DbType = Global.System.Data.DbType.[String]
-            param.MySqlDbType = Global.MySql.Data.MySqlClient.MySqlDbType.VarChar
-            param.IsNullable = true
-            param.SourceColumn = "manufacturer"
-            param.SourceVersion = Global.System.Data.DataRowVersion.Original
-            Me._adapter.UpdateCommand.Parameters.Add(param)
-            param = New Global.MySql.Data.MySqlClient.MySqlParameter()
-            param.ParameterName = "@p18"
-            param.DbType = Global.System.Data.DbType.[String]
-            param.MySqlDbType = Global.MySql.Data.MySqlClient.MySqlDbType.VarChar
-            param.IsNullable = true
-            param.SourceColumn = "brand"
-            param.SourceVersion = Global.System.Data.DataRowVersion.Original
-            Me._adapter.UpdateCommand.Parameters.Add(param)
-            param = New Global.MySql.Data.MySqlClient.MySqlParameter()
-            param.ParameterName = "@p19"
-            param.DbType = Global.System.Data.DbType.[String]
-            param.MySqlDbType = Global.MySql.Data.MySqlClient.MySqlDbType.VarChar
-            param.IsNullable = true
-            param.SourceColumn = "category"
-            param.SourceVersion = Global.System.Data.DataRowVersion.Original
-            Me._adapter.UpdateCommand.Parameters.Add(param)
-            param = New Global.MySql.Data.MySqlClient.MySqlParameter()
-            param.ParameterName = "@p20"
-            param.DbType = Global.System.Data.DbType.[String]
-            param.MySqlDbType = Global.MySql.Data.MySqlClient.MySqlDbType.VarChar
-            param.IsNullable = true
-            param.SourceColumn = "catcode"
-            param.SourceVersion = Global.System.Data.DataRowVersion.Original
-            Me._adapter.UpdateCommand.Parameters.Add(param)
-            param = New Global.MySql.Data.MySqlClient.MySqlParameter()
-            param.ParameterName = "@p21"
-            param.DbType = Global.System.Data.DbType.[String]
-            param.MySqlDbType = Global.MySql.Data.MySqlClient.MySqlDbType.VarChar
-            param.IsNullable = true
-            param.SourceColumn = "unit"
-            param.SourceVersion = Global.System.Data.DataRowVersion.Original
-            Me._adapter.UpdateCommand.Parameters.Add(param)
-            param = New Global.MySql.Data.MySqlClient.MySqlParameter()
-            param.ParameterName = "@p22"
-            param.DbType = Global.System.Data.DbType.Int32
-            param.MySqlDbType = Global.MySql.Data.MySqlClient.MySqlDbType.Int32
-            param.IsNullable = true
-            param.SourceColumn = "price"
-            param.SourceVersion = Global.System.Data.DataRowVersion.Original
-            Me._adapter.UpdateCommand.Parameters.Add(param)
-            param = New Global.MySql.Data.MySqlClient.MySqlParameter()
-            param.ParameterName = "@p23"
-            param.DbType = Global.System.Data.DbType.Int32
-            param.MySqlDbType = Global.MySql.Data.MySqlClient.MySqlDbType.Int32
-            param.IsNullable = true
-            param.SourceColumn = "quantity"
-            param.SourceVersion = Global.System.Data.DataRowVersion.Original
-            Me._adapter.UpdateCommand.Parameters.Add(param)
-            param = New Global.MySql.Data.MySqlClient.MySqlParameter()
-            param.ParameterName = "@p24"
-            param.DbType = Global.System.Data.DbType.[Date]
-            param.MySqlDbType = Global.MySql.Data.MySqlClient.MySqlDbType.[Date]
-            param.IsNullable = true
-            param.SourceColumn = "manufactureddate"
-            param.SourceVersion = Global.System.Data.DataRowVersion.Original
-            Me._adapter.UpdateCommand.Parameters.Add(param)
-            param = New Global.MySql.Data.MySqlClient.MySqlParameter()
-            param.ParameterName = "@p25"
-            param.DbType = Global.System.Data.DbType.[Date]
-            param.MySqlDbType = Global.MySql.Data.MySqlClient.MySqlDbType.[Date]
-            param.IsNullable = true
-            param.SourceColumn = "expirationdate"
-            param.SourceVersion = Global.System.Data.DataRowVersion.Original
-            Me._adapter.UpdateCommand.Parameters.Add(param)
-            param = New Global.MySql.Data.MySqlClient.MySqlParameter()
-            param.ParameterName = "@p26"
-            param.DbType = Global.System.Data.DbType.[Date]
-            param.MySqlDbType = Global.MySql.Data.MySqlClient.MySqlDbType.[Date]
-            param.IsNullable = true
-            param.SourceColumn = "dateaddedstocks"
-            param.SourceVersion = Global.System.Data.DataRowVersion.Original
-            Me._adapter.UpdateCommand.Parameters.Add(param)
-            param = New Global.MySql.Data.MySqlClient.MySqlParameter()
-            param.ParameterName = "@p27"
-            param.DbType = Global.System.Data.DbType.Int32
-            param.MySqlDbType = Global.MySql.Data.MySqlClient.MySqlDbType.Int32
-            param.IsNullable = true
-            param.SourceColumn = "stockid"
-            param.SourceVersion = Global.System.Data.DataRowVersion.Original
-            Me._adapter.UpdateCommand.Parameters.Add(param)
-        End Sub
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
-        Private Sub InitConnection()
-            Me._connection = New Global.MySql.Data.MySqlClient.MySqlConnection()
-            Me._connection.ConnectionString = Global.SALESANDINVENTORYSYSTEM.My.MySettings.Default.inventory_dbConnectionString
-        End Sub
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
-        Private Sub InitCommandCollection()
-            Me._commandCollection = New Global.MySql.Data.MySqlClient.MySqlCommand(1) {}
-            Me._commandCollection(0) = New Global.MySql.Data.MySqlClient.MySqlCommand()
-            Me._commandCollection(0).Connection = Me.Connection
-            Me._commandCollection(0).CommandText = "SELECT id, prodcode, prodname, manufacturer, brand, category, catcode, unit, pric"& _ 
-                "e, quantity, manufactureddate, expirationdate, dateaddedstocks, stockid FROM tbl"& _ 
-                "_stocks"
-            Me._commandCollection(0).CommandType = Global.System.Data.CommandType.Text
-            Me._commandCollection(1) = New Global.MySql.Data.MySqlClient.MySqlCommand()
-            Me._commandCollection(1).Connection = Me.Connection
-            Me._commandCollection(1).CommandText = "SELECT id, prodcode, prodname, manufacturer, brand, category, catcode, unit, pric"& _ 
-                "e, quantity, manufactureddate, expirationdate, dateaddedstocks, stockid FROM tbl"& _ 
-                "_stocks where category = ?"
-            Me._commandCollection(1).CommandType = Global.System.Data.CommandType.Text
-            Dim param As Global.MySql.Data.MySqlClient.MySqlParameter = New Global.MySql.Data.MySqlClient.MySqlParameter()
-            param.ParameterName = "@Param1"
-            param.DbType = Global.System.Data.DbType.[String]
-            param.MySqlDbType = Global.MySql.Data.MySqlClient.MySqlDbType.VarChar
-            param.Size = 45
-            param.IsNullable = true
-            param.SourceColumn = "category"
-            param.SourceVersion = Global.System.Data.DataRowVersion.Current
-            Me._commandCollection(1).Parameters.Add(param)
-        End Sub
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0"),  _
-         Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"),  _
-         Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.Fill, true)>  _
-        Public Overloads Overridable Function Fill(ByVal dataTable As inventory_dbDataSet.tbl_stocksDataTable) As Integer
-            Me.Adapter.SelectCommand = Me.CommandCollection(0)
-            If (Me.ClearBeforeFill = true) Then
-                dataTable.Clear
-            End If
-            Dim returnValue As Integer = Me.Adapter.Fill(dataTable)
-            Return returnValue
-        End Function
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0"),  _
-         Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"),  _
-         Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.[Select], true)>  _
-        Public Overloads Overridable Function GetData() As inventory_dbDataSet.tbl_stocksDataTable
-            Me.Adapter.SelectCommand = Me.CommandCollection(0)
-            Dim dataTable As inventory_dbDataSet.tbl_stocksDataTable = New inventory_dbDataSet.tbl_stocksDataTable()
-            Me.Adapter.Fill(dataTable)
-            Return dataTable
-        End Function
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0"),  _
-         Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"),  _
-         Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.Fill, false)>  _
-        Public Overloads Overridable Function FillBySTOCKSCATEGORY(ByVal dataTable As inventory_dbDataSet.tbl_stocksDataTable, ByVal Param1 As String) As Integer
-            Me.Adapter.SelectCommand = Me.CommandCollection(1)
-            If (Param1 Is Nothing) Then
-                Throw New Global.System.ArgumentNullException("Param1")
-            Else
-                Me.Adapter.SelectCommand.Parameters(0).Value = CType(Param1,String)
-            End If
-            If (Me.ClearBeforeFill = true) Then
-                dataTable.Clear
-            End If
-            Dim returnValue As Integer = Me.Adapter.Fill(dataTable)
-            Return returnValue
-        End Function
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0"),  _
-         Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"),  _
-         Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.[Select], false)>  _
-        Public Overloads Overridable Function GetDataBySTOCKSCATEGORY(ByVal Param1 As String) As inventory_dbDataSet.tbl_stocksDataTable
-            Me.Adapter.SelectCommand = Me.CommandCollection(1)
-            If (Param1 Is Nothing) Then
-                Throw New Global.System.ArgumentNullException("Param1")
-            Else
-                Me.Adapter.SelectCommand.Parameters(0).Value = CType(Param1,String)
-            End If
-            Dim dataTable As inventory_dbDataSet.tbl_stocksDataTable = New inventory_dbDataSet.tbl_stocksDataTable()
-            Me.Adapter.Fill(dataTable)
-            Return dataTable
-        End Function
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0"),  _
-         Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")>  _
-        Public Overloads Overridable Function Update(ByVal dataTable As inventory_dbDataSet.tbl_stocksDataTable) As Integer
-            Return Me.Adapter.Update(dataTable)
-        End Function
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0"),  _
-         Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")>  _
-        Public Overloads Overridable Function Update(ByVal dataSet As inventory_dbDataSet) As Integer
-            Return Me.Adapter.Update(dataSet, "tbl_stocks")
-        End Function
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0"),  _
-         Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")>  _
-        Public Overloads Overridable Function Update(ByVal dataRow As Global.System.Data.DataRow) As Integer
-            Return Me.Adapter.Update(New Global.System.Data.DataRow() {dataRow})
-        End Function
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0"),  _
-         Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")>  _
-        Public Overloads Overridable Function Update(ByVal dataRows() As Global.System.Data.DataRow) As Integer
-            Return Me.Adapter.Update(dataRows)
-        End Function
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0"),  _
-         Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"),  _
-         Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.Delete, true)>  _
-        Public Overloads Overridable Function Delete(ByVal p1 As Integer, ByVal p2 As String, ByVal p3 As String, ByVal p4 As String, ByVal p5 As String, ByVal p6 As String, ByVal p7 As String, ByVal p8 As String, ByVal p9 As Integer, ByVal p10 As Integer, ByVal p11 As Date, ByVal p12 As Date, ByVal p13 As Date, ByVal p14 As Integer) As Integer
-            Me.Adapter.DeleteCommand.Parameters(0).Value = CType(p1,Integer)
-            If (p2 Is Nothing) Then
-                Throw New Global.System.ArgumentNullException("p2")
-            Else
-                Me.Adapter.DeleteCommand.Parameters(1).Value = CType(p2,String)
-            End If
-            If (p3 Is Nothing) Then
-                Throw New Global.System.ArgumentNullException("p3")
-            Else
-                Me.Adapter.DeleteCommand.Parameters(2).Value = CType(p3,String)
-            End If
-            If (p4 Is Nothing) Then
-                Throw New Global.System.ArgumentNullException("p4")
-            Else
-                Me.Adapter.DeleteCommand.Parameters(3).Value = CType(p4,String)
-            End If
-            If (p5 Is Nothing) Then
-                Throw New Global.System.ArgumentNullException("p5")
-            Else
-                Me.Adapter.DeleteCommand.Parameters(4).Value = CType(p5,String)
-            End If
-            If (p6 Is Nothing) Then
-                Throw New Global.System.ArgumentNullException("p6")
-            Else
-                Me.Adapter.DeleteCommand.Parameters(5).Value = CType(p6,String)
-            End If
-            If (p7 Is Nothing) Then
-                Throw New Global.System.ArgumentNullException("p7")
-            Else
-                Me.Adapter.DeleteCommand.Parameters(6).Value = CType(p7,String)
-            End If
-            If (p8 Is Nothing) Then
-                Throw New Global.System.ArgumentNullException("p8")
-            Else
-                Me.Adapter.DeleteCommand.Parameters(7).Value = CType(p8,String)
-            End If
-            Me.Adapter.DeleteCommand.Parameters(8).Value = CType(p9,Integer)
-            Me.Adapter.DeleteCommand.Parameters(9).Value = CType(p10,Integer)
-            Me.Adapter.DeleteCommand.Parameters(10).Value = CType(p11,Date)
-            Me.Adapter.DeleteCommand.Parameters(11).Value = CType(p12,Date)
-            Me.Adapter.DeleteCommand.Parameters(12).Value = CType(p13,Date)
-            Me.Adapter.DeleteCommand.Parameters(13).Value = CType(p14,Integer)
-            Dim previousConnectionState As Global.System.Data.ConnectionState = Me.Adapter.DeleteCommand.Connection.State
-            If ((Me.Adapter.DeleteCommand.Connection.State And Global.System.Data.ConnectionState.Open)  _
-                        <> Global.System.Data.ConnectionState.Open) Then
-                Me.Adapter.DeleteCommand.Connection.Open
-            End If
-            Try 
-                Dim returnValue As Integer = Me.Adapter.DeleteCommand.ExecuteNonQuery
-                Return returnValue
-            Finally
-                If (previousConnectionState = Global.System.Data.ConnectionState.Closed) Then
-                    Me.Adapter.DeleteCommand.Connection.Close
-                End If
-            End Try
-        End Function
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0"),  _
-         Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"),  _
-         Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.Insert, true)>  _
-        Public Overloads Overridable Function Insert(ByVal p1 As Integer, ByVal p2 As String, ByVal p3 As String, ByVal p4 As String, ByVal p5 As String, ByVal p6 As String, ByVal p7 As String, ByVal p8 As String, ByVal p9 As Integer, ByVal p10 As Integer, ByVal p11 As Date, ByVal p12 As Date, ByVal p13 As Date) As Integer
-            Me.Adapter.InsertCommand.Parameters(0).Value = CType(p1,Integer)
-            If (p2 Is Nothing) Then
-                Throw New Global.System.ArgumentNullException("p2")
-            Else
-                Me.Adapter.InsertCommand.Parameters(1).Value = CType(p2,String)
-            End If
-            If (p3 Is Nothing) Then
-                Throw New Global.System.ArgumentNullException("p3")
-            Else
-                Me.Adapter.InsertCommand.Parameters(2).Value = CType(p3,String)
-            End If
-            If (p4 Is Nothing) Then
-                Throw New Global.System.ArgumentNullException("p4")
-            Else
-                Me.Adapter.InsertCommand.Parameters(3).Value = CType(p4,String)
-            End If
-            If (p5 Is Nothing) Then
-                Throw New Global.System.ArgumentNullException("p5")
-            Else
-                Me.Adapter.InsertCommand.Parameters(4).Value = CType(p5,String)
-            End If
-            If (p6 Is Nothing) Then
-                Throw New Global.System.ArgumentNullException("p6")
-            Else
-                Me.Adapter.InsertCommand.Parameters(5).Value = CType(p6,String)
-            End If
-            If (p7 Is Nothing) Then
-                Throw New Global.System.ArgumentNullException("p7")
-            Else
-                Me.Adapter.InsertCommand.Parameters(6).Value = CType(p7,String)
-            End If
-            If (p8 Is Nothing) Then
-                Throw New Global.System.ArgumentNullException("p8")
-            Else
-                Me.Adapter.InsertCommand.Parameters(7).Value = CType(p8,String)
-            End If
-            Me.Adapter.InsertCommand.Parameters(8).Value = CType(p9,Integer)
-            Me.Adapter.InsertCommand.Parameters(9).Value = CType(p10,Integer)
-            Me.Adapter.InsertCommand.Parameters(10).Value = CType(p11,Date)
-            Me.Adapter.InsertCommand.Parameters(11).Value = CType(p12,Date)
-            Me.Adapter.InsertCommand.Parameters(12).Value = CType(p13,Date)
-            Dim previousConnectionState As Global.System.Data.ConnectionState = Me.Adapter.InsertCommand.Connection.State
-            If ((Me.Adapter.InsertCommand.Connection.State And Global.System.Data.ConnectionState.Open)  _
-                        <> Global.System.Data.ConnectionState.Open) Then
-                Me.Adapter.InsertCommand.Connection.Open
-            End If
-            Try 
-                Dim returnValue As Integer = Me.Adapter.InsertCommand.ExecuteNonQuery
-                Return returnValue
-            Finally
-                If (previousConnectionState = Global.System.Data.ConnectionState.Closed) Then
-                    Me.Adapter.InsertCommand.Connection.Close
-                End If
-            End Try
-        End Function
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0"),  _
-         Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"),  _
-         Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.Update, true)>  _
-        Public Overloads Overridable Function Update( _
-                    ByVal p1 As Integer,  _
-                    ByVal p2 As String,  _
-                    ByVal p3 As String,  _
-                    ByVal p4 As String,  _
-                    ByVal p5 As String,  _
-                    ByVal p6 As String,  _
-                    ByVal p7 As String,  _
-                    ByVal p8 As String,  _
-                    ByVal p9 As Integer,  _
-                    ByVal p10 As Integer,  _
-                    ByVal p11 As Date,  _
-                    ByVal p12 As Date,  _
-                    ByVal p13 As Date,  _
-                    ByVal p14 As Integer,  _
-                    ByVal p15 As String,  _
-                    ByVal p16 As String,  _
-                    ByVal p17 As String,  _
-                    ByVal p18 As String,  _
-                    ByVal p19 As String,  _
-                    ByVal p20 As String,  _
-                    ByVal p21 As String,  _
-                    ByVal p22 As Integer,  _
-                    ByVal p23 As Integer,  _
-                    ByVal p24 As Date,  _
-                    ByVal p25 As Date,  _
-                    ByVal p26 As Date,  _
-                    ByVal p27 As Integer) As Integer
-            Me.Adapter.UpdateCommand.Parameters(0).Value = CType(p1,Integer)
-            If (p2 Is Nothing) Then
-                Throw New Global.System.ArgumentNullException("p2")
-            Else
-                Me.Adapter.UpdateCommand.Parameters(1).Value = CType(p2,String)
-            End If
-            If (p3 Is Nothing) Then
-                Throw New Global.System.ArgumentNullException("p3")
-            Else
-                Me.Adapter.UpdateCommand.Parameters(2).Value = CType(p3,String)
-            End If
-            If (p4 Is Nothing) Then
-                Throw New Global.System.ArgumentNullException("p4")
-            Else
-                Me.Adapter.UpdateCommand.Parameters(3).Value = CType(p4,String)
-            End If
-            If (p5 Is Nothing) Then
-                Throw New Global.System.ArgumentNullException("p5")
-            Else
-                Me.Adapter.UpdateCommand.Parameters(4).Value = CType(p5,String)
-            End If
-            If (p6 Is Nothing) Then
-                Throw New Global.System.ArgumentNullException("p6")
-            Else
-                Me.Adapter.UpdateCommand.Parameters(5).Value = CType(p6,String)
-            End If
-            If (p7 Is Nothing) Then
-                Throw New Global.System.ArgumentNullException("p7")
-            Else
-                Me.Adapter.UpdateCommand.Parameters(6).Value = CType(p7,String)
-            End If
-            If (p8 Is Nothing) Then
-                Throw New Global.System.ArgumentNullException("p8")
-            Else
-                Me.Adapter.UpdateCommand.Parameters(7).Value = CType(p8,String)
-            End If
-            Me.Adapter.UpdateCommand.Parameters(8).Value = CType(p9,Integer)
-            Me.Adapter.UpdateCommand.Parameters(9).Value = CType(p10,Integer)
-            Me.Adapter.UpdateCommand.Parameters(10).Value = CType(p11,Date)
-            Me.Adapter.UpdateCommand.Parameters(11).Value = CType(p12,Date)
-            Me.Adapter.UpdateCommand.Parameters(12).Value = CType(p13,Date)
-            Me.Adapter.UpdateCommand.Parameters(13).Value = CType(p14,Integer)
-            If (p15 Is Nothing) Then
-                Throw New Global.System.ArgumentNullException("p15")
-            Else
-                Me.Adapter.UpdateCommand.Parameters(14).Value = CType(p15,String)
-            End If
-            If (p16 Is Nothing) Then
-                Throw New Global.System.ArgumentNullException("p16")
-            Else
-                Me.Adapter.UpdateCommand.Parameters(15).Value = CType(p16,String)
-            End If
-            If (p17 Is Nothing) Then
-                Throw New Global.System.ArgumentNullException("p17")
-            Else
-                Me.Adapter.UpdateCommand.Parameters(16).Value = CType(p17,String)
-            End If
-            If (p18 Is Nothing) Then
-                Throw New Global.System.ArgumentNullException("p18")
-            Else
-                Me.Adapter.UpdateCommand.Parameters(17).Value = CType(p18,String)
-            End If
-            If (p19 Is Nothing) Then
-                Throw New Global.System.ArgumentNullException("p19")
-            Else
-                Me.Adapter.UpdateCommand.Parameters(18).Value = CType(p19,String)
-            End If
-            If (p20 Is Nothing) Then
-                Throw New Global.System.ArgumentNullException("p20")
-            Else
-                Me.Adapter.UpdateCommand.Parameters(19).Value = CType(p20,String)
-            End If
-            If (p21 Is Nothing) Then
-                Throw New Global.System.ArgumentNullException("p21")
-            Else
-                Me.Adapter.UpdateCommand.Parameters(20).Value = CType(p21,String)
-            End If
-            Me.Adapter.UpdateCommand.Parameters(21).Value = CType(p22,Integer)
-            Me.Adapter.UpdateCommand.Parameters(22).Value = CType(p23,Integer)
-            Me.Adapter.UpdateCommand.Parameters(23).Value = CType(p24,Date)
-            Me.Adapter.UpdateCommand.Parameters(24).Value = CType(p25,Date)
-            Me.Adapter.UpdateCommand.Parameters(25).Value = CType(p26,Date)
-            Me.Adapter.UpdateCommand.Parameters(26).Value = CType(p27,Integer)
-            Dim previousConnectionState As Global.System.Data.ConnectionState = Me.Adapter.UpdateCommand.Connection.State
-            If ((Me.Adapter.UpdateCommand.Connection.State And Global.System.Data.ConnectionState.Open)  _
-                        <> Global.System.Data.ConnectionState.Open) Then
-                Me.Adapter.UpdateCommand.Connection.Open
-            End If
-            Try 
-                Dim returnValue As Integer = Me.Adapter.UpdateCommand.ExecuteNonQuery
-                Return returnValue
-            Finally
-                If (previousConnectionState = Global.System.Data.ConnectionState.Closed) Then
-                    Me.Adapter.UpdateCommand.Connection.Close
-                End If
-            End Try
-        End Function
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0"),  _
-         Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"),  _
-         Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.Update, true)>  _
-        Public Overloads Overridable Function Update( _
-                    ByVal p1 As Integer,  _
-                    ByVal p2 As String,  _
-                    ByVal p3 As String,  _
-                    ByVal p4 As String,  _
-                    ByVal p5 As String,  _
-                    ByVal p6 As String,  _
-                    ByVal p7 As String,  _
-                    ByVal p8 As String,  _
-                    ByVal p9 As Integer,  _
-                    ByVal p10 As Integer,  _
-                    ByVal p11 As Date,  _
-                    ByVal p12 As Date,  _
-                    ByVal p14 As Integer,  _
-                    ByVal p15 As String,  _
-                    ByVal p16 As String,  _
-                    ByVal p17 As String,  _
-                    ByVal p18 As String,  _
-                    ByVal p19 As String,  _
-                    ByVal p20 As String,  _
-                    ByVal p21 As String,  _
-                    ByVal p22 As Integer,  _
-                    ByVal p23 As Integer,  _
-                    ByVal p24 As Date,  _
-                    ByVal p25 As Date,  _
-                    ByVal p26 As Date,  _
-                    ByVal p27 As Integer) As Integer
-            Return Me.Update(p1, p2, p3, p4, p5, p6, p7, p8, p9, p10, p11, p12, p26, p14, p15, p16, p17, p18, p19, p20, p21, p22, p23, p24, p25, p26, p27)
         End Function
     End Class
     
@@ -19244,6 +18232,982 @@ Namespace inventory_dbDataSetTableAdapters
     End Class
     
     '''<summary>
+    '''Represents the connection and commands used to retrieve and save data.
+    '''</summary>
+    <Global.System.ComponentModel.DesignerCategoryAttribute("code"),  _
+     Global.System.ComponentModel.ToolboxItem(true),  _
+     Global.System.ComponentModel.DataObjectAttribute(true),  _
+     Global.System.ComponentModel.DesignerAttribute("Microsoft.VSDesigner.DataSource.Design.TableAdapterDesigner, Microsoft.VSDesigner"& _ 
+        ", Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a"),  _
+     Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")>  _
+    Partial Public Class tbl_stocksTableAdapter
+        Inherits Global.System.ComponentModel.Component
+        
+        Private WithEvents _adapter As Global.MySql.Data.MySqlClient.MySqlDataAdapter
+        
+        Private _connection As Global.MySql.Data.MySqlClient.MySqlConnection
+        
+        Private _transaction As Global.MySql.Data.MySqlClient.MySqlTransaction
+        
+        Private _commandCollection() As Global.MySql.Data.MySqlClient.MySqlCommand
+        
+        Private _clearBeforeFill As Boolean
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
+        Public Sub New()
+            MyBase.New
+            Me.ClearBeforeFill = true
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
+        Protected Friend ReadOnly Property Adapter() As Global.MySql.Data.MySqlClient.MySqlDataAdapter
+            Get
+                If (Me._adapter Is Nothing) Then
+                    Me.InitAdapter
+                End If
+                Return Me._adapter
+            End Get
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
+        Friend Property Connection() As Global.MySql.Data.MySqlClient.MySqlConnection
+            Get
+                If (Me._connection Is Nothing) Then
+                    Me.InitConnection
+                End If
+                Return Me._connection
+            End Get
+            Set
+                Me._connection = value
+                If (Not (Me.Adapter.InsertCommand) Is Nothing) Then
+                    Me.Adapter.InsertCommand.Connection = value
+                End If
+                If (Not (Me.Adapter.DeleteCommand) Is Nothing) Then
+                    Me.Adapter.DeleteCommand.Connection = value
+                End If
+                If (Not (Me.Adapter.UpdateCommand) Is Nothing) Then
+                    Me.Adapter.UpdateCommand.Connection = value
+                End If
+                Dim i As Integer = 0
+                Do While (i < Me.CommandCollection.Length)
+                    If (Not (Me.CommandCollection(i)) Is Nothing) Then
+                        CType(Me.CommandCollection(i),Global.MySql.Data.MySqlClient.MySqlCommand).Connection = value
+                    End If
+                    i = (i + 1)
+                Loop
+            End Set
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
+        Friend Property Transaction() As Global.MySql.Data.MySqlClient.MySqlTransaction
+            Get
+                Return Me._transaction
+            End Get
+            Set
+                Me._transaction = value
+                Dim i As Integer = 0
+                Do While (i < Me.CommandCollection.Length)
+                    Me.CommandCollection(i).Transaction = Me._transaction
+                    i = (i + 1)
+                Loop
+                If ((Not (Me.Adapter) Is Nothing)  _
+                            AndAlso (Not (Me.Adapter.DeleteCommand) Is Nothing)) Then
+                    Me.Adapter.DeleteCommand.Transaction = Me._transaction
+                End If
+                If ((Not (Me.Adapter) Is Nothing)  _
+                            AndAlso (Not (Me.Adapter.InsertCommand) Is Nothing)) Then
+                    Me.Adapter.InsertCommand.Transaction = Me._transaction
+                End If
+                If ((Not (Me.Adapter) Is Nothing)  _
+                            AndAlso (Not (Me.Adapter.UpdateCommand) Is Nothing)) Then
+                    Me.Adapter.UpdateCommand.Transaction = Me._transaction
+                End If
+            End Set
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
+        Protected ReadOnly Property CommandCollection() As Global.MySql.Data.MySqlClient.MySqlCommand()
+            Get
+                If (Me._commandCollection Is Nothing) Then
+                    Me.InitCommandCollection
+                End If
+                Return Me._commandCollection
+            End Get
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
+        Public Property ClearBeforeFill() As Boolean
+            Get
+                Return Me._clearBeforeFill
+            End Get
+            Set
+                Me._clearBeforeFill = value
+            End Set
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
+        Private Sub InitAdapter()
+            Me._adapter = New Global.MySql.Data.MySqlClient.MySqlDataAdapter()
+            Dim tableMapping As Global.System.Data.Common.DataTableMapping = New Global.System.Data.Common.DataTableMapping()
+            tableMapping.SourceTable = "Table"
+            tableMapping.DataSetTable = "tbl_stocks"
+            tableMapping.ColumnMappings.Add("stockid", "stockid")
+            tableMapping.ColumnMappings.Add("id", "id")
+            tableMapping.ColumnMappings.Add("prodcode", "prodcode")
+            tableMapping.ColumnMappings.Add("prodname", "prodname")
+            tableMapping.ColumnMappings.Add("manufacturer", "manufacturer")
+            tableMapping.ColumnMappings.Add("brand", "brand")
+            tableMapping.ColumnMappings.Add("category", "category")
+            tableMapping.ColumnMappings.Add("catcode", "catcode")
+            tableMapping.ColumnMappings.Add("unit", "unit")
+            tableMapping.ColumnMappings.Add("price", "price")
+            tableMapping.ColumnMappings.Add("quantity", "quantity")
+            tableMapping.ColumnMappings.Add("manufactureddate", "manufactureddate")
+            tableMapping.ColumnMappings.Add("expirationdate", "expirationdate")
+            tableMapping.ColumnMappings.Add("dateaddedstocks", "dateaddedstocks")
+            Me._adapter.TableMappings.Add(tableMapping)
+            Me._adapter.DeleteCommand = New Global.MySql.Data.MySqlClient.MySqlCommand()
+            Me._adapter.DeleteCommand.Connection = Me.Connection
+            Me._adapter.DeleteCommand.CommandText = "DELETE FROM `tbl_stocks` WHERE ((`stockid` = @p1) AND (`id` = @p2) AND (`prodcode"& _ 
+                "` = @p3) AND (`prodname` = @p4) AND (`manufacturer` = @p5) AND (`brand` = @p6) A"& _ 
+                "ND (`category` = @p7) AND (`catcode` = @p8) AND (`unit` = @p9) AND (`price` = @p"& _ 
+                "10) AND (`quantity` = @p11) AND (`manufactureddate` = @p12) AND (`expirationdate"& _ 
+                "` = @p13) AND (`dateaddedstocks` = @p14))"
+            Me._adapter.DeleteCommand.CommandType = Global.System.Data.CommandType.Text
+            Dim param As Global.MySql.Data.MySqlClient.MySqlParameter = New Global.MySql.Data.MySqlClient.MySqlParameter()
+            param.ParameterName = "@p1"
+            param.DbType = Global.System.Data.DbType.Int32
+            param.MySqlDbType = Global.MySql.Data.MySqlClient.MySqlDbType.Int32
+            param.IsNullable = true
+            param.SourceColumn = "stockid"
+            param.SourceVersion = Global.System.Data.DataRowVersion.Original
+            Me._adapter.DeleteCommand.Parameters.Add(param)
+            param = New Global.MySql.Data.MySqlClient.MySqlParameter()
+            param.ParameterName = "@p2"
+            param.DbType = Global.System.Data.DbType.Int32
+            param.MySqlDbType = Global.MySql.Data.MySqlClient.MySqlDbType.Int32
+            param.IsNullable = true
+            param.SourceColumn = "id"
+            param.SourceVersion = Global.System.Data.DataRowVersion.Original
+            Me._adapter.DeleteCommand.Parameters.Add(param)
+            param = New Global.MySql.Data.MySqlClient.MySqlParameter()
+            param.ParameterName = "@p3"
+            param.DbType = Global.System.Data.DbType.[String]
+            param.MySqlDbType = Global.MySql.Data.MySqlClient.MySqlDbType.VarChar
+            param.IsNullable = true
+            param.SourceColumn = "prodcode"
+            param.SourceVersion = Global.System.Data.DataRowVersion.Original
+            Me._adapter.DeleteCommand.Parameters.Add(param)
+            param = New Global.MySql.Data.MySqlClient.MySqlParameter()
+            param.ParameterName = "@p4"
+            param.DbType = Global.System.Data.DbType.[String]
+            param.MySqlDbType = Global.MySql.Data.MySqlClient.MySqlDbType.VarChar
+            param.IsNullable = true
+            param.SourceColumn = "prodname"
+            param.SourceVersion = Global.System.Data.DataRowVersion.Original
+            Me._adapter.DeleteCommand.Parameters.Add(param)
+            param = New Global.MySql.Data.MySqlClient.MySqlParameter()
+            param.ParameterName = "@p5"
+            param.DbType = Global.System.Data.DbType.[String]
+            param.MySqlDbType = Global.MySql.Data.MySqlClient.MySqlDbType.VarChar
+            param.IsNullable = true
+            param.SourceColumn = "manufacturer"
+            param.SourceVersion = Global.System.Data.DataRowVersion.Original
+            Me._adapter.DeleteCommand.Parameters.Add(param)
+            param = New Global.MySql.Data.MySqlClient.MySqlParameter()
+            param.ParameterName = "@p6"
+            param.DbType = Global.System.Data.DbType.[String]
+            param.MySqlDbType = Global.MySql.Data.MySqlClient.MySqlDbType.VarChar
+            param.IsNullable = true
+            param.SourceColumn = "brand"
+            param.SourceVersion = Global.System.Data.DataRowVersion.Original
+            Me._adapter.DeleteCommand.Parameters.Add(param)
+            param = New Global.MySql.Data.MySqlClient.MySqlParameter()
+            param.ParameterName = "@p7"
+            param.DbType = Global.System.Data.DbType.[String]
+            param.MySqlDbType = Global.MySql.Data.MySqlClient.MySqlDbType.VarChar
+            param.IsNullable = true
+            param.SourceColumn = "category"
+            param.SourceVersion = Global.System.Data.DataRowVersion.Original
+            Me._adapter.DeleteCommand.Parameters.Add(param)
+            param = New Global.MySql.Data.MySqlClient.MySqlParameter()
+            param.ParameterName = "@p8"
+            param.DbType = Global.System.Data.DbType.[String]
+            param.MySqlDbType = Global.MySql.Data.MySqlClient.MySqlDbType.VarChar
+            param.IsNullable = true
+            param.SourceColumn = "catcode"
+            param.SourceVersion = Global.System.Data.DataRowVersion.Original
+            Me._adapter.DeleteCommand.Parameters.Add(param)
+            param = New Global.MySql.Data.MySqlClient.MySqlParameter()
+            param.ParameterName = "@p9"
+            param.DbType = Global.System.Data.DbType.[String]
+            param.MySqlDbType = Global.MySql.Data.MySqlClient.MySqlDbType.VarChar
+            param.IsNullable = true
+            param.SourceColumn = "unit"
+            param.SourceVersion = Global.System.Data.DataRowVersion.Original
+            Me._adapter.DeleteCommand.Parameters.Add(param)
+            param = New Global.MySql.Data.MySqlClient.MySqlParameter()
+            param.ParameterName = "@p10"
+            param.DbType = Global.System.Data.DbType.Int32
+            param.MySqlDbType = Global.MySql.Data.MySqlClient.MySqlDbType.Int32
+            param.IsNullable = true
+            param.SourceColumn = "price"
+            param.SourceVersion = Global.System.Data.DataRowVersion.Original
+            Me._adapter.DeleteCommand.Parameters.Add(param)
+            param = New Global.MySql.Data.MySqlClient.MySqlParameter()
+            param.ParameterName = "@p11"
+            param.DbType = Global.System.Data.DbType.Int32
+            param.MySqlDbType = Global.MySql.Data.MySqlClient.MySqlDbType.Int32
+            param.IsNullable = true
+            param.SourceColumn = "quantity"
+            param.SourceVersion = Global.System.Data.DataRowVersion.Original
+            Me._adapter.DeleteCommand.Parameters.Add(param)
+            param = New Global.MySql.Data.MySqlClient.MySqlParameter()
+            param.ParameterName = "@p12"
+            param.DbType = Global.System.Data.DbType.[Date]
+            param.MySqlDbType = Global.MySql.Data.MySqlClient.MySqlDbType.[Date]
+            param.IsNullable = true
+            param.SourceColumn = "manufactureddate"
+            param.SourceVersion = Global.System.Data.DataRowVersion.Original
+            Me._adapter.DeleteCommand.Parameters.Add(param)
+            param = New Global.MySql.Data.MySqlClient.MySqlParameter()
+            param.ParameterName = "@p13"
+            param.DbType = Global.System.Data.DbType.[Date]
+            param.MySqlDbType = Global.MySql.Data.MySqlClient.MySqlDbType.[Date]
+            param.IsNullable = true
+            param.SourceColumn = "expirationdate"
+            param.SourceVersion = Global.System.Data.DataRowVersion.Original
+            Me._adapter.DeleteCommand.Parameters.Add(param)
+            param = New Global.MySql.Data.MySqlClient.MySqlParameter()
+            param.ParameterName = "@p14"
+            param.DbType = Global.System.Data.DbType.[Date]
+            param.MySqlDbType = Global.MySql.Data.MySqlClient.MySqlDbType.[Date]
+            param.IsNullable = true
+            param.SourceColumn = "dateaddedstocks"
+            param.SourceVersion = Global.System.Data.DataRowVersion.Original
+            Me._adapter.DeleteCommand.Parameters.Add(param)
+            Me._adapter.InsertCommand = New Global.MySql.Data.MySqlClient.MySqlCommand()
+            Me._adapter.InsertCommand.Connection = Me.Connection
+            Me._adapter.InsertCommand.CommandText = "INSERT INTO `tbl_stocks` (`id`, `prodcode`, `prodname`, `manufacturer`, `brand`, "& _ 
+                "`category`, `catcode`, `unit`, `price`, `quantity`, `manufactureddate`, `expirat"& _ 
+                "iondate`, `dateaddedstocks`) VALUES (@p1, @p2, @p3, @p4, @p5, @p6, @p7, @p8, @p9"& _ 
+                ", @p10, @p11, @p12, @p13)"
+            Me._adapter.InsertCommand.CommandType = Global.System.Data.CommandType.Text
+            param = New Global.MySql.Data.MySqlClient.MySqlParameter()
+            param.ParameterName = "@p1"
+            param.DbType = Global.System.Data.DbType.Int32
+            param.MySqlDbType = Global.MySql.Data.MySqlClient.MySqlDbType.Int32
+            param.IsNullable = true
+            param.SourceColumn = "id"
+            param.SourceVersion = Global.System.Data.DataRowVersion.Current
+            Me._adapter.InsertCommand.Parameters.Add(param)
+            param = New Global.MySql.Data.MySqlClient.MySqlParameter()
+            param.ParameterName = "@p2"
+            param.DbType = Global.System.Data.DbType.[String]
+            param.MySqlDbType = Global.MySql.Data.MySqlClient.MySqlDbType.VarChar
+            param.IsNullable = true
+            param.SourceColumn = "prodcode"
+            param.SourceVersion = Global.System.Data.DataRowVersion.Current
+            Me._adapter.InsertCommand.Parameters.Add(param)
+            param = New Global.MySql.Data.MySqlClient.MySqlParameter()
+            param.ParameterName = "@p3"
+            param.DbType = Global.System.Data.DbType.[String]
+            param.MySqlDbType = Global.MySql.Data.MySqlClient.MySqlDbType.VarChar
+            param.IsNullable = true
+            param.SourceColumn = "prodname"
+            param.SourceVersion = Global.System.Data.DataRowVersion.Current
+            Me._adapter.InsertCommand.Parameters.Add(param)
+            param = New Global.MySql.Data.MySqlClient.MySqlParameter()
+            param.ParameterName = "@p4"
+            param.DbType = Global.System.Data.DbType.[String]
+            param.MySqlDbType = Global.MySql.Data.MySqlClient.MySqlDbType.VarChar
+            param.IsNullable = true
+            param.SourceColumn = "manufacturer"
+            param.SourceVersion = Global.System.Data.DataRowVersion.Current
+            Me._adapter.InsertCommand.Parameters.Add(param)
+            param = New Global.MySql.Data.MySqlClient.MySqlParameter()
+            param.ParameterName = "@p5"
+            param.DbType = Global.System.Data.DbType.[String]
+            param.MySqlDbType = Global.MySql.Data.MySqlClient.MySqlDbType.VarChar
+            param.IsNullable = true
+            param.SourceColumn = "brand"
+            param.SourceVersion = Global.System.Data.DataRowVersion.Current
+            Me._adapter.InsertCommand.Parameters.Add(param)
+            param = New Global.MySql.Data.MySqlClient.MySqlParameter()
+            param.ParameterName = "@p6"
+            param.DbType = Global.System.Data.DbType.[String]
+            param.MySqlDbType = Global.MySql.Data.MySqlClient.MySqlDbType.VarChar
+            param.IsNullable = true
+            param.SourceColumn = "category"
+            param.SourceVersion = Global.System.Data.DataRowVersion.Current
+            Me._adapter.InsertCommand.Parameters.Add(param)
+            param = New Global.MySql.Data.MySqlClient.MySqlParameter()
+            param.ParameterName = "@p7"
+            param.DbType = Global.System.Data.DbType.[String]
+            param.MySqlDbType = Global.MySql.Data.MySqlClient.MySqlDbType.VarChar
+            param.IsNullable = true
+            param.SourceColumn = "catcode"
+            param.SourceVersion = Global.System.Data.DataRowVersion.Current
+            Me._adapter.InsertCommand.Parameters.Add(param)
+            param = New Global.MySql.Data.MySqlClient.MySqlParameter()
+            param.ParameterName = "@p8"
+            param.DbType = Global.System.Data.DbType.[String]
+            param.MySqlDbType = Global.MySql.Data.MySqlClient.MySqlDbType.VarChar
+            param.IsNullable = true
+            param.SourceColumn = "unit"
+            param.SourceVersion = Global.System.Data.DataRowVersion.Current
+            Me._adapter.InsertCommand.Parameters.Add(param)
+            param = New Global.MySql.Data.MySqlClient.MySqlParameter()
+            param.ParameterName = "@p9"
+            param.DbType = Global.System.Data.DbType.Int32
+            param.MySqlDbType = Global.MySql.Data.MySqlClient.MySqlDbType.Int32
+            param.IsNullable = true
+            param.SourceColumn = "price"
+            param.SourceVersion = Global.System.Data.DataRowVersion.Current
+            Me._adapter.InsertCommand.Parameters.Add(param)
+            param = New Global.MySql.Data.MySqlClient.MySqlParameter()
+            param.ParameterName = "@p10"
+            param.DbType = Global.System.Data.DbType.Int32
+            param.MySqlDbType = Global.MySql.Data.MySqlClient.MySqlDbType.Int32
+            param.IsNullable = true
+            param.SourceColumn = "quantity"
+            param.SourceVersion = Global.System.Data.DataRowVersion.Current
+            Me._adapter.InsertCommand.Parameters.Add(param)
+            param = New Global.MySql.Data.MySqlClient.MySqlParameter()
+            param.ParameterName = "@p11"
+            param.DbType = Global.System.Data.DbType.[Date]
+            param.MySqlDbType = Global.MySql.Data.MySqlClient.MySqlDbType.[Date]
+            param.IsNullable = true
+            param.SourceColumn = "manufactureddate"
+            param.SourceVersion = Global.System.Data.DataRowVersion.Current
+            Me._adapter.InsertCommand.Parameters.Add(param)
+            param = New Global.MySql.Data.MySqlClient.MySqlParameter()
+            param.ParameterName = "@p12"
+            param.DbType = Global.System.Data.DbType.[Date]
+            param.MySqlDbType = Global.MySql.Data.MySqlClient.MySqlDbType.[Date]
+            param.IsNullable = true
+            param.SourceColumn = "expirationdate"
+            param.SourceVersion = Global.System.Data.DataRowVersion.Current
+            Me._adapter.InsertCommand.Parameters.Add(param)
+            param = New Global.MySql.Data.MySqlClient.MySqlParameter()
+            param.ParameterName = "@p13"
+            param.DbType = Global.System.Data.DbType.[Date]
+            param.MySqlDbType = Global.MySql.Data.MySqlClient.MySqlDbType.[Date]
+            param.IsNullable = true
+            param.SourceColumn = "dateaddedstocks"
+            param.SourceVersion = Global.System.Data.DataRowVersion.Current
+            Me._adapter.InsertCommand.Parameters.Add(param)
+            Me._adapter.UpdateCommand = New Global.MySql.Data.MySqlClient.MySqlCommand()
+            Me._adapter.UpdateCommand.Connection = Me.Connection
+            Me._adapter.UpdateCommand.CommandText = "UPDATE `tbl_stocks` SET `id` = @p1, `prodcode` = @p2, `prodname` = @p3, `manufact"& _ 
+                "urer` = @p4, `brand` = @p5, `category` = @p6, `catcode` = @p7, `unit` = @p8, `pr"& _ 
+                "ice` = @p9, `quantity` = @p10, `manufactureddate` = @p11, `expirationdate` = @p1"& _ 
+                "2, `dateaddedstocks` = @p13 WHERE ((`stockid` = @p14) AND (`id` = @p15) AND (`pr"& _ 
+                "odcode` = @p16) AND (`prodname` = @p17) AND (`manufacturer` = @p18) AND (`brand`"& _ 
+                " = @p19) AND (`category` = @p20) AND (`catcode` = @p21) AND (`unit` = @p22) AND "& _ 
+                "(`price` = @p23) AND (`quantity` = @p24) AND (`manufactureddate` = @p25) AND (`e"& _ 
+                "xpirationdate` = @p26) AND (`dateaddedstocks` = @p27))"
+            Me._adapter.UpdateCommand.CommandType = Global.System.Data.CommandType.Text
+            param = New Global.MySql.Data.MySqlClient.MySqlParameter()
+            param.ParameterName = "@p1"
+            param.DbType = Global.System.Data.DbType.Int32
+            param.MySqlDbType = Global.MySql.Data.MySqlClient.MySqlDbType.Int32
+            param.IsNullable = true
+            param.SourceColumn = "id"
+            param.SourceVersion = Global.System.Data.DataRowVersion.Current
+            Me._adapter.UpdateCommand.Parameters.Add(param)
+            param = New Global.MySql.Data.MySqlClient.MySqlParameter()
+            param.ParameterName = "@p2"
+            param.DbType = Global.System.Data.DbType.[String]
+            param.MySqlDbType = Global.MySql.Data.MySqlClient.MySqlDbType.VarChar
+            param.IsNullable = true
+            param.SourceColumn = "prodcode"
+            param.SourceVersion = Global.System.Data.DataRowVersion.Current
+            Me._adapter.UpdateCommand.Parameters.Add(param)
+            param = New Global.MySql.Data.MySqlClient.MySqlParameter()
+            param.ParameterName = "@p3"
+            param.DbType = Global.System.Data.DbType.[String]
+            param.MySqlDbType = Global.MySql.Data.MySqlClient.MySqlDbType.VarChar
+            param.IsNullable = true
+            param.SourceColumn = "prodname"
+            param.SourceVersion = Global.System.Data.DataRowVersion.Current
+            Me._adapter.UpdateCommand.Parameters.Add(param)
+            param = New Global.MySql.Data.MySqlClient.MySqlParameter()
+            param.ParameterName = "@p4"
+            param.DbType = Global.System.Data.DbType.[String]
+            param.MySqlDbType = Global.MySql.Data.MySqlClient.MySqlDbType.VarChar
+            param.IsNullable = true
+            param.SourceColumn = "manufacturer"
+            param.SourceVersion = Global.System.Data.DataRowVersion.Current
+            Me._adapter.UpdateCommand.Parameters.Add(param)
+            param = New Global.MySql.Data.MySqlClient.MySqlParameter()
+            param.ParameterName = "@p5"
+            param.DbType = Global.System.Data.DbType.[String]
+            param.MySqlDbType = Global.MySql.Data.MySqlClient.MySqlDbType.VarChar
+            param.IsNullable = true
+            param.SourceColumn = "brand"
+            param.SourceVersion = Global.System.Data.DataRowVersion.Current
+            Me._adapter.UpdateCommand.Parameters.Add(param)
+            param = New Global.MySql.Data.MySqlClient.MySqlParameter()
+            param.ParameterName = "@p6"
+            param.DbType = Global.System.Data.DbType.[String]
+            param.MySqlDbType = Global.MySql.Data.MySqlClient.MySqlDbType.VarChar
+            param.IsNullable = true
+            param.SourceColumn = "category"
+            param.SourceVersion = Global.System.Data.DataRowVersion.Current
+            Me._adapter.UpdateCommand.Parameters.Add(param)
+            param = New Global.MySql.Data.MySqlClient.MySqlParameter()
+            param.ParameterName = "@p7"
+            param.DbType = Global.System.Data.DbType.[String]
+            param.MySqlDbType = Global.MySql.Data.MySqlClient.MySqlDbType.VarChar
+            param.IsNullable = true
+            param.SourceColumn = "catcode"
+            param.SourceVersion = Global.System.Data.DataRowVersion.Current
+            Me._adapter.UpdateCommand.Parameters.Add(param)
+            param = New Global.MySql.Data.MySqlClient.MySqlParameter()
+            param.ParameterName = "@p8"
+            param.DbType = Global.System.Data.DbType.[String]
+            param.MySqlDbType = Global.MySql.Data.MySqlClient.MySqlDbType.VarChar
+            param.IsNullable = true
+            param.SourceColumn = "unit"
+            param.SourceVersion = Global.System.Data.DataRowVersion.Current
+            Me._adapter.UpdateCommand.Parameters.Add(param)
+            param = New Global.MySql.Data.MySqlClient.MySqlParameter()
+            param.ParameterName = "@p9"
+            param.DbType = Global.System.Data.DbType.Int32
+            param.MySqlDbType = Global.MySql.Data.MySqlClient.MySqlDbType.Int32
+            param.IsNullable = true
+            param.SourceColumn = "price"
+            param.SourceVersion = Global.System.Data.DataRowVersion.Current
+            Me._adapter.UpdateCommand.Parameters.Add(param)
+            param = New Global.MySql.Data.MySqlClient.MySqlParameter()
+            param.ParameterName = "@p10"
+            param.DbType = Global.System.Data.DbType.Int32
+            param.MySqlDbType = Global.MySql.Data.MySqlClient.MySqlDbType.Int32
+            param.IsNullable = true
+            param.SourceColumn = "quantity"
+            param.SourceVersion = Global.System.Data.DataRowVersion.Current
+            Me._adapter.UpdateCommand.Parameters.Add(param)
+            param = New Global.MySql.Data.MySqlClient.MySqlParameter()
+            param.ParameterName = "@p11"
+            param.DbType = Global.System.Data.DbType.[Date]
+            param.MySqlDbType = Global.MySql.Data.MySqlClient.MySqlDbType.[Date]
+            param.IsNullable = true
+            param.SourceColumn = "manufactureddate"
+            param.SourceVersion = Global.System.Data.DataRowVersion.Current
+            Me._adapter.UpdateCommand.Parameters.Add(param)
+            param = New Global.MySql.Data.MySqlClient.MySqlParameter()
+            param.ParameterName = "@p12"
+            param.DbType = Global.System.Data.DbType.[Date]
+            param.MySqlDbType = Global.MySql.Data.MySqlClient.MySqlDbType.[Date]
+            param.IsNullable = true
+            param.SourceColumn = "expirationdate"
+            param.SourceVersion = Global.System.Data.DataRowVersion.Current
+            Me._adapter.UpdateCommand.Parameters.Add(param)
+            param = New Global.MySql.Data.MySqlClient.MySqlParameter()
+            param.ParameterName = "@p13"
+            param.DbType = Global.System.Data.DbType.[Date]
+            param.MySqlDbType = Global.MySql.Data.MySqlClient.MySqlDbType.[Date]
+            param.IsNullable = true
+            param.SourceColumn = "dateaddedstocks"
+            param.SourceVersion = Global.System.Data.DataRowVersion.Current
+            Me._adapter.UpdateCommand.Parameters.Add(param)
+            param = New Global.MySql.Data.MySqlClient.MySqlParameter()
+            param.ParameterName = "@p14"
+            param.DbType = Global.System.Data.DbType.Int32
+            param.MySqlDbType = Global.MySql.Data.MySqlClient.MySqlDbType.Int32
+            param.IsNullable = true
+            param.SourceColumn = "stockid"
+            param.SourceVersion = Global.System.Data.DataRowVersion.Original
+            Me._adapter.UpdateCommand.Parameters.Add(param)
+            param = New Global.MySql.Data.MySqlClient.MySqlParameter()
+            param.ParameterName = "@p15"
+            param.DbType = Global.System.Data.DbType.Int32
+            param.MySqlDbType = Global.MySql.Data.MySqlClient.MySqlDbType.Int32
+            param.IsNullable = true
+            param.SourceColumn = "id"
+            param.SourceVersion = Global.System.Data.DataRowVersion.Original
+            Me._adapter.UpdateCommand.Parameters.Add(param)
+            param = New Global.MySql.Data.MySqlClient.MySqlParameter()
+            param.ParameterName = "@p16"
+            param.DbType = Global.System.Data.DbType.[String]
+            param.MySqlDbType = Global.MySql.Data.MySqlClient.MySqlDbType.VarChar
+            param.IsNullable = true
+            param.SourceColumn = "prodcode"
+            param.SourceVersion = Global.System.Data.DataRowVersion.Original
+            Me._adapter.UpdateCommand.Parameters.Add(param)
+            param = New Global.MySql.Data.MySqlClient.MySqlParameter()
+            param.ParameterName = "@p17"
+            param.DbType = Global.System.Data.DbType.[String]
+            param.MySqlDbType = Global.MySql.Data.MySqlClient.MySqlDbType.VarChar
+            param.IsNullable = true
+            param.SourceColumn = "prodname"
+            param.SourceVersion = Global.System.Data.DataRowVersion.Original
+            Me._adapter.UpdateCommand.Parameters.Add(param)
+            param = New Global.MySql.Data.MySqlClient.MySqlParameter()
+            param.ParameterName = "@p18"
+            param.DbType = Global.System.Data.DbType.[String]
+            param.MySqlDbType = Global.MySql.Data.MySqlClient.MySqlDbType.VarChar
+            param.IsNullable = true
+            param.SourceColumn = "manufacturer"
+            param.SourceVersion = Global.System.Data.DataRowVersion.Original
+            Me._adapter.UpdateCommand.Parameters.Add(param)
+            param = New Global.MySql.Data.MySqlClient.MySqlParameter()
+            param.ParameterName = "@p19"
+            param.DbType = Global.System.Data.DbType.[String]
+            param.MySqlDbType = Global.MySql.Data.MySqlClient.MySqlDbType.VarChar
+            param.IsNullable = true
+            param.SourceColumn = "brand"
+            param.SourceVersion = Global.System.Data.DataRowVersion.Original
+            Me._adapter.UpdateCommand.Parameters.Add(param)
+            param = New Global.MySql.Data.MySqlClient.MySqlParameter()
+            param.ParameterName = "@p20"
+            param.DbType = Global.System.Data.DbType.[String]
+            param.MySqlDbType = Global.MySql.Data.MySqlClient.MySqlDbType.VarChar
+            param.IsNullable = true
+            param.SourceColumn = "category"
+            param.SourceVersion = Global.System.Data.DataRowVersion.Original
+            Me._adapter.UpdateCommand.Parameters.Add(param)
+            param = New Global.MySql.Data.MySqlClient.MySqlParameter()
+            param.ParameterName = "@p21"
+            param.DbType = Global.System.Data.DbType.[String]
+            param.MySqlDbType = Global.MySql.Data.MySqlClient.MySqlDbType.VarChar
+            param.IsNullable = true
+            param.SourceColumn = "catcode"
+            param.SourceVersion = Global.System.Data.DataRowVersion.Original
+            Me._adapter.UpdateCommand.Parameters.Add(param)
+            param = New Global.MySql.Data.MySqlClient.MySqlParameter()
+            param.ParameterName = "@p22"
+            param.DbType = Global.System.Data.DbType.[String]
+            param.MySqlDbType = Global.MySql.Data.MySqlClient.MySqlDbType.VarChar
+            param.IsNullable = true
+            param.SourceColumn = "unit"
+            param.SourceVersion = Global.System.Data.DataRowVersion.Original
+            Me._adapter.UpdateCommand.Parameters.Add(param)
+            param = New Global.MySql.Data.MySqlClient.MySqlParameter()
+            param.ParameterName = "@p23"
+            param.DbType = Global.System.Data.DbType.Int32
+            param.MySqlDbType = Global.MySql.Data.MySqlClient.MySqlDbType.Int32
+            param.IsNullable = true
+            param.SourceColumn = "price"
+            param.SourceVersion = Global.System.Data.DataRowVersion.Original
+            Me._adapter.UpdateCommand.Parameters.Add(param)
+            param = New Global.MySql.Data.MySqlClient.MySqlParameter()
+            param.ParameterName = "@p24"
+            param.DbType = Global.System.Data.DbType.Int32
+            param.MySqlDbType = Global.MySql.Data.MySqlClient.MySqlDbType.Int32
+            param.IsNullable = true
+            param.SourceColumn = "quantity"
+            param.SourceVersion = Global.System.Data.DataRowVersion.Original
+            Me._adapter.UpdateCommand.Parameters.Add(param)
+            param = New Global.MySql.Data.MySqlClient.MySqlParameter()
+            param.ParameterName = "@p25"
+            param.DbType = Global.System.Data.DbType.[Date]
+            param.MySqlDbType = Global.MySql.Data.MySqlClient.MySqlDbType.[Date]
+            param.IsNullable = true
+            param.SourceColumn = "manufactureddate"
+            param.SourceVersion = Global.System.Data.DataRowVersion.Original
+            Me._adapter.UpdateCommand.Parameters.Add(param)
+            param = New Global.MySql.Data.MySqlClient.MySqlParameter()
+            param.ParameterName = "@p26"
+            param.DbType = Global.System.Data.DbType.[Date]
+            param.MySqlDbType = Global.MySql.Data.MySqlClient.MySqlDbType.[Date]
+            param.IsNullable = true
+            param.SourceColumn = "expirationdate"
+            param.SourceVersion = Global.System.Data.DataRowVersion.Original
+            Me._adapter.UpdateCommand.Parameters.Add(param)
+            param = New Global.MySql.Data.MySqlClient.MySqlParameter()
+            param.ParameterName = "@p27"
+            param.DbType = Global.System.Data.DbType.[Date]
+            param.MySqlDbType = Global.MySql.Data.MySqlClient.MySqlDbType.[Date]
+            param.IsNullable = true
+            param.SourceColumn = "dateaddedstocks"
+            param.SourceVersion = Global.System.Data.DataRowVersion.Original
+            Me._adapter.UpdateCommand.Parameters.Add(param)
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
+        Private Sub InitConnection()
+            Me._connection = New Global.MySql.Data.MySqlClient.MySqlConnection()
+            Me._connection.ConnectionString = Global.SALESANDINVENTORYSYSTEM.My.MySettings.Default.inventory_dbConnectionString
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
+        Private Sub InitCommandCollection()
+            Me._commandCollection = New Global.MySql.Data.MySqlClient.MySqlCommand(1) {}
+            Me._commandCollection(0) = New Global.MySql.Data.MySqlClient.MySqlCommand()
+            Me._commandCollection(0).Connection = Me.Connection
+            Me._commandCollection(0).CommandText = "SELECT `stockid`, `id`, `prodcode`, `prodname`, `manufacturer`, `brand`, `categor"& _ 
+                "y`, `catcode`, `unit`, `price`, `quantity`, `manufactureddate`, `expirationdate`"& _ 
+                ", `dateaddedstocks` FROM `tbl_stocks`"
+            Me._commandCollection(0).CommandType = Global.System.Data.CommandType.Text
+            Me._commandCollection(1) = New Global.MySql.Data.MySqlClient.MySqlCommand()
+            Me._commandCollection(1).Connection = Me.Connection
+            Me._commandCollection(1).CommandText = "SELECT `stockid`, `id`, `prodcode`, `prodname`, `manufacturer`, `brand`, `categor"& _ 
+                "y`, `catcode`, `unit`, `price`, `quantity`, `manufactureddate`, `expirationdate`"& _ 
+                ", `dateaddedstocks` FROM `tbl_stocks` where category = ?"
+            Me._commandCollection(1).CommandType = Global.System.Data.CommandType.Text
+            Dim param As Global.MySql.Data.MySqlClient.MySqlParameter = New Global.MySql.Data.MySqlClient.MySqlParameter()
+            param.ParameterName = "@Param1"
+            param.DbType = Global.System.Data.DbType.[String]
+            param.MySqlDbType = Global.MySql.Data.MySqlClient.MySqlDbType.VarChar
+            param.Size = 45
+            param.IsNullable = true
+            param.SourceColumn = "category"
+            param.SourceVersion = Global.System.Data.DataRowVersion.Current
+            Me._commandCollection(1).Parameters.Add(param)
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0"),  _
+         Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"),  _
+         Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.Fill, true)>  _
+        Public Overloads Overridable Function Fill(ByVal dataTable As inventory_dbDataSet.tbl_stocksDataTable) As Integer
+            Me.Adapter.SelectCommand = Me.CommandCollection(0)
+            If (Me.ClearBeforeFill = true) Then
+                dataTable.Clear
+            End If
+            Dim returnValue As Integer = Me.Adapter.Fill(dataTable)
+            Return returnValue
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0"),  _
+         Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"),  _
+         Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.[Select], true)>  _
+        Public Overloads Overridable Function GetData() As inventory_dbDataSet.tbl_stocksDataTable
+            Me.Adapter.SelectCommand = Me.CommandCollection(0)
+            Dim dataTable As inventory_dbDataSet.tbl_stocksDataTable = New inventory_dbDataSet.tbl_stocksDataTable()
+            Me.Adapter.Fill(dataTable)
+            Return dataTable
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0"),  _
+         Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"),  _
+         Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.Fill, false)>  _
+        Public Overloads Overridable Function FillBySTOCKSCATEGORY(ByVal dataTable As inventory_dbDataSet.tbl_stocksDataTable, ByVal Param1 As String) As Integer
+            Me.Adapter.SelectCommand = Me.CommandCollection(1)
+            If (Param1 Is Nothing) Then
+                Throw New Global.System.ArgumentNullException("Param1")
+            Else
+                Me.Adapter.SelectCommand.Parameters(0).Value = CType(Param1,String)
+            End If
+            If (Me.ClearBeforeFill = true) Then
+                dataTable.Clear
+            End If
+            Dim returnValue As Integer = Me.Adapter.Fill(dataTable)
+            Return returnValue
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0"),  _
+         Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"),  _
+         Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.[Select], false)>  _
+        Public Overloads Overridable Function GetDataBySTOCKSCATEGORY(ByVal Param1 As String) As inventory_dbDataSet.tbl_stocksDataTable
+            Me.Adapter.SelectCommand = Me.CommandCollection(1)
+            If (Param1 Is Nothing) Then
+                Throw New Global.System.ArgumentNullException("Param1")
+            Else
+                Me.Adapter.SelectCommand.Parameters(0).Value = CType(Param1,String)
+            End If
+            Dim dataTable As inventory_dbDataSet.tbl_stocksDataTable = New inventory_dbDataSet.tbl_stocksDataTable()
+            Me.Adapter.Fill(dataTable)
+            Return dataTable
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0"),  _
+         Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")>  _
+        Public Overloads Overridable Function Update(ByVal dataTable As inventory_dbDataSet.tbl_stocksDataTable) As Integer
+            Return Me.Adapter.Update(dataTable)
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0"),  _
+         Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")>  _
+        Public Overloads Overridable Function Update(ByVal dataSet As inventory_dbDataSet) As Integer
+            Return Me.Adapter.Update(dataSet, "tbl_stocks")
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0"),  _
+         Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")>  _
+        Public Overloads Overridable Function Update(ByVal dataRow As Global.System.Data.DataRow) As Integer
+            Return Me.Adapter.Update(New Global.System.Data.DataRow() {dataRow})
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0"),  _
+         Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")>  _
+        Public Overloads Overridable Function Update(ByVal dataRows() As Global.System.Data.DataRow) As Integer
+            Return Me.Adapter.Update(dataRows)
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0"),  _
+         Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"),  _
+         Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.Delete, true)>  _
+        Public Overloads Overridable Function Delete(ByVal p1 As Integer, ByVal p2 As Integer, ByVal p3 As String, ByVal p4 As String, ByVal p5 As String, ByVal p6 As String, ByVal p7 As String, ByVal p8 As String, ByVal p9 As String, ByVal p10 As Integer, ByVal p11 As Integer, ByVal p12 As Date, ByVal p13 As Date, ByVal p14 As Date) As Integer
+            Me.Adapter.DeleteCommand.Parameters(0).Value = CType(p1,Integer)
+            Me.Adapter.DeleteCommand.Parameters(1).Value = CType(p2,Integer)
+            If (p3 Is Nothing) Then
+                Throw New Global.System.ArgumentNullException("p3")
+            Else
+                Me.Adapter.DeleteCommand.Parameters(2).Value = CType(p3,String)
+            End If
+            If (p4 Is Nothing) Then
+                Throw New Global.System.ArgumentNullException("p4")
+            Else
+                Me.Adapter.DeleteCommand.Parameters(3).Value = CType(p4,String)
+            End If
+            If (p5 Is Nothing) Then
+                Throw New Global.System.ArgumentNullException("p5")
+            Else
+                Me.Adapter.DeleteCommand.Parameters(4).Value = CType(p5,String)
+            End If
+            If (p6 Is Nothing) Then
+                Throw New Global.System.ArgumentNullException("p6")
+            Else
+                Me.Adapter.DeleteCommand.Parameters(5).Value = CType(p6,String)
+            End If
+            If (p7 Is Nothing) Then
+                Throw New Global.System.ArgumentNullException("p7")
+            Else
+                Me.Adapter.DeleteCommand.Parameters(6).Value = CType(p7,String)
+            End If
+            If (p8 Is Nothing) Then
+                Throw New Global.System.ArgumentNullException("p8")
+            Else
+                Me.Adapter.DeleteCommand.Parameters(7).Value = CType(p8,String)
+            End If
+            If (p9 Is Nothing) Then
+                Throw New Global.System.ArgumentNullException("p9")
+            Else
+                Me.Adapter.DeleteCommand.Parameters(8).Value = CType(p9,String)
+            End If
+            Me.Adapter.DeleteCommand.Parameters(9).Value = CType(p10,Integer)
+            Me.Adapter.DeleteCommand.Parameters(10).Value = CType(p11,Integer)
+            Me.Adapter.DeleteCommand.Parameters(11).Value = CType(p12,Date)
+            Me.Adapter.DeleteCommand.Parameters(12).Value = CType(p13,Date)
+            Me.Adapter.DeleteCommand.Parameters(13).Value = CType(p14,Date)
+            Dim previousConnectionState As Global.System.Data.ConnectionState = Me.Adapter.DeleteCommand.Connection.State
+            If ((Me.Adapter.DeleteCommand.Connection.State And Global.System.Data.ConnectionState.Open)  _
+                        <> Global.System.Data.ConnectionState.Open) Then
+                Me.Adapter.DeleteCommand.Connection.Open
+            End If
+            Try 
+                Dim returnValue As Integer = Me.Adapter.DeleteCommand.ExecuteNonQuery
+                Return returnValue
+            Finally
+                If (previousConnectionState = Global.System.Data.ConnectionState.Closed) Then
+                    Me.Adapter.DeleteCommand.Connection.Close
+                End If
+            End Try
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0"),  _
+         Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"),  _
+         Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.Insert, true)>  _
+        Public Overloads Overridable Function Insert(ByVal p1 As Integer, ByVal p2 As String, ByVal p3 As String, ByVal p4 As String, ByVal p5 As String, ByVal p6 As String, ByVal p7 As String, ByVal p8 As String, ByVal p9 As Integer, ByVal p10 As Integer, ByVal p11 As Date, ByVal p12 As Date, ByVal p13 As Date) As Integer
+            Me.Adapter.InsertCommand.Parameters(0).Value = CType(p1,Integer)
+            If (p2 Is Nothing) Then
+                Throw New Global.System.ArgumentNullException("p2")
+            Else
+                Me.Adapter.InsertCommand.Parameters(1).Value = CType(p2,String)
+            End If
+            If (p3 Is Nothing) Then
+                Throw New Global.System.ArgumentNullException("p3")
+            Else
+                Me.Adapter.InsertCommand.Parameters(2).Value = CType(p3,String)
+            End If
+            If (p4 Is Nothing) Then
+                Throw New Global.System.ArgumentNullException("p4")
+            Else
+                Me.Adapter.InsertCommand.Parameters(3).Value = CType(p4,String)
+            End If
+            If (p5 Is Nothing) Then
+                Throw New Global.System.ArgumentNullException("p5")
+            Else
+                Me.Adapter.InsertCommand.Parameters(4).Value = CType(p5,String)
+            End If
+            If (p6 Is Nothing) Then
+                Throw New Global.System.ArgumentNullException("p6")
+            Else
+                Me.Adapter.InsertCommand.Parameters(5).Value = CType(p6,String)
+            End If
+            If (p7 Is Nothing) Then
+                Throw New Global.System.ArgumentNullException("p7")
+            Else
+                Me.Adapter.InsertCommand.Parameters(6).Value = CType(p7,String)
+            End If
+            If (p8 Is Nothing) Then
+                Throw New Global.System.ArgumentNullException("p8")
+            Else
+                Me.Adapter.InsertCommand.Parameters(7).Value = CType(p8,String)
+            End If
+            Me.Adapter.InsertCommand.Parameters(8).Value = CType(p9,Integer)
+            Me.Adapter.InsertCommand.Parameters(9).Value = CType(p10,Integer)
+            Me.Adapter.InsertCommand.Parameters(10).Value = CType(p11,Date)
+            Me.Adapter.InsertCommand.Parameters(11).Value = CType(p12,Date)
+            Me.Adapter.InsertCommand.Parameters(12).Value = CType(p13,Date)
+            Dim previousConnectionState As Global.System.Data.ConnectionState = Me.Adapter.InsertCommand.Connection.State
+            If ((Me.Adapter.InsertCommand.Connection.State And Global.System.Data.ConnectionState.Open)  _
+                        <> Global.System.Data.ConnectionState.Open) Then
+                Me.Adapter.InsertCommand.Connection.Open
+            End If
+            Try 
+                Dim returnValue As Integer = Me.Adapter.InsertCommand.ExecuteNonQuery
+                Return returnValue
+            Finally
+                If (previousConnectionState = Global.System.Data.ConnectionState.Closed) Then
+                    Me.Adapter.InsertCommand.Connection.Close
+                End If
+            End Try
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0"),  _
+         Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"),  _
+         Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.Update, true)>  _
+        Public Overloads Overridable Function Update( _
+                    ByVal p1 As Integer,  _
+                    ByVal p2 As String,  _
+                    ByVal p3 As String,  _
+                    ByVal p4 As String,  _
+                    ByVal p5 As String,  _
+                    ByVal p6 As String,  _
+                    ByVal p7 As String,  _
+                    ByVal p8 As String,  _
+                    ByVal p9 As Integer,  _
+                    ByVal p10 As Integer,  _
+                    ByVal p11 As Date,  _
+                    ByVal p12 As Date,  _
+                    ByVal p13 As Date,  _
+                    ByVal p14 As Integer,  _
+                    ByVal p15 As Integer,  _
+                    ByVal p16 As String,  _
+                    ByVal p17 As String,  _
+                    ByVal p18 As String,  _
+                    ByVal p19 As String,  _
+                    ByVal p20 As String,  _
+                    ByVal p21 As String,  _
+                    ByVal p22 As String,  _
+                    ByVal p23 As Integer,  _
+                    ByVal p24 As Integer,  _
+                    ByVal p25 As Date,  _
+                    ByVal p26 As Date,  _
+                    ByVal p27 As Date) As Integer
+            Me.Adapter.UpdateCommand.Parameters(0).Value = CType(p1,Integer)
+            If (p2 Is Nothing) Then
+                Throw New Global.System.ArgumentNullException("p2")
+            Else
+                Me.Adapter.UpdateCommand.Parameters(1).Value = CType(p2,String)
+            End If
+            If (p3 Is Nothing) Then
+                Throw New Global.System.ArgumentNullException("p3")
+            Else
+                Me.Adapter.UpdateCommand.Parameters(2).Value = CType(p3,String)
+            End If
+            If (p4 Is Nothing) Then
+                Throw New Global.System.ArgumentNullException("p4")
+            Else
+                Me.Adapter.UpdateCommand.Parameters(3).Value = CType(p4,String)
+            End If
+            If (p5 Is Nothing) Then
+                Throw New Global.System.ArgumentNullException("p5")
+            Else
+                Me.Adapter.UpdateCommand.Parameters(4).Value = CType(p5,String)
+            End If
+            If (p6 Is Nothing) Then
+                Throw New Global.System.ArgumentNullException("p6")
+            Else
+                Me.Adapter.UpdateCommand.Parameters(5).Value = CType(p6,String)
+            End If
+            If (p7 Is Nothing) Then
+                Throw New Global.System.ArgumentNullException("p7")
+            Else
+                Me.Adapter.UpdateCommand.Parameters(6).Value = CType(p7,String)
+            End If
+            If (p8 Is Nothing) Then
+                Throw New Global.System.ArgumentNullException("p8")
+            Else
+                Me.Adapter.UpdateCommand.Parameters(7).Value = CType(p8,String)
+            End If
+            Me.Adapter.UpdateCommand.Parameters(8).Value = CType(p9,Integer)
+            Me.Adapter.UpdateCommand.Parameters(9).Value = CType(p10,Integer)
+            Me.Adapter.UpdateCommand.Parameters(10).Value = CType(p11,Date)
+            Me.Adapter.UpdateCommand.Parameters(11).Value = CType(p12,Date)
+            Me.Adapter.UpdateCommand.Parameters(12).Value = CType(p13,Date)
+            Me.Adapter.UpdateCommand.Parameters(13).Value = CType(p14,Integer)
+            Me.Adapter.UpdateCommand.Parameters(14).Value = CType(p15,Integer)
+            If (p16 Is Nothing) Then
+                Throw New Global.System.ArgumentNullException("p16")
+            Else
+                Me.Adapter.UpdateCommand.Parameters(15).Value = CType(p16,String)
+            End If
+            If (p17 Is Nothing) Then
+                Throw New Global.System.ArgumentNullException("p17")
+            Else
+                Me.Adapter.UpdateCommand.Parameters(16).Value = CType(p17,String)
+            End If
+            If (p18 Is Nothing) Then
+                Throw New Global.System.ArgumentNullException("p18")
+            Else
+                Me.Adapter.UpdateCommand.Parameters(17).Value = CType(p18,String)
+            End If
+            If (p19 Is Nothing) Then
+                Throw New Global.System.ArgumentNullException("p19")
+            Else
+                Me.Adapter.UpdateCommand.Parameters(18).Value = CType(p19,String)
+            End If
+            If (p20 Is Nothing) Then
+                Throw New Global.System.ArgumentNullException("p20")
+            Else
+                Me.Adapter.UpdateCommand.Parameters(19).Value = CType(p20,String)
+            End If
+            If (p21 Is Nothing) Then
+                Throw New Global.System.ArgumentNullException("p21")
+            Else
+                Me.Adapter.UpdateCommand.Parameters(20).Value = CType(p21,String)
+            End If
+            If (p22 Is Nothing) Then
+                Throw New Global.System.ArgumentNullException("p22")
+            Else
+                Me.Adapter.UpdateCommand.Parameters(21).Value = CType(p22,String)
+            End If
+            Me.Adapter.UpdateCommand.Parameters(22).Value = CType(p23,Integer)
+            Me.Adapter.UpdateCommand.Parameters(23).Value = CType(p24,Integer)
+            Me.Adapter.UpdateCommand.Parameters(24).Value = CType(p25,Date)
+            Me.Adapter.UpdateCommand.Parameters(25).Value = CType(p26,Date)
+            Me.Adapter.UpdateCommand.Parameters(26).Value = CType(p27,Date)
+            Dim previousConnectionState As Global.System.Data.ConnectionState = Me.Adapter.UpdateCommand.Connection.State
+            If ((Me.Adapter.UpdateCommand.Connection.State And Global.System.Data.ConnectionState.Open)  _
+                        <> Global.System.Data.ConnectionState.Open) Then
+                Me.Adapter.UpdateCommand.Connection.Open
+            End If
+            Try 
+                Dim returnValue As Integer = Me.Adapter.UpdateCommand.ExecuteNonQuery
+                Return returnValue
+            Finally
+                If (previousConnectionState = Global.System.Data.ConnectionState.Closed) Then
+                    Me.Adapter.UpdateCommand.Connection.Close
+                End If
+            End Try
+        End Function
+    End Class
+    
+    '''<summary>
     '''TableAdapterManager is used to coordinate TableAdapters in the dataset to enable Hierarchical Update scenarios
     '''</summary>
     <Global.System.ComponentModel.DesignerCategoryAttribute("code"),  _
@@ -19264,8 +19228,6 @@ Namespace inventory_dbDataSetTableAdapters
         
         Private _tbl_actlogTableAdapter As tbl_actlogTableAdapter
         
-        Private _tbl_stocksTableAdapter As tbl_stocksTableAdapter
-        
         Private _tbl_expiredproductsTableAdapter As tbl_expiredproductsTableAdapter
         
         Private _tbl_manufacturerTableAdapter As tbl_manufacturerTableAdapter
@@ -19281,6 +19243,8 @@ Namespace inventory_dbDataSetTableAdapters
         Private _tbl_outofstocksTableAdapter As tbl_outofstocksTableAdapter
         
         Private _tbl_salesTableAdapter As tbl_salesTableAdapter
+        
+        Private _tbl_stocksTableAdapter As tbl_stocksTableAdapter
         
         Private _backupDataSetBeforeUpdate As Boolean
         
@@ -19350,20 +19314,6 @@ Namespace inventory_dbDataSetTableAdapters
             End Get
             Set
                 Me._tbl_actlogTableAdapter = value
-            End Set
-        End Property
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0"),  _
-         Global.System.ComponentModel.EditorAttribute("Microsoft.VSDesigner.DataSource.Design.TableAdapterManagerPropertyEditor, Microso"& _ 
-            "ft.VSDesigner, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3"& _ 
-            "a", "System.Drawing.Design.UITypeEditor")>  _
-        Public Property tbl_stocksTableAdapter() As tbl_stocksTableAdapter
-            Get
-                Return Me._tbl_stocksTableAdapter
-            End Get
-            Set
-                Me._tbl_stocksTableAdapter = value
             End Set
         End Property
         
@@ -19480,6 +19430,20 @@ Namespace inventory_dbDataSetTableAdapters
         End Property
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0"),  _
+         Global.System.ComponentModel.EditorAttribute("Microsoft.VSDesigner.DataSource.Design.TableAdapterManagerPropertyEditor, Microso"& _ 
+            "ft.VSDesigner, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3"& _ 
+            "a", "System.Drawing.Design.UITypeEditor")>  _
+        Public Property tbl_stocksTableAdapter() As tbl_stocksTableAdapter
+            Get
+                Return Me._tbl_stocksTableAdapter
+            End Get
+            Set
+                Me._tbl_stocksTableAdapter = value
+            End Set
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
         Public Property BackupDataSetBeforeUpdate() As Boolean
             Get
@@ -19514,10 +19478,6 @@ Namespace inventory_dbDataSetTableAdapters
                             AndAlso (Not (Me._tbl_actlogTableAdapter.Connection) Is Nothing)) Then
                     Return Me._tbl_actlogTableAdapter.Connection
                 End If
-                If ((Not (Me._tbl_stocksTableAdapter) Is Nothing)  _
-                            AndAlso (Not (Me._tbl_stocksTableAdapter.Connection) Is Nothing)) Then
-                    Return Me._tbl_stocksTableAdapter.Connection
-                End If
                 If ((Not (Me._tbl_expiredproductsTableAdapter) Is Nothing)  _
                             AndAlso (Not (Me._tbl_expiredproductsTableAdapter.Connection) Is Nothing)) Then
                     Return Me._tbl_expiredproductsTableAdapter.Connection
@@ -19550,6 +19510,10 @@ Namespace inventory_dbDataSetTableAdapters
                             AndAlso (Not (Me._tbl_salesTableAdapter.Connection) Is Nothing)) Then
                     Return Me._tbl_salesTableAdapter.Connection
                 End If
+                If ((Not (Me._tbl_stocksTableAdapter) Is Nothing)  _
+                            AndAlso (Not (Me._tbl_stocksTableAdapter.Connection) Is Nothing)) Then
+                    Return Me._tbl_stocksTableAdapter.Connection
+                End If
                 Return Nothing
             End Get
             Set
@@ -19575,9 +19539,6 @@ Namespace inventory_dbDataSetTableAdapters
                 If (Not (Me._tbl_actlogTableAdapter) Is Nothing) Then
                     count = (count + 1)
                 End If
-                If (Not (Me._tbl_stocksTableAdapter) Is Nothing) Then
-                    count = (count + 1)
-                End If
                 If (Not (Me._tbl_expiredproductsTableAdapter) Is Nothing) Then
                     count = (count + 1)
                 End If
@@ -19600,6 +19561,9 @@ Namespace inventory_dbDataSetTableAdapters
                     count = (count + 1)
                 End If
                 If (Not (Me._tbl_salesTableAdapter) Is Nothing) Then
+                    count = (count + 1)
+                End If
+                If (Not (Me._tbl_stocksTableAdapter) Is Nothing) Then
                     count = (count + 1)
                 End If
                 Return count
@@ -19646,15 +19610,6 @@ Namespace inventory_dbDataSetTableAdapters
                 If ((Not (updatedRows) Is Nothing)  _
                             AndAlso (0 < updatedRows.Length)) Then
                     result = (result + Me._tbl_actlogTableAdapter.Update(updatedRows))
-                    allChangedRows.AddRange(updatedRows)
-                End If
-            End If
-            If (Not (Me._tbl_stocksTableAdapter) Is Nothing) Then
-                Dim updatedRows() As Global.System.Data.DataRow = dataSet.tbl_stocks.Select(Nothing, Nothing, Global.System.Data.DataViewRowState.ModifiedCurrent)
-                updatedRows = Me.GetRealUpdatedRows(updatedRows, allAddedRows)
-                If ((Not (updatedRows) Is Nothing)  _
-                            AndAlso (0 < updatedRows.Length)) Then
-                    result = (result + Me._tbl_stocksTableAdapter.Update(updatedRows))
                     allChangedRows.AddRange(updatedRows)
                 End If
             End If
@@ -19730,6 +19685,15 @@ Namespace inventory_dbDataSetTableAdapters
                     allChangedRows.AddRange(updatedRows)
                 End If
             End If
+            If (Not (Me._tbl_stocksTableAdapter) Is Nothing) Then
+                Dim updatedRows() As Global.System.Data.DataRow = dataSet.tbl_stocks.Select(Nothing, Nothing, Global.System.Data.DataViewRowState.ModifiedCurrent)
+                updatedRows = Me.GetRealUpdatedRows(updatedRows, allAddedRows)
+                If ((Not (updatedRows) Is Nothing)  _
+                            AndAlso (0 < updatedRows.Length)) Then
+                    result = (result + Me._tbl_stocksTableAdapter.Update(updatedRows))
+                    allChangedRows.AddRange(updatedRows)
+                End If
+            End If
             Return result
         End Function
         
@@ -19769,14 +19733,6 @@ Namespace inventory_dbDataSetTableAdapters
                 If ((Not (addedRows) Is Nothing)  _
                             AndAlso (0 < addedRows.Length)) Then
                     result = (result + Me._tbl_actlogTableAdapter.Update(addedRows))
-                    allAddedRows.AddRange(addedRows)
-                End If
-            End If
-            If (Not (Me._tbl_stocksTableAdapter) Is Nothing) Then
-                Dim addedRows() As Global.System.Data.DataRow = dataSet.tbl_stocks.Select(Nothing, Nothing, Global.System.Data.DataViewRowState.Added)
-                If ((Not (addedRows) Is Nothing)  _
-                            AndAlso (0 < addedRows.Length)) Then
-                    result = (result + Me._tbl_stocksTableAdapter.Update(addedRows))
                     allAddedRows.AddRange(addedRows)
                 End If
             End If
@@ -19844,6 +19800,14 @@ Namespace inventory_dbDataSetTableAdapters
                     allAddedRows.AddRange(addedRows)
                 End If
             End If
+            If (Not (Me._tbl_stocksTableAdapter) Is Nothing) Then
+                Dim addedRows() As Global.System.Data.DataRow = dataSet.tbl_stocks.Select(Nothing, Nothing, Global.System.Data.DataViewRowState.Added)
+                If ((Not (addedRows) Is Nothing)  _
+                            AndAlso (0 < addedRows.Length)) Then
+                    result = (result + Me._tbl_stocksTableAdapter.Update(addedRows))
+                    allAddedRows.AddRange(addedRows)
+                End If
+            End If
             Return result
         End Function
         
@@ -19854,6 +19818,14 @@ Namespace inventory_dbDataSetTableAdapters
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
         Private Function UpdateDeletedRows(ByVal dataSet As inventory_dbDataSet, ByVal allChangedRows As Global.System.Collections.Generic.List(Of Global.System.Data.DataRow)) As Integer
             Dim result As Integer = 0
+            If (Not (Me._tbl_stocksTableAdapter) Is Nothing) Then
+                Dim deletedRows() As Global.System.Data.DataRow = dataSet.tbl_stocks.Select(Nothing, Nothing, Global.System.Data.DataViewRowState.Deleted)
+                If ((Not (deletedRows) Is Nothing)  _
+                            AndAlso (0 < deletedRows.Length)) Then
+                    result = (result + Me._tbl_stocksTableAdapter.Update(deletedRows))
+                    allChangedRows.AddRange(deletedRows)
+                End If
+            End If
             If (Not (Me._tbl_salesTableAdapter) Is Nothing) Then
                 Dim deletedRows() As Global.System.Data.DataRow = dataSet.tbl_sales.Select(Nothing, Nothing, Global.System.Data.DataViewRowState.Deleted)
                 If ((Not (deletedRows) Is Nothing)  _
@@ -19915,14 +19887,6 @@ Namespace inventory_dbDataSetTableAdapters
                 If ((Not (deletedRows) Is Nothing)  _
                             AndAlso (0 < deletedRows.Length)) Then
                     result = (result + Me._tbl_expiredproductsTableAdapter.Update(deletedRows))
-                    allChangedRows.AddRange(deletedRows)
-                End If
-            End If
-            If (Not (Me._tbl_stocksTableAdapter) Is Nothing) Then
-                Dim deletedRows() As Global.System.Data.DataRow = dataSet.tbl_stocks.Select(Nothing, Nothing, Global.System.Data.DataViewRowState.Deleted)
-                If ((Not (deletedRows) Is Nothing)  _
-                            AndAlso (0 < deletedRows.Length)) Then
-                    result = (result + Me._tbl_stocksTableAdapter.Update(deletedRows))
                     allChangedRows.AddRange(deletedRows)
                 End If
             End If
@@ -20019,11 +19983,6 @@ Namespace inventory_dbDataSetTableAdapters
                 Throw New Global.System.ArgumentException("All TableAdapters managed by a TableAdapterManager must use the same connection s"& _ 
                         "tring.")
             End If
-            If ((Not (Me._tbl_stocksTableAdapter) Is Nothing)  _
-                        AndAlso (Me.MatchTableAdapterConnection(Me._tbl_stocksTableAdapter.Connection) = false)) Then
-                Throw New Global.System.ArgumentException("All TableAdapters managed by a TableAdapterManager must use the same connection s"& _ 
-                        "tring.")
-            End If
             If ((Not (Me._tbl_expiredproductsTableAdapter) Is Nothing)  _
                         AndAlso (Me.MatchTableAdapterConnection(Me._tbl_expiredproductsTableAdapter.Connection) = false)) Then
                 Throw New Global.System.ArgumentException("All TableAdapters managed by a TableAdapterManager must use the same connection s"& _ 
@@ -20061,6 +20020,11 @@ Namespace inventory_dbDataSetTableAdapters
             End If
             If ((Not (Me._tbl_salesTableAdapter) Is Nothing)  _
                         AndAlso (Me.MatchTableAdapterConnection(Me._tbl_salesTableAdapter.Connection) = false)) Then
+                Throw New Global.System.ArgumentException("All TableAdapters managed by a TableAdapterManager must use the same connection s"& _ 
+                        "tring.")
+            End If
+            If ((Not (Me._tbl_stocksTableAdapter) Is Nothing)  _
+                        AndAlso (Me.MatchTableAdapterConnection(Me._tbl_stocksTableAdapter.Connection) = false)) Then
                 Throw New Global.System.ArgumentException("All TableAdapters managed by a TableAdapterManager must use the same connection s"& _ 
                         "tring.")
             End If
@@ -20130,15 +20094,6 @@ Namespace inventory_dbDataSetTableAdapters
                     If Me._tbl_actlogTableAdapter.Adapter.AcceptChangesDuringUpdate Then
                         Me._tbl_actlogTableAdapter.Adapter.AcceptChangesDuringUpdate = false
                         adaptersWithAcceptChangesDuringUpdate.Add(Me._tbl_actlogTableAdapter.Adapter)
-                    End If
-                End If
-                If (Not (Me._tbl_stocksTableAdapter) Is Nothing) Then
-                    revertConnections.Add(Me._tbl_stocksTableAdapter, Me._tbl_stocksTableAdapter.Connection)
-                    Me._tbl_stocksTableAdapter.Connection = CType(workConnection,Global.MySql.Data.MySqlClient.MySqlConnection)
-                    Me._tbl_stocksTableAdapter.Transaction = CType(workTransaction,Global.MySql.Data.MySqlClient.MySqlTransaction)
-                    If Me._tbl_stocksTableAdapter.Adapter.AcceptChangesDuringUpdate Then
-                        Me._tbl_stocksTableAdapter.Adapter.AcceptChangesDuringUpdate = false
-                        adaptersWithAcceptChangesDuringUpdate.Add(Me._tbl_stocksTableAdapter.Adapter)
                     End If
                 End If
                 If (Not (Me._tbl_expiredproductsTableAdapter) Is Nothing) Then
@@ -20211,6 +20166,15 @@ Namespace inventory_dbDataSetTableAdapters
                     If Me._tbl_salesTableAdapter.Adapter.AcceptChangesDuringUpdate Then
                         Me._tbl_salesTableAdapter.Adapter.AcceptChangesDuringUpdate = false
                         adaptersWithAcceptChangesDuringUpdate.Add(Me._tbl_salesTableAdapter.Adapter)
+                    End If
+                End If
+                If (Not (Me._tbl_stocksTableAdapter) Is Nothing) Then
+                    revertConnections.Add(Me._tbl_stocksTableAdapter, Me._tbl_stocksTableAdapter.Connection)
+                    Me._tbl_stocksTableAdapter.Connection = CType(workConnection,Global.MySql.Data.MySqlClient.MySqlConnection)
+                    Me._tbl_stocksTableAdapter.Transaction = CType(workTransaction,Global.MySql.Data.MySqlClient.MySqlTransaction)
+                    If Me._tbl_stocksTableAdapter.Adapter.AcceptChangesDuringUpdate Then
+                        Me._tbl_stocksTableAdapter.Adapter.AcceptChangesDuringUpdate = false
+                        adaptersWithAcceptChangesDuringUpdate.Add(Me._tbl_stocksTableAdapter.Adapter)
                     End If
                 End If
                 '
@@ -20289,10 +20253,6 @@ Namespace inventory_dbDataSetTableAdapters
                     Me._tbl_actlogTableAdapter.Connection = CType(revertConnections(Me._tbl_actlogTableAdapter),Global.MySql.Data.MySqlClient.MySqlConnection)
                     Me._tbl_actlogTableAdapter.Transaction = Nothing
                 End If
-                If (Not (Me._tbl_stocksTableAdapter) Is Nothing) Then
-                    Me._tbl_stocksTableAdapter.Connection = CType(revertConnections(Me._tbl_stocksTableAdapter),Global.MySql.Data.MySqlClient.MySqlConnection)
-                    Me._tbl_stocksTableAdapter.Transaction = Nothing
-                End If
                 If (Not (Me._tbl_expiredproductsTableAdapter) Is Nothing) Then
                     Me._tbl_expiredproductsTableAdapter.Connection = CType(revertConnections(Me._tbl_expiredproductsTableAdapter),Global.MySql.Data.MySqlClient.MySqlConnection)
                     Me._tbl_expiredproductsTableAdapter.Transaction = Nothing
@@ -20324,6 +20284,10 @@ Namespace inventory_dbDataSetTableAdapters
                 If (Not (Me._tbl_salesTableAdapter) Is Nothing) Then
                     Me._tbl_salesTableAdapter.Connection = CType(revertConnections(Me._tbl_salesTableAdapter),Global.MySql.Data.MySqlClient.MySqlConnection)
                     Me._tbl_salesTableAdapter.Transaction = Nothing
+                End If
+                If (Not (Me._tbl_stocksTableAdapter) Is Nothing) Then
+                    Me._tbl_stocksTableAdapter.Connection = CType(revertConnections(Me._tbl_stocksTableAdapter),Global.MySql.Data.MySqlClient.MySqlConnection)
+                    Me._tbl_stocksTableAdapter.Transaction = Nothing
                 End If
                 If (0 < adaptersWithAcceptChangesDuringUpdate.Count) Then
                     Dim adapters((adaptersWithAcceptChangesDuringUpdate.Count) - 1) As Global.System.Data.Common.DataAdapter

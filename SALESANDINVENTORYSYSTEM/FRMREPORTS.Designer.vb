@@ -33,27 +33,18 @@ Partial Class FRMREPORTS
         Dim ReportDataSource8 As Microsoft.Reporting.WinForms.ReportDataSource = New Microsoft.Reporting.WinForms.ReportDataSource()
         Dim ReportDataSource9 As Microsoft.Reporting.WinForms.ReportDataSource = New Microsoft.Reporting.WinForms.ReportDataSource()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(FRMREPORTS))
-        Me.tbl_usersBindingSource = New System.Windows.Forms.BindingSource(Me.components)
-        Me.inventory_dbDataSet = New SALESANDINVENTORYSYSTEM.inventory_dbDataSet()
-        Me.tbl_salesBindingSource = New System.Windows.Forms.BindingSource(Me.components)
-        Me.tbl_outofstocksBindingSource = New System.Windows.Forms.BindingSource(Me.components)
-        Me.tbl_expiredproductsBindingSource = New System.Windows.Forms.BindingSource(Me.components)
-        Me.tbl_deliveryBindingSource = New System.Windows.Forms.BindingSource(Me.components)
-        Me.tbl_stocksBindingSource = New System.Windows.Forms.BindingSource(Me.components)
-        Me.tbl_productsBindingSource = New System.Windows.Forms.BindingSource(Me.components)
         Me.Panel1 = New System.Windows.Forms.Panel()
         Me.TPTRANSREC = New System.Windows.Forms.TabPage()
-        Me.Label13 = New System.Windows.Forms.Label()
-        Me.Label14 = New System.Windows.Forms.Label()
-        Me.BTNCLRTRANS = New Guna.UI2.WinForms.Guna2Button()
-        Me.BTNFILLTRANS = New Guna.UI2.WinForms.Guna2Button()
-        Me.DT2 = New Guna.UI2.WinForms.Guna2DateTimePicker()
-        Me.DT1 = New Guna.UI2.WinForms.Guna2DateTimePicker()
+        Me.MONTHLYTRANSACTION = New Guna.UI2.WinForms.Guna2RadioButton()
+        Me.WEEKLYTRANSACTION = New Guna.UI2.WinForms.Guna2RadioButton()
+        Me.DAILYTRANSACTION = New Guna.UI2.WinForms.Guna2RadioButton()
+        Me.CLEARTRANSACTION = New Guna.UI2.WinForms.Guna2Button()
+        Me.FILTERTRANSACTION = New Guna.UI2.WinForms.Guna2Button()
         Me.RPTTRANSACTIONRECORDS = New Microsoft.Reporting.WinForms.ReportViewer()
         Me.TPACT = New System.Windows.Forms.TabPage()
         Me.ACTCLR = New Guna.UI2.WinForms.Guna2Button()
         Me.ACTFILL = New Guna.UI2.WinForms.Guna2Button()
-        Me.CBOTYPE = New Guna.UI2.WinForms.Guna2ComboBox()
+        Me.CBOACTIVITYLOG = New Guna.UI2.WinForms.Guna2ComboBox()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.RPTACTLOG = New Microsoft.Reporting.WinForms.ReportViewer()
         Me.TPSALES = New System.Windows.Forms.TabPage()
@@ -107,21 +98,21 @@ Partial Class FRMREPORTS
         Me.FILTERUSERS = New Guna.UI2.WinForms.Guna2Button()
         Me.CBOUSERS = New Guna.UI2.WinForms.Guna2ComboBox()
         Me.TCREPORTS = New System.Windows.Forms.TabControl()
+        Me.tbl_usersBindingSource = New System.Windows.Forms.BindingSource(Me.components)
+        Me.inventory_dbDataSet = New SALESANDINVENTORYSYSTEM.inventory_dbDataSet()
+        Me.tbl_productsBindingSource = New System.Windows.Forms.BindingSource(Me.components)
+        Me.tbl_stocksBindingSource = New System.Windows.Forms.BindingSource(Me.components)
+        Me.tbl_deliveryBindingSource = New System.Windows.Forms.BindingSource(Me.components)
+        Me.tbl_expiredproductsBindingSource = New System.Windows.Forms.BindingSource(Me.components)
+        Me.tbl_outofstocksBindingSource = New System.Windows.Forms.BindingSource(Me.components)
+        Me.tbl_salesBindingSource = New System.Windows.Forms.BindingSource(Me.components)
         Me.tbl_productsTableAdapter = New SALESANDINVENTORYSYSTEM.inventory_dbDataSetTableAdapters.tbl_productsTableAdapter()
         Me.tbl_salesTableAdapter = New SALESANDINVENTORYSYSTEM.inventory_dbDataSetTableAdapters.tbl_salesTableAdapter()
         Me.tbl_usersTableAdapter = New SALESANDINVENTORYSYSTEM.inventory_dbDataSetTableAdapters.tbl_usersTableAdapter()
         Me.tbl_expiredproductsTableAdapter = New SALESANDINVENTORYSYSTEM.inventory_dbDataSetTableAdapters.tbl_expiredproductsTableAdapter()
-        Me.tbl_stocksTableAdapter = New SALESANDINVENTORYSYSTEM.inventory_dbDataSetTableAdapters.tbl_stocksTableAdapter()
         Me.tbl_deliveryTableAdapter = New SALESANDINVENTORYSYSTEM.inventory_dbDataSetTableAdapters.tbl_deliveryTableAdapter()
         Me.tbl_outofstocksTableAdapter = New SALESANDINVENTORYSYSTEM.inventory_dbDataSetTableAdapters.tbl_outofstocksTableAdapter()
-        CType(Me.tbl_usersBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.inventory_dbDataSet, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.tbl_salesBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.tbl_outofstocksBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.tbl_expiredproductsBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.tbl_deliveryBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.tbl_stocksBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.tbl_productsBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.tbl_stocksTableAdapter = New SALESANDINVENTORYSYSTEM.inventory_dbDataSetTableAdapters.tbl_stocksTableAdapter()
         Me.TPTRANSREC.SuspendLayout()
         Me.TPACT.SuspendLayout()
         Me.TPSALES.SuspendLayout()
@@ -132,47 +123,15 @@ Partial Class FRMREPORTS
         Me.TPPRODS.SuspendLayout()
         Me.TPUSERS.SuspendLayout()
         Me.TCREPORTS.SuspendLayout()
+        CType(Me.tbl_usersBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.inventory_dbDataSet, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.tbl_productsBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.tbl_stocksBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.tbl_deliveryBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.tbl_expiredproductsBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.tbl_outofstocksBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.tbl_salesBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
-        '
-        'tbl_usersBindingSource
-        '
-        Me.tbl_usersBindingSource.DataMember = "tbl_users"
-        Me.tbl_usersBindingSource.DataSource = Me.inventory_dbDataSet
-        '
-        'inventory_dbDataSet
-        '
-        Me.inventory_dbDataSet.DataSetName = "inventory_dbDataSet"
-        Me.inventory_dbDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema
-        '
-        'tbl_salesBindingSource
-        '
-        Me.tbl_salesBindingSource.DataMember = "tbl_sales"
-        Me.tbl_salesBindingSource.DataSource = Me.inventory_dbDataSet
-        '
-        'tbl_outofstocksBindingSource
-        '
-        Me.tbl_outofstocksBindingSource.DataMember = "tbl_outofstocks"
-        Me.tbl_outofstocksBindingSource.DataSource = Me.inventory_dbDataSet
-        '
-        'tbl_expiredproductsBindingSource
-        '
-        Me.tbl_expiredproductsBindingSource.DataMember = "tbl_expiredproducts"
-        Me.tbl_expiredproductsBindingSource.DataSource = Me.inventory_dbDataSet
-        '
-        'tbl_deliveryBindingSource
-        '
-        Me.tbl_deliveryBindingSource.DataMember = "tbl_delivery"
-        Me.tbl_deliveryBindingSource.DataSource = Me.inventory_dbDataSet
-        '
-        'tbl_stocksBindingSource
-        '
-        Me.tbl_stocksBindingSource.DataMember = "tbl_stocks"
-        Me.tbl_stocksBindingSource.DataSource = Me.inventory_dbDataSet
-        '
-        'tbl_productsBindingSource
-        '
-        Me.tbl_productsBindingSource.DataMember = "tbl_products"
-        Me.tbl_productsBindingSource.DataSource = Me.inventory_dbDataSet
         '
         'Panel1
         '
@@ -183,12 +142,11 @@ Partial Class FRMREPORTS
         '
         'TPTRANSREC
         '
-        Me.TPTRANSREC.Controls.Add(Me.Label13)
-        Me.TPTRANSREC.Controls.Add(Me.Label14)
-        Me.TPTRANSREC.Controls.Add(Me.BTNCLRTRANS)
-        Me.TPTRANSREC.Controls.Add(Me.BTNFILLTRANS)
-        Me.TPTRANSREC.Controls.Add(Me.DT2)
-        Me.TPTRANSREC.Controls.Add(Me.DT1)
+        Me.TPTRANSREC.Controls.Add(Me.MONTHLYTRANSACTION)
+        Me.TPTRANSREC.Controls.Add(Me.WEEKLYTRANSACTION)
+        Me.TPTRANSREC.Controls.Add(Me.DAILYTRANSACTION)
+        Me.TPTRANSREC.Controls.Add(Me.CLEARTRANSACTION)
+        Me.TPTRANSREC.Controls.Add(Me.FILTERTRANSACTION)
         Me.TPTRANSREC.Controls.Add(Me.RPTTRANSACTIONRECORDS)
         Me.TPTRANSREC.Location = New System.Drawing.Point(4, 29)
         Me.TPTRANSREC.Name = "TPTRANSREC"
@@ -197,88 +155,96 @@ Partial Class FRMREPORTS
         Me.TPTRANSREC.Text = "Transaction Records"
         Me.TPTRANSREC.UseVisualStyleBackColor = True
         '
-        'Label13
+        'MONTHLYTRANSACTION
         '
-        Me.Label13.AutoSize = True
-        Me.Label13.Location = New System.Drawing.Point(313, 27)
-        Me.Label13.Name = "Label13"
-        Me.Label13.Size = New System.Drawing.Size(32, 20)
-        Me.Label13.TabIndex = 22
-        Me.Label13.Text = "To :"
+        Me.MONTHLYTRANSACTION.AutoSize = True
+        Me.MONTHLYTRANSACTION.CheckedState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
+        Me.MONTHLYTRANSACTION.CheckedState.BorderThickness = 0
+        Me.MONTHLYTRANSACTION.CheckedState.FillColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
+        Me.MONTHLYTRANSACTION.CheckedState.InnerColor = System.Drawing.Color.White
+        Me.MONTHLYTRANSACTION.CheckedState.InnerOffset = -4
+        Me.MONTHLYTRANSACTION.Location = New System.Drawing.Point(202, 28)
+        Me.MONTHLYTRANSACTION.Name = "MONTHLYTRANSACTION"
+        Me.MONTHLYTRANSACTION.Size = New System.Drawing.Size(86, 24)
+        Me.MONTHLYTRANSACTION.TabIndex = 28
+        Me.MONTHLYTRANSACTION.TabStop = True
+        Me.MONTHLYTRANSACTION.Text = "Monthly"
+        Me.MONTHLYTRANSACTION.UncheckedState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(125, Byte), Integer), CType(CType(137, Byte), Integer), CType(CType(149, Byte), Integer))
+        Me.MONTHLYTRANSACTION.UncheckedState.BorderThickness = 2
+        Me.MONTHLYTRANSACTION.UncheckedState.FillColor = System.Drawing.Color.Transparent
+        Me.MONTHLYTRANSACTION.UncheckedState.InnerColor = System.Drawing.Color.Transparent
+        Me.MONTHLYTRANSACTION.UseVisualStyleBackColor = True
         '
-        'Label14
+        'WEEKLYTRANSACTION
         '
-        Me.Label14.AutoSize = True
-        Me.Label14.Location = New System.Drawing.Point(27, 27)
-        Me.Label14.Name = "Label14"
-        Me.Label14.Size = New System.Drawing.Size(52, 20)
-        Me.Label14.TabIndex = 21
-        Me.Label14.Text = "From :"
+        Me.WEEKLYTRANSACTION.AutoSize = True
+        Me.WEEKLYTRANSACTION.CheckedState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
+        Me.WEEKLYTRANSACTION.CheckedState.BorderThickness = 0
+        Me.WEEKLYTRANSACTION.CheckedState.FillColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
+        Me.WEEKLYTRANSACTION.CheckedState.InnerColor = System.Drawing.Color.White
+        Me.WEEKLYTRANSACTION.CheckedState.InnerOffset = -4
+        Me.WEEKLYTRANSACTION.Location = New System.Drawing.Point(98, 28)
+        Me.WEEKLYTRANSACTION.Name = "WEEKLYTRANSACTION"
+        Me.WEEKLYTRANSACTION.Size = New System.Drawing.Size(81, 24)
+        Me.WEEKLYTRANSACTION.TabIndex = 27
+        Me.WEEKLYTRANSACTION.TabStop = True
+        Me.WEEKLYTRANSACTION.Text = "Weekly"
+        Me.WEEKLYTRANSACTION.UncheckedState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(125, Byte), Integer), CType(CType(137, Byte), Integer), CType(CType(149, Byte), Integer))
+        Me.WEEKLYTRANSACTION.UncheckedState.BorderThickness = 2
+        Me.WEEKLYTRANSACTION.UncheckedState.FillColor = System.Drawing.Color.Transparent
+        Me.WEEKLYTRANSACTION.UncheckedState.InnerColor = System.Drawing.Color.Transparent
+        Me.WEEKLYTRANSACTION.UseVisualStyleBackColor = True
         '
-        'BTNCLRTRANS
+        'DAILYTRANSACTION
         '
-        Me.BTNCLRTRANS.BackColor = System.Drawing.Color.Transparent
-        Me.BTNCLRTRANS.CheckedState.Parent = Me.BTNCLRTRANS
-        Me.BTNCLRTRANS.CustomImages.Parent = Me.BTNCLRTRANS
-        Me.BTNCLRTRANS.FillColor = System.Drawing.SystemColors.ControlDark
-        Me.BTNCLRTRANS.Font = New System.Drawing.Font("Century Gothic", 9.0!)
-        Me.BTNCLRTRANS.ForeColor = System.Drawing.Color.White
-        Me.BTNCLRTRANS.HoverState.Parent = Me.BTNCLRTRANS
-        Me.BTNCLRTRANS.Location = New System.Drawing.Point(740, 27)
-        Me.BTNCLRTRANS.Name = "BTNCLRTRANS"
-        Me.BTNCLRTRANS.ShadowDecoration.Parent = Me.BTNCLRTRANS
-        Me.BTNCLRTRANS.Size = New System.Drawing.Size(98, 36)
-        Me.BTNCLRTRANS.TabIndex = 20
-        Me.BTNCLRTRANS.Text = "Clear Filter"
+        Me.DAILYTRANSACTION.AutoSize = True
+        Me.DAILYTRANSACTION.CheckedState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
+        Me.DAILYTRANSACTION.CheckedState.BorderThickness = 0
+        Me.DAILYTRANSACTION.CheckedState.FillColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
+        Me.DAILYTRANSACTION.CheckedState.InnerColor = System.Drawing.Color.White
+        Me.DAILYTRANSACTION.CheckedState.InnerOffset = -4
+        Me.DAILYTRANSACTION.Location = New System.Drawing.Point(20, 29)
+        Me.DAILYTRANSACTION.Name = "DAILYTRANSACTION"
+        Me.DAILYTRANSACTION.Size = New System.Drawing.Size(62, 24)
+        Me.DAILYTRANSACTION.TabIndex = 26
+        Me.DAILYTRANSACTION.TabStop = True
+        Me.DAILYTRANSACTION.Text = "Daily"
+        Me.DAILYTRANSACTION.UncheckedState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(125, Byte), Integer), CType(CType(137, Byte), Integer), CType(CType(149, Byte), Integer))
+        Me.DAILYTRANSACTION.UncheckedState.BorderThickness = 2
+        Me.DAILYTRANSACTION.UncheckedState.FillColor = System.Drawing.Color.Transparent
+        Me.DAILYTRANSACTION.UncheckedState.InnerColor = System.Drawing.Color.Transparent
+        Me.DAILYTRANSACTION.UseVisualStyleBackColor = True
         '
-        'BTNFILLTRANS
+        'CLEARTRANSACTION
         '
-        Me.BTNFILLTRANS.CheckedState.Parent = Me.BTNFILLTRANS
-        Me.BTNFILLTRANS.CustomImages.Parent = Me.BTNFILLTRANS
-        Me.BTNFILLTRANS.FillColor = System.Drawing.Color.MediumSeaGreen
-        Me.BTNFILLTRANS.Font = New System.Drawing.Font("Century Gothic", 9.0!)
-        Me.BTNFILLTRANS.ForeColor = System.Drawing.Color.White
-        Me.BTNFILLTRANS.HoverState.Parent = Me.BTNFILLTRANS
-        Me.BTNFILLTRANS.Location = New System.Drawing.Point(610, 26)
-        Me.BTNFILLTRANS.Name = "BTNFILLTRANS"
-        Me.BTNFILLTRANS.ShadowDecoration.Parent = Me.BTNFILLTRANS
-        Me.BTNFILLTRANS.Size = New System.Drawing.Size(98, 36)
-        Me.BTNFILLTRANS.TabIndex = 19
-        Me.BTNFILLTRANS.Text = "Filter"
+        Me.CLEARTRANSACTION.BackColor = System.Drawing.Color.Transparent
+        Me.CLEARTRANSACTION.CheckedState.Parent = Me.CLEARTRANSACTION
+        Me.CLEARTRANSACTION.CustomImages.Parent = Me.CLEARTRANSACTION
+        Me.CLEARTRANSACTION.FillColor = System.Drawing.SystemColors.ControlDark
+        Me.CLEARTRANSACTION.Font = New System.Drawing.Font("Century Gothic", 9.0!)
+        Me.CLEARTRANSACTION.ForeColor = System.Drawing.Color.White
+        Me.CLEARTRANSACTION.HoverState.Parent = Me.CLEARTRANSACTION
+        Me.CLEARTRANSACTION.Location = New System.Drawing.Point(443, 29)
+        Me.CLEARTRANSACTION.Name = "CLEARTRANSACTION"
+        Me.CLEARTRANSACTION.ShadowDecoration.Parent = Me.CLEARTRANSACTION
+        Me.CLEARTRANSACTION.Size = New System.Drawing.Size(98, 36)
+        Me.CLEARTRANSACTION.TabIndex = 25
+        Me.CLEARTRANSACTION.Text = "Clear Filter"
         '
-        'DT2
+        'FILTERTRANSACTION
         '
-        Me.DT2.CheckedState.Parent = Me.DT2
-        Me.DT2.FillColor = System.Drawing.Color.MediumSeaGreen
-        Me.DT2.Font = New System.Drawing.Font("Century Gothic", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.DT2.ForeColor = System.Drawing.Color.White
-        Me.DT2.Format = System.Windows.Forms.DateTimePickerFormat.[Long]
-        Me.DT2.HoverState.Parent = Me.DT2
-        Me.DT2.Location = New System.Drawing.Point(372, 26)
-        Me.DT2.MaxDate = New Date(9998, 12, 31, 0, 0, 0, 0)
-        Me.DT2.MinDate = New Date(1753, 1, 1, 0, 0, 0, 0)
-        Me.DT2.Name = "DT2"
-        Me.DT2.ShadowDecoration.Parent = Me.DT2
-        Me.DT2.Size = New System.Drawing.Size(200, 36)
-        Me.DT2.TabIndex = 18
-        Me.DT2.Value = New Date(2023, 4, 15, 23, 18, 1, 623)
-        '
-        'DT1
-        '
-        Me.DT1.CheckedState.Parent = Me.DT1
-        Me.DT1.FillColor = System.Drawing.Color.MediumSeaGreen
-        Me.DT1.Font = New System.Drawing.Font("Century Gothic", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.DT1.ForeColor = System.Drawing.Color.White
-        Me.DT1.Format = System.Windows.Forms.DateTimePickerFormat.[Long]
-        Me.DT1.HoverState.Parent = Me.DT1
-        Me.DT1.Location = New System.Drawing.Point(90, 26)
-        Me.DT1.MaxDate = New Date(9998, 12, 31, 0, 0, 0, 0)
-        Me.DT1.MinDate = New Date(1753, 1, 1, 0, 0, 0, 0)
-        Me.DT1.Name = "DT1"
-        Me.DT1.ShadowDecoration.Parent = Me.DT1
-        Me.DT1.Size = New System.Drawing.Size(200, 36)
-        Me.DT1.TabIndex = 17
-        Me.DT1.Value = New Date(2023, 4, 15, 23, 18, 1, 623)
+        Me.FILTERTRANSACTION.CheckedState.Parent = Me.FILTERTRANSACTION
+        Me.FILTERTRANSACTION.CustomImages.Parent = Me.FILTERTRANSACTION
+        Me.FILTERTRANSACTION.FillColor = System.Drawing.Color.MediumSeaGreen
+        Me.FILTERTRANSACTION.Font = New System.Drawing.Font("Century Gothic", 9.0!)
+        Me.FILTERTRANSACTION.ForeColor = System.Drawing.Color.White
+        Me.FILTERTRANSACTION.HoverState.Parent = Me.FILTERTRANSACTION
+        Me.FILTERTRANSACTION.Location = New System.Drawing.Point(313, 28)
+        Me.FILTERTRANSACTION.Name = "FILTERTRANSACTION"
+        Me.FILTERTRANSACTION.ShadowDecoration.Parent = Me.FILTERTRANSACTION
+        Me.FILTERTRANSACTION.Size = New System.Drawing.Size(98, 36)
+        Me.FILTERTRANSACTION.TabIndex = 24
+        Me.FILTERTRANSACTION.Text = "Filter"
         '
         'RPTTRANSACTIONRECORDS
         '
@@ -296,7 +262,7 @@ Partial Class FRMREPORTS
         '
         Me.TPACT.Controls.Add(Me.ACTCLR)
         Me.TPACT.Controls.Add(Me.ACTFILL)
-        Me.TPACT.Controls.Add(Me.CBOTYPE)
+        Me.TPACT.Controls.Add(Me.CBOACTIVITYLOG)
         Me.TPACT.Controls.Add(Me.Label1)
         Me.TPACT.Controls.Add(Me.RPTACTLOG)
         Me.TPACT.Location = New System.Drawing.Point(4, 29)
@@ -338,25 +304,25 @@ Partial Class FRMREPORTS
         Me.ACTFILL.TabIndex = 5
         Me.ACTFILL.Text = "Filter"
         '
-        'CBOTYPE
+        'CBOACTIVITYLOG
         '
-        Me.CBOTYPE.BackColor = System.Drawing.Color.Transparent
-        Me.CBOTYPE.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed
-        Me.CBOTYPE.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
-        Me.CBOTYPE.FocusedColor = System.Drawing.Color.Empty
-        Me.CBOTYPE.FocusedState.Parent = Me.CBOTYPE
-        Me.CBOTYPE.Font = New System.Drawing.Font("Segoe UI", 10.0!)
-        Me.CBOTYPE.ForeColor = System.Drawing.Color.FromArgb(CType(CType(68, Byte), Integer), CType(CType(88, Byte), Integer), CType(CType(112, Byte), Integer))
-        Me.CBOTYPE.FormattingEnabled = True
-        Me.CBOTYPE.HoverState.Parent = Me.CBOTYPE
-        Me.CBOTYPE.ItemHeight = 30
-        Me.CBOTYPE.Items.AddRange(New Object() {"Admin", "Cashier", "Manager"})
-        Me.CBOTYPE.ItemsAppearance.Parent = Me.CBOTYPE
-        Me.CBOTYPE.Location = New System.Drawing.Point(200, 25)
-        Me.CBOTYPE.Name = "CBOTYPE"
-        Me.CBOTYPE.ShadowDecoration.Parent = Me.CBOTYPE
-        Me.CBOTYPE.Size = New System.Drawing.Size(140, 36)
-        Me.CBOTYPE.TabIndex = 3
+        Me.CBOACTIVITYLOG.BackColor = System.Drawing.Color.Transparent
+        Me.CBOACTIVITYLOG.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed
+        Me.CBOACTIVITYLOG.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
+        Me.CBOACTIVITYLOG.FocusedColor = System.Drawing.Color.Empty
+        Me.CBOACTIVITYLOG.FocusedState.Parent = Me.CBOACTIVITYLOG
+        Me.CBOACTIVITYLOG.Font = New System.Drawing.Font("Segoe UI", 10.0!)
+        Me.CBOACTIVITYLOG.ForeColor = System.Drawing.Color.FromArgb(CType(CType(68, Byte), Integer), CType(CType(88, Byte), Integer), CType(CType(112, Byte), Integer))
+        Me.CBOACTIVITYLOG.FormattingEnabled = True
+        Me.CBOACTIVITYLOG.HoverState.Parent = Me.CBOACTIVITYLOG
+        Me.CBOACTIVITYLOG.ItemHeight = 30
+        Me.CBOACTIVITYLOG.Items.AddRange(New Object() {"Admin", "Cashier", "Manager"})
+        Me.CBOACTIVITYLOG.ItemsAppearance.Parent = Me.CBOACTIVITYLOG
+        Me.CBOACTIVITYLOG.Location = New System.Drawing.Point(200, 25)
+        Me.CBOACTIVITYLOG.Name = "CBOACTIVITYLOG"
+        Me.CBOACTIVITYLOG.ShadowDecoration.Parent = Me.CBOACTIVITYLOG
+        Me.CBOACTIVITYLOG.Size = New System.Drawing.Size(140, 36)
+        Me.CBOACTIVITYLOG.TabIndex = 3
         '
         'Label1
         '
@@ -1144,6 +1110,46 @@ Partial Class FRMREPORTS
         Me.TCREPORTS.Size = New System.Drawing.Size(1116, 652)
         Me.TCREPORTS.TabIndex = 23
         '
+        'tbl_usersBindingSource
+        '
+        Me.tbl_usersBindingSource.DataMember = "tbl_users"
+        Me.tbl_usersBindingSource.DataSource = Me.inventory_dbDataSet
+        '
+        'inventory_dbDataSet
+        '
+        Me.inventory_dbDataSet.DataSetName = "inventory_dbDataSet"
+        Me.inventory_dbDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema
+        '
+        'tbl_productsBindingSource
+        '
+        Me.tbl_productsBindingSource.DataMember = "tbl_products"
+        Me.tbl_productsBindingSource.DataSource = Me.inventory_dbDataSet
+        '
+        'tbl_stocksBindingSource
+        '
+        Me.tbl_stocksBindingSource.DataMember = "tbl_stocks"
+        Me.tbl_stocksBindingSource.DataSource = Me.inventory_dbDataSet
+        '
+        'tbl_deliveryBindingSource
+        '
+        Me.tbl_deliveryBindingSource.DataMember = "tbl_delivery"
+        Me.tbl_deliveryBindingSource.DataSource = Me.inventory_dbDataSet
+        '
+        'tbl_expiredproductsBindingSource
+        '
+        Me.tbl_expiredproductsBindingSource.DataMember = "tbl_expiredproducts"
+        Me.tbl_expiredproductsBindingSource.DataSource = Me.inventory_dbDataSet
+        '
+        'tbl_outofstocksBindingSource
+        '
+        Me.tbl_outofstocksBindingSource.DataMember = "tbl_outofstocks"
+        Me.tbl_outofstocksBindingSource.DataSource = Me.inventory_dbDataSet
+        '
+        'tbl_salesBindingSource
+        '
+        Me.tbl_salesBindingSource.DataMember = "tbl_sales"
+        Me.tbl_salesBindingSource.DataSource = Me.inventory_dbDataSet
+        '
         'tbl_productsTableAdapter
         '
         Me.tbl_productsTableAdapter.ClearBeforeFill = True
@@ -1160,10 +1166,6 @@ Partial Class FRMREPORTS
         '
         Me.tbl_expiredproductsTableAdapter.ClearBeforeFill = True
         '
-        'tbl_stocksTableAdapter
-        '
-        Me.tbl_stocksTableAdapter.ClearBeforeFill = True
-        '
         'tbl_deliveryTableAdapter
         '
         Me.tbl_deliveryTableAdapter.ClearBeforeFill = True
@@ -1171,6 +1173,10 @@ Partial Class FRMREPORTS
         'tbl_outofstocksTableAdapter
         '
         Me.tbl_outofstocksTableAdapter.ClearBeforeFill = True
+        '
+        'tbl_stocksTableAdapter
+        '
+        Me.tbl_stocksTableAdapter.ClearBeforeFill = True
         '
         'FRMREPORTS
         '
@@ -1187,14 +1193,6 @@ Partial Class FRMREPORTS
         Me.Name = "FRMREPORTS"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Reports"
-        CType(Me.tbl_usersBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.inventory_dbDataSet, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.tbl_salesBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.tbl_outofstocksBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.tbl_expiredproductsBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.tbl_deliveryBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.tbl_stocksBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.tbl_productsBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
         Me.TPTRANSREC.ResumeLayout(False)
         Me.TPTRANSREC.PerformLayout()
         Me.TPACT.ResumeLayout(False)
@@ -1214,6 +1212,14 @@ Partial Class FRMREPORTS
         Me.TPUSERS.ResumeLayout(False)
         Me.TPUSERS.PerformLayout()
         Me.TCREPORTS.ResumeLayout(False)
+        CType(Me.tbl_usersBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.inventory_dbDataSet, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.tbl_productsBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.tbl_stocksBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.tbl_deliveryBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.tbl_expiredproductsBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.tbl_outofstocksBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.tbl_salesBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
 
     End Sub
@@ -1224,17 +1230,11 @@ Partial Class FRMREPORTS
     Friend WithEvents tbl_salesBindingSource As BindingSource
     Friend WithEvents tbl_salesTableAdapter As inventory_dbDataSetTableAdapters.tbl_salesTableAdapter
     Friend WithEvents TPTRANSREC As TabPage
-    Friend WithEvents Label13 As Label
-    Friend WithEvents Label14 As Label
-    Friend WithEvents BTNCLRTRANS As Guna.UI2.WinForms.Guna2Button
-    Friend WithEvents BTNFILLTRANS As Guna.UI2.WinForms.Guna2Button
-    Friend WithEvents DT2 As Guna.UI2.WinForms.Guna2DateTimePicker
-    Friend WithEvents DT1 As Guna.UI2.WinForms.Guna2DateTimePicker
     Friend WithEvents RPTTRANSACTIONRECORDS As Microsoft.Reporting.WinForms.ReportViewer
     Friend WithEvents TPACT As TabPage
     Friend WithEvents ACTCLR As Guna.UI2.WinForms.Guna2Button
     Friend WithEvents ACTFILL As Guna.UI2.WinForms.Guna2Button
-    Friend WithEvents CBOTYPE As Guna.UI2.WinForms.Guna2ComboBox
+    Friend WithEvents CBOACTIVITYLOG As Guna.UI2.WinForms.Guna2ComboBox
     Friend WithEvents Label1 As Label
     Friend WithEvents RPTACTLOG As Microsoft.Reporting.WinForms.ReportViewer
     Friend WithEvents TPSALES As TabPage
@@ -1292,10 +1292,15 @@ Partial Class FRMREPORTS
     Friend WithEvents RPTDELIVERY As Microsoft.Reporting.WinForms.ReportViewer
     Friend WithEvents tbl_expiredproductsBindingSource As BindingSource
     Friend WithEvents tbl_expiredproductsTableAdapter As inventory_dbDataSetTableAdapters.tbl_expiredproductsTableAdapter
-    Friend WithEvents tbl_stocksBindingSource As BindingSource
-    Friend WithEvents tbl_stocksTableAdapter As inventory_dbDataSetTableAdapters.tbl_stocksTableAdapter
     Friend WithEvents tbl_deliveryBindingSource As BindingSource
     Friend WithEvents tbl_deliveryTableAdapter As inventory_dbDataSetTableAdapters.tbl_deliveryTableAdapter
     Friend WithEvents tbl_outofstocksBindingSource As BindingSource
     Friend WithEvents tbl_outofstocksTableAdapter As inventory_dbDataSetTableAdapters.tbl_outofstocksTableAdapter
+    Friend WithEvents MONTHLYTRANSACTION As Guna.UI2.WinForms.Guna2RadioButton
+    Friend WithEvents WEEKLYTRANSACTION As Guna.UI2.WinForms.Guna2RadioButton
+    Friend WithEvents DAILYTRANSACTION As Guna.UI2.WinForms.Guna2RadioButton
+    Friend WithEvents CLEARTRANSACTION As Guna.UI2.WinForms.Guna2Button
+    Friend WithEvents FILTERTRANSACTION As Guna.UI2.WinForms.Guna2Button
+    Friend WithEvents tbl_stocksBindingSource As BindingSource
+    Friend WithEvents tbl_stocksTableAdapter As inventory_dbDataSetTableAdapters.tbl_stocksTableAdapter
 End Class

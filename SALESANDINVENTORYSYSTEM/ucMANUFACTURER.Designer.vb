@@ -22,9 +22,9 @@ Partial Class ucMANUFACTURER
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
-        Dim DataGridViewCellStyle1 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle2 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle3 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle4 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle5 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle6 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(ucMANUFACTURER))
         Me.GroupBox2 = New System.Windows.Forms.GroupBox()
         Me.Label3 = New System.Windows.Forms.Label()
@@ -54,9 +54,9 @@ Partial Class ucMANUFACTURER
         Me.GroupBox2.Controls.Add(Me.DGVMANUFACTURER)
         Me.GroupBox2.Font = New System.Drawing.Font("Century Gothic", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.GroupBox2.ForeColor = System.Drawing.SystemColors.ControlDarkDark
-        Me.GroupBox2.Location = New System.Drawing.Point(563, 108)
+        Me.GroupBox2.Location = New System.Drawing.Point(446, 81)
         Me.GroupBox2.Name = "GroupBox2"
-        Me.GroupBox2.Size = New System.Drawing.Size(483, 562)
+        Me.GroupBox2.Size = New System.Drawing.Size(483, 327)
         Me.GroupBox2.TabIndex = 85
         Me.GroupBox2.TabStop = False
         Me.GroupBox2.Text = "Manufacturer List"
@@ -64,11 +64,11 @@ Partial Class ucMANUFACTURER
         'Label3
         '
         Me.Label3.AutoSize = True
-        Me.Label3.Location = New System.Drawing.Point(84, 40)
+        Me.Label3.Location = New System.Drawing.Point(198, 40)
         Me.Label3.Name = "Label3"
-        Me.Label3.Size = New System.Drawing.Size(164, 17)
+        Me.Label3.Size = New System.Drawing.Size(59, 17)
         Me.Label3.TabIndex = 78
-        Me.Label3.Text = "Search Category Name:"
+        Me.Label3.Text = "Search :"
         '
         'TXTSEARCH
         '
@@ -83,37 +83,37 @@ Partial Class ucMANUFACTURER
         Me.DGVMANUFACTURER.AllowUserToDeleteRows = False
         Me.DGVMANUFACTURER.BackgroundColor = System.Drawing.Color.White
         Me.DGVMANUFACTURER.ClipboardCopyMode = System.Windows.Forms.DataGridViewClipboardCopyMode.EnableWithoutHeaderText
-        DataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
-        DataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control
-        DataGridViewCellStyle1.Font = New System.Drawing.Font("Century Gothic", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.ControlDarkDark
-        DataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.MediumSeaGreen
-        DataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText
-        DataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
-        Me.DGVMANUFACTURER.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle1
+        DataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.Control
+        DataGridViewCellStyle4.Font = New System.Drawing.Font("Century Gothic", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.ControlDarkDark
+        DataGridViewCellStyle4.SelectionBackColor = System.Drawing.Color.MediumSeaGreen
+        DataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+        DataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.DGVMANUFACTURER.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle4
         Me.DGVMANUFACTURER.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        DataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
-        DataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window
-        DataGridViewCellStyle2.Font = New System.Drawing.Font("Century Gothic", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlDarkDark
-        DataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.MediumSeaGreen
-        DataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText
-        DataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
-        Me.DGVMANUFACTURER.DefaultCellStyle = DataGridViewCellStyle2
-        Me.DGVMANUFACTURER.Location = New System.Drawing.Point(41, 71)
+        DataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle5.BackColor = System.Drawing.SystemColors.Window
+        DataGridViewCellStyle5.Font = New System.Drawing.Font("Century Gothic", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle5.ForeColor = System.Drawing.SystemColors.ControlDarkDark
+        DataGridViewCellStyle5.SelectionBackColor = System.Drawing.Color.MediumSeaGreen
+        DataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+        DataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
+        Me.DGVMANUFACTURER.DefaultCellStyle = DataGridViewCellStyle5
+        Me.DGVMANUFACTURER.Location = New System.Drawing.Point(28, 71)
         Me.DGVMANUFACTURER.Name = "DGVMANUFACTURER"
         Me.DGVMANUFACTURER.ReadOnly = True
-        DataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
-        DataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Control
-        DataGridViewCellStyle3.Font = New System.Drawing.Font("Century Gothic", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.ControlDarkDark
-        DataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.MediumSeaGreen
-        DataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText
-        DataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
-        Me.DGVMANUFACTURER.RowHeadersDefaultCellStyle = DataGridViewCellStyle3
+        DataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle6.BackColor = System.Drawing.SystemColors.Control
+        DataGridViewCellStyle6.Font = New System.Drawing.Font("Century Gothic", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle6.ForeColor = System.Drawing.SystemColors.ControlDarkDark
+        DataGridViewCellStyle6.SelectionBackColor = System.Drawing.Color.MediumSeaGreen
+        DataGridViewCellStyle6.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+        DataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.DGVMANUFACTURER.RowHeadersDefaultCellStyle = DataGridViewCellStyle6
         Me.DGVMANUFACTURER.RowHeadersVisible = False
         Me.DGVMANUFACTURER.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
-        Me.DGVMANUFACTURER.Size = New System.Drawing.Size(402, 474)
+        Me.DGVMANUFACTURER.Size = New System.Drawing.Size(415, 231)
         Me.DGVMANUFACTURER.TabIndex = 76
         '
         'GroupBox1
@@ -127,9 +127,9 @@ Partial Class ucMANUFACTURER
         Me.GroupBox1.Controls.Add(Me.TXTMANU)
         Me.GroupBox1.Font = New System.Drawing.Font("Century Gothic", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.GroupBox1.ForeColor = System.Drawing.SystemColors.ControlDarkDark
-        Me.GroupBox1.Location = New System.Drawing.Point(46, 157)
+        Me.GroupBox1.Location = New System.Drawing.Point(35, 131)
         Me.GroupBox1.Name = "GroupBox1"
-        Me.GroupBox1.Size = New System.Drawing.Size(499, 513)
+        Me.GroupBox1.Size = New System.Drawing.Size(405, 277)
         Me.GroupBox1.TabIndex = 84
         Me.GroupBox1.TabStop = False
         '
@@ -138,9 +138,9 @@ Partial Class ucMANUFACTURER
         Me.CBOSTATUS.ForeColor = System.Drawing.Color.DimGray
         Me.CBOSTATUS.FormattingEnabled = True
         Me.CBOSTATUS.Items.AddRange(New Object() {"Active", "Inactive"})
-        Me.CBOSTATUS.Location = New System.Drawing.Point(170, 112)
+        Me.CBOSTATUS.Location = New System.Drawing.Point(132, 106)
         Me.CBOSTATUS.Name = "CBOSTATUS"
-        Me.CBOSTATUS.Size = New System.Drawing.Size(300, 25)
+        Me.CBOSTATUS.Size = New System.Drawing.Size(242, 25)
         Me.CBOSTATUS.TabIndex = 75
         Me.CBOSTATUS.Text = "-- Select --"
         '
@@ -149,11 +149,11 @@ Partial Class ucMANUFACTURER
         Me.Label4.AutoSize = True
         Me.Label4.Font = New System.Drawing.Font("Century Gothic", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label4.ForeColor = System.Drawing.SystemColors.ControlDarkDark
-        Me.Label4.Location = New System.Drawing.Point(20, 112)
+        Me.Label4.Location = New System.Drawing.Point(20, 114)
         Me.Label4.Name = "Label4"
-        Me.Label4.Size = New System.Drawing.Size(46, 17)
+        Me.Label4.Size = New System.Drawing.Size(54, 17)
         Me.Label4.TabIndex = 74
-        Me.Label4.Text = "Status"
+        Me.Label4.Text = "Status :"
         '
         'Label2
         '
@@ -162,9 +162,9 @@ Partial Class ucMANUFACTURER
         Me.Label2.ForeColor = System.Drawing.SystemColors.ControlDarkDark
         Me.Label2.Location = New System.Drawing.Point(20, 51)
         Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(94, 17)
+        Me.Label2.Size = New System.Drawing.Size(102, 17)
         Me.Label2.TabIndex = 37
-        Me.Label2.Text = "Manufacturer"
+        Me.Label2.Text = "Manufacturer :"
         '
         'BTNUPDATE
         '
@@ -172,7 +172,7 @@ Partial Class ucMANUFACTURER
         Me.BTNUPDATE.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.BTNUPDATE.Font = New System.Drawing.Font("Century Gothic", 9.0!)
         Me.BTNUPDATE.ForeColor = System.Drawing.Color.Snow
-        Me.BTNUPDATE.Location = New System.Drawing.Point(371, 179)
+        Me.BTNUPDATE.Location = New System.Drawing.Point(275, 175)
         Me.BTNUPDATE.Name = "BTNUPDATE"
         Me.BTNUPDATE.Size = New System.Drawing.Size(99, 36)
         Me.BTNUPDATE.TabIndex = 38
@@ -185,7 +185,7 @@ Partial Class ucMANUFACTURER
         Me.BTNSAVE.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.BTNSAVE.Font = New System.Drawing.Font("Century Gothic", 9.0!)
         Me.BTNSAVE.ForeColor = System.Drawing.Color.Snow
-        Me.BTNSAVE.Location = New System.Drawing.Point(257, 179)
+        Me.BTNSAVE.Location = New System.Drawing.Point(132, 175)
         Me.BTNSAVE.Name = "BTNSAVE"
         Me.BTNSAVE.Size = New System.Drawing.Size(99, 36)
         Me.BTNSAVE.TabIndex = 39
@@ -196,9 +196,9 @@ Partial Class ucMANUFACTURER
         '
         Me.TXTMANU.Font = New System.Drawing.Font("Century Gothic", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.TXTMANU.ForeColor = System.Drawing.SystemColors.ControlDarkDark
-        Me.TXTMANU.Location = New System.Drawing.Point(170, 51)
+        Me.TXTMANU.Location = New System.Drawing.Point(132, 51)
         Me.TXTMANU.Name = "TXTMANU"
-        Me.TXTMANU.Size = New System.Drawing.Size(300, 23)
+        Me.TXTMANU.Size = New System.Drawing.Size(242, 23)
         Me.TXTMANU.TabIndex = 73
         '
         'Label11
@@ -206,7 +206,7 @@ Partial Class ucMANUFACTURER
         Me.Label11.AutoSize = True
         Me.Label11.Font = New System.Drawing.Font("Century Gothic", 20.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label11.ForeColor = System.Drawing.Color.MediumSeaGreen
-        Me.Label11.Location = New System.Drawing.Point(40, 96)
+        Me.Label11.Location = New System.Drawing.Point(29, 70)
         Me.Label11.Name = "Label11"
         Me.Label11.Size = New System.Drawing.Size(226, 32)
         Me.Label11.TabIndex = 83
@@ -219,7 +219,7 @@ Partial Class ucMANUFACTURER
         Me.Panel2.Dock = System.Windows.Forms.DockStyle.Top
         Me.Panel2.Location = New System.Drawing.Point(0, 0)
         Me.Panel2.Name = "Panel2"
-        Me.Panel2.Size = New System.Drawing.Size(1091, 49)
+        Me.Panel2.Size = New System.Drawing.Size(987, 49)
         Me.Panel2.TabIndex = 82
         '
         'BTNBACK
@@ -232,7 +232,7 @@ Partial Class ucMANUFACTURER
         Me.BTNBACK.ForeColor = System.Drawing.Color.White
         Me.BTNBACK.Image = CType(resources.GetObject("BTNBACK.Image"), System.Drawing.Image)
         Me.BTNBACK.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.BTNBACK.Location = New System.Drawing.Point(960, 3)
+        Me.BTNBACK.Location = New System.Drawing.Point(810, 3)
         Me.BTNBACK.Name = "BTNBACK"
         Me.BTNBACK.Padding = New System.Windows.Forms.Padding(20, 0, 0, 0)
         Me.BTNBACK.Size = New System.Drawing.Size(119, 46)
@@ -250,7 +250,7 @@ Partial Class ucMANUFACTURER
         Me.Controls.Add(Me.Label11)
         Me.Controls.Add(Me.Panel2)
         Me.Name = "ucMANUFACTURER"
-        Me.Size = New System.Drawing.Size(1091, 729)
+        Me.Size = New System.Drawing.Size(987, 461)
         Me.GroupBox2.ResumeLayout(False)
         Me.GroupBox2.PerformLayout()
         CType(Me.DGVMANUFACTURER, System.ComponentModel.ISupportInitialize).EndInit()

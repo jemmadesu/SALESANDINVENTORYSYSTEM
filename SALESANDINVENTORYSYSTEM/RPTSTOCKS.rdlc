@@ -786,7 +786,7 @@
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value>=String.Format ("{0:dd/MM/yyyy}", Fields!manufactureddate.Value)</Value>
+                              <Value>=Fields!manufactureddate.Value</Value>
                               <Style>
                                 <FontSize>9pt</FontSize>
                               </Style>
@@ -819,7 +819,7 @@
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value>=String.Format ("{0:dd/MM/yyyy}", Fields!expirationdate.Value)</Value>
+                              <Value>=Fields!expirationdate.Value</Value>
                               <Style>
                                 <FontSize>9pt</FontSize>
                               </Style>
@@ -921,6 +921,10 @@
         <CommandText>/* Local Query */</CommandText>
       </Query>
       <Fields>
+        <Field Name="stockid">
+          <DataField>stockid</DataField>
+          <rd:TypeName>System.Int32</rd:TypeName>
+        </Field>
         <Field Name="id">
           <DataField>id</DataField>
           <rd:TypeName>System.Int32</rd:TypeName>
@@ -972,10 +976,6 @@
         <Field Name="dateaddedstocks">
           <DataField>dateaddedstocks</DataField>
           <rd:TypeName>System.DateTime</rd:TypeName>
-        </Field>
-        <Field Name="stockid">
-          <DataField>stockid</DataField>
-          <rd:TypeName>System.Int32</rd:TypeName>
         </Field>
       </Fields>
       <rd:DataSetInfo>

@@ -82,6 +82,10 @@ Partial Class ucTRANSACTION
         Me.BTNPAY = New System.Windows.Forms.Button()
         Me.lbldate = New System.Windows.Forms.Label()
         Me.Panel3 = New System.Windows.Forms.Panel()
+        Me.Label24 = New System.Windows.Forms.Label()
+        Me.Label23 = New System.Windows.Forms.Label()
+        Me.TXTID = New System.Windows.Forms.TextBox()
+        Me.TXTNAME = New System.Windows.Forms.TextBox()
         Me.DGVSUMMARY = New System.Windows.Forms.DataGridView()
         Me.Panel5 = New System.Windows.Forms.Panel()
         Me.Label20 = New System.Windows.Forms.Label()
@@ -94,13 +98,8 @@ Partial Class ucTRANSACTION
         Me.Label18 = New System.Windows.Forms.Label()
         Me.ORNO = New System.Windows.Forms.Label()
         Me.Label21 = New System.Windows.Forms.Label()
-        Me.Guna2GradientTileButton1 = New Guna.UI2.WinForms.Guna2GradientTileButton()
         Me.Panel6 = New System.Windows.Forms.Panel()
         Me.Label22 = New System.Windows.Forms.Label()
-        Me.TXTNAME = New System.Windows.Forms.TextBox()
-        Me.TXTID = New System.Windows.Forms.TextBox()
-        Me.Label23 = New System.Windows.Forms.Label()
-        Me.Label24 = New System.Windows.Forms.Label()
         Me.GroupBox3.SuspendLayout()
         Me.GroupBox1.SuspendLayout()
         CType(Me.NumericUpDown1, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -447,9 +446,9 @@ Partial Class ucTRANSACTION
         Me.Label1.ForeColor = System.Drawing.SystemColors.ControlDarkDark
         Me.Label1.Location = New System.Drawing.Point(30, 53)
         Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(84, 17)
+        Me.Label1.Size = New System.Drawing.Size(68, 17)
         Me.Label1.TabIndex = 11
-        Me.Label1.Text = "OR Number : "
+        Me.Label1.Text = "Invoice # "
         '
         'CBODISCOUNT
         '
@@ -755,6 +754,48 @@ Partial Class ucTRANSACTION
         Me.Panel3.Size = New System.Drawing.Size(338, 410)
         Me.Panel3.TabIndex = 77
         '
+        'Label24
+        '
+        Me.Label24.AutoSize = True
+        Me.Label24.Font = New System.Drawing.Font("Century Gothic", 9.0!)
+        Me.Label24.ForeColor = System.Drawing.SystemColors.ControlDarkDark
+        Me.Label24.Location = New System.Drawing.Point(23, 89)
+        Me.Label24.Name = "Label24"
+        Me.Label24.Size = New System.Drawing.Size(49, 17)
+        Me.Label24.TabIndex = 80
+        Me.Label24.Text = "ID No. :"
+        '
+        'Label23
+        '
+        Me.Label23.AutoSize = True
+        Me.Label23.Font = New System.Drawing.Font("Century Gothic", 9.0!)
+        Me.Label23.ForeColor = System.Drawing.SystemColors.ControlDarkDark
+        Me.Label23.Location = New System.Drawing.Point(23, 58)
+        Me.Label23.Name = "Label23"
+        Me.Label23.Size = New System.Drawing.Size(50, 17)
+        Me.Label23.TabIndex = 79
+        Me.Label23.Text = "Name :"
+        '
+        'TXTID
+        '
+        Me.TXTID.BackColor = System.Drawing.SystemColors.Window
+        Me.TXTID.Font = New System.Drawing.Font("Century Gothic", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.TXTID.ForeColor = System.Drawing.SystemColors.ControlDarkDark
+        Me.TXTID.Location = New System.Drawing.Point(126, 85)
+        Me.TXTID.Name = "TXTID"
+        Me.TXTID.Size = New System.Drawing.Size(179, 21)
+        Me.TXTID.TabIndex = 80
+        '
+        'TXTNAME
+        '
+        Me.TXTNAME.BackColor = System.Drawing.SystemColors.Window
+        Me.TXTNAME.Font = New System.Drawing.Font("Century Gothic", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.TXTNAME.ForeColor = System.Drawing.SystemColors.ControlDarkDark
+        Me.TXTNAME.Location = New System.Drawing.Point(126, 58)
+        Me.TXTNAME.Name = "TXTNAME"
+        Me.TXTNAME.Size = New System.Drawing.Size(179, 21)
+        Me.TXTNAME.TabIndex = 79
+        '
         'DGVSUMMARY
         '
         Me.DGVSUMMARY.AllowUserToAddRows = False
@@ -788,7 +829,7 @@ Partial Class ucTRANSACTION
         Me.DGVSUMMARY.DefaultCellStyle = DataGridViewCellStyle9
         Me.DGVSUMMARY.Enabled = False
         Me.DGVSUMMARY.GridColor = System.Drawing.SystemColors.InactiveCaption
-        Me.DGVSUMMARY.Location = New System.Drawing.Point(-1, 207)
+        Me.DGVSUMMARY.Location = New System.Drawing.Point(-1, 219)
         Me.DGVSUMMARY.Name = "DGVSUMMARY"
         Me.DGVSUMMARY.ReadOnly = True
         DataGridViewCellStyle10.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
@@ -808,7 +849,7 @@ Partial Class ucTRANSACTION
         Me.DGVSUMMARY.RowsDefaultCellStyle = DataGridViewCellStyle11
         Me.DGVSUMMARY.ScrollBars = System.Windows.Forms.ScrollBars.None
         Me.DGVSUMMARY.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
-        Me.DGVSUMMARY.Size = New System.Drawing.Size(338, 206)
+        Me.DGVSUMMARY.Size = New System.Drawing.Size(338, 186)
         Me.DGVSUMMARY.TabIndex = 55
         '
         'Panel5
@@ -850,33 +891,33 @@ Partial Class ucTRANSACTION
         'lblut
         '
         Me.lblut.AutoSize = True
-        Me.lblut.Font = New System.Drawing.Font("Century Gothic", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblut.Font = New System.Drawing.Font("Century Gothic", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lblut.ForeColor = System.Drawing.Color.DimGray
         Me.lblut.Location = New System.Drawing.Point(115, 12)
         Me.lblut.Name = "lblut"
-        Me.lblut.Size = New System.Drawing.Size(20, 16)
+        Me.lblut.Size = New System.Drawing.Size(18, 16)
         Me.lblut.TabIndex = 56
         Me.lblut.Text = "ut"
         '
         'TOTALAMOUNT
         '
         Me.TOTALAMOUNT.AutoSize = True
-        Me.TOTALAMOUNT.Font = New System.Drawing.Font("Century Gothic", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.TOTALAMOUNT.Font = New System.Drawing.Font("Century Gothic", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.TOTALAMOUNT.ForeColor = System.Drawing.SystemColors.ControlDarkDark
         Me.TOTALAMOUNT.Location = New System.Drawing.Point(266, 14)
         Me.TOTALAMOUNT.Name = "TOTALAMOUNT"
-        Me.TOTALAMOUNT.Size = New System.Drawing.Size(40, 16)
+        Me.TOTALAMOUNT.Size = New System.Drawing.Size(39, 16)
         Me.TOTALAMOUNT.TabIndex = 54
         Me.TOTALAMOUNT.Text = "00,00"
         '
         'lblun
         '
         Me.lblun.AutoSize = True
-        Me.lblun.Font = New System.Drawing.Font("Century Gothic", 9.75!, System.Drawing.FontStyle.Bold)
+        Me.lblun.Font = New System.Drawing.Font("Century Gothic", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lblun.ForeColor = System.Drawing.Color.DimGray
         Me.lblun.Location = New System.Drawing.Point(115, 33)
         Me.lblun.Name = "lblun"
-        Me.lblun.Size = New System.Drawing.Size(24, 16)
+        Me.lblun.Size = New System.Drawing.Size(22, 16)
         Me.lblun.TabIndex = 55
         Me.lblun.Text = "un"
         '
@@ -935,22 +976,6 @@ Partial Class ucTRANSACTION
         Me.Label21.TabIndex = 0
         Me.Label21.Text = "Order No :"
         '
-        'Guna2GradientTileButton1
-        '
-        Me.Guna2GradientTileButton1.CheckedState.Parent = Me.Guna2GradientTileButton1
-        Me.Guna2GradientTileButton1.CustomImages.Parent = Me.Guna2GradientTileButton1
-        Me.Guna2GradientTileButton1.FillColor = System.Drawing.Color.Green
-        Me.Guna2GradientTileButton1.FillColor2 = System.Drawing.Color.FromArgb(CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer))
-        Me.Guna2GradientTileButton1.Font = New System.Drawing.Font("Segoe UI", 9.0!)
-        Me.Guna2GradientTileButton1.ForeColor = System.Drawing.Color.White
-        Me.Guna2GradientTileButton1.HoverState.Parent = Me.Guna2GradientTileButton1
-        Me.Guna2GradientTileButton1.Location = New System.Drawing.Point(429, 74)
-        Me.Guna2GradientTileButton1.Name = "Guna2GradientTileButton1"
-        Me.Guna2GradientTileButton1.ShadowDecoration.Parent = Me.Guna2GradientTileButton1
-        Me.Guna2GradientTileButton1.Size = New System.Drawing.Size(150, 27)
-        Me.Guna2GradientTileButton1.TabIndex = 78
-        Me.Guna2GradientTileButton1.Text = "Guna2GradientTileButton1"
-        '
         'Panel6
         '
         Me.Panel6.BackColor = System.Drawing.Color.FromArgb(CType(CType(37, Byte), Integer), CType(CType(46, Byte), Integer), CType(CType(59, Byte), Integer))
@@ -971,55 +996,12 @@ Partial Class ucTRANSACTION
         Me.Label22.TabIndex = 57
         Me.Label22.Text = "CUSTOMER's ID information"
         '
-        'TXTNAME
-        '
-        Me.TXTNAME.BackColor = System.Drawing.SystemColors.Window
-        Me.TXTNAME.Font = New System.Drawing.Font("Century Gothic", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.TXTNAME.ForeColor = System.Drawing.SystemColors.ControlDarkDark
-        Me.TXTNAME.Location = New System.Drawing.Point(126, 58)
-        Me.TXTNAME.Name = "TXTNAME"
-        Me.TXTNAME.Size = New System.Drawing.Size(179, 21)
-        Me.TXTNAME.TabIndex = 79
-        '
-        'TXTID
-        '
-        Me.TXTID.BackColor = System.Drawing.SystemColors.Window
-        Me.TXTID.Font = New System.Drawing.Font("Century Gothic", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.TXTID.ForeColor = System.Drawing.SystemColors.ControlDarkDark
-        Me.TXTID.Location = New System.Drawing.Point(126, 85)
-        Me.TXTID.Name = "TXTID"
-        Me.TXTID.Size = New System.Drawing.Size(179, 21)
-        Me.TXTID.TabIndex = 80
-        '
-        'Label23
-        '
-        Me.Label23.AutoSize = True
-        Me.Label23.Font = New System.Drawing.Font("Century Gothic", 9.0!)
-        Me.Label23.ForeColor = System.Drawing.SystemColors.ControlDarkDark
-        Me.Label23.Location = New System.Drawing.Point(23, 58)
-        Me.Label23.Name = "Label23"
-        Me.Label23.Size = New System.Drawing.Size(50, 17)
-        Me.Label23.TabIndex = 79
-        Me.Label23.Text = "Name :"
-        '
-        'Label24
-        '
-        Me.Label24.AutoSize = True
-        Me.Label24.Font = New System.Drawing.Font("Century Gothic", 9.0!)
-        Me.Label24.ForeColor = System.Drawing.SystemColors.ControlDarkDark
-        Me.Label24.Location = New System.Drawing.Point(23, 89)
-        Me.Label24.Name = "Label24"
-        Me.Label24.Size = New System.Drawing.Size(49, 17)
-        Me.Label24.TabIndex = 80
-        Me.Label24.Text = "ID No. :"
-        '
         'ucTRANSACTION
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.White
         Me.Controls.Add(Me.Panel6)
-        Me.Controls.Add(Me.Guna2GradientTileButton1)
         Me.Controls.Add(Me.Panel4)
         Me.Controls.Add(Me.Panel5)
         Me.Controls.Add(Me.Panel3)
@@ -1126,7 +1108,6 @@ Partial Class ucTRANSACTION
     Friend WithEvents Label20 As Label
     Friend WithEvents Label19 As Label
     Friend WithEvents NumericUpDown1 As Guna.UI2.WinForms.Guna2NumericUpDown
-    Friend WithEvents Guna2GradientTileButton1 As Guna.UI2.WinForms.Guna2GradientTileButton
     Friend WithEvents Panel6 As Panel
     Friend WithEvents Label22 As Label
     Friend WithEvents Label24 As Label

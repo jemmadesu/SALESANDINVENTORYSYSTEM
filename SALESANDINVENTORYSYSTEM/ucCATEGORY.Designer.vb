@@ -117,9 +117,9 @@ Partial Class ucCATEGORY
         Me.Label11.ForeColor = System.Drawing.Color.MediumSeaGreen
         Me.Label11.Location = New System.Drawing.Point(49, 81)
         Me.Label11.Name = "Label11"
-        Me.Label11.Size = New System.Drawing.Size(160, 32)
+        Me.Label11.Size = New System.Drawing.Size(358, 32)
         Me.Label11.TabIndex = 74
-        Me.Label11.Text = "CATEGORY"
+        Me.Label11.Text = "CATEGORY MANAGEMENT"
         '
         'Panel2
         '
