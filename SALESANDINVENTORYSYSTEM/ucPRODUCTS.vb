@@ -1,8 +1,7 @@
 ﻿
 Imports MySql.Data.MySqlClient
-
-
 Public Class ucNEWPRODUCT
+
     Private Sub actlog()
         con.Close()
         OpenCon()
@@ -62,7 +61,7 @@ Public Class ucNEWPRODUCT
         CBOPRODCAT.Enabled = True
         TXTPNA.Enabled = True
         CBOBRAND.Enabled = True
-        CBOMANUFACTURER.Enabled = True
+        TXTMANUFACTURER.Enabled = True
         TXTUNIT.Enabled = True
         TXTPRICE.Enabled = True
 
@@ -78,7 +77,7 @@ Public Class ucNEWPRODUCT
         CBOPRODCAT.Enabled = True
         TXTPNA.Enabled = True
         CBOBRAND.Enabled = True
-        CBOMANUFACTURER.Enabled = True
+        TXTMANUFACTURER.Enabled = True
         TXTUNIT.Enabled = True
         TXTPRICE.Enabled = True
 
@@ -97,7 +96,7 @@ Public Class ucNEWPRODUCT
         TXTPNA.Enabled = False
         CBOBRAND.Enabled = False
         CBOBRAND.Enabled = False
-        CBOMANUFACTURER.Enabled = False
+        TXTMANUFACTURER.Enabled = False
         TXTUNIT.Enabled = False
         TXTPRICE.Enabled = False
 
@@ -153,6 +152,7 @@ Public Class ucNEWPRODUCT
     End Sub
     Private Sub ucADDNEWPRODUCT_Load(sender As Object, e As EventArgs) Handles MyBase.Load
 
+
         '---------------------------------- CATEGORY COMBOBOX DATA ------------------------------
 
         Dim cmd As New MySqlCommand(“select catcode,catname from tbl_category”, con)
@@ -174,17 +174,17 @@ Public Class ucNEWPRODUCT
 
         '---------------------------------- MANUFACTURER COMBOBOX DATA ------------------------------
 
-        Dim cmd1 As New MySqlCommand("SELECT refno, manufacturer, status FROM tbl_manufacturer WHERE status = 'Active'", con)
-        Dim da1 As New MySqlDataAdapter(cmd1)
-        Dim tbl_manufacturer As New DataTable()
-        da1.Fill(tbl_manufacturer)
+        'Dim cmd1 As New MySqlCommand("SELECT refno, manufacturer, status FROM tbl_manufacturer WHERE status = 'Active'", con)
+        'Dim da1 As New MySqlDataAdapter(cmd1)
+        'Dim tbl_manufacturer As New DataTable()
+        'da1.Fill(tbl_manufacturer)
 
-        Dim rowsup As DataRow = tbl_manufacturer.NewRow()
-        rowsup("manufacturer") = "-- Select --"
-        tbl_manufacturer.Rows.InsertAt(rowsup, 0)
+        'Dim rowsup As DataRow = tbl_manufacturer.NewRow()
+        'rowsup("manufacturer") = "-- Select --"
+        'tbl_manufacturer.Rows.InsertAt(rowsup, 0)
 
-        CBOMANUFACTURER.DataSource = tbl_manufacturer
-        CBOMANUFACTURER.DisplayMember = "manufacturer"
+        'TXTMANUFACTURER.DataSource = tbl_manufacturer
+        'TXTMANUFACTURER.DisplayMember = "manufacturer"
 
         '---------------------------------- BRAND COMBOBOX DATA ------------------------------
 
@@ -205,7 +205,7 @@ Public Class ucNEWPRODUCT
 
 
 
-        If CBOPRODCAT.Text = "-- Select --" Or CBOMANUFACTURER.Text = "-- Select --" Or CBOBRAND.Text = "-- Select --" Then
+        If CBOPRODCAT.Text = "-- Select --" Or TXTMANUFACTURER.Text = "-- Select --" Or CBOBRAND.Text = "-- Select --" Then
             MessageBox.Show("Please select a product category!", "Error Saving", MessageBoxButtons.OK, MessageBoxIcon.Error)
             Exit Sub
         End If
@@ -213,7 +213,7 @@ Public Class ucNEWPRODUCT
         ' ---------------------------------------------------------------------------------------------------------- ERROR TRAPPING ----------------------------------------------------------------------------------------------------------
 
 
-        If TXTPI.Text = "" Or TXTPNA.Text = "" Or TXTCATCODE.Text = "" Or CBOMANUFACTURER.Text = "" Or CBOBRAND.Text = "" Or CBOPRODCAT.Text = "" Then
+        If TXTPI.Text = "" Or TXTPNA.Text = "" Or TXTCATCODE.Text = "" Or TXTMANUFACTURER.Text = "" Or CBOBRAND.Text = "" Or CBOPRODCAT.Text = "" Then
             MessageBox.Show("All fields are required!", "Error Saving", MessageBoxButtons.OK, MessageBoxIcon.Error)
             Exit Sub
         End If
@@ -234,7 +234,7 @@ Public Class ucNEWPRODUCT
             .AddWithValue("id", LBLID.Text)
             .AddWithValue("pid", TXTPI.Text)
             .AddWithValue("pna", TXTPNA.Text)
-            .AddWithValue("pm", CBOMANUFACTURER.Text)
+            .AddWithValue("pm", TXTMANUFACTURER.Text)
             .AddWithValue("pb", CBOBRAND.Text)
             .AddWithValue("pc", CBOPRODCAT.Text)
             .AddWithValue("cc", TXTCATCODE.Text)
@@ -254,7 +254,7 @@ Public Class ucNEWPRODUCT
 
         TXTPI.Text = ""
         TXTPNA.Text = ""
-        CBOMANUFACTURER.Text = ""
+        TXTMANUFACTURER.Text = ""
         CBOBRAND.Text = ""
         CBOPRODCAT.Text = ""
         TXTCATCODE.Text = ""
@@ -265,20 +265,20 @@ Public Class ucNEWPRODUCT
 
         ' ---------------------------------------------------------------------------------------------------------- ERROR CODE ----------------------------------------------------------------------------------------------------------
 
-        If CBOPRODCAT.Text = "-- Select --" Or CBOMANUFACTURER.Text = "-- Select --" Or CBOBRAND.Text = "-- Select --" Then
+        If CBOPRODCAT.Text = "-- Select --" Or TXTMANUFACTURER.Text = "-- Select --" Or CBOBRAND.Text = "-- Select --" Then
             MessageBox.Show("Please select a product category!", "Error Saving", MessageBoxButtons.OK, MessageBoxIcon.Error)
             Exit Sub
         End If
 
         If BTNEDIT.Text = "Edit" Then
-            If TXTPI.Text = "" Or TXTPNA.Text = "" Or CBOMANUFACTURER.Text = "" Then
+            If TXTPI.Text = "" Or TXTPNA.Text = "" Or TXTMANUFACTURER.Text = "" Then
 
                 MsgBox("Please select a record to edit!", vbOKOnly + vbCritical, "Error Editing")
                 Exit Sub
             End If
 
         ElseIf BTNEDIT.Text = "Update" Then
-            If TXTPI.Text = "" Or TXTPNA.Text = "" Or TXTCATCODE.Text = "" Or CBOMANUFACTURER.Text = "" Or CBOBRAND.Text = "" Or CBOPRODCAT.Text = "" Or TXTPRICE.Text = "" Then
+            If TXTPI.Text = "" Or TXTPNA.Text = "" Or TXTCATCODE.Text = "" Or TXTMANUFACTURER.Text = "" Or CBOBRAND.Text = "" Or CBOPRODCAT.Text = "" Or TXTPRICE.Text = "" Then
                 MessageBox.Show("All fields are required!", "Error Saving", MessageBoxButtons.OK, MessageBoxIcon.Error)
                 Exit Sub
             End If
@@ -299,7 +299,7 @@ Public Class ucNEWPRODUCT
                 cmd.Parameters.AddWithValue("@pi", TXTPI.Text)
                 cmd.Parameters.AddWithValue("@pb", CBOBRAND.Text)
                 cmd.Parameters.AddWithValue("@pna", TXTPNA.Text)
-                cmd.Parameters.AddWithValue("@pm", CBOMANUFACTURER.Text)
+                cmd.Parameters.AddWithValue("@pm", TXTMANUFACTURER.Text)
                 cmd.Parameters.AddWithValue("@pc", CBOPRODCAT.Text)
                 cmd.Parameters.AddWithValue("@cc", TXTCATCODE.Text)
                 cmd.Parameters.AddWithValue("@pr", TXTPRICE.Text)
@@ -316,7 +316,7 @@ Public Class ucNEWPRODUCT
         TXTPI.Text = ""
         TXTPNA.Text = ""
         CBOBRAND.Text = ""
-        CBOMANUFACTURER.Text = ""
+        TXTMANUFACTURER.Text = ""
         CBOPRODCAT.Text = ""
         TXTCATCODE.Text = ""
         TXTUNIT.Text = ""
@@ -340,10 +340,10 @@ Public Class ucNEWPRODUCT
     Private Sub BTNCSNCEL_Click_1(sender As Object, e As EventArgs) Handles BTNCSNCEL.Click
 
         Functionafterupdate()
-        CBOMANUFACTURER.Text = "-- Select --"
+        TXTMANUFACTURER.Text = "-- Select --"
         CBOBRAND.Text = "-- Select --"
         CBOPRODCAT.Text = "-- Select --"
-        CBOMANUFACTURER.Text = "-- Select --"
+        TXTMANUFACTURER.Text = "-- Select --"
         TXTCATCODE.Text = ""
         TXTPI.Text = ""
         TXTPNA.Text = ""
@@ -385,7 +385,7 @@ Public Class ucNEWPRODUCT
 
             TXTPI.Text = row.Cells(1).Value
             TXTPNA.Text = row.Cells(2).Value
-            CBOMANUFACTURER.Text = row.Cells(3).Value
+            TXTMANUFACTURER.Text = row.Cells(3).Value
             CBOBRAND.Text = row.Cells(4).Value
             CBOPRODCAT.Text = row.Cells(5).Value
             TXTCATCODE.Text = row.Cells(6).Value
@@ -417,6 +417,41 @@ Public Class ucNEWPRODUCT
                 DGVPRODUCTS.DataSource = table
             End Using
         End Using
+    End Sub
+
+    Private Sub BTNBRAND_Click(sender As Object, e As EventArgs) Handles BTNBRAND.Click
+
+        PNLMANAGEPRODUCTS.Visible = True
+
+        Dim i As Integer
+        For i = 0 To 0
+            PNLMANAGEPRODUCTS.Controls.RemoveAt(i)
+        Next
+
+        Dim BRAND As New ucBRAND()
+        BRAND.Parent = PNLMANAGEPRODUCTS
+        BRAND.Show()
+        BRAND.Dock = DockStyle.Fill
+    End Sub
+
+    Private Sub LBLCLOSE_Click(sender As Object, e As EventArgs) Handles LBLCLOSE.Click
+        PNLMANAGEPRODUCTS.Visible = False
+    End Sub
+
+    Private Sub BTNCATEGORY_Click(sender As Object, e As EventArgs) Handles BTNCATEGORY.Click
+
+        PNLMANAGEPRODUCTS.Visible = True
+
+
+        Dim i As Integer
+        For i = 0 To 0
+            PNLMANAGEPRODUCTS.Controls.RemoveAt(i)
+        Next
+
+        Dim CATEGORY As New ucCATEGORY()
+        CATEGORY.Parent = PNLMANAGEPRODUCTS
+        CATEGORY.Show()
+        CATEGORY.Dock = DockStyle.Fill
     End Sub
 End Class
 

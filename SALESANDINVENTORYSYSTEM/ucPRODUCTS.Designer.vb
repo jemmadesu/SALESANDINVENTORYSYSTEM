@@ -23,9 +23,9 @@ Partial Class ucNEWPRODUCT
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(ucNEWPRODUCT))
-        Dim DataGridViewCellStyle1 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle2 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle3 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle4 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle5 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle6 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Me.TXTCATCODE = New System.Windows.Forms.TextBox()
         Me.BTNADD = New System.Windows.Forms.Button()
         Me.Label9 = New System.Windows.Forms.Label()
@@ -45,21 +45,30 @@ Partial Class ucNEWPRODUCT
         Me.Label10 = New System.Windows.Forms.Label()
         Me.DTP = New System.Windows.Forms.DateTimePicker()
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
+        Me.BTNCATEGORY = New System.Windows.Forms.Button()
+        Me.BTNBRAND = New System.Windows.Forms.Button()
+        Me.TXTMANUFACTURER = New System.Windows.Forms.TextBox()
         Me.TXTUNIT = New System.Windows.Forms.TextBox()
         Me.Label7 = New System.Windows.Forms.Label()
         Me.Label6 = New System.Windows.Forms.Label()
         Me.TXTPRICE = New System.Windows.Forms.TextBox()
         Me.CBOBRAND = New System.Windows.Forms.ComboBox()
-        Me.CBOMANUFACTURER = New System.Windows.Forms.ComboBox()
         Me.Panel2 = New System.Windows.Forms.Panel()
         Me.BTNBACK = New System.Windows.Forms.Button()
         Me.DGVPRODUCTS = New System.Windows.Forms.DataGridView()
         Me.GroupBox2 = New System.Windows.Forms.GroupBox()
         Me.LBLID = New System.Windows.Forms.Label()
+        Me.PNLMANAGEPRODUCTS = New System.Windows.Forms.Panel()
+        Me.Button1 = New System.Windows.Forms.Button()
+        Me.LBLCLOSE = New System.Windows.Forms.PictureBox()
+        Me.Panel1 = New System.Windows.Forms.Panel()
         Me.GroupBox1.SuspendLayout()
         Me.Panel2.SuspendLayout()
         CType(Me.DGVPRODUCTS, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.GroupBox2.SuspendLayout()
+        Me.PNLMANAGEPRODUCTS.SuspendLayout()
+        CType(Me.LBLCLOSE, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.Panel1.SuspendLayout()
         Me.SuspendLayout()
         '
         'TXTCATCODE
@@ -104,7 +113,7 @@ Partial Class ucNEWPRODUCT
         Me.CBOPRODCAT.FormattingEnabled = True
         Me.CBOPRODCAT.Location = New System.Drawing.Point(231, 255)
         Me.CBOPRODCAT.Name = "CBOPRODCAT"
-        Me.CBOPRODCAT.Size = New System.Drawing.Size(190, 25)
+        Me.CBOPRODCAT.Size = New System.Drawing.Size(145, 25)
         Me.CBOPRODCAT.TabIndex = 21
         Me.CBOPRODCAT.Text = "-- Select --"
         '
@@ -269,12 +278,14 @@ Partial Class ucNEWPRODUCT
         '
         'GroupBox1
         '
+        Me.GroupBox1.Controls.Add(Me.BTNCATEGORY)
+        Me.GroupBox1.Controls.Add(Me.BTNBRAND)
+        Me.GroupBox1.Controls.Add(Me.TXTMANUFACTURER)
         Me.GroupBox1.Controls.Add(Me.TXTUNIT)
         Me.GroupBox1.Controls.Add(Me.Label7)
         Me.GroupBox1.Controls.Add(Me.Label6)
         Me.GroupBox1.Controls.Add(Me.TXTPRICE)
         Me.GroupBox1.Controls.Add(Me.CBOBRAND)
-        Me.GroupBox1.Controls.Add(Me.CBOMANUFACTURER)
         Me.GroupBox1.Controls.Add(Me.TXTCATCODE)
         Me.GroupBox1.Controls.Add(Me.TXTPI)
         Me.GroupBox1.Controls.Add(Me.Label2)
@@ -296,6 +307,45 @@ Partial Class ucNEWPRODUCT
         Me.GroupBox1.Size = New System.Drawing.Size(474, 529)
         Me.GroupBox1.TabIndex = 45
         Me.GroupBox1.TabStop = False
+        '
+        'BTNCATEGORY
+        '
+        Me.BTNCATEGORY.BackColor = System.Drawing.Color.MediumSeaGreen
+        Me.BTNCATEGORY.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None
+        Me.BTNCATEGORY.FlatAppearance.BorderSize = 0
+        Me.BTNCATEGORY.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.BTNCATEGORY.Font = New System.Drawing.Font("Century Gothic", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.BTNCATEGORY.ForeColor = System.Drawing.Color.White
+        Me.BTNCATEGORY.Image = CType(resources.GetObject("BTNCATEGORY.Image"), System.Drawing.Image)
+        Me.BTNCATEGORY.Location = New System.Drawing.Point(382, 247)
+        Me.BTNCATEGORY.Name = "BTNCATEGORY"
+        Me.BTNCATEGORY.Size = New System.Drawing.Size(39, 33)
+        Me.BTNCATEGORY.TabIndex = 83
+        Me.BTNCATEGORY.TextAlign = System.Drawing.ContentAlignment.MiddleRight
+        Me.BTNCATEGORY.UseVisualStyleBackColor = False
+        '
+        'BTNBRAND
+        '
+        Me.BTNBRAND.BackColor = System.Drawing.Color.MediumSeaGreen
+        Me.BTNBRAND.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.BTNBRAND.Font = New System.Drawing.Font("Century Gothic", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.BTNBRAND.ForeColor = System.Drawing.Color.White
+        Me.BTNBRAND.Image = Global.SALESANDINVENTORYSYSTEM.My.Resources.Resources.tag_4_241
+        Me.BTNBRAND.Location = New System.Drawing.Point(382, 189)
+        Me.BTNBRAND.Name = "BTNBRAND"
+        Me.BTNBRAND.Size = New System.Drawing.Size(39, 33)
+        Me.BTNBRAND.TabIndex = 81
+        Me.BTNBRAND.UseVisualStyleBackColor = False
+        '
+        'TXTMANUFACTURER
+        '
+        Me.TXTMANUFACTURER.Enabled = False
+        Me.TXTMANUFACTURER.Font = New System.Drawing.Font("Century Gothic", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.TXTMANUFACTURER.ForeColor = System.Drawing.SystemColors.ControlDarkDark
+        Me.TXTMANUFACTURER.Location = New System.Drawing.Point(231, 144)
+        Me.TXTMANUFACTURER.Name = "TXTMANUFACTURER"
+        Me.TXTMANUFACTURER.Size = New System.Drawing.Size(190, 23)
+        Me.TXTMANUFACTURER.TabIndex = 80
         '
         'TXTUNIT
         '
@@ -348,21 +398,9 @@ Partial Class ucNEWPRODUCT
         Me.CBOBRAND.Items.AddRange(New Object() {"ARBLOC", "AUGMENTIN", "AVARIN", "BIOGESI", "CATAFLAM", "CLOVIX", "COZAAR", "CORALAN", "DOXICON", "EXFORGE", "FENOFLEX", "FORXIGA", "GODEX", "KELTICAN", "LIVOLIN", "LYRICA", "NEBILET", "PLAVIX", "RENVELA", "VOLTAREN", "ZYRTEC"})
         Me.CBOBRAND.Location = New System.Drawing.Point(231, 197)
         Me.CBOBRAND.Name = "CBOBRAND"
-        Me.CBOBRAND.Size = New System.Drawing.Size(190, 25)
+        Me.CBOBRAND.Size = New System.Drawing.Size(145, 25)
         Me.CBOBRAND.TabIndex = 75
         Me.CBOBRAND.Text = "-- Select --"
-        '
-        'CBOMANUFACTURER
-        '
-        Me.CBOMANUFACTURER.Enabled = False
-        Me.CBOMANUFACTURER.Font = New System.Drawing.Font("Century Gothic", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.CBOMANUFACTURER.ForeColor = System.Drawing.SystemColors.ControlDarkDark
-        Me.CBOMANUFACTURER.FormattingEnabled = True
-        Me.CBOMANUFACTURER.Location = New System.Drawing.Point(231, 147)
-        Me.CBOMANUFACTURER.Name = "CBOMANUFACTURER"
-        Me.CBOMANUFACTURER.Size = New System.Drawing.Size(190, 25)
-        Me.CBOMANUFACTURER.TabIndex = 74
-        Me.CBOMANUFACTURER.Text = "-- Select --"
         '
         'Panel2
         '
@@ -397,34 +435,34 @@ Partial Class ucNEWPRODUCT
         Me.DGVPRODUCTS.AllowUserToAddRows = False
         Me.DGVPRODUCTS.AllowUserToDeleteRows = False
         Me.DGVPRODUCTS.BackgroundColor = System.Drawing.Color.White
-        DataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
-        DataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control
-        DataGridViewCellStyle1.Font = New System.Drawing.Font("Century Gothic", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.ControlDarkDark
-        DataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.MediumSeaGreen
-        DataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText
-        DataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
-        Me.DGVPRODUCTS.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle1
+        DataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.Control
+        DataGridViewCellStyle4.Font = New System.Drawing.Font("Century Gothic", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.ControlDarkDark
+        DataGridViewCellStyle4.SelectionBackColor = System.Drawing.Color.MediumSeaGreen
+        DataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+        DataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.DGVPRODUCTS.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle4
         Me.DGVPRODUCTS.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        DataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
-        DataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window
-        DataGridViewCellStyle2.Font = New System.Drawing.Font("Century Gothic", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlDarkDark
-        DataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.MediumSeaGreen
-        DataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText
-        DataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
-        Me.DGVPRODUCTS.DefaultCellStyle = DataGridViewCellStyle2
+        DataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle5.BackColor = System.Drawing.SystemColors.Window
+        DataGridViewCellStyle5.Font = New System.Drawing.Font("Century Gothic", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle5.ForeColor = System.Drawing.SystemColors.ControlDarkDark
+        DataGridViewCellStyle5.SelectionBackColor = System.Drawing.Color.MediumSeaGreen
+        DataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+        DataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
+        Me.DGVPRODUCTS.DefaultCellStyle = DataGridViewCellStyle5
         Me.DGVPRODUCTS.Location = New System.Drawing.Point(26, 67)
         Me.DGVPRODUCTS.Name = "DGVPRODUCTS"
         Me.DGVPRODUCTS.ReadOnly = True
-        DataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
-        DataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Control
-        DataGridViewCellStyle3.Font = New System.Drawing.Font("Century Gothic", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.ControlDarkDark
-        DataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.MediumSeaGreen
-        DataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText
-        DataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
-        Me.DGVPRODUCTS.RowHeadersDefaultCellStyle = DataGridViewCellStyle3
+        DataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle6.BackColor = System.Drawing.SystemColors.Control
+        DataGridViewCellStyle6.Font = New System.Drawing.Font("Century Gothic", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle6.ForeColor = System.Drawing.SystemColors.ControlDarkDark
+        DataGridViewCellStyle6.SelectionBackColor = System.Drawing.Color.MediumSeaGreen
+        DataGridViewCellStyle6.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+        DataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.DGVPRODUCTS.RowHeadersDefaultCellStyle = DataGridViewCellStyle6
         Me.DGVPRODUCTS.RowHeadersVisible = False
         Me.DGVPRODUCTS.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
         Me.DGVPRODUCTS.Size = New System.Drawing.Size(455, 433)
@@ -440,7 +478,7 @@ Partial Class ucNEWPRODUCT
         Me.GroupBox2.ForeColor = System.Drawing.SystemColors.ControlDarkDark
         Me.GroupBox2.Location = New System.Drawing.Point(544, 145)
         Me.GroupBox2.Name = "GroupBox2"
-        Me.GroupBox2.Size = New System.Drawing.Size(502, 520)
+        Me.GroupBox2.Size = New System.Drawing.Size(500, 520)
         Me.GroupBox2.TabIndex = 72
         Me.GroupBox2.TabStop = False
         Me.GroupBox2.Text = "New Product List"
@@ -456,11 +494,62 @@ Partial Class ucNEWPRODUCT
         Me.LBLID.Text = "ID"
         Me.LBLID.Visible = False
         '
+        'PNLMANAGEPRODUCTS
+        '
+        Me.PNLMANAGEPRODUCTS.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.PNLMANAGEPRODUCTS.Controls.Add(Me.Panel1)
+        Me.PNLMANAGEPRODUCTS.Location = New System.Drawing.Point(544, 136)
+        Me.PNLMANAGEPRODUCTS.Name = "PNLMANAGEPRODUCTS"
+        Me.PNLMANAGEPRODUCTS.Size = New System.Drawing.Size(500, 529)
+        Me.PNLMANAGEPRODUCTS.TabIndex = 74
+        Me.PNLMANAGEPRODUCTS.Visible = False
+        '
+        'Button1
+        '
+        Me.Button1.BackColor = System.Drawing.Color.FromArgb(CType(CType(37, Byte), Integer), CType(CType(46, Byte), Integer), CType(CType(59, Byte), Integer))
+        Me.Button1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None
+        Me.Button1.FlatAppearance.BorderSize = 0
+        Me.Button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.Button1.Font = New System.Drawing.Font("Century Gothic", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Button1.ForeColor = System.Drawing.Color.White
+        Me.Button1.Image = CType(resources.GetObject("Button1.Image"), System.Drawing.Image)
+        Me.Button1.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
+        Me.Button1.Location = New System.Drawing.Point(654, 0)
+        Me.Button1.Name = "Button1"
+        Me.Button1.Padding = New System.Windows.Forms.Padding(20, 0, 0, 0)
+        Me.Button1.Size = New System.Drawing.Size(119, 46)
+        Me.Button1.TabIndex = 3
+        Me.Button1.Text = " Back"
+        Me.Button1.UseVisualStyleBackColor = False
+        '
+        'LBLCLOSE
+        '
+        Me.LBLCLOSE.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.LBLCLOSE.Image = Global.SALESANDINVENTORYSYSTEM.My.Resources.Resources.x_mark_64__1_
+        Me.LBLCLOSE.Location = New System.Drawing.Point(468, 13)
+        Me.LBLCLOSE.Name = "LBLCLOSE"
+        Me.LBLCLOSE.Size = New System.Drawing.Size(19, 21)
+        Me.LBLCLOSE.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+        Me.LBLCLOSE.TabIndex = 79
+        Me.LBLCLOSE.TabStop = False
+        '
+        'Panel1
+        '
+        Me.Panel1.BackColor = System.Drawing.Color.FromArgb(CType(CType(37, Byte), Integer), CType(CType(46, Byte), Integer), CType(CType(59, Byte), Integer))
+        Me.Panel1.Controls.Add(Me.LBLCLOSE)
+        Me.Panel1.Controls.Add(Me.Button1)
+        Me.Panel1.Dock = System.Windows.Forms.DockStyle.Top
+        Me.Panel1.Location = New System.Drawing.Point(0, 0)
+        Me.Panel1.Name = "Panel1"
+        Me.Panel1.Size = New System.Drawing.Size(498, 49)
+        Me.Panel1.TabIndex = 77
+        '
         'ucNEWPRODUCT
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.White
+        Me.Controls.Add(Me.PNLMANAGEPRODUCTS)
         Me.Controls.Add(Me.LBLID)
         Me.Controls.Add(Me.GroupBox2)
         Me.Controls.Add(Me.Panel2)
@@ -475,6 +564,9 @@ Partial Class ucNEWPRODUCT
         CType(Me.DGVPRODUCTS, System.ComponentModel.ISupportInitialize).EndInit()
         Me.GroupBox2.ResumeLayout(False)
         Me.GroupBox2.PerformLayout()
+        Me.PNLMANAGEPRODUCTS.ResumeLayout(False)
+        CType(Me.LBLCLOSE, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.Panel1.ResumeLayout(False)
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -503,10 +595,16 @@ Partial Class ucNEWPRODUCT
     Friend WithEvents DGVPRODUCTS As DataGridView
     Friend WithEvents GroupBox2 As GroupBox
     Friend WithEvents LBLID As Label
-    Friend WithEvents CBOMANUFACTURER As ComboBox
     Friend WithEvents CBOBRAND As ComboBox
     Friend WithEvents Label6 As Label
     Friend WithEvents TXTPRICE As TextBox
     Friend WithEvents Label7 As Label
     Friend WithEvents TXTUNIT As TextBox
+    Friend WithEvents TXTMANUFACTURER As TextBox
+    Friend WithEvents BTNBRAND As Button
+    Friend WithEvents BTNCATEGORY As Button
+    Friend WithEvents PNLMANAGEPRODUCTS As Panel
+    Friend WithEvents Panel1 As Panel
+    Friend WithEvents LBLCLOSE As PictureBox
+    Friend WithEvents Button1 As Button
 End Class

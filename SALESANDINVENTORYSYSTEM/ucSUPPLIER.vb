@@ -157,7 +157,7 @@ Public Class ucSUPPLIER
         TXTTEL.Text = ""
     End Sub
 
-    Private Sub BTNBACK_Click(sender As Object, e As EventArgs) Handles BTNBACK.Click
+    Private Sub BTNBACK_Click(sender As Object, e As EventArgs)
         Dim i As Integer
         For i = 0 To 0
             FRMMAINMENU.PNLMAIN.Controls.RemoveAt(i)
@@ -209,6 +209,10 @@ Public Class ucSUPPLIER
     End Sub
 
     Private Sub CBOSTATUS_SelectedIndexChanged(sender As Object, e As EventArgs) Handles CBOSTATUS.SelectedIndexChanged
+
+    End Sub
+
+    Private Sub LBLCLOSE_Click(sender As Object, e As EventArgs)
 
     End Sub
 

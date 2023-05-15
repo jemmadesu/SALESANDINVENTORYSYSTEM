@@ -115,14 +115,6 @@ Public Class ucMANUFACTURER
     End Sub
 
     Private Sub BTNBACK_Click(sender As Object, e As EventArgs) Handles BTNBACK.Click
-        Dim i As Integer
-        For i = 0 To 0
-            FRMMAINMENU.PNLMAIN.Controls.RemoveAt(i)
-        Next
 
-        Dim SETTINGS As New ucSETTINGS()
-        SETTINGS.Parent = FRMMAINMENU.PNLMAIN
-        SETTINGS.Show()
-        SETTINGS.Dock = DockStyle.Fill
     End Sub
 End Class

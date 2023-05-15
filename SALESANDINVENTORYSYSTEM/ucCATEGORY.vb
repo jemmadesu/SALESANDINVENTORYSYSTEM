@@ -41,6 +41,14 @@ Public Class ucCATEGORY
 
 
     Private Sub ucCATEGORY_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+
+
+        TXTCATNAME.Enabled = True
+        TXTCATCODE.Enabled = True
+        BTNINSERT.Enabled = True
+        BTNUPDATE.Enabled = False
+
+
         con.Close()
 
         Try
@@ -59,7 +67,7 @@ Public Class ucCATEGORY
 
     End Sub
 
-    Private Sub BTNBACK_Click(sender As Object, e As EventArgs) Handles BTNBACK.Click
+    Private Sub BTNBACK_Click(sender As Object, e As EventArgs)
         Dim i As Integer
         For i = 0 To 0
             FRMMAINMENU.PNLMAIN.Controls.RemoveAt(i)
@@ -71,13 +79,8 @@ Public Class ucCATEGORY
         SETTINGS.Dock = DockStyle.Fill
     End Sub
 
-    Private Sub BTNADD_Click_1(sender As Object, e As EventArgs) Handles BTNADD.Click
-        TXTCATNAME.Enabled = True
-        TXTCATCODE.Enabled = True
-        BTNINSERT.Enabled = True
-        BTNUPDATE.Enabled = False
-        BTNDELETE.Enabled = False
-        BTNADD.Enabled = False
+    Private Sub BTNADD_Click_1(sender As Object, e As EventArgs)
+
         'Getmax()
     End Sub
 
@@ -133,39 +136,37 @@ Public Class ucCATEGORY
         TXTCATCODE.Text = ""
         TXTCATNAME.Enabled = False
         TXTCATCODE.Enabled = False
-        BTNADD.Enabled = True
         BTNINSERT.Enabled = False
         BTNUPDATE.Enabled = False
-        BTNDELETE.Enabled = False
 
         load_data()
     End Sub
 
-    Private Sub BTNDELETE_Click_1(sender As Object, e As EventArgs) Handles BTNDELETE.Click
+    'Private Sub BTNDELETE_Click_1(sender As Object, e As EventArgs) Handles BTNDELETE.Click
 
-        If MessageBox.Show("Are you sure to remove this from the Category Record?", "Delete", MessageBoxButtons.YesNo, MessageBoxIcon.Information, MessageBoxDefaultButton.Button2) = DialogResult.No Then
-            Exit Sub
-        End If
+    '    If MessageBox.Show("Are you sure to remove this from the Category Record?", "Delete", MessageBoxButtons.YesNo, MessageBoxIcon.Information, MessageBoxDefaultButton.Button2) = DialogResult.No Then
+    '        Exit Sub
+    '    End If
 
 
-        For i As Integer = 0 To DGVPRODUCTS.SelectedRows.Count - 1
-            Dim cmd As New MySqlCommand("delete from tbl_category where catcode = @cc ", con)
-            cmd.Parameters.AddWithValue("cc", DGVPRODUCTS.SelectedRows(i).Cells(0).Value.ToString())
-            con.Open()
-            cmd.ExecuteNonQuery()
-            con.Close()
-        Next
-        load_data()
-        MessageBox.Show("data deleted succesfully")
-        activity = "deleted a category. Category Code: " + TXTCATCODE.Text
-        actlog()
-        TXTCATCODE.Text = ""
-        TXTCATNAME.Text = ""
-        BTNADD.Enabled = True
-        BTNUPDATE.Enabled = False
-        BTNDELETE.Enabled = False
+    '    For i As Integer = 0 To DGVPRODUCTS.SelectedRows.Count - 1
+    '        Dim cmd As New MySqlCommand("delete from tbl_category where catcode = @cc ", con)
+    '        cmd.Parameters.AddWithValue("cc", DGVPRODUCTS.SelectedRows(i).Cells(0).Value.ToString())
+    '        con.Open()
+    '        cmd.ExecuteNonQuery()
+    '        con.Close()
+    '    Next
+    '    load_data()
+    '    MessageBox.Show("data deleted succesfully")
+    '    activity = "deleted a category. Category Code: " + TXTCATCODE.Text
+    '    actlog()
+    '    TXTCATCODE.Text = ""
+    '    TXTCATNAME.Text = ""
+    '    BTNADD.Enabled = True
+    '    BTNUPDATE.Enabled = False
+    '    BTNDELETE.Enabled = False
 
-    End Sub
+    'End Sub
 
 
 
@@ -173,11 +174,9 @@ Public Class ucCATEGORY
 
         TXTCATNAME.Enabled = True
         TXTCATCODE.Enabled = True
-        BTNADD.Enabled = False
         BTNINSERT.Enabled = False
 
         BTNUPDATE.Enabled = True
-        BTNDELETE.Enabled = True
 
 
         If e.RowIndex >= 0 Then
@@ -227,6 +226,10 @@ Public Class ucCATEGORY
     Private Sub TXTSEARCH_TextChanged(sender As Object, e As EventArgs) Handles TXTSEARCH.TextChanged
 
         search()
+
+    End Sub
+
+    Private Sub BTNDELETE_Click(sender As Object, e As EventArgs)
 
     End Sub
 End Class

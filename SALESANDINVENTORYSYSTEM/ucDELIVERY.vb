@@ -212,4 +212,23 @@ Public Class ucRESTOCK
         End Using
     End Sub
 
+    Private Sub BTNSUPPLIER_Click(sender As Object, e As EventArgs) Handles BTNSUPPLIER.Click
+        PNLSUPPLIER.Visible = True
+        HEADERPANEL.Visible = True
+
+
+        Dim i As Integer
+        For i = 0 To 0
+            PNLSUPPLIER.Controls.RemoveAt(i)
+        Next
+
+        Dim SUPPLIER As New ucCATEGORY()
+        CATEGORY.Parent = PNLSUPPLIER
+        CATEGORY.Show()
+        CATEGORY.Dock = DockStyle.Fill
+    End Sub
+    Private Sub LBLCLOSE_Click_1(sender As Object, e As EventArgs) Handles LBLCLOSE.Click
+        PNLSUPPLIER.Visible = False
+        HEADERPANEL.Visible = True
+    End Sub
 End Class

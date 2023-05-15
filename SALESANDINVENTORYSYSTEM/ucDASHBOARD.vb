@@ -172,20 +172,4 @@ Public Class ucDASHBOARD
         PictureBox1.BackColor = Color.Transparent
 
     End Sub
-
-    Private Sub PictureBox8_Click(sender As Object, e As EventArgs)
-
-    End Sub
-
-    Private Sub Chart1_Click(sender As Object, e As EventArgs) Handles Chart1.Click
-
-    End Sub
-
-    Private Sub DGVUSERS_CellContentClick(sender As Object, e As DataGridViewCellEventArgs) Handles DGVUSERS.CellContentClick
-
-    End Sub
-
-    Private Sub CHART_Click(sender As Object, e As EventArgs) Handles CHART.Click
-
-    End Sub
 End Class

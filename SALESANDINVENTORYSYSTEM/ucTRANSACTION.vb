@@ -151,7 +151,7 @@ Public Class ucTRANSACTION
 
         sumprice()
         e.Graphics.DrawString(line, f8, Brushes.BlueViolet, 0, 70 + height2)
-        e.Graphics.DrawString("Total Qty: " & t_qty, f10b, Brushes.BlueViolet, 0, 80 + height2)
+        e.Graphics.DrawString("No. of items: " & t_qty, f10b, Brushes.BlueViolet, 0, 80 + height2)
         e.Graphics.DrawString("Total: " & Format(t_price, "##,##0"), f10b, Brushes.BlueViolet, rightmargin, 80 + height2, right)
 
 
@@ -173,17 +173,17 @@ Public Class ucTRANSACTION
 
         ' VAT -------------------------------------------------------
 
-        e.Graphics.DrawString("VATable", f8, Brushes.BlueViolet, 0, 190 + height2)
-        e.Graphics.DrawString("0.00", f8, Brushes.BlueViolet, 220, 190 + height2)
-
-        e.Graphics.DrawString("VAT-Except Sale", f8, Brushes.BlueViolet, 0, 205 + height2)
+        e.Graphics.DrawString("VATable", f8, Brushes.BlueViolet, 0, 205 + height2)
         e.Graphics.DrawString("0.00", f8, Brushes.BlueViolet, 220, 205 + height2)
 
-        e.Graphics.DrawString("VAT-Zero Rate Sale", f8, Brushes.BlueViolet, 0, 220 + height2)
+        e.Graphics.DrawString("VAT-Except Sale", f8, Brushes.BlueViolet, 0, 220 + height2)
         e.Graphics.DrawString("0.00", f8, Brushes.BlueViolet, 220, 220 + height2)
 
-        e.Graphics.DrawString("VAT 12%", f8, Brushes.BlueViolet, 0, 235 + height2)
+        e.Graphics.DrawString("VAT-Zero Rate Sale", f8, Brushes.BlueViolet, 0, 235 + height2)
         e.Graphics.DrawString("0.00", f8, Brushes.BlueViolet, 220, 235 + height2)
+
+        e.Graphics.DrawString("VAT 12%", f8, Brushes.BlueViolet, 0, 250 + height2)
+        e.Graphics.DrawString("0.00", f8, Brushes.BlueViolet, 220, 250 + height2)
 
 
         ' OTHER DETAILS --------------------------------------------------

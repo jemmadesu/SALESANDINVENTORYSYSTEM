@@ -1,9 +1,9 @@
-﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()> _
+﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()>
 Partial Class ucRESTOCK
     Inherits System.Windows.Forms.UserControl
 
     'UserControl overrides dispose to clean up the component list.
-    <System.Diagnostics.DebuggerNonUserCode()> _
+    <System.Diagnostics.DebuggerNonUserCode()>
     Protected Overrides Sub Dispose(ByVal disposing As Boolean)
         Try
             If disposing AndAlso components IsNot Nothing Then
@@ -20,11 +20,11 @@ Partial Class ucRESTOCK
     'NOTE: The following procedure is required by the Windows Form Designer
     'It can be modified using the Windows Form Designer.  
     'Do not modify it using the code editor.
-    <System.Diagnostics.DebuggerStepThrough()> _
+    <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
-        Dim DataGridViewCellStyle1 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle2 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle3 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle10 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle11 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle12 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(ucRESTOCK))
         Me.Label8 = New System.Windows.Forms.Label()
         Me.GroupBox3 = New System.Windows.Forms.GroupBox()
@@ -60,12 +60,16 @@ Partial Class ucRESTOCK
         Me.Label13 = New System.Windows.Forms.Label()
         Me.CBOSUPPLIER = New System.Windows.Forms.ComboBox()
         Me.GroupBox2 = New System.Windows.Forms.GroupBox()
+        Me.BTNSUPPLIER = New System.Windows.Forms.Button()
         Me.MANU = New Guna.UI2.WinForms.Guna2DateTimePicker()
         Me.EXP = New Guna.UI2.WinForms.Guna2DateTimePicker()
         Me.DELIVERED = New Guna.UI2.WinForms.Guna2DateTimePicker()
         Me.Label16 = New System.Windows.Forms.Label()
         Me.QTY = New Guna.UI2.WinForms.Guna2NumericUpDown()
         Me.Panel1 = New System.Windows.Forms.Panel()
+        Me.PNLSUPPLIER = New System.Windows.Forms.Panel()
+        Me.HEADERPANEL = New System.Windows.Forms.Panel()
+        Me.LBLCLOSE = New System.Windows.Forms.PictureBox()
         Me.GroupBox3.SuspendLayout()
         Me.GroupBox1.SuspendLayout()
         CType(Me.DGVPRODUCTS, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -73,6 +77,8 @@ Partial Class ucRESTOCK
         Me.GroupBox2.SuspendLayout()
         CType(Me.QTY, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.Panel1.SuspendLayout()
+        Me.HEADERPANEL.SuspendLayout()
+        CType(Me.LBLCLOSE, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'Label8
@@ -314,7 +320,7 @@ Partial Class ucRESTOCK
         '
         Me.Label4.AutoSize = True
         Me.Label4.Font = New System.Drawing.Font("Century Gothic", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label4.Location = New System.Drawing.Point(220, 90)
+        Me.Label4.Location = New System.Drawing.Point(274, 91)
         Me.Label4.Name = "Label4"
         Me.Label4.Size = New System.Drawing.Size(127, 20)
         Me.Label4.TabIndex = 6
@@ -338,34 +344,34 @@ Partial Class ucRESTOCK
         'DGVPRODUCTS
         '
         Me.DGVPRODUCTS.BackgroundColor = System.Drawing.Color.White
-        DataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
-        DataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control
-        DataGridViewCellStyle1.Font = New System.Drawing.Font("Century Gothic", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.ControlDarkDark
-        DataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.MediumSeaGreen
-        DataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText
-        DataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
-        Me.DGVPRODUCTS.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle1
+        DataGridViewCellStyle10.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle10.BackColor = System.Drawing.SystemColors.Control
+        DataGridViewCellStyle10.Font = New System.Drawing.Font("Century Gothic", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle10.ForeColor = System.Drawing.SystemColors.ControlDarkDark
+        DataGridViewCellStyle10.SelectionBackColor = System.Drawing.Color.MediumSeaGreen
+        DataGridViewCellStyle10.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+        DataGridViewCellStyle10.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.DGVPRODUCTS.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle10
         Me.DGVPRODUCTS.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        DataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
-        DataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window
-        DataGridViewCellStyle2.Font = New System.Drawing.Font("Century Gothic", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlDarkDark
-        DataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.MediumSeaGreen
-        DataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText
-        DataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
-        Me.DGVPRODUCTS.DefaultCellStyle = DataGridViewCellStyle2
+        DataGridViewCellStyle11.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle11.BackColor = System.Drawing.SystemColors.Window
+        DataGridViewCellStyle11.Font = New System.Drawing.Font("Century Gothic", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle11.ForeColor = System.Drawing.SystemColors.ControlDarkDark
+        DataGridViewCellStyle11.SelectionBackColor = System.Drawing.Color.MediumSeaGreen
+        DataGridViewCellStyle11.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+        DataGridViewCellStyle11.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
+        Me.DGVPRODUCTS.DefaultCellStyle = DataGridViewCellStyle11
         Me.DGVPRODUCTS.Location = New System.Drawing.Point(24, 51)
         Me.DGVPRODUCTS.Name = "DGVPRODUCTS"
         Me.DGVPRODUCTS.ReadOnly = True
-        DataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
-        DataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Control
-        DataGridViewCellStyle3.Font = New System.Drawing.Font("Century Gothic", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.ControlDarkDark
-        DataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.MediumSeaGreen
-        DataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText
-        DataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
-        Me.DGVPRODUCTS.RowHeadersDefaultCellStyle = DataGridViewCellStyle3
+        DataGridViewCellStyle12.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle12.BackColor = System.Drawing.SystemColors.Control
+        DataGridViewCellStyle12.Font = New System.Drawing.Font("Century Gothic", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle12.ForeColor = System.Drawing.SystemColors.ControlDarkDark
+        DataGridViewCellStyle12.SelectionBackColor = System.Drawing.Color.MediumSeaGreen
+        DataGridViewCellStyle12.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+        DataGridViewCellStyle12.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.DGVPRODUCTS.RowHeadersDefaultCellStyle = DataGridViewCellStyle12
         Me.DGVPRODUCTS.RowHeadersVisible = False
         Me.DGVPRODUCTS.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
         Me.DGVPRODUCTS.Size = New System.Drawing.Size(952, 186)
@@ -444,7 +450,7 @@ Partial Class ucRESTOCK
         '
         Me.Label12.AutoSize = True
         Me.Label12.Font = New System.Drawing.Font("Century Gothic", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label12.Location = New System.Drawing.Point(220, 18)
+        Me.Label12.Location = New System.Drawing.Point(274, 19)
         Me.Label12.Name = "Label12"
         Me.Label12.Size = New System.Drawing.Size(164, 20)
         Me.Label12.TabIndex = 23
@@ -471,6 +477,7 @@ Partial Class ucRESTOCK
         'GroupBox2
         '
         Me.GroupBox2.BackColor = System.Drawing.Color.White
+        Me.GroupBox2.Controls.Add(Me.BTNSUPPLIER)
         Me.GroupBox2.Controls.Add(Me.MANU)
         Me.GroupBox2.Controls.Add(Me.EXP)
         Me.GroupBox2.Controls.Add(Me.DELIVERED)
@@ -490,6 +497,23 @@ Partial Class ucRESTOCK
         Me.GroupBox2.TabStop = False
         Me.GroupBox2.Text = "Delivered Products Information"
         '
+        'BTNSUPPLIER
+        '
+        Me.BTNSUPPLIER.BackColor = System.Drawing.Color.MediumSeaGreen
+        Me.BTNSUPPLIER.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None
+        Me.BTNSUPPLIER.FlatAppearance.BorderSize = 0
+        Me.BTNSUPPLIER.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.BTNSUPPLIER.Font = New System.Drawing.Font("Century Gothic", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.BTNSUPPLIER.ForeColor = System.Drawing.Color.White
+        Me.BTNSUPPLIER.Image = CType(resources.GetObject("BTNSUPPLIER.Image"), System.Drawing.Image)
+        Me.BTNSUPPLIER.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
+        Me.BTNSUPPLIER.Location = New System.Drawing.Point(188, 49)
+        Me.BTNSUPPLIER.Name = "BTNSUPPLIER"
+        Me.BTNSUPPLIER.Size = New System.Drawing.Size(39, 33)
+        Me.BTNSUPPLIER.TabIndex = 51
+        Me.BTNSUPPLIER.TextAlign = System.Drawing.ContentAlignment.MiddleRight
+        Me.BTNSUPPLIER.UseVisualStyleBackColor = False
+        '
         'MANU
         '
         Me.MANU.CheckedState.Parent = Me.MANU
@@ -498,7 +522,7 @@ Partial Class ucRESTOCK
         Me.MANU.ForeColor = System.Drawing.Color.White
         Me.MANU.Format = System.Windows.Forms.DateTimePickerFormat.[Long]
         Me.MANU.HoverState.Parent = Me.MANU
-        Me.MANU.Location = New System.Drawing.Point(224, 48)
+        Me.MANU.Location = New System.Drawing.Point(278, 49)
         Me.MANU.MaxDate = New Date(9998, 12, 31, 0, 0, 0, 0)
         Me.MANU.MinDate = New Date(1753, 1, 1, 0, 0, 0, 0)
         Me.MANU.Name = "MANU"
@@ -515,7 +539,7 @@ Partial Class ucRESTOCK
         Me.EXP.ForeColor = System.Drawing.Color.White
         Me.EXP.Format = System.Windows.Forms.DateTimePickerFormat.[Long]
         Me.EXP.HoverState.Parent = Me.EXP
-        Me.EXP.Location = New System.Drawing.Point(224, 120)
+        Me.EXP.Location = New System.Drawing.Point(278, 121)
         Me.EXP.MaxDate = New Date(9998, 12, 31, 0, 0, 0, 0)
         Me.EXP.MinDate = New Date(1753, 1, 1, 0, 0, 0, 0)
         Me.EXP.Name = "EXP"
@@ -532,7 +556,7 @@ Partial Class ucRESTOCK
         Me.DELIVERED.ForeColor = System.Drawing.Color.White
         Me.DELIVERED.Format = System.Windows.Forms.DateTimePickerFormat.[Long]
         Me.DELIVERED.HoverState.Parent = Me.DELIVERED
-        Me.DELIVERED.Location = New System.Drawing.Point(505, 120)
+        Me.DELIVERED.Location = New System.Drawing.Point(562, 88)
         Me.DELIVERED.MaxDate = New Date(9998, 12, 31, 0, 0, 0, 0)
         Me.DELIVERED.MinDate = New Date(1753, 1, 1, 0, 0, 0, 0)
         Me.DELIVERED.Name = "DELIVERED"
@@ -545,7 +569,7 @@ Partial Class ucRESTOCK
         '
         Me.Label16.AutoSize = True
         Me.Label16.Font = New System.Drawing.Font("Century Gothic", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label16.Location = New System.Drawing.Point(501, 90)
+        Me.Label16.Location = New System.Drawing.Point(558, 58)
         Me.Label16.Name = "Label16"
         Me.Label16.Size = New System.Drawing.Size(129, 20)
         Me.Label16.TabIndex = 48
@@ -584,23 +608,55 @@ Partial Class ucRESTOCK
         Me.Panel1.Controls.Add(Me.TXTID)
         Me.Panel1.Controls.Add(Me.TXTMAN)
         Me.Panel1.Controls.Add(Me.Label7)
-        Me.Panel1.Location = New System.Drawing.Point(1098, 82)
+        Me.Panel1.Location = New System.Drawing.Point(1129, 452)
         Me.Panel1.Name = "Panel1"
         Me.Panel1.Size = New System.Drawing.Size(383, 216)
         Me.Panel1.TabIndex = 25
+        '
+        'PNLSUPPLIER
+        '
+        Me.PNLSUPPLIER.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.PNLSUPPLIER.Location = New System.Drawing.Point(51, 100)
+        Me.PNLSUPPLIER.Name = "PNLSUPPLIER"
+        Me.PNLSUPPLIER.Size = New System.Drawing.Size(993, 582)
+        Me.PNLSUPPLIER.TabIndex = 75
+        Me.PNLSUPPLIER.Visible = False
+        '
+        'HEADERPANEL
+        '
+        Me.HEADERPANEL.BackColor = System.Drawing.Color.FromArgb(CType(CType(37, Byte), Integer), CType(CType(46, Byte), Integer), CType(CType(59, Byte), Integer))
+        Me.HEADERPANEL.Controls.Add(Me.LBLCLOSE)
+        Me.HEADERPANEL.Location = New System.Drawing.Point(51, 62)
+        Me.HEADERPANEL.Name = "HEADERPANEL"
+        Me.HEADERPANEL.Size = New System.Drawing.Size(993, 49)
+        Me.HEADERPANEL.TabIndex = 79
+        Me.HEADERPANEL.Visible = False
+        '
+        'LBLCLOSE
+        '
+        Me.LBLCLOSE.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.LBLCLOSE.Image = Global.SALESANDINVENTORYSYSTEM.My.Resources.Resources.x_mark_64__1_
+        Me.LBLCLOSE.Location = New System.Drawing.Point(957, 11)
+        Me.LBLCLOSE.Name = "LBLCLOSE"
+        Me.LBLCLOSE.Size = New System.Drawing.Size(19, 21)
+        Me.LBLCLOSE.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+        Me.LBLCLOSE.TabIndex = 79
+        Me.LBLCLOSE.TabStop = False
         '
         'ucRESTOCK
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.White
+        Me.Controls.Add(Me.HEADERPANEL)
+        Me.Controls.Add(Me.PNLSUPPLIER)
         Me.Controls.Add(Me.Panel1)
-        Me.Controls.Add(Me.GroupBox2)
         Me.Controls.Add(Me.Panel2)
         Me.Controls.Add(Me.Label8)
-        Me.Controls.Add(Me.GroupBox3)
         Me.Controls.Add(Me.GroupBox1)
         Me.Controls.Add(Me.TXTSI)
+        Me.Controls.Add(Me.GroupBox2)
+        Me.Controls.Add(Me.GroupBox3)
         Me.Name = "ucRESTOCK"
         Me.Size = New System.Drawing.Size(1091, 729)
         Me.GroupBox3.ResumeLayout(False)
@@ -614,6 +670,8 @@ Partial Class ucRESTOCK
         CType(Me.QTY, System.ComponentModel.ISupportInitialize).EndInit()
         Me.Panel1.ResumeLayout(False)
         Me.Panel1.PerformLayout()
+        Me.HEADERPANEL.ResumeLayout(False)
+        CType(Me.LBLCLOSE, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -659,4 +717,8 @@ Partial Class ucRESTOCK
     Friend WithEvents DELIVERED As Guna.UI2.WinForms.Guna2DateTimePicker
     Friend WithEvents MANU As Guna.UI2.WinForms.Guna2DateTimePicker
     Friend WithEvents EXP As Guna.UI2.WinForms.Guna2DateTimePicker
+    Friend WithEvents BTNSUPPLIER As Button
+    Friend WithEvents PNLSUPPLIER As Panel
+    Friend WithEvents LBLCLOSE As PictureBox
+    Friend WithEvents HEADERPANEL As Panel
 End Class

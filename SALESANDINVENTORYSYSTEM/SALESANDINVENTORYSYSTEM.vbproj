@@ -572,6 +572,9 @@
     <None Include="Resources\x-mark-64.ico" />
     <None Include="Resources\x-mark-24.ico" />
     <None Include="Resources\x-mark-64 %281%29.ico" />
+    <None Include="Resources\tag-4-24.ico" />
+    <None Include="Resources\tag-4-241.ico" />
+    <None Include="Resources\tags.ico" />
     <Content Include="SqlServerTypes\Loader.cs" />
     <Content Include="SqlServerTypes\readme.htm" />
     <Content Include="SqlServerTypes\x64\msvcr120.dll">

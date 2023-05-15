@@ -263,6 +263,36 @@ Namespace My.Resources
         '''<summary>
         '''  Looks up a localized resource of type System.Drawing.Bitmap.
         '''</summary>
+        Friend ReadOnly Property tag_4_24() As System.Drawing.Bitmap
+            Get
+                Dim obj As Object = ResourceManager.GetObject("tag-4-24", resourceCulture)
+                Return CType(obj,System.Drawing.Bitmap)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized resource of type System.Drawing.Bitmap.
+        '''</summary>
+        Friend ReadOnly Property tag_4_241() As System.Drawing.Bitmap
+            Get
+                Dim obj As Object = ResourceManager.GetObject("tag-4-241", resourceCulture)
+                Return CType(obj,System.Drawing.Bitmap)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized resource of type System.Drawing.Bitmap.
+        '''</summary>
+        Friend ReadOnly Property tags() As System.Drawing.Bitmap
+            Get
+                Dim obj As Object = ResourceManager.GetObject("tags", resourceCulture)
+                Return CType(obj,System.Drawing.Bitmap)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized resource of type System.Drawing.Bitmap.
+        '''</summary>
         Friend ReadOnly Property toppng_com_telephone_symbol_white_white_contact_icon_1776x1890() As System.Drawing.Bitmap
             Get
                 Dim obj As Object = ResourceManager.GetObject("toppng.com-telephone-symbol-white-white-contact-icon-1776x1890", resourceCulture)
