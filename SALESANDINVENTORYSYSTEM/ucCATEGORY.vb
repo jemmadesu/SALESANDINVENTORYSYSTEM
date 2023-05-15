@@ -18,7 +18,7 @@ Public Class ucCATEGORY
     Private Sub load_data()
         Try
 
-            Dim da As New MySqlDataAdapter("select catcode, catname from tbl_category ", con)
+            Dim da As New MySqlDataAdapter("select ID, catname, catcode from tbl_category ", con)
             Dim dt As New DataSet()
             da.Fill(dt)
             DGVPRODUCTS.DataSource = dt.Tables(0)
@@ -34,9 +34,12 @@ Public Class ucCATEGORY
     End Sub
     Private Sub DGVSETPROPERTY()
         DGVPRODUCTS.Columns(0).Width = 200
-        DGVPRODUCTS.Columns(0).HeaderText = "Category Code"
+        DGVPRODUCTS.Columns(0).HeaderText = "Ref No"
         DGVPRODUCTS.Columns(1).Width = 200
         DGVPRODUCTS.Columns(1).HeaderText = "Category Name"
+        DGVPRODUCTS.Columns(2).Width = 200
+        DGVPRODUCTS.Columns(2).HeaderText = "Category Code"
+
     End Sub
 
 
@@ -47,13 +50,14 @@ Public Class ucCATEGORY
         TXTCATCODE.Enabled = True
         BTNINSERT.Enabled = True
         BTNUPDATE.Enabled = False
+        BTNUPDATE.Text = "Edit"
 
 
         con.Close()
 
         Try
 
-            Dim da As New MySqlDataAdapter("select catcode, catname from tbl_category ", con)
+            Dim da As New MySqlDataAdapter("select ID, catname, catcode from tbl_category ", con)
             Dim dt As New DataSet()
             da.Fill(dt)
             DGVPRODUCTS.DataSource = dt.Tables(0)
@@ -66,24 +70,6 @@ Public Class ucCATEGORY
         End Try
 
     End Sub
-
-    Private Sub BTNBACK_Click(sender As Object, e As EventArgs)
-        Dim i As Integer
-        For i = 0 To 0
-            FRMMAINMENU.PNLMAIN.Controls.RemoveAt(i)
-        Next
-
-        Dim SETTINGS As New ucSETTINGS()
-        SETTINGS.Parent = FRMMAINMENU.PNLMAIN
-        SETTINGS.Show()
-        SETTINGS.Dock = DockStyle.Fill
-    End Sub
-
-    Private Sub BTNADD_Click_1(sender As Object, e As EventArgs)
-
-        'Getmax()
-    End Sub
-
     Private Sub BTNINSERT_Click_1(sender As Object, e As EventArgs) Handles BTNINSERT.Click
 
         OpenCon()
@@ -111,6 +97,12 @@ Public Class ucCATEGORY
     End Sub
 
     Private Sub BTNUPDATE_Click_1(sender As Object, e As EventArgs) Handles BTNUPDATE.Click
+        If TXTCATNAME.Text = "" Or TXTCATCODE.Text = "" Then
+            MsgBox("All fields are required!", vbOKOnly + vbCritical, "Error Saving")
+            TXTCATNAME.Focus()
+            Exit Sub
+        End If
+
 
         If TXTCATNAME.Text = "" Or TXTCATCODE.Text = "" Then
             MsgBox("All fields are required!", vbOKOnly + vbCritical, "Error Saving")
@@ -118,58 +110,28 @@ Public Class ucCATEGORY
             Exit Sub
         End If
 
-        OpenCon()
-        cmd.CommandText = "Update tbl_category set catcode =@cc, catname=@cn where catcode= @cc"
+        con.Open()
+        cmd.CommandText = "UPDATE tbl_category SET ID=@ID, catcode=@cc, catname=@cn WHERE ID=@ID"
         With cmd.Parameters
             .Clear()
-            .AddWithValue("cc", TXTCATCODE.Text)
-            .AddWithValue("cn", TXTCATNAME.Text)
-
-
+            .AddWithValue("@ID", Me.DGVPRODUCTS.CurrentRow.Cells(0).Value)
+            .AddWithValue("@cc", TXTCATCODE.Text)
+            .AddWithValue("@cn", TXTCATNAME.Text)
         End With
         cmd.ExecuteNonQuery()
         con.Close()
+
         MsgBox("Record has been updated!", vbOKOnly + vbInformation, "Editing Successful")
 
-        TXTID.Text = ""
         TXTCATNAME.Text = ""
         TXTCATCODE.Text = ""
         TXTCATNAME.Enabled = False
         TXTCATCODE.Enabled = False
-        BTNINSERT.Enabled = False
+        BTNINSERT.Enabled = True
         BTNUPDATE.Enabled = False
 
         load_data()
     End Sub
-
-    'Private Sub BTNDELETE_Click_1(sender As Object, e As EventArgs) Handles BTNDELETE.Click
-
-    '    If MessageBox.Show("Are you sure to remove this from the Category Record?", "Delete", MessageBoxButtons.YesNo, MessageBoxIcon.Information, MessageBoxDefaultButton.Button2) = DialogResult.No Then
-    '        Exit Sub
-    '    End If
-
-
-    '    For i As Integer = 0 To DGVPRODUCTS.SelectedRows.Count - 1
-    '        Dim cmd As New MySqlCommand("delete from tbl_category where catcode = @cc ", con)
-    '        cmd.Parameters.AddWithValue("cc", DGVPRODUCTS.SelectedRows(i).Cells(0).Value.ToString())
-    '        con.Open()
-    '        cmd.ExecuteNonQuery()
-    '        con.Close()
-    '    Next
-    '    load_data()
-    '    MessageBox.Show("data deleted succesfully")
-    '    activity = "deleted a category. Category Code: " + TXTCATCODE.Text
-    '    actlog()
-    '    TXTCATCODE.Text = ""
-    '    TXTCATNAME.Text = ""
-    '    BTNADD.Enabled = True
-    '    BTNUPDATE.Enabled = False
-    '    BTNDELETE.Enabled = False
-
-    'End Sub
-
-
-
     Private Sub DGVPRODUCTS_CellClick(sender As Object, e As DataGridViewCellEventArgs) Handles DGVPRODUCTS.CellClick
 
         TXTCATNAME.Enabled = True
@@ -184,52 +146,41 @@ Public Class ucCATEGORY
             row = DGVPRODUCTS.Rows(e.RowIndex)
 
 
-            TXTCATCODE.Text = row.Cells(0).Value
             TXTCATNAME.Text = row.Cells(1).Value
+            TXTCATCODE.Text = row.Cells(2).Value
 
 
         End If
         BTNUPDATE.Text = "Update"
     End Sub
 
-    Private Sub BTNSAVEEDIT_Click(sender As Object, e As EventArgs)
-        If TXTCATNAME.Text = "" Or TXTCATCODE.Text = "" Then
-            MsgBox("All fields are required!", vbOKOnly + vbCritical, "Error Saving")
-            TXTCATNAME.Focus()
-            Exit Sub
-        End If
-
-        OpenCon()
-        cmd.CommandText = "Update tbl_category set catcode =@cc, catname=@cn where catcode= @cc"
-        With cmd.Parameters
-            .Clear()
-            .AddWithValue("cc", TXTCATCODE.Text)
-            .AddWithValue("cn", TXTCATNAME.Text)
-
-
-        End With
-        cmd.ExecuteNonQuery()
-        con.Close()
-        MsgBox("Record has been updated!", vbOKOnly + vbInformation, "Editing Successful")
-
-        TXTID.Text = ""
-        TXTCATNAME.Text = ""
-        TXTCATCODE.Text = ""
-        load_data()
-    End Sub
-    Private Sub search()
-        Dim dba As New MySqlDataAdapter("select catcode, catname from tbl_category  WHERE tbl_category.catname LIKE '%" & Me.TXTSEARCH.Text & "%';", con)
-        Dim dbset As New DataSet
-        dba.Fill(dbset)
-        Me.DGVPRODUCTS.DataSource = dbset.Tables(0).DefaultView
-    End Sub
-    Private Sub TXTSEARCH_TextChanged(sender As Object, e As EventArgs) Handles TXTSEARCH.TextChanged
-
-        search()
+    Private Sub GroupBox1_Enter(sender As Object, e As EventArgs) Handles GroupBox1.Enter
 
     End Sub
 
-    Private Sub BTNDELETE_Click(sender As Object, e As EventArgs)
+    'Private Sub BTNSAVEEDIT_Click(sender As Object, e As EventArgs)
+    '    If TXTCATNAME.Text = "" Or TXTCATCODE.Text = "" Then
+    '        MsgBox("All fields are required!", vbOKOnly + vbCritical, "Error Saving")
+    '        TXTCATNAME.Focus()
+    '        Exit Sub
+    '    End If
 
-    End Sub
+    '    OpenCon()
+    '    cmd.CommandText = "Update tbl_category set catcode =@cc, catname=@cn where catcode= @cc"
+    '    With cmd.Parameters
+    '        .Clear()
+    '        .AddWithValue("cc", TXTCATCODE.Text)
+    '        .AddWithValue("cn", TXTCATNAME.Text)
+
+
+    '    End With
+    '    cmd.ExecuteNonQuery()
+    '    con.Close()
+    '    MsgBox("Record has been updated!", vbOKOnly + vbInformation, "Editing Successful")
+
+    '    TXTID.Text = ""
+    '    TXTCATNAME.Text = ""
+    '    TXTCATCODE.Text = ""
+    '    load_data()
+    'End Sub
 End Class

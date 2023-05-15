@@ -2,7 +2,7 @@
 Imports MySql.Data.MySqlClient
 
 
-Public Class ucRESTOCK
+Public Class ucDELIVERY
 
     Private Sub actlog()
         con.Close()
@@ -57,20 +57,20 @@ Public Class ucRESTOCK
 
         End Try
     End Sub
-    Private Sub ucRESTOCK_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+    Private Sub ucDELIVERY_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         VIEW()
 
-        Dim cmd1 As New MySqlCommand("SELECT name, status FROM tbl_supplier WHERE status = 'Active'", con)
+        Dim cmd1 As New MySqlCommand("SELECT companyname, status FROM tbl_supplier WHERE status = 'Active'", con)
         Dim da1 As New MySqlDataAdapter(cmd1)
         Dim tbl_supplier As New DataTable()
         da1.Fill(tbl_supplier)
 
         Dim rowsup As DataRow = tbl_supplier.NewRow()
-        rowsup("name") = "-- Select --"
+        rowsup("companyname") = "-- Select --"
         tbl_supplier.Rows.InsertAt(rowsup, 0)
 
         CBOSUPPLIER.DataSource = tbl_supplier
-        CBOSUPPLIER.DisplayMember = "name"
+        CBOSUPPLIER.DisplayMember = "companyname"
 
     End Sub
 
@@ -182,11 +182,11 @@ Public Class ucRESTOCK
         SETTINGS.Dock = DockStyle.Fill
     End Sub
 
-    Private Sub EXP_ValueChanged(sender As Object, e As EventArgs) 
+    Private Sub EXP_ValueChanged(sender As Object, e As EventArgs)
         EXP.CustomFormat = "dd/MM/yyyy"
     End Sub
 
-    Private Sub MANU_ValueChanged(sender As Object, e As EventArgs) 
+    Private Sub MANU_ValueChanged(sender As Object, e As EventArgs)
         MANU.CustomFormat = "dd/MM/yyyy"
     End Sub
 
@@ -217,18 +217,19 @@ Public Class ucRESTOCK
         HEADERPANEL.Visible = True
 
 
-        Dim i As Integer
-        For i = 0 To 0
-            PNLSUPPLIER.Controls.RemoveAt(i)
+        ' Remove existing controls (optional)
+        For Each control As Control In PNLSUPPLIER.Controls
+            PNLSUPPLIER.Controls.Remove(control)
         Next
 
-        Dim SUPPLIER As New ucCATEGORY()
-        CATEGORY.Parent = PNLSUPPLIER
-        CATEGORY.Show()
-        CATEGORY.Dock = DockStyle.Fill
+        Dim SUPPLIER As New ucSUPPLIER()
+        SUPPLIER.Parent = PNLSUPPLIER
+        SUPPLIER.Dock = DockStyle.Fill
+        SUPPLIER.Show()
+
     End Sub
     Private Sub LBLCLOSE_Click_1(sender As Object, e As EventArgs) Handles LBLCLOSE.Click
         PNLSUPPLIER.Visible = False
-        HEADERPANEL.Visible = True
+        HEADERPANEL.Visible = False
     End Sub
 End Class

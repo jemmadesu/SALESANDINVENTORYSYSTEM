@@ -30,6 +30,8 @@ Partial Class ucPUTINTOINVENTORY
         Dim DataGridViewCellStyle3 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(ucPUTINTOINVENTORY))
         Me.GroupBox4 = New System.Windows.Forms.GroupBox()
+        Me.DGVPRODUCTS = New System.Windows.Forms.DataGridView()
+        Me.TXTSEARCH = New System.Windows.Forms.TextBox()
         Me.BTNDELETE = New System.Windows.Forms.Button()
         Me.DGVMAIN = New System.Windows.Forms.DataGridView()
         Me.TXTSTOCKSEARCH = New System.Windows.Forms.TextBox()
@@ -53,23 +55,21 @@ Partial Class ucPUTINTOINVENTORY
         Me.TXTDA = New System.Windows.Forms.TextBox()
         Me.txtmix = New System.Windows.Forms.TextBox()
         Me.GroupBox2 = New System.Windows.Forms.GroupBox()
-        Me.DGVPRODUCTS = New System.Windows.Forms.DataGridView()
-        Me.TXTSEARCH = New System.Windows.Forms.TextBox()
         Me.Panel2 = New System.Windows.Forms.Panel()
-        Me.TXTSAM = New System.Windows.Forms.TextBox()
         Me.BTNBACK = New System.Windows.Forms.Button()
+        Me.TXTSAM = New System.Windows.Forms.TextBox()
         Me.GroupBox4.SuspendLayout()
+        CType(Me.DGVPRODUCTS, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.DGVMAIN, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.GroupBox1.SuspendLayout()
         CType(Me.NUDQUANTITY, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.DGVPRODUCTS, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.GroupBox2.SuspendLayout()
         Me.Panel2.SuspendLayout()
         Me.SuspendLayout()
         '
         'GroupBox4
         '
         Me.GroupBox4.BackColor = System.Drawing.SystemColors.InactiveCaption
-        Me.GroupBox4.Controls.Add(Me.DGVPRODUCTS)
         Me.GroupBox4.Controls.Add(Me.TXTSEARCH)
         Me.GroupBox4.Controls.Add(Me.BTNDELETE)
         Me.GroupBox4.Controls.Add(Me.DGVMAIN)
@@ -82,6 +82,50 @@ Partial Class ucPUTINTOINVENTORY
         Me.GroupBox4.TabIndex = 5
         Me.GroupBox4.TabStop = False
         Me.GroupBox4.Text = "Stock List"
+        '
+        'DGVPRODUCTS
+        '
+        Me.DGVPRODUCTS.BackgroundColor = System.Drawing.Color.White
+        DataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.Control
+        DataGridViewCellStyle4.Font = New System.Drawing.Font("Century Gothic", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.ControlDarkDark
+        DataGridViewCellStyle4.SelectionBackColor = System.Drawing.Color.MediumSeaGreen
+        DataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+        DataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.DGVPRODUCTS.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle4
+        Me.DGVPRODUCTS.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
+        DataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle5.BackColor = System.Drawing.SystemColors.Window
+        DataGridViewCellStyle5.Font = New System.Drawing.Font("Century Gothic", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle5.ForeColor = System.Drawing.SystemColors.ControlDarkDark
+        DataGridViewCellStyle5.SelectionBackColor = System.Drawing.Color.MediumSeaGreen
+        DataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+        DataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
+        Me.DGVPRODUCTS.DefaultCellStyle = DataGridViewCellStyle5
+        Me.DGVPRODUCTS.Location = New System.Drawing.Point(19, 41)
+        Me.DGVPRODUCTS.Name = "DGVPRODUCTS"
+        Me.DGVPRODUCTS.ReadOnly = True
+        DataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle6.BackColor = System.Drawing.SystemColors.Control
+        DataGridViewCellStyle6.Font = New System.Drawing.Font("Century Gothic", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle6.ForeColor = System.Drawing.SystemColors.ControlDarkDark
+        DataGridViewCellStyle6.SelectionBackColor = System.Drawing.Color.MediumSeaGreen
+        DataGridViewCellStyle6.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+        DataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.DGVPRODUCTS.RowHeadersDefaultCellStyle = DataGridViewCellStyle6
+        Me.DGVPRODUCTS.RowHeadersVisible = False
+        Me.DGVPRODUCTS.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
+        Me.DGVPRODUCTS.Size = New System.Drawing.Size(666, 262)
+        Me.DGVPRODUCTS.TabIndex = 32
+        '
+        'TXTSEARCH
+        '
+        Me.TXTSEARCH.ForeColor = System.Drawing.SystemColors.ControlDarkDark
+        Me.TXTSEARCH.Location = New System.Drawing.Point(199, -94)
+        Me.TXTSEARCH.Name = "TXTSEARCH"
+        Me.TXTSEARCH.Size = New System.Drawing.Size(397, 23)
+        Me.TXTSEARCH.TabIndex = 10
         '
         'BTNDELETE
         '
@@ -100,34 +144,34 @@ Partial Class ucPUTINTOINVENTORY
         'DGVMAIN
         '
         Me.DGVMAIN.BackgroundColor = System.Drawing.Color.White
-        DataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
-        DataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.Control
-        DataGridViewCellStyle4.Font = New System.Drawing.Font("Century Gothic", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.ControlDarkDark
-        DataGridViewCellStyle4.SelectionBackColor = System.Drawing.Color.MediumSeaGreen
-        DataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText
-        DataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
-        Me.DGVMAIN.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle4
+        DataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control
+        DataGridViewCellStyle1.Font = New System.Drawing.Font("Century Gothic", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.ControlDarkDark
+        DataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.MediumSeaGreen
+        DataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+        DataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.DGVMAIN.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle1
         Me.DGVMAIN.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        DataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
-        DataGridViewCellStyle5.BackColor = System.Drawing.SystemColors.Window
-        DataGridViewCellStyle5.Font = New System.Drawing.Font("Century Gothic", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle5.ForeColor = System.Drawing.SystemColors.ControlDarkDark
-        DataGridViewCellStyle5.SelectionBackColor = System.Drawing.Color.MediumSeaGreen
-        DataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText
-        DataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
-        Me.DGVMAIN.DefaultCellStyle = DataGridViewCellStyle5
+        DataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window
+        DataGridViewCellStyle2.Font = New System.Drawing.Font("Century Gothic", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlDarkDark
+        DataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.MediumSeaGreen
+        DataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+        DataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
+        Me.DGVMAIN.DefaultCellStyle = DataGridViewCellStyle2
         Me.DGVMAIN.Location = New System.Drawing.Point(23, 74)
         Me.DGVMAIN.Name = "DGVMAIN"
         Me.DGVMAIN.ReadOnly = True
-        DataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
-        DataGridViewCellStyle6.BackColor = System.Drawing.SystemColors.Control
-        DataGridViewCellStyle6.Font = New System.Drawing.Font("Century Gothic", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle6.ForeColor = System.Drawing.SystemColors.ControlDarkDark
-        DataGridViewCellStyle6.SelectionBackColor = System.Drawing.Color.MediumSeaGreen
-        DataGridViewCellStyle6.SelectionForeColor = System.Drawing.SystemColors.HighlightText
-        DataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
-        Me.DGVMAIN.RowHeadersDefaultCellStyle = DataGridViewCellStyle6
+        DataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Control
+        DataGridViewCellStyle3.Font = New System.Drawing.Font("Century Gothic", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.ControlDarkDark
+        DataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.MediumSeaGreen
+        DataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+        DataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.DGVMAIN.RowHeadersDefaultCellStyle = DataGridViewCellStyle3
         Me.DGVMAIN.RowHeadersVisible = False
         Me.DGVMAIN.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
         Me.DGVMAIN.Size = New System.Drawing.Size(1023, 181)
@@ -353,6 +397,7 @@ Partial Class ucPUTINTOINVENTORY
         'GroupBox2
         '
         Me.GroupBox2.BackColor = System.Drawing.SystemColors.InactiveCaption
+        Me.GroupBox2.Controls.Add(Me.DGVPRODUCTS)
         Me.GroupBox2.Font = New System.Drawing.Font("Century Gothic", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.GroupBox2.ForeColor = System.Drawing.SystemColors.ControlDarkDark
         Me.GroupBox2.Location = New System.Drawing.Point(384, 55)
@@ -361,50 +406,6 @@ Partial Class ucPUTINTOINVENTORY
         Me.GroupBox2.TabIndex = 0
         Me.GroupBox2.TabStop = False
         Me.GroupBox2.Text = "New Product List"
-        '
-        'DGVPRODUCTS
-        '
-        Me.DGVPRODUCTS.BackgroundColor = System.Drawing.Color.White
-        DataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
-        DataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control
-        DataGridViewCellStyle1.Font = New System.Drawing.Font("Century Gothic", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.ControlDarkDark
-        DataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.MediumSeaGreen
-        DataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText
-        DataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
-        Me.DGVPRODUCTS.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle1
-        Me.DGVPRODUCTS.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        DataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
-        DataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window
-        DataGridViewCellStyle2.Font = New System.Drawing.Font("Century Gothic", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlDarkDark
-        DataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.MediumSeaGreen
-        DataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText
-        DataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
-        Me.DGVPRODUCTS.DefaultCellStyle = DataGridViewCellStyle2
-        Me.DGVPRODUCTS.Location = New System.Drawing.Point(199, -46)
-        Me.DGVPRODUCTS.Name = "DGVPRODUCTS"
-        Me.DGVPRODUCTS.ReadOnly = True
-        DataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
-        DataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Control
-        DataGridViewCellStyle3.Font = New System.Drawing.Font("Century Gothic", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.ControlDarkDark
-        DataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.MediumSeaGreen
-        DataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText
-        DataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
-        Me.DGVPRODUCTS.RowHeadersDefaultCellStyle = DataGridViewCellStyle3
-        Me.DGVPRODUCTS.RowHeadersVisible = False
-        Me.DGVPRODUCTS.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
-        Me.DGVPRODUCTS.Size = New System.Drawing.Size(666, 262)
-        Me.DGVPRODUCTS.TabIndex = 32
-        '
-        'TXTSEARCH
-        '
-        Me.TXTSEARCH.ForeColor = System.Drawing.SystemColors.ControlDarkDark
-        Me.TXTSEARCH.Location = New System.Drawing.Point(199, -94)
-        Me.TXTSEARCH.Name = "TXTSEARCH"
-        Me.TXTSEARCH.Size = New System.Drawing.Size(397, 23)
-        Me.TXTSEARCH.TabIndex = 10
         '
         'Panel2
         '
@@ -415,14 +416,6 @@ Partial Class ucPUTINTOINVENTORY
         Me.Panel2.Name = "Panel2"
         Me.Panel2.Size = New System.Drawing.Size(1113, 49)
         Me.Panel2.TabIndex = 44
-        '
-        'TXTSAM
-        '
-        Me.TXTSAM.Location = New System.Drawing.Point(1000, 783)
-        Me.TXTSAM.Name = "TXTSAM"
-        Me.TXTSAM.Size = New System.Drawing.Size(100, 20)
-        Me.TXTSAM.TabIndex = 45
-        Me.TXTSAM.Visible = False
         '
         'BTNBACK
         '
@@ -442,6 +435,14 @@ Partial Class ucPUTINTOINVENTORY
         Me.BTNBACK.Text = " Back"
         Me.BTNBACK.UseVisualStyleBackColor = False
         '
+        'TXTSAM
+        '
+        Me.TXTSAM.Location = New System.Drawing.Point(1000, 783)
+        Me.TXTSAM.Name = "TXTSAM"
+        Me.TXTSAM.Size = New System.Drawing.Size(100, 20)
+        Me.TXTSAM.TabIndex = 45
+        Me.TXTSAM.Visible = False
+        '
         'ucPUTINTOINVENTORY
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -460,11 +461,12 @@ Partial Class ucPUTINTOINVENTORY
         Me.Size = New System.Drawing.Size(1113, 682)
         Me.GroupBox4.ResumeLayout(False)
         Me.GroupBox4.PerformLayout()
+        CType(Me.DGVPRODUCTS, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.DGVMAIN, System.ComponentModel.ISupportInitialize).EndInit()
         Me.GroupBox1.ResumeLayout(False)
         Me.GroupBox1.PerformLayout()
         CType(Me.NUDQUANTITY, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.DGVPRODUCTS, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.GroupBox2.ResumeLayout(False)
         Me.Panel2.ResumeLayout(False)
         Me.ResumeLayout(False)
         Me.PerformLayout()

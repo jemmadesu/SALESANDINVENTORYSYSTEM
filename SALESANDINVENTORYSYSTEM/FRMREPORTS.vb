@@ -84,6 +84,23 @@ Public Class FRMREPORTS
 
 
         Me.RPTOUTOFSTOCKS.RefreshReport()
+
+        ' ACTIVITY LOG REPORTS -------------------------------------------------------------------------------------------------------------
+
+
+        Me.RPTACTLOG.SetDisplayMode(Microsoft.Reporting.WinForms.DisplayMode.PrintLayout)
+        Me.tbl_usersTableAdapter.Fill(Me.inventory_dbDataSet.tbl_users)
+
+
+        Me.RPTACTLOG.RefreshReport()
+
+        ' TRANSACTION REPORTS -------------------------------------------------------------------------------------------------------------
+
+        Me.RPTTRANSACTIONRECORDS.SetDisplayMode(Microsoft.Reporting.WinForms.DisplayMode.PrintLayout)
+        Me.tbl_transactionTableAdapter.Fill(Me.inventory_dbDataSet.tbl_transaction)
+
+
+        Me.RPTTRANSACTIONRECORDS.RefreshReport()
     End Sub
     Private Sub BTNCLOSE_Click(sender As Object, e As EventArgs)
         Me.Close()
@@ -310,5 +327,16 @@ Public Class FRMREPORTS
         Me.tbl_deliveryTableAdapter.Fill(Me.inventory_dbDataSet.tbl_delivery)
 
         Me.RPTDELIVERY.RefreshReport()
+    End Sub
+
+    Private Sub FILTERACTLOG_Click(sender As Object, e As EventArgs) Handles FILTERACTLOG.Click
+        Me.tbl_actlogTableAdapter.FillByACT(Me.inventory_dbDataSet.tbl_actlog, CBOACTIVITYLOG.Text)
+
+        Me.RPTACTLOG.RefreshReport()
+    End Sub
+    Private Sub CLEARACTLOG_Click(sender As Object, e As EventArgs) Handles CLEARACTLOG.Click
+        Me.tbl_usersTableAdapter.Fill(Me.inventory_dbDataSet.tbl_users)
+
+        Me.RPTUSERS.RefreshReport()
     End Sub
 End Class

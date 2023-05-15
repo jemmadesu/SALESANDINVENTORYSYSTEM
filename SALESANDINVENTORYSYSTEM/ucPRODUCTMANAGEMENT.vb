@@ -105,13 +105,7 @@ Public Class ucNEWPRODUCT
 
     End Sub
 
-    Private Sub searchproducts()
-        Dim dba As New MySqlDataAdapter("select id, prodcode, prodname, manufacturer, brand, category, catcode, unit, price  from tbl_products  WHERE tbl_products.prodname LIKE '%" & Me.TXTSEARCH.Text & "%' OR tbl_products.prodcode LIKE '%" & Me.TXTSEARCH.Text & "%'", con)
-        Dim dbset As New DataSet
-        dba.Fill(dbset)
-        Me.DGVPRODUCTS.DataSource = dbset.Tables(0).DefaultView
 
-    End Sub
 
 
 
@@ -150,9 +144,22 @@ Public Class ucNEWPRODUCT
 
         End Try
     End Sub
-    Private Sub ucADDNEWPRODUCT_Load(sender As Object, e As EventArgs) Handles MyBase.Load
 
+    Private Sub LOADBRAND()
+        Dim cmd3 As New MySqlCommand("SELECT refno, brand, status FROM tbl_brand WHERE status = 'Active'", con)
+        Dim da3 As New MySqlDataAdapter(cmd3)
+        Dim tbl_brand As New DataTable()
+        da3.Fill(tbl_brand)
 
+        Dim rowbrand As DataRow = tbl_brand.NewRow()
+        rowbrand("brand") = "-- Select --"
+        tbl_brand.Rows.InsertAt(rowbrand, 0)
+
+        CBOBRAND.DataSource = tbl_brand
+        CBOBRAND.DisplayMember = "brand"
+    End Sub
+
+    Private Sub LOADCATEGORY()
         '---------------------------------- CATEGORY COMBOBOX DATA ------------------------------
 
         Dim cmd As New MySqlCommand(“select catcode,catname from tbl_category”, con)
@@ -172,33 +179,15 @@ Public Class ucNEWPRODUCT
         CBOPRODCAT.DisplayMember = “catname”
         CBOPRODCAT.ValueMember = "catcode"
 
-        '---------------------------------- MANUFACTURER COMBOBOX DATA ------------------------------
 
-        'Dim cmd1 As New MySqlCommand("SELECT refno, manufacturer, status FROM tbl_manufacturer WHERE status = 'Active'", con)
-        'Dim da1 As New MySqlDataAdapter(cmd1)
-        'Dim tbl_manufacturer As New DataTable()
-        'da1.Fill(tbl_manufacturer)
 
-        'Dim rowsup As DataRow = tbl_manufacturer.NewRow()
-        'rowsup("manufacturer") = "-- Select --"
-        'tbl_manufacturer.Rows.InsertAt(rowsup, 0)
+    End Sub
+    Private Sub ucADDNEWPRODUCT_Load(sender As Object, e As EventArgs) Handles MyBase.Load
 
-        'TXTMANUFACTURER.DataSource = tbl_manufacturer
-        'TXTMANUFACTURER.DisplayMember = "manufacturer"
 
-        '---------------------------------- BRAND COMBOBOX DATA ------------------------------
-
-        Dim cmd3 As New MySqlCommand("SELECT refno, manufacturer, brand, status FROM tbl_brand WHERE status = 'Active'", con)
-        Dim da3 As New MySqlDataAdapter(cmd3)
-        Dim tbl_brand As New DataTable()
-        da3.Fill(tbl_brand)
-
-        Dim rowbrand As DataRow = tbl_brand.NewRow()
-        rowbrand("brand") = "-- Select --"
-        tbl_brand.Rows.InsertAt(rowbrand, 0)
-
-        CBOBRAND.DataSource = tbl_brand
-        CBOBRAND.DisplayMember = "brand"
+        VIEW()
+        LOADBRAND()
+        LOADCATEGORY()
 
     End Sub
     Private Sub BTNSAVE_Click_1(sender As Object, e As EventArgs) Handles BTNSAVE.Click
@@ -258,12 +247,18 @@ Public Class ucNEWPRODUCT
         CBOBRAND.Text = ""
         CBOPRODCAT.Text = ""
         TXTCATCODE.Text = ""
+        BTNCATEGORY.Enabled = False
+        BTNBRAND.Enabled = False
         VIEW()
+        LOADBRAND()
+        LOADCATEGORY()
     End Sub
 
     Private Sub BTNEDIT_Click_1(sender As Object, e As EventArgs) Handles BTNEDIT.Click
 
         ' ---------------------------------------------------------------------------------------------------------- ERROR CODE ----------------------------------------------------------------------------------------------------------
+
+
 
         If CBOPRODCAT.Text = "-- Select --" Or TXTMANUFACTURER.Text = "-- Select --" Or CBOBRAND.Text = "-- Select --" Then
             MessageBox.Show("Please select a product category!", "Error Saving", MessageBoxButtons.OK, MessageBoxIcon.Error)
@@ -321,8 +316,12 @@ Public Class ucNEWPRODUCT
         TXTCATCODE.Text = ""
         TXTUNIT.Text = ""
         TXTPRICE.Text = ""
+        BTNCATEGORY.Enabled = False
+        BTNBRAND.Enabled = False
 
         VIEW()
+        LOADBRAND()
+        LOADCATEGORY()
 
     End Sub
 
@@ -330,11 +329,13 @@ Public Class ucNEWPRODUCT
         'DGVSETPROPERTY()
         VIEW()
     End Sub
-
-
     Private Sub BTNADD_Click(sender As Object, e As EventArgs) Handles BTNADD.Click
         Functionadd()
         Getmax()
+
+        BTNADD.Enabled = False
+        BTNCATEGORY.Enabled = True
+        BTNBRAND.Enabled = True
     End Sub
 
     Private Sub BTNCSNCEL_Click_1(sender As Object, e As EventArgs) Handles BTNCSNCEL.Click
@@ -349,6 +350,8 @@ Public Class ucNEWPRODUCT
         TXTPNA.Text = ""
         TXTPRICE.Text = ""
         TXTUNIT.Text = ""
+        BTNCATEGORY.Enabled = False
+        BTNBRAND.Enabled = False
         TXTPI.Focus()
 
     End Sub
@@ -394,6 +397,8 @@ Public Class ucNEWPRODUCT
 
         End If
         BTNEDIT.Text = "Update"
+        BTNCATEGORY.Enabled = True
+        BTNBRAND.Enabled = True
 
     End Sub
 
@@ -421,37 +426,54 @@ Public Class ucNEWPRODUCT
 
     Private Sub BTNBRAND_Click(sender As Object, e As EventArgs) Handles BTNBRAND.Click
 
+        HEADERPANEL.Visible = True
         PNLMANAGEPRODUCTS.Visible = True
 
-        Dim i As Integer
-        For i = 0 To 0
-            PNLMANAGEPRODUCTS.Controls.RemoveAt(i)
+        ' Remove existing controls (optional)
+        For Each control As Control In PNLMANAGEPRODUCTS.Controls
+            PNLMANAGEPRODUCTS.Controls.Remove(control)
         Next
 
         Dim BRAND As New ucBRAND()
         BRAND.Parent = PNLMANAGEPRODUCTS
-        BRAND.Show()
         BRAND.Dock = DockStyle.Fill
+        BRAND.Show()
+        VIEW()
+        LOADBRAND()
+        LOADCATEGORY()
     End Sub
-
-    Private Sub LBLCLOSE_Click(sender As Object, e As EventArgs) Handles LBLCLOSE.Click
-        PNLMANAGEPRODUCTS.Visible = False
-    End Sub
-
     Private Sub BTNCATEGORY_Click(sender As Object, e As EventArgs) Handles BTNCATEGORY.Click
 
         PNLMANAGEPRODUCTS.Visible = True
+        HEADERPANEL.Visible = True
 
 
-        Dim i As Integer
-        For i = 0 To 0
-            PNLMANAGEPRODUCTS.Controls.RemoveAt(i)
+        ' Remove existing controls (optional)
+        For Each control As Control In PNLMANAGEPRODUCTS.Controls
+            PNLMANAGEPRODUCTS.Controls.Remove(control)
         Next
 
         Dim CATEGORY As New ucCATEGORY()
         CATEGORY.Parent = PNLMANAGEPRODUCTS
-        CATEGORY.Show()
         CATEGORY.Dock = DockStyle.Fill
+        CATEGORY.Show()
+        VIEW()
+        LOADBRAND()
+        LOADCATEGORY()
+    End Sub
+
+    Private Sub LBLCLOSE_Click_1(sender As Object, e As EventArgs) Handles LBLCLOSE.Click
+        HEADERPANEL.Visible = False
+        PNLMANAGEPRODUCTS.Visible = False
+        VIEW()
+        LOADBRAND()
+        LOADCATEGORY()
+    End Sub
+
+    Private Sub CBOBRAND_SelectedIndexChanged(sender As Object, e As EventArgs) Handles CBOBRAND.SelectedIndexChanged
+    End Sub
+
+    Private Sub CBOPRODCAT_SelectedIndexChanged(sender As Object, e As EventArgs) Handles CBOPRODCAT.SelectedIndexChanged
     End Sub
 End Class
 

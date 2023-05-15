@@ -32,7 +32,6 @@ Partial Class ucSETTINGS
         Me.BTNUM = New System.Windows.Forms.Button()
         Me.BTNSTOCKIN = New System.Windows.Forms.Button()
         Me.BTNINVENTORY = New System.Windows.Forms.Button()
-        Me.BTNSUP = New System.Windows.Forms.Button()
         Me.Guna2ShadowPanel1 = New Guna.UI2.WinForms.Guna2ShadowPanel()
         Me.BTNRESTORE = New Guna.UI2.WinForms.Guna2Button()
         Me.BTNBACKUP = New Guna.UI2.WinForms.Guna2Button()
@@ -59,7 +58,6 @@ Partial Class ucSETTINGS
         Me.Panel2.Controls.Add(Me.BTNUM)
         Me.Panel2.Controls.Add(Me.BTNSTOCKIN)
         Me.Panel2.Controls.Add(Me.BTNINVENTORY)
-        Me.Panel2.Controls.Add(Me.BTNSUP)
         Me.Panel2.Dock = System.Windows.Forms.DockStyle.Top
         Me.Panel2.Location = New System.Drawing.Point(0, 0)
         Me.Panel2.Name = "Panel2"
@@ -76,7 +74,7 @@ Partial Class ucSETTINGS
         Me.BTNUM.ForeColor = System.Drawing.Color.White
         Me.BTNUM.Image = CType(resources.GetObject("BTNUM.Image"), System.Drawing.Image)
         Me.BTNUM.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.BTNUM.Location = New System.Drawing.Point(485, -3)
+        Me.BTNUM.Location = New System.Drawing.Point(531, -6)
         Me.BTNUM.Name = "BTNUM"
         Me.BTNUM.Size = New System.Drawing.Size(174, 52)
         Me.BTNUM.TabIndex = 47
@@ -94,7 +92,7 @@ Partial Class ucSETTINGS
         Me.BTNSTOCKIN.ForeColor = System.Drawing.Color.White
         Me.BTNSTOCKIN.Image = CType(resources.GetObject("BTNSTOCKIN.Image"), System.Drawing.Image)
         Me.BTNSTOCKIN.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.BTNSTOCKIN.Location = New System.Drawing.Point(236, 0)
+        Me.BTNSTOCKIN.Location = New System.Drawing.Point(282, -3)
         Me.BTNSTOCKIN.Name = "BTNSTOCKIN"
         Me.BTNSTOCKIN.Size = New System.Drawing.Size(210, 49)
         Me.BTNSTOCKIN.TabIndex = 49
@@ -112,31 +110,13 @@ Partial Class ucSETTINGS
         Me.BTNINVENTORY.ForeColor = System.Drawing.Color.White
         Me.BTNINVENTORY.Image = CType(resources.GetObject("BTNINVENTORY.Image"), System.Drawing.Image)
         Me.BTNINVENTORY.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.BTNINVENTORY.Location = New System.Drawing.Point(3, 0)
+        Me.BTNINVENTORY.Location = New System.Drawing.Point(49, -3)
         Me.BTNINVENTORY.Name = "BTNINVENTORY"
         Me.BTNINVENTORY.Size = New System.Drawing.Size(207, 49)
         Me.BTNINVENTORY.TabIndex = 49
         Me.BTNINVENTORY.Text = "Product Management"
         Me.BTNINVENTORY.TextAlign = System.Drawing.ContentAlignment.MiddleRight
         Me.BTNINVENTORY.UseVisualStyleBackColor = False
-        '
-        'BTNSUP
-        '
-        Me.BTNSUP.BackColor = System.Drawing.Color.FromArgb(CType(CType(37, Byte), Integer), CType(CType(46, Byte), Integer), CType(CType(59, Byte), Integer))
-        Me.BTNSUP.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None
-        Me.BTNSUP.FlatAppearance.BorderSize = 0
-        Me.BTNSUP.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.BTNSUP.Font = New System.Drawing.Font("Century Gothic", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.BTNSUP.ForeColor = System.Drawing.Color.White
-        Me.BTNSUP.Image = CType(resources.GetObject("BTNSUP.Image"), System.Drawing.Image)
-        Me.BTNSUP.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.BTNSUP.Location = New System.Drawing.Point(841, 4)
-        Me.BTNSUP.Name = "BTNSUP"
-        Me.BTNSUP.Size = New System.Drawing.Size(169, 49)
-        Me.BTNSUP.TabIndex = 49
-        Me.BTNSUP.Text = "Manage Supplier"
-        Me.BTNSUP.TextAlign = System.Drawing.ContentAlignment.MiddleRight
-        Me.BTNSUP.UseVisualStyleBackColor = False
         '
         'Guna2ShadowPanel1
         '
@@ -355,7 +335,6 @@ Partial Class ucSETTINGS
     Friend WithEvents Panel2 As Panel
     Friend WithEvents Guna2ShadowPanel1 As Guna.UI2.WinForms.Guna2ShadowPanel
     Friend WithEvents LBLHISTORY As Label
-    Friend WithEvents BTNSUP As Button
     Friend WithEvents BTNUM As Button
     Friend WithEvents BTNINVENTORY As Button
     Friend WithEvents BTNSTOCKIN As Button

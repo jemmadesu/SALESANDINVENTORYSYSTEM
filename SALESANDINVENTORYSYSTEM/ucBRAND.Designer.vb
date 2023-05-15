@@ -30,10 +30,8 @@ Partial Class ucBRAND
         Me.TXTSEARCH = New System.Windows.Forms.TextBox()
         Me.DGVBRAND = New System.Windows.Forms.DataGridView()
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
-        Me.CBOMANU = New System.Windows.Forms.ComboBox()
         Me.CBOSTATUS = New System.Windows.Forms.ComboBox()
         Me.Label4 = New System.Windows.Forms.Label()
-        Me.Label1 = New System.Windows.Forms.Label()
         Me.Label2 = New System.Windows.Forms.Label()
         Me.BTNUPDATE = New System.Windows.Forms.Button()
         Me.BTNSAVE = New System.Windows.Forms.Button()
@@ -52,7 +50,7 @@ Partial Class ucBRAND
         Me.GroupBox2.Controls.Add(Me.DGVBRAND)
         Me.GroupBox2.Font = New System.Drawing.Font("Century Gothic", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.GroupBox2.ForeColor = System.Drawing.SystemColors.ControlDarkDark
-        Me.GroupBox2.Location = New System.Drawing.Point(20, 255)
+        Me.GroupBox2.Location = New System.Drawing.Point(12, 219)
         Me.GroupBox2.Name = "GroupBox2"
         Me.GroupBox2.Size = New System.Drawing.Size(467, 247)
         Me.GroupBox2.TabIndex = 81
@@ -62,7 +60,7 @@ Partial Class ucBRAND
         'Label3
         '
         Me.Label3.AutoSize = True
-        Me.Label3.Location = New System.Drawing.Point(256, 25)
+        Me.Label3.Location = New System.Drawing.Point(16, 31)
         Me.Label3.Name = "Label3"
         Me.Label3.Size = New System.Drawing.Size(51, 17)
         Me.Label3.TabIndex = 78
@@ -70,7 +68,7 @@ Partial Class ucBRAND
         '
         'TXTSEARCH
         '
-        Me.TXTSEARCH.Location = New System.Drawing.Point(313, 19)
+        Me.TXTSEARCH.Location = New System.Drawing.Point(73, 25)
         Me.TXTSEARCH.Name = "TXTSEARCH"
         Me.TXTSEARCH.Size = New System.Drawing.Size(148, 23)
         Me.TXTSEARCH.TabIndex = 77
@@ -117,38 +115,26 @@ Partial Class ucBRAND
         'GroupBox1
         '
         Me.GroupBox1.BackColor = System.Drawing.Color.White
-        Me.GroupBox1.Controls.Add(Me.CBOMANU)
         Me.GroupBox1.Controls.Add(Me.CBOSTATUS)
         Me.GroupBox1.Controls.Add(Me.Label4)
-        Me.GroupBox1.Controls.Add(Me.Label1)
         Me.GroupBox1.Controls.Add(Me.Label2)
         Me.GroupBox1.Controls.Add(Me.BTNUPDATE)
         Me.GroupBox1.Controls.Add(Me.BTNSAVE)
         Me.GroupBox1.Controls.Add(Me.TXTBRAND)
         Me.GroupBox1.Font = New System.Drawing.Font("Century Gothic", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.GroupBox1.ForeColor = System.Drawing.SystemColors.ControlDarkDark
-        Me.GroupBox1.Location = New System.Drawing.Point(20, 87)
+        Me.GroupBox1.Location = New System.Drawing.Point(12, 51)
         Me.GroupBox1.Name = "GroupBox1"
         Me.GroupBox1.Size = New System.Drawing.Size(467, 162)
         Me.GroupBox1.TabIndex = 80
         Me.GroupBox1.TabStop = False
-        '
-        'CBOMANU
-        '
-        Me.CBOMANU.ForeColor = System.Drawing.Color.DimGray
-        Me.CBOMANU.FormattingEnabled = True
-        Me.CBOMANU.Location = New System.Drawing.Point(148, 33)
-        Me.CBOMANU.Name = "CBOMANU"
-        Me.CBOMANU.Size = New System.Drawing.Size(148, 25)
-        Me.CBOMANU.TabIndex = 76
-        Me.CBOMANU.Text = "-- Select --"
         '
         'CBOSTATUS
         '
         Me.CBOSTATUS.ForeColor = System.Drawing.Color.DimGray
         Me.CBOSTATUS.FormattingEnabled = True
         Me.CBOSTATUS.Items.AddRange(New Object() {"Active", "Inactive"})
-        Me.CBOSTATUS.Location = New System.Drawing.Point(148, 113)
+        Me.CBOSTATUS.Location = New System.Drawing.Point(148, 94)
         Me.CBOSTATUS.Name = "CBOSTATUS"
         Me.CBOSTATUS.Size = New System.Drawing.Size(148, 25)
         Me.CBOSTATUS.TabIndex = 75
@@ -159,29 +145,18 @@ Partial Class ucBRAND
         Me.Label4.AutoSize = True
         Me.Label4.Font = New System.Drawing.Font("Century Gothic", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label4.ForeColor = System.Drawing.SystemColors.ControlDarkDark
-        Me.Label4.Location = New System.Drawing.Point(39, 113)
+        Me.Label4.Location = New System.Drawing.Point(39, 94)
         Me.Label4.Name = "Label4"
         Me.Label4.Size = New System.Drawing.Size(54, 17)
         Me.Label4.TabIndex = 74
         Me.Label4.Text = "Status :"
-        '
-        'Label1
-        '
-        Me.Label1.AutoSize = True
-        Me.Label1.Font = New System.Drawing.Font("Century Gothic", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label1.ForeColor = System.Drawing.SystemColors.ControlDarkDark
-        Me.Label1.Location = New System.Drawing.Point(39, 36)
-        Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(102, 17)
-        Me.Label1.TabIndex = 36
-        Me.Label1.Text = "Manufacturer :"
         '
         'Label2
         '
         Me.Label2.AutoSize = True
         Me.Label2.Font = New System.Drawing.Font("Century Gothic", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label2.ForeColor = System.Drawing.SystemColors.ControlDarkDark
-        Me.Label2.Location = New System.Drawing.Point(39, 74)
+        Me.Label2.Location = New System.Drawing.Point(39, 55)
         Me.Label2.Name = "Label2"
         Me.Label2.Size = New System.Drawing.Size(53, 17)
         Me.Label2.TabIndex = 37
@@ -217,7 +192,7 @@ Partial Class ucBRAND
         '
         Me.TXTBRAND.Font = New System.Drawing.Font("Century Gothic", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.TXTBRAND.ForeColor = System.Drawing.SystemColors.ControlDarkDark
-        Me.TXTBRAND.Location = New System.Drawing.Point(148, 74)
+        Me.TXTBRAND.Location = New System.Drawing.Point(148, 55)
         Me.TXTBRAND.Name = "TXTBRAND"
         Me.TXTBRAND.Size = New System.Drawing.Size(148, 23)
         Me.TXTBRAND.TabIndex = 73
@@ -227,7 +202,7 @@ Partial Class ucBRAND
         Me.Label11.AutoSize = True
         Me.Label11.Font = New System.Drawing.Font("Century Gothic", 20.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label11.ForeColor = System.Drawing.Color.MediumSeaGreen
-        Me.Label11.Location = New System.Drawing.Point(9, 52)
+        Me.Label11.Location = New System.Drawing.Point(6, 16)
         Me.Label11.Name = "Label11"
         Me.Label11.Size = New System.Drawing.Size(106, 32)
         Me.Label11.TabIndex = 79
@@ -242,7 +217,7 @@ Partial Class ucBRAND
         Me.Controls.Add(Me.Label11)
         Me.Controls.Add(Me.GroupBox1)
         Me.Name = "ucBRAND"
-        Me.Size = New System.Drawing.Size(500, 520)
+        Me.Size = New System.Drawing.Size(500, 479)
         Me.GroupBox2.ResumeLayout(False)
         Me.GroupBox2.PerformLayout()
         CType(Me.DGVBRAND, System.ComponentModel.ISupportInitialize).EndInit()
@@ -257,7 +232,6 @@ Partial Class ucBRAND
     Friend WithEvents TXTSEARCH As TextBox
     Friend WithEvents DGVBRAND As DataGridView
     Friend WithEvents GroupBox1 As GroupBox
-    Friend WithEvents Label1 As Label
     Friend WithEvents Label2 As Label
     Friend WithEvents BTNUPDATE As Button
     Friend WithEvents BTNSAVE As Button
@@ -265,5 +239,4 @@ Partial Class ucBRAND
     Friend WithEvents Label11 As Label
     Friend WithEvents CBOSTATUS As ComboBox
     Friend WithEvents Label4 As Label
-    Friend WithEvents CBOMANU As ComboBox
 End Class

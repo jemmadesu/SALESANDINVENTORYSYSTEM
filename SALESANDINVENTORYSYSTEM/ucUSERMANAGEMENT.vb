@@ -347,5 +347,7 @@ Public Class ucUSERMANAGEMENT
         CBOSTATUS.Enabled = True
     End Sub
 
+    Private Sub txtsearch_TextChanged(sender As Object, e As EventArgs) Handles txtsearch.TextChanged
 
+    End Sub
 End Class

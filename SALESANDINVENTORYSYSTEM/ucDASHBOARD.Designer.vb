@@ -310,6 +310,7 @@ Partial Class ucDASHBOARD
         Me.panel2.Controls.Add(Me.lblproducts)
         Me.panel2.Controls.Add(Me.pictureBox3)
         Me.panel2.Controls.Add(Me.Label2)
+        Me.panel2.ForeColor = System.Drawing.Color.MediumSeaGreen
         Me.panel2.Location = New System.Drawing.Point(20, 340)
         Me.panel2.Name = "panel2"
         Me.panel2.Size = New System.Drawing.Size(200, 65)

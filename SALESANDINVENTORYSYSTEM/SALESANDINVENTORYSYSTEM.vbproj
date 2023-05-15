@@ -326,10 +326,10 @@
     <Compile Include="ucBRAND.vb">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="ucPRODUCTS.Designer.vb">
-      <DependentUpon>ucPRODUCTS.vb</DependentUpon>
+    <Compile Include="ucPRODUCTMANAGEMENT.Designer.vb">
+      <DependentUpon>ucPRODUCTMANAGEMENT.vb</DependentUpon>
     </Compile>
-    <Compile Include="ucPRODUCTS.vb">
+    <Compile Include="ucPRODUCTMANAGEMENT.vb">
       <SubType>UserControl</SubType>
     </Compile>
     <Compile Include="ucDELIVERY.Designer.vb">
@@ -432,6 +432,7 @@
     <EmbeddedResource Include="RPTSALES.rdlc">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </EmbeddedResource>
+    <EmbeddedResource Include="RPTTRANSACTIONRECORDS.rdlc" />
     <EmbeddedResource Include="RPTUSERS.rdlc">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </EmbeddedResource>
@@ -447,8 +448,8 @@
     <EmbeddedResource Include="ucMANUFACTURER.resx">
       <DependentUpon>ucMANUFACTURER.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="ucPRODUCTS.resx">
-      <DependentUpon>ucPRODUCTS.vb</DependentUpon>
+    <EmbeddedResource Include="ucPRODUCTMANAGEMENT.resx">
+      <DependentUpon>ucPRODUCTMANAGEMENT.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ucDELIVERY.resx">
       <DependentUpon>ucDELIVERY.vb</DependentUpon>

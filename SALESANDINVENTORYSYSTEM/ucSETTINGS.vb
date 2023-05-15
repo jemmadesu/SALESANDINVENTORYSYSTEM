@@ -115,19 +115,7 @@ Public Class ucSETTINGS
         INVENTORY.Dock = DockStyle.Fill
     End Sub
 
-    Private Sub BTNSTOCKIN_Click(sender As Object, e As EventArgs) Handles BTNSTOCKIN.Click
-        Dim i As Integer
-        For i = 0 To 0
-            FRMMAINMENU.PNLMAIN.Controls.RemoveAt(i)
-        Next
-
-        Dim RESTOCK As New ucRESTOCK
-        RESTOCK.Parent = FRMMAINMENU.PNLMAIN
-        RESTOCK.Show()
-        RESTOCK.Dock = DockStyle.Fill
-    End Sub
-
-    Private Sub BTNSUP_Click(sender As Object, e As EventArgs) Handles BTNSUP.Click
+    Private Sub BTNSUP_Click(sender As Object, e As EventArgs)
 
         Dim i As Integer
         For i = 0 To 0
@@ -212,5 +200,17 @@ Public Class ucSETTINGS
         MANUFACTURER.Parent = FRMMAINMENU.PNLMAIN
         MANUFACTURER.Show()
         MANUFACTURER.Dock = DockStyle.Fill
+    End Sub
+
+    Private Sub BTNSTOCKIN_Click(sender As Object, e As EventArgs) Handles BTNSTOCKIN.Click
+        Dim i As Integer
+        For i = 0 To 0
+            FRMMAINMENU.PNLMAIN.Controls.RemoveAt(i)
+        Next
+
+        Dim DELIVERY As New ucDELIVERY
+        DELIVERY.Parent = FRMMAINMENU.PNLMAIN
+        DELIVERY.Show()
+        DELIVERY.Dock = DockStyle.Fill
     End Sub
 End Class

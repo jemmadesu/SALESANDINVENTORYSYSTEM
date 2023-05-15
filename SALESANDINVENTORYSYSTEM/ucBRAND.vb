@@ -15,24 +15,23 @@ Public Class ucBRAND
         End With
     End Sub
     Private Sub ucBRAND_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        BTNUPDATE.Enabled = False
         view()
     End Sub
     Private Sub DGVSETPROPERTY()
         DGVBRAND.Columns(0).Width = 200
         DGVBRAND.Columns(0).HeaderText = "Ref No."
         DGVBRAND.Columns(1).Width = 200
-        DGVBRAND.Columns(1).HeaderText = "Manufacturer"
+        DGVBRAND.Columns(1).HeaderText = "Brand"
         DGVBRAND.Columns(2).Width = 200
-        DGVBRAND.Columns(2).HeaderText = "Brand"
-        DGVBRAND.Columns(3).Width = 200
-        DGVBRAND.Columns(3).HeaderText = "Status"
+        DGVBRAND.Columns(2).HeaderText = "Status"
     End Sub
     Private Sub view()
         con.Close()
 
         Try
 
-            Dim da As New MySqlDataAdapter("select refno, manufacturer, brand, status from tbl_brand ", con)
+            Dim da As New MySqlDataAdapter("select refno, brand, status from tbl_brand ", con)
             Dim dt As New DataSet()
             da.Fill(dt)
             DGVBRAND.DataSource = dt.Tables(0)
@@ -49,17 +48,18 @@ Public Class ucBRAND
 
     Private Sub BTNSAVE_Click(sender As Object, e As EventArgs) Handles BTNSAVE.Click
 
-        If CBOMANU.Text = "-- Select --" Or TXTBRAND.Text = "" Or CBOSTATUS.Text = "-- Select --" Then
+
+
+        If TXTBRAND.Text = "" Or CBOSTATUS.Text = "-- Select --" Then
             MsgBox("All fields are required!", vbOKOnly + vbCritical, "Error Saving")
             Exit Sub
         End If
 
         OpenCon()
-        cmd.CommandText = "insert into tbl_brand values (NULL, @mn, @br, @st)"
+        cmd.CommandText = "insert into tbl_brand values (NULL, @br, @st)"
         With cmd.Parameters
 
             .Clear()
-            .AddWithValue("mn", CBOMANU.Text)
             .AddWithValue("br", TXTBRAND.Text)
             .AddWithValue("st", CBOSTATUS.Text)
 
@@ -73,31 +73,36 @@ Public Class ucBRAND
         actlog()
         view()
 
-        CBOMANU.Text = ""
         TXTBRAND.Text = ""
         CBOSTATUS.Text = ""
     End Sub
 
     Private Sub BTNUPDATE_Click(sender As Object, e As EventArgs) Handles BTNUPDATE.Click
 
-        If CBOMANU.Text = "-- Select --" Or TXTBRAND.Text = "" Or CBOSTATUS.Text = "-- Select --" Then
+        If TXTBRAND.Text = "" Or CBOSTATUS.Text = "-- Select --" Then
             MsgBox("All fields are required!", vbOKOnly + vbCritical, "Error Saving")
             Exit Sub
         End If
 
-        OpenCon()
-        cmd.CommandText = "Update tbl_brand set refno=@rn, manufacturer =@mn, brand=@br, status=@st where refno=@rn"
+        con.Open()
+        cmd.CommandText = "UPDATE tbl_brand SET refno=@rn, brand=@br, status=@st WHERE refno=@rn"
         With cmd.Parameters
             .Clear()
-            .AddWithValue("mn", CBOMANU.Text)
-            .AddWithValue("br", TXTBRAND.Text)
-            .AddWithValue("st", CBOSTATUS.Text)
+            .AddWithValue("@rn", Me.DGVBRAND.CurrentRow.Cells(0).Value)
+            .AddWithValue("@br", TXTBRAND.Text)
+            .AddWithValue("@st", CBOSTATUS.Text)
         End With
         cmd.ExecuteNonQuery()
         con.Close()
         view()
         MsgBox("Record has been updated!", vbOKOnly + vbInformation, "Editing Successful")
+
+
         BTNUPDATE.Text = "Edit"
+        BTNSAVE.Enabled = True
+        TXTBRAND.Text = ""
+        CBOSTATUS.Text = ""
+
     End Sub
 
     Private Sub DGVBRAND_CellClick(sender As Object, e As DataGridViewCellEventArgs) Handles DGVBRAND.CellClick
@@ -105,17 +110,14 @@ Public Class ucBRAND
             Dim row As DataGridViewRow
             row = DGVBRAND.Rows(e.RowIndex)
 
-
-            CBOMANU.Text = row.Cells(1).Value
-            TXTBRAND.Text = row.Cells(2).Value
-            CBOSTATUS.Text = row.Cells(3).Value
+            TXTBRAND.Text = row.Cells(1).Value
+            CBOSTATUS.Text = row.Cells(2).Value
 
 
         End If
         BTNUPDATE.Text = "Update"
+        BTNSAVE.Enabled = False
+        BTNUPDATE.Enabled = True
     End Sub
 
-    Private Sub BTNBACK_Click(sender As Object, e As EventArgs) 
-
-    End Sub
 End Class

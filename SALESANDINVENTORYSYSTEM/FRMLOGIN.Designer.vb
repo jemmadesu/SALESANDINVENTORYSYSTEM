@@ -172,13 +172,14 @@ Partial Class FRMLOGIN
         'lblWelcome
         '
         Me.lblWelcome.AutoSize = True
-        Me.lblWelcome.Font = New System.Drawing.Font("Century Gothic", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblWelcome.Font = New System.Drawing.Font("Century Gothic", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lblWelcome.ForeColor = System.Drawing.SystemColors.ControlDarkDark
-        Me.lblWelcome.Location = New System.Drawing.Point(50, 165)
+        Me.lblWelcome.Location = New System.Drawing.Point(15, 163)
         Me.lblWelcome.Name = "lblWelcome"
-        Me.lblWelcome.Size = New System.Drawing.Size(346, 51)
+        Me.lblWelcome.Size = New System.Drawing.Size(409, 63)
         Me.lblWelcome.TabIndex = 27
-        Me.lblWelcome.Text = "Rizal Provincial Hospital Employees and Community " & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "Multi-purpose Cooperative " & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10)
+        Me.lblWelcome.Text = "Rizal Provincial Hospital Employees and Community " & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "          Multi-Purpose Coope" &
+    "rative " & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10)
         Me.lblWelcome.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
         '
         'txtLogin
@@ -186,7 +187,7 @@ Partial Class FRMLOGIN
         Me.txtLogin.AutoSize = True
         Me.txtLogin.Font = New System.Drawing.Font("Century Gothic", 27.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.txtLogin.ForeColor = System.Drawing.Color.MediumSeaGreen
-        Me.txtLogin.Location = New System.Drawing.Point(166, 104)
+        Me.txtLogin.Location = New System.Drawing.Point(153, 99)
         Me.txtLogin.Name = "txtLogin"
         Me.txtLogin.Size = New System.Drawing.Size(148, 44)
         Me.txtLogin.TabIndex = 26

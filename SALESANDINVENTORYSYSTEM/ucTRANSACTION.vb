@@ -12,28 +12,30 @@ Public Class ucTRANSACTION
     Dim longpaper As Integer
 
     Private Sub setsum()
-        DGVSUMMARY.Columns(0).Width = 270
+        DGVSUMMARY.Columns(0).Width = 200
         DGVSUMMARY.Columns(0).HeaderText = "Products"
-        DGVSUMMARY.Columns(1).Width = 100
+        DGVSUMMARY.Columns(1).Width = 200
         DGVSUMMARY.Columns(1).HeaderText = "Qty"
+        DGVSUMMARY.Columns(2).Width = 200
+        DGVSUMMARY.Columns(2).HeaderText = "Price"
+        DGVSUMMARY.Columns(3).Width = 200
+        DGVSUMMARY.Columns(3).HeaderText = "Total Price"
     End Sub
     Private Sub SUMMARY()
         Try
-
-            Dim da As New MySqlDataAdapter("select prodname, quantity  from tbl_cart ", con)
+            Dim da As New MySqlDataAdapter("select prodname, quantity, price, totalprice from tbl_cart", con)
             Dim dt As New DataSet()
             da.Fill(dt)
             Me.DGVSUMMARY.DataSource = dt.Tables(0).DefaultView
 
             setsum()
         Catch ex As Exception
-
+            con.Close()
             MessageBox.Show(ex.ToString())
-
         End Try
     End Sub
     Private Sub ucTRANSACTION_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-
+        con.Close()
 
         'FIFO
 
@@ -142,7 +144,8 @@ Public Class ucTRANSACTION
 
             e.Graphics.DrawString("X" + DGVCART.Rows(row).Cells(7).Value.ToString, f10, Brushes.BlueViolet, 0, 170 + height)
             e.Graphics.DrawString(DGVCART.Rows(row).Cells(1).Value.ToString, f10, Brushes.BlueViolet, 40, 170 + height)
-            e.Graphics.DrawString(DGVCART.Rows(row).Cells(5).Value.ToString, f10, Brushes.BlueViolet, 220, 170 + height)
+            e.Graphics.DrawString(DGVCART.Rows(row).Cells(6).Value.ToString, f10, Brushes.BlueViolet, 200, 170 + height)
+            e.Graphics.DrawString(DGVCART.Rows(row).Cells(8).Value.ToString, f10, Brushes.BlueViolet, 220, 170 + height)
 
 
         Next
@@ -152,7 +155,8 @@ Public Class ucTRANSACTION
         sumprice()
         e.Graphics.DrawString(line, f8, Brushes.BlueViolet, 0, 70 + height2)
         e.Graphics.DrawString("No. of items: " & t_qty, f10b, Brushes.BlueViolet, 0, 80 + height2)
-        e.Graphics.DrawString("Total: " & Format(t_price, "##,##0"), f10b, Brushes.BlueViolet, rightmargin, 80 + height2, right)
+        e.Graphics.DrawString("Sub Total: " + LBLSUB.Text.ToString, f10b, Brushes.BlueViolet, 180, 80 + height2)
+        e.Graphics.DrawString("Total: " & TOTALAMOUNT.Text, f10b, Brushes.BlueViolet, 180, 100 + height2)
 
 
         e.Graphics.DrawString("Cash: " + TXTPAYMENT.Text.ToString, f10b, Brushes.BlueViolet, 0, 110 + height2)
@@ -245,25 +249,31 @@ Public Class ucTRANSACTION
 
         '--------------------------------------------------------------- CODE FOR COLUMN HEADER NAME (PRODUCTS) -----------------------------------------
         DGVPRODUCTS.Columns(0).Width = 200
-        DGVPRODUCTS.Columns(0).HeaderText = "Product Code"
+        DGVPRODUCTS.Columns(0).HeaderText = "Product ID"
         DGVPRODUCTS.Columns(1).Width = 200
-        DGVPRODUCTS.Columns(1).HeaderText = "Product Name"
+        DGVPRODUCTS.Columns(1).HeaderText = "Product Code"
         DGVPRODUCTS.Columns(2).Width = 200
-        DGVPRODUCTS.Columns(2).HeaderText = "Product Brand"
+        DGVPRODUCTS.Columns(2).HeaderText = "Product Name"
         DGVPRODUCTS.Columns(3).Width = 200
-        DGVPRODUCTS.Columns(3).HeaderText = "Category"
+        DGVPRODUCTS.Columns(3).HeaderText = "Manufacturer"
         DGVPRODUCTS.Columns(4).Width = 200
-        DGVPRODUCTS.Columns(4).HeaderText = "Category Code"
+        DGVPRODUCTS.Columns(4).HeaderText = "Brand"
         DGVPRODUCTS.Columns(5).Width = 200
-        DGVPRODUCTS.Columns(5).HeaderText = "Price"
+        DGVPRODUCTS.Columns(5).HeaderText = "Category"
         DGVPRODUCTS.Columns(6).Width = 200
-        DGVPRODUCTS.Columns(6).HeaderText = "Unit"
+        DGVPRODUCTS.Columns(6).HeaderText = "Category Code"
         DGVPRODUCTS.Columns(7).Width = 200
-        DGVPRODUCTS.Columns(7).HeaderText = "Stocks"
+        DGVPRODUCTS.Columns(7).HeaderText = "Unit"
         DGVPRODUCTS.Columns(8).Width = 200
-        DGVPRODUCTS.Columns(8).HeaderText = "Date Added"
-        DGVPRODUCTS.Columns(9).Width = 300
-        DGVPRODUCTS.Columns(9).HeaderText = "Days ago after added"
+        DGVPRODUCTS.Columns(8).HeaderText = "Price"
+        DGVPRODUCTS.Columns(9).Width = 200
+        DGVPRODUCTS.Columns(9).HeaderText = "Quantity"
+        DGVPRODUCTS.Columns(10).Width = 200
+        DGVPRODUCTS.Columns(10).HeaderText = "Manufactured Date"
+        DGVPRODUCTS.Columns(11).Width = 200
+        DGVPRODUCTS.Columns(11).HeaderText = "Expiration Date"
+        DGVPRODUCTS.Columns(12).Width = 200
+        DGVPRODUCTS.Columns(12).HeaderText = "Date Added Stocks"
 
 
     End Sub
@@ -283,15 +293,15 @@ Public Class ucTRANSACTION
         DGVCART.Columns(4).Width = 200
         DGVCART.Columns(4).HeaderText = "Category Code"
         DGVCART.Columns(5).Width = 200
-        DGVCART.Columns(5).HeaderText = "Price"
+        DGVCART.Columns(5).HeaderText = "Unit"
         DGVCART.Columns(6).Width = 200
-        DGVCART.Columns(6).HeaderText = "Unit"
+        DGVCART.Columns(6).HeaderText = "Price"
         DGVCART.Columns(7).Width = 200
         DGVCART.Columns(7).HeaderText = "Quantity"
         DGVCART.Columns(8).Width = 200
-        DGVCART.Columns(8).HeaderText = "Transaction Date"
+        DGVCART.Columns(8).HeaderText = "Total Price"
         DGVCART.Columns(9).Width = 200
-        DGVCART.Columns(9).HeaderText = "Return Date"
+        DGVCART.Columns(9).HeaderText = "Transaction Date"
 
 
     End Sub
@@ -307,6 +317,33 @@ Public Class ucTRANSACTION
 
     End Sub
 
+    'Private Sub totalsum()
+
+    '    ' Assuming you have a SQL Server database connection
+    '    Dim connectionString As String = “Server=localhost;Port=3306;User=root;Password=password;Database=inventory_db"
+    '    Dim query As String = "SELECT price, quantity FROM tbl_cart"
+    '    Dim totalSum As Decimal = 0
+
+    '    Using connection As New MySqlConnection(connectionString)
+    '        Using command As New MySqlCommand(query, connection)
+    '            connection.Open()
+    '            Dim reader As MySqlDataReader = command.ExecuteReader()
+
+    '            While reader.Read()
+    '                Dim price As Decimal = reader.GetDecimal(0)
+    '                Dim quantity As Integer = reader.GetInt32(1)
+    '                totalSum += price * quantity
+    '            End While
+
+    '            reader.Close()
+    '        End Using
+    '    End Using
+
+    '    ' Now the totalSum variable contains the sum of price * quantity
+    '    Console.WriteLine("Total sum: " & totalSum)
+
+    'End Sub
+
     Private Sub showproducts()
 
 
@@ -320,7 +357,7 @@ Public Class ucTRANSACTION
 
         Try
             con.Open()
-            command = New MySqlCommand("SELECT prodcode, prodname, brand, category, catcode, price, unit, quantity, dateaddedstocks, CONCAT('added ', DATEDIFF(dateaddedstocks, NOW()), ' days ago') AS Remaining_Days FROM tbl_stocks", con)
+            command = New MySqlCommand("SELECT id, prodcode, prodname, manufacturer, brand, category, catcode, unit, price, quantity, manufactureddate, expirationdate, dateaddedstocks FROM tbl_stocks", con)
 
             dataadapt.SelectCommand = command
             dataadapt.Fill(dataset)
@@ -352,7 +389,7 @@ Public Class ucTRANSACTION
 
         Try
 
-            Dim da As New MySqlDataAdapter("select prodcode, prodname, brand, category, catcode, price, unit, quantity, transdate, returndate  from tbl_cart ", con)
+            Dim da As New MySqlDataAdapter("select prodcode, prodname, brand, category, catcode, unit, price, quantity, totalprice, transdate  from tbl_cart ", con)
             Dim dt As New DataSet()
             da.Fill(dt)
             Me.DGVCART.DataSource = dt.Tables(0).DefaultView
@@ -368,8 +405,45 @@ Public Class ucTRANSACTION
 
 
     End Sub
+    Private Sub items()
+        Dim query As String = "SELECT SUM(quantity) FROM tbl_cart"
+        Dim sum As Object = Nothing
+
+        Using connection As New MySqlConnection("Server=localhost;Port=3306;User=root;Password=password;Database=inventory_db")
+            Using command As New MySqlCommand(query, connection)
+                connection.Open()
+                sum = command.ExecuteScalar()
+            End Using
+        End Using
+
+        If sum IsNot Nothing AndAlso Not DBNull.Value.Equals(sum) Then
+            Me.LBLITEMS.Text = sum.ToString()
+        Else
+            Me.LBLITEMS.Text = "N/A" ' or any default value if the sum is null
+        End If
+    End Sub
+
+    Private Sub totalsub()
+        Dim query As String = "SELECT SUM(totalprice) FROM tbl_cart"
+        Dim sum As Object = Nothing
+
+        Using connection As New MySqlConnection("Server=localhost;Port=3306;User=root;Password=password;Database=inventory_db")
+            Using command As New MySqlCommand(query, connection)
+                connection.Open()
+                sum = command.ExecuteScalar()
+            End Using
+        End Using
+
+        If sum IsNot Nothing AndAlso Not DBNull.Value.Equals(sum) Then
+            Me.LBLSUB.Text = sum.ToString()
+        Else
+            Me.LBLSUB.Text = "N/A" ' or any default value if the sum is null
+        End If
+    End Sub
 
     Private Sub BTNCART_Click(sender As Object, e As EventArgs) Handles BTNCART.Click
+
+
 
         ' ERROR TRAPPING FOR PRODUCTS
 
@@ -389,11 +463,11 @@ Public Class ucTRANSACTION
             MessageBox.Show("The Quantity is 0 ", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
             Exit Sub
         End If
-        If Me.NumericUpDown1.Value > Me.DGVPRODUCTS.CurrentRow.Cells(7).Value Then
+        If Me.NumericUpDown1.Value > Me.DGVPRODUCTS.CurrentRow.Cells(9).Value Then
             MessageBox.Show("The quantity you have entered is beyond the stocks limit.", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning)
             Exit Sub
         End If
-        If Me.NumericUpDown1.Value > 0 Or Me.NumericUpDown1.Value <= Me.DGVPRODUCTS.CurrentRow.Cells(7).Value Then
+        If Me.NumericUpDown1.Value > 0 Or Me.NumericUpDown1.Value <= Me.DGVPRODUCTS.CurrentRow.Cells(9).Value Then
         End If
 
         BTNPAY.Visible = True
@@ -432,7 +506,7 @@ Public Class ucTRANSACTION
         ' Create the MySqlCommand and add the parameters
         Dim command As New MySqlCommand(sql, con)
         command.Parameters.AddWithValue("@quantityToSubtract", quantityToSubtract)
-        command.Parameters.AddWithValue("@prodcode", currentRow.Cells(0).Value)
+        command.Parameters.AddWithValue("@prodcode", currentRow.Cells(1).Value)
 
         ' Open the connection, execute the command, and close the connection
         con.Open()
@@ -444,24 +518,25 @@ Public Class ucTRANSACTION
         SUMMARY()
 
         con.Open()
-        cmd.CommandText = "insert into tbl_cart (prodcode, prodname, brand, category, catcode, price, unit, quantity, transdate ) values ( @pco, @pna, @br, @pc, @cc, @pr, @un, @qt, @td)  "
-        With cmd.Parameters
-
-            .Clear()
-
-            .AddWithValue("pco", TXTPRODID.Text)
-            .AddWithValue("pna", TXTPRODNAME.Text)
-            .AddWithValue("br", TXTPRODBRAND.Text)
-            .AddWithValue("pc", TXTPRODCAT.Text)
-            .AddWithValue("cc", TXTCATCODE.Text)
-            .AddWithValue("pr", QuantityUpdate)
-            .AddWithValue("un", TXTUNIT.Text)
-            .AddWithValue("qt", NumericUpDown1.Text)
-            .AddWithValue("td", Format(Date.Now, "yyyy-mm-dd"))
-
-        End With
-        cmd.ExecuteNonQuery()
+        Dim query As String = "INSERT INTO tbl_cart (prodcode, prodname, brand, category, catcode, price, totalprice, unit, quantity, transdate) VALUES (@pco, @pna, @br, @pc, @cc, @pr, @tp, @un, @qt, @td)"
+        Using cmd As New MySqlCommand(query, con)
+            With cmd.Parameters
+                .Clear()
+                .AddWithValue("@pco", TXTPRODID.Text)
+                .AddWithValue("@pna", TXTPRODNAME.Text)
+                .AddWithValue("@br", TXTPRODBRAND.Text)
+                .AddWithValue("@pc", TXTPRODCAT.Text)
+                .AddWithValue("@cc", TXTCATCODE.Text)
+                .AddWithValue("@pr", TXTPRC.Text)
+                .AddWithValue("@tp", QuantityUpdate)
+                .AddWithValue("@un", TXTUNIT.Text)
+                .AddWithValue("@qt", NumericUpDown1.Text)
+                .AddWithValue("@td", Format(Date.Now, "yyyy-MM-dd"))
+            End With
+            cmd.ExecuteNonQuery()
+        End Using
         con.Close()
+
         MsgBox("New product order has been added!", vbOKOnly + vbInformation, "Added Successfully")
         TXTPRODID.Text = ""
         TXTPRODNAME.Text = ""
@@ -476,8 +551,10 @@ Public Class ucTRANSACTION
         showproducts()
         showcart()
         SUMMARY()
+        items()
+        totalsub()
 
-        Dim dba1 As New MySqlDataAdapter("SELECT SUM(Price) FROM tbl_cart", con)
+        Dim dba1 As New MySqlDataAdapter("SELECT SUM(totalprice) FROM tbl_cart", con)
         Dim dbset1 As New DataSet
         dba1.Fill(dbset1)
         If dbset1.Tables(0).Rows.Count > 0 Then
@@ -534,7 +611,7 @@ Public Class ucTRANSACTION
             For x = 0 To DGVCART.Rows.Count - 1
 
                 con.Open()
-                cmd.CommandText = "insert into tbl_transaction values (NULL, @or, @ut, @una, @dt, @pc, @pn, @br, @cn, @cc, @un, @qt, @pm, @tb, @ch, @da, @td, @rd)"
+                cmd.CommandText = "insert into tbl_transaction values (NULL, @or, @ut, @una, @dt, @pc, @pn, @br, @cn, @cc, @un, @qt, @pr, @pm, @tb, @ch, @da, @td, @rd)"
 
 
 
@@ -561,9 +638,11 @@ Public Class ucTRANSACTION
 
                     .AddWithValue("cc", DGVCART.Rows(x).Cells(4).Value.ToString)
 
-                    .AddWithValue("un", DGVCART.Rows(x).Cells(6).Value.ToString)
+                    .AddWithValue("un", DGVCART.Rows(x).Cells(5).Value.ToString)
 
                     .AddWithValue("qt", DGVCART.Rows(x).Cells(7).Value.ToString)
+
+                    .AddWithValue("pr", DGVCART.Rows(x).Cells(6).Value.ToString)
 
                     .AddWithValue("pm", TXTPAYMENT.Text)
 
@@ -603,6 +682,10 @@ Public Class ucTRANSACTION
         TXTCHANGE.Text = 0
         TXTPAYMENT.Text = 0
         TXTDISCAMOUNT.Text = 0
+        LBLITEMS.Text = "0"
+        LBLSUB.Text = "0.00"
+        TXTID.Text = ""
+        TXTNAME.Text = ""
         TOTALAMOUNT.Text = "00,00"
         ORNO.Text = "000000"
         CBODISCOUNT.Text = "-- Select --"
@@ -634,7 +717,7 @@ Public Class ucTRANSACTION
 
 
             TOTALBILL.Text = TXTBILL.Text
-            TOTALAMOUNT.Text = "₱" + TXTBILL.Text
+            TOTALAMOUNT.Text = TXTBILL.Text
         End If
 
     End Sub
@@ -677,14 +760,14 @@ Public Class ucTRANSACTION
             row = DGVPRODUCTS.Rows(e.RowIndex)
 
 
-            TXTPRODID.Text = row.Cells(0).Value
-            TXTPRODNAME.Text = row.Cells(1).Value
-            TXTPRODBRAND.Text = row.Cells(2).Value
-            TXTPRODCAT.Text = row.Cells(3).Value
-            TXTCATCODE.Text = row.Cells(4).Value
-            TXTPRC.Text = row.Cells(5).Value
-            TXTUNIT.Text = row.Cells(6).Value
-            TXTQTY.Text = row.Cells(7).Value
+            TXTPRODID.Text = row.Cells(1).Value
+            TXTPRODNAME.Text = row.Cells(2).Value
+            TXTPRODBRAND.Text = row.Cells(4).Value
+            TXTPRODCAT.Text = row.Cells(5).Value
+            TXTCATCODE.Text = row.Cells(6).Value
+            TXTPRC.Text = row.Cells(8).Value
+            TXTUNIT.Text = row.Cells(7).Value
+            TXTQTY.Text = row.Cells(9).Value
 
         End If
     End Sub
@@ -696,13 +779,13 @@ Public Class ucTRANSACTION
 
         For Each productRow As DataGridViewRow In DGVPRODUCTS.Rows
             ' Get the product ID and quantity from the current row
-            Dim prodcode = productRow.Cells(0).Value
-            Dim quantity = productRow.Cells(7).Value
+            Dim prodcode = productRow.Cells(1).Value
+            Dim quantity = productRow.Cells(9).Value
 
             ' Calculate the new quantity by adding the quantity in the cart rows
             For Each cartRow As DataGridViewRow In DGVCART.Rows
-                If cartRow.Cells(0).Value = prodcode Then
-                    quantity += cartRow.Cells(7).Value
+                If cartRow.Cells(1).Value = prodcode Then
+                    quantity += cartRow.Cells(9).Value
                 End If
             Next
 
@@ -735,6 +818,8 @@ Public Class ucTRANSACTION
         showcart()
         SUMMARY()
         showproducts()
+        items()
+        totalsub()
         MessageBox.Show("Successfully removed from the cart.")
 
         If Me.DGVPRODUCTS.RowCount = 0 Then
@@ -800,11 +885,11 @@ Public Class ucTRANSACTION
 
     Private Sub DGVPRODUCTS_CellFormatting(sender As Object, e As DataGridViewCellFormattingEventArgs) Handles DGVPRODUCTS.CellFormatting
 
-        If e.ColumnIndex = DGVPRODUCTS.Columns(9).Index AndAlso e.Value IsNot Nothing Then
-            Dim cellValue As String = e.Value.ToString()
-            e.Value = cellValue.Replace("-", "")
-            e.FormattingApplied = True
-        End If
+        'If e.ColumnIndex = DGVPRODUCTS.Columns(9).Index AndAlso e.Value IsNot Nothing Then
+        '    Dim cellValue As String = e.Value.ToString()
+        '    e.Value = cellValue.Replace("-", "")
+        '    e.FormattingApplied = True
+        'End If
     End Sub
 
     Private Sub Guna2GradientTileButton1_Click(sender As Object, e As EventArgs)
@@ -812,4 +897,26 @@ Public Class ucTRANSACTION
         PPD.Document = PD
         PPD.ShowDialog()
     End Sub
+
+    Private Sub TXTSEARCH_TextChanged(sender As Object, e As EventArgs) Handles TXTSEARCH.TextChanged
+        PerformSearchAndLoadData(TXTSEARCH.Text)
+    End Sub
+    Private Sub PerformSearchAndLoadData(keyword As String)
+        ' Perform the search and load the data
+        Dim query As String = "SELECT prodcode, prodname, brand, category, catcode, price, unit, quantity, dateaddedstocks FROM tbl_stocks WHERE tbl_stocks.prodcode & tbl_stocks.prodname & tbl_stocks.brand & tbl_stocks.manufacturer LIKE @Keyword"
+        Dim connectionString As String = "Server=localhost;Port=3306;User=root;Password=password;Database=inventory_db"
+
+        Using connection As New MySqlConnection(connectionString)
+            Using command As New MySqlCommand(query, connection)
+                command.Parameters.AddWithValue("@Keyword", "%" & keyword & "%")
+
+                Dim adapter As New MySqlDataAdapter(command)
+                Dim table As New DataTable()
+                adapter.Fill(table)
+
+                DGVPRODUCTS.DataSource = table
+            End Using
+        End Using
+    End Sub
+
 End Class

@@ -59,16 +59,14 @@ Partial Class ucNEWPRODUCT
         Me.GroupBox2 = New System.Windows.Forms.GroupBox()
         Me.LBLID = New System.Windows.Forms.Label()
         Me.PNLMANAGEPRODUCTS = New System.Windows.Forms.Panel()
-        Me.Button1 = New System.Windows.Forms.Button()
+        Me.HEADERPANEL = New System.Windows.Forms.Panel()
         Me.LBLCLOSE = New System.Windows.Forms.PictureBox()
-        Me.Panel1 = New System.Windows.Forms.Panel()
         Me.GroupBox1.SuspendLayout()
         Me.Panel2.SuspendLayout()
         CType(Me.DGVPRODUCTS, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.GroupBox2.SuspendLayout()
-        Me.PNLMANAGEPRODUCTS.SuspendLayout()
+        Me.HEADERPANEL.SuspendLayout()
         CType(Me.LBLCLOSE, System.ComponentModel.ISupportInitialize).BeginInit()
-        Me.Panel1.SuspendLayout()
         Me.SuspendLayout()
         '
         'TXTCATCODE
@@ -312,6 +310,7 @@ Partial Class ucNEWPRODUCT
         '
         Me.BTNCATEGORY.BackColor = System.Drawing.Color.MediumSeaGreen
         Me.BTNCATEGORY.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None
+        Me.BTNCATEGORY.Enabled = False
         Me.BTNCATEGORY.FlatAppearance.BorderSize = 0
         Me.BTNCATEGORY.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.BTNCATEGORY.Font = New System.Drawing.Font("Century Gothic", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
@@ -327,6 +326,7 @@ Partial Class ucNEWPRODUCT
         'BTNBRAND
         '
         Me.BTNBRAND.BackColor = System.Drawing.Color.MediumSeaGreen
+        Me.BTNBRAND.Enabled = False
         Me.BTNBRAND.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.BTNBRAND.Font = New System.Drawing.Font("Century Gothic", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.BTNBRAND.ForeColor = System.Drawing.Color.White
@@ -481,7 +481,7 @@ Partial Class ucNEWPRODUCT
         Me.GroupBox2.Size = New System.Drawing.Size(500, 520)
         Me.GroupBox2.TabIndex = 72
         Me.GroupBox2.TabStop = False
-        Me.GroupBox2.Text = "New Product List"
+        Me.GroupBox2.Text = "Product List"
         '
         'LBLID
         '
@@ -497,58 +497,39 @@ Partial Class ucNEWPRODUCT
         'PNLMANAGEPRODUCTS
         '
         Me.PNLMANAGEPRODUCTS.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.PNLMANAGEPRODUCTS.Controls.Add(Me.Panel1)
-        Me.PNLMANAGEPRODUCTS.Location = New System.Drawing.Point(544, 136)
+        Me.PNLMANAGEPRODUCTS.Location = New System.Drawing.Point(544, 186)
         Me.PNLMANAGEPRODUCTS.Name = "PNLMANAGEPRODUCTS"
-        Me.PNLMANAGEPRODUCTS.Size = New System.Drawing.Size(500, 529)
+        Me.PNLMANAGEPRODUCTS.Size = New System.Drawing.Size(500, 479)
         Me.PNLMANAGEPRODUCTS.TabIndex = 74
         Me.PNLMANAGEPRODUCTS.Visible = False
         '
-        'Button1
+        'HEADERPANEL
         '
-        Me.Button1.BackColor = System.Drawing.Color.FromArgb(CType(CType(37, Byte), Integer), CType(CType(46, Byte), Integer), CType(CType(59, Byte), Integer))
-        Me.Button1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None
-        Me.Button1.FlatAppearance.BorderSize = 0
-        Me.Button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.Button1.Font = New System.Drawing.Font("Century Gothic", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Button1.ForeColor = System.Drawing.Color.White
-        Me.Button1.Image = CType(resources.GetObject("Button1.Image"), System.Drawing.Image)
-        Me.Button1.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.Button1.Location = New System.Drawing.Point(654, 0)
-        Me.Button1.Name = "Button1"
-        Me.Button1.Padding = New System.Windows.Forms.Padding(20, 0, 0, 0)
-        Me.Button1.Size = New System.Drawing.Size(119, 46)
-        Me.Button1.TabIndex = 3
-        Me.Button1.Text = " Back"
-        Me.Button1.UseVisualStyleBackColor = False
+        Me.HEADERPANEL.BackColor = System.Drawing.Color.FromArgb(CType(CType(37, Byte), Integer), CType(CType(46, Byte), Integer), CType(CType(59, Byte), Integer))
+        Me.HEADERPANEL.Controls.Add(Me.LBLCLOSE)
+        Me.HEADERPANEL.Location = New System.Drawing.Point(544, 144)
+        Me.HEADERPANEL.Name = "HEADERPANEL"
+        Me.HEADERPANEL.Size = New System.Drawing.Size(500, 49)
+        Me.HEADERPANEL.TabIndex = 80
+        Me.HEADERPANEL.Visible = False
         '
         'LBLCLOSE
         '
         Me.LBLCLOSE.Cursor = System.Windows.Forms.Cursors.Hand
         Me.LBLCLOSE.Image = Global.SALESANDINVENTORYSYSTEM.My.Resources.Resources.x_mark_64__1_
-        Me.LBLCLOSE.Location = New System.Drawing.Point(468, 13)
+        Me.LBLCLOSE.Location = New System.Drawing.Point(462, 12)
         Me.LBLCLOSE.Name = "LBLCLOSE"
         Me.LBLCLOSE.Size = New System.Drawing.Size(19, 21)
         Me.LBLCLOSE.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
         Me.LBLCLOSE.TabIndex = 79
         Me.LBLCLOSE.TabStop = False
         '
-        'Panel1
-        '
-        Me.Panel1.BackColor = System.Drawing.Color.FromArgb(CType(CType(37, Byte), Integer), CType(CType(46, Byte), Integer), CType(CType(59, Byte), Integer))
-        Me.Panel1.Controls.Add(Me.LBLCLOSE)
-        Me.Panel1.Controls.Add(Me.Button1)
-        Me.Panel1.Dock = System.Windows.Forms.DockStyle.Top
-        Me.Panel1.Location = New System.Drawing.Point(0, 0)
-        Me.Panel1.Name = "Panel1"
-        Me.Panel1.Size = New System.Drawing.Size(498, 49)
-        Me.Panel1.TabIndex = 77
-        '
         'ucNEWPRODUCT
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.White
+        Me.Controls.Add(Me.HEADERPANEL)
         Me.Controls.Add(Me.PNLMANAGEPRODUCTS)
         Me.Controls.Add(Me.LBLID)
         Me.Controls.Add(Me.GroupBox2)
@@ -564,9 +545,8 @@ Partial Class ucNEWPRODUCT
         CType(Me.DGVPRODUCTS, System.ComponentModel.ISupportInitialize).EndInit()
         Me.GroupBox2.ResumeLayout(False)
         Me.GroupBox2.PerformLayout()
-        Me.PNLMANAGEPRODUCTS.ResumeLayout(False)
+        Me.HEADERPANEL.ResumeLayout(False)
         CType(Me.LBLCLOSE, System.ComponentModel.ISupportInitialize).EndInit()
-        Me.Panel1.ResumeLayout(False)
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -604,7 +584,6 @@ Partial Class ucNEWPRODUCT
     Friend WithEvents BTNBRAND As Button
     Friend WithEvents BTNCATEGORY As Button
     Friend WithEvents PNLMANAGEPRODUCTS As Panel
-    Friend WithEvents Panel1 As Panel
+    Friend WithEvents HEADERPANEL As Panel
     Friend WithEvents LBLCLOSE As PictureBox
-    Friend WithEvents Button1 As Button
 End Class

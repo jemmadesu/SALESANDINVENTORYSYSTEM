@@ -26,6 +26,7 @@ Partial Class FRMMAINMENU
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(FRMMAINMENU))
         Me.PNLMAIN = New System.Windows.Forms.Panel()
         Me.Panel1 = New System.Windows.Forms.Panel()
+        Me.LBLNAME = New System.Windows.Forms.Label()
         Me.Label2 = New System.Windows.Forms.Label()
         Me.BTNSALES = New System.Windows.Forms.Button()
         Me.Guna2CirclePictureBox1 = New Guna.UI2.WinForms.Guna2CirclePictureBox()
@@ -41,7 +42,6 @@ Partial Class FRMMAINMENU
         Me.BTNSETTINGS = New System.Windows.Forms.Button()
         Me.BTNDASHBOARD = New System.Windows.Forms.Button()
         Me.Timer1 = New System.Windows.Forms.Timer(Me.components)
-        Me.LBLNAME = New System.Windows.Forms.Label()
         Me.Panel1.SuspendLayout()
         CType(Me.Guna2CirclePictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
@@ -78,6 +78,17 @@ Partial Class FRMMAINMENU
         Me.Panel1.Name = "Panel1"
         Me.Panel1.Size = New System.Drawing.Size(259, 729)
         Me.Panel1.TabIndex = 20
+        '
+        'LBLNAME
+        '
+        Me.LBLNAME.AutoSize = True
+        Me.LBLNAME.Font = New System.Drawing.Font("Century Gothic", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.LBLNAME.ForeColor = System.Drawing.Color.MediumSeaGreen
+        Me.LBLNAME.Location = New System.Drawing.Point(121, 164)
+        Me.LBLNAME.Name = "LBLNAME"
+        Me.LBLNAME.Size = New System.Drawing.Size(53, 20)
+        Me.LBLNAME.TabIndex = 28
+        Me.LBLNAME.Text = "Name"
         '
         'Label2
         '
@@ -299,17 +310,6 @@ Partial Class FRMMAINMENU
         'Timer1
         '
         '
-        'LBLNAME
-        '
-        Me.LBLNAME.AutoSize = True
-        Me.LBLNAME.Font = New System.Drawing.Font("Century Gothic", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.LBLNAME.ForeColor = System.Drawing.Color.MediumSeaGreen
-        Me.LBLNAME.Location = New System.Drawing.Point(121, 164)
-        Me.LBLNAME.Name = "LBLNAME"
-        Me.LBLNAME.Size = New System.Drawing.Size(53, 20)
-        Me.LBLNAME.TabIndex = 28
-        Me.LBLNAME.Text = "Name"
-        '
         'FRMMAINMENU
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -323,7 +323,7 @@ Partial Class FRMMAINMENU
         Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.Name = "FRMMAINMENU"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
-        Me.Text = "Main Menu"
+        Me.Text = "RPHECMPC SALES AND INVENTORY SYSTEM"
         Me.TransparencyKey = System.Drawing.SystemColors.Desktop
         Me.Panel1.ResumeLayout(False)
         Me.Panel1.PerformLayout()
