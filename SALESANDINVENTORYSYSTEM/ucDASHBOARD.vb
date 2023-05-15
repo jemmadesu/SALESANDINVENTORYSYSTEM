@@ -73,12 +73,12 @@ Public Class ucDASHBOARD
         con.Close()
 
 
-        Dim sales As String
-        OpenCon()
-        cmd.CommandText = "select sum(totalbill) from tbl_Sales"
-        sales = cmd.ExecuteScalar()
-        lblsales.Text = "₱" & sales
-        con.Close()
+        'Dim sales As String
+        'OpenCon()
+        'cmd.CommandText = "select sum(totalbill) from tbl_Sales"
+        'sales = cmd.ExecuteScalar()
+        'lblsales.Text = "₱" & sales
+        'con.Close()
 
         Dim exp As String
         OpenCon()

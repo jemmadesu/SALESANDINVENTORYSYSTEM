@@ -20,35 +20,35 @@ Public Class FRMREPORTS
         CBOSTOCKSCATEGORY.DataSource = tbl_category
         CBOSTOCKSCATEGORY.DisplayMember = "catname"
 
-        ' PRODUCTS REPORT -------------------------------------------------------------------------------------------------------------
+        ' PRODUCTS REPORTS -------------------------------------------------------------------------------------------------------------
 
-        'TODO: This line of code loads data into the 'inventory_dbDataSet.tbl_products' table. You can move, or remove it, as needed.
+
         Me.RPTPRODUCTS.SetDisplayMode(Microsoft.Reporting.WinForms.DisplayMode.PrintLayout)
         Me.tbl_productsTableAdapter.Fill(Me.inventory_dbDataSet.tbl_products)
 
         Me.RPTPRODUCTS.RefreshReport()
 
-        ' SALES REPORT -------------------------------------------------------------------------------------------------------------
+        ' SALES REPORTS -------------------------------------------------------------------------------------------------------------
 
-        'TODO: This line of code loads data into the 'inventory_dbDataSet.tbl_sales' table. You can move, or remove it, as needed.
+
         Me.RPTSALES.SetDisplayMode(Microsoft.Reporting.WinForms.DisplayMode.PrintLayout)
         Me.tbl_salesTableAdapter.Fill(Me.inventory_dbDataSet.tbl_sales)
 
         Me.RPTSALES.RefreshReport()
 
 
-        ' USER REPORT -------------------------------------------------------------------------------------------------------------
+        ' USER REPORTS -------------------------------------------------------------------------------------------------------------
 
-        'TODO: This line of code loads data into the 'inventory_dbDataSet.tbl_users' table. You can move, or remove it, as needed.
+
         Me.RPTUSERS.SetDisplayMode(Microsoft.Reporting.WinForms.DisplayMode.PrintLayout)
         Me.tbl_usersTableAdapter.Fill(Me.inventory_dbDataSet.tbl_users)
 
         Me.RPTUSERS.RefreshReport()
 
 
-        ' USERS -------------------------------------------------------------------------------------------------------------
+        ' USERS REPORTS -------------------------------------------------------------------------------------------------------------
 
-        'TODO: This line of code loads data into the 'inventory_dbDataSet.tbl_stocks' table. You can move, or remove it, as needed.
+
         Me.RPTSTOCKS.SetDisplayMode(Microsoft.Reporting.WinForms.DisplayMode.PrintLayout)
         Me.tbl_stocksTableAdapter.Fill(Me.inventory_dbDataSet.tbl_stocks)
 
@@ -56,14 +56,34 @@ Public Class FRMREPORTS
         Me.RPTSTOCKS.RefreshReport()
 
 
-        ' DELIVERY  -------------------------------------------------------------------------------------------------------------
+        ' DELIVERY REPORTS -------------------------------------------------------------------------------------------------------------
 
-        'TODO: This line of code loads data into the 'inventory_dbDataSet.tbl_stocks' table. You can move, or remove it, as needed.
+
         Me.RPTDELIVERY.SetDisplayMode(Microsoft.Reporting.WinForms.DisplayMode.PrintLayout)
         Me.tbl_deliveryTableAdapter.Fill(Me.inventory_dbDataSet.tbl_delivery)
 
 
         Me.RPTDELIVERY.RefreshReport()
+
+
+        ' EXPIRED PRODUCTS REPORTS -------------------------------------------------------------------------------------------------------------
+
+
+        Me.RPTEXPIREDPRODUCTS.SetDisplayMode(Microsoft.Reporting.WinForms.DisplayMode.PrintLayout)
+        Me.tbl_expiredproductsTableAdapter.Fill(Me.inventory_dbDataSet.tbl_expiredproducts)
+
+
+        Me.RPTEXPIREDPRODUCTS.RefreshReport()
+
+
+        ' OUT OF STOCKS PRODUCTS REPORTS -------------------------------------------------------------------------------------------------------------
+
+
+        Me.RPTOUTOFSTOCKS.SetDisplayMode(Microsoft.Reporting.WinForms.DisplayMode.PrintLayout)
+        Me.tbl_outofstocksTableAdapter.Fill(Me.inventory_dbDataSet.tbl_outofstocks)
+
+
+        Me.RPTOUTOFSTOCKS.RefreshReport()
     End Sub
     Private Sub BTNCLOSE_Click(sender As Object, e As EventArgs)
         Me.Close()

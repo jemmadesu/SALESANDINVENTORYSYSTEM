@@ -57,11 +57,6 @@ Public Class ucTRANSACTION
         DGVSUMMARY.ColumnHeadersDefaultCellStyle.SelectionForeColor = Color.FromArgb(104, 104, 104)
 
 
-
-
-
-
-
         lblun.Text = FRMMAINMENU.LBLUSERNAME.Text
         lblut.Text = FRMMAINMENU.LBLUSERTYPE.Text
 
@@ -86,7 +81,7 @@ Public Class ucTRANSACTION
         longpaper = 0
         rowcount = DGVCART.Rows.Count
         longpaper = rowcount * 15
-        longpaper = longpaper + 500
+        longpaper = longpaper + 700
 
     End Sub
     Private Sub BTNPRINT_Click(sender As Object, e As EventArgs)
@@ -102,9 +97,9 @@ Public Class ucTRANSACTION
     End Sub
     Private Sub PD_PrintPage(sender As Object, e As PrintPageEventArgs) Handles PD.PrintPage
         Dim f8 As New Font("Calibri", 8, FontStyle.Regular)
-        Dim f10 As New Font("Calibri", 10, FontStyle.Regular)
-        Dim f10b As New Font("Calibri", 10, FontStyle.Bold)
-        Dim f14 As New Font("Calibri", 14, FontStyle.Bold)
+        Dim f10 As New Font("Calibri", 8, FontStyle.Regular)
+        Dim f10b As New Font("Calibri", 8, FontStyle.Bold)
+        Dim f14 As New Font("Calibri", 8, FontStyle.Bold)
 
         Dim leftmargin As Integer = PD.DefaultPageSettings.Margins.Left
         Dim centermargin As Integer = PD.DefaultPageSettings.PaperSize.Width / 2
@@ -121,16 +116,18 @@ Public Class ucTRANSACTION
         line = "- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -"
 
 
-        e.Graphics.DrawString("RPHECMPC", f10b, Brushes.Black, centermargin, 5, center)
-        e.Graphics.DrawString("Rizal Provincial Hospital Employees", f8, Brushes.Black, centermargin, 25, center)
-        e.Graphics.DrawString("and Community Multi-purpose Cooperative", f8, Brushes.Black, centermargin, 40, center)
-        e.Graphics.DrawString("Tomas Claudio St. San Juan Morong, Rizal", f8, Brushes.Black, centermargin, 55, center)
+        e.Graphics.DrawString("RIZAl PROVINCIAL HOSP", f10b, Brushes.BlueViolet, centermargin, 5, center)
+        e.Graphics.DrawString("EMPLOYEES MULTI PURPOSE COOP", f10b, Brushes.BlueViolet, centermargin, 20, center)
+        e.Graphics.DrawString("Owned and Operated by : ", f8, Brushes.BlueViolet, centermargin, 35, center)
+        e.Graphics.DrawString("RIZAL PROVINCIAL HOSP", f8, Brushes.BlueViolet, centermargin, 50, center)
+        e.Graphics.DrawString("EMPLOYEES MULTI PURPOSE COOP", f8, Brushes.BlueViolet, centermargin, 65, center)
+        e.Graphics.DrawString("Tomas Claudio St. San Juan Morong, Rizal", f8, Brushes.BlueViolet, centermargin, 80, center)
 
-        'e.Graphics.DrawString(line, f8, Brushes.Black, 0, 100)
 
-        e.Graphics.DrawString("Invoice No.: " + TXTOR.Text.ToString, f8, Brushes.Black, 0, 80)
-        e.Graphics.DrawString("Cashier: " + FRMMAINMENU.LBLUSERNAME.Text.ToString, f8, Brushes.Black, 0, 95)
-        e.Graphics.DrawString("Date: " & Date.Now(), f8, Brushes.Black, 0, 110)
+
+        e.Graphics.DrawString("Invoice No.: " + TXTOR.Text.ToString, f8, Brushes.BlueViolet, 0, 120)
+        e.Graphics.DrawString("Cashier: " + FRMMAINMENU.LBLNAME.Text.ToString, f8, Brushes.BlueViolet, 0, 135)
+        e.Graphics.DrawString("Date: " & Date.Now(), f8, Brushes.BlueViolet, 0, 150)
 
 
         Dim height As Integer
@@ -140,8 +137,12 @@ Public Class ucTRANSACTION
 
         For row As Integer = 0 To DGVCART.RowCount - 1
             height += 15
-            e.Graphics.DrawString("Qty " + DGVCART.Rows(row).Cells(7).Value.ToString, f10, Brushes.Black, 0, 120 + height)
-            e.Graphics.DrawString(DGVCART.Rows(row).Cells(1).Value.ToString, f10, Brushes.Black, 35, 120 + height)
+            e.Graphics.DrawString(line, f8, Brushes.BlueViolet, 0, 170)
+
+
+            e.Graphics.DrawString("X" + DGVCART.Rows(row).Cells(7).Value.ToString, f10, Brushes.BlueViolet, 0, 170 + height)
+            e.Graphics.DrawString(DGVCART.Rows(row).Cells(1).Value.ToString, f10, Brushes.BlueViolet, 40, 170 + height)
+            e.Graphics.DrawString(DGVCART.Rows(row).Cells(5).Value.ToString, f10, Brushes.BlueViolet, 220, 170 + height)
 
 
         Next
@@ -149,18 +150,54 @@ Public Class ucTRANSACTION
         height2 = 110 + height
 
         sumprice()
+        e.Graphics.DrawString(line, f8, Brushes.BlueViolet, 0, 70 + height2)
+        e.Graphics.DrawString("Total Qty: " & t_qty, f10b, Brushes.BlueViolet, 0, 80 + height2)
+        e.Graphics.DrawString("Total: " & Format(t_price, "##,##0"), f10b, Brushes.BlueViolet, rightmargin, 80 + height2, right)
 
-        e.Graphics.DrawString("Total Qty: " & t_qty, f10b, Brushes.Black, 0, 50 + height2)
-        e.Graphics.DrawString("Total: " & Format(t_price, "##,##0"), f10b, Brushes.Black, rightmargin, 50 + height2, right)
+
+        e.Graphics.DrawString("Cash: " + TXTPAYMENT.Text.ToString, f10b, Brushes.BlueViolet, 0, 110 + height2)
+        e.Graphics.DrawString("Change: " + TXTCHANGE.Text.ToString, f10b, Brushes.BlueViolet, 0, 125 + height2)
+
+
+        ' SALES DISCOUNT ----------------------------------------------------------------
+
+        e.Graphics.DrawString(line, f8, Brushes.BlueViolet, 0, 135 + height2)
+
+        e.Graphics.DrawString("Discount Type: " + CBODISCOUNT.Text.ToString, f10b, Brushes.BlueViolet, 0, 145 + height2)
+        'e.Graphics.DrawString("Less (20%)" + CBODISCOUNT.Text.ToString, f10b, Brushes.BlueViolet, 0, 135 + height2)
+
+        e.Graphics.DrawString("Discount Type: " + CBODISCOUNT.Text.ToString, f10b, Brushes.BlueViolet, 0, 145 + height2)
+        e.Graphics.DrawString("Discount Amount: " + TXTDISCAMOUNT.Text.ToString, f10b, Brushes.BlueViolet, 0, 160 + height2)
+        e.Graphics.DrawString(TXTNAME.Text.ToString, f10b, Brushes.BlueViolet, 0, 175 + height2)
+        e.Graphics.DrawString(TXTID.Text.ToString, f10b, Brushes.BlueViolet, 0, 205 + height2)
+
+        ' VAT -------------------------------------------------------
+
+        e.Graphics.DrawString("VATable", f8, Brushes.BlueViolet, 0, 190 + height2)
+        e.Graphics.DrawString("0.00", f8, Brushes.BlueViolet, 220, 190 + height2)
+
+        e.Graphics.DrawString("VAT-Except Sale", f8, Brushes.BlueViolet, 0, 205 + height2)
+        e.Graphics.DrawString("0.00", f8, Brushes.BlueViolet, 220, 205 + height2)
+
+        e.Graphics.DrawString("VAT-Zero Rate Sale", f8, Brushes.BlueViolet, 0, 220 + height2)
+        e.Graphics.DrawString("0.00", f8, Brushes.BlueViolet, 220, 220 + height2)
+
+        e.Graphics.DrawString("VAT 12%", f8, Brushes.BlueViolet, 0, 235 + height2)
+        e.Graphics.DrawString("0.00", f8, Brushes.BlueViolet, 220, 235 + height2)
 
 
 
-        e.Graphics.DrawString("Payment: " + TXTPAYMENT.Text.ToString, f10b, Brushes.Black, 0, 65 + height2)
-        e.Graphics.DrawString("Discount Type: " + CBODISCOUNT.Text.ToString, f10b, Brushes.Black, 0, 80 + height2)
-        e.Graphics.DrawString("Change: " + TXTCHANGE.Text.ToString, f10b, Brushes.Black, 0, 95 + height2)
+        e.Graphics.DrawString("Thanks for puchasing”, f8, Brushes.BlueViolet, centermargin, 255 + height2, center)
+        e.Graphics.DrawString("This serves as your official receipt", f8, Brushes.BlueViolet, centermargin, 270 + height2, center)
 
-        e.Graphics.DrawString("Thanks for puchasing”, f10, Brushes.Black, centermargin, 150 + height2, center)
-        e.Graphics.DrawString("This serves as your official receipt", f10, Brushes.Black, centermargin, 180 + height2, center)
+        ' OTHER DETAILS --------------------------------------------------
+
+        e.Graphics.DrawString("---------- SIS Accredited Supplier ----------", f8, Brushes.BlueViolet, centermargin, 290 + height2, center)
+        e.Graphics.DrawString("UNIVERSITY OF RIZAL SYSTEM, BINANGONAN CAMPUS", f8, Brushes.BlueViolet, centermargin, 305 + height2, center)
+        e.Graphics.DrawString("F5MQ+62W, Manila E Rd, Binangonan, 1940 Rizal", f8, Brushes.BlueViolet, centermargin, 320 + height2, center)
+        e.Graphics.DrawString("TIN: 005-037-570-000", f8, Brushes.BlueViolet, centermargin, 335 + height2, center)
+
+
 
     End Sub
     Dim t_price As Long
@@ -194,7 +231,7 @@ Public Class ucTRANSACTION
 
         '--------------------------------------------------------------- CODE FOR COLUMN HEADER NAME (PRODUCTS) -----------------------------------------
         DGVPRODUCTS.Columns(0).Width = 200
-        DGVPRODUCTS.Columns(0).HeaderText = "Product ID"
+        DGVPRODUCTS.Columns(0).HeaderText = "Product Code"
         DGVPRODUCTS.Columns(1).Width = 200
         DGVPRODUCTS.Columns(1).HeaderText = "Product Name"
         DGVPRODUCTS.Columns(2).Width = 200
@@ -222,7 +259,7 @@ Public Class ucTRANSACTION
 
         '--------------------------------------------------------------- CODE FOR COLUMN HEADER NAME (CART) -----------------------------------------
         DGVCART.Columns(0).Width = 200
-        DGVCART.Columns(0).HeaderText = "Product ID"
+        DGVCART.Columns(0).HeaderText = "Product Code"
         DGVCART.Columns(1).Width = 200
         DGVCART.Columns(1).HeaderText = "Product Name"
         DGVCART.Columns(2).Width = 200
@@ -317,23 +354,6 @@ Public Class ucTRANSACTION
 
 
     End Sub
-
-    'Private Sub remove()
-
-    '    For i = 0 To DGVPRODUCTS.Rows.Count - 1
-
-    '        If DGVPRODUCTS.Rows(i).Cells(5).Value Is Nothing OrElse
-    '                    DGVPRODUCTS.Rows(i).Cells(5).Value.ToString.Trim = "" Then
-
-    '            DGVPRODUCTS.Rows(i).Visible = False
-
-    '        End If
-    '    Next
-
-    'End Sub
-    'Private Sub BTNNEWTRANS_Click(sender As Object, e As EventArgs)
-    '    DGVPRODUCTS.Enabled = True
-    'End Sub
 
     Private Sub BTNCART_Click(sender As Object, e As EventArgs) Handles BTNCART.Click
 
@@ -442,11 +462,6 @@ Public Class ucTRANSACTION
         showproducts()
         showcart()
         SUMMARY()
-
-        'Dim dba1 As New MySqlDataAdapter("SELECT SUM(Price) FROM tbl_cart", con)
-        'Dim dbset1 As New DataSet
-        'dba1.Fill(dbset1)
-        'Me.TXTBILL.Text = dbset1.Tables(0).DefaultView.Item(0).Item(0)
 
         Dim dba1 As New MySqlDataAdapter("SELECT SUM(Price) FROM tbl_cart", con)
         Dim dbset1 As New DataSet
@@ -746,10 +761,6 @@ Public Class ucTRANSACTION
         Format("yyyy-mm-dd")
         'Format(TRANSADATE.Value, "yyyy-mm-dd")
     End Sub
-    Private Sub TXTUNIT_TextChanged(sender As Object, e As EventArgs) Handles TXTUNIT.TextChanged
-
-    End Sub
-
     Private Sub NumericUpDown1_ValueChanged(sender As Object, e As EventArgs)
         If TXTUNIT.Text = "Pack/s" Then NumericUpDown1.Value = 10
     End Sub
@@ -775,50 +786,16 @@ Public Class ucTRANSACTION
 
     Private Sub DGVPRODUCTS_CellFormatting(sender As Object, e As DataGridViewCellFormattingEventArgs) Handles DGVPRODUCTS.CellFormatting
 
-
-
-        '' Check if the current cell belongs to the Remaining_Days column
-        'If DGVPRODUCTS.Columns(e.ColumnIndex).Name = "Remaining_Days" Then
-        '    ' Get the remaining days value from the cell
-        '    Dim remainingDays As Integer
-        '    If Integer.TryParse(e.Value.ToString(), remainingDays) Then
-        '        ' Check if the remaining days is less than or equal to 365 (1 year)
-        '        If remainingDays <= 365 Then
-        '            ' Set the row style to red
-        '            DGVPRODUCTS.Rows(e.RowIndex).DefaultCellStyle.BackColor = Color.Cornsilk
-        '            DGVPRODUCTS.Rows(e.RowIndex).DefaultCellStyle.ForeColor = Color.DimGray
-        '        End If
-        '    End If
-        'End If
-
-
-
-
-
         If e.ColumnIndex = DGVPRODUCTS.Columns(9).Index AndAlso e.Value IsNot Nothing Then
             Dim cellValue As String = e.Value.ToString()
             e.Value = cellValue.Replace("-", "")
             e.FormattingApplied = True
         End If
+    End Sub
 
-
-
-
-
-        '' Check if the current cell belongs to the ExpirationDate column
-        'If DGVPRODUCTS.Columns(e.ColumnIndex).Name = "dateadded" Then
-        '    ' Get the expiration date value from the cell
-        '    Dim expirationDate As Date
-        '    If Date.TryParse(e.Value.ToString(), expirationDate) Then
-        '        ' Compare with the current year
-        '        If expirationDate.Year = DateTime.Now.Year Then
-        '            ' Set the row style to red
-        '            DGVPRODUCTS.Rows(e.RowIndex).DefaultCellStyle.BackColor = Color.Red
-        '            DGVPRODUCTS.Rows(e.RowIndex).DefaultCellStyle.ForeColor = Color.White
-        '        End If
-        '    End If
-        'End If
-
-
+    Private Sub Guna2GradientTileButton1_Click(sender As Object, e As EventArgs) Handles Guna2GradientTileButton1.Click
+        changelongpaper()
+        PPD.Document = PD
+        PPD.ShowDialog()
     End Sub
 End Class

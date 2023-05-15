@@ -41,6 +41,7 @@ Partial Class FRMMAINMENU
         Me.BTNSETTINGS = New System.Windows.Forms.Button()
         Me.BTNDASHBOARD = New System.Windows.Forms.Button()
         Me.Timer1 = New System.Windows.Forms.Timer(Me.components)
+        Me.LBLNAME = New System.Windows.Forms.Label()
         Me.Panel1.SuspendLayout()
         CType(Me.Guna2CirclePictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
@@ -57,6 +58,7 @@ Partial Class FRMMAINMENU
         'Panel1
         '
         Me.Panel1.BackColor = System.Drawing.Color.FromArgb(CType(CType(37, Byte), Integer), CType(CType(46, Byte), Integer), CType(CType(59, Byte), Integer))
+        Me.Panel1.Controls.Add(Me.LBLNAME)
         Me.Panel1.Controls.Add(Me.Label2)
         Me.Panel1.Controls.Add(Me.BTNSALES)
         Me.Panel1.Controls.Add(Me.Guna2CirclePictureBox1)
@@ -84,9 +86,9 @@ Partial Class FRMMAINMENU
         Me.Label2.ForeColor = System.Drawing.Color.White
         Me.Label2.Location = New System.Drawing.Point(55, 163)
         Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(100, 21)
+        Me.Label2.Size = New System.Drawing.Size(70, 21)
         Me.Label2.TabIndex = 27
-        Me.Label2.Text = "Username : "
+        Me.Label2.Text = "Name : "
         '
         'BTNSALES
         '
@@ -178,11 +180,11 @@ Partial Class FRMMAINMENU
         Me.LBLUSERNAME.AutoSize = True
         Me.LBLUSERNAME.Font = New System.Drawing.Font("Century Gothic", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.LBLUSERNAME.ForeColor = System.Drawing.Color.MediumSeaGreen
-        Me.LBLUSERNAME.Location = New System.Drawing.Point(150, 163)
+        Me.LBLUSERNAME.Location = New System.Drawing.Point(7, 9)
         Me.LBLUSERNAME.Name = "LBLUSERNAME"
-        Me.LBLUSERNAME.Size = New System.Drawing.Size(30, 21)
+        Me.LBLUSERNAME.Size = New System.Drawing.Size(87, 21)
         Me.LBLUSERNAME.TabIndex = 19
-        Me.LBLUSERNAME.Text = "un"
+        Me.LBLUSERNAME.Text = "username"
         '
         'BTNINVENTORY
         '
@@ -297,6 +299,17 @@ Partial Class FRMMAINMENU
         'Timer1
         '
         '
+        'LBLNAME
+        '
+        Me.LBLNAME.AutoSize = True
+        Me.LBLNAME.Font = New System.Drawing.Font("Century Gothic", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.LBLNAME.ForeColor = System.Drawing.Color.MediumSeaGreen
+        Me.LBLNAME.Location = New System.Drawing.Point(121, 164)
+        Me.LBLNAME.Name = "LBLNAME"
+        Me.LBLNAME.Size = New System.Drawing.Size(53, 20)
+        Me.LBLNAME.TabIndex = 28
+        Me.LBLNAME.Text = "Name"
+        '
         'FRMMAINMENU
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -336,4 +349,5 @@ Partial Class FRMMAINMENU
     Friend WithEvents BTNSALES As Button
     Friend WithEvents Guna2CirclePictureBox1 As Guna.UI2.WinForms.Guna2CirclePictureBox
     Friend WithEvents Label2 As Label
+    Friend WithEvents LBLNAME As Label
 End Class

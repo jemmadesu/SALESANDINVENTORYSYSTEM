@@ -36,6 +36,7 @@ Partial Class FRMREPORTS
         Me.tbl_usersBindingSource = New System.Windows.Forms.BindingSource(Me.components)
         Me.inventory_dbDataSet = New SALESANDINVENTORYSYSTEM.inventory_dbDataSet()
         Me.tbl_salesBindingSource = New System.Windows.Forms.BindingSource(Me.components)
+        Me.tbl_outofstocksBindingSource = New System.Windows.Forms.BindingSource(Me.components)
         Me.tbl_expiredproductsBindingSource = New System.Windows.Forms.BindingSource(Me.components)
         Me.tbl_deliveryBindingSource = New System.Windows.Forms.BindingSource(Me.components)
         Me.tbl_stocksBindingSource = New System.Windows.Forms.BindingSource(Me.components)
@@ -71,13 +72,13 @@ Partial Class FRMREPORTS
         Me.Date1OUT = New Guna.UI2.WinForms.Guna2DateTimePicker()
         Me.RPTOUTOFSTOCKS = New Microsoft.Reporting.WinForms.ReportViewer()
         Me.TPEXP = New System.Windows.Forms.TabPage()
-        Me.RPTEXP = New Microsoft.Reporting.WinForms.ReportViewer()
+        Me.RPTEXPIREDPRODUCTS = New Microsoft.Reporting.WinForms.ReportViewer()
         Me.Label8 = New System.Windows.Forms.Label()
         Me.Label7 = New System.Windows.Forms.Label()
-        Me.EXPCLR = New Guna.UI2.WinForms.Guna2Button()
-        Me.EXPFILL = New Guna.UI2.WinForms.Guna2Button()
-        Me.DAte2EXP = New Guna.UI2.WinForms.Guna2DateTimePicker()
-        Me.Date1EXP = New Guna.UI2.WinForms.Guna2DateTimePicker()
+        Me.CLEAREXPIREDPRODUCTS = New Guna.UI2.WinForms.Guna2Button()
+        Me.FILTEREXPIREDPRODUCTS = New Guna.UI2.WinForms.Guna2Button()
+        Me.DATE2EXPIREDPRODUCTS = New Guna.UI2.WinForms.Guna2DateTimePicker()
+        Me.DATE1EXPIREDPRODUCTS = New Guna.UI2.WinForms.Guna2DateTimePicker()
         Me.TPDELIVERY = New System.Windows.Forms.TabPage()
         Me.MONTHLYDELIVERY = New Guna.UI2.WinForms.Guna2RadioButton()
         Me.WEEKLYDELIVERY = New Guna.UI2.WinForms.Guna2RadioButton()
@@ -112,9 +113,11 @@ Partial Class FRMREPORTS
         Me.tbl_expiredproductsTableAdapter = New SALESANDINVENTORYSYSTEM.inventory_dbDataSetTableAdapters.tbl_expiredproductsTableAdapter()
         Me.tbl_stocksTableAdapter = New SALESANDINVENTORYSYSTEM.inventory_dbDataSetTableAdapters.tbl_stocksTableAdapter()
         Me.tbl_deliveryTableAdapter = New SALESANDINVENTORYSYSTEM.inventory_dbDataSetTableAdapters.tbl_deliveryTableAdapter()
+        Me.tbl_outofstocksTableAdapter = New SALESANDINVENTORYSYSTEM.inventory_dbDataSetTableAdapters.tbl_outofstocksTableAdapter()
         CType(Me.tbl_usersBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.inventory_dbDataSet, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.tbl_salesBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.tbl_outofstocksBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.tbl_expiredproductsBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.tbl_deliveryBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.tbl_stocksBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -145,6 +148,11 @@ Partial Class FRMREPORTS
         '
         Me.tbl_salesBindingSource.DataMember = "tbl_sales"
         Me.tbl_salesBindingSource.DataSource = Me.inventory_dbDataSet
+        '
+        'tbl_outofstocksBindingSource
+        '
+        Me.tbl_outofstocksBindingSource.DataMember = "tbl_outofstocks"
+        Me.tbl_outofstocksBindingSource.DataSource = Me.inventory_dbDataSet
         '
         'tbl_expiredproductsBindingSource
         '
@@ -594,7 +602,7 @@ Partial Class FRMREPORTS
         'RPTOUTOFSTOCKS
         '
         ReportDataSource4.Name = "DataSet1"
-        ReportDataSource4.Value = Nothing
+        ReportDataSource4.Value = Me.tbl_outofstocksBindingSource
         Me.RPTOUTOFSTOCKS.LocalReport.DataSources.Add(ReportDataSource4)
         Me.RPTOUTOFSTOCKS.LocalReport.ReportEmbeddedResource = "SALESANDINVENTORYSYSTEM.RPTOUTOFSTOCKS.rdlc"
         Me.RPTOUTOFSTOCKS.Location = New System.Drawing.Point(20, 80)
@@ -605,13 +613,13 @@ Partial Class FRMREPORTS
         '
         'TPEXP
         '
-        Me.TPEXP.Controls.Add(Me.RPTEXP)
+        Me.TPEXP.Controls.Add(Me.RPTEXPIREDPRODUCTS)
         Me.TPEXP.Controls.Add(Me.Label8)
         Me.TPEXP.Controls.Add(Me.Label7)
-        Me.TPEXP.Controls.Add(Me.EXPCLR)
-        Me.TPEXP.Controls.Add(Me.EXPFILL)
-        Me.TPEXP.Controls.Add(Me.DAte2EXP)
-        Me.TPEXP.Controls.Add(Me.Date1EXP)
+        Me.TPEXP.Controls.Add(Me.CLEAREXPIREDPRODUCTS)
+        Me.TPEXP.Controls.Add(Me.FILTEREXPIREDPRODUCTS)
+        Me.TPEXP.Controls.Add(Me.DATE2EXPIREDPRODUCTS)
+        Me.TPEXP.Controls.Add(Me.DATE1EXPIREDPRODUCTS)
         Me.TPEXP.Location = New System.Drawing.Point(4, 29)
         Me.TPEXP.Name = "TPEXP"
         Me.TPEXP.Padding = New System.Windows.Forms.Padding(3)
@@ -620,17 +628,17 @@ Partial Class FRMREPORTS
         Me.TPEXP.Text = "Expired Products"
         Me.TPEXP.UseVisualStyleBackColor = True
         '
-        'RPTEXP
+        'RPTEXPIREDPRODUCTS
         '
         ReportDataSource5.Name = "DataSet1"
         ReportDataSource5.Value = Me.tbl_expiredproductsBindingSource
-        Me.RPTEXP.LocalReport.DataSources.Add(ReportDataSource5)
-        Me.RPTEXP.LocalReport.ReportEmbeddedResource = "SALESANDINVENTORYSYSTEM.RPTEXPIREDPRODUCTS.rdlc"
-        Me.RPTEXP.Location = New System.Drawing.Point(20, 80)
-        Me.RPTEXP.Name = "RPTEXP"
-        Me.RPTEXP.ServerReport.BearerToken = Nothing
-        Me.RPTEXP.Size = New System.Drawing.Size(1067, 513)
-        Me.RPTEXP.TabIndex = 12
+        Me.RPTEXPIREDPRODUCTS.LocalReport.DataSources.Add(ReportDataSource5)
+        Me.RPTEXPIREDPRODUCTS.LocalReport.ReportEmbeddedResource = "SALESANDINVENTORYSYSTEM.RPTEXPIREDPRODUCTS.rdlc"
+        Me.RPTEXPIREDPRODUCTS.Location = New System.Drawing.Point(20, 80)
+        Me.RPTEXPIREDPRODUCTS.Name = "RPTEXPIREDPRODUCTS"
+        Me.RPTEXPIREDPRODUCTS.ServerReport.BearerToken = Nothing
+        Me.RPTEXPIREDPRODUCTS.Size = New System.Drawing.Size(1067, 513)
+        Me.RPTEXPIREDPRODUCTS.TabIndex = 12
         '
         'Label8
         '
@@ -650,70 +658,70 @@ Partial Class FRMREPORTS
         Me.Label7.TabIndex = 10
         Me.Label7.Text = "To :"
         '
-        'EXPCLR
+        'CLEAREXPIREDPRODUCTS
         '
-        Me.EXPCLR.BackColor = System.Drawing.Color.Transparent
-        Me.EXPCLR.CheckedState.Parent = Me.EXPCLR
-        Me.EXPCLR.CustomImages.Parent = Me.EXPCLR
-        Me.EXPCLR.FillColor = System.Drawing.SystemColors.ControlDark
-        Me.EXPCLR.Font = New System.Drawing.Font("Century Gothic", 9.0!)
-        Me.EXPCLR.ForeColor = System.Drawing.Color.White
-        Me.EXPCLR.HoverState.Parent = Me.EXPCLR
-        Me.EXPCLR.Location = New System.Drawing.Point(740, 27)
-        Me.EXPCLR.Name = "EXPCLR"
-        Me.EXPCLR.ShadowDecoration.Parent = Me.EXPCLR
-        Me.EXPCLR.Size = New System.Drawing.Size(98, 36)
-        Me.EXPCLR.TabIndex = 9
-        Me.EXPCLR.Text = "Clear Filter"
+        Me.CLEAREXPIREDPRODUCTS.BackColor = System.Drawing.Color.Transparent
+        Me.CLEAREXPIREDPRODUCTS.CheckedState.Parent = Me.CLEAREXPIREDPRODUCTS
+        Me.CLEAREXPIREDPRODUCTS.CustomImages.Parent = Me.CLEAREXPIREDPRODUCTS
+        Me.CLEAREXPIREDPRODUCTS.FillColor = System.Drawing.SystemColors.ControlDark
+        Me.CLEAREXPIREDPRODUCTS.Font = New System.Drawing.Font("Century Gothic", 9.0!)
+        Me.CLEAREXPIREDPRODUCTS.ForeColor = System.Drawing.Color.White
+        Me.CLEAREXPIREDPRODUCTS.HoverState.Parent = Me.CLEAREXPIREDPRODUCTS
+        Me.CLEAREXPIREDPRODUCTS.Location = New System.Drawing.Point(740, 27)
+        Me.CLEAREXPIREDPRODUCTS.Name = "CLEAREXPIREDPRODUCTS"
+        Me.CLEAREXPIREDPRODUCTS.ShadowDecoration.Parent = Me.CLEAREXPIREDPRODUCTS
+        Me.CLEAREXPIREDPRODUCTS.Size = New System.Drawing.Size(98, 36)
+        Me.CLEAREXPIREDPRODUCTS.TabIndex = 9
+        Me.CLEAREXPIREDPRODUCTS.Text = "Clear Filter"
         '
-        'EXPFILL
+        'FILTEREXPIREDPRODUCTS
         '
-        Me.EXPFILL.CheckedState.Parent = Me.EXPFILL
-        Me.EXPFILL.CustomImages.Parent = Me.EXPFILL
-        Me.EXPFILL.FillColor = System.Drawing.Color.MediumSeaGreen
-        Me.EXPFILL.Font = New System.Drawing.Font("Century Gothic", 9.0!)
-        Me.EXPFILL.ForeColor = System.Drawing.Color.White
-        Me.EXPFILL.HoverState.Parent = Me.EXPFILL
-        Me.EXPFILL.Location = New System.Drawing.Point(610, 26)
-        Me.EXPFILL.Name = "EXPFILL"
-        Me.EXPFILL.ShadowDecoration.Parent = Me.EXPFILL
-        Me.EXPFILL.Size = New System.Drawing.Size(98, 36)
-        Me.EXPFILL.TabIndex = 8
-        Me.EXPFILL.Text = "Filter"
+        Me.FILTEREXPIREDPRODUCTS.CheckedState.Parent = Me.FILTEREXPIREDPRODUCTS
+        Me.FILTEREXPIREDPRODUCTS.CustomImages.Parent = Me.FILTEREXPIREDPRODUCTS
+        Me.FILTEREXPIREDPRODUCTS.FillColor = System.Drawing.Color.MediumSeaGreen
+        Me.FILTEREXPIREDPRODUCTS.Font = New System.Drawing.Font("Century Gothic", 9.0!)
+        Me.FILTEREXPIREDPRODUCTS.ForeColor = System.Drawing.Color.White
+        Me.FILTEREXPIREDPRODUCTS.HoverState.Parent = Me.FILTEREXPIREDPRODUCTS
+        Me.FILTEREXPIREDPRODUCTS.Location = New System.Drawing.Point(610, 26)
+        Me.FILTEREXPIREDPRODUCTS.Name = "FILTEREXPIREDPRODUCTS"
+        Me.FILTEREXPIREDPRODUCTS.ShadowDecoration.Parent = Me.FILTEREXPIREDPRODUCTS
+        Me.FILTEREXPIREDPRODUCTS.Size = New System.Drawing.Size(98, 36)
+        Me.FILTEREXPIREDPRODUCTS.TabIndex = 8
+        Me.FILTEREXPIREDPRODUCTS.Text = "Filter"
         '
-        'DAte2EXP
+        'DATE2EXPIREDPRODUCTS
         '
-        Me.DAte2EXP.CheckedState.Parent = Me.DAte2EXP
-        Me.DAte2EXP.FillColor = System.Drawing.Color.MediumSeaGreen
-        Me.DAte2EXP.Font = New System.Drawing.Font("Century Gothic", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.DAte2EXP.ForeColor = System.Drawing.Color.White
-        Me.DAte2EXP.Format = System.Windows.Forms.DateTimePickerFormat.[Long]
-        Me.DAte2EXP.HoverState.Parent = Me.DAte2EXP
-        Me.DAte2EXP.Location = New System.Drawing.Point(372, 26)
-        Me.DAte2EXP.MaxDate = New Date(9998, 12, 31, 0, 0, 0, 0)
-        Me.DAte2EXP.MinDate = New Date(1753, 1, 1, 0, 0, 0, 0)
-        Me.DAte2EXP.Name = "DAte2EXP"
-        Me.DAte2EXP.ShadowDecoration.Parent = Me.DAte2EXP
-        Me.DAte2EXP.Size = New System.Drawing.Size(200, 36)
-        Me.DAte2EXP.TabIndex = 7
-        Me.DAte2EXP.Value = New Date(2023, 4, 15, 23, 18, 1, 623)
+        Me.DATE2EXPIREDPRODUCTS.CheckedState.Parent = Me.DATE2EXPIREDPRODUCTS
+        Me.DATE2EXPIREDPRODUCTS.FillColor = System.Drawing.Color.MediumSeaGreen
+        Me.DATE2EXPIREDPRODUCTS.Font = New System.Drawing.Font("Century Gothic", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.DATE2EXPIREDPRODUCTS.ForeColor = System.Drawing.Color.White
+        Me.DATE2EXPIREDPRODUCTS.Format = System.Windows.Forms.DateTimePickerFormat.[Long]
+        Me.DATE2EXPIREDPRODUCTS.HoverState.Parent = Me.DATE2EXPIREDPRODUCTS
+        Me.DATE2EXPIREDPRODUCTS.Location = New System.Drawing.Point(372, 26)
+        Me.DATE2EXPIREDPRODUCTS.MaxDate = New Date(9998, 12, 31, 0, 0, 0, 0)
+        Me.DATE2EXPIREDPRODUCTS.MinDate = New Date(1753, 1, 1, 0, 0, 0, 0)
+        Me.DATE2EXPIREDPRODUCTS.Name = "DATE2EXPIREDPRODUCTS"
+        Me.DATE2EXPIREDPRODUCTS.ShadowDecoration.Parent = Me.DATE2EXPIREDPRODUCTS
+        Me.DATE2EXPIREDPRODUCTS.Size = New System.Drawing.Size(200, 36)
+        Me.DATE2EXPIREDPRODUCTS.TabIndex = 7
+        Me.DATE2EXPIREDPRODUCTS.Value = New Date(2023, 4, 15, 23, 18, 1, 623)
         '
-        'Date1EXP
+        'DATE1EXPIREDPRODUCTS
         '
-        Me.Date1EXP.CheckedState.Parent = Me.Date1EXP
-        Me.Date1EXP.FillColor = System.Drawing.Color.MediumSeaGreen
-        Me.Date1EXP.Font = New System.Drawing.Font("Century Gothic", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Date1EXP.ForeColor = System.Drawing.Color.White
-        Me.Date1EXP.Format = System.Windows.Forms.DateTimePickerFormat.[Long]
-        Me.Date1EXP.HoverState.Parent = Me.Date1EXP
-        Me.Date1EXP.Location = New System.Drawing.Point(90, 26)
-        Me.Date1EXP.MaxDate = New Date(9998, 12, 31, 0, 0, 0, 0)
-        Me.Date1EXP.MinDate = New Date(1753, 1, 1, 0, 0, 0, 0)
-        Me.Date1EXP.Name = "Date1EXP"
-        Me.Date1EXP.ShadowDecoration.Parent = Me.Date1EXP
-        Me.Date1EXP.Size = New System.Drawing.Size(200, 36)
-        Me.Date1EXP.TabIndex = 6
-        Me.Date1EXP.Value = New Date(2023, 4, 15, 23, 18, 1, 623)
+        Me.DATE1EXPIREDPRODUCTS.CheckedState.Parent = Me.DATE1EXPIREDPRODUCTS
+        Me.DATE1EXPIREDPRODUCTS.FillColor = System.Drawing.Color.MediumSeaGreen
+        Me.DATE1EXPIREDPRODUCTS.Font = New System.Drawing.Font("Century Gothic", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.DATE1EXPIREDPRODUCTS.ForeColor = System.Drawing.Color.White
+        Me.DATE1EXPIREDPRODUCTS.Format = System.Windows.Forms.DateTimePickerFormat.[Long]
+        Me.DATE1EXPIREDPRODUCTS.HoverState.Parent = Me.DATE1EXPIREDPRODUCTS
+        Me.DATE1EXPIREDPRODUCTS.Location = New System.Drawing.Point(90, 26)
+        Me.DATE1EXPIREDPRODUCTS.MaxDate = New Date(9998, 12, 31, 0, 0, 0, 0)
+        Me.DATE1EXPIREDPRODUCTS.MinDate = New Date(1753, 1, 1, 0, 0, 0, 0)
+        Me.DATE1EXPIREDPRODUCTS.Name = "DATE1EXPIREDPRODUCTS"
+        Me.DATE1EXPIREDPRODUCTS.ShadowDecoration.Parent = Me.DATE1EXPIREDPRODUCTS
+        Me.DATE1EXPIREDPRODUCTS.Size = New System.Drawing.Size(200, 36)
+        Me.DATE1EXPIREDPRODUCTS.TabIndex = 6
+        Me.DATE1EXPIREDPRODUCTS.Value = New Date(2023, 4, 15, 23, 18, 1, 623)
         '
         'TPDELIVERY
         '
@@ -1160,6 +1168,10 @@ Partial Class FRMREPORTS
         '
         Me.tbl_deliveryTableAdapter.ClearBeforeFill = True
         '
+        'tbl_outofstocksTableAdapter
+        '
+        Me.tbl_outofstocksTableAdapter.ClearBeforeFill = True
+        '
         'FRMREPORTS
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -1178,6 +1190,7 @@ Partial Class FRMREPORTS
         CType(Me.tbl_usersBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.inventory_dbDataSet, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.tbl_salesBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.tbl_outofstocksBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.tbl_expiredproductsBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.tbl_deliveryBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.tbl_stocksBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
@@ -1240,13 +1253,13 @@ Partial Class FRMREPORTS
     Friend WithEvents Date1OUT As Guna.UI2.WinForms.Guna2DateTimePicker
     Friend WithEvents RPTOUTOFSTOCKS As Microsoft.Reporting.WinForms.ReportViewer
     Friend WithEvents TPEXP As TabPage
-    Friend WithEvents RPTEXP As Microsoft.Reporting.WinForms.ReportViewer
+    Friend WithEvents RPTEXPIREDPRODUCTS As Microsoft.Reporting.WinForms.ReportViewer
     Friend WithEvents Label8 As Label
     Friend WithEvents Label7 As Label
-    Friend WithEvents EXPCLR As Guna.UI2.WinForms.Guna2Button
-    Friend WithEvents EXPFILL As Guna.UI2.WinForms.Guna2Button
-    Friend WithEvents DAte2EXP As Guna.UI2.WinForms.Guna2DateTimePicker
-    Friend WithEvents Date1EXP As Guna.UI2.WinForms.Guna2DateTimePicker
+    Friend WithEvents CLEAREXPIREDPRODUCTS As Guna.UI2.WinForms.Guna2Button
+    Friend WithEvents FILTEREXPIREDPRODUCTS As Guna.UI2.WinForms.Guna2Button
+    Friend WithEvents DATE2EXPIREDPRODUCTS As Guna.UI2.WinForms.Guna2DateTimePicker
+    Friend WithEvents DATE1EXPIREDPRODUCTS As Guna.UI2.WinForms.Guna2DateTimePicker
     Friend WithEvents TPDELIVERY As TabPage
     Friend WithEvents MONTHLYDELIVERY As Guna.UI2.WinForms.Guna2RadioButton
     Friend WithEvents WEEKLYDELIVERY As Guna.UI2.WinForms.Guna2RadioButton
@@ -1283,4 +1296,6 @@ Partial Class FRMREPORTS
     Friend WithEvents tbl_stocksTableAdapter As inventory_dbDataSetTableAdapters.tbl_stocksTableAdapter
     Friend WithEvents tbl_deliveryBindingSource As BindingSource
     Friend WithEvents tbl_deliveryTableAdapter As inventory_dbDataSetTableAdapters.tbl_deliveryTableAdapter
+    Friend WithEvents tbl_outofstocksBindingSource As BindingSource
+    Friend WithEvents tbl_outofstocksTableAdapter As inventory_dbDataSetTableAdapters.tbl_outofstocksTableAdapter
 End Class

@@ -25,31 +25,47 @@
 
 
     Private Sub BTNLOGIN_Click_1(sender As Object, e As EventArgs) Handles BTNLOGIN.Click
-
         OpenCon()
+
         cmd.CommandText = "SELECT * FROM tbl_users WHERE username = '" & TXTUN.Text & "' AND password = '" & TXTPW.Text & "'"
         dr = cmd.ExecuteReader
+
 
         If dr.HasRows Then
             dr.Read()
             If dr("status").ToString() = "Active" Then
                 FRMMAINMENU.LBLUSERNAME.Text = TXTUN.Text
 
+                ' Get the value of the "name" column
+                Dim nameValue As String = dr("name").ToString()
+
                 If dr("usertype").ToString() = "Admin" Then
                     activity = "Logged-in"
                     FRMMAINMENU.LBLUSERTYPE.Text = "Admin"
+
+                    ' Set the label text to the "name" value
+                    FRMMAINMENU.LBLNAME.Text = nameValue
+
                     actlog()
                     FRMMAINMENU.Show()
                     Me.Close()
                 ElseIf dr("usertype").ToString() = "Cashier" Then
                     activity = "Logged-in"
                     FRMMAINMENU.LBLUSERTYPE.Text = "Cashier"
+
+                    ' Set the label text to the "name" value
+                    FRMMAINMENU.LBLNAME.Text = nameValue
+
                     actlog()
                     FRMMAINMENU.Show()
                     Me.Close()
                 ElseIf dr("usertype").ToString() = "Manager" Then
                     activity = "Logged-in"
                     FRMMAINMENU.LBLUSERTYPE.Text = "Manager"
+
+                    ' Set the label text to the "name" value
+                    FRMMAINMENU.LBLNAME.Text = nameValue
+
                     actlog()
                     FRMMAINMENU.Show()
                     Me.Close()
