@@ -84,7 +84,7 @@ Partial Class FRMMAINMENU
         Me.LBLNAME.AutoSize = True
         Me.LBLNAME.Font = New System.Drawing.Font("Century Gothic", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.LBLNAME.ForeColor = System.Drawing.Color.MediumSeaGreen
-        Me.LBLNAME.Location = New System.Drawing.Point(121, 164)
+        Me.LBLNAME.Location = New System.Drawing.Point(115, 123)
         Me.LBLNAME.Name = "LBLNAME"
         Me.LBLNAME.Size = New System.Drawing.Size(53, 20)
         Me.LBLNAME.TabIndex = 28
@@ -95,7 +95,7 @@ Partial Class FRMMAINMENU
         Me.Label2.AutoSize = True
         Me.Label2.Font = New System.Drawing.Font("Century Gothic", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label2.ForeColor = System.Drawing.Color.White
-        Me.Label2.Location = New System.Drawing.Point(55, 163)
+        Me.Label2.Location = New System.Drawing.Point(49, 122)
         Me.Label2.Name = "Label2"
         Me.Label2.Size = New System.Drawing.Size(70, 21)
         Me.Label2.TabIndex = 27
@@ -112,7 +112,7 @@ Partial Class FRMMAINMENU
         Me.BTNSALES.ForeColor = System.Drawing.SystemColors.Window
         Me.BTNSALES.Image = CType(resources.GetObject("BTNSALES.Image"), System.Drawing.Image)
         Me.BTNSALES.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.BTNSALES.Location = New System.Drawing.Point(6, 380)
+        Me.BTNSALES.Location = New System.Drawing.Point(0, 359)
         Me.BTNSALES.Name = "BTNSALES"
         Me.BTNSALES.Padding = New System.Windows.Forms.Padding(30, 0, 0, 0)
         Me.BTNSALES.Size = New System.Drawing.Size(266, 43)
@@ -124,7 +124,7 @@ Partial Class FRMMAINMENU
         'Guna2CirclePictureBox1
         '
         Me.Guna2CirclePictureBox1.Image = CType(resources.GetObject("Guna2CirclePictureBox1.Image"), System.Drawing.Image)
-        Me.Guna2CirclePictureBox1.Location = New System.Drawing.Point(60, 88)
+        Me.Guna2CirclePictureBox1.Location = New System.Drawing.Point(54, 47)
         Me.Guna2CirclePictureBox1.Name = "Guna2CirclePictureBox1"
         Me.Guna2CirclePictureBox1.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle
         Me.Guna2CirclePictureBox1.ShadowDecoration.Parent = Me.Guna2CirclePictureBox1
@@ -166,10 +166,10 @@ Partial Class FRMMAINMENU
         Me.BTNREPORTS.ForeColor = System.Drawing.SystemColors.Window
         Me.BTNREPORTS.Image = CType(resources.GetObject("BTNREPORTS.Image"), System.Drawing.Image)
         Me.BTNREPORTS.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.BTNREPORTS.Location = New System.Drawing.Point(6, 429)
+        Me.BTNREPORTS.Location = New System.Drawing.Point(0, 417)
         Me.BTNREPORTS.Name = "BTNREPORTS"
         Me.BTNREPORTS.Padding = New System.Windows.Forms.Padding(40, 0, 0, 0)
-        Me.BTNREPORTS.Size = New System.Drawing.Size(267, 43)
+        Me.BTNREPORTS.Size = New System.Drawing.Size(266, 43)
         Me.BTNREPORTS.TabIndex = 23
         Me.BTNREPORTS.Text = "    Reports"
         Me.BTNREPORTS.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
@@ -180,7 +180,7 @@ Partial Class FRMMAINMENU
         Me.LBLUSERTYPE.AutoSize = True
         Me.LBLUSERTYPE.Font = New System.Drawing.Font("Century Gothic", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.LBLUSERTYPE.ForeColor = System.Drawing.Color.MediumSeaGreen
-        Me.LBLUSERTYPE.Location = New System.Drawing.Point(139, 124)
+        Me.LBLUSERTYPE.Location = New System.Drawing.Point(133, 83)
         Me.LBLUSERTYPE.Name = "LBLUSERTYPE"
         Me.LBLUSERTYPE.Size = New System.Drawing.Size(74, 20)
         Me.LBLUSERTYPE.TabIndex = 20
@@ -196,6 +196,7 @@ Partial Class FRMMAINMENU
         Me.LBLUSERNAME.Size = New System.Drawing.Size(87, 21)
         Me.LBLUSERNAME.TabIndex = 19
         Me.LBLUSERNAME.Text = "username"
+        Me.LBLUSERNAME.Visible = False
         '
         'BTNINVENTORY
         '
@@ -208,7 +209,7 @@ Partial Class FRMMAINMENU
         Me.BTNINVENTORY.ForeColor = System.Drawing.SystemColors.Window
         Me.BTNINVENTORY.Image = CType(resources.GetObject("BTNINVENTORY.Image"), System.Drawing.Image)
         Me.BTNINVENTORY.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.BTNINVENTORY.Location = New System.Drawing.Point(3, 285)
+        Me.BTNINVENTORY.Location = New System.Drawing.Point(0, 254)
         Me.BTNINVENTORY.Name = "BTNINVENTORY"
         Me.BTNINVENTORY.Padding = New System.Windows.Forms.Padding(40, 0, 0, 0)
         Me.BTNINVENTORY.Size = New System.Drawing.Size(266, 40)
@@ -222,7 +223,7 @@ Partial Class FRMMAINMENU
         Me.Label1.AutoSize = True
         Me.Label1.Font = New System.Drawing.Font("Century Gothic", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label1.ForeColor = System.Drawing.SystemColors.Window
-        Me.Label1.Location = New System.Drawing.Point(139, 103)
+        Me.Label1.Location = New System.Drawing.Point(133, 62)
         Me.Label1.Name = "Label1"
         Me.Label1.Size = New System.Drawing.Size(55, 21)
         Me.Label1.TabIndex = 15
@@ -239,7 +240,7 @@ Partial Class FRMMAINMENU
         Me.BTNTRANSACTION.ForeColor = System.Drawing.SystemColors.Window
         Me.BTNTRANSACTION.Image = CType(resources.GetObject("BTNTRANSACTION.Image"), System.Drawing.Image)
         Me.BTNTRANSACTION.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.BTNTRANSACTION.Location = New System.Drawing.Point(7, 331)
+        Me.BTNTRANSACTION.Location = New System.Drawing.Point(0, 300)
         Me.BTNTRANSACTION.Name = "BTNTRANSACTION"
         Me.BTNTRANSACTION.Padding = New System.Windows.Forms.Padding(40, 0, 0, 0)
         Me.BTNTRANSACTION.Size = New System.Drawing.Size(266, 43)
@@ -258,10 +259,10 @@ Partial Class FRMMAINMENU
         Me.BTNLOGOUT.ForeColor = System.Drawing.SystemColors.Window
         Me.BTNLOGOUT.Image = CType(resources.GetObject("BTNLOGOUT.Image"), System.Drawing.Image)
         Me.BTNLOGOUT.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.BTNLOGOUT.Location = New System.Drawing.Point(6, 571)
+        Me.BTNLOGOUT.Location = New System.Drawing.Point(0, 571)
         Me.BTNLOGOUT.Name = "BTNLOGOUT"
         Me.BTNLOGOUT.Padding = New System.Windows.Forms.Padding(40, 0, 0, 0)
-        Me.BTNLOGOUT.Size = New System.Drawing.Size(273, 43)
+        Me.BTNLOGOUT.Size = New System.Drawing.Size(266, 43)
         Me.BTNLOGOUT.TabIndex = 14
         Me.BTNLOGOUT.Text = "    Logout"
         Me.BTNLOGOUT.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
@@ -278,10 +279,10 @@ Partial Class FRMMAINMENU
         Me.BTNSETTINGS.ForeColor = System.Drawing.SystemColors.Window
         Me.BTNSETTINGS.Image = CType(resources.GetObject("BTNSETTINGS.Image"), System.Drawing.Image)
         Me.BTNSETTINGS.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.BTNSETTINGS.Location = New System.Drawing.Point(4, 478)
+        Me.BTNSETTINGS.Location = New System.Drawing.Point(0, 478)
         Me.BTNSETTINGS.Name = "BTNSETTINGS"
         Me.BTNSETTINGS.Padding = New System.Windows.Forms.Padding(40, 0, 0, 0)
-        Me.BTNSETTINGS.Size = New System.Drawing.Size(269, 43)
+        Me.BTNSETTINGS.Size = New System.Drawing.Size(266, 43)
         Me.BTNSETTINGS.TabIndex = 13
         Me.BTNSETTINGS.Text = "    Settings"
         Me.BTNSETTINGS.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
@@ -298,10 +299,10 @@ Partial Class FRMMAINMENU
         Me.BTNDASHBOARD.ForeColor = System.Drawing.SystemColors.Window
         Me.BTNDASHBOARD.Image = CType(resources.GetObject("BTNDASHBOARD.Image"), System.Drawing.Image)
         Me.BTNDASHBOARD.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.BTNDASHBOARD.Location = New System.Drawing.Point(6, 236)
+        Me.BTNDASHBOARD.Location = New System.Drawing.Point(0, 194)
         Me.BTNDASHBOARD.Name = "BTNDASHBOARD"
         Me.BTNDASHBOARD.Padding = New System.Windows.Forms.Padding(40, 0, 0, 0)
-        Me.BTNDASHBOARD.Size = New System.Drawing.Size(260, 43)
+        Me.BTNDASHBOARD.Size = New System.Drawing.Size(266, 43)
         Me.BTNDASHBOARD.TabIndex = 10
         Me.BTNDASHBOARD.Text = "    Dashboard"
         Me.BTNDASHBOARD.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText

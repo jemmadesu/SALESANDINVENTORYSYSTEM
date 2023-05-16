@@ -2119,7 +2119,7 @@
                 </Paragraph>
               </Paragraphs>
               <Top>0.63778in</Top>
-              <Left>10.8507in</Left>
+              <Left>12.6007in</Left>
               <Height>0.25in</Height>
               <Width>1in</Width>
               <ZIndex>3</ZIndex>
@@ -2152,7 +2152,7 @@
                 <Paragraph>
                   <TextRuns>
                     <TextRun>
-                      <Value>Printed by :</Value>
+                      <Value>Printed by : Manager</Value>
                       <Style />
                     </TextRun>
                   </TextRuns>
@@ -2163,7 +2163,7 @@
               <Top>0.09312in</Top>
               <Left>1.4318in</Left>
               <Height>0.25in</Height>
-              <Width>0.80208in</Width>
+              <Width>1.36458in</Width>
               <Style>
                 <Border>
                   <Style>None</Style>

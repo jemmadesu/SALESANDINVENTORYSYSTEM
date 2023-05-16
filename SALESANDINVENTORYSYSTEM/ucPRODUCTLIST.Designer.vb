@@ -48,6 +48,7 @@ Partial Class ucPRODUCTLIST
         Me.Panel2.Controls.Add(Me.BTNEP)
         Me.Panel2.Controls.Add(Me.BTNOS)
         Me.Panel2.Controls.Add(Me.BTNLOW)
+        Me.Panel2.Controls.Add(Me.BTNSTOCKS)
         Me.Panel2.Dock = System.Windows.Forms.DockStyle.Top
         Me.Panel2.Location = New System.Drawing.Point(0, 0)
         Me.Panel2.Name = "Panel2"
@@ -136,7 +137,7 @@ Partial Class ucPRODUCTLIST
         Me.BTNSTOCKS.ForeColor = System.Drawing.Color.White
         Me.BTNSTOCKS.Image = CType(resources.GetObject("BTNSTOCKS.Image"), System.Drawing.Image)
         Me.BTNSTOCKS.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.BTNSTOCKS.Location = New System.Drawing.Point(0, 0)
+        Me.BTNSTOCKS.Location = New System.Drawing.Point(27, 0)
         Me.BTNSTOCKS.Name = "BTNSTOCKS"
         Me.BTNSTOCKS.Size = New System.Drawing.Size(114, 46)
         Me.BTNSTOCKS.TabIndex = 60
@@ -247,7 +248,6 @@ Partial Class ucPRODUCTLIST
         Me.Controls.Add(Me.TXTSEARCH)
         Me.Controls.Add(Me.DGVPRODLIST)
         Me.Controls.Add(Me.Label4)
-        Me.Controls.Add(Me.BTNSTOCKS)
         Me.Controls.Add(Me.Label1)
         Me.Controls.Add(Me.Panel2)
         Me.Font = New System.Drawing.Font("Century Gothic", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))

@@ -29,6 +29,13 @@ Public Class FRMREPORTS
 
         ' PRODUCTS REPORTS -------------------------------------------------------------------------------------------------------------
 
+        'Assuming you are using Microsoft.Reporting.WinForms.ReportParameter for RDLC report
+        Dim currentDateParamproducts As New ReportParameter("CurrentDate", DateTime.Now.ToString())
+        ' Set the parameter to the report viewer
+        RPTPRODUCTS.LocalReport.SetParameters(currentDateParamproducts)
+
+        ' Refresh the report viewer to apply the parameter
+        RPTPRODUCTS.RefreshReport()
 
         Me.RPTPRODUCTS.SetDisplayMode(Microsoft.Reporting.WinForms.DisplayMode.PrintLayout)
         Me.tbl_productsTableAdapter.Fill(Me.inventory_dbDataSet.tbl_products)
@@ -37,6 +44,13 @@ Public Class FRMREPORTS
 
         ' SALES REPORTS -------------------------------------------------------------------------------------------------------------
 
+        'Assuming you are using Microsoft.Reporting.WinForms.ReportParameter for RDLC report
+        Dim currentDateParamsales As New ReportParameter("CurrentDate", DateTime.Now.ToString())
+        ' Set the parameter to the report viewer
+        RPTSALES.LocalReport.SetParameters(currentDateParamsales)
+
+        ' Refresh the report viewer to apply the parameter
+        RPTSALES.RefreshReport()
 
         Me.RPTSALES.SetDisplayMode(Microsoft.Reporting.WinForms.DisplayMode.PrintLayout)
         Me.tbl_salesTableAdapter.Fill(Me.inventory_dbDataSet.tbl_sales)
@@ -61,7 +75,15 @@ Public Class FRMREPORTS
         Me.RPTUSERS.RefreshReport()
 
 
-        ' USERS REPORTS -------------------------------------------------------------------------------------------------------------
+        ' STOCKS REPORTS -------------------------------------------------------------------------------------------------------------
+
+        'Assuming you are using Microsoft.Reporting.WinForms.ReportParameter for RDLC report
+        Dim currentDateParamstocks As New ReportParameter("CurrentDate", DateTime.Now.ToString())
+        ' Set the parameter to the report viewer
+        RPTSTOCKS.LocalReport.SetParameters(currentDateParamstocks)
+
+        ' Refresh the report viewer to apply the parameter
+        RPTSTOCKS.RefreshReport()
 
 
         Me.RPTSTOCKS.SetDisplayMode(Microsoft.Reporting.WinForms.DisplayMode.PrintLayout)
@@ -72,6 +94,14 @@ Public Class FRMREPORTS
 
 
         ' DELIVERY REPORTS -------------------------------------------------------------------------------------------------------------
+
+        'Assuming you are using Microsoft.Reporting.WinForms.ReportParameter for RDLC report
+        Dim currentDateParamdelivery As New ReportParameter("CurrentDate", DateTime.Now.ToString())
+        ' Set the parameter to the report viewer
+        RPTDELIVERY.LocalReport.SetParameters(currentDateParamdelivery)
+
+        ' Refresh the report viewer to apply the parameter
+        RPTDELIVERY.RefreshReport()
 
 
         Me.RPTDELIVERY.SetDisplayMode(Microsoft.Reporting.WinForms.DisplayMode.PrintLayout)
@@ -86,10 +116,10 @@ Public Class FRMREPORTS
         'Assuming you are using Microsoft.Reporting.WinForms.ReportParameter for RDLC report
         Dim currentDateParamexpiredproducts As New ReportParameter("CurrentDate", DateTime.Now.ToString())
         ' Set the parameter to the report viewer
-        RPTUSERS.LocalReport.SetParameters(currentDateParamexpiredproducts)
+        RPTEXPIREDPRODUCTS.LocalReport.SetParameters(currentDateParamexpiredproducts)
 
         ' Refresh the report viewer to apply the parameter
-        RPTUSERS.RefreshReport()
+        RPTEXPIREDPRODUCTS.RefreshReport()
 
         Me.RPTEXPIREDPRODUCTS.SetDisplayMode(Microsoft.Reporting.WinForms.DisplayMode.PrintLayout)
         Me.tbl_expiredproductsTableAdapter.Fill(Me.inventory_dbDataSet.tbl_expiredproducts)
