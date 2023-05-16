@@ -347,7 +347,27 @@ Public Class ucUSERMANAGEMENT
         CBOSTATUS.Enabled = True
     End Sub
 
-    Private Sub txtsearch_TextChanged(sender As Object, e As EventArgs) Handles txtsearch.TextChanged
-
+    Private Sub TXTSEARCH_TextChanged(sender As Object, e As EventArgs) Handles TXTSEARCH.TextChanged
+        PerformSearchAndLoadData(TXTSEARCH.Text)
     End Sub
+
+    Private Sub PerformSearchAndLoadData(keyword As String)
+        ' Perform the search and load the data
+        Dim query As String = "SELECT refid, username, usertype, userid, status, password, name FROM tbl_users WHERE username LIKE @Keyword OR usertype LIKE @Keyword OR userid LIKE @Keyword OR name LIKE @Keyword"
+        Dim connectionString As String = "Server=localhost;Port=3306;User=root;Password=password;Database=inventory_db"
+
+        Using connection As New MySqlConnection(connectionString)
+            Using command As New MySqlCommand(query, connection)
+                command.Parameters.AddWithValue("@Keyword", "%" & keyword & "%")
+
+                Dim adapter As New MySqlDataAdapter(command)
+                Dim table As New DataTable()
+                adapter.Fill(table)
+
+                DGVUSERS.DataSource = table
+                DGVSETPROPERTY()
+            End Using
+        End Using
+    End Sub
+
 End Class

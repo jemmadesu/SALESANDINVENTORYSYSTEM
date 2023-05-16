@@ -113,8 +113,27 @@ Public Class ucMANUFACTURER
         End If
         BTNUPDATE.Text = "Update"
     End Sub
-
-    Private Sub BTNBACK_Click(sender As Object, e As EventArgs) Handles BTNBACK.Click
-
+    Private Sub TXTSEARCH_TextChanged(sender As Object, e As EventArgs) Handles TXTSEARCH.TextChanged
+        PerformSearchAndLoadData(TXTSEARCH.Text)
     End Sub
+
+    Private Sub PerformSearchAndLoadData(keyword As String)
+        ' Perform the search and load the data
+        Dim query As String = "SELECT refno, manufacturer, status FROM tbl_manufacturer WHERE manufacturer LIKE @Keyword OR status LIKE @Keyword"
+        Dim connectionString As String = "Server=localhost;Port=3306;User=root;Password=password;Database=inventory_db"
+
+        Using connection As New MySqlConnection(connectionString)
+            Using command As New MySqlCommand(query, connection)
+                command.Parameters.AddWithValue("@Keyword", "%" & keyword & "%")
+
+                Dim adapter As New MySqlDataAdapter(command)
+                Dim table As New DataTable()
+                adapter.Fill(table)
+
+                DGVMANUFACTURER.DataSource = table
+                DGVSETPROPERTY()
+            End Using
+        End Using
+    End Sub
+
 End Class

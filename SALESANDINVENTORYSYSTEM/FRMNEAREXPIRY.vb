@@ -1,55 +1,89 @@
 ﻿Imports MySql.Data.MySqlClient
+
 Public Class FRMNEAREXPIRY
+
+    Dim connection As MySqlConnection
+    Dim command As MySqlCommand
+
     Private Sub DGVSETPROPERTY()
+
         DGVEXP.Columns(0).Width = 200
         DGVEXP.Columns(0).HeaderText = "Product ID"
         DGVEXP.Columns(1).Width = 200
-        DGVEXP.Columns(1).HeaderText = "Product Name"
+        DGVEXP.Columns(1).HeaderText = "Product Code"
         DGVEXP.Columns(2).Width = 200
-        DGVEXP.Columns(2).HeaderText = "Unit"
+        DGVEXP.Columns(2).HeaderText = "Product Name"
         DGVEXP.Columns(3).Width = 200
-        DGVEXP.Columns(3).HeaderText = "Quantity"
+        DGVEXP.Columns(3).HeaderText = "Manufacturer"
         DGVEXP.Columns(4).Width = 200
-        DGVEXP.Columns(4).HeaderText = "Expiration Date"
+        DGVEXP.Columns(4).HeaderText = "Brand"
         DGVEXP.Columns(5).Width = 200
-        DGVEXP.Columns(5).HeaderText = "Remaining Days"
+        DGVEXP.Columns(5).HeaderText = "Category"
+        DGVEXP.Columns(6).Width = 200
+        DGVEXP.Columns(6).HeaderText = "Category Code"
+        DGVEXP.Columns(7).Width = 200
+        DGVEXP.Columns(7).HeaderText = "Unit"
+        DGVEXP.Columns(8).Width = 200
+        DGVEXP.Columns(8).HeaderText = "Price"
+        DGVEXP.Columns(9).Width = 200
+        DGVEXP.Columns(9).HeaderText = "Stocks"
+        DGVEXP.Columns(10).Width = 200
+        DGVEXP.Columns(10).HeaderText = "Manufactured Date"
+        DGVEXP.Columns(11).Width = 200
+        DGVEXP.Columns(11).HeaderText = "Expiration Date"
+        DGVEXP.Columns(12).Width = 200
+        DGVEXP.Columns(12).HeaderText = "Remaining Days"
+
     End Sub
     Private Sub FRMNEAREXPIRY_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        con.Close()
+        connection = New MySqlConnection
+
+
+        Dim dataset As New DataTable
+        Dim bindindsrc As New BindingSource
+        Dim dataadapt As New MySqlDataAdapter
+
         Try
 
-            Dim da As New MySqlDataAdapter("SELECT prodid, prodname, unit, quantity, expirationdate, DATEDIFF(expirationdate, NOW()) AS Remaining_Days FROM tbl_stocks WHERE expirationdate > CURDATE() AND expirationdate <= DATE_ADD(CURDATE(), interval 10 day);", con)
-            Dim dt As New DataSet()
-            da.Fill(dt)
-            DGVEXP.DataSource = dt.Tables(0)
+            con.Open()
+            command = New MySqlCommand("SELECT id, prodcode, prodname, manufacturer, brand, category, catcode, unit, price, quantity, manufactureddate, expirationdate, DATEDIFF(expirationdate, NOW()) AS Remaining_Days FROM tbl_stocks WHERE expirationdate > CURDATE() AND expirationdate <= DATE_ADD(CURDATE(), interval 10 day);", con)
+
+            dataadapt.SelectCommand = command
+            dataadapt.Fill(dataset)
+            bindindsrc.DataSource = dataset
+
+            DGVEXP.DataSource = bindindsrc
+            dataadapt.Update(dataset)
+            con.Close()
 
             DGVSETPROPERTY()
         Catch ex As Exception
 
-            MessageBox.Show(ex.ToString())
+        Finally
+            con.Dispose()
 
         End Try
-        con.Close()
-
 
         ' Set the backcolor of the row
-        DGVEXP.Columns(5).DefaultCellStyle.BackColor = Color.IndianRed
+        DGVEXP.Columns(5).DefaultCellStyle.BackColor = Color.OrangeRed
 
         ' Set the forecolor of the row
         DGVEXP.Columns(5).DefaultCellStyle.ForeColor = Color.White
 
-
     End Sub
 
-    Private Sub LBLEXIT_Click(sender As Object, e As EventArgs) Handles LBLEXIT.Click
+    Private Sub DGVEXP_CellFormatting(sender As Object, e As DataGridViewCellFormattingEventArgs)
+        ' Check if the column index is the one you want to format
+        If e.ColumnIndex = 5 Then ' Replace 1 with the actual column index you want to format
+            ' Check the cell value and set the background color accordingly
+            If Convert.ToInt32(e.Value) < 10 Then ' Replace 10 with the value you want to use as the threshold
+                e.CellStyle.BackColor = Color.FromArgb(208, 34, 41)
+                e.CellStyle.ForeColor = Color.White
+            End If
+        End If
+    End Sub
+
+    Private Sub LBLCLOSE_Click(sender As Object, e As EventArgs) Handles LBLCLOSE.Click
         Me.Close()
-    End Sub
-
-    Private Sub Panel2_Paint(sender As Object, e As PaintEventArgs) Handles Panel2.Paint
-
-    End Sub
-
-    Private Sub DGVEXP_CellContentClick(sender As Object, e As DataGridViewCellEventArgs) Handles DGVEXP.CellContentClick
-
     End Sub
 End Class

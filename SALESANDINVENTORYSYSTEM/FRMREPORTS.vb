@@ -1,7 +1,13 @@
 ﻿Imports Microsoft.Reporting.WinForms
 Imports MySql.Data.MySqlClient
 Public Class FRMREPORTS
+    Public Property ReportParameter1 As String
     Private Sub FRMREPORTS_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+
+        ' ---------------------------------------------------------
+
+        LBLNAME.Text = FRMMAINMENU.LBLNAME.Text
+        LBLUSERTYPE.Text = FRMMAINMENU.LBLUSERTYPE.Text
 
         ' ----- CODE FOR COMBO BOX CATEGORY -----
 
@@ -254,8 +260,8 @@ Public Class FRMREPORTS
         Me.RPTSTOCKS.RefreshReport()
     End Sub
 
-    Private Sub LBLUSERNAME_Click(sender As Object, e As EventArgs) Handles LBLUSERNAME.Click
-        LBLUSERNAME.Text = FRMMAINMENU.LBLUSERNAME.Text
+    Private Sub LBLUSERNAME_Click(sender As Object, e As EventArgs) Handles LBLNAME.Click
+        LBLNAME.Text = FRMMAINMENU.LBLUSERNAME.Text
     End Sub
 
     Private Sub FILTERDELIVERY_Click(sender As Object, e As EventArgs) Handles FILTERDELIVERY.Click

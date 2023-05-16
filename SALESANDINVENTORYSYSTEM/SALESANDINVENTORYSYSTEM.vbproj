@@ -236,12 +236,6 @@
     <Compile Include="FRMNEAREXPIRY.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FRMOUTOFSTOCKS.Designer.vb">
-      <DependentUpon>FRMOUTOFSTOCKS.vb</DependentUpon>
-    </Compile>
-    <Compile Include="FRMOUTOFSTOCKS.vb">
-      <SubType>Form</SubType>
-    </Compile>
     <Compile Include="FRMREPORTS.Designer.vb">
       <DependentUpon>FRMREPORTS.vb</DependentUpon>
     </Compile>
@@ -252,6 +246,12 @@
       <DependentUpon>FRMRESTORE.vb</DependentUpon>
     </Compile>
     <Compile Include="FRMRESTORE.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FRMRUNNINGOUTOFSTOCKS.Designer.vb">
+      <DependentUpon>FRMRUNNINGOUTOFSTOCKS.vb</DependentUpon>
+    </Compile>
+    <Compile Include="FRMRUNNINGOUTOFSTOCKS.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="inventory_dbDataSet3.Designer.vb">
@@ -400,9 +400,6 @@
     <EmbeddedResource Include="FRMLOGIN.resx">
       <DependentUpon>FRMLOGIN.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FRMOUTOFSTOCKS.resx">
-      <DependentUpon>FRMOUTOFSTOCKS.vb</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="FRMMAINMENU.resx">
       <DependentUpon>FRMMAINMENU.vb</DependentUpon>
     </EmbeddedResource>
@@ -414,6 +411,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FRMRESTORE.resx">
       <DependentUpon>FRMRESTORE.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FRMRUNNINGOUTOFSTOCKS.resx">
+      <DependentUpon>FRMRUNNINGOUTOFSTOCKS.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="My Project\Resources.resx">
       <Generator>VbMyResourcesResXFileCodeGenerator</Generator>
@@ -576,6 +576,7 @@
     <None Include="Resources\tag-4-24.ico" />
     <None Include="Resources\tag-4-241.ico" />
     <None Include="Resources\tags.ico" />
+    <None Include="Resources\user.png" />
     <Content Include="SqlServerTypes\Loader.cs" />
     <Content Include="SqlServerTypes\readme.htm" />
     <Content Include="SqlServerTypes\x64\msvcr120.dll">

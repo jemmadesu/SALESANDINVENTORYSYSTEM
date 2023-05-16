@@ -117,7 +117,7 @@
                 Dim reslow As DialogResult
                 reslow = MessageBox.Show("Please check if you have products that is already running out of stocks on your inventory, do you want yo view the products?", "Notify Message", MessageBoxButtons.YesNo, MessageBoxIcon.Asterisk, MessageBoxDefaultButton.Button2)
                 If reslow = DialogResult.Yes Then
-                    FRMOUTOFSTOCKS.ShowDialog()
+                    FRMRUNNINGOUTOFSTOCKS.ShowDialog()
                 End If
                 con.Close()
             End If

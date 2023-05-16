@@ -168,15 +168,6 @@ Public Class ucSUPPLIER
         SETTINGS.Show()
         SETTINGS.Dock = DockStyle.Fill
     End Sub
-    Private Sub search()
-        Dim dba As New MySqlDataAdapter("select RefNo, Companyname, name, telno, status from tbl_supplier WHERE tbl_supplier.companyname LIKE '%" & Me.TXTSEARCH.Text & "%';", con)
-        Dim dbset As New DataSet
-        dba.Fill(dbset)
-        Me.DGVSUP.DataSource = dbset.Tables(0).DefaultView
-    End Sub
-    Private Sub TXTSEARCH_TextChanged(sender As Object, e As EventArgs) Handles TXTSEARCH.TextChanged
-        search()
-    End Sub
 
     Private Sub DGVSUP_CellClick(sender As Object, e As DataGridViewCellEventArgs) Handles DGVSUP.CellContentClick
 
@@ -207,14 +198,29 @@ Public Class ucSUPPLIER
             MsgBox("Number or Special character is not allowed", MessageBoxIcon.Warning, "Error")
         End If
     End Sub
-
-    Private Sub CBOSTATUS_SelectedIndexChanged(sender As Object, e As EventArgs) Handles CBOSTATUS.SelectedIndexChanged
-
+    Private Sub TXTSEARCH_TextChanged(sender As Object, e As EventArgs) Handles TXTSEARCH.TextChanged
+        PerformSearchAndLoadData(TXTSEARCH.Text)
     End Sub
 
-    Private Sub LBLCLOSE_Click(sender As Object, e As EventArgs)
+    Private Sub PerformSearchAndLoadData(keyword As String)
+        ' Perform the search and load the data
+        Dim query As String = "SELECT RefNo, Companyname, name, telno, status FROM tbl_supplier WHERE Companyname LIKE @Keyword OR name LIKE @Keyword OR telno LIKE @Keyword OR status LIKE @Keyword"
+        Dim connectionString As String = "Server=localhost;Port=3306;User=root;Password=password;Database=inventory_db"
 
+        Using connection As New MySqlConnection(connectionString)
+            Using command As New MySqlCommand(query, connection)
+                command.Parameters.AddWithValue("@Keyword", "%" & keyword & "%")
+
+                Dim adapter As New MySqlDataAdapter(command)
+                Dim table As New DataTable()
+                adapter.Fill(table)
+
+                DGVSUP.DataSource = table
+                DGVSET()
+            End Using
+        End Using
     End Sub
+
 
     'Private Sub TXTEMAIL_Validating(sender As Object, e As CancelEventArgs) Handles TXTEMAIL.Validating
     '    ' Get the entered email address from the TextBox

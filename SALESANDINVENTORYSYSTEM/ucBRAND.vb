@@ -120,4 +120,27 @@ Public Class ucBRAND
         BTNUPDATE.Enabled = True
     End Sub
 
+    Private Sub TXTSEARCH_TextChanged(sender As Object, e As EventArgs) Handles TXTSEARCH.TextChanged
+        PerformSearchAndLoadData(TXTSEARCH.Text)
+    End Sub
+
+    Private Sub PerformSearchAndLoadData(keyword As String)
+        ' Perform the search and load the data
+        Dim query As String = "SELECT refno, brand, status FROM tbl_brand WHERE brand LIKE @Keyword OR status LIKE @Keyword"
+        Dim connectionString As String = "Server=localhost;Port=3306;User=root;Password=password;Database=inventory_db"
+
+        Using connection As New MySqlConnection(connectionString)
+            Using command As New MySqlCommand(query, connection)
+                command.Parameters.AddWithValue("@Keyword", "%" & keyword & "%")
+
+                Dim adapter As New MySqlDataAdapter(command)
+                Dim table As New DataTable()
+                adapter.Fill(table)
+
+                DGVBRAND.DataSource = table
+                DGVSETPROPERTY()
+            End Using
+        End Using
+    End Sub
+
 End Class

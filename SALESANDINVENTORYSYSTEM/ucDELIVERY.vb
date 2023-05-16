@@ -86,13 +86,10 @@ Public Class ucDELIVERY
 
             row = DGVPRODUCTS.Rows(e.RowIndex)
 
-            TXTID.Text = row.Cells(0).Value
-            TXTPRODCODE.Text = row.Cells(1).Value
+
             TXTPRODNAME.Text = row.Cells(2).Value
-            TXTMAN.Text = row.Cells(3).Value
+
             TXTBRAND.Text = row.Cells(4).Value
-            TXTCATEGORY.Text = row.Cells(5).Value
-            TXTCATCODE.Text = row.Cells(6).Value
             TXTUNIT.Text = row.Cells(7).Value
             TXTPRICE.Text = row.Cells(8).Value
 
@@ -164,7 +161,6 @@ Public Class ucDELIVERY
         TXTUNIT.Text = ""
         TXTPRICE.Text = ""
         QTY.Text = ""
-        TXTMAN.Text = ""
         TXTBRAND.Text = ""
 
 
@@ -231,5 +227,9 @@ Public Class ucDELIVERY
     Private Sub LBLCLOSE_Click_1(sender As Object, e As EventArgs) Handles LBLCLOSE.Click
         PNLSUPPLIER.Visible = False
         HEADERPANEL.Visible = False
+    End Sub
+
+    Private Sub BTNADD_Click(sender As Object, e As EventArgs)
+
     End Sub
 End Class

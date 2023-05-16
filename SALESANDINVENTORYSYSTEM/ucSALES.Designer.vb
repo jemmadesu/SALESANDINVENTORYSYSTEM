@@ -26,16 +26,16 @@ Partial Class ucSALES
         Dim DataGridViewCellStyle2 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Me.Label4 = New System.Windows.Forms.Label()
         Me.Label8 = New System.Windows.Forms.Label()
-        Me.BTNGENERATE = New System.Windows.Forms.Button()
         Me.Label2 = New System.Windows.Forms.Label()
         Me.Panel2 = New System.Windows.Forms.Panel()
         Me.DGVSALES = New System.Windows.Forms.DataGridView()
         Me.TXTINCOME = New System.Windows.Forms.TextBox()
-        Me.DATE1 = New Guna.UI2.WinForms.Guna2DateTimePicker()
-        Me.DATE2 = New Guna.UI2.WinForms.Guna2DateTimePicker()
-        Me.BTNCLEAR = New System.Windows.Forms.Button()
-        Me.Label6 = New System.Windows.Forms.Label()
         Me.Label1 = New System.Windows.Forms.Label()
+        Me.Daily = New Guna.UI2.WinForms.Guna2CustomRadioButton()
+        Me.Label3 = New System.Windows.Forms.Label()
+        Me.Weekly = New Guna.UI2.WinForms.Guna2CustomRadioButton()
+        Me.Label5 = New System.Windows.Forms.Label()
+        Me.Monthly = New Guna.UI2.WinForms.Guna2CustomRadioButton()
         CType(Me.DGVSALES, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
@@ -58,19 +58,6 @@ Partial Class ucSALES
         Me.Label8.Size = New System.Drawing.Size(207, 32)
         Me.Label8.TabIndex = 45
         Me.Label8.Text = "SALES INCOME"
-        '
-        'BTNGENERATE
-        '
-        Me.BTNGENERATE.BackColor = System.Drawing.Color.MediumSeaGreen
-        Me.BTNGENERATE.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.BTNGENERATE.Font = New System.Drawing.Font("Century Gothic", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.BTNGENERATE.ForeColor = System.Drawing.SystemColors.Control
-        Me.BTNGENERATE.Location = New System.Drawing.Point(879, 109)
-        Me.BTNGENERATE.Name = "BTNGENERATE"
-        Me.BTNGENERATE.Size = New System.Drawing.Size(83, 33)
-        Me.BTNGENERATE.TabIndex = 44
-        Me.BTNGENERATE.Text = "Filter"
-        Me.BTNGENERATE.UseVisualStyleBackColor = False
         '
         'Label2
         '
@@ -131,93 +118,109 @@ Partial Class ucSALES
         Me.TXTINCOME.Size = New System.Drawing.Size(163, 27)
         Me.TXTINCOME.TabIndex = 47
         '
-        'DATE1
-        '
-        Me.DATE1.BackColor = System.Drawing.Color.White
-        Me.DATE1.CheckedState.Parent = Me.DATE1
-        Me.DATE1.FillColor = System.Drawing.Color.White
-        Me.DATE1.Font = New System.Drawing.Font("Century Gothic", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.DATE1.ForeColor = System.Drawing.Color.DimGray
-        Me.DATE1.Format = System.Windows.Forms.DateTimePickerFormat.[Long]
-        Me.DATE1.HoverState.Parent = Me.DATE1
-        Me.DATE1.Location = New System.Drawing.Point(354, 109)
-        Me.DATE1.MaxDate = New Date(9998, 12, 31, 0, 0, 0, 0)
-        Me.DATE1.MinDate = New Date(1753, 1, 1, 0, 0, 0, 0)
-        Me.DATE1.Name = "DATE1"
-        Me.DATE1.ShadowDecoration.Parent = Me.DATE1
-        Me.DATE1.Size = New System.Drawing.Size(200, 36)
-        Me.DATE1.TabIndex = 50
-        Me.DATE1.Value = New Date(2023, 4, 9, 3, 3, 41, 799)
-        '
-        'DATE2
-        '
-        Me.DATE2.BackColor = System.Drawing.Color.White
-        Me.DATE2.CheckedState.Parent = Me.DATE2
-        Me.DATE2.FillColor = System.Drawing.Color.White
-        Me.DATE2.Font = New System.Drawing.Font("Century Gothic", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.DATE2.ForeColor = System.Drawing.Color.DimGray
-        Me.DATE2.Format = System.Windows.Forms.DateTimePickerFormat.[Long]
-        Me.DATE2.HoverState.Parent = Me.DATE2
-        Me.DATE2.Location = New System.Drawing.Point(624, 109)
-        Me.DATE2.MaxDate = New Date(9998, 12, 31, 0, 0, 0, 0)
-        Me.DATE2.MinDate = New Date(1753, 1, 1, 0, 0, 0, 0)
-        Me.DATE2.Name = "DATE2"
-        Me.DATE2.ShadowDecoration.Parent = Me.DATE2
-        Me.DATE2.Size = New System.Drawing.Size(200, 36)
-        Me.DATE2.TabIndex = 51
-        Me.DATE2.Value = New Date(2023, 4, 9, 3, 3, 41, 799)
-        '
-        'BTNCLEAR
-        '
-        Me.BTNCLEAR.BackColor = System.Drawing.SystemColors.ControlDarkDark
-        Me.BTNCLEAR.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.BTNCLEAR.Font = New System.Drawing.Font("Century Gothic", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.BTNCLEAR.ForeColor = System.Drawing.SystemColors.Control
-        Me.BTNCLEAR.Location = New System.Drawing.Point(985, 108)
-        Me.BTNCLEAR.Name = "BTNCLEAR"
-        Me.BTNCLEAR.Size = New System.Drawing.Size(83, 33)
-        Me.BTNCLEAR.TabIndex = 52
-        Me.BTNCLEAR.Text = "Clear"
-        Me.BTNCLEAR.UseVisualStyleBackColor = False
-        '
-        'Label6
-        '
-        Me.Label6.AutoSize = True
-        Me.Label6.Font = New System.Drawing.Font("Century Gothic", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label6.ForeColor = System.Drawing.SystemColors.ControlDarkDark
-        Me.Label6.Location = New System.Drawing.Point(296, 114)
-        Me.Label6.Name = "Label6"
-        Me.Label6.Size = New System.Drawing.Size(52, 20)
-        Me.Label6.TabIndex = 53
-        Me.Label6.Text = "From :"
-        '
         'Label1
         '
         Me.Label1.AutoSize = True
         Me.Label1.Font = New System.Drawing.Font("Century Gothic", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label1.ForeColor = System.Drawing.SystemColors.ControlDarkDark
-        Me.Label1.Location = New System.Drawing.Point(573, 114)
+        Me.Label1.Location = New System.Drawing.Point(801, 118)
         Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(32, 20)
-        Me.Label1.TabIndex = 54
-        Me.Label1.Text = "To :"
+        Me.Label1.Size = New System.Drawing.Size(44, 20)
+        Me.Label1.TabIndex = 56
+        Me.Label1.Text = "Daily"
+        '
+        'Daily
+        '
+        Me.Daily.CheckedState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
+        Me.Daily.CheckedState.BorderThickness = 0
+        Me.Daily.CheckedState.FillColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
+        Me.Daily.CheckedState.InnerColor = System.Drawing.Color.White
+        Me.Daily.CheckedState.Parent = Me.Daily
+        Me.Daily.Location = New System.Drawing.Point(775, 118)
+        Me.Daily.Name = "Daily"
+        Me.Daily.ShadowDecoration.Parent = Me.Daily
+        Me.Daily.Size = New System.Drawing.Size(20, 20)
+        Me.Daily.TabIndex = 55
+        Me.Daily.UncheckedState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(125, Byte), Integer), CType(CType(137, Byte), Integer), CType(CType(149, Byte), Integer))
+        Me.Daily.UncheckedState.BorderThickness = 2
+        Me.Daily.UncheckedState.FillColor = System.Drawing.Color.Transparent
+        Me.Daily.UncheckedState.InnerColor = System.Drawing.Color.Transparent
+        Me.Daily.UncheckedState.Parent = Me.Daily
+        '
+        'Label3
+        '
+        Me.Label3.AutoSize = True
+        Me.Label3.Font = New System.Drawing.Font("Century Gothic", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label3.ForeColor = System.Drawing.SystemColors.ControlDarkDark
+        Me.Label3.Location = New System.Drawing.Point(891, 118)
+        Me.Label3.Name = "Label3"
+        Me.Label3.Size = New System.Drawing.Size(63, 20)
+        Me.Label3.TabIndex = 58
+        Me.Label3.Text = "Weekly"
+        '
+        'Weekly
+        '
+        Me.Weekly.CheckedState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
+        Me.Weekly.CheckedState.BorderThickness = 0
+        Me.Weekly.CheckedState.FillColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
+        Me.Weekly.CheckedState.InnerColor = System.Drawing.Color.White
+        Me.Weekly.CheckedState.Parent = Me.Weekly
+        Me.Weekly.Location = New System.Drawing.Point(865, 118)
+        Me.Weekly.Name = "Weekly"
+        Me.Weekly.ShadowDecoration.Parent = Me.Weekly
+        Me.Weekly.Size = New System.Drawing.Size(20, 20)
+        Me.Weekly.TabIndex = 57
+        Me.Weekly.UncheckedState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(125, Byte), Integer), CType(CType(137, Byte), Integer), CType(CType(149, Byte), Integer))
+        Me.Weekly.UncheckedState.BorderThickness = 2
+        Me.Weekly.UncheckedState.FillColor = System.Drawing.Color.Transparent
+        Me.Weekly.UncheckedState.InnerColor = System.Drawing.Color.Transparent
+        Me.Weekly.UncheckedState.Parent = Me.Weekly
+        '
+        'Label5
+        '
+        Me.Label5.AutoSize = True
+        Me.Label5.Font = New System.Drawing.Font("Century Gothic", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label5.ForeColor = System.Drawing.SystemColors.ControlDarkDark
+        Me.Label5.Location = New System.Drawing.Point(1000, 118)
+        Me.Label5.Name = "Label5"
+        Me.Label5.Size = New System.Drawing.Size(68, 20)
+        Me.Label5.TabIndex = 60
+        Me.Label5.Text = "Monthly"
+        '
+        'Monthly
+        '
+        Me.Monthly.CheckedState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
+        Me.Monthly.CheckedState.BorderThickness = 0
+        Me.Monthly.CheckedState.FillColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
+        Me.Monthly.CheckedState.InnerColor = System.Drawing.Color.White
+        Me.Monthly.CheckedState.Parent = Me.Monthly
+        Me.Monthly.Location = New System.Drawing.Point(974, 118)
+        Me.Monthly.Name = "Monthly"
+        Me.Monthly.ShadowDecoration.Parent = Me.Monthly
+        Me.Monthly.Size = New System.Drawing.Size(20, 20)
+        Me.Monthly.TabIndex = 59
+        Me.Monthly.UncheckedState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(125, Byte), Integer), CType(CType(137, Byte), Integer), CType(CType(149, Byte), Integer))
+        Me.Monthly.UncheckedState.BorderThickness = 2
+        Me.Monthly.UncheckedState.FillColor = System.Drawing.Color.Transparent
+        Me.Monthly.UncheckedState.InnerColor = System.Drawing.Color.Transparent
+        Me.Monthly.UncheckedState.Parent = Me.Monthly
         '
         'ucSALES
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.White
+        Me.Controls.Add(Me.Label5)
+        Me.Controls.Add(Me.Monthly)
+        Me.Controls.Add(Me.Label3)
+        Me.Controls.Add(Me.Weekly)
         Me.Controls.Add(Me.Label1)
-        Me.Controls.Add(Me.Label6)
-        Me.Controls.Add(Me.BTNCLEAR)
-        Me.Controls.Add(Me.DATE2)
-        Me.Controls.Add(Me.DATE1)
+        Me.Controls.Add(Me.Daily)
         Me.Controls.Add(Me.DGVSALES)
         Me.Controls.Add(Me.Panel2)
         Me.Controls.Add(Me.TXTINCOME)
         Me.Controls.Add(Me.Label2)
         Me.Controls.Add(Me.Label8)
-        Me.Controls.Add(Me.BTNGENERATE)
         Me.Controls.Add(Me.Label4)
         Me.Name = "ucSALES"
         Me.Size = New System.Drawing.Size(1091, 729)
@@ -228,14 +231,14 @@ Partial Class ucSALES
     End Sub
     Friend WithEvents Label4 As Label
     Friend WithEvents Label8 As Label
-    Friend WithEvents BTNGENERATE As Button
     Friend WithEvents Label2 As Label
     Friend WithEvents Panel2 As Panel
     Friend WithEvents DGVSALES As DataGridView
     Friend WithEvents TXTINCOME As TextBox
-    Friend WithEvents DATE1 As Guna.UI2.WinForms.Guna2DateTimePicker
-    Friend WithEvents DATE2 As Guna.UI2.WinForms.Guna2DateTimePicker
-    Friend WithEvents BTNCLEAR As Button
-    Friend WithEvents Label6 As Label
     Friend WithEvents Label1 As Label
+    Friend WithEvents Daily As Guna.UI2.WinForms.Guna2CustomRadioButton
+    Friend WithEvents Label3 As Label
+    Friend WithEvents Weekly As Guna.UI2.WinForms.Guna2CustomRadioButton
+    Friend WithEvents Label5 As Label
+    Friend WithEvents Monthly As Guna.UI2.WinForms.Guna2CustomRadioButton
 End Class

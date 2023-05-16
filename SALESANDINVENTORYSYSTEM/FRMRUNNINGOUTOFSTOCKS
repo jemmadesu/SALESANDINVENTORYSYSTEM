@@ -1,0 +1,68 @@
+﻿Imports MySql.Data.MySqlClient
+Public Class FRMRUNNINGOUTOFSTOCKS
+
+    Dim connection As MySqlConnection
+    Dim command As MySqlCommand
+
+    Private Sub DGVSETPROPERTY()
+
+        DGVLOWQTY.Columns(0).Width = 200
+        DGVLOWQTY.Columns(0).HeaderText = "Product ID"
+        DGVLOWQTY.Columns(1).Width = 200
+        DGVLOWQTY.Columns(1).HeaderText = "Product Code"
+        DGVLOWQTY.Columns(2).Width = 200
+        DGVLOWQTY.Columns(2).HeaderText = "Product Name"
+        DGVLOWQTY.Columns(3).Width = 200
+        DGVLOWQTY.Columns(3).HeaderText = "Manufacturer"
+        DGVLOWQTY.Columns(4).Width = 200
+        DGVLOWQTY.Columns(4).HeaderText = "Brand"
+        DGVLOWQTY.Columns(5).Width = 200
+        DGVLOWQTY.Columns(5).HeaderText = "Category"
+        DGVLOWQTY.Columns(6).Width = 200
+        DGVLOWQTY.Columns(6).HeaderText = "Category Code"
+        DGVLOWQTY.Columns(7).Width = 200
+        DGVLOWQTY.Columns(7).HeaderText = "Unit"
+        DGVLOWQTY.Columns(8).Width = 200
+        DGVLOWQTY.Columns(8).HeaderText = "Price"
+        DGVLOWQTY.Columns(9).Width = 200
+        DGVLOWQTY.Columns(9).HeaderText = "Stocks"
+        DGVLOWQTY.Columns(10).Width = 200
+        DGVLOWQTY.Columns(10).HeaderText = "Manufactured Date"
+        DGVLOWQTY.Columns(11).Width = 200
+        DGVLOWQTY.Columns(11).HeaderText = "Expiration Date"
+
+    End Sub
+    Private Sub FRMLOWQTY_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        Using connection As New MySqlConnection("your_connection_string")
+            Dim dataset As New DataTable()
+            Dim bindindsrc As New BindingSource()
+            Dim dataadapt As New MySqlDataAdapter()
+
+            Try
+                connection.Open()
+                command = New MySqlCommand("SELECT id, prodcode, prodname, manufacturer, brand, category, catcode, unit, price, quantity, manufactureddate, expirationdate FROM tbl_stocks WHERE quantity < 10;", connection)
+                dataadapt.SelectCommand = command
+                dataadapt.Fill(dataset)
+                bindindsrc.DataSource = dataset
+
+                DGVLOWQTY.DataSource = bindindsrc
+                dataadapt.Update(dataset)
+            Catch ex As Exception
+                MessageBox.Show(ex.ToString())
+            End Try
+        End Using
+
+        DGVSETPROPERTY()
+
+        ' Set the backcolor of the row
+        DGVLOWQTY.Columns(9).DefaultCellStyle.BackColor = Color.OrangeRed
+
+        ' Set the forecolor of the row
+        DGVLOWQTY.Columns(9).DefaultCellStyle.ForeColor = Color.White
+    End Sub
+
+
+    Private Sub LBLEXIT_Click(sender As Object, e As EventArgs) Handles LBLEXIT.Click
+        Me.Close()
+    End Sub
+End Class

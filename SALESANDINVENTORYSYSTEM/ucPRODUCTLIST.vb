@@ -128,8 +128,8 @@ Public Class ucPRODUCTLIST
 
     Private Sub PerformSearchAndLoadData(keyword As String)
         ' Perform the search and load the data
-        Dim query As String = " SELECT id, prodcode, prodname, manufacturer, brand, category, catcode, unit, price  FROM tbl_products WHERE tbl_products.id & tbl_products.prodcode & tbl_products.prodname & tbl_products.manufacturer & tbl_products.brand LIKE @Keyword"
-        Dim connectionString As String = “Server=localhost;Port=3306;User=root;Password=password;Database=inventory_db”
+        Dim query As String = "SELECT id, prodcode, prodname, manufacturer, brand, category, catcode, unit, price FROM tbl_products WHERE CONCAT(id, prodcode, prodname, manufacturer, brand) LIKE @Keyword"
+        Dim connectionString As String = "Server=localhost;Port=3306;User=root;Password=password;Database=inventory_db"
 
         Using connection As New MySqlConnection(connectionString)
             Using command As New MySqlCommand(query, connection)

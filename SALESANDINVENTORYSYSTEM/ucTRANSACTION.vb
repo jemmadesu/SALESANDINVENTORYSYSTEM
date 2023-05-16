@@ -901,9 +901,10 @@ Public Class ucTRANSACTION
     Private Sub TXTSEARCH_TextChanged(sender As Object, e As EventArgs) Handles TXTSEARCH.TextChanged
         PerformSearchAndLoadData(TXTSEARCH.Text)
     End Sub
+
     Private Sub PerformSearchAndLoadData(keyword As String)
         ' Perform the search and load the data
-        Dim query As String = "SELECT prodcode, prodname, brand, category, catcode, price, unit, quantity, dateaddedstocks FROM tbl_stocks WHERE tbl_stocks.prodcode & tbl_stocks.prodname & tbl_stocks.brand & tbl_stocks.manufacturer LIKE @Keyword"
+        Dim query As String = "SELECT * FROM tbl_stocks WHERE prodcode LIKE @Keyword OR prodname LIKE @Keyword OR brand LIKE @Keyword OR manufacturer LIKE @Keyword"
         Dim connectionString As String = "Server=localhost;Port=3306;User=root;Password=password;Database=inventory_db"
 
         Using connection As New MySqlConnection(connectionString)
@@ -915,8 +916,10 @@ Public Class ucTRANSACTION
                 adapter.Fill(table)
 
                 DGVPRODUCTS.DataSource = table
+                DGVSETPROPERTYPROD()
             End Using
         End Using
     End Sub
+
 
 End Class

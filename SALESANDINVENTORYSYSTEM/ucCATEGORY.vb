@@ -153,9 +153,27 @@ Public Class ucCATEGORY
         End If
         BTNUPDATE.Text = "Update"
     End Sub
+    Private Sub TXTSEARCH_TextChanged(sender As Object, e As EventArgs) Handles TXTSEARCH.TextChanged
+        PerformSearchAndLoadData(TXTSEARCH.Text)
+    End Sub
 
-    Private Sub GroupBox1_Enter(sender As Object, e As EventArgs) Handles GroupBox1.Enter
+    Private Sub PerformSearchAndLoadData(keyword As String)
+        ' Perform the search and load the data
+        Dim query As String = "SELECT ID, catname, catcode FROM tbl_category WHERE catname LIKE @Keyword OR catcode LIKE @Keyword"
+        Dim connectionString As String = "Server=localhost;Port=3306;User=root;Password=password;Database=inventory_db"
 
+        Using connection As New MySqlConnection(connectionString)
+            Using command As New MySqlCommand(query, connection)
+                command.Parameters.AddWithValue("@Keyword", "%" & keyword & "%")
+
+                Dim adapter As New MySqlDataAdapter(command)
+                Dim table As New DataTable()
+                adapter.Fill(table)
+
+                DGVPRODUCTS.DataSource = table
+                DGVSETPROPERTY()
+            End Using
+        End Using
     End Sub
 
     'Private Sub BTNSAVEEDIT_Click(sender As Object, e As EventArgs)
