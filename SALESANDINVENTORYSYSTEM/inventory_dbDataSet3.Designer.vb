@@ -13368,13 +13368,38 @@ Namespace inventory_dbDataSetTableAdapters
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
         Private Sub InitCommandCollection()
-            Me._commandCollection = New Global.MySql.Data.MySqlClient.MySqlCommand(0) {}
+            Me._commandCollection = New Global.MySql.Data.MySqlClient.MySqlCommand(1) {}
             Me._commandCollection(0) = New Global.MySql.Data.MySqlClient.MySqlCommand()
             Me._commandCollection(0).Connection = Me.Connection
             Me._commandCollection(0).CommandText = "SELECT `archiveno`, `id`, `prodcode`, `prodname`, `manufacturer`, `brand`, `categ"& _ 
                 "ory`, `catcode`, `price`, `unit`, `quantity`, `manufactureddate`, `expirationdat"& _ 
                 "e`, `dateremoved` FROM `tbl_expiredproducts`"
             Me._commandCollection(0).CommandType = Global.System.Data.CommandType.Text
+            Me._commandCollection(1) = New Global.MySql.Data.MySqlClient.MySqlCommand()
+            Me._commandCollection(1).Connection = Me.Connection
+            Me._commandCollection(1).CommandText = "SELECT `archiveno`, `id`, `prodcode`, `prodname`, `manufacturer`, `brand`, `categ"& _ 
+                "ory`, `catcode`, `price`, `unit`, `quantity`, `manufactureddate`, `expirationdat"& _ 
+                "e`, `dateremoved` FROM `tbl_expiredproducts` where expirationdate between @param"& _ 
+                "1 and @param2"
+            Me._commandCollection(1).CommandType = Global.System.Data.CommandType.Text
+            Dim param As Global.MySql.Data.MySqlClient.MySqlParameter = New Global.MySql.Data.MySqlClient.MySqlParameter()
+            param.ParameterName = "@param1"
+            param.DbType = Global.System.Data.DbType.[String]
+            param.MySqlDbType = Global.MySql.Data.MySqlClient.MySqlDbType.VarChar
+            param.Size = 45
+            param.IsNullable = true
+            param.SourceColumn = "expirationdate"
+            param.SourceVersion = Global.System.Data.DataRowVersion.Current
+            Me._commandCollection(1).Parameters.Add(param)
+            param = New Global.MySql.Data.MySqlClient.MySqlParameter()
+            param.ParameterName = "@param2"
+            param.DbType = Global.System.Data.DbType.[String]
+            param.MySqlDbType = Global.MySql.Data.MySqlClient.MySqlDbType.VarChar
+            param.Size = 45
+            param.IsNullable = true
+            param.SourceColumn = "expirationdate"
+            param.SourceVersion = Global.System.Data.DataRowVersion.Current
+            Me._commandCollection(1).Parameters.Add(param)
         End Sub
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
@@ -13396,6 +13421,50 @@ Namespace inventory_dbDataSetTableAdapters
          Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.[Select], true)>  _
         Public Overloads Overridable Function GetData() As inventory_dbDataSet.tbl_expiredproductsDataTable
             Me.Adapter.SelectCommand = Me.CommandCollection(0)
+            Dim dataTable As inventory_dbDataSet.tbl_expiredproductsDataTable = New inventory_dbDataSet.tbl_expiredproductsDataTable()
+            Me.Adapter.Fill(dataTable)
+            Return dataTable
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0"),  _
+         Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"),  _
+         Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.Fill, false)>  _
+        Public Overloads Overridable Function FillByEXPIRATIONDATE(ByVal dataTable As inventory_dbDataSet.tbl_expiredproductsDataTable, ByVal param1 As String, ByVal param2 As String) As Integer
+            Me.Adapter.SelectCommand = Me.CommandCollection(1)
+            If (param1 Is Nothing) Then
+                Throw New Global.System.ArgumentNullException("param1")
+            Else
+                Me.Adapter.SelectCommand.Parameters(0).Value = CType(param1,String)
+            End If
+            If (param2 Is Nothing) Then
+                Throw New Global.System.ArgumentNullException("param2")
+            Else
+                Me.Adapter.SelectCommand.Parameters(1).Value = CType(param2,String)
+            End If
+            If (Me.ClearBeforeFill = true) Then
+                dataTable.Clear
+            End If
+            Dim returnValue As Integer = Me.Adapter.Fill(dataTable)
+            Return returnValue
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0"),  _
+         Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"),  _
+         Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.[Select], false)>  _
+        Public Overloads Overridable Function GetDataByEXPIRATIONDATE(ByVal param1 As String, ByVal param2 As String) As inventory_dbDataSet.tbl_expiredproductsDataTable
+            Me.Adapter.SelectCommand = Me.CommandCollection(1)
+            If (param1 Is Nothing) Then
+                Throw New Global.System.ArgumentNullException("param1")
+            Else
+                Me.Adapter.SelectCommand.Parameters(0).Value = CType(param1,String)
+            End If
+            If (param2 Is Nothing) Then
+                Throw New Global.System.ArgumentNullException("param2")
+            Else
+                Me.Adapter.SelectCommand.Parameters(1).Value = CType(param2,String)
+            End If
             Dim dataTable As inventory_dbDataSet.tbl_expiredproductsDataTable = New inventory_dbDataSet.tbl_expiredproductsDataTable()
             Me.Adapter.Fill(dataTable)
             Return dataTable
@@ -17319,13 +17388,36 @@ Namespace inventory_dbDataSetTableAdapters
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
         Private Sub InitCommandCollection()
-            Me._commandCollection = New Global.MySql.Data.MySqlClient.MySqlCommand(0) {}
+            Me._commandCollection = New Global.MySql.Data.MySqlClient.MySqlCommand(1) {}
             Me._commandCollection(0) = New Global.MySql.Data.MySqlClient.MySqlCommand()
             Me._commandCollection(0).Connection = Me.Connection
             Me._commandCollection(0).CommandText = "SELECT `archiveno`, `id`, `prodcode`, `prodname`, `manufacturer`, `brand`, `categ"& _ 
                 "ory`, `catcode`, `price`, `unit`, `quantity`, `manufactureddate`, `expirationdat"& _ 
                 "e`, `dateremoved` FROM `tbl_outofstocks`"
             Me._commandCollection(0).CommandType = Global.System.Data.CommandType.Text
+            Me._commandCollection(1) = New Global.MySql.Data.MySqlClient.MySqlCommand()
+            Me._commandCollection(1).Connection = Me.Connection
+            Me._commandCollection(1).CommandText = "SELECT `archiveno`, `id`, `prodcode`, `prodname`, `manufacturer`, `brand`, `categ"& _ 
+                "ory`, `catcode`, `price`, `unit`, `quantity`, `manufactureddate`, `expirationdat"& _ 
+                "e`, `dateremoved` FROM `tbl_outofstocks` where dateremoved between @param1 and @"& _ 
+                "param2 "
+            Me._commandCollection(1).CommandType = Global.System.Data.CommandType.Text
+            Dim param As Global.MySql.Data.MySqlClient.MySqlParameter = New Global.MySql.Data.MySqlClient.MySqlParameter()
+            param.ParameterName = "@param1"
+            param.DbType = Global.System.Data.DbType.DateTime
+            param.MySqlDbType = Global.MySql.Data.MySqlClient.MySqlDbType.[Date]
+            param.IsNullable = true
+            param.SourceColumn = "dateremoved"
+            param.SourceVersion = Global.System.Data.DataRowVersion.Current
+            Me._commandCollection(1).Parameters.Add(param)
+            param = New Global.MySql.Data.MySqlClient.MySqlParameter()
+            param.ParameterName = "@param2"
+            param.DbType = Global.System.Data.DbType.DateTime
+            param.MySqlDbType = Global.MySql.Data.MySqlClient.MySqlDbType.[Date]
+            param.IsNullable = true
+            param.SourceColumn = "dateremoved"
+            param.SourceVersion = Global.System.Data.DataRowVersion.Current
+            Me._commandCollection(1).Parameters.Add(param)
         End Sub
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
@@ -17347,6 +17439,34 @@ Namespace inventory_dbDataSetTableAdapters
          Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.[Select], true)>  _
         Public Overloads Overridable Function GetData() As inventory_dbDataSet.tbl_outofstocksDataTable
             Me.Adapter.SelectCommand = Me.CommandCollection(0)
+            Dim dataTable As inventory_dbDataSet.tbl_outofstocksDataTable = New inventory_dbDataSet.tbl_outofstocksDataTable()
+            Me.Adapter.Fill(dataTable)
+            Return dataTable
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0"),  _
+         Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"),  _
+         Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.Fill, false)>  _
+        Public Overloads Overridable Function FillByOUTOFSTOCKS(ByVal dataTable As inventory_dbDataSet.tbl_outofstocksDataTable, ByVal param1 As Date, ByVal param2 As Date) As Integer
+            Me.Adapter.SelectCommand = Me.CommandCollection(1)
+            Me.Adapter.SelectCommand.Parameters(0).Value = CType(param1,Date)
+            Me.Adapter.SelectCommand.Parameters(1).Value = CType(param2,Date)
+            If (Me.ClearBeforeFill = true) Then
+                dataTable.Clear
+            End If
+            Dim returnValue As Integer = Me.Adapter.Fill(dataTable)
+            Return returnValue
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0"),  _
+         Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"),  _
+         Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.[Select], false)>  _
+        Public Overloads Overridable Function GetDataByOUTOFSTOCKS(ByVal param1 As Date, ByVal param2 As Date) As inventory_dbDataSet.tbl_outofstocksDataTable
+            Me.Adapter.SelectCommand = Me.CommandCollection(1)
+            Me.Adapter.SelectCommand.Parameters(0).Value = CType(param1,Date)
+            Me.Adapter.SelectCommand.Parameters(1).Value = CType(param2,Date)
             Dim dataTable As inventory_dbDataSet.tbl_outofstocksDataTable = New inventory_dbDataSet.tbl_outofstocksDataTable()
             Me.Adapter.Fill(dataTable)
             Return dataTable

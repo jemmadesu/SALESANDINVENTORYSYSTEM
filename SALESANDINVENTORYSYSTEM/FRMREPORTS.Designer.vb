@@ -33,7 +33,7 @@ Partial Class FRMREPORTS
         Dim ReportDataSource8 As Microsoft.Reporting.WinForms.ReportDataSource = New Microsoft.Reporting.WinForms.ReportDataSource()
         Dim ReportDataSource9 As Microsoft.Reporting.WinForms.ReportDataSource = New Microsoft.Reporting.WinForms.ReportDataSource()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(FRMREPORTS))
-        Me.tbl_usersBindingSource = New System.Windows.Forms.BindingSource(Me.components)
+        Me.tbl_transactionBindingSource = New System.Windows.Forms.BindingSource(Me.components)
         Me.inventory_dbDataSet = New SALESANDINVENTORYSYSTEM.inventory_dbDataSet()
         Me.tbl_actlogBindingSource = New System.Windows.Forms.BindingSource(Me.components)
         Me.tbl_salesBindingSource = New System.Windows.Forms.BindingSource(Me.components)
@@ -42,12 +42,11 @@ Partial Class FRMREPORTS
         Me.tbl_deliveryBindingSource = New System.Windows.Forms.BindingSource(Me.components)
         Me.tbl_stocksBindingSource = New System.Windows.Forms.BindingSource(Me.components)
         Me.tbl_productsBindingSource = New System.Windows.Forms.BindingSource(Me.components)
-        Me.Panel1 = New System.Windows.Forms.Panel()
+        Me.tbl_usersBindingSource = New System.Windows.Forms.BindingSource(Me.components)
         Me.TPTRANSREC = New System.Windows.Forms.TabPage()
         Me.MONTHLYTRANSACTION = New Guna.UI2.WinForms.Guna2RadioButton()
         Me.WEEKLYTRANSACTION = New Guna.UI2.WinForms.Guna2RadioButton()
         Me.DAILYTRANSACTION = New Guna.UI2.WinForms.Guna2RadioButton()
-        Me.CLEARTRANSACTION = New Guna.UI2.WinForms.Guna2Button()
         Me.FILTERTRANSACTION = New Guna.UI2.WinForms.Guna2Button()
         Me.RPTTRANSACTIONRECORDS = New Microsoft.Reporting.WinForms.ReportViewer()
         Me.TPACT = New System.Windows.Forms.TabPage()
@@ -60,16 +59,15 @@ Partial Class FRMREPORTS
         Me.MONTHLY = New Guna.UI2.WinForms.Guna2RadioButton()
         Me.WEEKLY = New Guna.UI2.WinForms.Guna2RadioButton()
         Me.DAILY = New Guna.UI2.WinForms.Guna2RadioButton()
-        Me.CLEARSALES = New Guna.UI2.WinForms.Guna2Button()
         Me.FILTERSALES = New Guna.UI2.WinForms.Guna2Button()
         Me.RPTSALES = New Microsoft.Reporting.WinForms.ReportViewer()
         Me.TPOUT = New System.Windows.Forms.TabPage()
         Me.Label10 = New System.Windows.Forms.Label()
         Me.Label9 = New System.Windows.Forms.Label()
-        Me.OUTCLR = New Guna.UI2.WinForms.Guna2Button()
-        Me.OUTFILL = New Guna.UI2.WinForms.Guna2Button()
-        Me.Date2OUT = New Guna.UI2.WinForms.Guna2DateTimePicker()
-        Me.Date1OUT = New Guna.UI2.WinForms.Guna2DateTimePicker()
+        Me.CLEAROUTOFSTOCKS = New Guna.UI2.WinForms.Guna2Button()
+        Me.FILTEROUTOFSTOCKS = New Guna.UI2.WinForms.Guna2Button()
+        Me.DATE2OUTOFSTOCKS = New Guna.UI2.WinForms.Guna2DateTimePicker()
+        Me.DATE1OUTOFSTOCKS = New Guna.UI2.WinForms.Guna2DateTimePicker()
         Me.RPTOUTOFSTOCKS = New Microsoft.Reporting.WinForms.ReportViewer()
         Me.TPEXP = New System.Windows.Forms.TabPage()
         Me.RPTEXPIREDPRODUCTS = New Microsoft.Reporting.WinForms.ReportViewer()
@@ -83,7 +81,6 @@ Partial Class FRMREPORTS
         Me.MONTHLYDELIVERY = New Guna.UI2.WinForms.Guna2RadioButton()
         Me.WEEKLYDELIVERY = New Guna.UI2.WinForms.Guna2RadioButton()
         Me.DAILYDELIVERY = New Guna.UI2.WinForms.Guna2RadioButton()
-        Me.CLEARDELIVERY = New Guna.UI2.WinForms.Guna2Button()
         Me.FILTERDELIVERY = New Guna.UI2.WinForms.Guna2Button()
         Me.RPTDELIVERY = New Microsoft.Reporting.WinForms.ReportViewer()
         Me.TPSTOCKS = New System.Windows.Forms.TabPage()
@@ -99,14 +96,14 @@ Partial Class FRMREPORTS
         Me.CBOPRODUCTSCATEGORY = New Guna.UI2.WinForms.Guna2ComboBox()
         Me.RPTPRODUCTS = New Microsoft.Reporting.WinForms.ReportViewer()
         Me.TPUSERS = New System.Windows.Forms.TabPage()
-        Me.Label6 = New System.Windows.Forms.Label()
-        Me.LBLNAME = New System.Windows.Forms.Label()
         Me.RPTUSERS = New Microsoft.Reporting.WinForms.ReportViewer()
-        Me.CLEARUSERS = New Guna.UI2.WinForms.Guna2Button()
         Me.Label2 = New System.Windows.Forms.Label()
         Me.FILTERUSERS = New Guna.UI2.WinForms.Guna2Button()
         Me.CBOUSERS = New Guna.UI2.WinForms.Guna2ComboBox()
+        Me.Label6 = New System.Windows.Forms.Label()
+        Me.lblNameReport = New System.Windows.Forms.Label()
         Me.TCREPORTS = New System.Windows.Forms.TabControl()
+        Me.LBLUSERTYPE = New System.Windows.Forms.Label()
         Me.tbl_productsTableAdapter = New SALESANDINVENTORYSYSTEM.inventory_dbDataSetTableAdapters.tbl_productsTableAdapter()
         Me.tbl_salesTableAdapter = New SALESANDINVENTORYSYSTEM.inventory_dbDataSetTableAdapters.tbl_salesTableAdapter()
         Me.tbl_usersTableAdapter = New SALESANDINVENTORYSYSTEM.inventory_dbDataSetTableAdapters.tbl_usersTableAdapter()
@@ -115,12 +112,10 @@ Partial Class FRMREPORTS
         Me.tbl_outofstocksTableAdapter = New SALESANDINVENTORYSYSTEM.inventory_dbDataSetTableAdapters.tbl_outofstocksTableAdapter()
         Me.tbl_stocksTableAdapter = New SALESANDINVENTORYSYSTEM.inventory_dbDataSetTableAdapters.tbl_stocksTableAdapter()
         Me.tbl_actlogTableAdapter = New SALESANDINVENTORYSYSTEM.inventory_dbDataSetTableAdapters.tbl_actlogTableAdapter()
-        Me.tbl_transactionBindingSource = New System.Windows.Forms.BindingSource(Me.components)
         Me.tbl_transactionTableAdapter = New SALESANDINVENTORYSYSTEM.inventory_dbDataSetTableAdapters.tbl_transactionTableAdapter()
         Me.PictureBox1 = New System.Windows.Forms.PictureBox()
-        Me.LBLUSERTYPE = New System.Windows.Forms.Label()
-        Me.TextBox1 = New System.Windows.Forms.TextBox()
-        CType(Me.tbl_usersBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.CLEARUSERS = New Guna.UI2.WinForms.Guna2Button()
+        CType(Me.tbl_transactionBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.inventory_dbDataSet, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.tbl_actlogBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.tbl_salesBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -129,6 +124,7 @@ Partial Class FRMREPORTS
         CType(Me.tbl_deliveryBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.tbl_stocksBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.tbl_productsBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.tbl_usersBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.TPTRANSREC.SuspendLayout()
         Me.TPACT.SuspendLayout()
         Me.TPSALES.SuspendLayout()
@@ -139,14 +135,13 @@ Partial Class FRMREPORTS
         Me.TPPRODS.SuspendLayout()
         Me.TPUSERS.SuspendLayout()
         Me.TCREPORTS.SuspendLayout()
-        CType(Me.tbl_transactionBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
-        'tbl_usersBindingSource
+        'tbl_transactionBindingSource
         '
-        Me.tbl_usersBindingSource.DataMember = "tbl_users"
-        Me.tbl_usersBindingSource.DataSource = Me.inventory_dbDataSet
+        Me.tbl_transactionBindingSource.DataMember = "tbl_transaction"
+        Me.tbl_transactionBindingSource.DataSource = Me.inventory_dbDataSet
         '
         'inventory_dbDataSet
         '
@@ -188,19 +183,16 @@ Partial Class FRMREPORTS
         Me.tbl_productsBindingSource.DataMember = "tbl_products"
         Me.tbl_productsBindingSource.DataSource = Me.inventory_dbDataSet
         '
-        'Panel1
+        'tbl_usersBindingSource
         '
-        Me.Panel1.Location = New System.Drawing.Point(152, 60)
-        Me.Panel1.Name = "Panel1"
-        Me.Panel1.Size = New System.Drawing.Size(1237, 25)
-        Me.Panel1.TabIndex = 13
+        Me.tbl_usersBindingSource.DataMember = "tbl_users"
+        Me.tbl_usersBindingSource.DataSource = Me.inventory_dbDataSet
         '
         'TPTRANSREC
         '
         Me.TPTRANSREC.Controls.Add(Me.MONTHLYTRANSACTION)
         Me.TPTRANSREC.Controls.Add(Me.WEEKLYTRANSACTION)
         Me.TPTRANSREC.Controls.Add(Me.DAILYTRANSACTION)
-        Me.TPTRANSREC.Controls.Add(Me.CLEARTRANSACTION)
         Me.TPTRANSREC.Controls.Add(Me.FILTERTRANSACTION)
         Me.TPTRANSREC.Controls.Add(Me.RPTTRANSACTIONRECORDS)
         Me.TPTRANSREC.Location = New System.Drawing.Point(4, 29)
@@ -270,22 +262,6 @@ Partial Class FRMREPORTS
         Me.DAILYTRANSACTION.UncheckedState.InnerColor = System.Drawing.Color.Transparent
         Me.DAILYTRANSACTION.UseVisualStyleBackColor = True
         '
-        'CLEARTRANSACTION
-        '
-        Me.CLEARTRANSACTION.BackColor = System.Drawing.Color.Transparent
-        Me.CLEARTRANSACTION.CheckedState.Parent = Me.CLEARTRANSACTION
-        Me.CLEARTRANSACTION.CustomImages.Parent = Me.CLEARTRANSACTION
-        Me.CLEARTRANSACTION.FillColor = System.Drawing.SystemColors.ControlDark
-        Me.CLEARTRANSACTION.Font = New System.Drawing.Font("Century Gothic", 9.0!)
-        Me.CLEARTRANSACTION.ForeColor = System.Drawing.Color.White
-        Me.CLEARTRANSACTION.HoverState.Parent = Me.CLEARTRANSACTION
-        Me.CLEARTRANSACTION.Location = New System.Drawing.Point(443, 29)
-        Me.CLEARTRANSACTION.Name = "CLEARTRANSACTION"
-        Me.CLEARTRANSACTION.ShadowDecoration.Parent = Me.CLEARTRANSACTION
-        Me.CLEARTRANSACTION.Size = New System.Drawing.Size(98, 36)
-        Me.CLEARTRANSACTION.TabIndex = 25
-        Me.CLEARTRANSACTION.Text = "Clear Filter"
-        '
         'FILTERTRANSACTION
         '
         Me.FILTERTRANSACTION.CheckedState.Parent = Me.FILTERTRANSACTION
@@ -294,7 +270,7 @@ Partial Class FRMREPORTS
         Me.FILTERTRANSACTION.Font = New System.Drawing.Font("Century Gothic", 9.0!)
         Me.FILTERTRANSACTION.ForeColor = System.Drawing.Color.White
         Me.FILTERTRANSACTION.HoverState.Parent = Me.FILTERTRANSACTION
-        Me.FILTERTRANSACTION.Location = New System.Drawing.Point(313, 28)
+        Me.FILTERTRANSACTION.Location = New System.Drawing.Point(325, 20)
         Me.FILTERTRANSACTION.Name = "FILTERTRANSACTION"
         Me.FILTERTRANSACTION.ShadowDecoration.Parent = Me.FILTERTRANSACTION
         Me.FILTERTRANSACTION.Size = New System.Drawing.Size(98, 36)
@@ -406,7 +382,6 @@ Partial Class FRMREPORTS
         Me.TPSALES.Controls.Add(Me.MONTHLY)
         Me.TPSALES.Controls.Add(Me.WEEKLY)
         Me.TPSALES.Controls.Add(Me.DAILY)
-        Me.TPSALES.Controls.Add(Me.CLEARSALES)
         Me.TPSALES.Controls.Add(Me.FILTERSALES)
         Me.TPSALES.Controls.Add(Me.RPTSALES)
         Me.TPSALES.Location = New System.Drawing.Point(4, 29)
@@ -477,22 +452,6 @@ Partial Class FRMREPORTS
         Me.DAILY.UncheckedState.InnerColor = System.Drawing.Color.Transparent
         Me.DAILY.UseVisualStyleBackColor = True
         '
-        'CLEARSALES
-        '
-        Me.CLEARSALES.BackColor = System.Drawing.Color.Transparent
-        Me.CLEARSALES.CheckedState.Parent = Me.CLEARSALES
-        Me.CLEARSALES.CustomImages.Parent = Me.CLEARSALES
-        Me.CLEARSALES.FillColor = System.Drawing.SystemColors.ControlDark
-        Me.CLEARSALES.Font = New System.Drawing.Font("Century Gothic", 9.0!)
-        Me.CLEARSALES.ForeColor = System.Drawing.Color.White
-        Me.CLEARSALES.HoverState.Parent = Me.CLEARSALES
-        Me.CLEARSALES.Location = New System.Drawing.Point(443, 27)
-        Me.CLEARSALES.Name = "CLEARSALES"
-        Me.CLEARSALES.ShadowDecoration.Parent = Me.CLEARSALES
-        Me.CLEARSALES.Size = New System.Drawing.Size(98, 36)
-        Me.CLEARSALES.TabIndex = 14
-        Me.CLEARSALES.Text = "Clear Filter"
-        '
         'FILTERSALES
         '
         Me.FILTERSALES.CheckedState.Parent = Me.FILTERSALES
@@ -524,10 +483,10 @@ Partial Class FRMREPORTS
         '
         Me.TPOUT.Controls.Add(Me.Label10)
         Me.TPOUT.Controls.Add(Me.Label9)
-        Me.TPOUT.Controls.Add(Me.OUTCLR)
-        Me.TPOUT.Controls.Add(Me.OUTFILL)
-        Me.TPOUT.Controls.Add(Me.Date2OUT)
-        Me.TPOUT.Controls.Add(Me.Date1OUT)
+        Me.TPOUT.Controls.Add(Me.CLEAROUTOFSTOCKS)
+        Me.TPOUT.Controls.Add(Me.FILTEROUTOFSTOCKS)
+        Me.TPOUT.Controls.Add(Me.DATE2OUTOFSTOCKS)
+        Me.TPOUT.Controls.Add(Me.DATE1OUTOFSTOCKS)
         Me.TPOUT.Controls.Add(Me.RPTOUTOFSTOCKS)
         Me.TPOUT.Location = New System.Drawing.Point(4, 29)
         Me.TPOUT.Name = "TPOUT"
@@ -555,70 +514,70 @@ Partial Class FRMREPORTS
         Me.Label9.TabIndex = 15
         Me.Label9.Text = "From :"
         '
-        'OUTCLR
+        'CLEAROUTOFSTOCKS
         '
-        Me.OUTCLR.BackColor = System.Drawing.Color.Transparent
-        Me.OUTCLR.CheckedState.Parent = Me.OUTCLR
-        Me.OUTCLR.CustomImages.Parent = Me.OUTCLR
-        Me.OUTCLR.FillColor = System.Drawing.SystemColors.ControlDark
-        Me.OUTCLR.Font = New System.Drawing.Font("Century Gothic", 9.0!)
-        Me.OUTCLR.ForeColor = System.Drawing.Color.White
-        Me.OUTCLR.HoverState.Parent = Me.OUTCLR
-        Me.OUTCLR.Location = New System.Drawing.Point(740, 27)
-        Me.OUTCLR.Name = "OUTCLR"
-        Me.OUTCLR.ShadowDecoration.Parent = Me.OUTCLR
-        Me.OUTCLR.Size = New System.Drawing.Size(98, 36)
-        Me.OUTCLR.TabIndex = 14
-        Me.OUTCLR.Text = "Clear Filter"
+        Me.CLEAROUTOFSTOCKS.BackColor = System.Drawing.Color.Transparent
+        Me.CLEAROUTOFSTOCKS.CheckedState.Parent = Me.CLEAROUTOFSTOCKS
+        Me.CLEAROUTOFSTOCKS.CustomImages.Parent = Me.CLEAROUTOFSTOCKS
+        Me.CLEAROUTOFSTOCKS.FillColor = System.Drawing.SystemColors.ControlDark
+        Me.CLEAROUTOFSTOCKS.Font = New System.Drawing.Font("Century Gothic", 9.0!)
+        Me.CLEAROUTOFSTOCKS.ForeColor = System.Drawing.Color.White
+        Me.CLEAROUTOFSTOCKS.HoverState.Parent = Me.CLEAROUTOFSTOCKS
+        Me.CLEAROUTOFSTOCKS.Location = New System.Drawing.Point(740, 27)
+        Me.CLEAROUTOFSTOCKS.Name = "CLEAROUTOFSTOCKS"
+        Me.CLEAROUTOFSTOCKS.ShadowDecoration.Parent = Me.CLEAROUTOFSTOCKS
+        Me.CLEAROUTOFSTOCKS.Size = New System.Drawing.Size(98, 36)
+        Me.CLEAROUTOFSTOCKS.TabIndex = 14
+        Me.CLEAROUTOFSTOCKS.Text = "Clear Filter"
         '
-        'OUTFILL
+        'FILTEROUTOFSTOCKS
         '
-        Me.OUTFILL.CheckedState.Parent = Me.OUTFILL
-        Me.OUTFILL.CustomImages.Parent = Me.OUTFILL
-        Me.OUTFILL.FillColor = System.Drawing.Color.MediumSeaGreen
-        Me.OUTFILL.Font = New System.Drawing.Font("Century Gothic", 9.0!)
-        Me.OUTFILL.ForeColor = System.Drawing.Color.White
-        Me.OUTFILL.HoverState.Parent = Me.OUTFILL
-        Me.OUTFILL.Location = New System.Drawing.Point(610, 26)
-        Me.OUTFILL.Name = "OUTFILL"
-        Me.OUTFILL.ShadowDecoration.Parent = Me.OUTFILL
-        Me.OUTFILL.Size = New System.Drawing.Size(98, 36)
-        Me.OUTFILL.TabIndex = 13
-        Me.OUTFILL.Text = "Filter"
+        Me.FILTEROUTOFSTOCKS.CheckedState.Parent = Me.FILTEROUTOFSTOCKS
+        Me.FILTEROUTOFSTOCKS.CustomImages.Parent = Me.FILTEROUTOFSTOCKS
+        Me.FILTEROUTOFSTOCKS.FillColor = System.Drawing.Color.MediumSeaGreen
+        Me.FILTEROUTOFSTOCKS.Font = New System.Drawing.Font("Century Gothic", 9.0!)
+        Me.FILTEROUTOFSTOCKS.ForeColor = System.Drawing.Color.White
+        Me.FILTEROUTOFSTOCKS.HoverState.Parent = Me.FILTEROUTOFSTOCKS
+        Me.FILTEROUTOFSTOCKS.Location = New System.Drawing.Point(610, 26)
+        Me.FILTEROUTOFSTOCKS.Name = "FILTEROUTOFSTOCKS"
+        Me.FILTEROUTOFSTOCKS.ShadowDecoration.Parent = Me.FILTEROUTOFSTOCKS
+        Me.FILTEROUTOFSTOCKS.Size = New System.Drawing.Size(98, 36)
+        Me.FILTEROUTOFSTOCKS.TabIndex = 13
+        Me.FILTEROUTOFSTOCKS.Text = "Filter"
         '
-        'Date2OUT
+        'DATE2OUTOFSTOCKS
         '
-        Me.Date2OUT.CheckedState.Parent = Me.Date2OUT
-        Me.Date2OUT.FillColor = System.Drawing.Color.MediumSeaGreen
-        Me.Date2OUT.Font = New System.Drawing.Font("Century Gothic", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Date2OUT.ForeColor = System.Drawing.Color.White
-        Me.Date2OUT.Format = System.Windows.Forms.DateTimePickerFormat.[Long]
-        Me.Date2OUT.HoverState.Parent = Me.Date2OUT
-        Me.Date2OUT.Location = New System.Drawing.Point(372, 26)
-        Me.Date2OUT.MaxDate = New Date(9998, 12, 31, 0, 0, 0, 0)
-        Me.Date2OUT.MinDate = New Date(1753, 1, 1, 0, 0, 0, 0)
-        Me.Date2OUT.Name = "Date2OUT"
-        Me.Date2OUT.ShadowDecoration.Parent = Me.Date2OUT
-        Me.Date2OUT.Size = New System.Drawing.Size(200, 36)
-        Me.Date2OUT.TabIndex = 12
-        Me.Date2OUT.Value = New Date(2023, 4, 15, 23, 18, 1, 623)
+        Me.DATE2OUTOFSTOCKS.CheckedState.Parent = Me.DATE2OUTOFSTOCKS
+        Me.DATE2OUTOFSTOCKS.FillColor = System.Drawing.Color.MediumSeaGreen
+        Me.DATE2OUTOFSTOCKS.Font = New System.Drawing.Font("Century Gothic", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.DATE2OUTOFSTOCKS.ForeColor = System.Drawing.Color.White
+        Me.DATE2OUTOFSTOCKS.Format = System.Windows.Forms.DateTimePickerFormat.[Long]
+        Me.DATE2OUTOFSTOCKS.HoverState.Parent = Me.DATE2OUTOFSTOCKS
+        Me.DATE2OUTOFSTOCKS.Location = New System.Drawing.Point(372, 26)
+        Me.DATE2OUTOFSTOCKS.MaxDate = New Date(9998, 12, 31, 0, 0, 0, 0)
+        Me.DATE2OUTOFSTOCKS.MinDate = New Date(1753, 1, 1, 0, 0, 0, 0)
+        Me.DATE2OUTOFSTOCKS.Name = "DATE2OUTOFSTOCKS"
+        Me.DATE2OUTOFSTOCKS.ShadowDecoration.Parent = Me.DATE2OUTOFSTOCKS
+        Me.DATE2OUTOFSTOCKS.Size = New System.Drawing.Size(200, 36)
+        Me.DATE2OUTOFSTOCKS.TabIndex = 12
+        Me.DATE2OUTOFSTOCKS.Value = New Date(2023, 4, 15, 23, 18, 1, 623)
         '
-        'Date1OUT
+        'DATE1OUTOFSTOCKS
         '
-        Me.Date1OUT.CheckedState.Parent = Me.Date1OUT
-        Me.Date1OUT.FillColor = System.Drawing.Color.MediumSeaGreen
-        Me.Date1OUT.Font = New System.Drawing.Font("Century Gothic", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Date1OUT.ForeColor = System.Drawing.Color.White
-        Me.Date1OUT.Format = System.Windows.Forms.DateTimePickerFormat.[Long]
-        Me.Date1OUT.HoverState.Parent = Me.Date1OUT
-        Me.Date1OUT.Location = New System.Drawing.Point(90, 26)
-        Me.Date1OUT.MaxDate = New Date(9998, 12, 31, 0, 0, 0, 0)
-        Me.Date1OUT.MinDate = New Date(1753, 1, 1, 0, 0, 0, 0)
-        Me.Date1OUT.Name = "Date1OUT"
-        Me.Date1OUT.ShadowDecoration.Parent = Me.Date1OUT
-        Me.Date1OUT.Size = New System.Drawing.Size(200, 36)
-        Me.Date1OUT.TabIndex = 11
-        Me.Date1OUT.Value = New Date(2023, 4, 15, 23, 18, 1, 623)
+        Me.DATE1OUTOFSTOCKS.CheckedState.Parent = Me.DATE1OUTOFSTOCKS
+        Me.DATE1OUTOFSTOCKS.FillColor = System.Drawing.Color.MediumSeaGreen
+        Me.DATE1OUTOFSTOCKS.Font = New System.Drawing.Font("Century Gothic", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.DATE1OUTOFSTOCKS.ForeColor = System.Drawing.Color.White
+        Me.DATE1OUTOFSTOCKS.Format = System.Windows.Forms.DateTimePickerFormat.[Long]
+        Me.DATE1OUTOFSTOCKS.HoverState.Parent = Me.DATE1OUTOFSTOCKS
+        Me.DATE1OUTOFSTOCKS.Location = New System.Drawing.Point(90, 26)
+        Me.DATE1OUTOFSTOCKS.MaxDate = New Date(9998, 12, 31, 0, 0, 0, 0)
+        Me.DATE1OUTOFSTOCKS.MinDate = New Date(1753, 1, 1, 0, 0, 0, 0)
+        Me.DATE1OUTOFSTOCKS.Name = "DATE1OUTOFSTOCKS"
+        Me.DATE1OUTOFSTOCKS.ShadowDecoration.Parent = Me.DATE1OUTOFSTOCKS
+        Me.DATE1OUTOFSTOCKS.Size = New System.Drawing.Size(200, 36)
+        Me.DATE1OUTOFSTOCKS.TabIndex = 11
+        Me.DATE1OUTOFSTOCKS.Value = New Date(2023, 4, 15, 23, 18, 1, 623)
         '
         'RPTOUTOFSTOCKS
         '
@@ -749,7 +708,6 @@ Partial Class FRMREPORTS
         Me.TPDELIVERY.Controls.Add(Me.MONTHLYDELIVERY)
         Me.TPDELIVERY.Controls.Add(Me.WEEKLYDELIVERY)
         Me.TPDELIVERY.Controls.Add(Me.DAILYDELIVERY)
-        Me.TPDELIVERY.Controls.Add(Me.CLEARDELIVERY)
         Me.TPDELIVERY.Controls.Add(Me.FILTERDELIVERY)
         Me.TPDELIVERY.Controls.Add(Me.RPTDELIVERY)
         Me.TPDELIVERY.Location = New System.Drawing.Point(4, 29)
@@ -820,22 +778,6 @@ Partial Class FRMREPORTS
         Me.DAILYDELIVERY.UncheckedState.InnerColor = System.Drawing.Color.Transparent
         Me.DAILYDELIVERY.UseVisualStyleBackColor = True
         '
-        'CLEARDELIVERY
-        '
-        Me.CLEARDELIVERY.BackColor = System.Drawing.Color.Transparent
-        Me.CLEARDELIVERY.CheckedState.Parent = Me.CLEARDELIVERY
-        Me.CLEARDELIVERY.CustomImages.Parent = Me.CLEARDELIVERY
-        Me.CLEARDELIVERY.FillColor = System.Drawing.SystemColors.ControlDark
-        Me.CLEARDELIVERY.Font = New System.Drawing.Font("Century Gothic", 9.0!)
-        Me.CLEARDELIVERY.ForeColor = System.Drawing.Color.White
-        Me.CLEARDELIVERY.HoverState.Parent = Me.CLEARDELIVERY
-        Me.CLEARDELIVERY.Location = New System.Drawing.Point(443, 29)
-        Me.CLEARDELIVERY.Name = "CLEARDELIVERY"
-        Me.CLEARDELIVERY.ShadowDecoration.Parent = Me.CLEARDELIVERY
-        Me.CLEARDELIVERY.Size = New System.Drawing.Size(98, 36)
-        Me.CLEARDELIVERY.TabIndex = 20
-        Me.CLEARDELIVERY.Text = "Clear Filter"
-        '
         'FILTERDELIVERY
         '
         Me.FILTERDELIVERY.CheckedState.Parent = Me.FILTERDELIVERY
@@ -844,7 +786,7 @@ Partial Class FRMREPORTS
         Me.FILTERDELIVERY.Font = New System.Drawing.Font("Century Gothic", 9.0!)
         Me.FILTERDELIVERY.ForeColor = System.Drawing.Color.White
         Me.FILTERDELIVERY.HoverState.Parent = Me.FILTERDELIVERY
-        Me.FILTERDELIVERY.Location = New System.Drawing.Point(313, 28)
+        Me.FILTERDELIVERY.Location = New System.Drawing.Point(325, 20)
         Me.FILTERDELIVERY.Name = "FILTERDELIVERY"
         Me.FILTERDELIVERY.ShadowDecoration.Parent = Me.FILTERDELIVERY
         Me.FILTERDELIVERY.Size = New System.Drawing.Size(98, 36)
@@ -1054,26 +996,6 @@ Partial Class FRMREPORTS
         Me.TPUSERS.TabIndex = 0
         Me.TPUSERS.Text = "User Accounts"
         '
-        'Label6
-        '
-        Me.Label6.AutoSize = True
-        Me.Label6.Font = New System.Drawing.Font("Century Gothic", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label6.Location = New System.Drawing.Point(28, 7)
-        Me.Label6.Name = "Label6"
-        Me.Label6.Size = New System.Drawing.Size(114, 21)
-        Me.Label6.TabIndex = 6
-        Me.Label6.Text = "Current User :"
-        '
-        'LBLNAME
-        '
-        Me.LBLNAME.AutoSize = True
-        Me.LBLNAME.Font = New System.Drawing.Font("Century Gothic", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.LBLNAME.Location = New System.Drawing.Point(148, 7)
-        Me.LBLNAME.Name = "LBLNAME"
-        Me.LBLNAME.Size = New System.Drawing.Size(58, 21)
-        Me.LBLNAME.TabIndex = 5
-        Me.LBLNAME.Text = "Name"
-        '
         'RPTUSERS
         '
         ReportDataSource9.Name = "DataSet1"
@@ -1085,22 +1007,6 @@ Partial Class FRMREPORTS
         Me.RPTUSERS.ServerReport.BearerToken = Nothing
         Me.RPTUSERS.Size = New System.Drawing.Size(1067, 513)
         Me.RPTUSERS.TabIndex = 0
-        '
-        'CLEARUSERS
-        '
-        Me.CLEARUSERS.BackColor = System.Drawing.Color.Transparent
-        Me.CLEARUSERS.CheckedState.Parent = Me.CLEARUSERS
-        Me.CLEARUSERS.CustomImages.Parent = Me.CLEARUSERS
-        Me.CLEARUSERS.FillColor = System.Drawing.SystemColors.ControlDark
-        Me.CLEARUSERS.Font = New System.Drawing.Font("Segoe UI", 9.0!)
-        Me.CLEARUSERS.ForeColor = System.Drawing.Color.White
-        Me.CLEARUSERS.HoverState.Parent = Me.CLEARUSERS
-        Me.CLEARUSERS.Location = New System.Drawing.Point(497, 28)
-        Me.CLEARUSERS.Name = "CLEARUSERS"
-        Me.CLEARUSERS.ShadowDecoration.Parent = Me.CLEARUSERS
-        Me.CLEARUSERS.Size = New System.Drawing.Size(98, 36)
-        Me.CLEARUSERS.TabIndex = 4
-        Me.CLEARUSERS.Text = "Clear Filter"
         '
         'Label2
         '
@@ -1147,6 +1053,26 @@ Partial Class FRMREPORTS
         Me.CBOUSERS.Size = New System.Drawing.Size(140, 36)
         Me.CBOUSERS.TabIndex = 2
         '
+        'Label6
+        '
+        Me.Label6.AutoSize = True
+        Me.Label6.Font = New System.Drawing.Font("Century Gothic", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label6.Location = New System.Drawing.Point(872, 3)
+        Me.Label6.Name = "Label6"
+        Me.Label6.Size = New System.Drawing.Size(114, 21)
+        Me.Label6.TabIndex = 6
+        Me.Label6.Text = "Current User :"
+        '
+        'lblNameReport
+        '
+        Me.lblNameReport.AutoSize = True
+        Me.lblNameReport.Font = New System.Drawing.Font("Century Gothic", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblNameReport.Location = New System.Drawing.Point(992, 2)
+        Me.lblNameReport.Name = "lblNameReport"
+        Me.lblNameReport.Size = New System.Drawing.Size(58, 21)
+        Me.lblNameReport.TabIndex = 5
+        Me.lblNameReport.Text = "Name"
+        '
         'TCREPORTS
         '
         Me.TCREPORTS.Controls.Add(Me.TPUSERS)
@@ -1164,6 +1090,16 @@ Partial Class FRMREPORTS
         Me.TCREPORTS.SelectedIndex = 0
         Me.TCREPORTS.Size = New System.Drawing.Size(1116, 652)
         Me.TCREPORTS.TabIndex = 23
+        '
+        'LBLUSERTYPE
+        '
+        Me.LBLUSERTYPE.AutoSize = True
+        Me.LBLUSERTYPE.Font = New System.Drawing.Font("Century Gothic", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.LBLUSERTYPE.Location = New System.Drawing.Point(33, 3)
+        Me.LBLUSERTYPE.Name = "LBLUSERTYPE"
+        Me.LBLUSERTYPE.Size = New System.Drawing.Size(78, 21)
+        Me.LBLUSERTYPE.TabIndex = 25
+        Me.LBLUSERTYPE.Text = "Usertype"
         '
         'tbl_productsTableAdapter
         '
@@ -1197,11 +1133,6 @@ Partial Class FRMREPORTS
         '
         Me.tbl_actlogTableAdapter.ClearBeforeFill = True
         '
-        'tbl_transactionBindingSource
-        '
-        Me.tbl_transactionBindingSource.DataMember = "tbl_transaction"
-        Me.tbl_transactionBindingSource.DataSource = Me.inventory_dbDataSet
-        '
         'tbl_transactionTableAdapter
         '
         Me.tbl_transactionTableAdapter.ClearBeforeFill = True
@@ -1209,29 +1140,28 @@ Partial Class FRMREPORTS
         'PictureBox1
         '
         Me.PictureBox1.Image = Global.SALESANDINVENTORYSYSTEM.My.Resources.Resources.user
-        Me.PictureBox1.Location = New System.Drawing.Point(3, 3)
+        Me.PictureBox1.Location = New System.Drawing.Point(3, 4)
         Me.PictureBox1.Name = "PictureBox1"
-        Me.PictureBox1.Size = New System.Drawing.Size(24, 25)
+        Me.PictureBox1.Size = New System.Drawing.Size(24, 22)
         Me.PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
         Me.PictureBox1.TabIndex = 24
         Me.PictureBox1.TabStop = False
         '
-        'LBLUSERTYPE
+        'CLEARUSERS
         '
-        Me.LBLUSERTYPE.AutoSize = True
-        Me.LBLUSERTYPE.Font = New System.Drawing.Font("Century Gothic", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.LBLUSERTYPE.Location = New System.Drawing.Point(1012, 8)
-        Me.LBLUSERTYPE.Name = "LBLUSERTYPE"
-        Me.LBLUSERTYPE.Size = New System.Drawing.Size(78, 21)
-        Me.LBLUSERTYPE.TabIndex = 25
-        Me.LBLUSERTYPE.Text = "Usertype"
-        '
-        'TextBox1
-        '
-        Me.TextBox1.Location = New System.Drawing.Point(308, 9)
-        Me.TextBox1.Name = "TextBox1"
-        Me.TextBox1.Size = New System.Drawing.Size(200, 20)
-        Me.TextBox1.TabIndex = 26
+        Me.CLEARUSERS.BackColor = System.Drawing.Color.Transparent
+        Me.CLEARUSERS.CheckedState.Parent = Me.CLEARUSERS
+        Me.CLEARUSERS.CustomImages.Parent = Me.CLEARUSERS
+        Me.CLEARUSERS.FillColor = System.Drawing.SystemColors.ControlDark
+        Me.CLEARUSERS.Font = New System.Drawing.Font("Segoe UI", 9.0!)
+        Me.CLEARUSERS.ForeColor = System.Drawing.Color.White
+        Me.CLEARUSERS.HoverState.Parent = Me.CLEARUSERS
+        Me.CLEARUSERS.Location = New System.Drawing.Point(497, 28)
+        Me.CLEARUSERS.Name = "CLEARUSERS"
+        Me.CLEARUSERS.ShadowDecoration.Parent = Me.CLEARUSERS
+        Me.CLEARUSERS.Size = New System.Drawing.Size(98, 36)
+        Me.CLEARUSERS.TabIndex = 4
+        Me.CLEARUSERS.Text = "Clear Filter"
         '
         'FRMREPORTS
         '
@@ -1239,12 +1169,10 @@ Partial Class FRMREPORTS
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.White
         Me.ClientSize = New System.Drawing.Size(1107, 682)
-        Me.Controls.Add(Me.TextBox1)
         Me.Controls.Add(Me.LBLUSERTYPE)
         Me.Controls.Add(Me.PictureBox1)
         Me.Controls.Add(Me.Label6)
-        Me.Controls.Add(Me.Panel1)
-        Me.Controls.Add(Me.LBLNAME)
+        Me.Controls.Add(Me.lblNameReport)
         Me.Controls.Add(Me.TCREPORTS)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D
         Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
@@ -1253,7 +1181,7 @@ Partial Class FRMREPORTS
         Me.Name = "FRMREPORTS"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Reports"
-        CType(Me.tbl_usersBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.tbl_transactionBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.inventory_dbDataSet, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.tbl_actlogBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.tbl_salesBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
@@ -1262,6 +1190,7 @@ Partial Class FRMREPORTS
         CType(Me.tbl_deliveryBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.tbl_stocksBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.tbl_productsBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.tbl_usersBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
         Me.TPTRANSREC.ResumeLayout(False)
         Me.TPTRANSREC.PerformLayout()
         Me.TPACT.ResumeLayout(False)
@@ -1281,7 +1210,6 @@ Partial Class FRMREPORTS
         Me.TPUSERS.ResumeLayout(False)
         Me.TPUSERS.PerformLayout()
         Me.TCREPORTS.ResumeLayout(False)
-        CType(Me.tbl_transactionBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
@@ -1290,7 +1218,6 @@ Partial Class FRMREPORTS
     Friend WithEvents tbl_productsBindingSource As BindingSource
     Friend WithEvents inventory_dbDataSet As inventory_dbDataSet
     Friend WithEvents tbl_productsTableAdapter As inventory_dbDataSetTableAdapters.tbl_productsTableAdapter
-    Friend WithEvents Panel1 As Panel
     Friend WithEvents tbl_salesBindingSource As BindingSource
     Friend WithEvents tbl_salesTableAdapter As inventory_dbDataSetTableAdapters.tbl_salesTableAdapter
     Friend WithEvents TPTRANSREC As TabPage
@@ -1305,16 +1232,15 @@ Partial Class FRMREPORTS
     Friend WithEvents MONTHLY As Guna.UI2.WinForms.Guna2RadioButton
     Friend WithEvents WEEKLY As Guna.UI2.WinForms.Guna2RadioButton
     Friend WithEvents DAILY As Guna.UI2.WinForms.Guna2RadioButton
-    Friend WithEvents CLEARSALES As Guna.UI2.WinForms.Guna2Button
     Friend WithEvents FILTERSALES As Guna.UI2.WinForms.Guna2Button
     Friend WithEvents RPTSALES As Microsoft.Reporting.WinForms.ReportViewer
     Friend WithEvents TPOUT As TabPage
     Friend WithEvents Label10 As Label
     Friend WithEvents Label9 As Label
-    Friend WithEvents OUTCLR As Guna.UI2.WinForms.Guna2Button
-    Friend WithEvents OUTFILL As Guna.UI2.WinForms.Guna2Button
-    Friend WithEvents Date2OUT As Guna.UI2.WinForms.Guna2DateTimePicker
-    Friend WithEvents Date1OUT As Guna.UI2.WinForms.Guna2DateTimePicker
+    Friend WithEvents CLEAROUTOFSTOCKS As Guna.UI2.WinForms.Guna2Button
+    Friend WithEvents FILTEROUTOFSTOCKS As Guna.UI2.WinForms.Guna2Button
+    Friend WithEvents DATE2OUTOFSTOCKS As Guna.UI2.WinForms.Guna2DateTimePicker
+    Friend WithEvents DATE1OUTOFSTOCKS As Guna.UI2.WinForms.Guna2DateTimePicker
     Friend WithEvents RPTOUTOFSTOCKS As Microsoft.Reporting.WinForms.ReportViewer
     Friend WithEvents TPEXP As TabPage
     Friend WithEvents RPTEXPIREDPRODUCTS As Microsoft.Reporting.WinForms.ReportViewer
@@ -1328,7 +1254,6 @@ Partial Class FRMREPORTS
     Friend WithEvents MONTHLYDELIVERY As Guna.UI2.WinForms.Guna2RadioButton
     Friend WithEvents WEEKLYDELIVERY As Guna.UI2.WinForms.Guna2RadioButton
     Friend WithEvents DAILYDELIVERY As Guna.UI2.WinForms.Guna2RadioButton
-    Friend WithEvents CLEARDELIVERY As Guna.UI2.WinForms.Guna2Button
     Friend WithEvents FILTERDELIVERY As Guna.UI2.WinForms.Guna2Button
     Friend WithEvents TPSTOCKS As TabPage
     Friend WithEvents TPPRODS As TabPage
@@ -1339,7 +1264,6 @@ Partial Class FRMREPORTS
     Friend WithEvents RPTPRODUCTS As Microsoft.Reporting.WinForms.ReportViewer
     Friend WithEvents TPUSERS As TabPage
     Friend WithEvents RPTUSERS As Microsoft.Reporting.WinForms.ReportViewer
-    Friend WithEvents CLEARUSERS As Guna.UI2.WinForms.Guna2Button
     Friend WithEvents Label2 As Label
     Friend WithEvents FILTERUSERS As Guna.UI2.WinForms.Guna2Button
     Friend WithEvents CBOUSERS As Guna.UI2.WinForms.Guna2ComboBox
@@ -1351,7 +1275,7 @@ Partial Class FRMREPORTS
     Friend WithEvents FILTERSTOCKS As Guna.UI2.WinForms.Guna2Button
     Friend WithEvents CBOSTOCKSCATEGORY As Guna.UI2.WinForms.Guna2ComboBox
     Friend WithEvents Label6 As Label
-    Friend WithEvents LBLNAME As Label
+    Friend WithEvents lblNameReport As Label
     Friend WithEvents RPTSTOCKS As Microsoft.Reporting.WinForms.ReportViewer
     Friend WithEvents RPTDELIVERY As Microsoft.Reporting.WinForms.ReportViewer
     Friend WithEvents tbl_expiredproductsBindingSource As BindingSource
@@ -1363,7 +1287,6 @@ Partial Class FRMREPORTS
     Friend WithEvents MONTHLYTRANSACTION As Guna.UI2.WinForms.Guna2RadioButton
     Friend WithEvents WEEKLYTRANSACTION As Guna.UI2.WinForms.Guna2RadioButton
     Friend WithEvents DAILYTRANSACTION As Guna.UI2.WinForms.Guna2RadioButton
-    Friend WithEvents CLEARTRANSACTION As Guna.UI2.WinForms.Guna2Button
     Friend WithEvents FILTERTRANSACTION As Guna.UI2.WinForms.Guna2Button
     Friend WithEvents tbl_stocksBindingSource As BindingSource
     Friend WithEvents tbl_stocksTableAdapter As inventory_dbDataSetTableAdapters.tbl_stocksTableAdapter
@@ -1373,5 +1296,5 @@ Partial Class FRMREPORTS
     Friend WithEvents tbl_transactionTableAdapter As inventory_dbDataSetTableAdapters.tbl_transactionTableAdapter
     Friend WithEvents PictureBox1 As PictureBox
     Friend WithEvents LBLUSERTYPE As Label
-    Friend WithEvents TextBox1 As TextBox
+    Friend WithEvents CLEARUSERS As Guna.UI2.WinForms.Guna2Button
 End Class

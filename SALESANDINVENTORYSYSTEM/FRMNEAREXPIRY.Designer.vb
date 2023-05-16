@@ -22,14 +22,15 @@ Partial Class FRMNEAREXPIRY
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
-        Dim DataGridViewCellStyle7 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle8 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle9 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle1 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle2 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle3 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(FRMNEAREXPIRY))
         Me.Label8 = New System.Windows.Forms.Label()
         Me.DGVEXP = New System.Windows.Forms.DataGridView()
         Me.Panel2 = New System.Windows.Forms.Panel()
-        Me.Label4 = New System.Windows.Forms.Label()
         Me.LBLCLOSE = New System.Windows.Forms.PictureBox()
+        Me.Label4 = New System.Windows.Forms.Label()
         CType(Me.DGVEXP, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.Panel2.SuspendLayout()
         CType(Me.LBLCLOSE, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -52,34 +53,34 @@ Partial Class FRMNEAREXPIRY
         Me.DGVEXP.AllowUserToAddRows = False
         Me.DGVEXP.AllowUserToDeleteRows = False
         Me.DGVEXP.BackgroundColor = System.Drawing.Color.White
-        DataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
-        DataGridViewCellStyle7.BackColor = System.Drawing.SystemColors.Control
-        DataGridViewCellStyle7.Font = New System.Drawing.Font("Century Gothic", 9.75!)
-        DataGridViewCellStyle7.ForeColor = System.Drawing.SystemColors.ControlDarkDark
-        DataGridViewCellStyle7.SelectionBackColor = System.Drawing.Color.MediumSeaGreen
-        DataGridViewCellStyle7.SelectionForeColor = System.Drawing.SystemColors.HighlightText
-        DataGridViewCellStyle7.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
-        Me.DGVEXP.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle7
+        DataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control
+        DataGridViewCellStyle1.Font = New System.Drawing.Font("Century Gothic", 9.75!)
+        DataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.ControlDarkDark
+        DataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.MediumSeaGreen
+        DataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+        DataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.DGVEXP.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle1
         Me.DGVEXP.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        DataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
-        DataGridViewCellStyle8.BackColor = System.Drawing.SystemColors.Window
-        DataGridViewCellStyle8.Font = New System.Drawing.Font("Century Gothic", 9.75!)
-        DataGridViewCellStyle8.ForeColor = System.Drawing.SystemColors.ControlDarkDark
-        DataGridViewCellStyle8.SelectionBackColor = System.Drawing.Color.MediumSeaGreen
-        DataGridViewCellStyle8.SelectionForeColor = System.Drawing.SystemColors.HighlightText
-        DataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
-        Me.DGVEXP.DefaultCellStyle = DataGridViewCellStyle8
+        DataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window
+        DataGridViewCellStyle2.Font = New System.Drawing.Font("Century Gothic", 9.75!)
+        DataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlDarkDark
+        DataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.MediumSeaGreen
+        DataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+        DataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
+        Me.DGVEXP.DefaultCellStyle = DataGridViewCellStyle2
         Me.DGVEXP.Location = New System.Drawing.Point(39, 120)
         Me.DGVEXP.Name = "DGVEXP"
         Me.DGVEXP.ReadOnly = True
-        DataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
-        DataGridViewCellStyle9.BackColor = System.Drawing.SystemColors.Control
-        DataGridViewCellStyle9.Font = New System.Drawing.Font("Century Gothic", 9.75!)
-        DataGridViewCellStyle9.ForeColor = System.Drawing.SystemColors.ControlDarkDark
-        DataGridViewCellStyle9.SelectionBackColor = System.Drawing.Color.MediumSeaGreen
-        DataGridViewCellStyle9.SelectionForeColor = System.Drawing.SystemColors.HighlightText
-        DataGridViewCellStyle9.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
-        Me.DGVEXP.RowHeadersDefaultCellStyle = DataGridViewCellStyle9
+        DataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Control
+        DataGridViewCellStyle3.Font = New System.Drawing.Font("Century Gothic", 9.75!)
+        DataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.ControlDarkDark
+        DataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.MediumSeaGreen
+        DataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+        DataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.DGVEXP.RowHeadersDefaultCellStyle = DataGridViewCellStyle3
         Me.DGVEXP.RowHeadersVisible = False
         Me.DGVEXP.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
         Me.DGVEXP.Size = New System.Drawing.Size(999, 521)
@@ -95,14 +96,6 @@ Partial Class FRMNEAREXPIRY
         Me.Panel2.Size = New System.Drawing.Size(1075, 49)
         Me.Panel2.TabIndex = 134
         '
-        'Label4
-        '
-        Me.Label4.AutoSize = True
-        Me.Label4.Location = New System.Drawing.Point(939, 287)
-        Me.Label4.Name = "Label4"
-        Me.Label4.Size = New System.Drawing.Size(0, 13)
-        Me.Label4.TabIndex = 133
-        '
         'LBLCLOSE
         '
         Me.LBLCLOSE.Cursor = System.Windows.Forms.Cursors.Hand
@@ -113,6 +106,14 @@ Partial Class FRMNEAREXPIRY
         Me.LBLCLOSE.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
         Me.LBLCLOSE.TabIndex = 137
         Me.LBLCLOSE.TabStop = False
+        '
+        'Label4
+        '
+        Me.Label4.AutoSize = True
+        Me.Label4.Location = New System.Drawing.Point(939, 287)
+        Me.Label4.Name = "Label4"
+        Me.Label4.Size = New System.Drawing.Size(0, 13)
+        Me.Label4.TabIndex = 133
         '
         'FRMNEAREXPIRY
         '
@@ -125,7 +126,9 @@ Partial Class FRMNEAREXPIRY
         Me.Controls.Add(Me.Panel2)
         Me.Controls.Add(Me.Label4)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None
+        Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.Name = "FRMNEAREXPIRY"
+        Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent
         Me.Text = "FRMNEAREXPIRY"
         CType(Me.DGVEXP, System.ComponentModel.ISupportInitialize).EndInit()
         Me.Panel2.ResumeLayout(False)

@@ -104,6 +104,7 @@ Partial Class ucTRANSACTION
         Me.Label21 = New System.Windows.Forms.Label()
         Me.Panel6 = New System.Windows.Forms.Panel()
         Me.Label22 = New System.Windows.Forms.Label()
+        Me.BTNNEW = New System.Windows.Forms.Button()
         Me.GroupBox3.SuspendLayout()
         Me.GroupBox1.SuspendLayout()
         CType(Me.NumericUpDown1, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -145,18 +146,18 @@ Partial Class ucTRANSACTION
         Me.Label10.AutoSize = True
         Me.Label10.Font = New System.Drawing.Font("Century Gothic", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label10.ForeColor = System.Drawing.SystemColors.ControlDarkDark
-        Me.Label10.Location = New System.Drawing.Point(16, 84)
+        Me.Label10.Location = New System.Drawing.Point(403, 81)
         Me.Label10.Name = "Label10"
-        Me.Label10.Size = New System.Drawing.Size(110, 17)
+        Me.Label10.Size = New System.Drawing.Size(51, 17)
         Me.Label10.TabIndex = 13
-        Me.Label10.Text = "Search Product "
+        Me.Label10.Text = "Search"
         '
         'TXTSEARCH
         '
         Me.TXTSEARCH.BackColor = System.Drawing.SystemColors.Window
         Me.TXTSEARCH.Font = New System.Drawing.Font("Century Gothic", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.TXTSEARCH.ForeColor = System.Drawing.SystemColors.ControlDarkDark
-        Me.TXTSEARCH.Location = New System.Drawing.Point(140, 81)
+        Me.TXTSEARCH.Location = New System.Drawing.Point(460, 81)
         Me.TXTSEARCH.Name = "TXTSEARCH"
         Me.TXTSEARCH.Size = New System.Drawing.Size(255, 23)
         Me.TXTSEARCH.TabIndex = 9
@@ -686,6 +687,7 @@ Partial Class ucTRANSACTION
         DataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText
         DataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
         Me.DGVPRODUCTS.DefaultCellStyle = DataGridViewCellStyle5
+        Me.DGVPRODUCTS.Enabled = False
         Me.DGVPRODUCTS.Location = New System.Drawing.Point(17, 117)
         Me.DGVPRODUCTS.Name = "DGVPRODUCTS"
         Me.DGVPRODUCTS.ReadOnly = True
@@ -1047,11 +1049,30 @@ Partial Class ucTRANSACTION
         Me.Label22.TabIndex = 57
         Me.Label22.Text = "CUSTOMER ID INFORMATION (Optional)"
         '
+        'BTNNEW
+        '
+        Me.BTNNEW.BackColor = System.Drawing.Color.MediumSeaGreen
+        Me.BTNNEW.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.BTNNEW.FlatAppearance.BorderSize = 0
+        Me.BTNNEW.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.BTNNEW.Font = New System.Drawing.Font("Century Gothic", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.BTNNEW.ForeColor = System.Drawing.SystemColors.Control
+        Me.BTNNEW.Image = Global.SALESANDINVENTORYSYSTEM.My.Resources.Resources.add_24
+        Me.BTNNEW.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
+        Me.BTNNEW.Location = New System.Drawing.Point(17, 77)
+        Me.BTNNEW.Name = "BTNNEW"
+        Me.BTNNEW.Size = New System.Drawing.Size(146, 30)
+        Me.BTNNEW.TabIndex = 78
+        Me.BTNNEW.Text = "New Transaction"
+        Me.BTNNEW.TextAlign = System.Drawing.ContentAlignment.MiddleRight
+        Me.BTNNEW.UseVisualStyleBackColor = False
+        '
         'ucTRANSACTION
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.White
+        Me.Controls.Add(Me.BTNNEW)
         Me.Controls.Add(Me.Panel6)
         Me.Controls.Add(Me.Panel4)
         Me.Controls.Add(Me.Panel5)
@@ -1169,4 +1190,5 @@ Partial Class ucTRANSACTION
     Friend WithEvents LBLITEMS As Label
     Friend WithEvents LBLSUB As Label
     Friend WithEvents Label27 As Label
+    Friend WithEvents BTNNEW As Button
 End Class

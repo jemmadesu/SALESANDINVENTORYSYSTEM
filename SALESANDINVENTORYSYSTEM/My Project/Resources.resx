@@ -124,14 +124,20 @@
   <data name="toppng1" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\toppng.com-telephone-symbol-white-white-contact-icon-1776x18901.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="noun-data-backup-45505892" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\noun-data-backup-45505892.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="restore" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\restore.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="noun-data-backup-4550589" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\noun-data-backup-4550589.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="image_processing20210910-19574-1qoobzd" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\image_processing20210910-19574-1qoobzd.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="plus-5-24" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\plus-5-24.ico;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="plus" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\plus.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="image_processing20210910-19574-1qoobzd1" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\image_processing20210910-19574-1qoobzd1.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -145,6 +151,9 @@
   <data name="lv_0_20230503003934" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\lv_0_20230503003934.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="image_processing20190919-3788-cuf3o4" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\image_processing20190919-3788-cuf3o4.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="clipart2399764" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\clipart2399764.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -154,17 +163,14 @@
   <data name="x-symbol" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\x-symbol.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="restore" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\restore.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
   <data name="tag-4-24" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\tag-4-24.ico;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="Media_230503_005719" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Media_230503_005719.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="image_processing20190919-3788-cuf3o4" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\image_processing20190919-3788-cuf3o4.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="noun-data-backup-45505892" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\noun-data-backup-45505892.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="x-mark-64" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\x-mark-64.ico;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -196,8 +202,14 @@
   <data name="admin" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\admin.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="add-24" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\add-24.ico;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="noun-data-backup-45505891" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\noun-data-backup-45505891.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="user" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\user.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="tag-4-241" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\tag-4-241.ico;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -208,10 +220,13 @@
   <data name="clipart23997641" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\clipart23997641.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="plus-5-24 (1)" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\plus-5-24 (1).ico;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="toppng.com-telephone-symbol-white-white-contact-icon-1776x1890" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\toppng.com-telephone-symbol-white-white-contact-icon-1776x1890.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="user" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\user.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="plus1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\plus1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>

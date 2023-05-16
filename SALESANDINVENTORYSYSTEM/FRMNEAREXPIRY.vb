@@ -34,8 +34,11 @@ Public Class FRMNEAREXPIRY
         DGVEXP.Columns(12).Width = 200
         DGVEXP.Columns(12).HeaderText = "Remaining Days"
 
+
     End Sub
     Private Sub FRMNEAREXPIRY_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+
+        con.Close()
         connection = New MySqlConnection
 
 
@@ -65,12 +68,12 @@ Public Class FRMNEAREXPIRY
         End Try
 
         ' Set the backcolor of the row
-        DGVEXP.Columns(5).DefaultCellStyle.BackColor = Color.OrangeRed
+        DGVEXP.Columns(12).DefaultCellStyle.BackColor = Color.IndianRed
 
         ' Set the forecolor of the row
-        DGVEXP.Columns(5).DefaultCellStyle.ForeColor = Color.White
-
+        DGVEXP.Columns(12).DefaultCellStyle.ForeColor = Color.White
     End Sub
+
 
     Private Sub DGVEXP_CellFormatting(sender As Object, e As DataGridViewCellFormattingEventArgs)
         ' Check if the column index is the one you want to format

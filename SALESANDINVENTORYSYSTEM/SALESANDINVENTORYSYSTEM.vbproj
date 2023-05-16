@@ -577,6 +577,11 @@
     <None Include="Resources\tag-4-241.ico" />
     <None Include="Resources\tags.ico" />
     <None Include="Resources\user.png" />
+    <None Include="Resources\plus-5-24.ico" />
+    <None Include="Resources\plus-5-24 %281%29.ico" />
+    <None Include="Resources\add-24.ico" />
+    <None Include="Resources\plus.png" />
+    <None Include="Resources\plus1.png" />
     <Content Include="SqlServerTypes\Loader.cs" />
     <Content Include="SqlServerTypes\readme.htm" />
     <Content Include="SqlServerTypes\x64\msvcr120.dll">

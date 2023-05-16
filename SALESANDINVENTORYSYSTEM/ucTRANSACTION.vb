@@ -1,8 +1,6 @@
 ﻿
 Imports System.Drawing.Printing
 Imports MySql.Data.MySqlClient
-
-
 Public Class ucTRANSACTION
     Dim connection As MySqlConnection
     Dim command As MySqlCommand
@@ -10,6 +8,7 @@ Public Class ucTRANSACTION
     Dim WithEvents PD As New PrintDocument
     Dim PPD As New PrintPreviewDialog
     Dim longpaper As Integer
+    Private Shared InvoiceNumber As Integer = 0
 
     Private Sub setsum()
         DGVSUMMARY.Columns(0).Width = 200
@@ -574,6 +573,8 @@ Public Class ucTRANSACTION
 
     Private Sub BTNSAVE_Click(sender As Object, e As EventArgs) Handles BTNSAVE.Click
 
+        DGVPRODUCTS.Enabled = False
+
         Dim payment As Double
         Dim total As Double
 
@@ -866,20 +867,20 @@ Public Class ucTRANSACTION
     Private Sub TXTOR_KeyPress(sender As Object, e As KeyPressEventArgs) Handles TXTOR.KeyPress
 
 
-        ORNO.Text = TXTOR.Text
+        'ORNO.Text = TXTOR.Text
 
 
 
-        If Not Char.IsNumber(e.KeyChar) And Not Char.IsControl(e.KeyChar) Then
-            e.Handled = True
-            MsgBox("Letter or Special character is not allowed", vbCritical, "Notice")
-        End If
-        If TXTOR.Text.Length >= 6 Then
-            If e.KeyChar <> ControlChars.Back Then
-                e.Handled = True
-                MsgBox("Number Exceed", vbCritical, "Notice")
-            End If
-        End If
+        'If Not Char.IsNumber(e.KeyChar) And Not Char.IsControl(e.KeyChar) Then
+        '    e.Handled = True
+        '    MsgBox("Letter or Special character is not allowed", vbCritical, "Notice")
+        'End If
+        'If TXTOR.Text.Length >= 6 Then
+        '    If e.KeyChar <> ControlChars.Back Then
+        '        e.Handled = True
+        '        MsgBox("Number Exceed", vbCritical, "Notice")
+        '    End If
+        'End If
     End Sub
 
 
@@ -921,5 +922,28 @@ Public Class ucTRANSACTION
         End Using
     End Sub
 
+    Private Sub TXTOR_TextChanged(sender As Object, e As EventArgs) Handles TXTOR.TextChanged
 
+    End Sub
+
+    Private Sub Button1_Click(sender As Object, e As EventArgs) Handles BTNNEW.Click
+
+        DGVPRODUCTS.Enabled = True
+
+
+        ' Increment the invoice number
+        InvoiceNumber += 1
+
+        ' Generate the invoice number with a maximum of 6 characters
+        Dim invoiceText As String = String.Format("{0:000000}", InvoiceNumber)
+
+        ' Set the generated invoice number in the TextBox
+        TXTOR.Text = invoiceText
+
+        ORNO.Text = TXTOR.Text
+    End Sub
+
+    Private Sub Panel3_Paint(sender As Object, e As PaintEventArgs) Handles Panel3.Paint
+
+    End Sub
 End Class
